@@ -1,0 +1,425 @@
+{
+  "ui_components": [
+    {
+      "id": 1,
+      "name": "Motion Primitives",
+      "desc": "Open-source UI kit with animated React components built for Next.js and Tailwind CSS.",
+      "preview": "https://motion-primitives.com/favicon.ico",
+      "cardPreview": "https://motion-primitives.com/og-image.png",
+      "link": "https://motion-primitives.com",
+      "likes": 0
+    },
+    {
+      "id": 2,
+      "name": "Aceternity UI",
+      "desc": "Copy-paste UI components with modern animations using Framer Motion and Tailwind.",
+      "preview": "https://ui.aceternity.com/favicon.ico",
+      "cardPreview": "https://ui.aceternity.com/og-image.png",
+      "link": "https://ui.aceternity.com",
+      "likes": 0
+    },
+    {
+      "id": 3,
+      "name": "shadcn/ui",
+      "desc": "Accessible, customizable React components built with Radix UI and Tailwind CSS.",
+      "preview": "https://ui.shadcn.com/favicon.ico",
+      "cardPreview": "https://ui.shadcn.com/og-image.png",
+      "link": "https://ui.shadcn.com",
+      "likes": 0
+    },
+    {
+      "id": 4,
+      "name": "DaisyUI",
+      "desc": "Tailwind CSS component library with semantic HTML and built-in dark mode themes.",
+      "preview": "https://daisyui.com/favicon.ico",
+      "cardPreview": "https://daisyui.com/images/og-image.jpg",
+      "link": "https://daisyui.com",
+      "likes": 0
+    },
+    {
+      "id": 5,
+      "name": "Pattern Craft",
+      "desc": "Modern background patterns and gradients generator with Tailwind CSS snippets.",
+      "preview": "https://patterncraft.fun/favicon.ico",
+      "cardPreview": "https://patterncraft.fun/og-image.png",
+      "link": "https://patterncraft.fun",
+      "likes": 0
+    },
+    {
+      "id": 6,
+      "name": "TweakCN",
+      "desc": "Visual no-code theme editor for shadcn/ui components with Tailwind CSS v4 support.",
+      "preview": "https://tweakcn.com/favicon.ico",
+      "cardPreview": "https://allshadcn.com/tools/tweakcn/og-image.png",
+      "link": "https://tweakcn.com",
+      "likes": 0
+    },
+    {
+      "id": 7,
+      "name": "21st.dev",
+      "desc": "Component marketplace with AI-generated React UI blocks and CLI integration.",
+      "preview": "https://21st.dev/favicon.ico",
+      "cardPreview": "https://21st.dev/og-image.png",
+      "link": "https://21st.dev",
+      "likes": 0
+    },
+    {
+      "id": 8,
+      "name": "Ant Design",
+      "desc": "Enterprise-class React UI library with high-quality components and design system.",
+      "preview": "https://ant.design/favicon.ico",
+      "cardPreview": "https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg",
+      "link": "https://ant.design",
+      "likes": 0
+    },
+    {
+      "id": 9,
+      "name": "Jitter",
+      "desc": "Video creation platform with animated templates for social media and marketing.",
+      "preview": "https://jitter.video/favicon.ico",
+      "cardPreview": "https://jitter.video/og-image.jpg",
+      "link": "https://jitter.video",
+      "likes": 0
+    },
+    {
+      "id": 10,
+      "name": "Tailwind UI",
+      "desc": "Official Tailwind CSS component library with HTML, React, and Vue versions.",
+      "preview": "https://tailwindui.com/favicon.ico",
+      "cardPreview": "https://tailwindui.com/og-image.jpg",
+      "link": "https://tailwindui.com",
+      "likes": 0
+    }
+  ],
+   "design-ideas": [
+    {
+      "id": 1,
+      "name": "Dribbble",
+      "desc": "Showcase for designers to share UI/UX shots, illustrations, and animations.",
+      "preview": "https://dribbble.com/favicon.ico",
+      "cardPreview": "https://cdn.dribbble.com/assets/dribbble-logo-ball-7bfc805431e1e3e9f747b161388d8eb1a2d0038f0d8defd721e7b7be0779e2a9.svg",
+      "link": "https://dribbble.com",
+      "likes": 0
+    },
+    {
+      "id": 2,
+      "name": "Behance",
+      "desc": "Adobe's portfolio platform for full creative projects across disciplines.",
+      "preview": "https://www.behance.net/favicon.ico",
+      "link": "https://www.behance.net",
+      "likes": 0
+    },
+    {
+      "id": 3,
+      "name": "Awwwards",
+      "desc": "Awards for exceptional web design, inspiration, and development resources.",
+      "preview": "https://www.awwwards.com/favicon.ico",
+      "link": "https://www.awwwards.com",
+      "likes": 0
+    },
+    {
+      "id": 4,
+      "name": "Prettyfolio",
+      "desc": "Curated web design portfolios and inspiration for creatives.",
+      "preview": "https://prettyfolio.com/favicon.ico",
+      "link": "https://prettyfolio.com",
+      "likes": 0
+    },
+    {
+      "id": 5,
+      "name": "Stacksorted",
+      "desc": "Sorted collections of design stacks, tools, and inspirations for developers.",
+      "preview": "https://stacksorted.com/favicon.ico",
+      "link": "https://stacksorted.com",
+      "likes": 0
+    },
+    {
+      "id": 6,
+      "name": "Godly",
+      "desc": "Handpicked websites showcasing godly web design and creativity.",
+      "preview": "https://godly.website/favicon.ico",
+      "link": "https://godly.website",
+      "likes": 0
+    },
+    {
+      "id": 7,
+      "name": "Seesaw",
+      "desc": "Platform for discovering and sharing innovative web designs and ideas.",
+      "preview": "https://seesaw.is/favicon.ico",
+      "link": "https://seesaw.is",
+      "likes": 0
+    }
+  ],
+  "fonts": [
+    {
+      "id": 1,
+      "name": "Google Fonts",
+      "desc": "Library of 1,500+ open source fonts optimized for the web, free for commercial use.",
+      "preview": "https://fonts.google.com/favicon.ico",
+      "cardPreview": "https://fonts.google.com/static/img/googlefonts-logo.png",
+      "link": "https://fonts.google.com",
+      "likes": 0
+    },
+    {
+      "id": 2,
+      "name": "FontSpace",
+      "desc": "Over 150,000 free downloadable fonts from verified designers, with previews and licenses.",
+      "preview": "https://www.fontspace.com/favicon.ico",
+      "cardPreview": "https://www.fontspace.com/img/fontspace_logo.png",
+      "link": "https://www.fontspace.com",
+      "likes": 0
+    },
+   {
+      "id": 3,
+      "name": "DaFont",
+      "desc": "Popular site with thousands of free fonts for personal use, searchable by category.",
+      "preview": "https://www.dafont.com/favicon.ico",
+      "cardPreview": "https://www.dafont.com/img/header-bg.png",
+      "link": "https://www.dafont.com",
+      "likes": 0
+    },
+    {
+      "id": 4,
+      "name": "Font Squirrel",
+      "desc": "Handpicked premium-quality free fonts with commercial licenses and generators.",
+      "preview": "https://www.fontsquirrel.com/favicon.ico",
+      "cardPreview": "https://www.fontsquirrel.com/themes/front/images/logo.png",
+      "link": "https://www.fontsquirrel.com",
+      "likes": 0
+    },
+    {
+      "id": 5,
+      "name": "Fontshare",
+      "desc": "Free professional-grade fonts from Indian Type Foundry, 100% free for personal and commercial use.",
+      "preview": "https://www.fontshare.com/favicon.ico",
+      "cardPreview": "https://www.fontshare.com/_next/static/media/og.c2b7a8c4.png",
+      "link": "https://www.fontshare.com",
+      "likes": 0
+    },
+    {
+      "id": 6,
+      "name": "Unblast",
+      "desc": "Free fonts and design resources including mockups, templates, and graphics for designers.",
+      "preview": "https://unblast.com/favicon.ico",
+      "cardPreview": "https://unblast.com/img/unblast-logo.png",
+      "link": "https://unblast.com",
+      "likes": 0
+    },
+    {
+      "id": 7,
+      "name": "Awwwards Free Fonts",
+      "desc": "Curated collection of high-quality free fonts selected by Awwwards for digital design.",
+      "preview": "https://www.awwwards.com/favicon.ico",
+      "cardPreview": "https://www.awwwards.com/awwwards-logo.png",
+      "link": "https://www.awwwards.com/awwwards/collections/free-fonts/",
+      "likes": 0
+    }
+  ],
+  "images": [
+    {
+      "id": 1,
+      "name": "Unsplash",
+      "desc": "High-resolution photos from a global community, free under Unsplash license.",
+      "preview": "https://unsplash.com/favicon.ico",
+      "cardPreview": "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=300",
+      "link": "https://unsplash.com",
+      "likes": 0
+    },
+    {
+      "id": 2,
+      "name": "Pexels",
+      "desc": "Curated free stock photos and videos, CC0 licensed for commercial use.",
+      "preview": "https://www.pexels.com/favicon.ico",
+      "link": "https://www.pexels.com",
+      "likes": 0
+    },
+    {
+      "id": 3,
+      "name": "Pixabay",
+      "desc": "Millions of free images, illustrations, vectors, and videos under Pixabay license.",
+      "preview": "https://pixabay.com/favicon.ico",
+      "link": "https://pixabay.com",
+      "likes": 0
+    },
+    {
+      "id": 4,
+      "name": "Pinterest",
+      "desc": "Visual discovery engine for images, ideas, and inspiration across categories.",
+      "preview": "https://www.pinterest.com/favicon.ico",
+      "link": "https://www.pinterest.com",
+      "likes": 0
+    }
+  ],
+  "svg_icons": [
+    {
+      "id": 1,
+      "name": "SVG Repo",
+      "desc": "500,000+ free SVG vectors and icons in mono/multi color for commercial use.",
+      "preview": "https://www.svgrepo.com/favicon.ico",
+      "cardPreview": "https://www.svgrepo.com/img/og-image.png",
+      "link": "https://www.svgrepo.com",
+      "likes": 0
+    },
+    {
+      "id": 2,
+      "name": "Flaticon",
+      "desc": "Millions of free icons in SVG and other formats, with premium options.",
+      "preview": "https://www.flaticon.com/favicon.ico",
+      "link": "https://www.flaticon.com",
+      "likes": 0
+    },
+    {
+      "id": 3,
+      "name": "IconScout",
+      "desc": "Wide range of free SVG icons and illustrations for various projects.",
+      "preview": "https://iconscout.com/favicon.ico",
+      "link": "https://iconscout.com",
+      "likes": 0
+    },
+    {
+      "id": 4,
+      "name": "Font Awesome",
+      "desc": "Icon library with SVG, font, and CSS support, free core set available.",
+      "preview": "https://fontawesome.com/favicon.ico",
+      "link": "https://fontawesome.com",
+      "likes": 0
+    },
+    {
+      "id": 5,
+      "name": "Tabler Icons",
+      "desc": "550+ highly customizable open-source SVG icons for modern web design.",
+      "preview": "https://tabler.io/favicon.ico",
+      "link": "https://tabler.io/icons",
+      "likes": 0
+    },
+    {
+      "id": 6,
+      "name": "SVG Doodles",
+      "desc": "Free hand-drawn SVG doodles and icons for playful designs.",
+      "preview": "https://svgrepo.com/favicon.ico",
+      "link": "https://svgrepo.com/svgoai/doodles/",
+      "likes": 0
+    }
+  ],
+  "backgrounds": [
+    {
+      "id": 1,
+      "name": "Picjumbo",
+      "desc": "Free high-res images, backgrounds, and photos for personal/commercial use.",
+      "preview": "https://picjumbo.com/favicon.ico",
+      "cardPreview": "https://picjumbo.com/assets/images/picjumbo-logo.png",
+      "link": "https://picjumbo.com",
+      "likes": 0
+    },
+    {
+      "id": 2,
+      "name": "Unsplash",
+      "desc": "Excellent source for abstract and textured backgrounds.",
+      "preview": "https://unsplash.com/favicon.ico",
+      "link": "https://unsplash.com",
+      "likes": 0
+    },
+    {
+      "id": 3,
+      "name": "Pexels",
+      "desc": "Variety of backgrounds including gradients and patterns.",
+      "preview": "https://www.pexels.com/favicon.ico",
+      "link": "https://www.pexels.com",
+      "likes": 0
+    }
+  ],
+  "color_palettes": [
+    {
+      "id": 1,
+      "name": "Coolors",
+      "desc": "Super fast color palette generator with export options and browsing.",
+      "preview": "https://coolors.co/favicon.ico",
+      "cardPreview": "https://coolors.co/images/og-image.jpg",
+      "link": "https://coolors.co",
+      "likes": 0
+    },
+    {
+      "id": 2,
+      "name": "Adobe Color",
+      "desc": "Explore and create color schemes with color wheel and extraction tools.",
+      "preview": "https://color.adobe.com/favicon.ico",
+      "link": "https://color.adobe.com",
+      "likes": 0
+    },
+    {
+      "id": 3,
+      "name": "Paletton",
+      "desc": "Advanced color scheme designer based on color theory.",
+      "preview": "http://paletton.com/favicon.ico",
+      "link": "http://paletton.com",
+      "likes": 0
+    },
+    {
+      "id": 4,
+      "name": "Color Hunt",
+      "desc": "Hand-picked color palettes updated daily for design inspiration.",
+      "preview": "https://colorhunt.co/favicon.ico",
+      "link": "https://colorhunt.co",
+      "likes": 0
+    },
+    {
+      "id": 5,
+      "name": "Colormind",
+      "desc": "AI-powered color palette generator using deep learning from art and photos.",
+      "preview": "http://colormind.com/favicon.ico",
+      "link": "http://colormind.com",
+      "likes": 0
+    },
+    {
+      "id": 6,
+      "name": "Tailwind Color Generator",
+      "desc": "Generate Tailwind CSS compatible color palettes with shades and previews.",
+      "preview": "https://tailwindcss.com/favicon.ico",
+      "link": "https://tailwindcss.com/docs/customizing-colors",
+      "likes": 0
+    }
+  ],
+  "animations": [
+    {
+      "id": 1,
+      "name": "Animate.css",
+      "desc": "Cross-browser CSS animation library with ready-to-use effects.",
+      "preview": "https://animate.style/favicon.ico",
+      "cardPreview": "https://animate.style/og-image.png",
+      "link": "https://animate.style",
+      "likes": 0
+    },
+    {
+      "id": 2,
+      "name": "LottieFiles",
+      "desc": "Free animated icons, illustrations, and Lottie JSON animations.",
+      "preview": "https://lottiefiles.com/favicon.ico",
+      "link": "https://lottiefiles.com",
+      "likes": 0
+    },
+    {
+      "id": 3,
+      "name": "GSAP",
+      "desc": "Robust JavaScript animation library for complex timelines and effects.",
+      "preview": "https://gsap.com/favicon.ico",
+      "link": "https://gsap.com",
+      "likes": 0
+    },
+    {
+      "id": 4,
+      "name": "Codrops",
+      "desc": "Tutorials and demos for advanced CSS, JS, and WebGL animations.",
+      "preview": "https://tympanus.net/codrops/favicon.ico",
+      "link": "https://tympanus.net/codrops",
+      "likes": 0
+    },
+    {
+      "id": 5,
+      "name": "Awwwards Animations",
+      "desc": "Inspiring animation examples and collections from award-winning sites.",
+      "preview": "https://www.awwwards.com/favicon.ico",
+      "link": "https://www.awwwards.com/awwwards/collections/animation/",
+      "likes": 0
+    }
+  ]
+}

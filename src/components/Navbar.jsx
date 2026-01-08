@@ -1,0 +1,130 @@
+import { useState } from "react";
+// eslint-disable-next-line no-unused-vars
+import { motion, AnimatePresence } from "motion/react";
+import { Coffee, Github, Twitter } from "lucide-react";
+import Button from "./Button";
+
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const navVariants = {
+    hidden: { y: -100, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const menuItems = [
+    { id: "resources", content: <Coffee size={26} />, link: "#resources" },
+    { id: "github", content: <Github size={26} />, link: "https://github.com/shani-tiwari" },
+    { id: "twitter", content: <Twitter size={26} />, link: "https://x.com/theshanitiwari" },
+  ];
+
+  return (
+    <nav className="max-w-screen mx-auto bg-transparent ">
+      {/* Removed bg-yellow-500 reference as it might clash, kept base generic container if needed or just fragment */}
+      <motion.nav
+        initial="hidden"
+        animate="visible"
+        variants={navVariants}
+        className="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-[1000px] z-50 px-6 py-1 md:py-3 flex justify-between items-center rounded-full  backdrop-blur-sm border border-white/20 shadow-xs shadow-gray-400"
+      >
+        {/* Logo */}
+        <motion.div
+          variants={itemVariants}
+          whileHover={{ scale: 1.05 }}
+          className="flex items-center"
+        >
+          <img
+            src=""
+            alt="Brand Logo"
+            className="h-10 w-auto rounded-full object-cover"
+          />
+        </motion.div>
+
+        {/* Desktop Menu */}
+        <div className="hidden md:flex space-x-2 items-center text-gray-700">
+          {menuItems.map((item) => (
+            <a
+              key={item.id}
+              href={item.link}
+              target={item.link.startsWith("http") ? "_blank" : "_self"}
+              rel="noreferrer"
+            >
+              <Button name={item.content} />
+            </a>
+          ))}
+        </div>
+
+        {/* Mobile Menu Button */}
+        <motion.button
+          variants={itemVariants}
+          whileTap={{ scale: 0.9 }}
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden text-gray-800 dark:text-white focus:outline-none hover:scale-106 transition-all duration-300"
+        >
+          <svg
+            className="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            {isOpen ? (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            )}
+          </svg>
+        </motion.button>
+
+        {/* Mobile Menu Dropdown */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{opacity: 0, height: 0, borderRadius: "12px 12px 2rem 2rem"}}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="absolute top-full right-0 w-fit bg-gray-200/80   md:hidden 
+              flex flex-col items-center py-4 space-y-4 shadow-xl overflow-hidden mt-2 "
+            >
+              {menuItems.map((item) => (
+                <motion.a
+                  key={item.id}
+                  href={item.link}
+                  whileHover={{ scale: 1.1, color: "#a855f7" }}
+                  className="text-gray-800 font-bold text-2xl px-6 flex items-center justify-center p-2 active:scale-96 transition-all duration-300"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <Button name={item.content} />
+                </motion.a>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.nav>
+    </nav>
+  );
+};
+
+export default Navbar;
