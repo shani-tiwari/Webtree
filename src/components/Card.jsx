@@ -1,33 +1,28 @@
-export default function Card({ title, previewImage, logo, link }) {
-  return (
-    <a
-      href={link}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group block relative w-64 h-44 mr-4 shrink-0 overflow-hidden rounded-2xl border border-white/10 bg-gray-900 transition-all duration-500 hover:shadow-2xl hover:shadow-amber-500/10 hover:-translate-y-1"
-    >
-      {/* Background Image */}
-      <img
-        src={
-          previewImage ||
-          "https://placehold.co/600x400/1f2937/fbbf24?text=Preview"
-        }
-        alt={title}
-        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-      />
+import React from "react";
 
-      {/* Bottom Section: Logo + Title with Blur */}
-      <div className="absolute bottom-0 left-0 right-0 p-3 rounded-2xl flex items-center gap-3 bg-gray-900/10 backdrop-blur-md border-t border-white/10 transition-colors duration-300 group-hover:bg-gray-900/80 group-hover:border-amber-500/30">
-        <div className="relative h-8 w-8 overflow-hidden rounded-full border border-white/20 bg-gray-800 shrink-0">
-          <img
-            src={logo || ""}
-            alt={`${title} logo`}
-            className={logo ? 'h-full w-full object-cover ' : 'hidden' }
-          />
+export default function Card({ id, title, logo, link, desc }) {
+  return (
+    <a href={link} className="w-full h-full block p-1">
+      <div
+        key={id}
+        className="relative h-full flex flex-col bg-neutral-900/80 border border-white/30 rounded-xl p-2 transition-all duration-500 hover:scale-[1.02] group cursor-pointer backdrop-blur-sm 
+        hover:border-gray-300/50  hover:shadow shadow-amber-400/20 will-change-transform"
+      >
+        {/* Decorative Lines */}
+        <div className="absolute w-full -mt-2 left-1/2 -translate-x-1/2 h-px bg-linear-to-r from-transparent via-neutral-100/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div className="absolute h-full top-1/2 -translate-y-1/2 left-0 w-px bg-linear-to-b from-transparent via-neutral-100/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div className="absolute w-full bottom-0 left-1/2 -translate-x-1/2 translate-y-px h-px bg-linear-to-r from-transparent via-neutral-100/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div className="absolute h-full top-1/2 -translate-y-1/2 right-0 w-px bg-linear-to-b from-transparent via-neutral-100/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+        <div className="flex items-center gap-3 mb-2 border-b border-white/5 pb-2">
+          <img src={logo} alt={"logo"} className="w-6 h-6 rounded-sm " />
+          <h3 className="font-medium text-gray-200 group-hover:text-neutral-100 tracking-wide transition-colors duration-300">
+            {title}
+          </h3>
         </div>
-        <h3 className="text-sm font-medium text-gray-300 truncate pr-2 transition-colors duration-300 group-hover:text-gray-100">
-          {title}
-        </h3>
+        <p className="text-sm text-gray-400 leading-relaxed font-light grow">
+          {desc}
+        </p>
       </div>
     </a>
   );

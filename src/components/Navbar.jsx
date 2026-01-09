@@ -26,8 +26,16 @@ const Navbar = () => {
 
   const menuItems = [
     { id: "resources", content: <Coffee size={26} />, link: "#resources" },
-    { id: "github", content: <Github size={26} />, link: "https://github.com/shani-tiwari" },
-    { id: "twitter", content: <Twitter size={26} />, link: "https://x.com/theshanitiwari" },
+    {
+      id: "github",
+      content: <Github size={26} />,
+      link: "https://github.com/shani-tiwari",
+    },
+    {
+      id: "twitter",
+      content: <Twitter size={26} />,
+      link: "https://x.com/theshanitiwari",
+    },
   ];
 
   return (
@@ -37,7 +45,7 @@ const Navbar = () => {
         initial="hidden"
         animate="visible"
         variants={navVariants}
-        className="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-[1000px] z-50 px-6 py-1 md:py-3 flex justify-between items-center rounded-full  backdrop-blur-sm border border-white/20 shadow-xs shadow-gray-400"
+        className="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-[1000px] z-50 px-8 py-1 md:py-3 flex justify-between items-center rounded-full  backdrop-blur-sm border border-white/20 shadow-xs shadow-gray-400"
       >
         {/* Logo */}
         <motion.div
@@ -45,21 +53,20 @@ const Navbar = () => {
           whileHover={{ scale: 1.05 }}
           className="flex items-center"
         >
-          <img
-            src=""
-            alt="Brand Logo"
-            className="h-10 w-auto rounded-full object-cover"
-          />
+         <p className="text-white text-3xl">४</p>
+
         </motion.div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-2 items-center text-gray-700">
+        <div className="hidden md:flex space-x-2 items-center ">
           {menuItems.map((item) => (
             <a
               key={item.id}
               href={item.link}
               target={item.link.startsWith("http") ? "_blank" : "_self"}
               rel="noreferrer"
+              // style={{color: "#000"}}
+              // className="text-zinc-300"
             >
               <Button name={item.content} />
             </a>
@@ -71,7 +78,7 @@ const Navbar = () => {
           variants={itemVariants}
           whileTap={{ scale: 0.9 }}
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-gray-800 dark:text-white focus:outline-none hover:scale-106 transition-all duration-300"
+          className="md:hidden text-gray-800 dark:text-white focus:outline-none hover:scale-106 transition-all duration-400"
         >
           <svg
             className="w-8 h-8"
@@ -101,19 +108,24 @@ const Navbar = () => {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={{opacity: 0, height: 0, borderRadius: "12px 12px 2rem 2rem"}}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
+              initial={{
+                opacity: 0,
+                y: -10,
+                rotateY: 45,
+                borderRadius: "14px 14px 3rem 3rem",
+              }}
+              animate={{ opacity: 1, y: 0, rotateY: 0 }}
+              exit={{ opacity: 0, y: -10, rotateY: 45 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
-              className="absolute top-full right-0 w-fit bg-gray-200/80   md:hidden 
-              flex flex-col items-center py-4 space-y-4 shadow-xl overflow-hidden mt-2 "
+              className="z-150 absolute top-full right-0 w-fit bg-black/80  border border-gray-200/40 backdrop-blur-md md:hidden 
+              flex flex-col items-center py-4 space-y-4 shadow-xl overflow-hidden mt-2"
             >
               {menuItems.map((item) => (
                 <motion.a
                   key={item.id}
                   href={item.link}
-                  whileHover={{ scale: 1.1, color: "#a855f7" }}
-                  className="text-gray-800 font-bold text-2xl px-6 flex items-center justify-center p-2 active:scale-96 transition-all duration-300"
+                  whileHover={{ scale: 1.1 }}
+                  className=" font-medium text-2xl px-6 flex items-center justify-center p-2 active:scale-96  transition-all duration-300"
                   onClick={() => setIsOpen(false)}
                 >
                   <Button name={item.content} />
