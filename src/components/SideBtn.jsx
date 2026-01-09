@@ -14,7 +14,7 @@ export default function SideBtn({
         setActiveCategory(name);
       }}
       className={`relative group border text-center py-1 px-2 md:px-4 mb-2 rounded-md 
-        backdrop-blur-md cursor-pointer shadow-inner transition-all duration-300 ease-out
+        backdrop-blur-md cursor-pointer shadow-inner transition-all duration-300 ease-out select-none
         ${
           isActive
             ? "border-amber-300/50 bg-amber-500/10 shadow-amber-500/10 text-amber-200"
@@ -43,7 +43,7 @@ export default function SideBtn({
         }`}
         key={index.id}
       >
-        {name}
+        {name.split('_').join(' ')}
       </p>
     </div>
   );

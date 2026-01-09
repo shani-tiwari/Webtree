@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import SideBtn from "../components/SideBtn";
 import Card from "../components/Card";
+// eslint-disable-next-line no-unused-vars
+import { easeIn, motion } from "motion/react";
 
 export default function Home() {
   const [data, setData] = useState([]);
@@ -22,12 +24,17 @@ export default function Home() {
 
   return (
     <>
-      <main className="min-h-screen h-fit max-w-[1300px] bg-linear-to-b from-neutral-900 to-neutral-800 flex flex-col gap-10 md:gap-14">
+      <main className="min-h-screen h-fit max-w-[1300px] flex flex-col gap-10 md:gap-14">
         <nav className=" relative w-full h-22 z-60 ">
           <Navbar />
         </nav>
 
-        <section className="grow w-full flex flex-col md:flex-row lg:flex-row justify-center  gap-10 px-2 md:px-14  ">
+        <motion.section
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.3, delay: 0.1, ease: easeIn }}
+          className="grow w-full flex flex-col md:flex-row lg:flex-row justify-center  gap-10 px-2 md:px-14  "
+        >
           <aside className="z-40 sticky bg-black/10 rounded-xl md:top-36 top-20 shrink-0 grid grid-cols-2 md:grid-cols-1 gap-2 md:gap-0  overflow-y-auto w-full md:w-fit h-fit px-2 py-3 pt-4 text-white md:border border-white/40 ">
             {Object.keys(data).map((name, index) => (
               <SideBtn
@@ -48,12 +55,13 @@ export default function Home() {
                 key={item.id}
                 title={item.name}
                 logo={item.preview}
+                logo2={item.cardPreview}
                 link={item.link}
                 desc={item.desc}
               />
             ))}
           </div>
-        </section>
+        </motion.section>
       </main>
     </>
   );

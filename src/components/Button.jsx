@@ -18,7 +18,7 @@ export default function Button({ name }) {
           hover: { scaleX: 1, originX: 1 },
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className=" absolute top-0 left-0 h-full w-full bg-zinc-600"
+        className=" absolute top-0 left-0 h-full w-full bg-linear-to-bl from-zinc-700 to-zinc-500"
       />
     </motion.button>
   );

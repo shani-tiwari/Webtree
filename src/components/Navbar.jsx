@@ -34,18 +34,20 @@ const Navbar = () => {
     {
       id: "twitter",
       content: <Twitter size={26} />,
-      link: "https://x.com/theshanitiwari",
+      link: "https://x.com/shanidevelops",
     },
   ];
 
   return (
-    <nav className="max-w-screen mx-auto bg-transparent ">
+    <nav className="max-w-screen mx-auto bg-transparent select-none ">
       {/* Removed bg-yellow-500 reference as it might clash, kept base generic container if needed or just fragment */}
       <motion.nav
         initial="hidden"
         animate="visible"
         variants={navVariants}
-        className="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-[1000px] z-50 px-8 py-1 md:py-3 flex justify-between items-center rounded-full  backdrop-blur-sm border border-white/20 shadow-xs shadow-gray-400"
+        className="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-[1000px] z-50 px-8 py-1 md:py-3 
+        flex justify-between items-center rounded-full  backdrop-blur-sm 
+        border border-white/30 shadow-xs shadow-gray-500 bg-linear-to-t from-neutral-800 to-neutral-600"
       >
         {/* Logo */}
         <motion.div
