@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://webtree.vercel.app/sitemap.xml

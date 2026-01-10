@@ -25,7 +25,7 @@ const Navbar = () => {
   };
 
   const menuItems = [
-    { id: "resources", content: <Coffee size={26} />, link: "#resources" },
+    // { id: "resources", content: <Coffee size={26} />, link: "#resources" },
     {
       id: "github",
       content: <Github size={26} />,

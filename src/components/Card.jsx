@@ -5,7 +5,7 @@ export default function Card({ id, title, logo, link, desc }) {
       className="w-full h-full block p-1"
       aria-label={`View ${title} resource`}
     >
-      <div
+      <article
         key={id}
         className="relative h-full flex flex-col bg-linear-to-bl from-neutral-800 via-zinc-700/40 to-neutral-800 border border-white/30 rounded-xl p-2 transition-all duration-500 hover:scale-[1.02] group cursor-pointer backdrop-blur-sm 
         hover:border-gray-300/50  hover:shadow shadow-amber-400/20 will-change-transform select-none"
@@ -41,7 +41,7 @@ export default function Card({ id, title, logo, link, desc }) {
         <p className="text-sm text-gray-400 leading-relaxed font-light grow">
           {desc}
         </p>
-      </div>
+      </article>
     </a>
   );
 }
