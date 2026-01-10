@@ -1,4 +1,4 @@
-export default function Card({ id, title, logo, logo2, link, desc }) {
+export default function Card({ id, title, logo, link, desc }) {
   return (
     <a
       href={link}
@@ -30,9 +30,9 @@ export default function Card({ id, title, logo, logo2, link, desc }) {
 
         <div className="flex items-center gap-3 mb-2 border-b border-white/5 pb-2">
           <img
-            src={logo ? logo : logo2}
+            src={logo}
             alt={`${title} logo`}
-            className="w-6 h-6 rounded-sm "
+            className={`w-6 h-6 rounded-sm ${logo ? "" : "hidden"}`}
           />
           <h3 className="font-medium text-gray-200 group-hover:text-neutral-100 tracking-wide transition-colors duration-300">
             {title}

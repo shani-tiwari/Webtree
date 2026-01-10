@@ -45,8 +45,8 @@ const Navbar = () => {
       variants={navVariants}
       aria-label="Main Navigation"
       className="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-[1000px] z-50 px-8 py-1 md:py-3 
-        flex justify-between items-center rounded-full  backdrop-blur-sm 
-        border border-white/30 shadow-xs shadow-gray-500 bg-linear-to-t from-neutral-800 to-neutral-600"
+        flex justify-between items-center rounded-full  
+        border border-white/30 shadow-xs shadow-gray-500 "
     >
       {/* Logo */}
       <motion.div
@@ -68,7 +68,17 @@ const Navbar = () => {
             rel="noreferrer"
             aria-label={`Visit ${item.id}`}
           >
-            <Button name={item.content} ariaLabel={`${item.id} link`} />
+            <Button
+              name={
+                <>
+                  {item.content}
+                  {item.link.startsWith("http") && (
+                    <span className="sr-only"> (opens in new tab)</span>
+                  )}
+                </>
+              }
+              ariaLabel={`${item.id} link`}
+            />
           </a>
         ))}
       </div>
@@ -79,6 +89,7 @@ const Navbar = () => {
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
+        aria-controls="mobile-menu"
         aria-label="Toggle menu"
         className="md:hidden text-gray-400 dark:text-white focus:outline-none hover:scale-106 transition-all duration-400"
       >
@@ -110,6 +121,7 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id="mobile-menu"
             initial={{
               opacity: 0,
               y: -10,
@@ -132,7 +144,14 @@ const Navbar = () => {
                 aria-label={`Visit ${item.id} mobile`}
               >
                 <Button
-                  name={item.content}
+                  name={
+                    <>
+                      {item.content}
+                      {item.link.startsWith("http") && (
+                        <span className="sr-only"> (opens in new tab)</span>
+                      )}
+                    </>
+                  }
                   ariaLabel={`${item.id} mobile link`}
                 />
               </motion.a>

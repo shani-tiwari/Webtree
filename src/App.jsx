@@ -2,6 +2,7 @@ import Home from "./pages/Home";
 // eslint-disable-next-line no-unused-vars
 import { motion, useSpring, useMotionValue } from "motion/react";
 import { useEffect } from "react";
+import bgImage from "./assets/webtree-bg.jpg";
 
 function App() {
   const mouseX = useMotionValue(0);
@@ -23,8 +24,22 @@ function App() {
 
   return (
     <>
-      <div className="relative h-full w-full bg-linear-to-b from-neutral-900 to-neutral-800 mx-auto flex justify-center overflow-hidden">
-        <Home />
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
+      <div
+        className="relative min-h-screen w-full bg-neutral-900 mx-auto flex justify-center bg-fixed bg-cover bg-center"
+        style={{ backgroundImage: `url(${bgImage})` }}
+      >
+        {/* Subtle dark overlay to ensure readability of text and UI */}
+        <div
+          className="absolute inset-0 bg-neutral-950/40 pointer-events-none"
+          aria-hidden="true"
+        />
+
+        <div className="relative z-10 w-full flex justify-center">
+          <Home />
+        </div>
 
         {/* Smooth centered mouse follower */}
         <motion.div
