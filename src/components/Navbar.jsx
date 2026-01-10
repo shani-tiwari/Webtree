@@ -45,7 +45,7 @@ const Navbar = () => {
       variants={navVariants}
       aria-label="Main Navigation"
       className="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-[1000px] z-50 px-8 py-1 md:py-3 
-        flex justify-between items-center rounded-full  
+        flex justify-between items-center rounded-full font-beba
         border border-white/30 shadow-xs shadow-gray-500 "
     >
       {/* Logo */}
@@ -55,7 +55,7 @@ const Navbar = () => {
         className="flex items-center"
         aria-label="Logo"
       >
-        <p className="text-white text-3xl">४</p>
+        <p className="text-white text-2xl md:text-3xl">४</p>
       </motion.div>
 
       {/* Desktop Menu */}
@@ -94,7 +94,7 @@ const Navbar = () => {
         className="md:hidden text-gray-400 dark:text-white focus:outline-none hover:scale-106 transition-all duration-400"
       >
         <svg
-          className="w-8 h-8"
+          className="h-6 w-6 md:h-8 md:w-8"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"

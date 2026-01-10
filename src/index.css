@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "beba";
+  src: url("./assets/fonts/Bebas_Neue/BebasNeue-Regular.ttf");
+}
+
 @layer utilities {
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
