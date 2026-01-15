@@ -1,7 +1,7 @@
 import { useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "motion/react";
-import { Coffee, Github, Twitter } from "lucide-react";
+import { Coffee, Github, Twitter, Instagram } from "lucide-react";
 import Button from "./Button";
 
 const Navbar = () => {
@@ -35,6 +35,11 @@ const Navbar = () => {
       id: "twitter",
       content: <Twitter size={26} />,
       link: "https://x.com/shanidevelops",
+    },
+    {
+      id: "instagram",
+      content: <Instagram size={26} />,
+      link: "https://instagram.com/shanidevelops",
     },
   ];
 
