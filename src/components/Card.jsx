@@ -1,4 +1,32 @@
-export default function Card({ id, title, link, desc }) {
+import { useCollection } from "../context/CollectionContext";
+import { useState } from "react";
+import { FolderHeart, Trash2 } from "lucide-react";
+
+export default function Card({ id, title, link, desc, allowRemove, ...props }) {
+  const { addToCollection, removeFromCollection, collection } = useCollection();
+  const [added, setAdded] = useState(false);
+
+  // Check if item is already in collection to show correct state
+  const isCollected = collection.some((item) => item.id === id);
+
+  const handleAddKey = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    // Create item object to save
+    const item = { id, title, link, desc, ...props };
+    addToCollection(item);
+
+    setAdded(true);
+    setTimeout(() => setAdded(false), 2000);
+  };
+
+  const handleRemoveKey = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    removeFromCollection(id);
+  };
+
   return (
     <a
       href={link}
@@ -7,8 +35,8 @@ export default function Card({ id, title, link, desc }) {
     >
       <article
         key={id}
-        className="relative h-full flex flex-col bg-linear-to-bl from-neutral-800 via-zinc-700/40 to-neutral-800 border border-white/30 rounded-xl p-2 transition-all duration-500 hover:scale-[1.02] group cursor-pointer backdrop-blur-sm 
-        hover:border-gray-300/50  hover:shadow shadow-amber-400/20 will-change-transform select-none"
+        className="relative h-full flex flex-col bg-gray-700/20 backdrop-blur-xs border border-white/40 rounded-xl p-2 transition-all duration-300 hover:scale-[1.02] group cursor-pointer  
+        hover:border-white/60 text-white/70 select-none"
       >
         {/* Decorative Lines */}
         <div
@@ -28,17 +56,44 @@ export default function Card({ id, title, link, desc }) {
           className="absolute h-full top-1/2 -translate-y-1/2 right-0 w-px bg-linear-to-b from-transparent via-neutral-100/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
         ></div>
 
-        <div className="flex items-center gap-3 mb-2 border-b border-white/5 pb-2">
+        <div className="flex items-center justify-between gap-3 mb-2 border-b border-white/20 pb-2">
           {/* <img
             src={logo}
             alt={`${title} logo`}
             className={`w-6 h-6 rounded-sm ${logo ? "" : "hidden"}`}
           /> */}
-          <h3 className="font-medium text-gray-200 group-hover:text-neutral-100 tracking-wide transition-colors duration-300">
+          <h3 className="font-medium text-[--color-text-primary]  tracking-wide transition-colors duration-300">
             {title}
           </h3>
+          <div className="flex gap-2">
+            {allowRemove && (
+              <span
+                onClick={handleRemoveKey}
+                className="group/delete relative flex items-center justify-center text-red-600/90 transition-colors duration-300 hover:text-red-400 z-30"
+              >
+                <Trash2 size={20} />
+                <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max px-2.5 py-1 text-xs font-medium text-red-100 bg-zinc-800/90 border border-white/10 rounded-md shadow-xl backdrop-blur-sm opacity-0 invisible group-hover/delete:opacity-100 group-hover/delete:visible transition-all duration-200 transform scale-90 group-hover/delete:scale-100 pointer-events-none z-20">
+                  Remove
+                </span>
+              </span>
+            )}
+            {!allowRemove && (
+              <span
+                onClick={handleAddKey}
+                className="group/icon relative flex items-center justify-center text-white/80 transition-colors duration-300 hover:text-amber-400 z-30"
+              >
+                <FolderHeart
+                  size={20}
+                  className={isCollected ? "fill-[oklch(76.9% 0.188 70.08)] " : ""}
+                />
+                <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max px-2.5 py-1 text-xs font-medium text-amber-100 bg-zinc-800/90 border border-white/10 rounded-md shadow-xl backdrop-blur-sm opacity-0 invisible group-hover/icon:opacity-100 group-hover/icon:visible transition-all duration-200 transform scale-90 group-hover/icon:scale-100 pointer-events-none z-20">
+                  {added ? "Added!" : isCollected ? "Saved" : "+ Add"}
+                </span>
+              </span>
+            )}
+          </div>
         </div>
-        <p className="text-sm text-gray-400 leading-relaxed font-light grow">
+        <p className="text-sm text-white/60 leading-relaxed font-light grow">
           {desc}
         </p>
       </article>

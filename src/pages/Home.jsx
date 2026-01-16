@@ -37,11 +37,11 @@ export default function Home() {
             : ""}
         </div>
 
-        <nav className="h-16 md:h-22 z-90 backdrop-blur-2xl fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px]">
+        <nav className="h-16 md:h-22 z-90 backdrop-blur-xs fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px]">
           <Navbar />
         </nav>
 
-        <header className="text-white/70 text-center font-beba w-full backdrop-blur-2xl md:backdrop-blur-none pt-20 md:pt-32">
+        <header className="text-white/50 text-center font-beba w-full backdrop-blur-xl md:backdrop-blur-none pt-20 md:pt-32">
           <h1 className="md:text-xl tracking-wider">
             Collection of Frontend Resources
           </h1>
@@ -57,8 +57,7 @@ export default function Home() {
             aria-label="Category selection"
             className="z-40 sticky md:top-44 top-16 shrink-0 grid grid-cols-2 rounded-md
             md:grid-cols-1 gap-2 md:gap-0 w-full md:w-fit h-fit px-2 py-3 pt-5 
-            text-white md:border border-white/40 bg-neutral-800/60 backdrop-blur-md shadow-lg 
-            md:bg-transparent md:backdrop-blur-none md:shadow-none"
+            text-white md:border border-white/40 bg-[--color-sidebar-bg] backdrop-blur-md shadow-lg "
           >
             {Object.keys(data).map((name, index) => (
               <SideBtn
@@ -75,12 +74,13 @@ export default function Home() {
 
           <section
             aria-label="Resources grid"
-            className="z-10 container  overflow-hidden bg-transparent grow grid grid-cols-1 md:grid-cols-2 
+            className="z-10 container   bg-transparent grow grid grid-cols-1 md:grid-cols-2 
             lg:grid-cols-4 gap-[10px] content-start md:-mt-3"
           >
             {Object.values(carddata).map((item) => (
               <Card
                 key={item.id}
+                id={item.id}
                 title={item.name}
                 logo={item.preview}
                 link={item.link}

@@ -19,27 +19,27 @@ export default function SideBtn({
         backdrop-blur-md cursor-pointer shadow-inner transition-all duration-300 ease-out select-none w-full
         ${
           isActive
-            ? "border-amber-300/50 bg-amber-500/10 shadow-amber-500/10 text-amber-200"
-            : "border-white/30 hover:bg-gray-700/15 shadow-white/15 text-gray-300"
+            ? "border-[--color-collection-border]/50 bg-linear-to-r from-amber-500/80 to-amber-600/40 shadow-[--shadow-glow-gold] text-[--color-text-accent]"
+            : "border-[--color-border-divider] bg-zinc-800/20 hover:bg-zinc-800/40 shadow-white/15 text-[--color-text-secondary]"
         }`}
     >
       {isActive && (
         <>
           <div
             aria-hidden="true"
-            className="absolute w-[80%]-mt-1 h-px bg-linear-to-r from-transparent via-amber-300 to-transparent"
+            className="absolute w-[80%]-mt-1 h-px bg-linear-to-r from-transparent via-[oklch(76.9% 0.188 70.08)] to-transparent"
           ></div>
           <div
             aria-hidden="true"
-            className="absolute h-[80%] rotate-180 left-0 w-px bg-linear-to-b from-transparent via-amber-300 to-transparent"
+            className="absolute h-[80%] rotate-180 left-0 w-px bg-linear-to-b from-transparent via-[oklch(76.9% 0.188 70.08)] to-transparent"
           ></div>
           <div
             aria-hidden="true"
-            className="absolute w-[80%] mt-1 h-px bottom-0 bg-linear-to-r from-transparent via-amber-300 to-transparent"
+            className="absolute w-[80%] mt-1 h-px bottom-0 bg-linear-to-r from-transparent via-[oklch(76.9% 0.188 70.08)] to-transparent"
           ></div>
           <div
             aria-hidden="true"
-            className="absolute h-[80%] rotate-180 mt-1 top-0 right-0 w-px bg-linear-to-b from-transparent via-amber-300 to-transparent"
+            className="absolute h-[80%] rotate-180 mt-1 top-0 right-0 w-px bg-linear-to-b from-transparent via-[oklch(76.9% 0.188 70.08)] to-transparent"
           ></div>
         </>
       )}
@@ -65,7 +65,7 @@ export default function SideBtn({
       )}
       <span
         className={` text-sm md:text-lg font-light tracking-wide ${
-          isActive ? "text-amber-500" : ""
+          isActive ? "text-[--color-collection-border]" : ""
         }`}
       >
         {name.split("_").join(" ")}
