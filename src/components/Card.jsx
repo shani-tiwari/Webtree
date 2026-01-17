@@ -60,9 +60,14 @@ const Card = React.memo(
           />
 
           <div className="flex items-center justify-between gap-3 mb-2 border-b border-white/20 pb-2">
-            <h3 className="font-medium text-[--color-text-primary]  tracking-wide transition-colors duration-300">
-              {title}
-            </h3>
+            <div className="flex items-center justify-center gap-4 ">
+              <div className="w-7 h-7 rounded-full  bg-neutral-800 flex items-center justify-center border border-white/20">
+                <span className="text-amber-500/70">{title.charAt(0).toUpperCase()}</span>
+              </div>
+              <h3 className="font-medium text-[--color-text-primary]  tracking-wide transition-colors duration-300">
+                {title}
+              </h3>
+            </div>
             <div className="flex gap-2">
               {allowRemove && (
                 <span

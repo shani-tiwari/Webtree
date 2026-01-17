@@ -41,9 +41,9 @@ export default function Home() {
           <Navbar />
         </nav>
 
-        <header className="text-white/50 text-center font-beba w-full backdrop-blur-xl md:backdrop-blur-none pt-20 md:pt-32">
+        <header className="text-white/60 text-center font-beba w-full backdrop-blur-xl md:backdrop-blur-none pt-20 md:pt-32">
           <h1 className="md:text-xl tracking-wider selection:bg-amber-600/30 selection:text-white">
-            Collection of Frontend Resources
+            ⁕ Collection of Frontend Resources ⁕
           </h1>
         </header>
 

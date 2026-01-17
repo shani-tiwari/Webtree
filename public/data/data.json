@@ -2,7 +2,7 @@
   "ui_components": [
     {
       "id": 1,
-      "name": "Motion Primitives",
+      "name": "Motion",
       "desc": "Open-source UI kit with animated React components built for Next.js and Tailwind CSS.",
       "preview": "https://motion-primitives.com/favicon.ico",
       "cardPreview": "https://motion-primitives.com/og-image.png",
