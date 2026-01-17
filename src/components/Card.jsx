@@ -1,6 +1,6 @@
 import { useCollection } from "../context/CollectionContext";
 import { useState } from "react";
-import { FolderHeart, Trash2 } from "lucide-react";
+import { FolderCheck, FolderHeart, Trash2 } from "lucide-react";
 
 export default function Card({ id, title, link, desc, allowRemove, ...props }) {
   const { addToCollection, removeFromCollection, collection } = useCollection();
@@ -80,12 +80,15 @@ export default function Card({ id, title, link, desc, allowRemove, ...props }) {
             {!allowRemove && (
               <span
                 onClick={handleAddKey}
-                className="group/icon relative flex items-center justify-center text-white/80 transition-colors duration-300 hover:text-amber-400 z-30"
+                className="group/icon relative flex items-center justify-center text-white/70 hover:scale-110 active:scale-95 transition-all duration-300 hover:text-amber-400 z-30"
               >
-                <FolderHeart
-                  size={20}
-                  className={isCollected ? "fill-[oklch(76.9% 0.188 70.08)] " : ""}
-                />
+                
+                {
+                  isCollected 
+                  ? <FolderCheck size={20} style={{ color: "oklch(76.9% 0.188 70.08)" }} />
+                  : <FolderHeart size={20} />
+                }
+                  
                 <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max px-2.5 py-1 text-xs font-medium text-amber-100 bg-zinc-800/90 border border-white/10 rounded-md shadow-xl backdrop-blur-sm opacity-0 invisible group-hover/icon:opacity-100 group-hover/icon:visible transition-all duration-200 transform scale-90 group-hover/icon:scale-100 pointer-events-none z-20">
                   {added ? "Added!" : isCollected ? "Saved" : "+ Add"}
                 </span>
