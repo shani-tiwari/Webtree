@@ -1,6 +1,7 @@
 import { useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "motion/react";
+import { useCollection } from "../context/CollectionContext";
 import {
   Coffee,
   Github,
@@ -13,6 +14,7 @@ import {
 } from "lucide-react";
 import { Link, useLocation } from "react-router";
 import Button from "./Button";
+import { CollectionProvider } from "../context/CollectionContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,6 +56,8 @@ const Navbar = () => {
     },
     // { id: "collection", content: <FolderHeart size={26} />, link: "#collection" },
   ];
+
+  const {collection} = useCollection();
 
   return (
     <motion.nav
@@ -100,7 +104,7 @@ const Navbar = () => {
           </a>
         ))}
         <Link
-          className="mr-2 ml-2 active:scale-95"
+          className="relative mr-2 ml-2 active:scale-95"
           to={location.pathname === "/collection" ? "/" : "/collection"}
           rel="noreferrer"
           aria-label={`Visit`}
@@ -113,13 +117,14 @@ const Navbar = () => {
               size={26}
             />
           }
+          <sup className="absolute -right-2 top-1 text-amber-500">{collection.length}</sup>
         </Link>
       </div>
 
       {/* Mobile Menu Button */}
       <div className=" md:hidden flex items-center justify-center gap-4 ">
         <Link
-          className=" mr-2 ml-2 active:scale-95"
+          className="relative mr-2 ml-2 active:scale-95"
           to={location.pathname === "/collection" ? "/" : "/collection"}
           rel="noreferrer"
           aria-label={`Visit`}
@@ -128,6 +133,7 @@ const Navbar = () => {
             style={{ color: "oklch(76.9% 0.188 70.08)" }}
             size={22}
           />
+          <sup className="absolute -right-2 top-1 text-amber-500">{collection.length}</sup>
         </Link>
         <button
           onClick={() => setIsOpen(!isOpen)}

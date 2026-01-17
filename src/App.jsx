@@ -1,7 +1,8 @@
 import Home from "./pages/Home";
 import bgImage from "./assets/webtree-bg.jpg";
+import React from "react";
 
-import Collection from "./pages/Collection";
+const Collection = React.lazy(() => import("./pages/Collection"));
 import { Routes, Route } from "react-router";
 
 function App() {
@@ -21,10 +22,16 @@ function App() {
         />
 
         <div className="relative z-10 w-full flex justify-center">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/collection" element={<Collection />} />
-          </Routes>
+          <React.Suspense
+            fallback={
+              <div className="text-white text-center p-10">Loading...</div>
+            }
+          >
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/collection" element={<Collection />} />
+            </Routes>
+          </React.Suspense>
         </div>
       </div>
     </>

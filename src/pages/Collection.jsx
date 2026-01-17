@@ -19,11 +19,11 @@ export default function Collection() {
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.2 }}
-        className="z-90 absolute top-20 left-1 md:left-8 md:top-34"
+        className="z-90 absolute top-21 left-2 md:left-8 md:top-34"
       >
         <Link
           to="/"
-          className="group flex items-center  gap-2 text-white/70 py-2 px-2 md:px-5 rounded-full 
+          className="group flex items-center  gap-2 text-white/70 py-1 px-2 md:px-5 rounded-full 
               bg-black/40 backdrop-blur-md border border-white/5 
              hover:text-amber-50 hover:bg-black/50
               transition-all duration-300 shadow-lg ring-2 ring-zinc-400/50"

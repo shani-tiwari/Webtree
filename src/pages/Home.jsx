@@ -42,20 +42,15 @@ export default function Home() {
         </nav>
 
         <header className="text-white/50 text-center font-beba w-full backdrop-blur-xl md:backdrop-blur-none pt-20 md:pt-32">
-          <h1 className="md:text-xl tracking-wider">
+          <h1 className="md:text-xl tracking-wider selection:bg-amber-600/30 selection:text-white">
             Collection of Frontend Resources
           </h1>
         </header>
 
-        <motion.section
-          initial={{ y: -50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.3, delay: 0.1, ease: easeIn }}
-          className="grow  w-full flex flex-col md:flex-row lg:flex-row justify-center gap-10 px-1  md:px-14"
-        >
+        <section className="grow  w-full flex flex-col md:flex-row lg:flex-row justify-center gap-10 px-1  md:px-14">
           <aside
             aria-label="Category selection"
-            className="z-40 sticky md:top-44 top-16 shrink-0 grid grid-cols-2 rounded-md
+            className="z-40 sticky md:top-44 top-16 shrink-0 grid grid-cols-2 rounded-xl
             md:grid-cols-1 gap-2 md:gap-0 w-full md:w-fit h-fit px-2 py-3 pt-5 
             text-white md:border border-white/40 bg-[--color-sidebar-bg] backdrop-blur-md shadow-lg "
           >
@@ -66,7 +61,7 @@ export default function Home() {
                 index={index}
                 setcardData={setcardData}
                 data={data}
-                activeCategory={activeCategory}
+                isActive={activeCategory === name}
                 setActiveCategory={setActiveCategory}
               />
             ))}
@@ -88,7 +83,7 @@ export default function Home() {
               />
             ))}
           </section>
-        </motion.section>
+        </section>
       </main>
     </>
   );
