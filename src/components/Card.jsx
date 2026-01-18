@@ -31,14 +31,6 @@ const Card = React.memo(
       removeFromCollection(id);
     };
 
-    // Border gradients
-    const borderGradient = `
-    linear-gradient(to right, transparent, rgba(245, 245, 245, 0.9), transparent) top / 100% 1px no-repeat,
-    linear-gradient(to bottom, transparent, rgba(245, 245, 245, 0.9), transparent) left / 1px 100% no-repeat,
-    linear-gradient(to right, transparent, rgba(245, 245, 245, 0.9), transparent) bottom / 100% 1px no-repeat,
-    linear-gradient(to bottom, transparent, rgba(245, 245, 245, 0.9), transparent) right / 1px 100% no-repeat
-  `;
-
     return (
       <a
         href={link}
@@ -49,22 +41,16 @@ const Card = React.memo(
       >
         <article
           key={id}
-          className="relative h-full flex flex-col bg-white/5 backdrop-blur-xs border border-white/50 rounded-lg p-2 transition-all duration-300 
-        hover:scale-[1.02] group cursor-pointer hover:border-white/60 text-white/70 select-none"
+          className="relative h-full flex flex-col bg-white/3 backdrop-blur-xs border border-amber-600/20 rounded-lg p-2 transition-all duration-400 
+         group cursor-pointer hover:border-amber-600/40 text-white/70 select-none  hover:scale-[1.02] "
         >
-          {/* Decorative Lines Container */}
-          <div
-            aria-hidden="true"
-            className="absolute top-0 left-0 right-0 -bottom-px opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-            style={{ background: borderGradient }}
-          />
 
-          <div className="flex items-center justify-between gap-3 mb-2 border-b border-white/20 pb-2">
-            <div className="flex items-center justify-center gap-4 ">
-              <div className="w-7 h-7 rounded-full  bg-neutral-800 flex items-center justify-center border border-white/20">
+          <div className="flex items-center justify-between gap-3 mb-1 pb-2">
+            <div className="flex items-center justify-center gap-3 ">
+              <div className="w-7 h-7 rounded-full  bg-neutral-800 flex items-center justify-center border border-amber-600/20">
                 <span className="text-amber-500/70">{title.charAt(0).toUpperCase()}</span>
               </div>
-              <h3 className="font-medium text-[--color-text-primary]  tracking-wide transition-colors duration-300">
+              <h3 className="font-medium text-gray-200  md:tracking-wider transition-colors duration-300">
                 {title}
               </h3>
             </div>
@@ -83,7 +69,7 @@ const Card = React.memo(
               {!allowRemove && (
                 <span
                   onClick={handleAddKey}
-                  className="group/icon relative flex items-center justify-center text-white/70 hover:scale-110 active:scale-95 transition-all duration-300 hover:text-amber-400 z-30"
+                  className="group/icon relative flex items-center justify-center text-white/70 hover:scale-110 active:scale-100 transition-all duration-300 hover:text-amber-400 z-30"
                 >
                   {isCollected ? (
                     <FolderCheck
@@ -101,6 +87,10 @@ const Card = React.memo(
               )}
             </div>
           </div>
+
+          {/* border */}
+          <div className="w-full h-px bg-linear-to-r from-transparent via-amber-500/40 to-transparent mb-1"></div>
+
           <p className="text-sm text-white/60 leading-relaxed font-light grow">
             {desc}
           </p>

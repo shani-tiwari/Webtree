@@ -15,7 +15,7 @@ const SideBtn = React.memo(
         className={`
           ${
             isActive
-              ? " bg-linear-to-bl from-amber-500/80 to-amber-600/40 "
+              ? " bg-linear-to-bl from-amber-600/30 to-amber-700/30 "
               : " bg-zinc-800/20 hover:bg-zinc-800/40 shadow-white/15 "
           }
           relative md:text-start group border border-white/50 py-1 px-3 mb-2 rounded-md

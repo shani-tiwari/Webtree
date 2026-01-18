@@ -2,25 +2,34 @@ import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import SideBtn from "../components/SideBtn";
 import Card from "../components/Card";
-// eslint-disable-next-line no-unused-vars
-import { easeIn, motion } from "motion/react";
+import SkeletonHome from "../components/SkeletonHome";
 
 export default function Home() {
   const [data, setData] = useState([]);
   const [carddata, setcardData] = useState([]);
   const [activeCategory, setActiveCategory] = useState("ui_components");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function getData() {
+      // Simulate a small delay to show skeleton if data loads too fast
+      // const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+      // await delay(1000);
+
       await fetch("./data/data.json")
         .then((res) => res.json())
         .then((data) => {
           setData(data);
           setcardData(data["ui_components"]);
+          setLoading(false);
         });
     }
     getData();
   }, []);
+
+  if (loading) {
+    return <SkeletonHome />;
+  }
 
   return (
     <>
@@ -37,11 +46,11 @@ export default function Home() {
             : ""}
         </div>
 
-        <nav className="h-16 md:h-22 z-90 backdrop-blur-xs fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px]">
+        <nav className="h-16 md:h-22 z-90  fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px]">
           <Navbar />
         </nav>
 
-        <header className="text-white/60 text-center font-beba w-full backdrop-blur-xl md:backdrop-blur-none pt-20 md:pt-32">
+        <header className="text-white/80 text-center font-beba w-full backdrop-blur-xl md:backdrop-blur-none pt-20 md:pt-28">
           <h1 className="md:text-xl tracking-wider selection:bg-amber-600/30 selection:text-white">
             ⁕ Collection of Frontend Resources ⁕
           </h1>
@@ -52,7 +61,7 @@ export default function Home() {
             aria-label="Category selection"
             className="z-40 sticky md:top-44 top-16 shrink-0 grid grid-cols-2 rounded-xl
             md:grid-cols-1 gap-2 md:gap-0 w-full md:w-fit h-fit px-2 py-3 pt-5 
-            text-white md:border border-white/40 bg-[--color-sidebar-bg] backdrop-blur-md shadow-lg "
+            text-white md:border border-white/40 bg-[--color-sidebar-bg] backdrop-blur-md shadow-lg transition-all duration-300"
           >
             {Object.keys(data).map((name, index) => (
               <SideBtn

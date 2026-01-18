@@ -11,6 +11,7 @@ import {
   Menu,
   CircleX,
   FolderOutput,
+  MailPlus,
 } from "lucide-react";
 import { Link, useLocation } from "react-router";
 // import { CollectionProvider } from "../context/CollectionContext";
@@ -40,22 +41,32 @@ const Navbar = () => {
     {
       id: "github",
       content: <Github size={22} />,
-      link: "https://github.com/shani-tiwari",
+      link: "https://github.com/shani-tiwari/Webtree",
+      title: "Give a star",
     },
     {
       id: "twitter",
       content: <Twitter size={22} />,
       link: "https://x.com/shanidevelops",
+      title: "Let's connect",
     },
     {
       id: "instagram",
       content: <Instagram size={22} />,
       link: "https://instagram.com/shanidevelops",
+      title: "Do follow",
     },
     {
       id: "resources",
       content: <Coffee size={22} />,
       link: "https://buymeacoffee.com/shani_tiwari?new=1",
+      title: "Buy me a coffee",
+    },
+    {
+      id: "mail",
+      content: <MailPlus size={22} />,
+      link: "https://mail.google.com/mail/u/3/#inbox",
+      title: "Send a mail",
     },
 
     // { id: "collection", content: <FolderHeart size={26} />, link: "#collection" },
@@ -71,7 +82,7 @@ const Navbar = () => {
       aria-label="Main Navigation"
       className="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-[1000px] z-50 px-8 py-1 md:py-3 
         flex justify-between items-center rounded-full font-beba
-        border border-amber-400/30 shadow-xs shadow-amber-700/40 "
+        border border-amber-400/30 shadow-xs shadow-amber-700/40 backdrop-blur-xs "
     >
       {/* Logo */}
       <motion.div
@@ -80,7 +91,9 @@ const Navbar = () => {
         className="flex items-center"
         aria-label="Logo"
       >
-        <p className="text-white text-2xl md:text-3xl selection:bg-amber-600/30 selection:text-white">४</p>
+        <p className="text-white text-2xl md:text-3xl selection:bg-amber-600/30 selection:text-white">
+          ४
+        </p>
       </motion.div>
 
       {/* Desktop Menu */}
@@ -93,14 +106,17 @@ const Navbar = () => {
               target={item.link.startsWith("http") ? "_blank" : "_self"}
               rel="noreferrer"
               aria-label={`Visit ${item.id}`}
-              className="active:scale-95 hover:text-white hover:scale-105 transition-all duration-300"
+              className="group relative active:scale-95 hover:text-white hover:scale-105 transition-all duration-300"
             >
               {item.content}
+              <span className="absolute text-amber-600/90 top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 bg-black/70 text-[14px] rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none border border-amber-500/30 shadow-lg whitespace-nowrap z-50">
+                {item.title}
+              </span>
             </a>
           ))}
         </div>
         <Link
-          className="relative mr-2 ml-2 active:scale-95"
+          className="group relative mr-2 ml-2 active:scale-95"
           to={location.pathname === "/collection" ? "/" : "/collection"}
           rel="noreferrer"
           aria-label={`Visit`}
@@ -119,6 +135,9 @@ const Navbar = () => {
           <sup className="absolute -right-2 top-1 text-amber-500 selection:bg-amber-600/30 selection:text-white">
             {collection.length}
           </sup>
+          <span className="absolute top-full right-0 mt-2 px-2 py-1 bg-black/80 text-amber-600/90 text-[14px] rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none border border-amber-500/30 shadow-lg whitespace-nowrap z-50">
+            {location.pathname === "/collection" ? "Home" : "Your Collection"}
+          </span>
         </Link>
       </div>
 
