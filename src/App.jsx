@@ -14,7 +14,7 @@ function App() {
       <div
         className={cn(
           "absolute inset-0",
-          "bg-size-[40px_40px]",
+          "bg-size-[70px_70px]",
           "bg-[linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_1px)]",
           "dark:bg-[linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]",
         )}

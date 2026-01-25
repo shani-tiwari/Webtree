@@ -7,20 +7,17 @@ import SkeletonHome from "../components/SkeletonHome";
 export default function Home() {
   const [data, setData] = useState([]);
   const [carddata, setcardData] = useState([]);
-  const [activeCategory, setActiveCategory] = useState("ui_components");
+  const [activeCategory, setActiveCategory] = useState("tools");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function getData() {
-      // Simulate a small delay to show skeleton if data loads too fast
-      // const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-      // await delay(1000);
 
       await fetch("./data/data.json")
         .then((res) => res.json())
         .then((data) => {
           setData(data);
-          setcardData(data["ui_components"]);
+          setcardData(data["tools"]);
           setLoading(false);
         });
     }
@@ -59,9 +56,9 @@ export default function Home() {
         <section className="grow  w-full flex flex-col md:flex-row lg:flex-row justify-center gap-10 px-1  md:px-14">
           <aside
             aria-label="Category selection"
-            className="z-40 sticky md:top-44 top-16 shrink-0 grid grid-cols-2 rounded-xl
-            md:grid-cols-1 gap-2 md:gap-0 w-full md:w-fit h-fit px-2 py-3 pt-5 
-            text-white md:border border-white/40 bg-[--color-sidebar-bg] backdrop-blur-md shadow-lg transition-all duration-300"
+            className="z-40 sticky md:top-36 top-16 shrink-0 grid grid-cols-2 rounded-xl
+            md:grid-cols-1 gap-2 md:gap-0 w-full md:w-fit h-fit px-2 py-3 pt-5 text-white md:border border-white/40 
+            bg-[--color-sidebar-bg] backdrop-blur-md shadow-lg transition-all duration-300"
           >
             {Object.keys(data).map((name, index) => (
               <SideBtn
