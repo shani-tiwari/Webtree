@@ -10,15 +10,20 @@ const Card = React.memo(
       useCollection();
     const [added, setAdded] = useState(false);
 
+    const normalize = (str) => str ? str.trim().split(" ").join("").toLowerCase() : "";
+
     // Check if item is already in collection to show correct state
-    const isCollected = collection.some((item) => item.id === id);
+    const isCollected = collection.some(
+      (item) => normalize(item.name || item.title) === normalize(title),
+    );
 
     const handleAddKey = (e) => {
       e.preventDefault();
       e.stopPropagation();
 
       // Create item object to save
-      const item = { id, title, link, desc, logo, ...props };
+      // Ensure name is present for consistency
+      const item = { id, title, link, desc, logo, name: title, ...props };
       addToCollection(item);
 
       setAdded(true);
@@ -28,7 +33,7 @@ const Card = React.memo(
     const handleRemoveKey = (e) => {
       e.preventDefault();
       e.stopPropagation();
-      removeFromCollection(id);
+      removeFromCollection(title);
     };
 
     return (
@@ -44,11 +49,12 @@ const Card = React.memo(
           className="relative h-full flex flex-col bg-white/3 backdrop-blur-xs border border-amber-600/20 rounded-lg p-2 transition-all duration-400 
          group cursor-pointer hover:border-amber-600/40 text-white/70 select-none  hover:scale-[1.02] "
         >
-
           <div className="flex items-center justify-between gap-3 mb-1 pb-2">
             <div className="flex items-center justify-center gap-3 ">
               <div className="w-7 h-7 rounded-full  bg-neutral-800 flex items-center justify-center border border-amber-600/20">
-                <span className="text-amber-500/70">{title.charAt(0).toUpperCase()}</span>
+                <span className="text-amber-500/70">
+                  {title.charAt(0).toUpperCase()}
+                </span>
               </div>
               <h3 className="font-medium text-gray-200  md:tracking-wider transition-colors duration-300">
                 {title}
