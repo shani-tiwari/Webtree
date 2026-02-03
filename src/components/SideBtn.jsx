@@ -16,16 +16,17 @@ const SideBtn = React.memo(
           ${
             isActive
               ? " bg-linear-to-bl from-amber-600/30 to-amber-700/30 "
-              : " bg-zinc-800/20 hover:bg-zinc-800/40 shadow-white/15 "
+              : " bg-zinc-800/20 hover:bg-zinc-800/40  "
           }
-          relative md:text-start group border border-white/50 py-1 px-3 mb-2 rounded-md
-          backdrop-blur-md cursor-pointer shadow-inner transition-all duration-400 ease-out select-none w-full
+          relative w-fit md:text-start group border border-white/40 py-1 px-3 mb-2 rounded-md
+          backdrop-blur-md cursor-pointer transition-all duration-300 ease-out select-none
         `}
       >
         <span
-          className={`text-sm md:text-lg font-light tracking-wide`}
+          className={`text-base font-light tracking-wide`}
         >
-          ⁘ {name.split("_").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
+          {/* ⁘ */}
+           {name.split("_").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
         </span>
       </button>
     );

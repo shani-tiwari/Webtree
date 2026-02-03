@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
 import SideBtn from "../components/SideBtn";
 import Card from "../components/Card";
 import SkeletonHome from "../components/SkeletonHome";
@@ -32,7 +31,7 @@ export default function Home() {
     <>
       <main
         id="main-content"
-        className="min-h-screen h-fit max-w-[1300px] flex flex-col gap-10 md:gap-10"
+        className="min-h-screen w-full h-fit max-w-[1300px] flex flex-col gap-10 md:gap-10"
       >
         <h1 className="sr-only">WebTree Resources Directory</h1>
 
@@ -43,22 +42,20 @@ export default function Home() {
             : ""}
         </div>
 
-        <nav className="h-16 md:h-22 z-90  fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px]">
-          <Navbar />
-        </nav>
 
         <header className="text-white/80 text-center font-beba w-full backdrop-blur-xl md:backdrop-blur-none pt-20 md:pt-28">
           <h1 className="md:text-xl tracking-wider selection:bg-amber-600/30 selection:text-white">
-            ⁕ Collection of Frontend Resources ⁕
+            Collection of &nbsp; 85+ &nbsp; Frontend Resources 
           </h1>
         </header>
 
-        <section className="grow  w-full flex flex-col md:flex-row lg:flex-row justify-center gap-10 px-1  md:px-14">
+        <section className="grow  w-full flex flex-col  justify-center gap-4 md:gap-8 px-1  md:px-14">
+
           <aside
             aria-label="Category selection"
-            className="z-40 sticky md:top-36 top-16 shrink-0 grid grid-cols-2 rounded-xl
-            md:grid-cols-1 gap-2 md:gap-0 w-full md:w-fit h-fit px-2 py-3 pt-5 text-white md:border border-white/40 
-            bg-[--color-sidebar-bg] backdrop-blur-md shadow-lg transition-all duration-300"
+            className="z-40 shrink-0 flex flex-wrap justify-center rounded-xl
+            gap-1 md:gap-2 w-full h-fit px-2 md:py-3 md:pt-5 text-white 
+             backdrop-blur-sm  transition-all duration-300"
           >
             {Object.keys(data).map((name, index) => (
               <SideBtn
@@ -75,7 +72,7 @@ export default function Home() {
 
           <section
             aria-label="Resources grid"
-            className="z-10 container   bg-transparent grow grid grid-cols-1 md:grid-cols-2 
+            className="z-10 container bg-transparent grow grid grid-cols-1 md:grid-cols-2 
             lg:grid-cols-4 gap-[10px] content-start md:-mt-3"
           >
             {Object.values(carddata).map((item) => (
@@ -89,6 +86,7 @@ export default function Home() {
               />
             ))}
           </section>
+
         </section>
       </main>
     </>

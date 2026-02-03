@@ -8,19 +8,19 @@
   },
   {
     "id": 2,
-    "name": "Glassmorphism Generator",
+    "name": "Glassmorphism ",
     "link": "https://hype4.academy/tools/glassmorphism-generator",
     "desc": "Generate frosted glass effects with backdrop-filter, blur, and border controls."
   },
   {
     "id": 3,
-    "name": "Neumorphism Generator",
+    "name": "Neumorphism ",
     "link": "https://neumorphism.io/",
     "desc": "Create soft UI neumorphic buttons, cards, and shadows with color/light controls."
   },
   {
     "id": 4,
-    "name": "Gradient Generator",
+    "name": "Gradient ",
     "link": "https://cssgradient.io/",
     "desc": "Build linear/radial/conic gradients with angle/color stops and Tailwind exports."
   },
@@ -474,5 +474,73 @@
     "link": "https://illustrations.design/",
     "desc": "Free SVG illustrations designed for charity/NGO websites."
   }
-]
+],
+"3d": [
+    {
+      "id": 1,
+      "name": "Three.js Resources",
+      "desc": "Curated directory of Three.js tutorials, tools, examples, courses, and libraries for 3D web development, VR, and games.",
+      "link": "https://threejsresources.com"
+    },
+    {
+      "id": 2,
+      "name": "Spline",
+      "desc": "Web-based 3D design tool for creating interactive 3D scenes, models, and animations that integrate with React and Three.js.",
+      "link": "https://spline.design"
+    },
+    {
+      "id": 3,
+      "name": "Sketchfab",
+      "desc": "Largest platform for 3D models, AR/VR assets, with free and paid downloads optimized for web embedding via Three.js/GLTF.",
+      "link": "https://sketchfab.com"
+    },
+    {
+      "id": 4,
+      "name": "Poly Haven",
+      "desc": "Free, high-quality CC0 3D models, HDRIs, materials, and textures for realistic 3D rendering in web projects.",
+      "link": "https://polyhaven.com"
+    },
+    {
+      "id": 5,
+      "name": "Blender",
+      "desc": "Free open-source 3D creation suite for modeling, rigging, animation; export GLTF/GLB for web devs using Three.js.",
+      "link": "https://www.blender.org"
+    },
+    {
+      "id": 6,
+      "name": "PlayCanvas Asset Store",
+      "desc": "Free 3D models, scripts, fonts, and assets library for PlayCanvas engine, compatible with web-based 3D games.",
+      "link": "https://developer.playcanvas.com/user-manual/editor/assets/asset-store/"
+    },
+    {
+      "id": 7,
+      "name": "CGTrader",
+      "desc": "Marketplace for 3D models, textures, and rigs; thousands of assets ready for web 3D development and purchase.",
+      "link": "https://www.cgtrader.com"
+    },
+    {
+      "id": 8,
+      "name": "Kenney Assets",
+      "desc": "Free game-ready 3D models, sprites, icons, and sounds optimized for web development and prototypes.",
+      "link": "https://kenney.nl/assets"
+    },
+    {
+      "id": 9,
+      "name": "Quaternius",
+      "desc": "Free low-poly 3D models and assets packs for game devs, lightweight for web 3D projects.",
+      "link": "https://quaternius.com"
+    },
+    {
+      "id": 10,
+      "name": "Poly Pizza",
+      "desc": "Free and paid modular 3D assets marketplace for blockchain/web3 devs building 3D experiences.",
+      "link": "https://poly.pizza"
+    },
+    {
+      "id": 11,
+      "name": "Mixamo",
+      "desc": "Adobe's free 3D character animation tool with rigged models and motions exportable to GLB for web.",
+      "link": "https://www.mixamo.com"
+    }
+  ]
 }

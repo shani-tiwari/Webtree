@@ -1,7 +1,6 @@
 import { useCollection } from "../context/CollectionContext";
 import { Link } from "react-router";
 import Card from "../components/Card";
-import Navbar from "../components/Navbar";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
 import { MoveLeft } from "lucide-react";
@@ -10,11 +9,7 @@ export default function Collection() {
   const { collection } = useCollection();
 
   return (
-    <main className="relative min-h-screen max-w-[1300px] flex flex-col gap-10 md:gap-10 mx-auto px-4 md:px-14 pb-20">
-      <nav className="h-16 md:h-22 z-90 backdrop-blur-xs fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px]">
-        <Navbar />
-      </nav>
-
+    <main className="relative min-h-screen max-w-[1300px] w-full flex flex-col gap-10 md:gap-10 mx-auto px-4 md:px-14 pb-20">
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}

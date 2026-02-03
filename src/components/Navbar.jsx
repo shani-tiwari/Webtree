@@ -42,32 +42,32 @@ const Navbar = () => {
       id: "github",
       content: <Github size={22} />,
       link: "https://github.com/shani-tiwari/Webtree",
-      title: "Give a star",
+      title: "star me ⭐",
     },
     {
       id: "twitter",
       content: <Twitter size={22} />,
       link: "https://x.com/shanidevelops",
-      title: "Let's connect",
+      title: "Let's connect 🔗",
     },
     {
       id: "instagram",
       content: <Instagram size={22} />,
       link: "https://instagram.com/shanidevelops",
-      title: "Do follow",
+      title: "what's ur review ⁉️",
     },
     {
       id: "resources",
       content: <Coffee size={22} />,
       link: "https://buymeacoffee.com/shani_tiwari?new=1",
-      title: "Buy me a coffee",
+      title: "🍵 coffee ❔",
     },
-    {
-      id: "mail",
-      content: <MailPlus size={22} />,
-      link: "https://mail.google.com/mail/u/3/#inbox",
-      title: "Send a mail",
-    },
+    // {
+    //   id: "mail",
+    //   content: <MailPlus size={22} />,
+    //   link: "https://mail.google.com/mail/u/3/#inbox",
+    //   title: "what's your review",
+    // },
 
     // { id: "collection", content: <FolderHeart size={26} />, link: "#collection" },
   ];
@@ -80,9 +80,9 @@ const Navbar = () => {
       animate="visible"
       variants={navVariants}
       aria-label="Main Navigation"
-      className="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-[1000px] z-50 px-8 py-1 md:py-3 
-        flex justify-between items-center rounded-full font-beba
-        border border-amber-400/30 shadow-xs shadow-amber-700/40 backdrop-blur-xs "
+      className="fixed top-2 left-1/2 -translate-x-1/2 w-[90%] md:max-w-[1000px] z-50 px-8 py-1 md:py-3 
+        flex justify-between items-center rounded-2xl font-beba
+        border border-zinc-100/60 shadow-xs shadow-amber-700/40 backdrop-blur-sm "
     >
       {/* Logo */}
       <motion.div
@@ -98,7 +98,8 @@ const Navbar = () => {
 
       {/* Desktop Menu */}
       <div className="hidden md:flex space-x-1 items-center  ">
-        <div className="bg-amber-400/10 flex text-white/70 px-6 py-[6px] gap-8 mr-4 items-center justify-around rounded-full border border-amber-500/50 ">
+        <div className="bg-neutral-400/10 flex text-white/50 px-6 py-[6px] gap-8 mr-4 items-center justify-around rounded-md border 
+        border-zinc-500 ">
           {menuItems.map((item) => (
             <a
               key={item.id}
@@ -106,10 +107,12 @@ const Navbar = () => {
               target={item.link.startsWith("http") ? "_blank" : "_self"}
               rel="noreferrer"
               aria-label={`Visit ${item.id}`}
-              className="group relative active:scale-95 hover:text-white hover:scale-105 transition-all duration-300"
+              className="group relative active:scale-95 hover:text-white/80 hover:scale-105 transition-all duration-300"
             >
               {item.content}
-              <span className="absolute text-amber-600/90 top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 bg-black/70 text-[14px] rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none border border-amber-500/30 shadow-lg whitespace-nowrap z-50">
+              <span className="absolute text-zinc-200 top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 bg-black/70 text-[14px] 
+              rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none border 
+              border-zinc-500 shadow-lg whitespace-nowrap z-50">
                 {item.title}
               </span>
             </a>
@@ -123,16 +126,16 @@ const Navbar = () => {
         >
           {location.pathname === "/collection" ? (
             <FolderOutput
-              style={{ color: "oklch(76.9% 0.188 70.08)" }}
+              style={{ color: "oklch(0.871 0.006 286.286)" }}
               size={26}
             />
           ) : (
             <FolderHeart
-              style={{ color: "oklch(76.9% 0.188 70.08)" }}
+              style={{ color: "oklch(0.871 0.006 286.286)" }}
               size={26}
             />
           )}
-          <sup className="absolute -right-2 top-1 text-amber-500 selection:bg-amber-600/30 selection:text-white">
+          <sup className="absolute -right-3 top-1 text-zinc-300 selection:bg-zinc-600/30 selection:text-white">
             {collection.length}
           </sup>
           <span className="absolute top-full right-0 mt-2 px-2 py-1 bg-black/80 text-amber-600/90 text-[14px] rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none border border-amber-500/30 shadow-lg whitespace-nowrap z-50">
@@ -150,10 +153,10 @@ const Navbar = () => {
           aria-label={`Visit`}
         >
           <FolderHeart
-            style={{ color: "oklch(76.9% 0.188 70.08)" }}
+            style={{ color: "oklch(0.871 0.006 286.286)" }}
             size={22}
           />
-          <sup className="absolute -right-2 top-1 text-amber-500 selection:bg-amber-600/30 selection:text-white">
+          <sup className="absolute -right-2 top-1 text-zinc-300 selection:bg-amber-600/30 selection:text-white">
             {collection.length}
           </sup>
         </Link>

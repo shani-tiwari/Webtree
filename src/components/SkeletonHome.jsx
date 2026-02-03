@@ -6,18 +6,6 @@ const SkeletonHome = () => {
   return (
     <SkeletonTheme baseColor="#333" highlightColor="#555">
       <main className="min-h-screen h-fit max-w-screen flex flex-col gap-10 md:gap-10">
-        {/* Navbar Skeleton */}
-        <nav className="h-16 md:h-22 z-90 fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px] px-8 py-3 flex justify-between items-center rounded-full border border-white/10 bg-black/50 backdrop-blur-md mt-4">
-          <Skeleton circle width={40} height={40} />
-          <div className="hidden md:flex gap-4">
-            <Skeleton width={30} height={30} circle />
-            <Skeleton width={30} height={30} circle />
-          </div>
-          <div className="md:hidden">
-            <Skeleton width={30} height={30} circle />
-          </div>
-        </nav>
-
         <section className="grow w-full flex flex-col md:flex-row lg:flex-row justify-center gap-10 px-1 md:px-14">
           {/* Sidebar Skeleton */}
           <aside className="shrink-0 w-full md:w-64 md:pt-30 pt-20 h-fit px-2 py-3 flex flex-col gap-2">
