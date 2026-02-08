@@ -1,8 +1,63 @@
-import { ChartSpline, CircleArrowOutUpRight, Heart } from "lucide-react";
+import {   
+  Github,
+  Twitter,
+  Linkedin,
+  Mail,
+  ArrowUpRight,
+  Heart,
+  Dribbble,
+  Instagram,
+  ChartSpline,
+  CircleArrowOutUpRight,
+Coffee } from "lucide-react";
 
 export default function Footer() {
 
     const currentYear = new Date().getFullYear();
+     const socialLinks = [
+    {
+      name: "GitHub",
+      icon: Github,
+      url: "https://github.com/shani-tiwari",
+      label: "Visit my GitHub ⭐",
+    },
+    {
+      name: "X / Twitter",
+      icon: Twitter,
+      url: "https://x.com/ShaniDevelops",
+      label: "Follow on X 🚀",
+    },
+    {
+      name: "LinkedIn",
+      icon: Linkedin,
+      url: "https://www.linkedin.com/in/shani-tiwari-aspirational/",
+      label: "Connect on LinkedIn ⛓️‍💥",
+    },
+    {
+      name: "Gmail",
+      icon: Mail,
+      url: "mailto:shanitiwarifl@gmail.com",
+      label: "Send me an email 💌",
+    },
+    {
+      name: "Dribbble",
+      icon: Dribbble,
+      url: "https://dribbble.com/shani-tiwari",
+      label: "My Dribbble portfolio🎨",
+    },
+    {
+      name: "Instagram",
+      icon: Instagram,
+      url: "https://Instagram.com/shanidevelops",
+      label: "Follow on Instagram✨",
+    },
+    {
+      name: "Coffee",
+      icon: Coffee ,
+      url: "https://buymeacoffee.com/shani_tiwari?new=1",
+      label: "🍵 coffee ❔",
+    },
+  ];
 
   return (
      <footer className="w-full bg-black/80 mt-10 border-t border-white/5 relative ">
@@ -36,6 +91,23 @@ export default function Footer() {
             Whether you're hunting for Tailwind components, Framer prototypes, 
             or color palettes, discover everything to supercharge your projects in seconds.
           </p>
+          <div className="flex gap-4">
+            {socialLinks.map((social) => (
+              <a
+                key={social.name}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative h-8 w-8 md:w-10 md:h-10 rounded-lg bg-gray-800 flex items-center justify-center text-gray-200 hover:-translate-y-1 border-2 border-white/20 transition-all duration-300"
+                aria-label={social.label}
+              >
+                <social.icon size={20} />
+                <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-gray-800 border border-gray-700 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none shadow-xl">
+                  {social.label}
+                </span>
+              </a>
+            ))}
+          </div>
         </div>
 
         {/* bebd */}

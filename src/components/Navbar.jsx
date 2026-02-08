@@ -3,15 +3,12 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { useCollection } from "../context/CollectionContext";
 import {
-  Coffee,
   Github,
   Twitter,
-  Instagram,
   FolderHeart,
   Menu,
   CircleX,
   FolderOutput,
-  MailPlus,
 } from "lucide-react";
 import { Link, useLocation } from "react-router";
 // import { CollectionProvider } from "../context/CollectionContext";
@@ -50,18 +47,13 @@ const Navbar = () => {
       link: "https://x.com/shanidevelops",
       title: "Let's connect 🔗",
     },
-    {
-      id: "instagram",
-      content: <Instagram size={22} />,
-      link: "https://instagram.com/shanidevelops",
-      title: "what's ur review ⁉️",
-    },
-    {
-      id: "resources",
-      content: <Coffee size={22} />,
-      link: "https://buymeacoffee.com/shani_tiwari?new=1",
-      title: "🍵 coffee ❔",
-    },
+    // {
+    //   id: "instagram",
+    //   content: <Instagram size={22} />,
+    //   link: "https://instagram.com/shanidevelops",
+    //   title: "what's ur review ⁉️",
+    // },
+    
     // {
     //   id: "mail",
     //   content: <MailPlus size={22} />,
@@ -98,7 +90,7 @@ const Navbar = () => {
 
       {/* Desktop Menu */}
       <div className="hidden md:flex space-x-1 items-center  ">
-        <div className="bg-neutral-400/10 flex text-white/50 px-6 py-[6px] gap-8 mr-4 items-center justify-around rounded-md border 
+        <div className="bg-neutral-400/10 flex text-white/50 px-4 py-[6px] gap-6 mr-4 items-center rounded-xl border 
         border-zinc-500 ">
           {menuItems.map((item) => (
             <a
@@ -138,8 +130,9 @@ const Navbar = () => {
           <sup className="absolute -right-3 top-1 text-zinc-300 selection:bg-zinc-600/30 selection:text-white">
             {collection.length}
           </sup>
-          <span className="absolute top-full right-0 mt-2 px-2 py-1 bg-black/80 text-amber-600/90 text-[14px] rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none border border-amber-500/30 shadow-lg whitespace-nowrap z-50">
-            {location.pathname === "/collection" ? "Home" : "Your Collection"}
+          <span className="absolute top-full right-0 mt-2 px-2 py-1 bg-black/80 text-zinc-100/90 text-[14px] rounded-md opacity-0 
+          group-hover:opacity-100 transition-opacity duration-200 pointer-events-none border border-neutral-500 shadow-lg whitespace-nowrap z-50">
+            {location.pathname === "/collection" ? "Home🏡" : "Your Collection 🎁"}
           </span>
         </Link>
       </div>
