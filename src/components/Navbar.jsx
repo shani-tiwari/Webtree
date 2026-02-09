@@ -9,6 +9,11 @@ import {
   Menu,
   CircleX,
   FolderOutput,
+  Coffee,
+  Instagram,
+  Dribbble,
+  Mail,
+  Linkedin,
 } from "lucide-react";
 import { Link, useLocation } from "react-router";
 // import { CollectionProvider } from "../context/CollectionContext";
@@ -62,6 +67,50 @@ const Navbar = () => {
     // },
 
     // { id: "collection", content: <FolderHeart size={26} />, link: "#collection" },
+  ];
+  const socialLinks = [
+    {
+      name: "GitHub",
+      icon: Github,
+      url: "https://github.com/shani-tiwari",
+      label: "Visit my GitHub ⭐",
+    },
+    {
+      name: "X / Twitter",
+      icon: Twitter ,
+      url: "https://x.com/ShaniDevelops",
+      label: "Follow on X 🚀",
+    },
+    {
+      name: "LinkedIn",
+      icon: Linkedin ,
+      url: "https://www.linkedin.com/in/shani-tiwari-aspirational/",
+      label: "Connect on LinkedIn ⛓️‍💥",
+    },
+    {
+      name: "Gmail",
+      icon: Mail,
+      url: "mailto:shanitiwarifl@gmail.com",
+      label: "Send me an email 💌",
+    },
+    {
+      name: "Dribbble",
+      icon: Dribbble,
+      url: "https://dribbble.com/shani-tiwari",
+      label: "My Dribbble portfolio🎨",
+    },
+    {
+      name: "Instagram",
+      icon: Instagram,
+      url: "https://Instagram.com/shanidevelops",
+      label: "Follow on Instagram✨",
+    },
+    {
+      name: "Coffee",
+      icon: Coffee ,
+      url: "https://buymeacoffee.com/shani_tiwari?new=1",
+      label: "🍵 coffee ❔",
+    },
   ];
 
   const { collection } = useCollection();
@@ -160,7 +209,7 @@ const Navbar = () => {
           aria-label="Toggle menu"
           className="md:hidden text-gray-400 dark:text-white focus:outline-none hover:scale-106 transition-all duration-400"
         >
-          {isOpen ? <CircleX size={22} /> : <Menu size={22} />}
+          {isOpen ? <CircleX size={20} /> : <Menu size={20} />}
         </button>
       </div>
 
@@ -180,16 +229,17 @@ const Navbar = () => {
             className="z-150 absolute top-full right-0 w-full bg-black/90 border-2 border-gray-200/30 md:hidden 
               flex items-center justify-evenly  py-3 shadow-inner shadow-white/10 overflow-hidden mt-2 rounded-full"
           >
-            {menuItems.map((item) => (
+            {socialLinks.map((item) => (
               <motion.a
-                key={item.id}
-                href={item.link}
+                key={item.name}
+                href={item.url}
+                target="_blank"
                 whileHover={{ scale: 1.1 }}
                 className=" font-medium text-2xl text-white/80 active:scale-96 transition-all duration-300"
                 onClick={() => setIsOpen(false)}
-                aria-label={`Visit ${item.id} mobile`}
+                aria-label={`Visit ${item.label} mobile`}
               >
-                {item.content}
+                <item.icon size={20} />
               </motion.a>
             ))}
           </motion.div>

@@ -43,7 +43,7 @@ export default function Home() {
         </div>
 
 
-        <header className="text-white/80 text-center font-beba w-full backdrop-blur-xl md:backdrop-blur-none pt-20 md:pt-28">
+        <header className="text-white/80 text-center px-4 md:px-6 font-beba w-full backdrop-blur-xl md:backdrop-blur-none pt-20 md:pt-28">
           <h1 className="md:text-xl tracking-wider selection:bg-amber-600/30 selection:text-white">
             Collection of &nbsp; 85+ &nbsp; Frontend Resources 
           </h1>

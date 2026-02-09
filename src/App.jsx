@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router";
 import { cn } from "./lib/utils";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
         </div>
 
         <Footer />
+        <ScrollToTop />
       </div>
     </>
   );

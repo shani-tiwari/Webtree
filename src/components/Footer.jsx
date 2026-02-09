@@ -91,7 +91,7 @@ export default function Footer() {
             Whether you're hunting for Tailwind components, Framer prototypes, 
             or color palettes, discover everything to supercharge your projects in seconds.
           </p>
-          <div className="flex gap-4">
+          <div className="flex flex-wrap gap-4">
             {socialLinks.map((social) => (
               <a
                 key={social.name}
@@ -122,7 +122,7 @@ export default function Footer() {
             <span className="text-2xl font-bold tracking-tight bg-clip-text text-transparent bg-linear-to-b from-zinc-300 via-zinc-400 to-zinc-500">
               BeBD
             </span>
-            <a href="https://bebd-be-better-developer.vercel.app" target="_blank" rel="noopener noreferrer">
+            <a href="https://bebd.vercel.app" target="_blank" rel="noopener noreferrer">
               <span className="text-gray-300">
                 <CircleArrowOutUpRight style={{ font: "white" }} size={16} />
               </span>
