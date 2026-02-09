@@ -90,7 +90,7 @@ const Navbar = () => {
 
       {/* Desktop Menu */}
       <div className="hidden md:flex space-x-1 items-center  ">
-        <div className="bg-neutral-400/10 flex text-white/50 px-4 py-[6px] gap-6 mr-4 items-center rounded-xl border 
+        <div className="bg-neutral-400/10 flex text-white/50 px-4 py-[6px] gap-6 mr-4 items-center rounded-lg border 
         border-zinc-500 ">
           {menuItems.map((item) => (
             <a

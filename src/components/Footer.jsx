@@ -60,7 +60,7 @@ export default function Footer() {
   ];
 
   return (
-     <footer className="w-full bg-black/80 mt-10 border-t border-white/5 relative ">
+     <footer className="w-full bg-black/90 mt-10 relative">
       {/* Upper Section */}
       <div className="max-w-7xl w-full mx-auto px-6 pt-16 pb-12 flex flex-col flex-wrap md:flex-row gap-10 
       lg:gap-0 lg:justify-between md:items-center">
