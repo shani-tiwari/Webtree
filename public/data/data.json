@@ -71,6 +71,48 @@
     "name": "Pattern Generator",
     "link": "https://www.heropatterns.com/",
     "desc": "SVG/CSS background patterns with customizable colors and opacity."
+  },
+   {
+    "id": 13,
+    "name": "SVGOMG",
+    "link": "https://jakearchibald.github.io/svgomg",
+    "desc": "Optimize SVGs up to 70% smaller. Essential for icons/logos in production frontend apps."
+  },
+  {
+    "id": 14,
+    "name": "JSON Formatter",
+    "link": "https://jsonformatter.curiousconcept.com",
+    "desc": "Validate, format, and beautify JSON. Debug API responses and generate mock data quickly."
+  },
+  {
+    "id": 15,
+    "name": "Base64 Guru",
+    "link": "https://base64.guru",
+    "desc": "Encode/decode images/CSS/icons to base64. Embed assets directly in CSS for tiny performance gains."
+  },
+  {
+    "id": 16,
+    "name": "Haunted House",
+    "link": "https://electricinterface.be/haunted-house",
+    "desc": "Interactive cursor trail generator. Canvas-based mouse followers for premium micro-interactions."
+  },
+  {
+    "id": 17,
+    "name": "iLoveIMG",
+    "link": "https://www.iloveimg.com",
+    "desc": "Batch image converter, compressor, resizer, cropper. Perfect for optimizing assets before frontend deployment."
+  },
+  {
+    "id": 18,
+    "name": "Squoosh",
+    "link": "https://squoosh.app",
+    "desc": "Google's real-time image compressor with WebAssembly. Compare formats (WebP/AVIF) side-by-side with quality sliders."
+  },
+  {
+    "id": 19,
+    "name": "TinyPNG",
+    "link": "https://tinypng.com",
+    "desc": "Intelligent PNG/JPEG compression that preserves visual quality. API available for automation in builds."
   }
   ],
   "ui_components": [
