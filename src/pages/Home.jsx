@@ -83,6 +83,7 @@ export default function Home() {
                 logo={item.preview}
                 link={item.link}
                 desc={item.desc}
+                category={activeCategory}
               />
             ))}
           </section>

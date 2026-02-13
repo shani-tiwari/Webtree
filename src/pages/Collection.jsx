@@ -25,16 +25,13 @@ export default function Collection() {
         >
           <MoveLeft
             className="group-hover:-translate-x-1 group-hover:text-lg transition-transform duration-300"
-            size={22}
+            size={20}
           />
-          {/* <span className="hidden md:inline font-light tracking-wide text-sm">
-            Back to Home
-          </span> */}
         </Link>
       </motion.div>
 
       <header className="relative  text-white/70 text-center font-beba w-full backdrop-blur-xl md:backdrop-blur-none pt-20 md:pt-32">
-        <h1 className="text-3xl md:text-5xl tracking-wider">My Collection</h1>
+        <h1 className="text-2xl md:text-5xl tracking-wider">My Collection</h1>
         <p className="text-sm md:text-base mt-2 opacity-80 text-white/70">
           Your personally curated list of resources
         </p>
@@ -54,14 +51,15 @@ export default function Collection() {
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[10px] content-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[10px]  content-start">
             {collection.map((item) => (
               <Card
-                key={item.id || item.name} // Use id if available, fallback to name
+                key={item.id || item.name} 
                 {...item}
-                title={item.name || item.title} // Handle potential data structure diffs
+                title={item.name || item.title} 
                 logo={item.preview || item.logo}
                 desc={item.desc}
+                category={item.category}
                 allowRemove={true}
               />
             ))}

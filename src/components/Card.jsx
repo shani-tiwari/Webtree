@@ -5,9 +5,9 @@ import { FolderCheck, FolderHeart, Trash2 } from "lucide-react";
 
 // Memoized Card Component
 const Card = React.memo(
-  ({ id, title, link, desc, allowRemove, logo, ...props }) => {
-    const { addToCollection, removeFromCollection, collection } =
-      useCollection();
+
+  ({ id, title, link, desc, allowRemove, logo, category, ...props }) => {
+    const { addToCollection, removeFromCollection, collection } = useCollection();
     const [added, setAdded] = useState(false);
 
     const normalize = (str) => str ? str.trim().split(" ").join("").toLowerCase() : "";
@@ -22,8 +22,7 @@ const Card = React.memo(
       e.stopPropagation();
 
       // Create item object to save
-      // Ensure name is present for consistency
-      const item = { id, title, link, desc, logo, name: title, ...props };
+      const item = { id, title, link, desc, logo, name: title, category, ...props };
       addToCollection(item);
 
       setAdded(true);
@@ -36,6 +35,7 @@ const Card = React.memo(
       removeFromCollection(title);
     };
 
+
     return (
       <a
         href={link}
@@ -46,8 +46,8 @@ const Card = React.memo(
       >
         <article
           key={id}
-          className="relative h-full flex flex-col bg-black/50 backdrop-blur-xs border border-zinc-700 rounded-lg p-2 transition-all duration-300 
-         group cursor-pointer hover:border-zinc-600 text-white/70 select-none  hover:scale-[1.02] "
+          className="relative h-full flex flex-col bg-black/50 backdrop-blur-xs border border-zinc-600 rounded-lg p-2 transition-all duration-300 
+         group cursor-pointer text-white/70 select-none  hover:scale-[1.02] "
         >
           <div className="flex items-center justify-between gap-3 mb-1 pb-2">
             <div className="flex items-center justify-center gap-3 ">
@@ -98,11 +98,16 @@ const Card = React.memo(
           </div>
 
           {/* border */}
-          <div className="w-full h-px bg-linear-to-r from-transparent via-zinc-500/70 to-transparent mb-[5px]"></div>
+          <div className="w-full h-px bg-linear-to-r from-zinc-500/20 via-zinc-500/70 to-zinc-500/20 mb-[5px] rounded-full"></div>
 
           <p className="text-sm text-white/60 leading-relaxed font-light grow">
             {desc}
           </p>
+          {allowRemove &&
+            <span className="absolute -bottom-[10px] right-2 w-fit text-xs px-4 py-px bg-black backdrop-blur-2xl  border border-white/30 rounded-full text-white/60 leading-relaxed font-light">
+              {category.split("_").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
+            </span>
+          }
         </article>
       </a>
     );

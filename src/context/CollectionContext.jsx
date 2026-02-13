@@ -3,6 +3,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 const CollectionContext = createContext();
 
 export function CollectionProvider({ children }) {
+
   const [collection, setCollection] = useState(() => {
     const saved = localStorage.getItem("personalCollection");
     return saved ? JSON.parse(saved) : [];
@@ -18,12 +19,14 @@ export function CollectionProvider({ children }) {
   };
 
   const addToCollection = (item) => {
+
     setCollection((prev) => {
       const newItemName = normalize(item.name || item.title);
       if (prev.some((i) => normalize(i.name || i.title) === newItemName))
         return prev;
       return [...prev, item];
     });
+    
   };
 
   const removeFromCollection = (nameIdentifier) => {

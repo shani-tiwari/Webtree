@@ -1,224 +1,260 @@
 {
   "tools": [
-  {
-    "id": 1,
-    "name": "CSS Grid Generator",
-    "link": "https://cssgrid-generator.netlify.app/",
-    "desc": "Visual drag-drop tool to create perfect CSS Grid layouts with live preview and copyable code."
-  },
-  {
-    "id": 2,
-    "name": "Glassmorphism ",
-    "link": "https://hype4.academy/tools/glassmorphism-generator",
-    "desc": "Generate frosted glass effects with backdrop-filter, blur, and border controls."
-  },
-  {
-    "id": 3,
-    "name": "Neumorphism ",
-    "link": "https://neumorphism.io/",
-    "desc": "Create soft UI neumorphic buttons, cards, and shadows with color/light controls."
-  },
-  {
-    "id": 4,
-    "name": "Gradient ",
-    "link": "https://cssgradient.io/",
-    "desc": "Build linear/radial/conic gradients with angle/color stops and Tailwind exports."
-  },
-  {
-    "id": 5,
-    "name": "Flexbox Froggy",
-    "link": "https://flexboxfroggy.com/",
-    "desc": "Game-based Flexbox learning with code challenges (great for CSS layout practice)."
-  },
-  {
-    "id": 6,
-    "name": "Clippy",
-    "link": "https://bennettfeely.com/clippy/",
-    "desc": "Visual editor for custom polygon/ellipse clip-path shapes."
-  },
-  {
-    "id": 7,
-    "name": "Tailwind Play",
-    "link": "https://play.tailwindcss.com/",
-    "desc": "Live Tailwind CSS editor with autocomplete, responsive previews, and export."
-  },
-  {
-    "id": 8,
-    "name": "Responsively App",
-    "link": "https://responsively.app/",
-    "desc": "Desktop app for testing responsive designs across 50+ device viewports."
-  },
-  {
-    "id": 9,
-    "name": "Color Palette Generator",
-    "link": "https://coolors.co/generate",
-    "desc": "AI-powered color schemes with export to CSS, Tailwind, Figma."
-  },
-  {
-    "id": 10,
-    "name": "Fontjoy",
-    "link": "https://www.fontjoy.com/",
-    "desc": "AI font pairing tool for perfect Google Fonts combinations."
-  },
-  {
-    "id": 11,
-    "name": "Loading.io",
-    "link": "https://loading.io/",
-    "desc": "CSS/SVG spinners, loaders, and animated placeholders generator."
-  },
-  {
-    "id": 12,
-    "name": "Pattern Generator",
-    "link": "https://www.heropatterns.com/",
-    "desc": "SVG/CSS background patterns with customizable colors and opacity."
-  },
-   {
-    "id": 13,
-    "name": "SVGOMG",
-    "link": "https://jakearchibald.github.io/svgomg",
-    "desc": "Optimize SVGs up to 70% smaller. Essential for icons/logos in production frontend apps."
-  },
-  {
-    "id": 14,
-    "name": "JSON Formatter",
-    "link": "https://jsonformatter.curiousconcept.com",
-    "desc": "Validate, format, and beautify JSON. Debug API responses and generate mock data quickly."
-  },
-  {
-    "id": 15,
-    "name": "Base64 Guru",
-    "link": "https://base64.guru",
-    "desc": "Encode/decode images/CSS/icons to base64. Embed assets directly in CSS for tiny performance gains."
-  },
-  {
-    "id": 16,
-    "name": "Haunted House",
-    "link": "https://electricinterface.be/haunted-house",
-    "desc": "Interactive cursor trail generator. Canvas-based mouse followers for premium micro-interactions."
-  },
-  {
-    "id": 17,
-    "name": "iLoveIMG",
-    "link": "https://www.iloveimg.com",
-    "desc": "Batch image converter, compressor, resizer, cropper. Perfect for optimizing assets before frontend deployment."
-  },
-  {
-    "id": 18,
-    "name": "Squoosh",
-    "link": "https://squoosh.app",
-    "desc": "Google's real-time image compressor with WebAssembly. Compare formats (WebP/AVIF) side-by-side with quality sliders."
-  },
-  {
-    "id": 19,
-    "name": "TinyPNG",
-    "link": "https://tinypng.com",
-    "desc": "Intelligent PNG/JPEG compression that preserves visual quality. API available for automation in builds."
-  }
+    {
+      "id": 1,
+      "name": "CSS Grid Generator",
+      "link": "https://cssgrid-generator.netlify.app/",
+      "desc": "Visual drag-drop tool to create perfect CSS Grid layouts with live preview and copyable code.",
+      "category": "tools"
+    },
+    {
+      "id": 2,
+      "name": "Glassmorphism ",
+      "link": "https://hype4.academy/tools/glassmorphism-generator",
+      "desc": "Generate frosted glass effects with backdrop-filter, blur, and border controls.",
+      "category": "tools"
+    },
+    {
+      "id": 3,
+      "name": "Neumorphism ",
+      "link": "https://neumorphism.io/",
+      "desc": "Create soft UI neumorphic buttons, cards, and shadows with color/light controls.",
+      "category": "tools"
+    },
+    {
+      "id": 4,
+      "name": "Gradient ",
+      "link": "https://cssgradient.io/",
+      "desc": "Build linear/radial/conic gradients with angle/color stops and Tailwind exports.",
+      "category": "tools"
+    },
+    {
+      "id": 5,
+      "name": "Flexbox Froggy",
+      "link": "https://flexboxfroggy.com/",
+      "desc": "Game-based Flexbox learning with code challenges (great for CSS layout practice).",
+      "category": "tools"
+    },
+    {
+      "id": 6,
+      "name": "Clippy",
+      "link": "https://bennettfeely.com/clippy/",
+      "desc": "Visual editor for custom polygon/ellipse clip-path shapes.",
+      "category": "tools"
+    },
+    {
+      "id": 7,
+      "name": "Tailwind Play",
+      "link": "https://play.tailwindcss.com/",
+      "desc": "Live Tailwind CSS editor with autocomplete, responsive previews, and export.",
+      "category": "tools"
+    },
+    {
+      "id": 8,
+      "name": "Responsively App",
+      "link": "https://responsively.app/",
+      "desc": "Desktop app for testing responsive designs across 50+ device viewports.",
+      "category": "tools"
+    },
+    {
+      "id": 9,
+      "name": "Color Palette Generator",
+      "link": "https://coolors.co/generate",
+      "desc": "AI-powered color schemes with export to CSS, Tailwind, Figma.",
+      "category": "tools"
+    },
+    {
+      "id": 10,
+      "name": "Fontjoy",
+      "link": "https://www.fontjoy.com/",
+      "desc": "AI font pairing tool for perfect Google Fonts combinations.",
+      "category": "tools"
+    },
+    {
+      "id": 11,
+      "name": "Loading.io",
+      "link": "https://loading.io/",
+      "desc": "CSS/SVG spinners, loaders, and animated placeholders generator.",
+      "category": "tools"
+    },
+    {
+      "id": 12,
+      "name": "Pattern Generator",
+      "link": "https://www.heropatterns.com/",
+      "desc": "SVG/CSS background patterns with customizable colors and opacity.",
+      "category": "tools"
+    },
+    {
+      "id": 13,
+      "name": "SVGOMG",
+      "link": "https://jakearchibald.github.io/svgomg",
+      "desc": "Optimize SVGs up to 70% smaller. Essential for icons/logos in production frontend apps.",
+      "category": "tools"
+    },
+    {
+      "id": 14,
+      "name": "JSON Formatter",
+      "link": "https://jsonformatter.curiousconcept.com",
+      "desc": "Validate, format, and beautify JSON. Debug API responses and generate mock data quickly.",
+      "category": "tools"
+    },
+    {
+      "id": 15,
+      "name": "Base64 Guru",
+      "link": "https://base64.guru",
+      "desc": "Encode/decode images/CSS/icons to base64. Embed assets directly in CSS for tiny performance gains.",
+      "category": "tools"
+    },
+    {
+      "id": 16,
+      "name": "Haunted House",
+      "link": "https://electricinterface.be/haunted-house",
+      "desc": "Interactive cursor trail generator. Canvas-based mouse followers for premium micro-interactions.",
+      "category": "tools"
+    },
+    {
+      "id": 17,
+      "name": "iLoveIMG",
+      "link": "https://www.iloveimg.com",
+      "desc": "Batch image converter, compressor, resizer, cropper. Perfect for optimizing assets before frontend deployment.",
+      "category": "tools"
+    },
+    {
+      "id": 18,
+      "name": "Squoosh",
+      "link": "https://squoosh.app",
+      "desc": "Google's real-time image compressor with WebAssembly. Compare formats (WebP/AVIF) side-by-side with quality sliders.",
+      "category": "tools"
+    },
+    {
+      "id": 19,
+      "name": "TinyPNG",
+      "link": "https://tinypng.com",
+      "desc": "Intelligent PNG/JPEG compression that preserves visual quality. API available for automation in builds.",
+      "category": "tools"
+    }
   ],
   "ui_components": [
     {
       "id": 1,
       "name": "Motion",
       "desc": "Open-source UI kit with animated React components built for Next.js and Tailwind CSS.",
-      "link": "https://motion-primitives.com"
+      "link": "https://motion-primitives.com",
+      "category": "ui_components"
     },
     {
       "id": 2,
       "name": "Aceternity UI",
       "desc": "Copy-paste UI components with modern animations using Framer Motion and Tailwind.",
-      "link": "https://ui.aceternity.com"
+      "link": "https://ui.aceternity.com",
+      "category": "ui_components"
     },
     {
       "id": 3,
       "name": "shadcn/ui",
       "desc": "Accessible, customizable React components built with Radix UI and Tailwind CSS.",
-      "link": "https://ui.shadcn.com"
+      "link": "https://ui.shadcn.com",
+      "category": "ui_components"
     },
     {
       "id": 4,
       "name": "DaisyUI",
       "desc": "Tailwind CSS component library with semantic HTML and built-in dark mode themes.",
-      "link": "https://daisyui.com"
+      "link": "https://daisyui.com",
+      "category": "ui_components"
     },
     {
       "id": 5,
       "name": "Pattern Craft",
       "desc": "Modern background patterns and gradients generator with Tailwind CSS snippets.",
-      "link": "https://patterncraft.fun"
+      "link": "https://patterncraft.fun",
+      "category": "ui_components"
     },
     {
       "id": 6,
       "name": "TweakCN",
       "desc": "Visual no-code theme editor for shadcn/ui components with Tailwind CSS v4 support.",
-      "link": "https://tweakcn.com"
+      "link": "https://tweakcn.com",
+      "category": "ui_components"
     },
     {
       "id": 7,
       "name": "21st.dev",
       "desc": "Component marketplace with AI-generated React UI blocks and CLI integration.",
-      "link": "https://21st.dev"
+      "link": "https://21st.dev",
+      "category": "ui_components"
     },
     {
       "id": 8,
       "name": "Ant Design",
       "desc": "Enterprise-class React UI library with high-quality components and design system.",
-      "link": "https://ant.design"
+      "link": "https://ant.design",
+      "category": "ui_components"
     },
     {
       "id": 9,
       "name": "Jitter",
       "desc": "Video creation platform with animated templates for social media and marketing.",
-      "link": "https://jitter.video"
+      "link": "https://jitter.video",
+      "category": "ui_components"
     },
     {
       "id": 10,
       "name": "Tailwind UI",
       "desc": "Official Tailwind CSS component library with HTML, React, and Vue versions.",
-      "link": "https://tailwindui.com"
+      "link": "https://tailwindui.com",
+      "category": "ui_components"
     }
   ],
-   "design_ideas": [
+  "design_ideas": [
     {
       "id": 1,
       "name": "Dribbble",
       "desc": "Showcase for designers to share UI/UX shots, illustrations, and animations.",
-      "link": "https://dribbble.com"
+      "link": "https://dribbble.com",
+      "category": "design_ideas"
     },
     {
       "id": 2,
       "name": "Behance",
       "desc": "Adobe's portfolio platform for full creative projects across disciplines.",
-      "link": "https://www.behance.net"
+      "link": "https://www.behance.net",
+      "category": "design_ideas"
     },
     {
       "id": 3,
       "name": "Awwwards",
       "desc": "Awards for exceptional web design, inspiration, and development resources.",
-      "link": "https://www.awwwards.com"
+      "link": "https://www.awwwards.com",
+      "category": "design_ideas"
     },
     {
       "id": 4,
       "name": "Prettyfolio",
       "desc": "Curated web design portfolios and inspiration for creatives.",
-      "link": "https://prettyfolio.com"
+      "link": "https://prettyfolio.com",
+      "category": "design_ideas"
     },
     {
       "id": 5,
       "name": "Stacksorted",
       "desc": "Sorted collections of design stacks, tools, and inspirations for developers.",
-      "link": "https://stacksorted.com"
+      "link": "https://stacksorted.com",
+      "category": "design_ideas"
     },
     {
       "id": 6,
       "name": "Godly",
       "desc": "Handpicked websites showcasing godly web design and creativity.",
-      "link": "https://godly.website"
+      "link": "https://godly.website",
+      "category": "design_ideas"
     },
     {
       "id": 7,
       "name": "Seesaw",
       "desc": "Platform for discovering and sharing innovative web designs and ideas.",
-      "link": "https://seesaw.is"
+      "link": "https://seesaw.is",
+      "category": "design_ideas"
     }
   ],
   "fonts": [
@@ -226,49 +262,57 @@
       "id": 1,
       "name": "Google Fonts",
       "desc": "Library of 1,500+ open source fonts optimized for the web, free for commercial use.",
-      "link": "https://fonts.google.com"
+      "link": "https://fonts.google.com",
+      "category": "fonts"
     },
     {
       "id": 2,
       "name": "FontSpace",
       "desc": "Over 150,000 free downloadable fonts from verified designers, with previews and licenses.",
-      "link": "https://www.fontspace.com"
+      "link": "https://www.fontspace.com",
+      "category": "fonts"
     },
-   {
+    {
       "id": 3,
       "name": "DaFont",
       "desc": "Popular site with thousands of free fonts for personal use, searchable by category.",
-      "link": "https://www.dafont.com"
+      "link": "https://www.dafont.com",
+      "category": "fonts"
     },
     {
       "id": 4,
       "name": "Font Squirrel",
       "desc": "Handpicked premium-quality free fonts with commercial licenses and generators.",
-      "link": "https://www.fontsquirrel.com"
+      "link": "https://www.fontsquirrel.com",
+      "category": "fonts"
     },
     {
       "id": 5,
       "name": "Fontshare",
       "desc": "Free professional-grade fonts from Indian Type Foundry, 100% free for personal and commercial use.",
-      "link": "https://www.fontshare.com"
+      "link": "https://www.fontshare.com",
+      "category": "fonts"
     },
     {
       "id": 6,
       "name": "Unblast",
       "desc": "Free fonts and design resources including mockups, templates, and graphics for designers.",
-      "link": "https://unblast.com"
+      "link": "https://unblast.com",
+      "category": "fonts"
     },
     {
       "id": 7,
       "name": "Awwwards Free Fonts",
       "desc": "Curated collection of high-quality free fonts selected by Awwwards for digital design.",
-      "link": "https://www.awwwards.com/awwwards/collections/free-fonts/"
+      "link": "https://www.awwwards.com/awwwards/collections/free-fonts/",
+      "category": "fonts"
     },
     {
       "id": 8,
       "name": "Rawpixel",
       "desc": "rawpixel makes it easy to find beautiful visuals and create incredible designs..",
-      "link": "https://www.rawpixel.com/fonts?page=1&path=1524&sort=curated"
+      "link": "https://www.rawpixel.com/fonts?page=1&path=1524&sort=curated",
+      "category": "fonts"
     }
   ],
   "images": [
@@ -276,37 +320,43 @@
       "id": 1,
       "name": "Unsplash",
       "desc": "High-resolution photos from a global community, free under Unsplash license.",
-      "link": "https://unsplash.com"
+      "link": "https://unsplash.com",
+      "category": "images"
     },
     {
       "id": 2,
       "name": "Pexels",
       "desc": "Curated free stock photos and videos, CC0 licensed for commercial use.",
-      "link": "https://www.pexels.com"
+      "link": "https://www.pexels.com",
+      "category": "images"
     },
     {
       "id": 3,
       "name": "Pixabay",
       "desc": "Millions of free images, illustrations, vectors, and videos under Pixabay license.",
-      "link": "https://pixabay.com"
+      "link": "https://pixabay.com",
+      "category": "images"
     },
     {
       "id": 4,
       "name": "Pinterest",
       "desc": "Visual discovery engine for images, ideas, and inspiration across categories.",
-      "link": "https://www.pinterest.com"
+      "link": "https://www.pinterest.com",
+      "category": "images"
     },
     {
       "id": 5,
       "name": "Freepik",
       "desc": "Find free images that speak to you.",
-      "link": "https://www.freepik.com/images#from_element=mainmenu"
+      "link": "https://www.freepik.com/images#from_element=mainmenu",
+      "category": "images"
     },
     {
       "id": 6,
       "name": "Rawpixel",
       "desc": "rawpixel makes it easy to find beautiful visuals and create incredible designs.",
-      "link": "https://www.rawpixel.com/search?page=1&path=1522&sort=curated"
+      "link": "https://www.rawpixel.com/search?page=1&path=1522&sort=curated",
+      "category": "images"
     }
   ],
   "svg_icons": [
@@ -314,69 +364,80 @@
       "id": 1,
       "name": "SVG Repo",
       "desc": "500,000+ free SVG vectors and icons in mono/multi color for commercial use.",
-      "link": "https://www.svgrepo.com"
+      "link": "https://www.svgrepo.com",
+      "category": "svg_icons"
     },
     {
       "id": 2,
       "name": "Flaticon",
       "desc": "Millions of free icons in SVG and other formats, with premium options.",
-      "link": "https://www.flaticon.com"
+      "link": "https://www.flaticon.com",
+      "category": "svg_icons"
     },
     {
       "id": 3,
       "name": "IconScout",
       "desc": "Wide range of free SVG icons and illustrations for various projects.",
-      "link": "https://iconscout.com"
+      "link": "https://iconscout.com",
+      "category": "svg_icons"
     },
     {
       "id": 4,
       "name": "Font Awesome",
       "desc": "Icon library with SVG, font, and CSS support, free core set available.",
-      "link": "https://fontawesome.com"
+      "link": "https://fontawesome.com",
+      "category": "svg_icons"
     },
     {
       "id": 5,
       "name": "Tabler Icons",
       "desc": "550+ highly customizable open-source SVG icons for modern web design.",
-      "link": "https://tabler.io/icons"
+      "link": "https://tabler.io/icons",
+      "category": "svg_icons"
     },
     {
       "id": 6,
       "name": "Rawpixel",
       "desc": "rawpixel makes it easy to find beautiful visuals and create incredible designs..",
-      "link": "https://www.rawpixel.com/icons?page=1&path=83&sort=curated"
+      "link": "https://www.rawpixel.com/icons?page=1&path=83&sort=curated",
+      "category": "svg_icons"
     },
-      {
+    {
       "id": 7,
       "name": "LordIcon",
       "link": "https://lordicon.com/",
-      "desc": "Animated Lottie icons and character illustrations with free/paid packs."
-     }
+      "desc": "Animated Lottie icons and character illustrations with free/paid packs.",
+      "category": "svg_icons"
+    }
   ],
   "backgrounds": [
     {
       "id": 1,
       "name": "Picjumbo",
       "desc": "Free high-res images, backgrounds, and photos for personal/commercial use.",
-      "link": "https://picjumbo.com"
+      "link": "https://picjumbo.com",
+      "category": "backgrounds"
     },
     {
       "id": 2,
       "name": "Unsplash",
       "desc": "Excellent source for abstract and textured backgrounds.",
-      "link": "https://unsplash.com"
+      "link": "https://unsplash.com",
+      "category": "backgrounds"
     },
     {
       "id": 3,
       "name": "Pexels",
       "desc": "Variety of backgrounds including gradients and patterns.",
-      "link": "https://www.pexels.com"
+      "link": "https://www.pexels.com",
+      "category": "backgrounds"
     },
     {
       "id": 4,
       "name": "Rawpixel",
       "desc": "rawpixel makes it easy to find beautiful visuals and create incredible designs..",
-      "link": "https://www.rawpixel.com/wallpapers?page=1&path=1636&sort=curated"
+      "link": "https://www.rawpixel.com/wallpapers?page=1&path=1636&sort=curated",
+      "category": "backgrounds"
     }
   ],
   "color_palettes": [
@@ -384,37 +445,43 @@
       "id": 1,
       "name": "Coolors",
       "desc": "Super fast color palette generator with export options and browsing.",
-      "link": "https://coolors.co"
+      "link": "https://coolors.co",
+      "category": "color_palettes"
     },
     {
       "id": 2,
       "name": "Adobe Color",
       "desc": "Explore and create color schemes with color wheel and extraction tools.",
-      "link": "https://color.adobe.com"
+      "link": "https://color.adobe.com",
+      "category": "color_palettes"
     },
     {
       "id": 3,
       "name": "Paletton",
       "desc": "Advanced color scheme designer based on color theory.",
-      "link": "http://paletton.com"
+      "link": "http://paletton.com",
+      "category": "color_palettes"
     },
     {
       "id": 4,
       "name": "Color Hunt",
       "desc": "Hand-picked color palettes updated daily for design inspiration.",
-      "link": "https://colorhunt.co"
+      "link": "https://colorhunt.co",
+      "category": "color_palettes"
     },
     {
       "id": 5,
       "name": "Colormind",
       "desc": "AI-powered color palette generator using deep learning from art and photos.",
-      "link": "http://colormind.com"
+      "link": "http://colormind.com",
+      "category": "color_palettes"
     },
     {
       "id": 6,
       "name": "Tailwind Color Generator",
       "desc": "Generate Tailwind CSS compatible color palettes with shades and previews.",
-      "link": "https://tailwindcss.com/docs/customizing-colors"
+      "link": "https://tailwindcss.com/docs/customizing-colors",
+      "category": "color_palettes"
     }
   ],
   "animations": [
@@ -422,167 +489,194 @@
       "id": 1,
       "name": "Animate.css",
       "desc": "Cross-browser CSS animation library with ready-to-use effects.",
-      "link": "https://animate.style"
+      "link": "https://animate.style",
+      "category": "animations"
     },
     {
       "id": 2,
       "name": "LottieFiles",
       "desc": "Free animated icons, illustrations, and Lottie JSON animations.",
-      "link": "https://lottiefiles.com"
+      "link": "https://lottiefiles.com",
+      "category": "animations"
     },
     {
       "id": 3,
       "name": "GSAP",
       "desc": "Robust JavaScript animation library for complex timelines and effects.",
-      "link": "https://gsap.com"
+      "link": "https://gsap.com",
+      "category": "animations"
     },
     {
       "id": 4,
       "name": "Codrops",
       "desc": "Tutorials and demos for advanced CSS, JS, and WebGL animations.",
-      "link": "https://tympanus.net/codrops"
+      "link": "https://tympanus.net/codrops",
+      "category": "animations"
     },
     {
       "id": 5,
       "name": "Awwwards Animations",
       "desc": "Inspiring animation examples and collections from award-winning sites.",
-      "link": "https://www.awwwards.com/awwwards/collections/animation/"
+      "link": "https://www.awwwards.com/awwwards/collections/animation/",
+      "category": "animations"
     }
   ],
   "illustrations": [
-  {
-    "id": 1,
-    "name": "UnDraw",
-    "link": "https://undraw.co/",
-    "desc": "Open-source, customizable SVG illustrations in multiple color themes for any UI."
-  },
-  {
-    "id": 2,
-    "name": "Blush",
-    "link": "https://blush.design/",
-    "desc": "Drag-drop illustration builder with 1000+ elements, characters, and scenes."
-  },
-  {
-    "id": 3,
-    "name": "DrawKit",
-    "link": "https://www.drawkit.com/",
-    "desc": "Premium hand-drawn illustrations for websites, apps, and presentations."
-  },
-  {
-    "id": 4,
-    "name": "StorySet",
-    "link": "https://storyset.com/",
-    "desc": "600+ free customizable illustrations for landing pages and mobile apps."
-  },
-  {
-    "id": 5,
-    "name": "Humaaans",
-    "link": "https://www.humaaans.com/",
-    "desc": "Mix-match human characters with 100+ poses, skin tones, clothing options."
-  },
-  {
-    "id": 6,
-    "name": "Open Doodles",
-    "link": "https://absurd.design/",
-    "desc": "Free hand-drawn doodle illustrations with color customization."
-  },
-  {
-    "id": 7,
-    "name": "Pexels Illustrations",
-    "link": "https://www.pexels.com/search/illustration/",
-    "desc": "Free stock illustrations and vector art for commercial use."
-  },
-  {
-    "id": 8,
-    "name": "Irvan",
-    "link": "https://irvan.id/",
-    "desc": "Free minimalist illustrations optimized for websites and apps."
-  },
-  {
-    "id": 9,
-    "name": "Manypixels",
-    "link": "https://www.manypixels.co/gallery/illustrations",
-    "desc": "Premium illustration library with modern flat and gradient styles."
-  },
-  {
-    "id": 10,
-    "name": "Icons8 Illustrations",
-    "link": "https://icons8.com/illustrations",
-    "desc": "2000+ free illustrations with search, categories, and style filters."
-  },
-  {
-    "id": 11,
-    "name": "Charity Illustrations",
-    "link": "https://illustrations.design/",
-    "desc": "Free SVG illustrations designed for charity/NGO websites."
-  }
-],
-"3d": [
+    {
+      "id": 1,
+      "name": "UnDraw",
+      "link": "https://undraw.co/",
+      "desc": "Open-source, customizable SVG illustrations in multiple color themes for any UI.",
+      "category": "illustrations"
+    },
+    {
+      "id": 2,
+      "name": "Blush",
+      "link": "https://blush.design/",
+      "desc": "Drag-drop illustration builder with 1000+ elements, characters, and scenes.",
+      "category": "illustrations"
+    },
+    {
+      "id": 3,
+      "name": "DrawKit",
+      "link": "https://www.drawkit.com/",
+      "desc": "Premium hand-drawn illustrations for websites, apps, and presentations.",
+      "category": "illustrations"
+    },
+    {
+      "id": 4,
+      "name": "StorySet",
+      "link": "https://storyset.com/",
+      "desc": "600+ free customizable illustrations for landing pages and mobile apps.",
+      "category": "illustrations"
+    },
+    {
+      "id": 5,
+      "name": "Humaaans",
+      "link": "https://www.humaaans.com/",
+      "desc": "Mix-match human characters with 100+ poses, skin tones, clothing options.",
+      "category": "illustrations"
+    },
+    {
+      "id": 6,
+      "name": "Open Doodles",
+      "link": "https://absurd.design/",
+      "desc": "Free hand-drawn doodle illustrations with color customization.",
+      "category": "illustrations"
+    },
+    {
+      "id": 7,
+      "name": "Pexels Illustrations",
+      "link": "https://www.pexels.com/search/illustration/",
+      "desc": "Free stock illustrations and vector art for commercial use.",
+      "category": "illustrations"
+    },
+    {
+      "id": 8,
+      "name": "Irvan",
+      "link": "https://irvan.id/",
+      "desc": "Free minimalist illustrations optimized for websites and apps.",
+      "category": "illustrations"
+    },
+    {
+      "id": 9,
+      "name": "Manypixels",
+      "link": "https://www.manypixels.co/gallery/illustrations",
+      "desc": "Premium illustration library with modern flat and gradient styles.",
+      "category": "illustrations"
+    },
+    {
+      "id": 10,
+      "name": "Icons8 Illustrations",
+      "link": "https://icons8.com/illustrations",
+      "desc": "2000+ free illustrations with search, categories, and style filters.",
+      "category": "illustrations"
+    },
+    {
+      "id": 11,
+      "name": "Charity Illustrations",
+      "link": "https://illustrations.design/",
+      "desc": "Free SVG illustrations designed for charity/NGO websites.",
+      "category": "illustrations"
+    }
+  ],
+  "3d": [
     {
       "id": 1,
       "name": "Three.js Resources",
       "desc": "Curated directory of Three.js tutorials, tools, examples, courses, and libraries for 3D web development, VR, and games.",
-      "link": "https://threejsresources.com"
+      "link": "https://threejsresources.com",
+      "category": "3d"
     },
     {
       "id": 2,
       "name": "Spline",
       "desc": "Web-based 3D design tool for creating interactive 3D scenes, models, and animations that integrate with React and Three.js.",
-      "link": "https://spline.design"
+      "link": "https://spline.design",
+      "category": "3d"
     },
     {
       "id": 3,
       "name": "Sketchfab",
       "desc": "Largest platform for 3D models, AR/VR assets, with free and paid downloads optimized for web embedding via Three.js/GLTF.",
-      "link": "https://sketchfab.com"
+      "link": "https://sketchfab.com",
+      "category": "3d"
     },
     {
       "id": 4,
       "name": "Poly Haven",
       "desc": "Free, high-quality CC0 3D models, HDRIs, materials, and textures for realistic 3D rendering in web projects.",
-      "link": "https://polyhaven.com"
+      "link": "https://polyhaven.com",
+      "category": "3d"
     },
     {
       "id": 5,
       "name": "Blender",
       "desc": "Free open-source 3D creation suite for modeling, rigging, animation; export GLTF/GLB for web devs using Three.js.",
-      "link": "https://www.blender.org"
+      "link": "https://www.blender.org",
+      "category": "3d"
     },
     {
       "id": 6,
       "name": "PlayCanvas Asset Store",
       "desc": "Free 3D models, scripts, fonts, and assets library for PlayCanvas engine, compatible with web-based 3D games.",
-      "link": "https://developer.playcanvas.com/user-manual/editor/assets/asset-store/"
+      "link": "https://developer.playcanvas.com/user-manual/editor/assets/asset-store/",
+      "category": "3d"
     },
     {
       "id": 7,
       "name": "CGTrader",
       "desc": "Marketplace for 3D models, textures, and rigs; thousands of assets ready for web 3D development and purchase.",
-      "link": "https://www.cgtrader.com"
+      "link": "https://www.cgtrader.com",
+      "category": "3d"
     },
     {
       "id": 8,
       "name": "Kenney Assets",
       "desc": "Free game-ready 3D models, sprites, icons, and sounds optimized for web development and prototypes.",
-      "link": "https://kenney.nl/assets"
+      "link": "https://kenney.nl/assets",
+      "category": "3d"
     },
     {
       "id": 9,
       "name": "Quaternius",
       "desc": "Free low-poly 3D models and assets packs for game devs, lightweight for web 3D projects.",
-      "link": "https://quaternius.com"
+      "link": "https://quaternius.com",
+      "category": "3d"
     },
     {
       "id": 10,
       "name": "Poly Pizza",
       "desc": "Free and paid modular 3D assets marketplace for blockchain/web3 devs building 3D experiences.",
-      "link": "https://poly.pizza"
+      "link": "https://poly.pizza",
+      "category": "3d"
     },
     {
       "id": 11,
       "name": "Mixamo",
       "desc": "Adobe's free 3D character animation tool with rigged models and motions exportable to GLB for web.",
-      "link": "https://www.mixamo.com"
+      "link": "https://www.mixamo.com",
+      "category": "3d"
     }
   ]
 }
