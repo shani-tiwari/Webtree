@@ -60,7 +60,7 @@ export default function Footer() {
   ];
 
   return (
-     <footer className="w-full bg-black/90 mt-10 relative">
+     <footer id="about" className="w-full bg-black/80 mt-10 relative">
       {/* Upper Section */}
       <div className="max-w-7xl w-full mx-auto px-6 pt-16 pb-12 flex flex-col flex-wrap md:flex-row gap-10 
       lg:gap-0 lg:justify-between md:items-center">
@@ -98,7 +98,7 @@ export default function Footer() {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative h-8 w-8 md:w-10 md:h-10 rounded-lg bg-gray-800 flex items-center justify-center text-gray-200 hover:-translate-y-1 border-2 border-white/20 transition-all duration-300"
+                className="group relative h-8 w-8 md:w-10 md:h-10 rounded-lg bg-gray-950 flex items-center justify-center text-gray-200 hover:-translate-y-1 border-2 border-white/20 transition-all duration-300"
                 aria-label={social.label}
               >
                 <social.icon size={20} />

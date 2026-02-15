@@ -45,9 +45,8 @@ const Card = React.memo(
         aria-label={`View ${title} resource`}
       >
         <article
-          key={id}
-          className="relative h-full flex flex-col bg-black/50 backdrop-blur-xs border border-zinc-600 rounded-lg p-2 transition-all duration-300 
-         group cursor-pointer text-white/70 select-none  hover:scale-[1.02] "
+          className="relative h-full flex flex-col bg-black/50 backdrop-blur-xs border border-zinc-600 rounded-lg p-2 
+          transition-all duration-400 group cursor-pointer text-white/70 select-none hover:scale-[1.01] hover:-translate-y-1 hover:border-zinc-400"
         >
           <div className="flex items-center justify-between gap-3 mb-1 pb-2">
             <div className="flex items-center justify-center gap-3 ">
@@ -87,9 +86,11 @@ const Card = React.memo(
                     <FolderHeart size={20} />
                   )}
 
-                  <span className="absolute bottom-full left-1/2 -translate-x-1/2 w-max px-2.5 py-1 text-xs font-medium
+                  <span
+                    className="absolute bottom-full left-1/2 -translate-x-1/2 w-max px-2.5 py-1 text-xs font-medium
                    bg-zinc-800/90 border border-white/10 rounded-md shadow-xl backdrop-blur-sm opacity-0 invisible group-hover/icon:opacity-100 
-                   group-hover/icon:visible transition-all duration-200 transform scale-90 group-hover/icon:scale-100 pointer-events-none z-99">
+                   group-hover/icon:visible transition-all duration-200 transform scale-90 group-hover/icon:scale-100 pointer-events-none z-99"
+                  >
                     {added ? "Added!" : isCollected ? "Saved" : "+ Add"}
                   </span>
                 </span>

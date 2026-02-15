@@ -43,10 +43,11 @@ export default function Home() {
         </div>
 
 
-        <header className="text-white/80 text-center px-4 md:px-6 font-beba w-full backdrop-blur-xl md:backdrop-blur-none pt-20 md:pt-28">
-          <h1 className="md:text-xl tracking-wider selection:bg-amber-600/30 selection:text-white">
-            Collection of &nbsp; 90+ &nbsp; Frontend Resources 
+        <header className="text-white/80 text-center px-4 md:px-6 font-beba w-full backdrop-blur-xl md:backdrop-blur-none pt-20 md:pt-30">
+          <h1 className="md:text-2xl tracking-wider selection:bg-amber-600/30 selection:text-white">
+            Discover the best Frontend tools 
           </h1>
+          <p className="text-gray-400 max-w-sm leading-relaxed mx-auto">Curated Collection of 90+ high-quality Resources </p>
         </header>
 
         <section className="grow  w-full flex flex-col  justify-center gap-4 md:gap-8 px-1  md:px-14">

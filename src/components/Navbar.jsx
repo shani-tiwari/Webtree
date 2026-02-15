@@ -39,35 +39,35 @@ const Navbar = () => {
     visible: { opacity: 1, y: 0 },
   };
 
-  const menuItems = [
-    {
-      id: "github",
-      content: <Github size={22} />,
-      link: "https://github.com/shani-tiwari/Webtree",
-      title: "star me ⭐",
-    },
-    {
-      id: "twitter",
-      content: <Twitter size={22} />,
-      link: "https://x.com/shanidevelops",
-      title: "Let's connect 🔗",
-    },
-    // {
-    //   id: "instagram",
-    //   content: <Instagram size={22} />,
-    //   link: "https://instagram.com/shanidevelops",
-    //   title: "what's ur review ⁉️",
-    // },
+  // const menuItems = [
+  //   {
+  //     id: "github",
+  //     content: <Github size={22} />,
+  //     link: "https://github.com/shani-tiwari/Webtree",
+  //     title: "star me ⭐",
+  //   },
+  //   {
+  //     id: "twitter",
+  //     content: <Twitter size={22} />,
+  //     link: "https://x.com/shanidevelops",
+  //     title: "Let's connect 🔗",
+  //   },
+  //   // {
+  //   //   id: "instagram",
+  //   //   content: <Instagram size={22} />,
+  //   //   link: "https://instagram.com/shanidevelops",
+  //   //   title: "what's ur review ⁉️",
+  //   // },
     
-    // {
-    //   id: "mail",
-    //   content: <MailPlus size={22} />,
-    //   link: "https://mail.google.com/mail/u/3/#inbox",
-    //   title: "what's your review",
-    // },
+  //   // {
+  //   //   id: "mail",
+  //   //   content: <MailPlus size={22} />,
+  //   //   link: "https://mail.google.com/mail/u/3/#inbox",
+  //   //   title: "what's your review",
+  //   // },
 
-    // { id: "collection", content: <FolderHeart size={26} />, link: "#collection" },
-  ];
+  //   // { id: "collection", content: <FolderHeart size={26} />, link: "#collection" },
+  // ];
   const socialLinks = [
     {
       name: "GitHub",
@@ -121,7 +121,7 @@ const Navbar = () => {
       animate="visible"
       variants={navVariants}
       aria-label="Main Navigation"
-      className="fixed top-2 left-1/2 -translate-x-1/2 w-[90%] md:max-w-[1000px] z-50 px-8 py-1 md:py-3 
+      className="fixed top-1 left-1/2 -translate-x-1/2 w-[90%] md:max-w-[1000px] z-50 px-8 py-1 md:py-3 
         flex justify-between items-center rounded-2xl font-beba
         border border-zinc-100/60 shadow-xs shadow-amber-700/40 backdrop-blur-sm "
     >
@@ -132,15 +132,15 @@ const Navbar = () => {
         className="flex items-center"
         aria-label="Logo"
       >
-        <p className="text-white text-2xl md:text-3xl selection:bg-amber-600/30 selection:text-white">
-          ४
+        <p className="text-white text-xl md:text-2xl selection:bg-amber-600/30 selection:text-white">
+          ४ Webtree
         </p>
       </motion.div>
 
       {/* Desktop Menu */}
-      <div className="hidden md:flex space-x-1 items-center  ">
-        <div className="bg-neutral-400/10 flex text-white/50 px-4 py-[6px] gap-6 mr-4 items-center rounded-lg border 
-        border-zinc-500 ">
+      <div className="hidden md:flex gap-6 space-x-1 items-center  ">
+        {/* <div className="bg-neutral-400/10 flex text-white/50 px-4 py-[6px] gap-6 mr-4 items-center rounded-lg border 
+        border-zinc-400 ">
           {menuItems.map((item) => (
             <a
               key={item.id}
@@ -150,7 +150,7 @@ const Navbar = () => {
               aria-label={`Visit ${item.id}`}
               className="group relative active:scale-95 hover:text-white/80 hover:scale-105 transition-all duration-300"
             >
-              {item.content}
+               {item.content}
               <span className="absolute text-zinc-200 top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 bg-black/70 text-[14px] 
               rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none border 
               border-zinc-500 shadow-lg whitespace-nowrap z-50">
@@ -158,22 +158,24 @@ const Navbar = () => {
               </span>
             </a>
           ))}
-        </div>
+        </div> */}
+        <a href="#about" className="text-neutral-400 text-lg cursor-pointer">About</a>
         <Link
-          className="group relative mr-2 ml-2 active:scale-95"
+          className="group flex gap-2 items-center justify-center relative mr-2 ml-2 active:scale-97 transition-all duration-200"
           to={location.pathname === "/collection" ? "/" : "/collection"}
           rel="noreferrer"
           aria-label={`Visit`}
-        >
+        > 
+          <p className="text-neutral-400 text-lg hidden md:block ">Collection</p>
           {location.pathname === "/collection" ? (
             <FolderOutput
               style={{ color: "oklch(0.871 0.006 286.286)" }}
-              size={26}
+              size={22}
             />
           ) : (
             <FolderHeart
               style={{ color: "oklch(0.871 0.006 286.286)" }}
-              size={26}
+              size={22}
             />
           )}
           <sup className="absolute -right-3 top-1 text-zinc-300 selection:bg-zinc-600/30 selection:text-white">
