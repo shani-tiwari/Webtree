@@ -58,7 +58,7 @@ const Navbar = () => {
   //   //   link: "https://instagram.com/shanidevelops",
   //   //   title: "what's ur review ⁉️",
   //   // },
-    
+
   //   // {
   //   //   id: "mail",
   //   //   content: <MailPlus size={22} />,
@@ -77,13 +77,13 @@ const Navbar = () => {
     },
     {
       name: "X / Twitter",
-      icon: Twitter ,
+      icon: Twitter,
       url: "https://x.com/ShaniDevelops",
       label: "Follow on X 🚀",
     },
     {
       name: "LinkedIn",
-      icon: Linkedin ,
+      icon: Linkedin,
       url: "https://www.linkedin.com/in/shani-tiwari-aspirational/",
       label: "Connect on LinkedIn ⛓️‍💥",
     },
@@ -93,12 +93,12 @@ const Navbar = () => {
       url: "mailto:shanitiwarifl@gmail.com",
       label: "Send me an email 💌",
     },
-    {
-      name: "Dribbble",
-      icon: Dribbble,
-      url: "https://dribbble.com/shani-tiwari",
-      label: "My Dribbble portfolio🎨",
-    },
+    // {
+    //   name: "Dribbble",
+    //   icon: Dribbble,
+    //   url: "https://dribbble.com/shani-tiwari",
+    //   label: "My Dribbble portfolio🎨",
+    // },
     {
       name: "Instagram",
       icon: Instagram,
@@ -107,7 +107,7 @@ const Navbar = () => {
     },
     {
       name: "Coffee",
-      icon: Coffee ,
+      icon: Coffee,
       url: "https://buymeacoffee.com/shani_tiwari?new=1",
       label: "🍵 coffee ❔",
     },
@@ -121,7 +121,7 @@ const Navbar = () => {
       animate="visible"
       variants={navVariants}
       aria-label="Main Navigation"
-      className="fixed top-1 left-1/2 -translate-x-1/2 w-[90%] md:max-w-[1000px] z-50 px-8 py-1 md:py-3 
+      className="fixed top-1 left-1/2 -translate-x-1/2 w-[90%] md:max-w-[1000px] z-50 px-4 md:px-6 py-1 md:py-3 
         flex justify-between items-center rounded-2xl font-beba
         border border-zinc-100/60 shadow-xs shadow-amber-700/40 backdrop-blur-sm "
     >
@@ -132,7 +132,7 @@ const Navbar = () => {
         className="flex items-center"
         aria-label="Logo"
       >
-        <p className="text-white text-xl md:text-2xl selection:bg-amber-600/30 selection:text-white">
+        <p className="text-white text-lg md:text-2xl selection:bg-amber-600/30 selection:text-white">
           ४ Webtree
         </p>
       </motion.div>
@@ -159,14 +159,21 @@ const Navbar = () => {
             </a>
           ))}
         </div> */}
-        <a href="#about" className="text-neutral-400 text-lg cursor-pointer">About</a>
+        <a
+          href="#about"
+          className="text-neutral-400 text-lg cursor-pointer scroll-smooth hover:text-white/60 hover:scale-101 transition-all duration-300"
+        >
+          About
+        </a>
         <Link
           className="group flex gap-2 items-center justify-center relative mr-2 ml-2 active:scale-97 transition-all duration-200"
           to={location.pathname === "/collection" ? "/" : "/collection"}
           rel="noreferrer"
           aria-label={`Visit`}
-        > 
-          <p className="text-neutral-400 text-lg hidden md:block ">Collection</p>
+        >
+          <p className="text-neutral-400 text-lg hidden md:block ">
+            Collection
+          </p>
           {location.pathname === "/collection" ? (
             <FolderOutput
               style={{ color: "oklch(0.871 0.006 286.286)" }}
@@ -181,9 +188,13 @@ const Navbar = () => {
           <sup className="absolute -right-3 top-1 text-zinc-300 selection:bg-zinc-600/30 selection:text-white">
             {collection.length}
           </sup>
-          <span className="absolute top-full right-0 mt-2 px-2 py-1 bg-black/80 text-zinc-100/90 text-[14px] rounded-md opacity-0 
-          group-hover:opacity-100 transition-opacity duration-200 pointer-events-none border border-neutral-500 shadow-lg whitespace-nowrap z-50">
-            {location.pathname === "/collection" ? "Home🏡" : "Your Collection 🎁"}
+          <span
+            className="absolute top-full right-0 mt-2 px-2 py-1 bg-black/80 text-zinc-100/90 text-[14px] rounded-md opacity-0 
+          group-hover:opacity-100 transition-opacity duration-200 pointer-events-none border border-neutral-500 shadow-lg whitespace-nowrap z-50"
+          >
+            {location.pathname === "/collection"
+              ? "Home🏡"
+              : "Your Collection 🎁"}
           </span>
         </Link>
       </div>
@@ -211,7 +222,7 @@ const Navbar = () => {
           aria-label="Toggle menu"
           className="md:hidden text-gray-400 dark:text-white focus:outline-none hover:scale-106 transition-all duration-400"
         >
-          {isOpen ? <CircleX size={20} /> : <Menu size={20} />}
+          {isOpen ? <CircleX size={18} /> : <Menu size={18} />}
         </button>
       </div>
 
@@ -220,30 +231,49 @@ const Navbar = () => {
         {isOpen && (
           <motion.div
             id="mobile-menu"
-            initial={{
-              opacity: 0,
-              y: -10,
-              rotateY: 45,
-            }}
-            animate={{ opacity: 1, y: 0, rotateY: 0 }}
-            exit={{ opacity: 0, y: -10, rotateY: 45 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
-            className="z-150 absolute top-full right-0 w-full bg-black/90 border-2 border-gray-200/30 md:hidden 
-              flex items-center justify-evenly  py-3 shadow-inner shadow-white/10 overflow-hidden mt-2 rounded-full"
+            initial={{ opacity: 0, y: -20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -20, scale: 0.95 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="z-150 absolute top-[110%] right-0 w-64 bg-black/95 border border-zinc-500/30 md:hidden 
+              flex flex-col p-4 shadow-2xl backdrop-blur-xl rounded-3xl gap-2"
           >
-            {socialLinks.map((item) => (
-              <motion.a
-                key={item.name}
-                href={item.url}
-                target="_blank"
-                whileHover={{ scale: 1.1 }}
-                className=" font-medium text-2xl text-white/80 active:scale-96 transition-all duration-300"
+            {/* About Link */}
+            <div className="flex flex-col gap-2">
+              <a
+                href="#about"
+                className="text-zinc-400 text-xl hover:text-white transition-colors"
                 onClick={() => setIsOpen(false)}
-                aria-label={`Visit ${item.label} mobile`}
               >
-                <item.icon size={20} />
-              </motion.a>
-            ))}
+                About
+              </a>
+            </div>
+
+            <span className="h-[0.3px] w-full bg-white/20 rounded-full "></span>
+
+            {/* Socials Section */}
+            <div className="flex flex-col gap-2">
+              <p className="text-zinc-400 text-xs tracking-widest uppercase">
+                Socials
+              </p>
+              <div className="grid grid-cols-3 gap-4">
+                {socialLinks.map((item) => (
+                  <motion.a
+                    key={item.name}
+                    href={item.url}
+                    target="_blank"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="flex flex-col items-center justify-center p-2 rounded-xl bg-zinc-800/50 text-white/80 border 
+                    border-zinc-700/50 hover:bg-zinc-700/50 transition-all"
+                    onClick={() => setIsOpen(false)}
+                    aria-label={`Visit ${item.label} mobile`}
+                  >
+                    <item.icon size={20} />
+                  </motion.a>
+                ))}
+              </div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

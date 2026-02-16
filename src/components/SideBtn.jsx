@@ -23,7 +23,7 @@ const SideBtn = React.memo(
         `}
       >
         <span
-          className={`text-base font-light tracking-wide`}
+          className={`font-light tracking-[0.01em]`}
         >
           {/* ⁘ */}
            {name.split("_").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}

@@ -11,7 +11,6 @@ export default function Home() {
 
   useEffect(() => {
     async function getData() {
-
       await fetch("./data/data.json")
         .then((res) => res.json())
         .then((data) => {
@@ -31,7 +30,7 @@ export default function Home() {
     <>
       <main
         id="main-content"
-        className="min-h-screen w-full h-fit max-w-[1300px] flex flex-col gap-10 md:gap-10"
+        className="w-full h-fit max-w-[1300px] flex flex-col gap-10 md:gap-10"
       >
         <h1 className="sr-only">WebTree Resources Directory</h1>
 
@@ -42,20 +41,20 @@ export default function Home() {
             : ""}
         </div>
 
-
         <header className="text-white/80 text-center px-4 md:px-6 font-beba w-full backdrop-blur-xl md:backdrop-blur-none pt-20 md:pt-30">
           <h1 className="md:text-2xl tracking-wider selection:bg-amber-600/30 selection:text-white">
-            Discover the best Frontend tools 
+            Discover the best Frontend tools
           </h1>
-          <p className="text-gray-400 max-w-sm leading-relaxed mx-auto">Curated Collection of 90+ high-quality Resources </p>
+          <p className="text-gray-400 max-w-sm leading-relaxed mx-auto">
+            Curated Collection of 90+ high-quality Resources
+          </p>
         </header>
 
-        <section className="grow  w-full flex flex-col  justify-center gap-4 md:gap-8 px-1  md:px-14">
-
+        <section className="grow  w-full flex flex-col gap-4 md:gap-8 px-1  md:px-14">
           <aside
             aria-label="Category selection"
             className="z-40 shrink-0 flex flex-wrap justify-center rounded-xl
-            gap-1 md:gap-2 w-full h-fit px-2 md:py-3 md:pt-5 text-white 
+            gap-1 md:gap-2 w-full h-fit px-2 md:py-3 md:pt-4 text-white 
              backdrop-blur-sm  transition-all duration-300"
           >
             {Object.keys(data).map((name, index) => (
@@ -74,7 +73,7 @@ export default function Home() {
           <section
             aria-label="Resources grid"
             className="z-10 container bg-transparent grow grid grid-cols-1 md:grid-cols-2 
-            lg:grid-cols-4 gap-[10px] content-start md:-mt-3"
+            lg:grid-cols-4 gap-[14px] content-start md:-mt-3"
           >
             {Object.values(carddata).map((item) => (
               <Card
@@ -88,7 +87,6 @@ export default function Home() {
               />
             ))}
           </section>
-
         </section>
       </main>
     </>

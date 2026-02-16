@@ -39,12 +39,12 @@ export default function Footer() {
       url: "mailto:shanitiwarifl@gmail.com",
       label: "Send me an email 💌",
     },
-    {
-      name: "Dribbble",
-      icon: Dribbble,
-      url: "https://dribbble.com/shani-tiwari",
-      label: "My Dribbble portfolio🎨",
-    },
+    // {
+    //   name: "Dribbble",
+    //   icon: Dribbble,
+    //   url: "https://dribbble.com/shani-tiwari",
+    //   label: "My Dribbble portfolio🎨",
+    // },
     {
       name: "Instagram",
       icon: Instagram,

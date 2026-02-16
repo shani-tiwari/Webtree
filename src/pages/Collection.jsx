@@ -9,7 +9,7 @@ export default function Collection() {
   const { collection } = useCollection();
 
   return (
-    <main className="relative min-h-screen max-w-[1300px] w-full flex flex-col gap-10 md:gap-10 mx-auto px-4 md:px-14 pb-20">
+    <main className="relative max-w-[1300px] w-full flex flex-col gap-10 md:gap-10 mx-auto px-4 md:px-14 pb-20">
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
@@ -54,9 +54,9 @@ export default function Collection() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[10px]  content-start">
             {collection.map((item) => (
               <Card
-                key={item.id || item.name} 
+                key={item.id || item.name}
                 {...item}
-                title={item.name || item.title} 
+                title={item.name || item.title}
                 logo={item.preview || item.logo}
                 desc={item.desc}
                 category={item.category}
