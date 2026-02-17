@@ -80,7 +80,7 @@ export default function Home() {
                 key={item.id}
                 id={item.id}
                 title={item.name}
-                logo={item.preview}
+                logo={item.logo}
                 link={item.link}
                 desc={item.desc}
                 category={activeCategory}

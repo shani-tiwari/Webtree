@@ -5,12 +5,13 @@ import { FolderCheck, FolderHeart, Trash2 } from "lucide-react";
 
 // Memoized Card Component
 const Card = React.memo(
-
   ({ id, title, link, desc, allowRemove, logo, category, ...props }) => {
-    const { addToCollection, removeFromCollection, collection } = useCollection();
+    const { addToCollection, removeFromCollection, collection } =
+      useCollection();
     const [added, setAdded] = useState(false);
 
-    const normalize = (str) => str ? str.trim().split(" ").join("").toLowerCase() : "";
+    const normalize = (str) =>
+      str ? str.trim().split(" ").join("").toLowerCase() : "";
 
     // Check if item is already in collection to show correct state
     const isCollected = collection.some(
@@ -22,7 +23,16 @@ const Card = React.memo(
       e.stopPropagation();
 
       // Create item object to save
-      const item = { id, title, link, desc, logo, name: title, category, ...props };
+      const item = {
+        id,
+        title,
+        link,
+        desc,
+        logo,
+        name: title,
+        category,
+        ...props,
+      };
       addToCollection(item);
 
       setAdded(true);
@@ -34,7 +44,6 @@ const Card = React.memo(
       e.stopPropagation();
       removeFromCollection(title);
     };
-
 
     return (
       <a
@@ -50,12 +59,26 @@ const Card = React.memo(
         >
           <div className="flex items-center justify-between gap-3 mb-1 pb-2">
             <div className="flex items-center justify-center gap-3 ">
-              <div className="w-7 h-7 rounded-full  bg-neutral-800 flex items-center justify-center border border-amber-600/20">
-                <span className="text-amber-500/70">
+              <div className="w-8 h-8 rounded-full bg-neutral-800 flex items-center justify-center border border-amber-600/20 overflow-hidden shrink-0">
+                {logo ? (
+                  <img
+                    src={logo}
+                    alt={`${title} logo`}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      e.target.style.display = "none";
+                      e.target.nextSibling.style.display = "flex";
+                    }}
+                  />
+                ) : null}
+                <span
+                  className="text-amber-500/70 text-sm font-bold"
+                  style={{ display: logo ? "none" : "flex" }}
+                >
                   {title.charAt(0).toUpperCase()}
                 </span>
               </div>
-              <h3 className="font-medium text-gray-200  md:tracking-wider transition-colors duration-300">
+              <h3 className="font-medium text-gray-200 md:tracking-wider transition-colors duration-300">
                 {title}
               </h3>
             </div>
@@ -104,11 +127,14 @@ const Card = React.memo(
           <p className="text-sm text-white/60 leading-relaxed font-light grow">
             {desc}
           </p>
-          {allowRemove &&
+          {allowRemove && (
             <span className="absolute -bottom-[10px] right-2 w-fit text-xs px-4 py-px bg-black backdrop-blur-2xl  border border-white/30 rounded-full text-white/60 leading-relaxed font-light">
-              {category.split("_").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
+              {category
+                .split("_")
+                .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+                .join(" ")}
             </span>
-          }
+          )}
         </article>
       </a>
     );

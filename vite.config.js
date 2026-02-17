@@ -16,7 +16,7 @@ export default defineConfig({
     tailwindcss(),
     VitePWA({
       registerType: "autoUpdate",
-      devOptions:{enabled: true},
+      devOptions: { enabled: true },
       manifest: {
         name: "WebTree",
         short_name: "WebTree",
@@ -77,6 +77,25 @@ export default defineConfig({
         start_url: "/",
         display: "standalone",
         background_color: "#ffffff",
+      },
+      workbox: {
+        // logo caching
+        runtimeCaching: [
+          {
+            urlPattern: /^https:\/\/img\.logo\.dev\/.*/i,
+            handler: "CacheFirst",
+            options: {
+              cacheName: "logo-dev-cache",
+              expiration: {
+                maxEntries: 200,
+                maxAgeSeconds: 60 * 60 * 24 * 30, // 30 Days
+              },
+              cacheableResponse: {
+                statuses: [0, 200],
+              },
+            },
+          },
+        ],
       },
     }),
   ],
