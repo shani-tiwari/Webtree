@@ -23,7 +23,7 @@ function App() {
           )}
         />
         {/* Radial gradient for the container to give a faded look */}
-        <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black mask-[radial-gradient(ellipse_at_center,transparent_10%,black)] "></div>
+        {/* <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/50 mask-[radial-gradient(ellipse_at_center,transparent_10%,black)] "></div> */}
 
         {/* website */}
         <Navbar />

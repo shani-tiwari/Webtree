@@ -1,9 +1,10 @@
+import { HugeiconsIcon } from "@hugeicons/react";
+import { MoveLeftIcon } from "@hugeicons/core-free-icons";
 import { useCollection } from "../context/CollectionContext";
 import { Link } from "react-router";
 import Card from "../components/Card";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
-import { MoveLeft } from "lucide-react";
 
 export default function Collection() {
   const { collection } = useCollection();
@@ -23,10 +24,7 @@ export default function Collection() {
              hover:text-amber-50 hover:bg-black/50
               transition-all duration-300 shadow-lg ring-2 ring-zinc-400/50"
         >
-          <MoveLeft
-            className="group-hover:-translate-x-1 group-hover:text-lg transition-transform duration-300"
-            size={20}
-          />
+          <HugeiconsIcon icon={MoveLeftIcon} className="group-hover:-translate-x-1 group-hover:text-lg transition-transform duration-300" size={20} />
         </Link>
       </motion.div>
 

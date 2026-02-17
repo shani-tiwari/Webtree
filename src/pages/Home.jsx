@@ -45,7 +45,7 @@ export default function Home() {
           <h1 className="md:text-[26px] tracking-wider selection:bg-amber-600/30 selection:text-white">
             Discover the best Frontend tools
           </h1>
-          <p className="text-sm md:text-[17px] text-gray-400 max-w-md leading-relaxed mx-auto">
+          <p className="text-sm md:text-[17px] text-gray-400 max-w-md leading-relaxed mx-auto selection:bg-amber-600/30 selection:text-white">
             Curated Collection of 90+ high-quality Resources
           </p>
         </header>

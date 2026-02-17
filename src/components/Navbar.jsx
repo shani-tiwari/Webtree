@@ -1,22 +1,23 @@
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+  CancelCircleIcon,
+  Coffee01Icon,
+  DribbbleIcon,
+  GithubIcon,
+  InstagramIcon,
+  Linkedin01Icon,
+  Mail01Icon,
+  Menu01Icon,
+  NewTwitterRectangleIcon,
+  FolderCheckIcon,
+  SquareArrowLeft02Icon,
+  FolderFavouriteIcon
+} from "@hugeicons/core-free-icons";
 import { useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "motion/react";
 import { useCollection } from "../context/CollectionContext";
-import {
-  Github,
-  Twitter,
-  FolderHeart,
-  Menu,
-  CircleX,
-  FolderOutput,
-  Coffee,
-  Instagram,
-  Dribbble,
-  Mail,
-  Linkedin,
-} from "lucide-react";
 import { Link, useLocation } from "react-router";
-// import { CollectionProvider } from "../context/CollectionContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,57 +40,28 @@ const Navbar = () => {
     visible: { opacity: 1, y: 0 },
   };
 
-  // const menuItems = [
-  //   {
-  //     id: "github",
-  //     content: <Github size={22} />,
-  //     link: "https://github.com/shani-tiwari/Webtree",
-  //     title: "star me ⭐",
-  //   },
-  //   {
-  //     id: "twitter",
-  //     content: <Twitter size={22} />,
-  //     link: "https://x.com/shanidevelops",
-  //     title: "Let's connect 🔗",
-  //   },
-  //   // {
-  //   //   id: "instagram",
-  //   //   content: <Instagram size={22} />,
-  //   //   link: "https://instagram.com/shanidevelops",
-  //   //   title: "what's ur review ⁉️",
-  //   // },
-
-  //   // {
-  //   //   id: "mail",
-  //   //   content: <MailPlus size={22} />,
-  //   //   link: "https://mail.google.com/mail/u/3/#inbox",
-  //   //   title: "what's your review",
-  //   // },
-
-  //   // { id: "collection", content: <FolderHeart size={26} />, link: "#collection" },
-  // ];
   const socialLinks = [
     {
       name: "GitHub",
-      icon: Github,
+      icon: GithubIcon,
       url: "https://github.com/shani-tiwari",
       label: "Visit my GitHub ⭐",
     },
     {
       name: "X / Twitter",
-      icon: Twitter,
+      icon: NewTwitterRectangleIcon,
       url: "https://x.com/ShaniDevelops",
       label: "Follow on X 🚀",
     },
     {
       name: "LinkedIn",
-      icon: Linkedin,
+      icon: Linkedin01Icon,
       url: "https://www.linkedin.com/in/shani-tiwari-aspirational/",
       label: "Connect on LinkedIn ⛓️‍💥",
     },
     {
       name: "Gmail",
-      icon: Mail,
+      icon: Mail01Icon,
       url: "mailto:shanitiwarifl@gmail.com",
       label: "Send me an email 💌",
     },
@@ -101,13 +73,13 @@ const Navbar = () => {
     // },
     {
       name: "Instagram",
-      icon: Instagram,
+      icon: InstagramIcon,
       url: "https://Instagram.com/shanidevelops",
       label: "Follow on Instagram✨",
     },
     {
       name: "Coffee",
-      icon: Coffee,
+      icon: Coffee01Icon,
       url: "https://buymeacoffee.com/shani_tiwari?new=1",
       label: "🍵 coffee ❔",
     },
@@ -161,7 +133,7 @@ const Navbar = () => {
         </div> */}
         <a
           href="#about"
-          className="text-neutral-400 text-lg cursor-pointer scroll-smooth hover:text-white/60 hover:scale-101 transition-all duration-300"
+          className="text-neutral-400 text-lg cursor-pointer scroll-smooth hover:text-white/60 hover:scale-101 transition-all duration-300 selection:bg-amber-600/30 selection:text-white"
         >
           About
         </a>
@@ -171,21 +143,23 @@ const Navbar = () => {
           rel="noreferrer"
           aria-label={`Visit`}
         >
-          <p className="text-neutral-400 text-lg hidden md:block ">
+          <p className="text-neutral-400 text-lg hidden md:block selection:bg-amber-600/30 selection:text-white ">
             Collection
           </p>
           {location.pathname === "/collection" ? (
-            <FolderOutput
+            <HugeiconsIcon
+              icon={SquareArrowLeft02Icon}
+              size={20}
               style={{ color: "oklch(0.871 0.006 286.286)" }}
-              size={22}
             />
           ) : (
-            <FolderHeart
+            <HugeiconsIcon
+              icon={FolderFavouriteIcon}
+              size={20}
               style={{ color: "oklch(0.871 0.006 286.286)" }}
-              size={22}
             />
           )}
-          <sup className="absolute -right-3 top-1 text-zinc-300 selection:bg-zinc-600/30 selection:text-white">
+          <sup className="absolute -right-2 top-1 text-zinc-300 selection:bg-zinc-600/30 selection:text-white">
             {collection.length}
           </sup>
           <span
@@ -207,10 +181,12 @@ const Navbar = () => {
           rel="noreferrer"
           aria-label={`Visit`}
         >
-          <FolderHeart
+          <HugeiconsIcon
+            icon={FolderCheckIcon}
+            size={20}
             style={{ color: "oklch(0.871 0.006 286.286)" }}
-            size={22}
           />
+
           <sup className="absolute -right-2 top-1 text-zinc-300 selection:bg-amber-600/30 selection:text-white">
             {collection.length}
           </sup>
@@ -222,7 +198,11 @@ const Navbar = () => {
           aria-label="Toggle menu"
           className="md:hidden text-gray-400 dark:text-white focus:outline-none hover:scale-106 transition-all duration-400"
         >
-          {isOpen ? <CircleX size={18} /> : <Menu size={18} />}
+          {isOpen ? (
+            <HugeiconsIcon icon={CancelCircleIcon} size={18} />
+          ) : (
+            <HugeiconsIcon icon={Menu01Icon} size={18} />
+          )}
         </button>
       </div>
 
@@ -242,7 +222,7 @@ const Navbar = () => {
             <div className="flex flex-col gap-2">
               <a
                 href="#about"
-                className="text-zinc-400 text-xl hover:text-white transition-colors"
+                className="text-zinc-300 text-xl "
                 onClick={() => setIsOpen(false)}
               >
                 About
@@ -269,7 +249,7 @@ const Navbar = () => {
                     onClick={() => setIsOpen(false)}
                     aria-label={`Visit ${item.label} mobile`}
                   >
-                    <item.icon size={20} />
+                    <HugeiconsIcon icon={item.icon} size={24} />
                   </motion.a>
                 ))}
               </div>

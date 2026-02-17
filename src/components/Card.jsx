@@ -1,7 +1,8 @@
+import { HugeiconsIcon } from "@hugeicons/react";
+import { Delete03Icon, FolderCheckIcon, FolderAddIcon } from "@hugeicons/core-free-icons";
 import { useCollection } from "../context/CollectionContext";
 import { useState } from "react";
 import React from "react";
-import { FolderCheck, FolderHeart, Trash2 } from "lucide-react";
 
 // Memoized Card Component
 const Card = React.memo(
@@ -88,7 +89,7 @@ const Card = React.memo(
                   onClick={handleRemoveKey}
                   className="group/delete relative flex items-center justify-center text-red-600/90 transition-colors duration-300 hover:text-red-400 z-30"
                 >
-                  <Trash2 size={20} />
+                  <HugeiconsIcon icon={Delete03Icon} size={20} />
                   <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max px-2.5 py-1 text-xs font-medium text-red-100 bg-zinc-800/90 border border-white/10 rounded-md shadow-xl backdrop-blur-sm opacity-0 invisible group-hover/delete:opacity-100 group-hover/delete:visible transition-all duration-200 transform scale-90 group-hover/delete:scale-100 pointer-events-none z-20">
                     Remove
                   </span>
@@ -101,12 +102,9 @@ const Card = React.memo(
                   duration-200 z-30"
                 >
                   {isCollected ? (
-                    <FolderCheck
-                      size={20}
-                      style={{ color: "oklch(53.2% 0.157 131.589)" }}
-                    />
+                    <HugeiconsIcon icon={FolderCheckIcon} size={22} style={{ color: "oklch(53.2% 0.157 131.589)" }} />
                   ) : (
-                    <FolderHeart size={20} />
+                    <HugeiconsIcon icon={FolderAddIcon} size={22} style={{ color: "oklch(47.6% 0.114 61.907)" }} />
                   )}
 
                   <span

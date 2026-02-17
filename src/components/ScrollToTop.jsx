@@ -1,8 +1,8 @@
+import { HugeiconsIcon } from "@hugeicons/react";
+import { ArrowUp01Icon } from "@hugeicons/core-free-icons";
 import { useState, useEffect } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "motion/react";
-import { ArrowUp } from "lucide-react";
-
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -44,7 +44,7 @@ const ScrollToTop = () => {
                      transition-colors duration-300 group"
           aria-label="Scroll to top"
         >
-          <ArrowUp className="w-6 h-6 group-hover:text-neutral-400 transition-colors" />
+          <HugeiconsIcon icon={ArrowUp01Icon} className="w-6 h-6 group-hover:text-neutral-400 transition-colors" />
         </motion.button>
       )}
     </AnimatePresence>
