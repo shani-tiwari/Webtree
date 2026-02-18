@@ -111,29 +111,9 @@ const Navbar = () => {
 
       {/* Desktop Menu */}
       <div className="hidden md:flex gap-6 space-x-1 items-center  ">
-        {/* <div className="bg-neutral-400/10 flex text-white/50 px-4 py-[6px] gap-6 mr-4 items-center rounded-lg border 
-        border-zinc-400 ">
-          {menuItems.map((item) => (
-            <a
-              key={item.id}
-              href={item.link}
-              target={item.link.startsWith("http") ? "_blank" : "_self"}
-              rel="noreferrer"
-              aria-label={`Visit ${item.id}`}
-              className="group relative active:scale-95 hover:text-white/80 hover:scale-105 transition-all duration-300"
-            >
-               {item.content}
-              <span className="absolute text-zinc-200 top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 bg-black/70 text-[14px] 
-              rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none border 
-              border-zinc-500 shadow-lg whitespace-nowrap z-50">
-                {item.title}
-              </span>
-            </a>
-          ))}
-        </div> */}
         <a
           href="#about"
-          className="text-neutral-400 text-lg cursor-pointer scroll-smooth hover:text-white/60 hover:scale-101 transition-all duration-300 selection:bg-amber-600/30 selection:text-white"
+          className="text-neutral-400 text-lg cursor-pointer scroll-smooth hover:text-neutral-300 hover:scale-101 transition-all duration-300 selection:bg-amber-600/30 selection:text-white"
         >
           About
         </a>
@@ -143,7 +123,7 @@ const Navbar = () => {
           rel="noreferrer"
           aria-label={`Visit`}
         >
-          <p className="text-neutral-400 text-lg hidden md:block selection:bg-amber-600/30 selection:text-white ">
+          <p className="text-neutral-400 hover:text-neutral-300 text-lg hidden md:block selection:bg-amber-600/30 selection:text-white ">
             Collection
           </p>
           {location.pathname === "/collection" ? (
@@ -153,11 +133,11 @@ const Navbar = () => {
               style={{ color: "oklch(0.871 0.006 286.286)" }}
             />
           ) : (
-            <HugeiconsIcon
-              icon={FolderFavouriteIcon}
-              size={20}
-              style={{ color: "oklch(0.871 0.006 286.286)" }}
-            />
+              <HugeiconsIcon
+                icon={FolderFavouriteIcon}
+                size={20}
+                style={{ color: "oklch(0.871 0.006 286.286)" }}
+              />
           )}
           <sup className="absolute -right-2 top-1 text-zinc-300 selection:bg-zinc-600/30 selection:text-white">
             {collection.length}
@@ -170,6 +150,9 @@ const Navbar = () => {
               ? "Home🏡"
               : "Your Collection 🎁"}
           </span>
+        </Link>
+        <Link to={'https://github.com/shani-tiwari/webtree'} target="_blank" className="text-neutral-400 hover:text-neutral-300">
+          <HugeiconsIcon icon={GithubIcon} size={22} />
         </Link>
       </div>
 
@@ -214,7 +197,7 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
             className="z-150 absolute top-[110%] right-0 w-64 bg-black/95 border border-zinc-500/30 md:hidden 
               flex flex-col p-4 shadow-2xl backdrop-blur-xl rounded-3xl gap-2"
           >
@@ -229,7 +212,7 @@ const Navbar = () => {
               </a>
             </div>
 
-            <span className="h-[0.3px] w-full bg-white/20 rounded-full "></span>
+            <span className="h-[0.3px] w-full bg-white/20 rounded-full my-3"></span>
 
             {/* Socials Section */}
             <div className="flex flex-col gap-2">
@@ -253,6 +236,23 @@ const Navbar = () => {
                   </motion.a>
                 ))}
               </div>
+            </div>
+
+            <span className="h-[0.3px] w-full bg-white/20 rounded-full my-3"></span>
+
+            {/* Other Products */}
+            <div>
+              <p className="text-zinc-400 text-xs tracking-widest uppercase mb-1">
+                Other Products
+              </p>
+              <a
+                href="https://bebd.vercel.app"
+                target="_blank"
+                className="text-zinc-300 text-xl "
+                onClick={() => setIsOpen(false)}
+              >
+                ↁ BeBD 
+              </a>
             </div>
           </motion.div>
         )}
