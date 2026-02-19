@@ -33,12 +33,12 @@ export default function About() {
       url: "https://www.linkedin.com/in/shani-tiwari-aspirational/",
       label: "Connect on LinkedIn ⛓️‍💥",
     },
-    {
-      name: "Gmail",
-      icon: Mail01Icon,
-      url: "mailto:shanitiwarifl@gmail.com",
-      label: "Send me an email 💌",
-    },
+    // {
+    //   name: "Gmail",
+    //   icon: Mail01Icon,
+    //   url: "mailto:shanitiwarifl@gmail.com",
+    //   label: "Send me an email 💌",
+    // },
     // {
     //   name: "Dribbble",
     //   icon: Dribbble,
@@ -108,7 +108,7 @@ export default function About() {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative h-8 w-8 md:w-10 md:h-10 rounded-lg bg-gray-950 flex items-center justify-center text-gray-200 hover:-translate-y-1 border-2 border-white/20 transition-all duration-300"
+                className="group relative  px-2 py-2 md:w-10 md:h-10 rounded-lg bg-gray-950 flex items-center justify-center text-gray-200 hover:-translate-y-1 border-2 border-white/20 transition-all duration-300"
                 aria-label={social.label}
               >
                 <HugeiconsIcon icon={social.icon} size={22} />
@@ -141,7 +141,7 @@ export default function About() {
               Upcoming
             </span>
           </a>
-          <p className="text-gray-400 max-w-sm leading-relaxed">
+          <p className="text-gray-400 max-w-sm leading-relaxed ml-3">
             → Backend Section <br />
             → Video Recommandations <br />
             → New Categories for frontend <br />
@@ -175,10 +175,16 @@ export default function About() {
                 </span>
               </a>
             </div>
-            <a href="https://github.com/shani-tiwari/Bebd-be_better_developer" target="_blank"
-            className="h-8 w-8 md:w-10 md:h-10 rounded-lg text-gray-200 border-2 border-gray-600 bg-gray-950 flex items-center justify-center  hover:-translate-y-1 duration-300 transition-all">
-              <HugeiconsIcon icon={GithubIcon} size={22} />
-            </a>
+            <a
+                href="https://github.com/shani-tiwari/BeBD-be_better_developer"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/70 px-3 py-2 bg-gray-950/80 border-2 border-white/30 rounded-lg hover:-translate-y-1 transition-all duration-300"
+              >
+                <span className="text-gray-200">
+                  <HugeiconsIcon icon={GithubIcon} size={18} />
+                </span>
+              </a>
           </div>
           <p className="text-gray-400 max-w-sm leading-relaxed">
             <strong className="tracking-wide">Be Better Developer</strong> <br />
@@ -203,10 +209,6 @@ export default function About() {
           <span className="sr-only">love</span> for the community.
         </p>
       </div>
-
-      {/* Background Decor */}
-      {/* <div className="absolute top-0 right-0 -z-10 w-64 h-64 bg-primary-500/5 blur-[100px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 left-0 -z-10 w-96 h-96 bg-primary-700/5 blur-[120px] rounded-full pointer-events-none" /> */}
     </footer>
   );
 }

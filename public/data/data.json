@@ -409,6 +409,81 @@
       "logo": "https://img.logo.dev/rawpixel.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
+  "videos": [
+    {
+      "id": 1,
+      "name": "Mixkit",
+      "desc": "Curated HD/4K stock videos for commercial use. No attribution or watermark required.",
+      "link": "https://mixkit.co/free-stock-video/",
+      "category": "videos",
+      "logo": "https://img.logo.dev/mixkit.co?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 2,
+      "name": "Pexels Videos",
+      "desc": "Thousands of free HD/4K clips under CC0 license. Perfect for hero backgrounds and transitions.",
+      "link": "https://www.pexels.com/videos/",
+      "category": "videos",
+      "logo": "https://img.logo.dev/pexels.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 3,
+      "name": "Coverr",
+      "desc": "Beautiful cinematic footage for websites. No sign-up, no attribution, commercial-friendly.",
+      "link": "https://coverr.co",
+      "category": "videos",
+      "logo": "https://img.logo.dev/coverr.co?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 4,
+      "name": "Videvo",
+      "desc": "8K+ free clips with premium options. Great for tech demos, motion graphics, and loops.",
+      "link": "https://www.videvo.net",
+      "category": "videos",
+      "logo": "https://img.logo.dev/videvo.net?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 5,
+      "name": "Pixabay Videos",
+      "desc": "1M+ royalty-free videos. Aerial, nature, business clips optimized for web embedding.",
+      "link": "https://pixabay.com/videos/",
+      "category": "videos",
+      "logo": "https://img.logo.dev/pixabay.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 6,
+      "name": "Videezy",
+      "desc": "Pro quality 4K/HD footage. Free tier with attribution; ideal for parallax backgrounds.",
+      "link": "https://www.videezy.com",
+      "category": "videos",
+      "logo": "https://img.logo.dev/videezy.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 8,
+      "name": "Free Nature Stock",
+      "desc": "Stunning nature/landscape footage. CC0 licensed for unlimited commercial projects.",
+      "link": "https://freenaturestock.com",
+      "category": "videos",
+      "logo": "https://img.logo.dev/freenaturestock.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 9,
+      "name": "Motion Elements",
+      "desc": "5 free downloads/week. High-res motion graphics and backgrounds for web.",
+      "link": "https://www.motionelements.com/free/stock-footage",
+      "category": "videos",
+      "logo": "https://img.logo.dev/motionelements.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 10,
+      "name": "Dareful",
+      "desc": "Curated 4K clips for creative projects. Simple licensing, no attribution needed.",
+      "link": "https://dareful.com",
+      "category": "videos",
+      "logo": "https://img.logo.dev/dareful.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    }
+  ],
+
   "svg_icons": [
     {
       "id": 1,

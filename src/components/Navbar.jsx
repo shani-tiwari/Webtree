@@ -11,7 +11,8 @@ import {
   NewTwitterRectangleIcon,
   FolderCheckIcon,
   SquareArrowLeft02Icon,
-  FolderFavouriteIcon
+  FolderFavouriteIcon,
+  LogoutCircle01Icon,
 } from "@hugeicons/core-free-icons";
 import { useState } from "react";
 // eslint-disable-next-line no-unused-vars
@@ -44,7 +45,7 @@ const Navbar = () => {
     {
       name: "GitHub",
       icon: GithubIcon,
-      url: "https://github.com/shani-tiwari",
+      url: "https://github.com/shani-tiwari/webtree",
       label: "Visit my GitHub ⭐",
     },
     {
@@ -133,11 +134,11 @@ const Navbar = () => {
               style={{ color: "oklch(0.871 0.006 286.286)" }}
             />
           ) : (
-              <HugeiconsIcon
-                icon={FolderFavouriteIcon}
-                size={20}
-                style={{ color: "oklch(0.871 0.006 286.286)" }}
-              />
+            <HugeiconsIcon
+              icon={FolderFavouriteIcon}
+              size={20}
+              style={{ color: "oklch(0.871 0.006 286.286)" }}
+            />
           )}
           <sup className="absolute -right-2 top-1 text-zinc-300 selection:bg-zinc-600/30 selection:text-white">
             {collection.length}
@@ -151,7 +152,11 @@ const Navbar = () => {
               : "Your Collection 🎁"}
           </span>
         </Link>
-        <Link to={'https://github.com/shani-tiwari/webtree'} target="_blank" className="text-neutral-400 hover:text-neutral-300">
+        <Link
+          to={"https://github.com/shani-tiwari/webtree"}
+          target="_blank"
+          className="text-neutral-400 hover:text-neutral-300"
+        >
           <HugeiconsIcon icon={GithubIcon} size={22} />
         </Link>
       </div>
@@ -182,9 +187,9 @@ const Navbar = () => {
           className="md:hidden text-gray-400 dark:text-white focus:outline-none hover:scale-106 transition-all duration-400"
         >
           {isOpen ? (
-            <HugeiconsIcon icon={CancelCircleIcon} size={18} />
+            <HugeiconsIcon icon={CancelCircleIcon} size={19} />
           ) : (
-            <HugeiconsIcon icon={Menu01Icon} size={18} />
+            <HugeiconsIcon icon={Menu01Icon} size={19} />
           )}
         </button>
       </div>
@@ -198,11 +203,10 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="z-150 absolute top-[110%] right-0 w-64 bg-black/95 border border-zinc-500/30 md:hidden 
-              flex flex-col p-4 shadow-2xl backdrop-blur-xl rounded-3xl gap-2"
+            className="z-40 absolute top-10 right-0 w-fit bg-black/95 border border-zinc-100/40 flex flex-col p-4 rounded-3xl gap-2"
           >
             {/* About Link */}
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 ml-1">
               <a
                 href="#about"
                 className="text-zinc-300 text-xl "
@@ -215,11 +219,11 @@ const Navbar = () => {
             <span className="h-[0.3px] w-full bg-white/20 rounded-full my-3"></span>
 
             {/* Socials Section */}
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 ml-1">
               <p className="text-zinc-400 text-xs tracking-widest uppercase">
                 Socials
               </p>
-              <div className="grid grid-cols-3 gap-4">
+              <div className="flex gap-4 mt-1 justify-between">
                 {socialLinks.map((item) => (
                   <motion.a
                     key={item.name}
@@ -227,12 +231,11 @@ const Navbar = () => {
                     target="_blank"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
-                    className="flex flex-col items-center justify-center p-2 rounded-xl bg-zinc-800/50 text-white/80 border 
-                    border-zinc-700/50 hover:bg-zinc-700/50 transition-all"
+                    className="flex items-center justify-center active:scale-95 text-white/80 transition-all duration-200"
                     onClick={() => setIsOpen(false)}
                     aria-label={`Visit ${item.label} mobile`}
                   >
-                    <HugeiconsIcon icon={item.icon} size={24} />
+                    <HugeiconsIcon icon={item.icon} size={22} />
                   </motion.a>
                 ))}
               </div>
@@ -241,18 +244,46 @@ const Navbar = () => {
             <span className="h-[0.3px] w-full bg-white/20 rounded-full my-3"></span>
 
             {/* Other Products */}
-            <div>
-              <p className="text-zinc-400 text-xs tracking-widest uppercase mb-1">
+            <div className=" ml-1">
+              <p className="text-zinc-400 text-xs tracking-widest uppercase mb-2">
                 Other Products
               </p>
-              <a
-                href="https://bebd.vercel.app"
-                target="_blank"
-                className="text-zinc-300 text-xl "
-                onClick={() => setIsOpen(false)}
-              >
-                ↁ BeBD 
-              </a>
+              <div className="flex justify-between">
+                <div className="flex items-center gap-3">
+                  <a
+                    href="https://bebd.vercel.app"
+                    target="_blank"
+                    className="text-zinc-300 text-xl "
+                    onClick={() => setIsOpen(false)}
+                  >
+                    ↁ BeBD
+                  </a>
+                  <a
+                    href="https://bebd.vercel.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1"
+                  >
+                    <span className="text-gray-200">
+                      <HugeiconsIcon
+                        icon={LogoutCircle01Icon}
+                        size={14}
+                        className="-rotate-30"
+                      />
+                    </span>
+                  </a>
+                </div>
+                <a
+                  href="https://github.com/shani-tiwari/BeBD-be_better_developer"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-1  "
+                >
+                  <span className="active:scale-95 text-white/80 transition-all duration-200">
+                    <HugeiconsIcon icon={GithubIcon} size={20} />
+                  </span>
+                </a>
+              </div>
             </div>
           </motion.div>
         )}
