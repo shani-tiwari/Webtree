@@ -143,8 +143,7 @@ export default function About() {
           </a>
           <p className="text-gray-400 max-w-sm leading-relaxed ml-3">
             → Backend Section <br />
-            → Video Recommandations <br />
-            → New Categories for frontend <br />
+            → Tutorials, AI/perfromance/testing tools <br />
             → Repository's - open source & projects <br />
             {/* - Personal Collection <br /> */}
           </p>

@@ -152,13 +152,13 @@ const Navbar = () => {
               : "Your Collection 🎁"}
           </span>
         </Link>
-        <Link
+        {/* <Link
           to={"https://github.com/shani-tiwari/webtree"}
           target="_blank"
           className="text-neutral-400 hover:text-neutral-300"
         >
           <HugeiconsIcon icon={GithubIcon} size={22} />
-        </Link>
+        </Link> */}
       </div>
 
       {/* Mobile Menu Button */}

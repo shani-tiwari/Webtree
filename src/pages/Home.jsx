@@ -11,7 +11,7 @@ export default function Home() {
 
   useEffect(() => {
     async function getData() {
-      await fetch("./data/data.json")
+      await fetch(import.meta.env.VITE_DATA_URL)
         .then((res) => res.json())
         .then((data) => {
           setData(data);
