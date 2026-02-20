@@ -60,7 +60,7 @@ const Card = React.memo(
         >
           <div className="flex items-center justify-between gap-3 mb-1 pb-2">
             <div className="flex items-center justify-center gap-3 ">
-              <div className="w-8 h-8 rounded-full bg-neutral-800 flex items-center justify-center border border-amber-600/20 overflow-hidden shrink-0">
+              <div className="w-8 h-8 rounded-full bg-neutral-800 flex items-center justify-center border border-zinc-500 overflow-hidden shrink-0">
                 {logo ? (
                   <img
                     src={logo}

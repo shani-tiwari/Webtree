@@ -233,6 +233,14 @@
       "link": "https://tailwindui.com",
       "category": "ui_components",
       "logo": "https://img.logo.dev/tailwindui.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 11,
+      "name": "REUI",
+      "desc": "Supercharge your shadcn projects with a free collection of premium-quality components.",
+      "link": "https://reui.io",
+      "category": "ui_components",
+      "logo": "https://img.logo.dev/reui.io?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
   "design_ideas": [
