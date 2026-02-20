@@ -96,7 +96,7 @@ const Navbar = () => {
       aria-label="Main Navigation"
       className="fixed top-1 left-1/2 -translate-x-1/2 w-[90%] md:max-w-[1000px] z-50 px-4 md:px-6 py-1 md:py-3 
         flex justify-between items-center rounded-2xl font-beba
-        border border-zinc-100/60 shadow-xs shadow-amber-700/40 backdrop-blur-sm "
+        border border-zinc-100/60 shadow-xs shadow-amber-700/40 backdrop-blur-xs "
     >
       {/* Logo */}
       <motion.div
@@ -105,8 +105,8 @@ const Navbar = () => {
         className="flex items-center"
         aria-label="Logo"
       >
-        <p className="text-white text-lg md:text-2xl selection:bg-amber-600/30 selection:text-white">
-          ४ Webtree
+        <p className="text-white flex text-lg md:text-2xl selection:bg-amber-600/30 selection:text-white">
+          ४ <p className="w-2 h-1"></p> Webtree
         </p>
       </motion.div>
 

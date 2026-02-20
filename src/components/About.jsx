@@ -3,7 +3,6 @@ import {
   ChartLineData02Icon,
   Coffee01Icon,
   DribbbleIcon,
-  FavouriteIcon,
   GithubIcon,
   InstagramIcon,
   Linkedin01Icon,
@@ -70,13 +69,12 @@ export default function About() {
 
       {/* Upper Section */}
       <div
-        className="max-w-7xl w-full mx-auto px-6 pt-8 pb-12 flex flex-col flex-wrap md:flex-row gap-10 
-      lg:gap-0 lg:justify-between selection:bg-amber-600/30 selection:text-white"
+        className="max-w-7xl mx-auto px-6 pt-8 pb-12 flex flex-wrap gap-10 selection:bg-amber-600/30 selection:text-white"
       >
         {/* Brand Section */}
 
         {/* webtree */}
-        <div className="lg:col-span-2 space-y-6">
+        <div className=" space-y-6">
           <a
             href="https://webtree-iota.vercel.app"
             target="_blank"
@@ -123,7 +121,7 @@ export default function About() {
 
         
         {/* upcoming */}
-        <div className="lg:col-span-2 space-y-6">
+        <div className=" space-y-6">
           <a
             href="https://webtree-iota.vercel.app"
             target="_blank"
@@ -143,16 +141,17 @@ export default function About() {
           </a>
           <p className="text-gray-400 max-w-sm leading-relaxed ml-3">
             → Backend Section <br />
+            → Practice Websites <br />
             → Tutorials, AI/perfromance/testing tools <br />
             → Repository's - open source & projects <br />
             {/* - Personal Collection <br /> */}
           </p>
         </div>
 
-        <span className="md:w-px md:h-[250px] h-px w-full bg-neutral-800 rounded-full "></span>
+        {/* <span className="hidden xl:block md:w-px md:h-[250px] h-px w-full bg-neutral-800 rounded-full "></span> */}
 
         {/* bebd */}
-        <div className="lg:col-span-2 space-y-6">
+        {/* <div className=" space-y-6">
           <div className="flex items-center gap-4  cursor-default justify-between">
             <div className="flex items-center gap-4">
               <div
@@ -191,21 +190,14 @@ export default function About() {
             modern web applications. Join our community and level up your
             development journey.
           </p>
-        </div>
+        </div> */}
 
       </div>
 
       {/* Bottom Bar - Footer  */}
-      <div className="max-w-7xl mx-auto px-6 py-6 border-t border-white/5 flex flex-row justify-between items-center gap-6 select-none">
-        <p className="text-sm text-gray-500 flex items-center gap-1">
-          © {currentYear} BeBD. Built with{" "}
-          <HugeiconsIcon
-            icon={FavouriteIcon}
-            size={18}
-            className="text-red-500 animate-pulse"
-            aria-hidden="true"
-          />
-          <span className="sr-only">love</span> for the community.
+      <div className="max-w-7xl mx-auto px-6 py-6 border-t border-white/5 flex items-center gap-2 select-none">
+        <p className="text-sm text-gray-500 flex  items-center gap-2">
+          © {currentYear} - Made with ❤️ by Shani Tiwari
         </p>
       </div>
     </footer>

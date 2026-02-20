@@ -11,7 +11,7 @@ export default function Home() {
 
   useEffect(() => {
     async function getData() {
-      await fetch(import.meta.env.VITE_DATA_URL)
+      await fetch(import.meta.env.VITE_PRIVATE_WEBSITE_COLLECTION_URL)
         .then((res) => res.json())
         .then((data) => {
           setData(data);
@@ -41,21 +41,23 @@ export default function Home() {
             : ""}
         </div>
 
-        <header className="text-white/80 text-center px-4 md:px-6 font-beba w-full backdrop-blur-xl md:backdrop-blur-none pt-20 md:pt-30">
-          <h1 className="md:text-[26px] text-2xl tracking-wider selection:bg-amber-600/30 selection:text-white">
-            Discover the best Frontend tools
-          </h1>
-          <p className="text-sm md:text-[17px] text-gray-400 max-w-md leading-relaxed mx-auto selection:bg-amber-600/30 selection:text-white">
-            Collection of 100+ high-quality Resources
-          </p>
+        <header className="w-full  text-white/80 text-center px-4 md:px-6 font-semibold font-beba pt-20 md:pt-30">
+          <div className="flex flex-col md:flex-row items-center gap-2 bg-clip-text text-transparent bg-linear-to-b from-amber-500 to-amber-800 mx-auto w-fit md:text-[26px] text-2xl tracking-wider selection:bg-amber-600/30 selection:text-white">
+            <div>
+              <span className="wavy-underline-pulse w-fit mr-1 bg-clip-text text-transparent bg-linear-to-b from-amber-400 to-amber-800">
+                100+
+              </span>
+            </div>
+            <span className="">
+              Frontend Resources, One Click Away
+            </span>
+          </div>
         </header>
 
         <section className="grow  w-full flex flex-col gap-4 md:gap-8 px-1  md:px-14">
           <aside
             aria-label="Category selection"
-            className="z-40 shrink-0 flex flex-wrap justify-center rounded-xl
-            gap-1 md:gap-2 w-full h-fit px-2 md:py-3 md:pt-4 text-white 
-             backdrop-blur-sm  transition-all duration-300"
+            className="z-40 shrink-0 flex flex-wrap justify-center rounded-xl gap-1 md:gap-2 w-full h-fit px-2 md:py-3 md:pt-4 text-white backdrop-blur-sm"
           >
             {Object.keys(data).map((name, index) => (
               <SideBtn
