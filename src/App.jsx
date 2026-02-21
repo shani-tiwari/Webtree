@@ -28,7 +28,9 @@ function App() {
         {/* <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/50 mask-[radial-gradient(ellipse_at_center,transparent_10%,black)] "></div> */}
 
         {/* website */}
+
         <Navbar />
+
 
         <main
           id="main-content"

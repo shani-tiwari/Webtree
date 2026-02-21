@@ -106,8 +106,8 @@ const Card = memo(
                   "group/icon relative flex items-center justify-center transition-all duration-200 z-30",
                   "hover:-translate-y-0.5 active:scale-97",
                   isCollected
-                    ? "text-emerald-400"
-                    : "text-amber-500/80 hover:text-amber-400",
+                    ? "text-emerald-300/70 hover:text-emerald-300"
+                    : "text-amber-300/55 hover:text-amber-300",
                 )}
               >
                 {isCollected ? (
@@ -130,7 +130,7 @@ const Card = memo(
               <motion.span
                 onClick={handleRemoveKey}
                 className={cn(
-                  "group/delete relative flex items-center justify-center text-red-500/70 hover:text-red-500 transition-colors duration-300 z-30",
+                  "group/delete relative flex items-center justify-center text-red-400/70 hover:text-red-500/70 transition-colors duration-300 z-30",
                   "hover:-translate-y-0.5 active:scale-97 transition-all duration-200",
                 )}
               >
@@ -150,7 +150,7 @@ const Card = memo(
               onClick={handleCopy}
               className={cn(
                 "group/copy relative flex items-center justify-center transition-all duration-200 z-30",
-                "text-sky-400 hover:text-sky-300 active:scale-97 hover:-translate-y-0.5",
+                "text-sky-400/60 hover:text-sky-300 active:scale-97 hover:-translate-y-0.5",
               )}
             >
               <HugeiconsIcon icon={Copy02Icon} size={22} />
@@ -169,7 +169,7 @@ const Card = memo(
               onClick={handleShare}
               className={cn(
                 "group/share relative flex items-center justify-center transition-all duration-200 z-30",
-                "text-indigo-400 hover:text-indigo-300 hover:-translate-y-0.5 active:scale-97",
+                "text-indigo-400/60 hover:text-indigo-300 hover:-translate-y-0.5 active:scale-97",
               )}
             >
               <HugeiconsIcon icon={SentIcon} size={22} />
@@ -185,7 +185,7 @@ const Card = memo(
 
           <div
             className={cn(
-              "flex items-start justify-between gap-3 mb-2 pb-2 pr-9",
+              "flex items-start justify-between gap-3 mb-1 pb-2 pr-9",
             )}
           >
             <div className={cn("flex items-center justify-center gap-3")}>
@@ -229,23 +229,25 @@ const Card = memo(
           </div>
 
           {/* divider */}
-          <span className="w-[88%] h-[0.3px] bg-white/20 mb-2"></span>
+          <span className="w-[88%] h-[0.3px] bg-white/20 mb-[10px]"></span>
+
 
           {/*  Description */}
           <Link to={link} target="_blank" rel="noopener noreferrer">
             <p
               className={cn(
-                "text-[14px] max-w-[90%] text-neutral-400 leading-5 font-mono grow group-hover:text-neutral-200 transition-colors duration-300",
+                "text-[14px] max-w-[90%] text-neutral-400 leading-[18px] font-mono grow group-hover:text-neutral-200 transition-colors duration-300",
               )}
             >
               {desc}
             </p>
           </Link>
 
+          {/* category add on */}
           {allowRemove && (
             <span
               className={cn(
-                "mt-4 w-fit text-[10px] px-3 py-1 bg-white/5 border border-white/10 rounded-full text-amber-500/80 uppercase font-black tracking-widest leading-none",
+                "absolute right-2 -bottom-2 mt-4 w-fit text-[10px] px-3 py-1 bg-black  border border-white/10 rounded-full text-amber-700/80 uppercase font-black tracking-widest leading-none",
               )}
             >
               {category

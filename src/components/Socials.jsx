@@ -55,33 +55,16 @@ const SocialCard = ({
 
         {status && (
           <div
-            className={cn(
-              "absolute right-1 flex items-center gap-2 px-1.5 md:px-3 py-1.5 rounded-full bg-black/40 border border-white/5 backdrop-blur-md",
-            )}
-          >
-            <span
-              className={cn(
-                "relative flex items-center justify-center h-2 w-2",
-              )}
-            >
-              <span
-                className={cn(
-                  "animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75",
-                )}
-              ></span>
-              <span
-                className={cn(
-                  "relative inline-flex rounded-full h-2 w-2 bg-green-500",
-                )}
-              ></span>
+            className={cn("absolute right-1 flex items-center justify-center gap-2 px-1.5 md:px-3 py-1.5 rounded-full bg-black/40 border border-white/5 backdrop-blur-md",)}>
+
+            <span className={cn("relative flex items-center justify-center h-2 w-2" )}>
+              <span className={cn("animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75")}></span>
+              <span className={cn("relative inline-flex rounded-full h-2 w-2 bg-green-500")}></span>
             </span>
-            <span
-              className={cn(
-                "hidden md:block text-[10px] uppercase tracking-widest text-neutral-300 font-bold",
-              )}
-            >
+            <span className={cn("hidden md:block text-[10px] uppercase tracking-widest text-neutral-300 font-bold")}>
               {status}
             </span>
+
           </div>
         )}
       </div>
@@ -167,7 +150,7 @@ export default function Socials() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-6xl md:text-7xl mx-auto font-black text-white/90 tracking-tighter"
+            className="text-5xl md:text-7xl mx-auto font-black text-white/90 tracking-tighter"
           >
             Stay <span className="text-neutral-500 italic">Connected</span>
           </motion.h2>

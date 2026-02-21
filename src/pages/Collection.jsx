@@ -21,7 +21,7 @@ export default function Collection() {
           to="/"
           className="group flex items-center  gap-2 text-white/70 py-1 px-2 md:px-5 rounded-full 
               bg-black/40 backdrop-blur-md border border-white/5 
-             hover:text-amber-50 hover:bg-black/50
+             hover:text-amber-50 hover:bg-black/50 active:scale-97
               transition-all duration-300 shadow-lg ring-2 ring-zinc-400/50"
         >
           <HugeiconsIcon icon={MoveLeftIcon} className="group-hover:-translate-x-1 group-hover:text-lg transition-transform duration-300" size={20} />

@@ -13,8 +13,9 @@ import {
   SquareArrowLeft02Icon,
   FolderFavouriteIcon,
   LogoutCircle01Icon,
+  Agreement03Icon,
 } from "@hugeicons/core-free-icons";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "motion/react";
 import { useCollection } from "../context/CollectionContext";
@@ -24,6 +25,18 @@ import { cn } from "../lib/utils";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
 
   const navVariants = {
     hidden: { y: -100, opacity: 0 },
@@ -90,241 +103,252 @@ const Navbar = () => {
   const { collection } = useCollection();
 
   return (
-    <motion.nav
-      initial="hidden"
-      animate="visible"
-      variants={navVariants}
-      aria-label="Main Navigation"
-      className={cn(
-        "fixed top-1 left-1/2 -translate-x-1/2 w-[90%] md:max-w-[1000px] z-50 px-4 md:px-6 py-1 md:py-3",
-        "flex justify-between items-center rounded-2xl font-beba",
-        "border border-zinc-100/60 shadow-xs shadow-amber-700/40 backdrop-blur-xs",
+    <>
+      {/* Full-screen overlay — rendered outside nav to escape backdrop-blur containing block */}
+      {isOpen && (
+        <div
+          onClick={() => setIsOpen(false)}
+          className="fixed inset-0 z-40 bg-black backdrop-blur-sm md:hidden "
+        />
       )}
-    >
-      {/* Logo */}
-      <motion.div
-        variants={itemVariants}
-        whileHover={{ scale: 1.05 }}
-        className={cn("flex items-center")}
-        aria-label="Logo"
-      >
-        <p
-          className={cn(
-            "text-white flex text-lg md:text-2xl selection:bg-amber-600/30 selection:text-white",
-          )}
-        >
-          ४ <p className={cn("w-2 h-1")}></p> Webtree
-        </p>
-      </motion.div>
 
-      {/* Desktop Menu */}
-      <div className={cn("hidden md:flex gap-6 space-x-1 items-center")}>
-        <a
-          href="#about"
-          className={cn(
-            "text-neutral-400 text-lg cursor-pointer scroll-smooth hover:text-neutral-300 hover:scale-101 transition-all duration-300 selection:bg-amber-600/30 selection:text-white",
-          )}
-        >
-          About
-        </a>
-        <Link
-          className={cn(
-            "group flex gap-2 items-center justify-center relative mr-2 ml-2 active:scale-97 transition-all duration-200",
-          )}
-          to={location.pathname === "/collection" ? "/" : "/collection"}
-          rel="noreferrer"
-          aria-label={`Visit`}
+      <motion.nav
+        initial="hidden"
+        animate="visible"
+        variants={navVariants}
+        aria-label="Main Navigation"
+        className={cn(
+          "fixed top-1 left-1/2 -translate-x-1/2 w-[90%] md:max-w-[1000px] z-50 px-4 md:px-6 py-1 md:py-3",
+          "flex justify-between items-center rounded-full border-2 border-neutral-400/50 shadow-xs shadow-amber-700/40 backdrop-blur-xs",
+        )}
+      >
+        {/* Logo */}
+        <motion.div
+          variants={itemVariants}
+          className={cn("flex items-center")}
+          aria-label="Logo"
         >
           <p
             className={cn(
-              "text-neutral-400 hover:text-neutral-300 text-lg hidden md:block selection:bg-amber-600/30 selection:text-white",
+              "text-white flex text-lg md:text-2xl selection:bg-amber-600/30 selection:text-white",
             )}
           >
-            Collection
+            ४ <p className={cn("w-2 h-1")}></p> Webtree
           </p>
-          {location.pathname === "/collection" ? (
-            <HugeiconsIcon
-              icon={SquareArrowLeft02Icon}
-              size={20}
-              style={{ color: "oklch(0.871 0.006 286.286)" }}
-            />
-          ) : (
-            <HugeiconsIcon
-              icon={FolderFavouriteIcon}
-              size={20}
-              style={{ color: "oklch(0.871 0.006 286.286)" }}
-            />
-          )}
-          <sup
+        </motion.div>
+
+        {/* Desktop Menu */}
+        <div className={cn("hidden md:flex gap-6 space-x-1 items-center")}>
+          <a
+            href="#about"
             className={cn(
-              "absolute -right-2 top-1 text-zinc-300 selection:bg-zinc-600/30 selection:text-white",
+              "text-neutral-300 text-lg cursor-pointer scroll-smooth hover:text-neutral-200 hover:-translate-y-0.5 transition-all duration-300 selection:bg-amber-600/30 selection:text-white",
             )}
           >
-            {collection.length}
-          </sup>
-          <span
+            About
+          </a>
+          <Link
             className={cn(
-              "absolute top-full right-0 mt-2 px-2.5 py-1 bg-zinc-900 text-zinc-100/90 text-[10px] uppercase font-semibold rounded-md invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none border border-white/10 shadow-xs whitespace-nowrap z-50",
+              "group flex gap-2 items-center justify-center relative mr-2 ml-2 hover:-translate-y-0.5 active:scale-97 transition-all duration-300",
             )}
+            to={location.pathname === "/collection" ? "/" : "/collection"}
+            rel="noreferrer"
+            aria-label={`Visit`}
           >
-            {location.pathname === "/collection"
-              ? "Home🏡"
-              : "Your Collection 🎁"}
-          </span>
-        </Link>
-        {/* <Link
-          to={"https://github.com/shani-tiwari/webtree"}
-          target="_blank"
-          className="text-neutral-400 hover:text-neutral-300"
-        >
-          <HugeiconsIcon icon={GithubIcon} size={22} />
-        </Link> */}
-      </div>
-
-      {/* Mobile Menu Button */}
-      <div className={cn("md:hidden flex items-center justify-center gap-4")}>
-        <Link
-          className={cn("relative mr-2 ml-2 active:scale-95")}
-          to={location.pathname === "/collection" ? "/" : "/collection"}
-          rel="noreferrer"
-          aria-label={`Visit`}
-        >
-          <HugeiconsIcon
-            icon={FolderCheckIcon}
-            size={20}
-            style={{ color: "oklch(0.871 0.006 286.286)" }}
-          />
-
-          <sup
-            className={cn(
-              "absolute -right-2 top-1 text-zinc-300 selection:bg-amber-600/30 selection:text-white",
-            )}
-          >
-            {collection.length}
-          </sup>
-        </Link>
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          aria-expanded={isOpen}
-          aria-controls="mobile-menu"
-          aria-label="Toggle menu"
-          className="md:hidden text-gray-400 dark:text-white focus:outline-none hover:scale-106 transition-all duration-400"
-        >
-          {isOpen ? (
-            <HugeiconsIcon icon={CancelCircleIcon} size={19} />
-          ) : (
-            <HugeiconsIcon icon={Menu01Icon} size={19} />
-          )}
-        </button>
-      </div>
-
-      {/* Mobile Menu Dropdown */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            id="mobile-menu"
-            initial={{ opacity: 0, y: -20, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -20, scale: 0.95 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className={cn(
-              "z-40 absolute top-10 right-0 w-fit bg-black/95 border border-zinc-100/40 flex flex-col p-4 rounded-3xl gap-2 text-shadow-2xs shadow-xl",
-            )}
-          >
-            {/* About Link */}
-            <div className="flex flex-col gap-2 ml-1">
-              <a
-                href="#about"
-                className={cn("text-zinc-300 text-xl")}
-                onClick={() => setIsOpen(false)}
-              >
-                About
-              </a>
-            </div>
-
-            <span className="h-[0.3px] w-full bg-white/20 rounded-full my-3"></span>
-
-            {/* Socials Section */}
-            <div className="flex flex-col gap-2 ml-1">
-              <p
-                className={cn(
-                  "text-zinc-400 text-xs tracking-widest uppercase",
-                )}
-              >
-                Socials
-              </p>
-              <div className="flex gap-4 mt-1 justify-between">
-                {socialLinks.map((item) => (
-                  <motion.a
-                    key={item.name}
-                    href={item.url}
-                    target="_blank"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    className={cn(
-                      "flex items-center justify-center active:scale-95 text-white/80 transition-all duration-200",
-                    )}
-                    onClick={() => setIsOpen(false)}
-                    aria-label={`Visit ${item.label} mobile`}
-                  >
-                    <HugeiconsIcon icon={item.icon} size={22} />
-                  </motion.a>
-                ))}
+            <p
+              className={cn(
+                "text-neutral-300 hover:text-neutral-200  text-lg hidden md:block selection:bg-amber-600/30 selection:text-white",
+              )}
+            >
+              Collection
+            </p>
+            {location.pathname === "/collection" ? (
+              <HugeiconsIcon
+                icon={SquareArrowLeft02Icon}
+                size={20}
+                style={{ color: "oklch(0.871 0.006 286.286)" }}
+              />
+            ) : (
+              <div>
+                <HugeiconsIcon
+                  icon={FolderFavouriteIcon}
+                  size={20}
+                  style={{ color: "oklch(0.871 0.006 286.286)" }}
+                />
+                <sup
+                  className={cn(
+                    "absolute -right-2 top-1 text-zinc-300 selection:bg-zinc-600/30 selection:text-white ",
+                  )}
+                >
+                  {collection.length}
+                </sup>
               </div>
-            </div>
+            )}
+            <span
+              className={cn(
+                "absolute top-full right-0 mt-3 px-3 py-1.5 tracking-widest bg-zinc-900/90 text-zinc-100/90 text-[10px] uppercase rounded-lg backdrop-blur-md",
+                "opacity-0 scale-95 translate-y-2 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 invisible group-hover:visible transition-all duration-300 ease-out pointer-events-none border border-white/20 shadow-xl whitespace-nowrap z-50",
+              )}
+            >
+              {location.pathname === "/collection"
+                ? "Back to Home 🏡"
+                : "Personal Collection 🎁"}
+            </span>
+          </Link>
+        </div>
 
-            <span className="h-[0.3px] w-full bg-white/20 rounded-full my-3"></span>
+        {/* Mobile Menu Button */}
+        <div className={cn("md:hidden flex items-center justify-center gap-4")}>
+          <Link
+            className={cn("relative mr-2 ml-2 active:scale-95")}
+            to={location.pathname === "/collection" ? "/" : "/collection"}
+            rel="noreferrer"
+            aria-label={`Visit`}
+          >
+            <HugeiconsIcon
+              icon={FolderCheckIcon}
+              size={20}
+              style={{ color: "oklch(0.871 0.006 286.286)" }}
+            />
 
-            {/* Other Products */}
-            <div className=" ml-1">
-              <p
-                className={cn(
-                  "text-zinc-400 text-xs tracking-widest uppercase mb-2",
-                )}
-              >
-                Other Products
-              </p>
-              <div className="flex justify-between">
-                <div className="flex items-center gap-3">
+            <sup
+              className={cn(
+                "absolute -right-2 top-1 text-zinc-300 selection:bg-amber-600/30 selection:text-white",
+              )}
+            >
+              {collection.length}
+            </sup>
+          </Link>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
+            aria-label="Toggle menu"
+            className="md:hidden text-gray-400 dark:text-white focus:outline-none hover:scale-106 transition-all duration-400"
+          >
+            {isOpen ? (
+              <HugeiconsIcon icon={CancelCircleIcon} size={19} />
+            ) : (
+              <HugeiconsIcon icon={Menu01Icon} size={19} />
+            )}
+          </button>
+        </div>
+
+        {/* Mobile Menu Dropdown */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              id="mobile-menu"
+              initial={{ opacity: 0, y: -20, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -20, scale: 0.95 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className={cn(
+                "z-40 absolute top-10 right-0 w-fit bg-black/95 border border-zinc-100/40 flex flex-col p-4 rounded-3xl gap-2 text-shadow-2xs shadow-xl",
+              )}
+            >
+              {/* About Link */}
+              <div className="flex gap-3 ml-1 items-center ">
+                <a
+                  href="#about"
+                  className={cn(
+                    "text-zinc-300 text-xl transition-all duration-300 active:scale-95",
+                  )}
+                  onClick={() => setIsOpen(false)}
+                >
+                  About
+                </a>
+                <HugeiconsIcon
+                  className="text-white/80 mt-1 animate-pulse"
+                  icon={Agreement03Icon}
+                  size={18}
+                />
+              </div>
+
+              <span className="h-[0.3px] w-full bg-white/20 rounded-full my-3 transition-all duration-500"></span>
+
+              {/* Socials Section */}
+              <div className="flex flex-col gap-2 ml-1">
+                <p
+                  className={cn(
+                    "text-zinc-400 text-xs tracking-widest uppercase",
+                  )}
+                >
+                  Socials
+                </p>
+                <div className="flex gap-4 mt-1 justify-between">
+                  {socialLinks.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.url}
+                      target="_blank"
+                      className={cn(
+                        "flex items-center justify-center text-white/80 transition-all duration-300 active:scale-90",
+                      )}
+                      onClick={() => setIsOpen(false)}
+                      aria-label={`Visit ${item.label} mobile`}
+                    >
+                      <HugeiconsIcon icon={item.icon} size={22} />
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              <span className="h-[0.3px] w-full bg-white/20 rounded-full my-3 transition-all duration-500"></span>
+
+              {/* Other Products */}
+              <div className=" ml-1">
+                <p
+                  className={cn(
+                    "text-zinc-400 text-xs tracking-widest uppercase mb-2",
+                  )}
+                >
+                  Other Products
+                </p>
+                <div className="flex justify-between">
+                  <div className="flex items-center gap-3">
+                    <a
+                      href="https://bebd.vercel.app"
+                      target="_blank"
+                      className={cn(
+                        "text-zinc-300 text-xl transition-all duration-300 active:scale-95",
+                      )}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      ↁ BeBD
+                    </a>
+                    <a
+                      href="https://bebd.vercel.app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-1 transition-all duration-300 hover:-translate-y-0.5"
+                    >
+                      <span className="text-gray-200">
+                        <HugeiconsIcon
+                          icon={LogoutCircle01Icon}
+                          size={14}
+                          className="-rotate-30"
+                        />
+                      </span>
+                    </a>
+                  </div>
                   <a
-                    href="https://bebd.vercel.app"
-                    target="_blank"
-                    className={cn("text-zinc-300 text-xl")}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    ↁ BeBD
-                  </a>
-                  <a
-                    href="https://bebd.vercel.app"
+                    href="https://github.com/shani-tiwari/BeBD-be_better_developer"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-1"
+                    className="mt-1 transition-all duration-300 hover:-translate-y-0.5 hover:scale-110 active:scale-90"
                   >
-                    <span className="text-gray-200">
-                      <HugeiconsIcon
-                        icon={LogoutCircle01Icon}
-                        size={14}
-                        className="-rotate-30"
-                      />
+                    <span className="text-white/80 transition-colors duration-300 hover:text-white">
+                      <HugeiconsIcon icon={GithubIcon} size={20} />
                     </span>
                   </a>
                 </div>
-                <a
-                  href="https://github.com/shani-tiwari/BeBD-be_better_developer"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-1  "
-                >
-                  <span className="active:scale-95 text-white/80 transition-all duration-200">
-                    <HugeiconsIcon icon={GithubIcon} size={20} />
-                  </span>
-                </a>
               </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.nav>
+    </>
   );
 };
 

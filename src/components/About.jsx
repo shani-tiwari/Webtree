@@ -24,7 +24,7 @@ export default function About() {
     <section
       id="about"
       className={cn(
-        "w-full bg-[#030303]/80 mt-10 px-4 relative selection:bg-amber-600/30 selection:text-white overflow-hidden",
+        "w-full min-h-screen flex items-center justify-center flex-col bg-[#030303]/80 mt-10 px-4 relative selection:bg-amber-600/30 selection:text-white overflow-hidden",
       )}
     >
       {/* Background Micro-Accents */}
@@ -46,13 +46,13 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className={cn(
-              "text-2xl md:text-5xl mx-auto text-center font-black text-white/90 tracking-tighter",
+              "text-4xl italic md:text-5xl mx-auto text-center font-black text-white/90 tracking-tighter",
             )}
           >
             About <span className={cn("text-neutral-500 italic")}>Webtree</span>
           </motion.h2>
           <p
-            className={cn("h-[0.2px] w-full bg-white/30 rounded-full mt-4")}
+            className={cn("h-[0.2px] w-[75vw] bg-white/30 mt-6")}
           ></p>
         </motion.div>
       </div>
@@ -171,13 +171,14 @@ export default function About() {
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
                     </span>
-                    <span className="text-[10px] uppercase tracking-tighter text-amber-500/80 font-bold">
+                    <span className="text-[10px] uppercase tracking-tighter text-amber-500/80 font-semibold">
                       Live Soon
                     </span>
                   </div>
                 )}
                 <p className="text-sm font-bold text-white group-hover:text-amber-500 transition-colors">
-                  • {item.title}
+                  <span className="text-amber-500">• </span>
+                  {item.title}
                 </p>
                 <p className="text-xs text-gray-500 mt-1 leading-relaxed">
                   {item.desc}
