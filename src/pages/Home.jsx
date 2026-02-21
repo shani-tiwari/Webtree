@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence, easeIn } from "motion/react";
 import Categories from "../components/Categories";
 import Card from "../components/Card";
 import SkeletonHome from "../components/SkeletonHome";
+import { cn } from "../lib/utils";
 
 export default function Home() {
   const [data, setData] = useState([]);
@@ -36,7 +37,7 @@ export default function Home() {
       <h1 className="sr-only">WebTree Resources Directory</h1>
 
       {/* Screen reader live region for announcing category changes */}
-      <div className="sr-only" aria-live="polite" role="status">
+      <div className={cn("sr-only")} aria-live="polite" role="status">
         {activeCategory
           ? `Showing ${activeCategory.split("_").join(" ")} resources`
           : ""}
@@ -47,36 +48,44 @@ export default function Home() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="w-full text-white/80 text-center px-4 md:px-6 font-semibold font-beba pt-20 md:pt-30"
+        className={cn(
+          "w-full text-white/80 text-center px-4 md:px-6 font-semibold font-beba pt-20 md:pt-30",
+        )}
       >
-        <div className="text-xl flex flex-col md:flex-row items-center gap-2 bg-clip-text text-transparent bg-linear-to-b from-amber-400 to-amber-700 mx-auto w-fit md:text-[26px] tracking-wider selection:bg-amber-600/30 selection:text-white">
+        <div
+          className={cn(
+            "text-xl flex flex-col md:flex-row items-center gap-2 bg-clip-text text-transparent bg-linear-to-b from-amber-400 to-amber-700 mx-auto w-fit md:text-[26px] tracking-wider selection:bg-amber-600/30 selection:text-white",
+          )}
+        >
           <motion.div
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <span className="wavy-underline-pulse w-fit bg-clip-text text-transparent bg-linear-to-b from-amber-400 to-amber-700">
+            <span
+              className={cn(
+                "wavy-underline-pulse w-fit bg-clip-text text-transparent bg-linear-to-b from-amber-400 to-amber-700",
+              )}
+            >
               100+
             </span>
           </motion.div>
-          <motion.span
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-          >
-            Frontend Resources, One Click away
-          </motion.span>
+          <span>Frontend Resources, One Click away</span>
         </div>
       </motion.header>
 
-      {/* Cards Section */}
-      <section className="grow w-full flex flex-col gap-4 md:gap-8 px-1 md:px-14">
+      {/* categories */}
+      <section
+        className={cn("grow w-full flex flex-col gap-4 md:gap-8 px-1 md:px-14")}
+      >
         <motion.aside
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           aria-label="Category selection"
-          className="z-40 shrink-0 flex flex-wrap justify-center rounded-xl gap-1 md:gap-2 w-full h-fit px-2 md:py-3 md:pt-4 text-white backdrop-blur-sm"
+          className={cn(
+            "z-40 shrink-0 flex flex-wrap justify-center rounded-xl gap-1 md:gap-2 w-full h-fit px-2 md:py-3 md:pt-4 text-white backdrop-blur-sm",
+          )}
         >
           {Object.keys(data).map((name, index) => (
             <Categories
@@ -91,10 +100,13 @@ export default function Home() {
           ))}
         </motion.aside>
 
+        {/* Cards Section */}
         <motion.section
           layout
           aria-label="Resources grid"
-          className="z-10 container bg-transparent grow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[14px] content-start md:-mt-3"
+          className={cn(
+            "z-10 container bg-transparent grow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[14px] content-start md:-mt-3",
+          )}
         >
           <AnimatePresence mode="popLayout">
             {Object.values(carddata).map((item) => (

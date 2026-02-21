@@ -2,6 +2,7 @@
 import { motion } from "motion/react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { ChartLineData02Icon } from "@hugeicons/core-free-icons";
+import { cn } from "../lib/utils";
 
 export default function About() {
   const containerVariants = {
@@ -22,12 +23,18 @@ export default function About() {
   return (
     <section
       id="about"
-      className="w-full bg-[#030303]/80 mt-10 px-4 relative selection:bg-amber-600/30 selection:text-white overflow-hidden"
+      className={cn(
+        "w-full bg-[#030303]/80 mt-10 px-4 relative selection:bg-amber-600/30 selection:text-white overflow-hidden",
+      )}
     >
       {/* Background Micro-Accents */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/5 blur-[100px] rounded-full pointer-events-none" />
+      <div
+        className={cn(
+          "absolute top-0 right-0 w-64 h-64 bg-amber-500/5 blur-[100px] rounded-full pointer-events-none",
+        )}
+      />
 
-      <div className="max-w-[1300px] mx-auto px-1 md:px-14 py-8">
+      <div className={cn("max-w-[1300px] mx-auto px-1 md:px-14 py-8")}>
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -38,11 +45,15 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-2xl md:text-5xl mx-auto text-center font-black text-white/90 tracking-tighter"
+            className={cn(
+              "text-2xl md:text-5xl mx-auto text-center font-black text-white/90 tracking-tighter",
+            )}
           >
-            About <span className="text-neutral-500 italic">Webtree</span>
+            About <span className={cn("text-neutral-500 italic")}>Webtree</span>
           </motion.h2>
-          <p className="h-[0.2px] w-full bg-white/30 rounded-full mt-4"></p>
+          <p
+            className={cn("h-[0.2px] w-full bg-white/30 rounded-full mt-4")}
+          ></p>
         </motion.div>
       </div>
 

@@ -3,6 +3,7 @@ import { ArrowUp01Icon } from "@hugeicons/core-free-icons";
 import { useState, useEffect } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "motion/react";
+import { cn } from "../lib/utils";
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -39,12 +40,19 @@ const ScrollToTop = () => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={scrollToTop}
-          className="fixed bottom-20 md:bottom-16 right-6 md:right-12 z-50 p-2 rounded-full bg-white/10 backdrop-blur-md 
-                     border border-white/20 text-white shadow-lg hover:bg-white/20 hover:border-white/40
-                     transition-colors duration-300 group"
+          className={cn(
+            "fixed bottom-20 md:bottom-16 right-6 md:right-12 z-50 p-2 rounded-full bg-white/10 backdrop-blur-md",
+            "border border-white/20 text-white shadow-lg hover:bg-white/20 hover:border-white/40",
+            "transition-colors duration-300 group",
+          )}
           aria-label="Scroll to top"
         >
-          <HugeiconsIcon icon={ArrowUp01Icon} className="w-6 h-6 group-hover:text-neutral-400 transition-colors" />
+          <HugeiconsIcon
+            icon={ArrowUp01Icon}
+            className={cn(
+              "w-6 h-6 group-hover:text-neutral-400 transition-colors",
+            )}
+          />
         </motion.button>
       )}
     </AnimatePresence>

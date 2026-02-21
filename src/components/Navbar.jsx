@@ -19,6 +19,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { useCollection } from "../context/CollectionContext";
 import { Link, useLocation } from "react-router";
+import { cn } from "../lib/utils";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -94,37 +95,51 @@ const Navbar = () => {
       animate="visible"
       variants={navVariants}
       aria-label="Main Navigation"
-      className="fixed top-1 left-1/2 -translate-x-1/2 w-[90%] md:max-w-[1000px] z-50 px-4 md:px-6 py-1 md:py-3 
-        flex justify-between items-center rounded-2xl font-beba
-        border border-zinc-100/60 shadow-xs shadow-amber-700/40 backdrop-blur-xs "
+      className={cn(
+        "fixed top-1 left-1/2 -translate-x-1/2 w-[90%] md:max-w-[1000px] z-50 px-4 md:px-6 py-1 md:py-3",
+        "flex justify-between items-center rounded-2xl font-beba",
+        "border border-zinc-100/60 shadow-xs shadow-amber-700/40 backdrop-blur-xs",
+      )}
     >
       {/* Logo */}
       <motion.div
         variants={itemVariants}
         whileHover={{ scale: 1.05 }}
-        className="flex items-center"
+        className={cn("flex items-center")}
         aria-label="Logo"
       >
-        <p className="text-white flex text-lg md:text-2xl selection:bg-amber-600/30 selection:text-white">
-          ४ <p className="w-2 h-1"></p> Webtree
+        <p
+          className={cn(
+            "text-white flex text-lg md:text-2xl selection:bg-amber-600/30 selection:text-white",
+          )}
+        >
+          ४ <p className={cn("w-2 h-1")}></p> Webtree
         </p>
       </motion.div>
 
       {/* Desktop Menu */}
-      <div className="hidden md:flex gap-6 space-x-1 items-center  ">
+      <div className={cn("hidden md:flex gap-6 space-x-1 items-center")}>
         <a
           href="#about"
-          className="text-neutral-400 text-lg cursor-pointer scroll-smooth hover:text-neutral-300 hover:scale-101 transition-all duration-300 selection:bg-amber-600/30 selection:text-white"
+          className={cn(
+            "text-neutral-400 text-lg cursor-pointer scroll-smooth hover:text-neutral-300 hover:scale-101 transition-all duration-300 selection:bg-amber-600/30 selection:text-white",
+          )}
         >
           About
         </a>
         <Link
-          className="group flex gap-2 items-center justify-center relative mr-2 ml-2 active:scale-97 transition-all duration-200"
+          className={cn(
+            "group flex gap-2 items-center justify-center relative mr-2 ml-2 active:scale-97 transition-all duration-200",
+          )}
           to={location.pathname === "/collection" ? "/" : "/collection"}
           rel="noreferrer"
           aria-label={`Visit`}
         >
-          <p className="text-neutral-400 hover:text-neutral-300 text-lg hidden md:block selection:bg-amber-600/30 selection:text-white ">
+          <p
+            className={cn(
+              "text-neutral-400 hover:text-neutral-300 text-lg hidden md:block selection:bg-amber-600/30 selection:text-white",
+            )}
+          >
             Collection
           </p>
           {location.pathname === "/collection" ? (
@@ -140,12 +155,17 @@ const Navbar = () => {
               style={{ color: "oklch(0.871 0.006 286.286)" }}
             />
           )}
-          <sup className="absolute -right-2 top-1 text-zinc-300 selection:bg-zinc-600/30 selection:text-white">
+          <sup
+            className={cn(
+              "absolute -right-2 top-1 text-zinc-300 selection:bg-zinc-600/30 selection:text-white",
+            )}
+          >
             {collection.length}
           </sup>
           <span
-            className="absolute top-full right-0 mt-2 px-2 py-1 bg-black/80 text-zinc-100/90 text-[14px] rounded-md opacity-0 
-          group-hover:opacity-100 transition-opacity duration-200 pointer-events-none border border-neutral-500 shadow-lg whitespace-nowrap z-50"
+            className={cn(
+              "absolute top-full right-0 mt-2 px-2.5 py-1 bg-zinc-900 text-zinc-100/90 text-[10px] uppercase font-semibold rounded-md invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none border border-white/10 shadow-xs whitespace-nowrap z-50",
+            )}
           >
             {location.pathname === "/collection"
               ? "Home🏡"
@@ -162,9 +182,9 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu Button */}
-      <div className=" md:hidden flex items-center justify-center gap-4 ">
+      <div className={cn("md:hidden flex items-center justify-center gap-4")}>
         <Link
-          className="relative mr-2 ml-2 active:scale-95"
+          className={cn("relative mr-2 ml-2 active:scale-95")}
           to={location.pathname === "/collection" ? "/" : "/collection"}
           rel="noreferrer"
           aria-label={`Visit`}
@@ -175,7 +195,11 @@ const Navbar = () => {
             style={{ color: "oklch(0.871 0.006 286.286)" }}
           />
 
-          <sup className="absolute -right-2 top-1 text-zinc-300 selection:bg-amber-600/30 selection:text-white">
+          <sup
+            className={cn(
+              "absolute -right-2 top-1 text-zinc-300 selection:bg-amber-600/30 selection:text-white",
+            )}
+          >
             {collection.length}
           </sup>
         </Link>
@@ -203,13 +227,15 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="z-40 absolute top-10 right-0 w-fit bg-black/95 border border-zinc-100/40 flex flex-col p-4 rounded-3xl gap-2"
+            className={cn(
+              "z-40 absolute top-10 right-0 w-fit bg-black/95 border border-zinc-100/40 flex flex-col p-4 rounded-3xl gap-2 text-shadow-2xs shadow-xl",
+            )}
           >
             {/* About Link */}
             <div className="flex flex-col gap-2 ml-1">
               <a
                 href="#about"
-                className="text-zinc-300 text-xl "
+                className={cn("text-zinc-300 text-xl")}
                 onClick={() => setIsOpen(false)}
               >
                 About
@@ -220,7 +246,11 @@ const Navbar = () => {
 
             {/* Socials Section */}
             <div className="flex flex-col gap-2 ml-1">
-              <p className="text-zinc-400 text-xs tracking-widest uppercase">
+              <p
+                className={cn(
+                  "text-zinc-400 text-xs tracking-widest uppercase",
+                )}
+              >
                 Socials
               </p>
               <div className="flex gap-4 mt-1 justify-between">
@@ -231,7 +261,9 @@ const Navbar = () => {
                     target="_blank"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
-                    className="flex items-center justify-center active:scale-95 text-white/80 transition-all duration-200"
+                    className={cn(
+                      "flex items-center justify-center active:scale-95 text-white/80 transition-all duration-200",
+                    )}
                     onClick={() => setIsOpen(false)}
                     aria-label={`Visit ${item.label} mobile`}
                   >
@@ -245,7 +277,11 @@ const Navbar = () => {
 
             {/* Other Products */}
             <div className=" ml-1">
-              <p className="text-zinc-400 text-xs tracking-widest uppercase mb-2">
+              <p
+                className={cn(
+                  "text-zinc-400 text-xs tracking-widest uppercase mb-2",
+                )}
+              >
                 Other Products
               </p>
               <div className="flex justify-between">
@@ -253,7 +289,7 @@ const Navbar = () => {
                   <a
                     href="https://bebd.vercel.app"
                     target="_blank"
-                    className="text-zinc-300 text-xl "
+                    className={cn("text-zinc-300 text-xl")}
                     onClick={() => setIsOpen(false)}
                   >
                     ↁ BeBD

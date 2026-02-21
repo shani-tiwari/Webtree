@@ -8,6 +8,7 @@ import {
   Linkedin01Icon,
   NewTwitterRectangleIcon,
 } from "@hugeicons/core-free-icons";
+import { cn } from "../lib/utils";
 
 const SocialCard = ({
   name,
@@ -27,32 +28,58 @@ const SocialCard = ({
       viewport={{ once: true }}
       whileHover={{ y: -8, scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="group relative flex flex-col items-center justify-between p-4 md:p-5 w-full sm:w-52 md:w-60 lg:w-full 
-      rounded-3xl md:rounded-4xl bg-white/3 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-400 overflow-hidden"
+      className={cn(
+        "group relative flex flex-col items-center justify-between p-4 md:p-5 w-full sm:w-52 md:w-60 lg:w-full",
+        "rounded-3xl md:rounded-4xl bg-white/3 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-400 overflow-hidden",
+      )}
       aria-label={label}
     >
       {/* Dynamic Background Glow */}
       <div
-        className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-700 blur-[80px]"
+        className={cn(
+          "absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-700 blur-[80px]",
+        )}
         style={{ backgroundColor: color }}
       />
 
       {/* Top Section: Icon & Status */}
       <div className="w-full flex justify-between items-start z-10">
         <div
-          className="p-2 rounded-2xl bg-white/5 border border-white/5 shadow-2xl group-hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] transition-all duration-500"
+          className={cn(
+            "p-2 rounded-2xl bg-white/5 border border-white/5 shadow-2xl group-hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] transition-all duration-500",
+          )}
           style={{ color: color }}
         >
           <HugeiconsIcon icon={icon} size={26} />
         </div>
 
         {status && (
-          <div className="absolute right-1 flex items-center gap-2 px-1.5 md:px-3 py-1.5 rounded-full bg-black/40 border border-white/5 backdrop-blur-md">
-            <span className="relative flex items-center justify-center h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+          <div
+            className={cn(
+              "absolute right-1 flex items-center gap-2 px-1.5 md:px-3 py-1.5 rounded-full bg-black/40 border border-white/5 backdrop-blur-md",
+            )}
+          >
+            <span
+              className={cn(
+                "relative flex items-center justify-center h-2 w-2",
+              )}
+            >
+              <span
+                className={cn(
+                  "animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75",
+                )}
+              ></span>
+              <span
+                className={cn(
+                  "relative inline-flex rounded-full h-2 w-2 bg-green-500",
+                )}
+              ></span>
             </span>
-            <span className="hidden md:block text-[10px] uppercase tracking-widest text-neutral-300 font-bold">
+            <span
+              className={cn(
+                "hidden md:block text-[10px] uppercase tracking-widest text-neutral-300 font-bold",
+              )}
+            >
               {status}
             </span>
           </div>
@@ -60,7 +87,7 @@ const SocialCard = ({
       </div>
 
       {/* Bottom Section */}
-      <motion.div 
+      <motion.div
         className="w-full mt-2 z-10 backface-hidden"
         initial={{ y: 0 }}
         whileHover={{ y: -2 }}
