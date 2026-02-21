@@ -1,205 +1,116 @@
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
   ChartLineData02Icon,
-  Coffee01Icon,
-  DribbbleIcon,
-  GithubIcon,
-  InstagramIcon,
-  Linkedin01Icon,
-  Mail01Icon,
-  NewTwitterRectangleIcon,
-  LogoutCircle01Icon
+  LogoutCircle01Icon,
 } from "@hugeicons/core-free-icons";
+import Socials from "./Socials";
 
 export default function About() {
-  const currentYear = new Date().getFullYear();
-  const socialLinks = [
-    {
-      name: "GitHub",
-      icon: GithubIcon,
-      url: "https://github.com/shani-tiwari",
-      label: "Visit my GitHub ⭐",
-    },
-    {
-      name: "X / Twitter",
-      icon: NewTwitterRectangleIcon,
-      url: "https://x.com/ShaniDevelops",
-      label: "Follow on X 🚀",
-    },
-    {
-      name: "LinkedIn",
-      icon: Linkedin01Icon,
-      url: "https://www.linkedin.com/in/shani-tiwari-aspirational/",
-      label: "Connect on LinkedIn ⛓️‍💥",
-    },
-    // {
-    //   name: "Gmail",
-    //   icon: Mail01Icon,
-    //   url: "mailto:shanitiwarifl@gmail.com",
-    //   label: "Send me an email 💌",
-    // },
-    // {
-    //   name: "Dribbble",
-    //   icon: Dribbble,
-    //   url: "https://dribbble.com/shani-tiwari",
-    //   label: "My Dribbble portfolio🎨",
-    // },
-    {
-      name: "Instagram",
-      icon: InstagramIcon,
-      url: "https://Instagram.com/shanidevelops",
-      label: "Follow on Instagram✨",
-    },
-    {
-      name: "Coffee",
-      icon: Coffee01Icon,
-      url: "https://buymeacoffee.com/shani_tiwari?new=1",
-      label: "🍵 coffee ❔",
-    },
-  ];
-
   return (
-    <footer id="about" className="w-full bg-black/80 mt-10 relative">
-
-      <div className="px-6 md:px-0 max-w-3xl md:ml-34 py-4">
-        <p className="text-neutral-200 text-2xl font-semibold tracking-wide">About</p>
-        <p className="h-[0.2px] w-[98%] bg-neutral-800 rounded-full mt-4"></p>
+    <section
+      id="about"
+      className="w-full bg-black/80 mt-10 px-4 relative selection:bg-amber-600/30  selection:text-white"
+    >
+      <div className="max-w-[1300px] mx-auto px-1 md:px-14 py-4">
+        <p className="text-neutral-200 text-2xl font-semibold tracking-wide">
+          About WebTree
+        </p>
+        <p className="h-[0.2px] w-full bg-white/30 rounded-full mt-4"></p>
       </div>
 
-
-      {/* Upper Section */}
-      <div
-        className="max-w-7xl mx-auto px-6 pt-8 pb-12 flex flex-wrap gap-10 selection:bg-amber-600/30 selection:text-white"
-      >
-        {/* Brand Section */}
-
-        {/* webtree */}
-        <div className=" space-y-6">
-          <a
-            href="https://webtree-iota.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-4 group cursor-pointer"
-            aria-label="Visit Webtree (opens in new tab)"
-          >
-            <span
-              className="w-10 h-10 rounded-xl bg-linear-to-b from-gray-700 to-gray-800 select-none  flex items-center justify-center text-white font-semibold text-xl group-hover:scale-110 transition-transform duration-300"
-              aria-hidden="true"
-            >
+      {/* Main Content Grid */}
+      <div className="max-w-[1300px] mx-auto px-1 md:px-14 pt-8 pb-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 ">
+        {/* Our Mission */}
+        <div className="space-y-4">
+          <div className="flex items-center gap-3">
+            <span className="w-8 h-8 rounded-lg bg-linear-to-b from-amber-500 to-amber-700 flex items-center justify-center text-white font-bold text-lg select-none">
               ४
             </span>
-            <span className="text-2xl font-bold tracking-tight bg-clip-text text-transparent bg-linear-to-b from-white via-gray-300 to-gray-500">
-              Webtree
-            </span>
-          </a>
-          <p className="text-gray-400 max-w-sm leading-relaxed">
-            One-stop for frontend magic—curated collections of websites and
-            essential tools. <br />
-            Whether you're hunting for Tailwind components, Framer prototypes,
-            or color palettes, discover everything to supercharge your projects
-            in seconds.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            {socialLinks.map((social) => (
-              <a
-                key={social.name}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative  px-2 py-2 md:w-10 md:h-10 rounded-lg bg-gray-950 flex items-center justify-center text-gray-200 hover:-translate-y-1 border-2 border-white/20 transition-all duration-300"
-                aria-label={social.label}
-              >
-                <HugeiconsIcon icon={social.icon} size={22} />
-                <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-gray-800 border border-gray-700 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none shadow-xl">
-                  {social.label}
-                </span>
-              </a>
-            ))}
+            <h3 className="text-xl font-bold text-white tracking-wide">
+              Our Mission
+            </h3>
           </div>
-        </div>
-
-
-        
-        {/* upcoming */}
-        <div className=" space-y-6">
-          <a
-            href="https://webtree-iota.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-4 group cursor-pointer"
-            aria-label="Visit Webtree (opens in new tab)"
-          >
-            <span
-              className="w-10 h-10 rounded-xl select-none bg-linear-to-b from-gray-700 to-gray-800  flex items-center justify-center text-white font-semibold text-xl group-hover:scale-110 transition-transform duration-300"
-              aria-hidden="true"
-            >
-              <HugeiconsIcon icon={ChartLineData02Icon} size={16} />
-            </span>
-            <span className="text-2xl font-bold tracking-tight bg-clip-text text-transparent bg-linear-to-b from-white via-gray-300 to-gray-500">
-              Upcoming
-            </span>
-          </a>
-          <p className="text-gray-400 max-w-sm leading-relaxed ml-3">
-            → Backend Section <br />
-            → Practice Websites <br />
-            → Tutorials, AI/perfromance/testing tools <br />
-            → Repository's - open source & projects <br />
-            {/* - Personal Collection <br /> */}
+          <p className="text-gray-400 leading-relaxed">
+            WebTree was born from a simple need: to cut through the noise of the
+            modern web. We curate the finest frontend magic—from Tailwind
+            components and Framer prototypes to essential performance
+            tools—helping you build better, faster.
           </p>
         </div>
 
-        {/* <span className="hidden xl:block md:w-px md:h-[250px] h-px w-full bg-neutral-800 rounded-full "></span> */}
-
-        {/* bebd */}
-        {/* <div className=" space-y-6">
-          <div className="flex items-center gap-4  cursor-default justify-between">
-            <div className="flex items-center gap-4">
-              <div
-                className="w-10 h-10 rounded-xl select-none bg-linear-to-b from-gray-700 to-gray-800  flex items-center justify-center text-white font-semibold text-xl group-hover:scale-110 transition-transform duration-300"
-                aria-hidden="true"
-              >
-                ↁ
-              </div>
-              <span className="text-2xl font-bold tracking-tight bg-clip-text text-transparent bg-linear-to-b from-zinc-300 via-zinc-400 to-zinc-500">
-                BeBD
+        {/* Why WebTree? */}
+        <div className="space-y-4">
+          <div className="flex items-center gap-3">
+            <span className="w-8 h-8 rounded-lg bg-linear-to-b from-gray-700 to-gray-800 flex items-center justify-center text-white">
+              <HugeiconsIcon icon={ChartLineData02Icon} size={18} />
+            </span>
+            <h3 className="text-xl font-bold text-white tracking-wide">
+              Why WebTree?
+            </h3>
+          </div>
+          <ul className="text-gray-400 space-y-2">
+            <li className="flex gap-2">
+              <span className="text-amber-500">→</span>
+              <span>
+                <strong>Hand-Curated:</strong> Every resource is verified for
+                quality and utility.
               </span>
-              <a
-                href="https://bebd.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="text-gray-200">
-                  <HugeiconsIcon icon={LogoutCircle01Icon} size={18} className="-rotate-30" />
-                </span>
-              </a>
-            </div>
-            <a
-                href="https://github.com/shani-tiwari/BeBD-be_better_developer"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/70 px-3 py-2 bg-gray-950/80 border-2 border-white/30 rounded-lg hover:-translate-y-1 transition-all duration-300"
-              >
-                <span className="text-gray-200">
-                  <HugeiconsIcon icon={GithubIcon} size={18} />
-                </span>
-              </a>
+            </li>
+            <li className="flex gap-2">
+              <span className="text-amber-500">→</span>
+              <span>
+                <strong>One-Click Magic:</strong> Zero friction access to the
+                tools you need right now.
+              </span>
+            </li>
+            <li className="flex gap-2">
+              <span className="text-amber-500">→</span>
+              <span>
+                <strong>Community Driven:</strong> Built by developers who
+                understand the craft.
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        {/* Product Roadmap */}
+        <div className="space-y-3">
+          <div className="flex items-center gap-3">
+            <span className="w-8 h-8 rounded-lg bg-linear-to-b from-gray-700 to-gray-800 flex items-center justify-center text-amber-500">
+              ⚡
+            </span>
+            <h3 className="text-xl font-bold text-white tracking-wide">
+              Roadmap
+            </h3>
           </div>
-          <p className="text-gray-400 max-w-sm leading-relaxed">
-            <strong className="tracking-wide">Be Better Developer</strong> <br />
-            Empowering developers to build better, faster, and more efficient
-            modern web applications. Join our community and level up your
-            development journey.
-          </p>
-        </div> */}
-
+          <div className="space-y-[10px]">
+            <div className="py-2 px-3 rounded-lg bg-white/5 border border-white/10">
+              <p className="text-sm font-semibold text-white">
+                • Backend & Infrastructure
+              </p>
+              <p className="text-xs text-gray-500 mt-1">
+                Expanding our curated collections to server-side excellence.
+              </p>
+            </div>
+            <div className="py-2 px-3 rounded-lg bg-white/5 border border-white/10">
+              <p className="text-sm font-semibold text-white">
+                • AI Tools & Workflows
+              </p>
+              <p className="text-xs text-gray-500 mt-1">
+                Integrating next-gen automation for your dev environment.
+              </p>
+            </div>
+            <div className="py-2 px-3 rounded-lg bg-white/5 border border-white/10">
+              <p className="text-sm font-semibold text-white">
+                • Interactive Tutorials
+              </p>
+              <p className="text-xs text-gray-500 mt-1">
+                Learn to master the tools you find here.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-
-      {/* Bottom Bar - Footer  */}
-      <div className="max-w-7xl mx-auto px-6 py-6 border-t border-white/5 flex items-center gap-2 select-none">
-        <p className="text-sm text-gray-500 flex  items-center gap-2">
-          © {currentYear} - Made with ❤️ by Shani Tiwari
-        </p>
-      </div>
-    </footer>
+    </section>
   );
 }

@@ -3,8 +3,8 @@ import {
   Delete03Icon,
   FolderCheckIcon,
   FolderAddIcon,
-  Copy01Icon,
-  Share02Icon,
+  Copy02Icon,
+  SentIcon,
 } from "@hugeicons/core-free-icons";
 import { useCollection } from "../context/CollectionContext";
 import { useState } from "react";
@@ -85,15 +85,15 @@ const Card = React.memo(
         aria-label={`View ${title} resource`}
       >
         <article
-          className="relative h-full flex flex-col bg-black/50 backdrop-blur-xs border border-zinc-600 rounded-lg p-2 
-          transition-all duration-400 group cursor-pointer text-white/70 select-none hover:scale-[1.01] hover:-translate-y-1 hover:border-zinc-400"
+          className="relative h-full flex flex-col bg-black/50 backdrop-blur-xs border border-zinc-600 rounded-lg p-3 
+          transition-all duration-300 group cursor-pointer text-white/70 select-none hover:-translate-y-1.5 hover:border-zinc-400"
         >
           {/* Action Icons Section */}
-          <div className="absolute top-2 right-2 flex flex-col gap-3 items-center z-40">
+          <div className="absolute top-3 right-2 flex flex-col gap-3 items-center z-40">
             {!allowRemove && (
               <span
                 onClick={handleAddKey}
-                className={`group/icon relative flex items-center justify-center hover:scale-110 active:scale-100 transition-all duration-200 z-30 ${isCollected ? "text-green-500 hover:text-green-700" : "text-amber-700 hover:text-amber-900"}`}
+                className={`group/icon relative flex items-center justify-center hover:-translate-y-0.5 active:scale-95 transition-all duration-200 z-30 ${isCollected ? "text-green-700 hover:text-green-800" : "text-yellow-600/80 hover:text-yellow-700"}`}
               >
                 {isCollected ? (
                   <HugeiconsIcon icon={FolderCheckIcon} size={22} />
@@ -102,9 +102,10 @@ const Card = React.memo(
                 )}
 
                 <span
-                  className="absolute right-full mr-2 w-max px-2.5 py-1 text-xs font-medium
+                  className={`absolute right-full mr-2 w-max px-2.5 py-1 text-xs font-medium
                    bg-zinc-800/90 border border-white/10 rounded-md shadow-xl backdrop-blur-sm opacity-0 invisible group-hover/icon:opacity-100 
-                   group-hover/icon:visible transition-all duration-200 transform scale-90 group-hover/icon:scale-100 pointer-events-none z-99"
+                   group-hover/icon:visible transition-all duration-200 transform scale-90 group-hover/icon:scale-100 pointer-events-none z-99 
+                   ${isCollected && 'pointer-events-none'}`}
                 >
                   {added ? "Added!" : isCollected ? "Saved" : "+ Add"}
                 </span>
@@ -113,7 +114,7 @@ const Card = React.memo(
             {allowRemove && (
               <span
                 onClick={handleRemoveKey}
-                className="group/delete relative flex items-center justify-center text-red-500 transition-colors duration-300 hover:text-red-700 z-30"
+                className="group/delete relative flex items-center justify-center text-red-500 active:scale-95 transition-colors duration-300 hover:text-red-700 z-30"
               >
                 <HugeiconsIcon icon={Delete03Icon} size={20} />
                 <span className="absolute right-full mr-2 w-max px-2.5 py-1 text-xs font-medium text-red-100 bg-zinc-800/90 border border-white/10 rounded-md shadow-xl backdrop-blur-sm opacity-0 invisible group-hover/delete:opacity-100 group-hover/delete:visible transition-all duration-200 transform scale-90 group-hover/delete:scale-100 pointer-events-none z-20">
@@ -125,9 +126,9 @@ const Card = React.memo(
             {/* Copy Link Button */}
             <span
               onClick={handleCopy}
-              className={`group/copy relative flex items-center justify-center transition-all duration-200 z-30 ${copied ? "text-green-400" : "text-blue-600 hover:text-blue-800 hover:scale-110 active:scale-100"}`}
+              className={`group/copy relative flex items-center justify-center transition-all duration-200 z-30 text-indigo-600/90 hover:text-blue-900 hover:-translate-y-0.5 active:scale-95`}
             >
-              <HugeiconsIcon icon={Copy01Icon} size={22} />
+              <HugeiconsIcon icon={Copy02Icon} size={22} />
               <span className="absolute right-full mr-2 w-max px-2.5 py-1 text-xs font-medium bg-zinc-800/90 border border-white/10 rounded-md shadow-xl backdrop-blur-sm opacity-0 invisible group-hover/copy:opacity-100 group-hover/copy:visible transition-all duration-200 transform scale-90 group-hover/copy:scale-100 pointer-events-none z-99">
                 {copied ? "Copied!" : "Copy Link"}
               </span>
@@ -136,9 +137,9 @@ const Card = React.memo(
             {/* Share Button */}
             <span
               onClick={handleShare}
-              className="group/share relative flex items-center justify-center text-purple-600 hover:text-purple-800 hover:scale-110 active:scale-100 transition-all duration-200 z-30"
+              className="group/share relative flex items-center justify-center text-sky-600 hover:text-sky-700 hover:-translate-y-0.5 active:scale-95 transition-all duration-200 z-30"
             >
-              <HugeiconsIcon icon={Share02Icon} size={22} />
+              <HugeiconsIcon icon={SentIcon} size={22} />
               <span className="absolute right-full mr-2 w-max px-2.5 py-1 text-xs font-medium bg-zinc-800/90 border border-white/10 rounded-md shadow-xl backdrop-blur-sm opacity-0 invisible group-hover/share:opacity-100 group-hover/share:visible transition-all duration-200 transform scale-90 group-hover/share:scale-100 pointer-events-none z-99">
                 Share
               </span>

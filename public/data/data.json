@@ -153,7 +153,7 @@
       "logo": "https://img.logo.dev/tinypng.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
-  "ui_components": [
+  "ui_library": [
     {
       "id": 1,
       "name": "Motion",
@@ -243,7 +243,7 @@
       "logo": "https://img.logo.dev/reui.io?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
-  "design_ideas": [
+  "design_idea": [
     {
       "id": 1,
       "name": "Dribbble",
@@ -301,7 +301,7 @@
       "logo": "https://img.logo.dev/seesaw.is?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
-  "fonts": [
+  "font": [
     {
       "id": 1,
       "name": "Google Fonts",
@@ -367,7 +367,7 @@
       "logo": "https://img.logo.dev/rawpixel.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
-  "images": [
+  "image": [
     {
       "id": 1,
       "name": "Unsplash",
@@ -417,7 +417,7 @@
       "logo": "https://img.logo.dev/rawpixel.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
-  "videos": [
+  "video": [
     {
       "id": 1,
       "name": "Mixkit",
@@ -492,7 +492,7 @@
     }
   ],
 
-  "svg_icons": [
+  "svg_icon": [
     {
       "id": 1,
       "name": "SVG Repo",
@@ -558,7 +558,7 @@
       "logo": "https://img.logo.dev/hugeicons.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
-  "backgrounds": [
+  "background": [
     {
       "id": 1,
       "name": "Picjumbo",
@@ -592,7 +592,7 @@
       "logo": "https://img.logo.dev/rawpixel.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
-  "color_palettes": [
+  "color": [
     {
       "id": 1,
       "name": "Coolors",
@@ -642,7 +642,7 @@
       "logo": "https://img.logo.dev/tailwindcss.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
-  "animations": [
+  "animation": [
     {
       "id": 1,
       "name": "Animate.css",
@@ -684,7 +684,7 @@
       "logo": "https://img.logo.dev/awwwards.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
-  "illustrations": [
+  "illustration": [
     {
       "id": 1,
       "name": "UnDraw",

@@ -4,6 +4,8 @@ const Collection = React.lazy(() => import("./pages/Collection"));
 import { Routes, Route } from "react-router";
 import { cn } from "./lib/utils";
 import About from "./components/About";
+import Socials from "./components/Socials";
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -28,7 +30,10 @@ function App() {
         {/* website */}
         <Navbar />
 
-        <div className="relative z-10 w-full flex justify-center grow">
+        <main
+          id="main-content"
+          className="relative z-10 w-full flex flex-col items-center grow"
+        >
           <React.Suspense
             fallback={
               <div className="text-white text-center p-10">Loading...</div>
@@ -39,9 +44,12 @@ function App() {
               <Route path="/collection" element={<Collection />} />
             </Routes>
           </React.Suspense>
-        </div>
 
-        <About />
+          <About />
+          <Socials />
+        </main>
+
+        <Footer />
         <ScrollToTop />
       </div>
     </>

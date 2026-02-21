@@ -5,6 +5,16 @@
   body {
     overflow-x: hidden;
     width: 100%;
+    /* Apply minimal black shadow for crispier text */
+    text-shadow: 0 0px 0px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Ensure inputs and buttons also get the shadow if they don't inherit automatically */
+  input,
+  textarea,
+  button,
+  select, p, span {
+    text-shadow: inherit;
   }
 }
 

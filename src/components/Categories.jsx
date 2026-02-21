@@ -1,6 +1,6 @@
 import React from "react";
 
-const SideBtn = React.memo(
+const Categories = React.memo(
   ({ name, setcardData, data, isActive, setActiveCategory }) => {
     const handleClick = () => {
       setcardData(data[name]);
@@ -19,9 +19,9 @@ const SideBtn = React.memo(
               : " bg-zinc-800/20 hover:bg-zinc-800/40 shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_1px_3px_rgba(0,0,0,0.4)] "
           }
           relative w-fit md:text-start group border border-white/30 py-1 px-3 mb-2 rounded-md
-          backdrop-blur-md cursor-pointer transition-all duration-200 ease-out select-none
+          backdrop-blur-md cursor-pointer transition-all duration-150 ease-out select-none
+          shadow-xs shadow-white/8
           hover:shadow-[0_4px_10px_rgba(0,0,0,0.8)]
-          active:shadow-[inset_0_3px_6px_rgba(0,0,0,0.3)]
           active:scale-97
         `}
       >
@@ -36,4 +36,4 @@ const SideBtn = React.memo(
     );
   },
 );
-export default SideBtn;
+export default Categories;
