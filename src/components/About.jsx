@@ -1,32 +1,66 @@
+// eslint-disable-next-line no-unused-vars
+import { motion } from "motion/react";
 import { HugeiconsIcon } from "@hugeicons/react";
-import {
-  ChartLineData02Icon,
-  LogoutCircle01Icon,
-} from "@hugeicons/core-free-icons";
-import Socials from "./Socials";
+import { ChartLineData02Icon } from "@hugeicons/core-free-icons";
 
 export default function About() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
   return (
     <section
       id="about"
-      className="w-full bg-black/80 mt-10 px-4 relative selection:bg-amber-600/30  selection:text-white"
+      className="w-full bg-[#030303]/80 mt-10 px-4 relative selection:bg-amber-600/30 selection:text-white overflow-hidden"
     >
-      <div className="max-w-[1300px] mx-auto px-1 md:px-14 py-4">
-        <p className="text-neutral-200 text-2xl font-semibold tracking-wide">
-          About WebTree
-        </p>
-        <p className="h-[0.2px] w-full bg-white/30 rounded-full mt-4"></p>
+      {/* Background Micro-Accents */}
+      <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/5 blur-[100px] rounded-full pointer-events-none" />
+
+      <div className="max-w-[1300px] mx-auto px-1 md:px-14 py-8">
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-2xl md:text-5xl mx-auto text-center font-black text-white/90 tracking-tighter"
+          >
+            About <span className="text-neutral-500 italic">Webtree</span>
+          </motion.h2>
+          <p className="h-[0.2px] w-full bg-white/30 rounded-full mt-4"></p>
+        </motion.div>
       </div>
 
       {/* Main Content Grid */}
-      <div className="max-w-[1300px] mx-auto px-1 md:px-14 pt-8 pb-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 ">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="max-w-[1300px] mx-auto px-1 md:px-14 pt-8 pb-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 "
+      >
         {/* Our Mission */}
-        <div className="space-y-4">
-          <div className="flex items-center gap-3">
-            <span className="w-8 h-8 rounded-lg bg-linear-to-b from-amber-500 to-amber-700 flex items-center justify-center text-white font-bold text-lg select-none">
+        <motion.div variants={itemVariants} className="space-y-4">
+          <div className="flex items-center gap-3 group">
+            <span className="w-8 h-8 rounded-lg bg-linear-to-b from-amber-500 to-amber-700 flex items-center justify-center text-white font-bold text-lg select-none group-hover:scale-110 transition-transform duration-300">
               ४
             </span>
-            <h3 className="text-xl font-bold text-white tracking-wide">
+            <h3 className="text-xl font-bold text-white tracking-wide group-hover:text-amber-500 transition-colors duration-300">
               Our Mission
             </h3>
           </div>
@@ -36,81 +70,112 @@ export default function About() {
             components and Framer prototypes to essential performance
             tools—helping you build better, faster.
           </p>
-        </div>
+        </motion.div>
 
         {/* Why WebTree? */}
-        <div className="space-y-4">
-          <div className="flex items-center gap-3">
-            <span className="w-8 h-8 rounded-lg bg-linear-to-b from-gray-700 to-gray-800 flex items-center justify-center text-white">
+        <motion.div variants={itemVariants} className="space-y-4">
+          <div className="flex items-center gap-3 group">
+            <span className="w-8 h-8 rounded-lg bg-linear-to-b from-gray-700 to-gray-800 flex items-center justify-center text-white group-hover:from-gray-600 group-hover:to-gray-700 transition-all duration-300">
               <HugeiconsIcon icon={ChartLineData02Icon} size={18} />
             </span>
-            <h3 className="text-xl font-bold text-white tracking-wide">
+            <h3 className="text-xl font-bold text-white tracking-wide group-hover:text-amber-500 transition-colors duration-300">
               Why WebTree?
             </h3>
           </div>
-          <ul className="text-gray-400 space-y-2">
-            <li className="flex gap-2">
-              <span className="text-amber-500">→</span>
-              <span>
-                <strong>Hand-Curated:</strong> Every resource is verified for
-                quality and utility.
-              </span>
-            </li>
-            <li className="flex gap-2">
-              <span className="text-amber-500">→</span>
-              <span>
-                <strong>One-Click Magic:</strong> Zero friction access to the
-                tools you need right now.
-              </span>
-            </li>
-            <li className="flex gap-2">
-              <span className="text-amber-500">→</span>
-              <span>
-                <strong>Community Driven:</strong> Built by developers who
-                understand the craft.
-              </span>
-            </li>
+          <ul className="text-gray-400 space-y-3">
+            {[
+              {
+                title: "Hand-Curated",
+                desc: "Every resource is verified for quality and utility.",
+              },
+              {
+                title: "One-Click Magic",
+                desc: "Zero friction access to the tools you need right now.",
+              },
+              {
+                title: "Community Driven",
+                desc: "Built by developers who understand the craft.",
+              },
+            ].map((item, i) => (
+              <motion.li
+                key={i}
+                whileHover={{ x: 5 }}
+                className="flex gap-2 group cursor-default"
+              >
+                <span className="text-amber-500 group-hover:text-amber-400 transition-colors">
+                  →
+                </span>
+                <span>
+                  <strong className="text-neutral-200">{item.title}:</strong>{" "}
+                  {item.desc}
+                </span>
+              </motion.li>
+            ))}
           </ul>
-        </div>
+        </motion.div>
 
         {/* Product Roadmap */}
-        <div className="space-y-3">
-          <div className="flex items-center gap-3">
-            <span className="w-8 h-8 rounded-lg bg-linear-to-b from-gray-700 to-gray-800 flex items-center justify-center text-amber-500">
+        <motion.div variants={itemVariants} className="space-y-4">
+          <div className="flex items-center gap-3 group">
+            <motion.span
+              animate={{ scale: [1, 1.2, 1] }}
+              transition={{ repeat: Infinity, duration: 2 }}
+              className="w-8 h-8 rounded-lg bg-linear-to-b from-gray-700 to-gray-800 flex items-center justify-center text-amber-500"
+            >
               ⚡
-            </span>
-            <h3 className="text-xl font-bold text-white tracking-wide">
+            </motion.span>
+            <h3 className="text-xl font-bold text-white tracking-wide group-hover:text-amber-500 transition-colors duration-300">
               Roadmap
             </h3>
           </div>
           <div className="space-y-[10px]">
-            <div className="py-2 px-3 rounded-lg bg-white/5 border border-white/10">
-              <p className="text-sm font-semibold text-white">
-                • Backend & Infrastructure
-              </p>
-              <p className="text-xs text-gray-500 mt-1">
-                Expanding our curated collections to server-side excellence.
-              </p>
-            </div>
-            <div className="py-2 px-3 rounded-lg bg-white/5 border border-white/10">
-              <p className="text-sm font-semibold text-white">
-                • AI Tools & Workflows
-              </p>
-              <p className="text-xs text-gray-500 mt-1">
-                Integrating next-gen automation for your dev environment.
-              </p>
-            </div>
-            <div className="py-2 px-3 rounded-lg bg-white/5 border border-white/10">
-              <p className="text-sm font-semibold text-white">
-                • Interactive Tutorials
-              </p>
-              <p className="text-xs text-gray-500 mt-1">
-                Learn to master the tools you find here.
-              </p>
-            </div>
+            {[
+              {
+                title: "Backend & Infrastructure",
+                desc: "Expanding our curated collections to server-side excellence.",
+                live: true,
+              },
+              {
+                title: "AI Tools & Workflows",
+                desc: "Integrating next-gen automation for your dev environment.",
+                live: false,
+              },
+              {
+                title: "Interactive Tutorials",
+                desc: "Learn to master the tools you find here.",
+                live: false,
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                whileHover={{
+                  x: 5,
+                  backgroundColor: "rgba(255, 255, 255, 0.08)",
+                }}
+                className="py-3 px-4 rounded-xl bg-white/5 border border-white/10 relative overflow-hidden group transition-colors"
+              >
+                {item.live && (
+                  <div className="absolute top-3 right-3 flex items-center gap-2">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+                    </span>
+                    <span className="text-[10px] uppercase tracking-tighter text-amber-500/80 font-bold">
+                      Live Soon
+                    </span>
+                  </div>
+                )}
+                <p className="text-sm font-bold text-white group-hover:text-amber-500 transition-colors">
+                  • {item.title}
+                </p>
+                <p className="text-xs text-gray-500 mt-1 leading-relaxed">
+                  {item.desc}
+                </p>
+              </motion.div>
+            ))}
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import Categories from "../components/Categories";
 import Card from "../components/Card";
 import SkeletonHome from "../components/SkeletonHome";
@@ -41,20 +43,38 @@ export default function Home() {
       </div>
 
       {/* Header */}
-      <header className="w-full  text-white/80 text-center px-4 md:px-6 font-semibold font-beba pt-20 md:pt-30">
+      <motion.header
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="w-full text-white/80 text-center px-4 md:px-6 font-semibold font-beba pt-20 md:pt-30"
+      >
         <div className="text-xl flex flex-col md:flex-row items-center gap-2 bg-clip-text text-transparent bg-linear-to-b from-amber-400 to-amber-700 mx-auto w-fit md:text-[26px] tracking-wider selection:bg-amber-600/30 selection:text-white">
-          <div>
+          <motion.div
+            initial={{ scale: 0.9 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
             <span className="wavy-underline-pulse w-fit bg-clip-text text-transparent bg-linear-to-b from-amber-400 to-amber-700">
               100+
             </span>
-          </div>
-          <span>Frontend Resources, One Click away</span>
+          </motion.div>
+          <motion.span
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+          >
+            Frontend Resources, One Click away
+          </motion.span>
         </div>
-      </header>
+      </motion.header>
 
-      {/* Cards */}
-      <section className="grow  w-full flex flex-col gap-4 md:gap-8 px-1  md:px-14">
-        <aside
+      {/* Cards Section */}
+      <section className="grow w-full flex flex-col gap-4 md:gap-8 px-1 md:px-14">
+        <motion.aside
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           aria-label="Category selection"
           className="z-40 shrink-0 flex flex-wrap justify-center rounded-xl gap-1 md:gap-2 w-full h-fit px-2 md:py-3 md:pt-4 text-white backdrop-blur-sm"
         >
@@ -69,24 +89,35 @@ export default function Home() {
               setActiveCategory={setActiveCategory}
             />
           ))}
-        </aside>
+        </motion.aside>
 
-        <section
+        <motion.section
+          layout
           aria-label="Resources grid"
           className="z-10 container bg-transparent grow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[14px] content-start md:-mt-3"
         >
-          {Object.values(carddata).map((item) => (
-            <Card
-              key={item.id}
-              id={item.id}
-              title={item.name}
-              logo={item.logo}
-              link={item.link}
-              desc={item.desc}
-              category={activeCategory}
-            />
-          ))}
-        </section>
+          <AnimatePresence mode="popLayout">
+            {Object.values(carddata).map((item) => (
+              <motion.div
+                key={item.id}
+                layout
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Card
+                  id={item.id}
+                  title={item.name}
+                  logo={item.logo}
+                  link={item.link}
+                  desc={item.desc}
+                  category={activeCategory}
+                />
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.section>
       </section>
     </section>
   );

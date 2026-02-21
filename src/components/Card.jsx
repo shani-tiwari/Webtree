@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+import { motion } from "motion/react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
   Delete03Icon,
@@ -7,12 +9,11 @@ import {
   SentIcon,
 } from "@hugeicons/core-free-icons";
 import { useCollection } from "../context/CollectionContext";
-import { useState } from "react";
-import React from "react";
+import { useState, memo } from "react";
 import { Link } from "react-router";
 
 // Memoized Card Component
-const Card = React.memo(
+const Card = memo(
   ({ id, title, link, desc, allowRemove, logo, category, ...props }) => {
     const { addToCollection, removeFromCollection, collection } =
       useCollection();
@@ -31,7 +32,6 @@ const Card = React.memo(
       e.preventDefault();
       e.stopPropagation();
 
-      // Create item object to save
       const item = {
         id,
         title,
@@ -80,20 +80,24 @@ const Card = React.memo(
     };
 
     return (
-      <div
+      <motion.div
+        layout
         className="w-full h-full block p-1"
         aria-label={`View ${title} resource`}
       >
-        <article
-          className="relative h-full flex flex-col bg-black/50 backdrop-blur-xs border border-zinc-600 rounded-lg p-3 
-          transition-all duration-300 group cursor-pointer text-white/70 select-none hover:-translate-y-1.5 hover:border-zinc-400"
+        <motion.article
+          whileHover={{ y: -8, transition: { duration: 0.2 } }}
+          className="relative h-full flex flex-col bg-[#080808]/80 backdrop-blur-md border border-zinc-800 rounded-xl p-4 
+          transition-colors duration-300 group cursor-pointer text-white/70 select-none hover:border-zinc-600/50 shadow-lg hover:shadow-2xl"
         >
           {/* Action Icons Section */}
-          <div className="absolute top-3 right-2 flex flex-col gap-3 items-center z-40">
+          <div className="absolute top-4 right-3 flex flex-col gap-3.5 items-center z-40">
             {!allowRemove && (
-              <span
+              <motion.span
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
                 onClick={handleAddKey}
-                className={`group/icon relative flex items-center justify-center hover:-translate-y-0.5 active:scale-95 transition-all duration-200 z-30 ${isCollected ? "text-green-700 hover:text-green-800" : "text-yellow-600/80 hover:text-yellow-700"}`}
+                className={`group/icon relative flex items-center justify-center transition-all duration-200 z-30 ${isCollected ? "text-amber-500" : "text-neutral-500 hover:text-white"}`}
               >
                 {isCollected ? (
                   <HugeiconsIcon icon={FolderCheckIcon} size={22} />
@@ -102,53 +106,58 @@ const Card = React.memo(
                 )}
 
                 <span
-                  className={`absolute right-full mr-2 w-max px-2.5 py-1 text-xs font-medium
-                   bg-zinc-800/90 border border-white/10 rounded-md shadow-xl backdrop-blur-sm opacity-0 invisible group-hover/icon:opacity-100 
-                   group-hover/icon:visible transition-all duration-200 transform scale-90 group-hover/icon:scale-100 pointer-events-none z-99 
-                   ${isCollected && 'pointer-events-none'}`}
+                  className="absolute right-full mr-2 w-max px-2.5 py-1 text-[10px] uppercase tracking-wider font-bold
+                   bg-zinc-900 border border-white/10 rounded-md shadow-xl backdrop-blur-sm opacity-0 invisible group-hover/icon:opacity-100 
+                   group-hover/icon:visible transition-all duration-200 transform scale-90 group-hover/icon:scale-100 pointer-events-none z-99"
                 >
                   {added ? "Added!" : isCollected ? "Saved" : "+ Add"}
                 </span>
-              </span>
+              </motion.span>
             )}
             {allowRemove && (
-              <span
+              <motion.span
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
                 onClick={handleRemoveKey}
-                className="group/delete relative flex items-center justify-center text-red-500 active:scale-95 transition-colors duration-300 hover:text-red-700 z-30"
+                className="group/delete relative flex items-center justify-center text-red-500/70 hover:text-red-500 transition-colors duration-300 z-30"
               >
                 <HugeiconsIcon icon={Delete03Icon} size={20} />
-                <span className="absolute right-full mr-2 w-max px-2.5 py-1 text-xs font-medium text-red-100 bg-zinc-800/90 border border-white/10 rounded-md shadow-xl backdrop-blur-sm opacity-0 invisible group-hover/delete:opacity-100 group-hover/delete:visible transition-all duration-200 transform scale-90 group-hover/delete:scale-100 pointer-events-none z-20">
+                <span className="absolute right-full mr-2 w-max px-2.5 py-1 text-[10px] uppercase tracking-wider font-bold text-red-100 bg-zinc-900 border border-white/10 rounded-md shadow-xl backdrop-blur-sm opacity-0 invisible group-hover/delete:opacity-100 group-hover/delete:visible transition-all duration-200 transform scale-90 group-hover/delete:scale-100 pointer-events-none z-20">
                   Remove
                 </span>
-              </span>
+              </motion.span>
             )}
 
             {/* Copy Link Button */}
-            <span
+            <motion.span
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
               onClick={handleCopy}
-              className={`group/copy relative flex items-center justify-center transition-all duration-200 z-30 text-indigo-600/90 hover:text-blue-900 hover:-translate-y-0.5 active:scale-95`}
+              className="group/copy relative flex items-center justify-center transition-all duration-200 z-30 text-neutral-500 hover:text-white"
             >
               <HugeiconsIcon icon={Copy02Icon} size={22} />
-              <span className="absolute right-full mr-2 w-max px-2.5 py-1 text-xs font-medium bg-zinc-800/90 border border-white/10 rounded-md shadow-xl backdrop-blur-sm opacity-0 invisible group-hover/copy:opacity-100 group-hover/copy:visible transition-all duration-200 transform scale-90 group-hover/copy:scale-100 pointer-events-none z-99">
+              <span className="absolute right-full mr-2 w-max px-2.5 py-1 text-[10px] uppercase tracking-wider font-bold bg-zinc-900 border border-white/10 rounded-md shadow-xl backdrop-blur-sm opacity-0 invisible group-hover/copy:opacity-100 group-hover/copy:visible transition-all duration-200 transform scale-90 group-hover/copy:scale-100 pointer-events-none z-99">
                 {copied ? "Copied!" : "Copy Link"}
               </span>
-            </span>
+            </motion.span>
 
             {/* Share Button */}
-            <span
+            <motion.span
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
               onClick={handleShare}
-              className="group/share relative flex items-center justify-center text-sky-600 hover:text-sky-700 hover:-translate-y-0.5 active:scale-95 transition-all duration-200 z-30"
+              className="group/share relative flex items-center justify-center text-neutral-500 hover:text-white transition-all duration-200 z-30"
             >
               <HugeiconsIcon icon={SentIcon} size={22} />
-              <span className="absolute right-full mr-2 w-max px-2.5 py-1 text-xs font-medium bg-zinc-800/90 border border-white/10 rounded-md shadow-xl backdrop-blur-sm opacity-0 invisible group-hover/share:opacity-100 group-hover/share:visible transition-all duration-200 transform scale-90 group-hover/share:scale-100 pointer-events-none z-99">
+              <span className="absolute right-full mr-2 w-max px-2.5 py-1 text-[10px] uppercase tracking-wider font-bold bg-zinc-900 border border-white/10 rounded-md shadow-xl backdrop-blur-sm opacity-0 invisible group-hover/share:opacity-100 group-hover/share:visible transition-all duration-200 transform scale-90 group-hover/share:scale-100 pointer-events-none z-99">
                 Share
               </span>
-            </span>
+            </motion.span>
           </div>
 
-          <div className="flex items-start justify-between gap-3 mb-1 pb-2 pr-9">
-            <div className="flex items-center justify-center gap-3 ">
-              <div className="w-8 h-8 rounded-full bg-neutral-800 flex items-center justify-center border border-zinc-500 overflow-hidden shrink-0">
+          <div className="flex items-start justify-between gap-3 mb-2 pb-2 pr-9 border-b border-white/5">
+            <div className="flex items-center justify-center gap-3">
+              <div className="w-8 h-8 rounded-2xl bg-neutral-900/50 flex items-center justify-center border border-white/10 overflow-hidden shrink-0 group-hover:border-amber-500/30 transition-colors duration-300">
                 {logo ? (
                   <Link to={link} target="_blank" rel="noopener noreferrer">
                     <img
@@ -164,7 +173,7 @@ const Card = React.memo(
                 ) : null}
                 <Link to={link} target="_blank" rel="noopener noreferrer">
                   <span
-                    className="text-amber-500/70 text-sm font-bold"
+                    className="text-amber-500 text-sm font-black"
                     style={{ display: logo ? "none" : "flex" }}
                   >
                     {title.charAt(0).toUpperCase()}
@@ -172,31 +181,29 @@ const Card = React.memo(
                 </Link>
               </div>
               <Link to={link} target="_blank" rel="noopener noreferrer">
-                <h3 className="font-medium text-gray-200 md:tracking-wider transition-colors duration-300">
+                <h3 className="font-bold text-gray-100 tracking-tight group-hover:text-amber-500 transition-colors duration-300">
                   {title}
                 </h3>
               </Link>
             </div>
           </div>
 
-          {/* border */}
-          <div className="w-[85%] h-[0.5px] bg-linear-to-r from-zinc-500/20 via-zinc-500/70 to-zinc-500/20 mb-[5px] rounded-full"></div>
-
           <Link to={link} target="_blank" rel="noopener noreferrer">
-            <p className="text-sm max-w-[90%] text-white/60 leading-relaxed font-light grow">
+            <p className="text-[13px] max-w-[90%] text-neutral-400 leading-relaxed font-medium grow group-hover:text-neutral-200 transition-colors duration-300">
               {desc}
             </p>
           </Link>
+
           {allowRemove && (
-            <span className="absolute -bottom-[10px] right-2 w-fit text-xs px-4 py-px bg-black backdrop-blur-2xl  border border-white/30 rounded-full text-white/60 leading-relaxed font-light">
+            <span className="mt-4 w-fit text-[10px] px-3 py-1 bg-white/5 border border-white/10 rounded-full text-amber-500/80 uppercase font-black tracking-widest leading-none">
               {category
                 .split("_")
                 .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
                 .join(" ")}
             </span>
           )}
-        </article>
-      </div>
+        </motion.article>
+      </motion.div>
     );
   },
 );

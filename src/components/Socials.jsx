@@ -1,84 +1,171 @@
+/* eslint-disable no-unused-vars */
+import { motion } from "motion/react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
   Coffee01Icon,
   GithubIcon,
   InstagramIcon,
   Linkedin01Icon,
-  Mail01Icon,
   NewTwitterRectangleIcon,
 } from "@hugeicons/core-free-icons";
 
+const SocialCard = ({
+  name,
+  icon,
+  url,
+  label,
+  color = "white",
+  status = null,
+}) => {
+  return (
+    <motion.a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      whileHover={{ y: -8, scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className="group relative flex flex-col items-center justify-between p-4 md:p-5 w-full sm:w-52 md:w-60 lg:w-full 
+      rounded-3xl md:rounded-4xl bg-white/3 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-400 overflow-hidden"
+      aria-label={label}
+    >
+      {/* Dynamic Background Glow */}
+      <div
+        className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-700 blur-[80px]"
+        style={{ backgroundColor: color }}
+      />
+
+      {/* Top Section: Icon & Status */}
+      <div className="w-full flex justify-between items-start z-10">
+        <div
+          className="p-2 rounded-2xl bg-white/5 border border-white/5 shadow-2xl group-hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] transition-all duration-500"
+          style={{ color: color }}
+        >
+          <HugeiconsIcon icon={icon} size={26} />
+        </div>
+
+        {status && (
+          <div className="absolute right-1 flex items-center gap-2 px-1.5 md:px-3 py-1.5 rounded-full bg-black/40 border border-white/5 backdrop-blur-md">
+            <span className="relative flex items-center justify-center h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            </span>
+            <span className="hidden md:block text-[10px] uppercase tracking-widest text-neutral-300 font-bold">
+              {status}
+            </span>
+          </div>
+        )}
+      </div>
+
+      {/* Bottom Section */}
+      <motion.div 
+        className="w-full mt-2 z-10 backface-hidden"
+        initial={{ y: 0 }}
+        whileHover={{ y: -2 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+      >
+        <h3 className="text-xl md:text-2xl font-bold text-white tracking-wide">
+          {name}
+        </h3>
+        <p className="text-sm font-medium text-neutral-500 group-hover:text-neutral-200 transition-colors duration-300 ">
+          {label}
+        </p>
+      </motion.div>
+
+      {/* Subtle Bottom Border Accent */}
+      <div
+        className="absolute bottom-0 left-0 h-1 w-0 group-hover:w-full blur-lg transition-all duration-700 ease-in-out"
+        style={{ backgroundColor: color }}
+      />
+    </motion.a>
+  );
+};
+
 export default function Socials() {
-  const socialLinks = [
+  const socials = [
     {
       name: "GitHub",
       icon: GithubIcon,
       url: "https://github.com/shani-tiwari",
-      label: "Visit my GitHub ⭐",
+      label: "Code & Open Source Contributions",
+      color: "#f0f6fc",
+      status: "Available",
     },
     {
-      name: "X / Twitter",
+      name: "Twitter",
       icon: NewTwitterRectangleIcon,
       url: "https://x.com/ShaniDevelops",
-      label: "Follow on X 🚀",
+      label: "Updates, Humour & Tech Insights",
+      color: "#1DA1F2",
     },
     {
       name: "LinkedIn",
       icon: Linkedin01Icon,
       url: "https://www.linkedin.com/in/shani-tiwari-aspirational/",
-      label: "Connect on LinkedIn ⛓️‍💥",
-    },
-    {
-      name: "Gmail",
-      icon: Mail01Icon,
-      url: "mailto:shanitiwarifl@gmail.com",
-      label: "Send me an email 💌",
+      label: "Professional Career & Networking",
+      color: "#0A66C2",
     },
     {
       name: "Instagram",
       icon: InstagramIcon,
       url: "https://Instagram.com/shanidevelops",
-      label: "Follow on Instagram✨",
+      label: "Personal Journey & Experience",
+      color: "#E4405F",
+      status: "Stories",
     },
     {
       name: "Coffee",
       icon: Coffee01Icon,
       url: "https://buymeacoffee.com/shani_tiwari?new=1",
-      label: "🍵 coffee ❔",
+      label: "Support My Development Work",
+      color: "#FFDD00",
     },
   ];
 
   return (
     <section
       id="socials"
-      className="w-full bg-black/80 relative selection:bg-amber-600/30 selection:text-white"
+      className="w-full bg-[#030303] py-12 relative overflow-hidden"
     >
-      <div className="max-w-[1300px] mx-auto px-1 md:px-14 py-8 space-y-6">
-        {/* Heading Section */}
-        <div className="py-2">
-          <p className="text-neutral-200 text-2xl font-semibold tracking-wide">
-            Socials
-          </p>
-          <p className="h-[0.2px] w-full bg-white/30 rounded-full mt-4"></p>
+      {/* Enhanced Ambient Background Accents */}
+      <div className="absolute top-0 -left-20 w-[500px] h-[500px] bg-purple-600/5 blur-[120px] rounded-full pointer-events-none animate-pulse" />
+      <div className="absolute bottom-0 -right-20 w-[500px] h-[500px] bg-blue-600/5 blur-[120px] rounded-full pointer-events-none animate-pulse" />
+
+      <div className="max-w-7xl mx-auto px-6 relative">
+        {/* Modern Minimal Header */}
+        <div className="mb-12 space-y-4 text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-6xl md:text-7xl mx-auto font-black text-white/90 tracking-tighter"
+          >
+            Stay <span className="text-neutral-500 italic">Connected</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.4 }}
+            className="text-neutral-500 max-w-100 mx-auto text-lg leading-5"
+          >
+            Follow my journey online and explore my latest projects & thoughts.
+          </motion.p>
         </div>
 
-        {/* Links Section */}
-        <div className="flex flex-wrap gap-4">
-          {socialLinks.map((social) => (
-            <a
+        {/* Floating Flex/Grid Container */}
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 md:gap-6">
+          {socials.map((social) => (
+            <SocialCard
               key={social.name}
-              href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative flex-1 min-w-[150px] px-4 py-2 md:h-12 rounded-lg bg-slate-950/40 flex shadow-sm items-center justify-center gap-3 text-gray-200 hover:-translate-y-1 border-2 border-white/20 transition-all duration-300"
-              aria-label={social.label}
-            >
-              <span className="text-xl font-medium">{social.name}</span>
-              <HugeiconsIcon icon={social.icon} size={24} className="mt-1" />
-              <span className="z-999 absolute -bottom-10 left-1/2 -translate-x-1/2 w-max px-2 py-1 bg-gray-800 border border-gray-700 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none shadow-xl">
-                {social.label}
-              </span>
-            </a>
+              name={social.name}
+              icon={social.icon}
+              url={social.url}
+              label={social.label}
+              color={social.color}
+              status={social.status}
+            />
           ))}
         </div>
       </div>
