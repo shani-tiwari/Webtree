@@ -71,11 +71,11 @@ export default function About() {
             <span className="w-8 h-8 rounded-lg bg-linear-to-b from-amber-500 to-amber-700 flex items-center justify-center text-white font-bold text-lg select-none group-hover:scale-110 transition-transform duration-300">
               ४
             </span>
-            <h3 className="text-xl font-bold text-white tracking-wide group-hover:text-amber-500 transition-colors duration-300">
+            <h3 className="text-[22px] font-bold text-white tracking-wide group-hover:text-amber-500 transition-colors duration-300">
               Our Mission
             </h3>
           </div>
-          <p className="text-gray-400 leading-relaxed">
+          <p className="text-gray-400 hover:text-gray-300/80 transition-all duration-300 leading-relaxed">
             WebTree was born from a simple need: to cut through the noise of the
             modern web. We curate the finest frontend magic—from Tailwind
             components and Framer prototypes to essential performance
@@ -89,7 +89,7 @@ export default function About() {
             <span className="w-8 h-8 rounded-lg bg-linear-to-b from-gray-700 to-gray-800 flex items-center justify-center text-white group-hover:from-gray-600 group-hover:to-gray-700 transition-all duration-300">
               <HugeiconsIcon icon={ChartLineData02Icon} size={18} />
             </span>
-            <h3 className="text-xl font-bold text-white tracking-wide group-hover:text-amber-500 transition-colors duration-300">
+            <h3 className="text-[22px] font-bold text-white tracking-wide group-hover:text-amber-500 transition-colors duration-300">
               Why WebTree?
             </h3>
           </div>
@@ -117,7 +117,7 @@ export default function About() {
                   →
                 </span>
                 <span>
-                  <strong className="text-neutral-200">{item.title}:</strong>{" "}
+                  <strong className="text-neutral-200 tracking-wide">{item.title}:</strong>{" "}
                   {item.desc}
                 </span>
               </motion.li>
@@ -135,7 +135,7 @@ export default function About() {
             >
               ⚡
             </motion.span>
-            <h3 className="text-xl font-bold text-white tracking-wide group-hover:text-amber-500 transition-colors duration-300">
+            <h3 className="text-[22px] font-bold text-white tracking-wide group-hover:text-amber-500 transition-colors duration-300">
               Roadmap
             </h3>
           </div>
@@ -176,7 +176,7 @@ export default function About() {
                     </span>
                   </div>
                 )}
-                <p className="text-sm font-bold text-white group-hover:text-amber-500 transition-colors">
+                <p className="text-sm font-semibold tracking-wide text-white group-hover:text-amber-500 transition-colors">
                   <span className="text-amber-500">• </span>
                   {item.title}
                 </p>

@@ -104,14 +104,6 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Full-screen overlay — rendered outside nav to escape backdrop-blur containing block */}
-      {isOpen && (
-        <div
-          onClick={() => setIsOpen(false)}
-          className="fixed inset-0 z-40 bg-black backdrop-blur-sm md:hidden "
-        />
-      )}
-
       <motion.nav
         initial="hidden"
         animate="visible"
@@ -233,121 +225,119 @@ const Navbar = () => {
             )}
           </button>
         </div>
+      </motion.nav>
 
-        {/* Mobile Menu Dropdown */}
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              id="mobile-menu"
-              initial={{ opacity: 0, y: -20, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -20, scale: 0.95 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              className={cn(
-                "z-40 absolute top-10 right-0 w-fit bg-black/95 border border-zinc-100/40 flex flex-col p-4 rounded-3xl gap-2 text-shadow-2xs shadow-xl",
-              )}
+      {/* Full-Screen Mobile Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            id="mobile-menu"
+            initial={{ opacity: 0, scale: 0.97 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.97 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className={cn(
+              "fixed inset-0 z-60 w-screen h-screen bg-black/95 backdrop-blur-md md:hidden",
+              "flex flex-col items-center justify-center p-8 text-shadow-2xs",
+            )}
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setIsOpen(false)}
+              aria-label="Close menu"
+              className="absolute top-3 right-9 text-white/80 hover:text-white active:scale-90 transition-all duration-300"
             >
-              {/* About Link */}
-              <div className="flex gap-3 ml-1 items-center ">
-                <a
-                  href="#about"
-                  className={cn(
-                    "text-zinc-300 text-xl transition-all duration-300 active:scale-95",
-                  )}
-                  onClick={() => setIsOpen(false)}
-                >
-                  About
-                </a>
-                <HugeiconsIcon
-                  className="text-white/80 mt-1 animate-pulse"
-                  icon={Agreement03Icon}
-                  size={18}
-                />
-              </div>
+              <HugeiconsIcon icon={CancelCircleIcon} size={30} />
+            </button>
 
-              <span className="h-[0.3px] w-full bg-white/20 rounded-full my-3 transition-all duration-500"></span>
+            {/* Menu Content */}
+            <div className="flex flex-col items-center gap-8 w-full max-w-xs">
+              {/* About Link */}
+              <a
+                href="#about"
+                className={cn(
+                  "text-zinc-200 text-2xl font-medium tracking-wide transition-all duration-300 active:scale-95 flex items-center gap-3",
+                )}
+                onClick={() => setIsOpen(false)}
+              >
+                About
+                <HugeiconsIcon
+                  className="text-white/70 animate-pulse"
+                  icon={Agreement03Icon}
+                  size={22}
+                />
+              </a>
+
+              <span className="h-[0.5px] w-3/4 bg-white/15 rounded-full"></span>
 
               {/* Socials Section */}
-              <div className="flex flex-col gap-2 ml-1">
+              <div className="flex flex-col items-center gap-4 w-full">
                 <p
                   className={cn(
-                    "text-zinc-400 text-xs tracking-widest uppercase",
+                    "text-zinc-400 text-sm tracking-[0.2em] uppercase",
                   )}
                 >
                   Socials
                 </p>
-                <div className="flex gap-4 mt-1 justify-between">
+                <div className="flex gap-6 flex-wrap justify-center">
                   {socialLinks.map((item) => (
                     <a
                       key={item.name}
                       href={item.url}
                       target="_blank"
                       className={cn(
-                        "flex items-center justify-center text-white/80 transition-all duration-300 active:scale-90",
+                        "flex flex-col items-center justify-center gap-1.5 text-white/70 transition-all duration-300 active:scale-90 hover:text-white",
                       )}
                       onClick={() => setIsOpen(false)}
                       aria-label={`Visit ${item.label} mobile`}
                     >
-                      <HugeiconsIcon icon={item.icon} size={22} />
+                      <HugeiconsIcon icon={item.icon} size={28} />
+                      <span className="text-[10px] text-zinc-400 tracking-wider">
+                        {item.name}
+                      </span>
                     </a>
                   ))}
                 </div>
               </div>
 
-              <span className="h-[0.3px] w-full bg-white/20 rounded-full my-3 transition-all duration-500"></span>
+              <span className="h-[0.5px] w-3/4 bg-white/15 rounded-full"></span>
 
               {/* Other Products */}
-              <div className=" ml-1">
+              <div className="flex flex-col items-center gap-4 w-full">
                 <p
                   className={cn(
-                    "text-zinc-400 text-xs tracking-widest uppercase mb-2",
+                    "text-zinc-400 text-sm tracking-[0.2em] uppercase",
                   )}
                 >
                   Other Products
                 </p>
-                <div className="flex justify-between">
-                  <div className="flex items-center gap-3">
-                    <a
-                      href="https://bebd.vercel.app"
-                      target="_blank"
-                      className={cn(
-                        "text-zinc-300 text-xl transition-all duration-300 active:scale-95",
-                      )}
-                      onClick={() => setIsOpen(false)}
-                    >
-                      ↁ BeBD
-                    </a>
-                    <a
-                      href="https://bebd.vercel.app"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-1 transition-all duration-300 hover:-translate-y-0.5"
-                    >
-                      <span className="text-gray-200">
-                        <HugeiconsIcon
-                          icon={LogoutCircle01Icon}
-                          size={14}
-                          className="-rotate-30"
-                        />
-                      </span>
-                    </a>
-                  </div>
+                <div className="flex items-center gap-4">
+                  <a
+                    href="https://bebd.vercel.app"
+                    target="_blank"
+                    className={cn(
+                      "text-zinc-200 text-2xl font-medium transition-all duration-300 active:scale-95",
+                    )}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    ↁ BeBD
+                  </a>
                   <a
                     href="https://github.com/shani-tiwari/BeBD-be_better_developer"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-1 transition-all duration-300 hover:-translate-y-0.5 hover:scale-110 active:scale-90"
+                    className="transition-all duration-300 hover:-translate-y-0.5 hover:scale-110 active:scale-90"
                   >
-                    <span className="text-white/80 transition-colors duration-300 hover:text-white">
-                      <HugeiconsIcon icon={GithubIcon} size={20} />
+                    <span className="text-white/70 transition-colors duration-300 hover:text-white">
+                      <HugeiconsIcon icon={GithubIcon} size={24} />
                     </span>
                   </a>
                 </div>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.nav>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };

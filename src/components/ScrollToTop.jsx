@@ -26,7 +26,7 @@ const ScrollToTop = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: "smooth"
     });
   };
 
@@ -43,7 +43,7 @@ const ScrollToTop = () => {
           className={cn(
             "fixed bottom-20 md:bottom-16 right-6 md:right-12 z-30 p-2 rounded-full bg-white/10 backdrop-blur-md",
             "border border-white/20 text-white shadow-lg hover:bg-white/20 hover:border-white/40",
-            "transition-colors duration-300 group",
+            "transition-all duration-300 group",
           )}
           aria-label="Scroll to top"
         >

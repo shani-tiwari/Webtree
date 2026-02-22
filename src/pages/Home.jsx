@@ -54,7 +54,7 @@ export default function Home() {
       >
         <div
           className={cn(
-            "text-xl flex flex-col md:flex-row items-center gap-2 bg-clip-text text-transparent bg-linear-to-b from-amber-400 to-amber-700 mx-auto w-fit md:text-[26px] tracking-wider selection:bg-amber-600/30 selection:text-white",
+            " text-xl flex flex-col lg:flex-row md:gap-2 bg-clip-text text-transparent bg-linear-to-b from-amber-400 to-amber-700 mx-auto w-fit md:text-[26px] tracking-wider selection:bg-amber-600/30 selection:text-white",
           )}
         >
           <motion.div
@@ -70,7 +70,7 @@ export default function Home() {
               130+
             </span>
           </motion.div>
-          <span>Frontend Resources, One Click away</span>
+          <span className="font-mono text-xl md:text-3xl">Development Resources,One Click away</span>
         </div>
       </motion.header>
 
@@ -99,6 +99,13 @@ export default function Home() {
             />
           ))}
         </motion.aside>
+
+        {/* divider */}
+        <motion.span 
+        initial={{width:"0%"}}
+        animate={{width:"100%"}}
+        transition={{duration:0.7, delay:0.4, originX:50, ease: "easeOut"}}
+        className=" h-[0.3px] mx-auto -mt-2 bg-white/30 "></motion.span>
 
         {/* Cards Section */}
         <motion.section
