@@ -863,5 +863,306 @@
       "category": "3d",
       "logo": "https://img.logo.dev/mixamo.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
+  ],
+  "apis": [
+    {
+      "id": 1,
+      "name": "JSONPlaceholder",
+      "desc": "Free fake REST API for testing and prototyping. Posts, users, comments – perfect for frontend demos.",
+      "link": "https://jsonplaceholder.typicode.com",
+      "category": "apis",
+      "logo": "https://img.logo.dev/jsonplaceholder.typicode.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 2,
+      "name": "ReqRes",
+      "desc": "REST API testing service with users, login/register endpoints. Great for auth flow practice.",
+      "link": "https://reqres.in",
+      "category": "apis",
+      "logo": "https://img.logo.dev/reqres.in?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 3,
+      "name": "MockAPI",
+      "desc": "Create your own instant REST APIs. No backend code needed for prototyping.",
+      "link": "https://mockapi.io",
+      "category": "apis",
+      "logo": "https://img.logo.dev/mockapi.io?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 4,
+      "name": "Random User",
+      "desc": "Generate random user profiles with photos, names, emails. Perfect for avatar lists.",
+      "link": "https://randomuser.me",
+      "category": "apis",
+      "logo": "https://img.logo.dev/randomuser.me?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 5,
+      "name": "UIFaces",
+      "desc": "Realistic user avatars for UI mockups and prototypes.",
+      "link": "https://uifaces.co",
+      "category": "apis",
+      "logo": "https://img.logo.dev/uifaces.co?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 6,
+      "name": "Faker.js",
+      "desc": "JavaScript library for fake data generation. Names, addresses, lorem ipsum.",
+      "link": "https://fakerjs.dev",
+      "category": "apis",
+      "logo": "https://img.logo.dev/fakerjs.dev?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 7,
+      "name": "IPinfo",
+      "desc": "IP geolocation API. Get visitor location, currency, timezone data.",
+      "link": "https://ipinfo.io",
+      "category": "apis",
+      "logo": "https://img.logo.dev/ipinfo.io?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 8,
+      "name": "ipapi",
+      "desc": "Fast IP geolocation with country, city, ISP detection.",
+      "link": "https://ipapi.co",
+      "category": "apis",
+      "logo": "https://img.logo.dev/ipapi.co?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 9,
+      "name": "OpenWeather",
+      "desc": "Current weather + forecasts worldwide. Free tier with API key.",
+      "link": "https://openweathermap.org/api",
+      "category": "apis",
+      "logo": "https://img.logo.dev/openweathermap.org?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 10,
+      "name": "WeatherAPI",
+      "desc": "Weather data, astronomy, timezones, sports APIs.",
+      "link": "https://www.weatherapi.com",
+      "category": "apis",
+      "logo": "https://img.logo.dev/weatherapi.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 11,
+      "name": "CoinGecko",
+      "desc": "Free crypto prices, market data, exchange rates.",
+      "link": "https://www.coingecko.com/en/api",
+      "category": "apis",
+      "logo": "https://img.logo.dev/coingecko.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 12,
+      "name": "ExchangeRate API",
+      "desc": "Live/historical forex rates. 170+ currencies.",
+      "link": "https://www.exchangerate-api.com",
+      "category": "apis",
+      "logo": "https://img.logo.dev/exchangerate-api.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 13,
+      "name": "GNews",
+      "desc": "News API with keyword/topic search across 60K+ sources.",
+      "link": "https://gnews.io",
+      "category": "apis",
+      "logo": "https://img.logo.dev/gnews.io?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 14,
+      "name": "Unsplash",
+      "desc": "Beautiful free stock photos API. Search by keyword/collection.",
+      "link": "https://unsplash.com/developers",
+      "category": "apis",
+      "logo": "https://img.logo.dev/unsplash.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 15,
+      "name": "Pexels",
+      "desc": "HD/4K stock video & photo API. Curated collections.",
+      "link": "https://www.pexels.com/api",
+      "category": "apis",
+      "logo": "https://img.logo.dev/pexels.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 16,
+      "name": "The Movie Database",
+      "desc": "Movies, TV shows, actors data. Rich metadata + posters.",
+      "link": "https://developer.themoviedb.org",
+      "category": "apis",
+      "logo": "https://img.logo.dev/themoviedb.org?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 17,
+      "name": "Hugging Face",
+      "desc": "Free ML inference API (limited). Text/image generation.",
+      "link": "https://huggingface.co/inference-api",
+      "category": "apis",
+      "logo": "https://img.logo.dev/huggingface.co?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    }
+  ],
+  "tutorials": [
+    {
+      "id": 1,
+      "name": "freeCodeCamp",
+      "desc": "12+ hour full-stack courses. React, Node.js, projects from scratch.",
+      "link": "https://www.youtube.com/@freecodecamp",
+      "category": "tutorials",
+      "logo": "https://img.logo.dev/freecodecamp.org?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 2,
+      "name": "Traversy Media",
+      "desc": "Crash courses + project tutorials. Practical, no-fluff web dev.",
+      "link": "https://www.youtube.com/@TraversyMedia",
+      "category": "tutorials",
+      "logo": "https://img.logo.dev/traversymedia.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 3,
+      "name": "Web Dev Simplified",
+      "desc": "React hooks, algorithms, bite-sized frontend concepts.",
+      "link": "https://www.youtube.com/@WebDevSimplified",
+      "category": "tutorials",
+      "logo": "https://img.logo.dev/webdevsimplified.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 4,
+      "name": "The Net Ninja",
+      "desc": "Complete series (React, Vue, Node). Beginner to advanced.",
+      "link": "https://www.youtube.com/@NetNinja",
+      "category": "tutorials",
+      "logo": "https://img.logo.dev/thenetninja.co.uk?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 5,
+      "name": "TechWorld with Nana",
+      "desc": "DevOps, Docker, Kubernetes, cloud-focused tutorials.",
+      "link": "https://www.youtube.com/@TechWorldwithNana",
+      "category": "tutorials",
+      "logo": "https://img.logo.dev/techworld-with-nana?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    }
+  ],
+  "deployment": [
+    {
+      "id": 1,
+      "name": "Vercel",
+      "desc": "Git push → instant deploys. Next.js optimized, global CDN.",
+      "link": "https://vercel.com",
+      "category": "deployment",
+      "logo": "https://img.logo.dev/vercel.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 2,
+      "name": "Netlify",
+      "desc": "Drag-drop deploys, forms, functions. JAMstack leader.",
+      "link": "https://www.netlify.com",
+      "category": "deployment",
+      "logo": "https://img.logo.dev/netlify.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 3,
+      "name": "Render",
+      "desc": "Full-stack platform. Static sites, web services, databases.",
+      "link": "https://render.com",
+      "category": "deployment",
+      "logo": "https://img.logo.dev/render.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 4,
+      "name": "Cloudflare Pages",
+      "desc": "Free global CDN + Workers. Unlimited bandwidth.",
+      "link": "https://pages.cloudflare.com",
+      "category": "deployment",
+      "logo": "https://img.logo.dev/cloudflare.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 5,
+      "name": "GitHub Pages",
+      "desc": "Free static hosting from any repo. Jekyll support.",
+      "link": "https://pages.github.com",
+      "category": "deployment",
+      "logo": "https://img.logo.dev/github.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    }
+  ],
+  "performance": [
+    {
+      "id": 1,
+      "name": "Google PageSpeed Insights",
+      "desc": "Mobile + desktop scores, Core Web Vitals, optimization tips.",
+      "link": "https://pagespeed.web.dev",
+      "category": "performance",
+      "logo": "https://img.logo.dev/pagespeed.web.dev?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 2,
+      "name": "Lighthouse",
+      "desc": "Chrome DevTools auditor. Performance, accessibility, SEO scores.",
+      "link": "https://developer.chrome.com/docs/lighthouse",
+      "category": "performance",
+      "logo": "https://img.logo.dev/developer.chrome.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 3,
+      "name": "GTmetrix",
+      "desc": "Detailed waterfalls, video replays, monitoring. 100 tests/month free.",
+      "link": "https://gtmetrix.com",
+      "category": "performance",
+      "logo": "https://img.logo.dev/gtmetrix.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 4,
+      "name": "WebPageTest",
+      "desc": "Real browsers, multiple locations. Advanced filmstrip view.",
+      "link": "https://www.webpagetest.org",
+      "category": "performance",
+      "logo": "https://img.logo.dev/webpagetest.org?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    }
+  ],
+  "testing": [
+    {
+      "id": 1,
+      "name": "Cypress",
+      "desc": "Fast E2E testing for modern web apps. Real browsers, time travel debugging.",
+      "link": "https://www.cypress.io",
+      "category": "testing",
+      "logo": "https://img.logo.dev/cypress.io?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 2,
+      "name": "Playwright",
+      "desc": "Cross-browser E2E. Chrome, Firefox, Safari, mobile emulation.",
+      "link": "https://playwright.dev",
+      "category": "testing",
+      "logo": "https://img.logo.dev/playwright.dev?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 3,
+      "name": "Selenium",
+      "desc": "Browser automation for testing. Enterprise standard, all languages.",
+      "link": "https://www.selenium.dev",
+      "category": "testing",
+      "logo": "https://img.logo.dev/selenium.dev?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 4,
+      "name": "Webhook.site",
+      "desc": "Test webhook endpoints instantly. Inspect incoming requests live.",
+      "link": "https://webhook.site",
+      "category": "testing",
+      "logo": "https://img.logo.dev/webhook.site?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    }
+  ],
+  "upskill": [
+    {
+      "id": 1,
+      "name": "bebd",
+      "desc": "Beginner project ideas with implementation plans and resources.",
+      "link": "https://bebd.vercel.app",
+      "category": "upskill",
+      "logo": "https://img.logo.dev/bebd.vercel.app?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    }
   ]
+
 }

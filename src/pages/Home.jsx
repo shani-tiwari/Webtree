@@ -67,7 +67,7 @@ export default function Home() {
                 "wavy-underline-pulse w-fit bg-clip-text text-transparent bg-linear-to-b from-amber-400 to-amber-700",
               )}
             >
-              100+
+              130+
             </span>
           </motion.div>
           <span>Frontend Resources, One Click away</span>

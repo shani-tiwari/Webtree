@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://webtree.vercel.app/sitemap.xml
+Sitemap: https://webtree-v2.vercel.app/sitemap.xml
