@@ -38,7 +38,7 @@ export default function About() {
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          // viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
           <motion.h2
@@ -51,11 +51,17 @@ export default function About() {
           >
             About <span className={cn("text-neutral-500 italic")}>Webtree</span>
           </motion.h2>
-          <p
-            className={cn("h-[0.2px] w-[75vw] bg-white/30 mt-6")}
-          ></p>
         </motion.div>
       </div>
+
+
+      <motion.span 
+        initial={{width:"0%"}}              
+        viewport={{ once: true }}
+        whileInView={{width:"80%"}}
+        transition={{duration:0.7, delay:0.4, originX:50, ease: "easeOut"}}
+        className=" h-[2px] mx-auto my-2 bg-white/30 ">
+      </motion.span>
 
       {/* Main Content Grid */}
       <motion.div

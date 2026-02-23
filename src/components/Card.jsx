@@ -106,8 +106,8 @@ const Card = memo(
                   "group/icon relative flex items-center justify-center transition-all duration-200 z-30",
                   "hover:-translate-y-0.5 active:scale-97",
                   isCollected
-                    ? "text-emerald-300/70 hover:text-emerald-300"
-                    : "text-amber-300/55 hover:text-amber-300/80",
+                    ? "text-emerald-600 font-bold hover:text-emerald-500"
+                    : "text-amber-300/75 hover:text-amber-300/80",
                 )}
               >
                 {isCollected ? (
@@ -150,7 +150,7 @@ const Card = memo(
               onClick={handleCopy}
               className={cn(
                 "group/copy relative flex items-center justify-center transition-all duration-200 z-30",
-                "text-sky-400/60 hover:text-sky-300/80 active:scale-97 hover:-translate-y-0.5",
+                "text-zinc-300 hover:text-sky-300/80 active:scale-97 hover:-translate-y-0.5",
               )}
             >
               <HugeiconsIcon icon={Copy02Icon} size={22} />
@@ -169,7 +169,7 @@ const Card = memo(
               onClick={handleShare}
               className={cn(
                 "group/share relative flex items-center justify-center transition-all duration-200 z-30",
-                "text-indigo-400/60 hover:text-indigo-400 hover:-translate-y-0.5 active:scale-97",
+                "text-zinc-300 hover:text-indigo-400 hover:-translate-y-0.5 active:scale-97",
               )}
             >
               <HugeiconsIcon icon={SentIcon} size={22} />

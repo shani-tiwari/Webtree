@@ -137,7 +137,7 @@ export default function Socials() {
   return (
     <section
       id="socials"
-      className="w-full bg-[#030303] py-12 relative overflow-hidden"
+      className="w-full bg-[#030303] py-12 relative overflow-hidden select-none"
     >
       {/* Enhanced Ambient Background Accents */}
       <div className="absolute top-0 -left-20 w-[500px] h-[500px] bg-purple-600/5 blur-[120px] rounded-full pointer-events-none animate-pulse" />
@@ -145,7 +145,7 @@ export default function Socials() {
 
       <div className="max-w-7xl mx-auto px-6 relative">
         {/* Modern Minimal Header */}
-        <div className="mb-12 space-y-4 text-center">
+        <div className="mb-8 space-y-4 text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -162,10 +162,20 @@ export default function Socials() {
           >
             Follow my journey online and explore my latest projects & thoughts.
           </motion.p>
+
+
         </div>
 
+          <motion.span 
+              initial={{width:"0%"}}
+              whileInView={{width:"100%"}}
+              viewport={{ once: true }}
+              transition={{duration:0.6, delay:0.3, ease: "easeOut"}}
+              className="block mx-auto  h-[1.3px] bg-white/30 ">
+          </motion.span>
+
         {/* Floating Flex/Grid Container */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6 ">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6 mt-8">
           {socials.map((social) => (
             <SocialCard
               key={social.name}

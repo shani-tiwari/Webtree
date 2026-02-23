@@ -70,7 +70,7 @@ export default function Home() {
               130+
             </span>
           </motion.div>
-          <span className="font-mono text-xl md:text-4xl">Development Resources,One Click away</span>
+          <span className="font-mono text-xl md:text-[30px]">Development Resources,One Click away</span>
         </div>
       </motion.header>
 
@@ -105,7 +105,7 @@ export default function Home() {
         initial={{width:"0%"}}
         animate={{width:"100%"}}
         transition={{duration:0.7, delay:0.4, originX:50, ease: "easeOut"}}
-        className=" h-[0.3px] mx-auto -mt-2 bg-white/30 "></motion.span>
+        className=" h-[1.5px] mx-auto -mt-2 bg-white/30 "></motion.span>
 
         {/* Cards Section */}
         <motion.section
