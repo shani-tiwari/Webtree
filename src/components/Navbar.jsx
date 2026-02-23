@@ -218,11 +218,7 @@ const Navbar = () => {
             aria-label="Toggle menu"
             className="md:hidden text-gray-400 dark:text-white focus:outline-none hover:scale-106 transition-all duration-400"
           >
-            {isOpen ? (
-              <HugeiconsIcon icon={CancelCircleIcon} size={19} />
-            ) : (
               <HugeiconsIcon icon={Menu01Icon} size={19} />
-            )}
           </button>
         </div>
       </motion.nav>
@@ -256,11 +252,11 @@ const Navbar = () => {
               <a
                 href="#about"
                 className={cn(
-                  "text-zinc-200 text-2xl font-medium tracking-wide transition-all duration-300 active:scale-95 flex items-center gap-3",
+                  "text-zinc-300 text-2xl font-medium tracking-wide transition-all duration-300 active:scale-95 flex items-center gap-6",
                 )}
                 onClick={() => setIsOpen(false)}
               >
-                About
+                <span>About</span>
                 <HugeiconsIcon
                   className="text-white/70 animate-pulse"
                   icon={Agreement03Icon}
@@ -271,7 +267,7 @@ const Navbar = () => {
               <span className="h-[0.5px] w-3/4 bg-white/15 rounded-full"></span>
 
               {/* Socials Section */}
-              <div className="flex flex-col items-center gap-4 w-full">
+              <div className="flex flex-col items-center gap-6 w-full">
                 <p
                   className={cn(
                     "text-zinc-400 text-sm tracking-[0.2em] uppercase",
@@ -279,20 +275,20 @@ const Navbar = () => {
                 >
                   Socials
                 </p>
-                <div className="flex gap-6 flex-wrap justify-center">
+                <div className="flex gap-x-14 gap-y-8 flex-wrap justify-center">
                   {socialLinks.map((item) => (
                     <a
                       key={item.name}
                       href={item.url}
                       target="_blank"
                       className={cn(
-                        "flex flex-col items-center justify-center gap-1.5 text-white/70 transition-all duration-300 active:scale-90 hover:text-white",
+                        "flex flex-col flex-wrap items-center justify-center gap-1.5 text-white/80 transition-all duration-300 active:scale-90 hover:text-white",
                       )}
                       onClick={() => setIsOpen(false)}
                       aria-label={`Visit ${item.label} mobile`}
                     >
-                      <HugeiconsIcon icon={item.icon} size={28} />
-                      <span className="text-[10px] text-zinc-400 tracking-wider">
+                      <HugeiconsIcon icon={item.icon} size={30} />
+                      <span className="text-[10px] text-zinc-400 tracking-widest">
                         {item.name}
                       </span>
                     </a>
@@ -311,12 +307,12 @@ const Navbar = () => {
                 >
                   Other Products
                 </p>
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-6">
                   <a
                     href="https://bebd.vercel.app"
                     target="_blank"
                     className={cn(
-                      "text-zinc-200 text-2xl font-medium transition-all duration-300 active:scale-95",
+                      "text-zinc-300 text-2xl font-medium transition-all duration-300 active:scale-95",
                     )}
                     onClick={() => setIsOpen(false)}
                   >
@@ -328,7 +324,7 @@ const Navbar = () => {
                     rel="noopener noreferrer"
                     className="transition-all duration-300 hover:-translate-y-0.5 hover:scale-110 active:scale-90"
                   >
-                    <span className="text-white/70 transition-colors duration-300 hover:text-white">
+                    <span className="text-white/70 transition-colors duration-300 hover:text-white animate-pulse">
                       <HugeiconsIcon icon={GithubIcon} size={24} />
                     </span>
                   </a>
