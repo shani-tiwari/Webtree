@@ -165,7 +165,7 @@ export default function Socials() {
         </div>
 
         {/* Floating Flex/Grid Container */}
-        <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 md:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6 ">
           {socials.map((social) => (
             <SocialCard
               key={social.name}

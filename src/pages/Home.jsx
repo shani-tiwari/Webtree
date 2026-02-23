@@ -54,7 +54,7 @@ export default function Home() {
       >
         <div
           className={cn(
-            " text-xl flex flex-col lg:flex-row md:gap-2 bg-clip-text text-transparent bg-linear-to-b from-amber-400 to-amber-700 mx-auto w-fit md:text-[26px] tracking-wider selection:bg-amber-600/30 selection:text-white",
+            " text-xl md:text-[28px] flex flex-col lg:flex-row md:gap-2 bg-clip-text text-transparent bg-linear-to-b from-amber-400 to-amber-700 mx-auto w-fit  tracking-wider selection:bg-amber-600/30 selection:text-white",
           )}
         >
           <motion.div
@@ -70,7 +70,7 @@ export default function Home() {
               130+
             </span>
           </motion.div>
-          <span className="font-mono text-xl md:text-3xl">Development Resources,One Click away</span>
+          <span className="font-mono text-xl md:text-4xl">Development Resources,One Click away</span>
         </div>
       </motion.header>
 
@@ -84,7 +84,7 @@ export default function Home() {
           transition={{ duration: 0.6, delay: 0.2 }}
           aria-label="Category selection"
           className={cn(
-            "z-40 shrink-0 flex flex-wrap justify-center rounded-xl gap-1 md:gap-2 w-full h-fit px-2 md:py-3 md:pt-4 text-white backdrop-blur-sm",
+            "z-40 max-w-4xl mx-auto shrink-0 flex flex-wrap justify-center rounded-xl gap-1 md:gap-2 w-full h-fit px-2 md:py-3 md:pt-4 text-white backdrop-blur-sm",
           )}
         >
           {Object.keys(data).map((name, index) => (

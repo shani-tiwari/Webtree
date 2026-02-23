@@ -111,7 +111,7 @@ const Navbar = () => {
         aria-label="Main Navigation"
         className={cn(
           "fixed top-1 left-1/2 -translate-x-1/2 w-[90%] md:max-w-[1000px] z-50 px-4 md:px-6 py-1 md:py-3",
-          "flex justify-between items-center rounded-full border-2 border-neutral-400/50 shadow-xs shadow-amber-700/40 backdrop-blur-xs",
+          "flex justify-between items-center rounded-full border-2 border-neutral-400/50 shadow-xs shadow-amber-700/40 backdrop-blur-[6px]",
         )}
       >
         {/* Logo */}
