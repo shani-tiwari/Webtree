@@ -60,7 +60,7 @@ export default function About() {
         viewport={{ once: true }}
         whileInView={{width:"80%"}}
         transition={{duration:0.7, delay:0.4, originX:50, ease: "easeOut"}}
-        className=" h-[2px] mx-auto my-2 bg-white/30 ">
+        className=" h-[1.3px] mx-auto mb-2 bg-white/30 ">
       </motion.span>
 
       {/* Main Content Grid */}

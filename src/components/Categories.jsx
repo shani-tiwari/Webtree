@@ -18,7 +18,7 @@ const Categories = React.memo(
         aria-pressed={isActive}
         aria-label={`Select ${name.split("_").join(" ")} category`}
         className={cn(
-          "relative w-fit md:text-start group border border-white/30 py-1.5 px-4 mb-2 rounded-lg",
+          "relative w-fit md:text-start group border border-white/30 py-1.5 px-4 mb-2 rounded-[14px]",
           "backdrop-blur-md cursor-pointer transition-colors duration-200 ease-out select-none",
           "shadow-xs shadow-white/8 hover:shadow-[0_4px_15px_rgba(0,0,0,0.6)]",
           isActive

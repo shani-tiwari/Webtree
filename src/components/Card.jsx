@@ -104,10 +104,10 @@ const Card = memo(
                 onClick={handleAddKey}
                 className={cn(
                   "group/icon relative flex items-center justify-center transition-all duration-200 z-30",
-                  "hover:-translate-y-0.5 active:scale-97",
+                  "hover:-translate-y-0.5 active:scale-97 ease-in-out",
                   isCollected
                     ? "text-emerald-600 font-bold hover:text-emerald-500"
-                    : "text-amber-300/75 hover:text-amber-300/80",
+                    : "text-amber-300/60 hover:text-amber-400/90",
                 )}
               >
                 {isCollected ? (
@@ -122,7 +122,7 @@ const Card = memo(
                     " font-semibold invisible group-hover/icon:visible transition-all duration-300 pointer-events-none z-99",
                   )}
                 >
-                  {added ? "Added!" : isCollected ? "Saved" : "+ Add"}
+                  {added ? "Added" : isCollected ? "Added" : "+ Add"}
                 </span>
               </motion.span>
             )}
@@ -150,7 +150,7 @@ const Card = memo(
               onClick={handleCopy}
               className={cn(
                 "group/copy relative flex items-center justify-center transition-all duration-200 z-30",
-                "text-zinc-300 hover:text-sky-300/80 active:scale-97 hover:-translate-y-0.5",
+                "text-sky-300/60 hover:text-sky-500/80 active:scale-97 hover:-translate-y-0.5",
               )}
             >
               <HugeiconsIcon icon={Copy02Icon} size={22} />
@@ -169,7 +169,7 @@ const Card = memo(
               onClick={handleShare}
               className={cn(
                 "group/share relative flex items-center justify-center transition-all duration-200 z-30",
-                "text-zinc-300 hover:text-indigo-400 hover:-translate-y-0.5 active:scale-97",
+                "text-indigo-300/70 hover:text-indigo-500 hover:-translate-y-0.5 active:scale-97",
               )}
             >
               <HugeiconsIcon icon={SentIcon} size={22} />
