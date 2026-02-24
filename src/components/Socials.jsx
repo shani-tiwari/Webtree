@@ -58,8 +58,14 @@ const SocialCard = ({
             className={cn("absolute right-1 flex items-center justify-center gap-2 px-1.5 md:px-3 py-1.5 rounded-full bg-black/40 border border-white/5 backdrop-blur-md",)}>
 
             <span className={cn("relative flex items-center justify-center h-2 w-2" )}>
-              <span className={cn("animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75")}></span>
-              <span className={cn("relative inline-flex rounded-full h-2 w-2 bg-green-500")}></span>
+              <span 
+                className={cn("animate-ping absolute inline-flex items-center justify-center h-full w-full rounded-full opacity-75")} 
+                style={{ backgroundColor: color}}>
+              </span>
+              <span 
+                className={cn("relative inline-flex rounded-full h-2 w-2")} 
+                style={{ backgroundColor: color}}>
+              </span>
             </span>
             <span className={cn("hidden md:block text-[10px] uppercase tracking-widest text-neutral-300 font-bold")}>
               {status}
@@ -100,15 +106,16 @@ export default function Socials() {
       icon: GithubIcon,
       url: "https://github.com/shani-tiwari",
       label: "Code & Open Source Contributions",
-      color: "#f0f6fc",
-      status: "Available",
+      color: "oklch(55.6% 0 0)",
+      status: "Building",
     },
     {
       name: "Twitter",
       icon: NewTwitterRectangleIcon,
       url: "https://x.com/ShaniDevelops",
       label: "Updates, Humour & Tech Insights",
-      color: "#1DA1F2",
+      color: "oklch(73.7% 0.021 106.9)",
+      status: "Updates",
     },
     {
       name: "LinkedIn",
@@ -116,6 +123,7 @@ export default function Socials() {
       url: "https://www.linkedin.com/in/shani-tiwari-aspirational/",
       label: "Professional Career & Networking",
       color: "#0A66C2",
+      status: "Networking",
     },
     {
       name: "Instagram",
@@ -130,7 +138,8 @@ export default function Socials() {
       icon: Coffee01Icon,
       url: "https://buymeacoffee.com/shani_tiwari?new=1",
       label: "Support My Development Work",
-      color: "#FFDD00",
+      color: "oklch(66.6% 0.179 58.318)",
+      status: "Support",
     },
   ];
 
@@ -145,7 +154,7 @@ export default function Socials() {
 
       <div className="max-w-7xl mx-auto px-6 relative">
         {/* Modern Minimal Header */}
-        <div className="mb-8 space-y-4 text-center">
+        <div className="mb-8 space-y-3 md:space-y-4 text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -158,7 +167,7 @@ export default function Socials() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="text-neutral-500 max-w-100 mx-auto text-lg leading-5"
+            className="text-neutral-500 max-w-100 mx-auto text-sm md:text-lg leading-5"
           >
             Follow my journey online and explore my latest projects & thoughts.
           </motion.p>
@@ -171,7 +180,7 @@ export default function Socials() {
               whileInView={{width:"100%"}}
               viewport={{ once: true }}
               transition={{duration:0.6, delay:0.3, ease: "easeOut"}}
-              className="block mx-auto  h-[1.3px] bg-white/30 ">
+              className="block mx-auto  h-[1.3px] bg-white/30 -mt-4 md:mt-0">
           </motion.span>
 
         {/* Floating Flex/Grid Container */}

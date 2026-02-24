@@ -1,4 +1,3 @@
-import React from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { cn } from "../lib/utils";
@@ -13,13 +12,13 @@ const SkeletonHome = () => {
       >
         <section
           className={cn(
-            "grow w-full flex flex-col md:flex-row lg:flex-row justify-center gap-10 px-1 md:px-14",
+            "grow w-full flex flex-col lg:flex-row justify-center gap-10 px-1 md:px-14",
           )}
         >
           {/* Sidebar Skeleton */}
           <aside
             className={cn(
-              "shrink-0 w-full md:w-64 md:pt-30 pt-20 h-fit px-2 py-3 flex flex-col gap-2",
+              "shrink-0 w-full md:w-64 md:pt-30 pt-20 h-fit px-2 py-3 flex  gap-2",
             )}
           >
             {Array(8)

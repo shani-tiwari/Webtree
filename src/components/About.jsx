@@ -58,9 +58,9 @@ export default function About() {
       <motion.span 
         initial={{width:"0%"}}              
         viewport={{ once: true }}
-        whileInView={{width:"80%"}}
+        whileInView={{width:"99%"}}
         transition={{duration:0.7, delay:0.4, originX:50, ease: "easeOut"}}
-        className=" h-[1.3px] mx-auto mb-2 bg-white/30 ">
+        className=" h-[1.3px] md:max-w-[80%] mx-auto -mt-4 md:mt-0 mb-2 bg-white/30 ">
       </motion.span>
 
       {/* Main Content Grid */}
@@ -81,7 +81,7 @@ export default function About() {
               Our Mission
             </h3>
           </div>
-          <p className="text-gray-400 hover:text-gray-300/80 transition-all duration-300 leading-relaxed">
+          <p className="text-gray-400 hover:text-gray-300/80 transition-all duration-300 leading-relaxed px-2 md:pr-10 md:pl-0">
             WebTree was born from a simple need: to cut through the noise of the
             modern web. We curate the finest frontend magic—from Tailwind
             components and Framer prototypes to essential performance
@@ -99,7 +99,7 @@ export default function About() {
               Why WebTree?
             </h3>
           </div>
-          <ul className="text-gray-400 space-y-3">
+          <ul className="text-gray-400 space-y-3 px-1">
             {[
               {
                 title: "Hand-Curated",
@@ -145,18 +145,18 @@ export default function About() {
               Roadmap
             </h3>
           </div>
-          <div className="space-y-[10px]">
+          <div className="space-y-[12px]">
             {[
               {
                 title: "Backend & Infrastructure",
                 desc: "Expanding our curated collections to server-side excellence.",
                 live: true,
               },
-              {
-                title: "AI Tools & Workflows",
-                desc: "Integrating next-gen automation for your dev environment.",
-                live: false,
-              },
+              // {
+              //   title: "AI Tools & Workflows",
+              //   desc: "Integrating next-gen automation for your dev environment.",
+              //   live: false,
+              // },
               {
                 title: "Interactive Tutorials",
                 desc: "Learn to master the tools you find here.",
@@ -169,7 +169,7 @@ export default function About() {
                   x: 5,
                   backgroundColor: "rgba(255, 255, 255, 0.08)",
                 }}
-                className="py-3 px-4 rounded-xl bg-white/5 border border-white/10 relative overflow-hidden group transition-colors"
+                className="py-2 px-3 rounded-xl bg-white/5 border border-white/10 relative overflow-hidden group transition-colors"
               >
                 {item.live && (
                   <div className="absolute top-3 right-3 flex items-center gap-2">
@@ -186,7 +186,7 @@ export default function About() {
                   <span className="text-amber-500">• </span>
                   {item.title}
                 </p>
-                <p className="text-xs text-gray-500 mt-1 leading-relaxed">
+                <p className="text-xs text-gray-500 mt-1 leading-4 pl-[10px]">
                   {item.desc}
                 </p>
               </motion.div>

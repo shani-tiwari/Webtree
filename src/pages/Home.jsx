@@ -54,7 +54,7 @@ export default function Home() {
       >
         <div
           className={cn(
-            " text-xl md:text-[28px] flex flex-col lg:flex-row md:gap-2 bg-clip-text text-transparent bg-linear-to-b from-amber-400 to-amber-700 mx-auto w-fit  tracking-wider selection:bg-amber-600/30 selection:text-white",
+            " text-xl md:text-[28px] flex flex-col gap-2 lg:flex-row md:gap-3 bg-clip-text text-transparent bg-linear-to-b from-amber-400 to-amber-700 mx-auto w-fit  tracking-wider selection:bg-amber-600/30 selection:text-white",
           )}
         >
           <motion.div
@@ -102,10 +102,11 @@ export default function Home() {
 
         {/* divider */}
         <motion.span 
-        initial={{width:"0%"}}
-        animate={{width:"100%"}}
-        transition={{duration:0.7, delay:0.4, originX:50, ease: "easeOut"}}
-        className=" h-[1.5px] mx-auto -mt-2 bg-white/30 "></motion.span>
+          initial={{width:"0%"}}
+          animate={{width:"99%"}}
+          transition={{duration:0.7, delay:0.4, originX:50, ease: "easeOut"}}
+          className=" h-[1.5px] mx-auto -mt-2 mb-2 bg-white/30 ">
+        </motion.span>
 
         {/* Cards Section */}
         <motion.section
