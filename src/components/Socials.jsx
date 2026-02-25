@@ -123,7 +123,7 @@ export default function Socials() {
       url: "https://www.linkedin.com/in/shani-tiwari-aspirational/",
       label: "Professional Career & Networking",
       color: "#0A66C2",
-      status: "Networking",
+      status: "Connect",
     },
     {
       name: "Instagram",
