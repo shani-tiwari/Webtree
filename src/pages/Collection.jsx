@@ -33,6 +33,9 @@ export default function Collection() {
         <p className="text-sm md:text-base mt-2 opacity-80 text-white/70">
           Your personally curated list of resources
         </p>
+        <p className="text-sm md:text-base mt-2 opacity-80 text-green-300">
+          Added Items - {collection.length}
+        </p>
       </header>
 
       <motion.section

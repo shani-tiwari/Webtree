@@ -130,14 +130,14 @@ const Card = memo(
               <motion.span
                 onClick={handleRemoveKey}
                 className={cn(
-                  "group/delete absolute right-6 flex items-center justify-center text-red-400/70 hover:text-red-500/70 transition-colors duration-300 z-30",
+                  "group/delete absolute right-2 flex items-center justify-center text-red-600/90 hover:text-red-500 p-1 rounded-xl border-2 border-white/20 z-30",
                   "hover:-translate-y-0.5 active:scale-97 transition-all duration-200",
                 )}
               >
                 <HugeiconsIcon icon={Delete03Icon} size={20} />
                 <span
                   className={cn(
-                    "absolute right-full mr-2 w-max px-2.5 py-1 text-[10px] uppercase bg-zinc-900 border border-white/10 rounded-md shadow-xs font-semibold invisible group-hover/delete:opacity-100 group-hover/delete:visible transition-all duration-200 pointer-events-none z-99",
+                    "absolute right-full mr-2 -mt-4 w-max px-2.5 py-1 text-[10px] uppercase bg-zinc-900 border border-white/10 rounded-md shadow-xs font-semibold invisible group-hover/delete:opacity-100 group-hover/delete:visible transition-all duration-200 pointer-events-none z-99",
                   )}
                 >
                   Remove
@@ -175,7 +175,7 @@ const Card = memo(
               <HugeiconsIcon icon={SentIcon} size={20} />
               <span
                 className={cn(
-                  "absolute bottom-full left-3 mb-1 w-max px-2.5 py-1 text-[10px] uppercase bg-zinc-900 border border-white/10 rounded-md shadow-xs font-semibold invisible group-hover/share:opacity-100 group-hover/share:visible transition-all duration-200 pointer-events-none z-99",
+                  "absolute top-[91%] -left-14 w-max px-2.5 py-1 text-[10px] uppercase bg-zinc-900 border border-white/10 rounded-md shadow-xs font-semibold invisible group-hover/share:opacity-100 group-hover/share:visible transition-all duration-200 pointer-events-none z-999",
                 )}
               >
                 Share
@@ -187,7 +187,7 @@ const Card = memo(
           <div className={cn("p-2 w-fit mb-2 rounded-2xl bg-neutral-900/50 flex items-center justify-center border-2 border-white/10 overflow-hidden shrink-0 group-hover:border-amber-500/30 transition-all duration-300")}>
               <div
                 className={cn(
-                  "w-8 h-8 rounded-2xl bg-neutral-900/50 flex items-center justify-center border border-white/10 overflow-hidden shrink-0 group-hover:border-amber-500/30 transition-colors duration-300",
+                  "w-8 h-8 rounded-2xl bg-neutral-900/50 flex items-center justify-center border border-white/10 overflow-hidden shrink-0 group-hover:scale-120 transition-all duration-300",
                 )}
               >
                 {logo ? (
@@ -246,7 +246,7 @@ const Card = memo(
           {allowRemove && (
             <span
               className={cn(
-                "absolute right-8 -bottom-2 mt-4 w-fit text-[10px] px-3 py-1 bg-black/75 backdrop-blur-md  border border-white/10 rounded-full text-amber-700/80 uppercase font-black tracking-widest leading-none",
+                "absolute right-7 -bottom-2 mt-4 w-fit text-[10px] px-3 py-1 bg-black/75 backdrop-blur-md  border border-white/10 rounded-full text-amber-700/80 uppercase font-black tracking-widest leading-none",
               )}
             >
               {category

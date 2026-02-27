@@ -7,31 +7,37 @@ const SkeletonHome = () => {
     <SkeletonTheme baseColor="#333" highlightColor="#555">
       <main
         className={cn(
-          "min-h-screen h-fit max-w-screen flex flex-col gap-10 md:gap-10",
+          "min-h-screen h-fit max-w-screen mx-auto flex flex-col items-center gap-10 md:gap-10 mt-1",
         )}
       >
+        {/* navbar */}
+        <nav className="w-full h-32 mx-auto">
+          <Skeleton height={`40%`} width={`100%`} borderRadius={30} />
+        </nav>
+
+
         <section
           className={cn(
-            "grow w-full flex flex-col lg:flex-row justify-center gap-10 px-1 md:px-14",
+            "grow w-full flex flex-col items-center justify-center gap-10 px-1 md:px-14",
           )}
         >
-          {/* Sidebar Skeleton */}
+          {/* category Skeleton */}
           <aside
             className={cn(
-              "shrink-0 w-full md:w-64 md:pt-30 pt-20 h-fit px-2 py-3 flex  gap-2",
+              " w-full  mx-auto flex gap-3 shrink-0 flex-wrap pt-20 h-fit px-2 py-3",
             )}
           >
-            {Array(8)
+            {Array(16)
               .fill(0)
               .map((_, i) => (
-                <Skeleton key={i} height={40} borderRadius={8} />
+                <Skeleton key={i} height={30} width={85} borderRadius={12} />
               ))}
           </aside>
 
           {/* Cards Grid Skeleton */}
           <section
             className={cn(
-              "hidden md:grow md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[10px] md:mt-30",
+              " md:grow md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[10px] md:mt-30",
             )}
           >
             {Array(12)
@@ -40,13 +46,13 @@ const SkeletonHome = () => {
                 <div
                   key={i}
                   className={cn(
-                    "aspect-square bg-black/40 rounded-lg p-3 flex flex-col justify-between border border-white/5",
+                    "aspect-square bg-black/40 rounded-xl p-3 flex flex-col justify-between border border-white/5",
                   )}
                 >
                   <div className={cn("flex flex-col gap-3")}>
                     <Skeleton circle width={40} height={40} />
-                    <Skeleton width={`60%`} height={20} />
                   </div>
+                    <Skeleton width={`60%`} height={20} />
                   <Skeleton width={`90%`} height={15} count={2} />
                 </div>
               ))}

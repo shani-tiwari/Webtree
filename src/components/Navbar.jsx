@@ -197,18 +197,26 @@ const Navbar = () => {
             rel="noreferrer"
             aria-label={`Visit`}
           >
-            <HugeiconsIcon
-              icon={FolderCheckIcon}
-              size={20}
-              style={{ color: "oklch(0.871 0.006 286.286)" }}
-            />
+            {location.pathname === "/collection" ? (
+              <HugeiconsIcon
+                icon={SquareArrowLeft02Icon}
+                size={20}
+                style={{ color: "oklch(0.871 0.006 286.286)" }}
+              />
+            ) : (
+              <HugeiconsIcon
+                icon={FolderCheckIcon}
+                size={20}
+                style={{ color: "oklch(0.871 0.006 286.286)" }}
+              />
+            )}
 
             <sup
               className={cn(
                 "absolute -right-2 top-1 text-zinc-300 selection:bg-amber-600/30 selection:text-white",
               )}
             >
-              {collection.length}
+              {location.pathname === '/' && collection.length}
             </sup>
           </Link>
           <button
