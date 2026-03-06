@@ -107,7 +107,7 @@ const Card = memo(
                   "hover:-translate-y-0.5 active:scale-97 ease-in-out p-1 rounded-xl bg-white/8 border-2 border-white/20",
                   isCollected
                     ? "text-emerald-600 font-bold hover:text-emerald-500 filter-[drop-shadow(0_0_12px_rgba(16,185,129,0.4))]"
-                    : "text-amber-300/60  group-hover:text-amber-400/80  ",
+                    : "text-amber-300/60  group-hover:text-amber-400/80 filter-[drop-shadow(0_0_12px_rgba(251,191,36,0.4))] ",
                 )}
               >
                 {isCollected ? (
@@ -137,7 +137,8 @@ const Card = memo(
                 <HugeiconsIcon icon={Delete03Icon} size={20} />
                 <span
                   className={cn(
-                    "absolute right-full mr-2 -mt-4 w-max px-2.5 py-1 text-[10px] uppercase bg-zinc-900 border border-white/10 rounded-md shadow-xs font-semibold invisible group-hover/delete:opacity-100 group-hover/delete:visible transition-all duration-200 pointer-events-none z-99",
+                    "absolute right-full mr-2 -mt-4 w-max px-2.5 py-1 text-[10px] uppercase bg-zinc-900 border border-white/10 rounded-md filter-[drop-shadow(0_0_12px_rgba(220,38,50,0.4))] ",
+                    "shadow-xs font-semibold invisible group-hover/delete:opacity-100 group-hover/delete:visible transition-all duration-200 pointer-events-none z-99",
                   )}
                 >
                   Remove
@@ -157,7 +158,7 @@ const Card = memo(
               <span
                 className={cn(
                   "absolute right-full mr-2 w-max px-2.5 py-1 text-[10px] uppercase bg-zinc-900 border border-white/10 rounded-md shadow-xs ",
-                  "font-semibold invisible group-hover/copy:opacity-100 group-hover/copy:visible transition-all duration-300 pointer-events-none z-99",
+                  "filter-[drop-shadow(0_0_12px_rgba(125,211,252,0.4))] font-semibold invisible group-hover/copy:opacity-100 group-hover/copy:visible transition-all duration-300 pointer-events-none z-99",
                 )}
               >
                 {copied ? "Copied!" : "Copy Link"}
@@ -175,7 +176,8 @@ const Card = memo(
               <HugeiconsIcon icon={SentIcon} size={20} />
               <span
                 className={cn(
-                  "absolute top-[91%] -left-14 w-max px-2.5 py-1 text-[10px] uppercase bg-zinc-900 border border-white/10 rounded-md shadow-xs font-semibold invisible group-hover/share:opacity-100 group-hover/share:visible transition-all duration-200 pointer-events-none z-999",
+                  "absolute top-[91%] -left-14 w-max px-2.5 py-1 text-[10px] uppercase bg-zinc-900 border border-white/10 rounded-md shadow-xs font-semibold invisible filter-[drop-shadow(0_0_12px_rgba(165,180,252,0.4))]",
+                  " group-hover/share:visible transition-all duration-200 pointer-events-none z-999",
                 )}
               >
                 Share

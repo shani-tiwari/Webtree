@@ -12,7 +12,6 @@ import {
   FolderCheckIcon,
   SquareArrowLeft02Icon,
   FolderFavouriteIcon,
-  LogoutCircle01Icon,
   Agreement03Icon,
 } from "@hugeicons/core-free-icons";
 import { useState, useEffect } from "react";
@@ -31,10 +30,10 @@ const Navbar = () => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "";
     }
     return () => {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "";
     };
   }, [isOpen]);
 
@@ -100,6 +99,13 @@ const Navbar = () => {
     },
   ];
 
+  const scrollTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   const { collection } = useCollection();
 
   return (
@@ -120,13 +126,17 @@ const Navbar = () => {
           className={cn("flex items-center")}
           aria-label="Logo"
         >
-          <p
+          <Link
             className={cn(
-              "text-white flex text-lg md:text-2xl selection:bg-amber-600/30 selection:text-white",
+              "text-white/40 flex text-lg md:text-2xl hover:text-white/50 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer selection:bg-amber-600/30 selection:text-white",
             )}
+            to="/"
+            onClick={scrollTop}
           >
-            ४ <p className={cn("w-2 h-1")}></p> Webtree
-          </p>
+            <p className="text-amber-500">४</p>
+            <p className={cn("w-2 h-1")}></p>
+            Webtree
+          </Link>
         </motion.div>
 
         {/* Desktop Menu */}
@@ -146,19 +156,30 @@ const Navbar = () => {
             to={location.pathname === "/collection" ? "/" : "/collection"}
             rel="noreferrer"
             aria-label={`Visit`}
+            onClick={scrollTop}
           >
-            <p
-              className={cn(
-                "text-neutral-300 hover:text-neutral-200  text-lg hidden md:block selection:bg-amber-600/30 selection:text-white",
-              )}
-            >
-              Collection
-            </p>
+            {location.pathname === "/" ? (
+              <p
+                className={cn(
+                  "text-neutral-300 hover:text-neutral-200  text-lg hidden md:block selection:bg-amber-600/30 selection:text-white",
+                )}
+              >
+                Collection
+              </p>
+            ) : (
+              <p
+                className={cn(
+                  "text-amber-600 text-lg hidden md:block selection:bg-amber-600/30 selection:text-white",
+                )}
+              >
+                Home
+              </p>
+            )}
             {location.pathname === "/collection" ? (
               <HugeiconsIcon
                 icon={SquareArrowLeft02Icon}
                 size={20}
-                style={{ color: "oklch(0.871 0.006 286.286)" }}
+                style={{ color: "oklch(66.6% 0.179 58.318)" }}
               />
             ) : (
               <div>
@@ -216,7 +237,7 @@ const Navbar = () => {
                 "absolute -right-2 top-1 text-zinc-300 selection:bg-amber-600/30 selection:text-white",
               )}
             >
-              {location.pathname === '/' && collection.length}
+              {location.pathname === "/" && collection.length}
             </sup>
           </Link>
           <button
@@ -226,7 +247,7 @@ const Navbar = () => {
             aria-label="Toggle menu"
             className="md:hidden text-gray-400 dark:text-white focus:outline-none hover:scale-106 transition-all duration-400"
           >
-              <HugeiconsIcon icon={Menu01Icon} size={19} />
+            <HugeiconsIcon icon={Menu01Icon} size={19} />
           </button>
         </div>
       </motion.nav>

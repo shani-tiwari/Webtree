@@ -1,6 +1,5 @@
 import Home from "./pages/Home";
 import React from "react";
-const Collection = React.lazy(() => import("./pages/Collection"));
 import { Routes, Route } from "react-router";
 import { cn } from "./lib/utils";
 import About from "./components/About";
@@ -8,6 +7,8 @@ import Socials from "./components/Socials";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import ScrollToTop from "./components/ScrollToTop";
+
+const Collection = React.lazy(() => import("./pages/Collection"));
 
 function App() {
   return (
@@ -24,13 +25,10 @@ function App() {
             "bg-[linear-gradient(to_right,#1a1a1a_1px,transparent_1px),linear-gradient(to_bottom,#1a1a1a_1px,transparent_1px)]",
           )}
         />
-        {/* Radial gradient for the container to give a faded look */}
-        {/* <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/50 mask-[radial-gradient(ellipse_at_center,transparent_10%,black)] "></div> */}
 
         {/* website */}
 
         <Navbar />
-
 
         <main
           id="main-content"
