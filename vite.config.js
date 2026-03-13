@@ -79,7 +79,7 @@ export default defineConfig({
         background_color: "#ffffff",
       },
       workbox: {
-        navigateFallbackDenylist: [/^\/sitemap\.xml$/, /^\/robots\.txt$/],
+        navigateFallbackDenylist: [/^\/sitemap\.xml$/, /^\/robots\.txt$/, /^\/1ead026798054782827bba53da149021\.txt$/],
         // logo caching
         runtimeCaching: [
           {
