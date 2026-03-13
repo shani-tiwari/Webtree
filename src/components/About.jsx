@@ -24,7 +24,7 @@ export default function About() {
     <section
       id="about"
       className={cn(
-        "w-full min-h-screen flex items-center justify-center flex-col bg-[#030303] mt-10 px-4 relative selection:bg-amber-600/30 selection:text-white overflow-hidden",
+        "w-full h-fit py-6 flex items-center justify-center flex-col bg-[#030303] mt-10 px-4 relative selection:bg-amber-600/30 selection:text-white overflow-hidden",
       )}
     >
       {/* Background Micro-Accents */}
