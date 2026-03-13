@@ -70,8 +70,10 @@ const Card = memo(
         try {
           await navigator.share({
             title: title,
+            text: "Check this out!",
             url: link,
           });
+          return; // success - exit
         } catch (err) {
           console.error("Error sharing:", err);
         }
