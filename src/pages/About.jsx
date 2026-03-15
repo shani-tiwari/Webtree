@@ -36,7 +36,7 @@ export default function About() {
       />
 
       {/* back button */}
-      <motion.div
+      {location.pathname.startsWith("/about") && (<motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.2 }}
@@ -51,7 +51,7 @@ export default function About() {
         >
           <HugeiconsIcon icon={MoveLeftIcon} className="group-hover:-translate-x-1 group-hover:text-lg transition-transform duration-300" size={20} />
         </Link>
-      </motion.div>
+      </motion.div>)}
 
       <div className={cn("max-w-[1300px] mx-auto px-1 md:px-14 py-8")}>
           <motion.h2

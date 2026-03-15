@@ -154,8 +154,8 @@ export default function Socials() {
       <div className="absolute top-0 -left-20 w-[500px] h-[500px] bg-purple-600/6 blur-[120px] rounded-full pointer-events-none animate-pulse" />
       <div className="absolute bottom-0 -right-20 w-[500px] h-[500px] bg-blue-600/6 blur-[120px] rounded-full pointer-events-none animate-pulse" />
 
-            {/* back button */}
-      <motion.div
+      {/* back button */}
+      {location.pathname.startsWith("/connect") && (<motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.2 }}
@@ -170,7 +170,7 @@ export default function Socials() {
         >
           <HugeiconsIcon icon={MoveLeftIcon} className="group-hover:-translate-x-1 group-hover:text-lg transition-transform duration-300" size={20} />
         </Link>
-      </motion.div>
+      </motion.div>)}
 
       <div className="max-w-7xl mx-auto px-6 relative">
         {/* Modern Minimal Header */}

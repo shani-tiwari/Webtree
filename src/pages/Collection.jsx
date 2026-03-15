@@ -11,6 +11,7 @@ export default function Collection() {
 
   return (
     <main className="relative max-w-[1300px] w-full flex flex-col gap-10 md:gap-10 mx-auto px-4 md:px-14 pb-20">
+      {/* back button */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
@@ -21,7 +22,7 @@ export default function Collection() {
           to="/"
           className="group flex items-center  gap-2 text-amber-600 py-1 px-2 md:px-5 rounded-full 
               bg-black/40 backdrop-blur-md border border-white/5 
-             hover:text-amber-500 hover:bg-black/50 active:scale-97
+             hover:text-amber-500 hover:bg-black/50 active:scale-95
               transition-all duration-300 shadow-lg ring-2 ring-zinc-400/50"
         >
           <HugeiconsIcon icon={MoveLeftIcon} className="group-hover:-translate-x-1 group-hover:text-lg transition-transform duration-300" size={20} />

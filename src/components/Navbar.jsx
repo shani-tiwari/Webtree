@@ -7,12 +7,12 @@ import {
   InstagramIcon,
   Linkedin01Icon,
   Mail01Icon,
-  Menu01Icon,
   NewTwitterRectangleIcon,
   FolderCheckIcon,
   SquareArrowLeft02Icon,
   FolderFavouriteIcon,
   Agreement03Icon,
+  Menu02Icon,
 } from "@hugeicons/core-free-icons";
 import { useState, useEffect } from "react";
 // eslint-disable-next-line no-unused-vars
@@ -108,6 +108,13 @@ const Navbar = () => {
 
   const { collection } = useCollection();
 
+  const active =
+    location.pathname === "/" ? null :
+    location.pathname.startsWith("/about") ? "about" :
+    location.pathname.startsWith("/connect") ? "connect" :
+    location.pathname.startsWith("/collection") ? "home" :
+    null;
+
   return (
     <>
       <motion.nav
@@ -143,15 +150,17 @@ const Navbar = () => {
         <div className={cn("hidden md:flex gap-6 space-x-1 items-center")}>
           <Link
             to="/about"
-            onClick={scrollTop}
-            className={cn("text-neutral-400 font-mono text-lg cursor-pointer scroll-smooth hover:text-neutral-200 hover:-translate-y-0.5 transition-all duration-300 selection:bg-amber-600/30 selection:text-white")}
+            className={cn("text-neutral-400 font-mono text-lg cursor-pointer scroll-smooth hover:text-neutral-200 hover:-translate-y-0.5 transition-all duration-300 selection:bg-amber-600/30 selection:text-white",
+              active === "about" && "text-amber-500 hover:text-amber-600/90 underline underline-offset-8"
+            )}
           >
             About
           </Link>
           <Link
             to="/connect"
-            onClick={scrollTop}
-            className={cn("text-neutral-400 font-mono text-lg cursor-pointer scroll-smooth hover:text-neutral-200 hover:-translate-y-0.5 transition-all duration-300 selection:bg-amber-600/30 selection:text-white")}
+            className={cn("text-neutral-400 font-mono text-lg cursor-pointer scroll-smooth hover:text-neutral-200 hover:-translate-y-0.5 transition-all duration-300 selection:bg-amber-600/30 selection:text-white",
+              active === "connect" && "text-amber-500 underline underline-offset-8 hover:text-amber-600/90"
+            )}
           >
             Connect
           </Link>
@@ -163,7 +172,10 @@ const Navbar = () => {
             onClick={scrollTop}
           >
             {location.pathname === "/collection" ? (
-              <p className={cn("text-amber-600 font-mono text-lg hidden md:block selection:bg-amber-600/30 selection:text-white")}>
+              <p 
+                className={cn("text-amber-600 font-mono text-lg hidden md:block selection:bg-amber-600/30 selection:text-white ",
+                  active === "home" && "underline underline-offset-8 hover:text-amber-600/90"
+                )}>
                 Home
               </p>
             ) : (
@@ -239,7 +251,7 @@ const Navbar = () => {
             aria-label="Toggle menu"
             className="md:hidden text-gray-400 dark:text-white focus:outline-none hover:scale-106 transition-all duration-400"
           >
-            <HugeiconsIcon icon={Menu01Icon} size={19} />
+            <HugeiconsIcon icon={Menu02Icon} size={19} />
           </button>
         </div>
       </motion.nav>

@@ -54,7 +54,7 @@ export default function Home() {
       >
         <div
           className={cn(
-            " text-xl md:text-[28px] flex flex-col gap-2 lg:flex-row md:gap-3 bg-clip-text text-transparent bg-linear-to-b from-amber-400 to-amber-700 mx-auto w-fit  tracking-wider selection:bg-amber-600/30 selection:text-white",
+            " text-xl md:text-[28px] flex flex-col gap-2 lg:flex-row md:gap-3 bg-clip-text text-transparent bg-linear-to-b from-amber-300 to-amber-700 mx-auto w-fit  tracking-wider selection:bg-amber-600/30 selection:text-white",
           )}
         >
           <motion.div
@@ -64,7 +64,7 @@ export default function Home() {
           >
             <span
               className={cn(
-                "wavy-underline-pulse w-fit bg-clip-text text-transparent bg-linear-to-b from-amber-400 to-amber-700",
+                "wavy-underline-pulse w-fit bg-clip-text text-transparent bg-linear-to-b from-amber-300 to-amber-700",
               )}
             >
               130+
