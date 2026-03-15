@@ -39,6 +39,15 @@ export default function Collection() {
         </p>
       </header>
 
+       {/* Animated line */}
+        <motion.span 
+            initial={{width:"0%"}}
+            whileInView={{width:"100%"}}
+            viewport={{ once: true }}
+            transition={{duration:0.6, delay:0.3, ease: "easeOut"}}
+            className="block mx-auto  h-[1.3px] bg-white/30 -mt-4 md:mt-0">
+        </motion.span>
+
       <motion.section
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}

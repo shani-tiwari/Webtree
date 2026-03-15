@@ -7,7 +7,7 @@ import ReviewForm from "./ReviewForm";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { Navigation03Icon, PlusSignIcon } from "@hugeicons/core-free-icons";
+import { Navigation03Icon, PlusSignCircleIcon, PlusSignIcon } from "@hugeicons/core-free-icons";
 
 export default function ReviewSection() {
   const { reviews } = useReviews();
@@ -38,7 +38,8 @@ export default function ReviewSection() {
           <motion.h2 
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            // viewport={{ once: true }}
             className="text-3xl md:text-4xl italic font-extrabold tracking-wide bg-clip-text text-transparent bg-linear-to-b from-white to-zinc-500"
           >
             Review & Feedback
@@ -58,11 +59,20 @@ export default function ReviewSection() {
              onClick={() => setIsFormOpen(true)}
              className="group flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-500 hover:bg-amber-500/80 hover:text-black transition-all duration-300 font-bold text-sm active:scale-95 shadow-[0_0_15px_rgba(245,158,11,0.1)] hover:shadow-[0_0_20px_rgba(245,158,11,0.4)]"
           >
-            <HugeiconsIcon icon={PlusSignIcon} size={16} className="group-hover:rotate-90 transition-transform duration-300" />
+            <HugeiconsIcon icon={PlusSignCircleIcon} size={16} className="group-hover:rotate-90 transition-transform duration-300" />
             Add Review
           </button>
         </div>
       </div>
+
+       {/* Animated line */}
+          <motion.span 
+              initial={{width:"0%"}}
+              whileInView={{width:"100%"}}
+              viewport={{ once: true }}
+              transition={{duration:0.6, delay:0.3, ease: "easeOut"}}
+              className="block mx-auto  h-[1.3px] bg-white/30 -mt-4 md:mt-0 mb-4">
+          </motion.span>
 
       {/* Scrollable Reviews Container */}
       <div className="relative w-full pb-4">

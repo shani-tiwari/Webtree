@@ -50,7 +50,7 @@ export default function ReviewCard({ name, xProfile, gender, text }) {
 
       {/* Review Text */}
       <div className="relative grow">
-        <span className="absolute -top-3 -left-2 text-4xl text-zinc-800 font-serif leading-none select-none">
+        <span className="absolute -top-3 -left-2 text-4xl text-zinc-600 font-serif leading-none select-none animate-pulse">
           "
         </span>
         <p className="text-zinc-400 text-sm leading-relaxed relative z-10 font-mono italic grow">

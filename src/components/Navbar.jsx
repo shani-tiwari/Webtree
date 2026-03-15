@@ -13,6 +13,7 @@ import {
   FolderFavouriteIcon,
   Agreement03Icon,
   Menu02Icon,
+  MessagePreview02FreeIcons,
 } from "@hugeicons/core-free-icons";
 import { useState, useEffect } from "react";
 // eslint-disable-next-line no-unused-vars
@@ -275,7 +276,7 @@ const Navbar = () => {
             exit={{ opacity: 0, scale: 0.97 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className={cn(
-              "fixed inset-0 z-60 w-screen h-screen bg-black/95 backdrop-blur-md md:hidden",
+              "fixed inset-0 z-50 w-screen h-screen bg-black/95 backdrop-blur-md md:hidden",
               "flex flex-col items-center justify-center p-8 text-shadow-2xs",
             )}
           >
@@ -343,8 +344,27 @@ const Navbar = () => {
 
               <span className="h-[0.5px] w-3/4 bg-white/15 rounded-full"></span>
 
+                {/* reviews Link */}
+              <Link
+                to="/reviews"
+                className={cn(
+                  "text-zinc-300 text-2xl font-medium tracking-wide transition-all duration-300 active:scale-95 flex items-center gap-6",
+                )}
+                onClick={() => {
+                  setIsOpen(false);
+                  scrollTop();
+                }}
+              >
+                <span>Review</span>
+                <HugeiconsIcon
+                  className="text-white/70 animate-pulse"
+                  icon={MessagePreview02FreeIcons}
+                  size={22}
+                />
+              </Link>
+
               {/* Other Products */}
-              <div className="flex flex-col items-center gap-4 w-full">
+              {/* <div className="flex flex-col items-center gap-4 w-full">
                 <p
                   className={cn(
                     "text-zinc-400 text-sm tracking-[0.2em] uppercase",
@@ -374,7 +394,7 @@ const Navbar = () => {
                     </span>
                   </a>
                 </div>
-              </div>
+              </div> */}
             </div>
           </motion.div>
         )}

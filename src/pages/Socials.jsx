@@ -195,6 +195,7 @@ export default function Socials() {
 
         </div>
 
+        {/* Animated line */}
           <motion.span 
               initial={{width:"0%"}}
               whileInView={{width:"100%"}}

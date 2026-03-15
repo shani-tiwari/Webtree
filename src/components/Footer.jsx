@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer
       className={cn(
-        "z-30 font-mono w-full bg-black/80 border-t border-white/5 py-12 selection:bg-amber-600/30 selection:text-white",
+        "z-5  font-mono w-full bg-black/80 border-t border-white/5 py-12 selection:bg-amber-600/30 selection:text-white",
       )}
     >
       <div
