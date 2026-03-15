@@ -141,18 +141,20 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className={cn("hidden md:flex gap-6 space-x-1 items-center")}>
-          <a
-            href="#about"
-            className={cn("text-neutral-300 font-mono text-lg cursor-pointer scroll-smooth hover:text-neutral-200 hover:-translate-y-0.5 transition-all duration-300 selection:bg-amber-600/30 selection:text-white")}
+          <Link
+            to="/about"
+            onClick={scrollTop}
+            className={cn("text-neutral-400 font-mono text-lg cursor-pointer scroll-smooth hover:text-neutral-200 hover:-translate-y-0.5 transition-all duration-300 selection:bg-amber-600/30 selection:text-white")}
           >
             About
-          </a>
-          <a
-            href="#connect"
-            className={cn("text-neutral-300 font-mono text-lg cursor-pointer scroll-smooth hover:text-neutral-200 hover:-translate-y-0.5 transition-all duration-300 selection:bg-amber-600/30 selection:text-white")}
+          </Link>
+          <Link
+            to="/connect"
+            onClick={scrollTop}
+            className={cn("text-neutral-400 font-mono text-lg cursor-pointer scroll-smooth hover:text-neutral-200 hover:-translate-y-0.5 transition-all duration-300 selection:bg-amber-600/30 selection:text-white")}
           >
             Connect
-          </a>
+          </Link>
           <Link
             className={cn("group flex gap-2 items-center justify-center relative mr-2 ml-2 hover:-translate-y-0.5 active:scale-97 transition-all duration-300")}
             to={location.pathname === "/collection" ? "/" : "/collection"}
@@ -160,13 +162,13 @@ const Navbar = () => {
             aria-label={`Visit`}
             onClick={scrollTop}
           >
-            {location.pathname === "/" ? (
-              <p className={cn("text-neutral-300 font-mono hover:text-neutral-200  text-lg hidden md:block selection:bg-amber-600/30 selection:text-white")}>
-                Collection
-              </p>
-            ) : (
+            {location.pathname === "/collection" ? (
               <p className={cn("text-amber-600 font-mono text-lg hidden md:block selection:bg-amber-600/30 selection:text-white")}>
                 Home
+              </p>
+            ) : (
+              <p className={cn("text-neutral-400 font-mono hover:text-neutral-200  text-lg hidden md:block selection:bg-amber-600/30 selection:text-white")}>
+                Collection
               </p>
             )}
             {location.pathname === "/collection" ? (
@@ -180,10 +182,10 @@ const Navbar = () => {
                 <HugeiconsIcon
                   icon={FolderFavouriteIcon}
                   size={20}
-                  style={{ color: "oklch(0.871 0.006 286.286)" }}
+                  style={{ color: "oklch(66.6% 0.179 58.318)" }}
                 />
                 <sup
-                  className={cn("absolute -right-2 top-1 font-mono text-zinc-300 selection:bg-zinc-600/30 selection:text-white ")}
+                  className={cn("absolute -right-2 top-1 font-mono text-amber-500 selection:bg-zinc-600/30 selection:text-white ")}
                 >
                   {collection.length}
                 </sup>
@@ -268,12 +270,15 @@ const Navbar = () => {
             {/* Menu Content */}
             <div className="flex flex-col items-center gap-8 w-full max-w-xs">
               {/* About Link */}
-              <a
-                href="#about"
+              <Link
+                to="/about"
                 className={cn(
                   "text-zinc-300 text-2xl font-medium tracking-wide transition-all duration-300 active:scale-95 flex items-center gap-6",
                 )}
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false);
+                  scrollTop();
+                }}
               >
                 <span>About</span>
                 <HugeiconsIcon
@@ -281,7 +286,7 @@ const Navbar = () => {
                   icon={Agreement03Icon}
                   size={22}
                 />
-              </a>
+              </Link>
 
               <span className="h-[0.5px] w-3/4 bg-white/15 rounded-full"></span>
 

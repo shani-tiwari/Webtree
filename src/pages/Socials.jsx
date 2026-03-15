@@ -6,9 +6,11 @@ import {
   GithubIcon,
   InstagramIcon,
   Linkedin01Icon,
+  MoveLeftIcon,
   NewTwitterRectangleIcon,
 } from "@hugeicons/core-free-icons";
 import { cn } from "../lib/utils";
+import { Link } from "react-router";
 
 const SocialCard = ({
   name,
@@ -146,11 +148,29 @@ export default function Socials() {
   return (
     <section
       id="socials"
-      className="w-full bg-[#030303] py-12 md:py-20 relative overflow-hidden select-none"
+      className="w-full min-h-screen flex flex-col items-center justify-center bg-[#030303] pt-14 pb-10 relative overflow-hidden select-none"
     >
       {/* Enhanced Ambient Background Accents */}
       <div className="absolute top-0 -left-20 w-[500px] h-[500px] bg-purple-600/6 blur-[120px] rounded-full pointer-events-none animate-pulse" />
       <div className="absolute bottom-0 -right-20 w-[500px] h-[500px] bg-blue-600/6 blur-[120px] rounded-full pointer-events-none animate-pulse" />
+
+            {/* back button */}
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.2 }}
+        className="z-90 hidden absolute md:flex left-42 top-48"
+      >
+        <Link
+          to="/"
+          className="group flex items-center  gap-2 text-amber-600 py-1 px-2 md:px-5 rounded-full 
+              bg-black/40 backdrop-blur-md border border-white/5 
+             hover:text-amber-500 hover:bg-black/50 active:scale-97
+              transition-all duration-300 shadow-lg ring-2 ring-zinc-400/50"
+        >
+          <HugeiconsIcon icon={MoveLeftIcon} className="group-hover:-translate-x-1 group-hover:text-lg transition-transform duration-300" size={20} />
+        </Link>
+      </motion.div>
 
       <div className="max-w-7xl mx-auto px-6 relative">
         {/* Modern Minimal Header */}

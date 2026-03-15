@@ -1,6 +1,6 @@
 import Home from "./pages/Home";
 import React from "react";
-import { Routes, Route } from "react-router";
+import { Routes, Route, useLocation } from "react-router";
 import { cn } from "./lib/utils";
 import About from "./pages/About";
 import Socials from "./pages/Socials";
@@ -11,6 +11,9 @@ import ScrollToTop from "./components/ScrollToTop";
 const Collection = React.lazy(() => import("./pages/Collection"));
 
 function App() {
+  const location = useLocation();
+  const isFullScreenRoute = ["/about", "/connect"].includes(location.pathname);
+
   return (
     <>
       <a href="#main-content" className="skip-link">
@@ -42,15 +45,25 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/collection" element={<Collection />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/connect" element={<Socials />} />
             </Routes>
           </React.Suspense>
 
-          <About />
-          <Socials />
+          {location.pathname === "/" && (
+            <>
+              <About />
+              <Socials />
+            </>
+          )}
         </main>
 
-        <Footer />
-        <ScrollToTop />
+        {!isFullScreenRoute && (
+          <>
+            <Footer />
+            <ScrollToTop />
+          </>
+        )}
       </div>
     </>
   );
