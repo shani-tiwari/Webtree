@@ -112,7 +112,8 @@ const Navbar = () => {
     location.pathname === "/" ? null :
     location.pathname.startsWith("/about") ? "about" :
     location.pathname.startsWith("/connect") ? "connect" :
-    location.pathname.startsWith("/collection") ? "home" :
+    location.pathname.startsWith("/reviews") ? "reviews" :
+    location.pathname.startsWith("/collection") ? "collection" :
     null;
 
   return (
@@ -147,7 +148,7 @@ const Navbar = () => {
         </motion.div>
 
         {/* Desktop Menu */}
-        <div className={cn("hidden md:flex gap-6 space-x-1 items-center")}>
+        <div className={cn("hidden md:flex gap-5 space-x-1 items-center")}>
           <Link
             to="/about"
             className={cn("text-neutral-400 font-mono text-lg cursor-pointer scroll-smooth hover:text-neutral-200 hover:-translate-y-0.5 transition-all duration-300 selection:bg-amber-600/30 selection:text-white",
@@ -165,7 +166,15 @@ const Navbar = () => {
             Connect
           </Link>
           <Link
-            className={cn("group flex gap-2 items-center justify-center relative mr-2 ml-2 hover:-translate-y-0.5 active:scale-97 transition-all duration-300")}
+            to="/reviews"
+            className={cn("text-neutral-400 font-mono text-lg cursor-pointer scroll-smooth hover:text-neutral-200 hover:-translate-y-0.5 transition-all duration-300 selection:bg-amber-600/30 selection:text-white",
+              active === "reviews" && "text-amber-500 underline underline-offset-8 hover:text-amber-600/90"
+            )}
+          >
+            Reviews
+          </Link>
+          <Link
+            className={cn("group flex gap-1 items-center justify-center relative mr-2 hover:-translate-y-0.5 active:scale-97 transition-all duration-300")}
             to={location.pathname === "/collection" ? "/" : "/collection"}
             rel="noreferrer"
             aria-label={`Visit`}
@@ -180,7 +189,7 @@ const Navbar = () => {
               </p>
             ) : (
               <p className={cn("text-neutral-400 font-mono hover:text-neutral-200  text-lg hidden md:block selection:bg-amber-600/30 selection:text-white")}>
-                Collection
+                Vault
               </p>
             )}
             {location.pathname === "/collection" ? (

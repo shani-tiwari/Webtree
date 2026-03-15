@@ -7,12 +7,13 @@ import Socials from "./pages/Socials";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import ScrollToTop from "./components/ScrollToTop";
+import Reviews from "./pages/Reviews";
 
 const Collection = React.lazy(() => import("./pages/Collection"));
 
 function App() {
   const location = useLocation();
-  const isFullScreenRoute = ["/about", "/connect"].includes(location.pathname);
+  const isFullScreenRoute = ["/about", "/connect", "/reviews"].includes(location.pathname);
 
   return (
     <>
@@ -47,6 +48,7 @@ function App() {
               <Route path="/collection" element={<Collection />} />
               <Route path="/about" element={<About />} />
               <Route path="/connect" element={<Socials />} />
+              <Route path="/reviews" element={<Reviews />} />
             </Routes>
           </React.Suspense>
 

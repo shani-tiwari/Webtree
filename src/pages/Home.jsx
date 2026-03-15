@@ -4,6 +4,7 @@ import { motion, AnimatePresence, easeIn } from "motion/react";
 import Categories from "../components/Categories";
 import Card from "../components/Card";
 import SkeletonHome from "../components/SkeletonHome";
+import ReviewSection from "../components/ReviewSection";
 import { cn } from "../lib/utils";
 
 export default function Home() {
@@ -139,6 +140,9 @@ export default function Home() {
           </AnimatePresence>
         </motion.section>
       </section>
+
+      {/* Review Section */}
+      <ReviewSection />
     </section>
   );
 }
