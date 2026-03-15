@@ -42,7 +42,7 @@ const ScrollToTop = () => {
           onClick={scrollToTop}
           className={cn(
             "fixed bottom-20 md:bottom-16 right-6 md:right-12 z-30 p-2 rounded-full bg-white/10 backdrop-blur-md",
-            "border border-white/20 text-white shadow-lg hover:bg-white/20 hover:border-white/40",
+            "border border-white/20 text-amber-600 shadow-lg hover:bg-white/20 hover:border-white/40",
             "transition-all duration-300 group",
           )}
           aria-label="Scroll to top"
@@ -50,7 +50,7 @@ const ScrollToTop = () => {
           <HugeiconsIcon
             icon={ArrowUp01Icon}
             className={cn(
-              "w-6 h-6 group-hover:text-neutral-400 transition-colors",
+              "w-6 h-6 ",
             )}
           />
         </motion.button>

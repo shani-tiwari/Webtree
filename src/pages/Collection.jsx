@@ -19,9 +19,9 @@ export default function Collection() {
       >
         <Link
           to="/"
-          className="group flex items-center  gap-2 text-white/70 py-1 px-2 md:px-5 rounded-full 
+          className="group flex items-center  gap-2 text-amber-600 py-1 px-2 md:px-5 rounded-full 
               bg-black/40 backdrop-blur-md border border-white/5 
-             hover:text-amber-50 hover:bg-black/50 active:scale-97
+             hover:text-amber-500 hover:bg-black/50 active:scale-97
               transition-all duration-300 shadow-lg ring-2 ring-zinc-400/50"
         >
           <HugeiconsIcon icon={MoveLeftIcon} className="group-hover:-translate-x-1 group-hover:text-lg transition-transform duration-300" size={20} />
@@ -29,11 +29,11 @@ export default function Collection() {
       </motion.div>
 
       <header className="relative  text-white/70 text-center font-beba w-full backdrop-blur-xl md:backdrop-blur-none pt-20 md:pt-32">
-        <h1 className="text-2xl md:text-5xl tracking-wider">My Collection</h1>
-        <p className="text-sm md:text-base mt-2 opacity-80 text-white/70">
+        <h1 className="text-2xl md:text-5xl tracking-wider font-mono">My Collection</h1>
+        <p className="text-sm md:text-base font-mono mt-2 opacity-80 text-white/70">
           Your personally curated list of resources
         </p>
-        <p className="text-sm md:text-base mt-2 opacity-80 text-green-300">
+        <p className="text-sm md:text-base font-mono mt-2 opacity-80 text-green-300">
           Added Items - {collection.length}
         </p>
       </header>

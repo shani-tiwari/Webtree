@@ -35,23 +35,16 @@ export default function About() {
       />
 
       <div className={cn("max-w-[1300px] mx-auto px-1 md:px-14 py-8")}>
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          // viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className={cn(
               "text-4xl italic md:text-5xl mx-auto text-center font-black text-white/90 tracking-tighter",
             )}
           >
             About <span className={cn("text-neutral-500 italic")}>Webtree</span>
           </motion.h2>
-        </motion.div>
       </div>
 
 
@@ -81,7 +74,7 @@ export default function About() {
               Our Mission
             </h3>
           </div>
-          <p className="text-gray-400 hover:text-gray-300/80 transition-all duration-300 leading-relaxed px-2 md:pr-10 md:pl-0">
+          <p className="text-gray-300/70 hover:text-gray-300 transition-all duration-300 leading-6 hover:leading-7 px-2 md:pr-10 md:pl-0">
             WebTree was born from a simple need: to cut through the noise of the
             modern web. We curate the finest frontend magic—from Tailwind
             components and Framer prototypes to essential performance

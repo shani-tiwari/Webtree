@@ -9,7 +9,7 @@ import { cn } from "../lib/utils";
 export default function Home() {
   const [data, setData] = useState([]);
   const [carddata, setcardData] = useState([]);
-  const [activeCategory, setActiveCategory] = useState("video");
+  const [activeCategory, setActiveCategory] = useState("tools");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ export default function Home() {
         .then((res) => res.json())
         .then((data) => {
           setData(data);
-          setcardData(data["video"]);
+          setcardData(data["tools"]);
           setLoading(false);
         });
     }

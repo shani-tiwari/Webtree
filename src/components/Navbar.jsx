@@ -128,7 +128,7 @@ const Navbar = () => {
         >
           <Link
             className={cn(
-              "text-white/40 flex text-lg md:text-2xl hover:text-white/50 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer selection:bg-amber-600/30 selection:text-white",
+              "text-white/40 flex text-lg md:text-2xl font-mono hover:text-white/50 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer selection:bg-amber-600/30 selection:text-white",
             )}
             to="/"
             onClick={scrollTop}
@@ -143,35 +143,29 @@ const Navbar = () => {
         <div className={cn("hidden md:flex gap-6 space-x-1 items-center")}>
           <a
             href="#about"
-            className={cn(
-              "text-neutral-300 text-lg cursor-pointer scroll-smooth hover:text-neutral-200 hover:-translate-y-0.5 transition-all duration-300 selection:bg-amber-600/30 selection:text-white",
-            )}
+            className={cn("text-neutral-300 font-mono text-lg cursor-pointer scroll-smooth hover:text-neutral-200 hover:-translate-y-0.5 transition-all duration-300 selection:bg-amber-600/30 selection:text-white")}
           >
             About
           </a>
+          <a
+            href="#connect"
+            className={cn("text-neutral-300 font-mono text-lg cursor-pointer scroll-smooth hover:text-neutral-200 hover:-translate-y-0.5 transition-all duration-300 selection:bg-amber-600/30 selection:text-white")}
+          >
+            Connect
+          </a>
           <Link
-            className={cn(
-              "group flex gap-2 items-center justify-center relative mr-2 ml-2 hover:-translate-y-0.5 active:scale-97 transition-all duration-300",
-            )}
+            className={cn("group flex gap-2 items-center justify-center relative mr-2 ml-2 hover:-translate-y-0.5 active:scale-97 transition-all duration-300")}
             to={location.pathname === "/collection" ? "/" : "/collection"}
             rel="noreferrer"
             aria-label={`Visit`}
             onClick={scrollTop}
           >
             {location.pathname === "/" ? (
-              <p
-                className={cn(
-                  "text-neutral-300 hover:text-neutral-200  text-lg hidden md:block selection:bg-amber-600/30 selection:text-white",
-                )}
-              >
+              <p className={cn("text-neutral-300 font-mono hover:text-neutral-200  text-lg hidden md:block selection:bg-amber-600/30 selection:text-white")}>
                 Collection
               </p>
             ) : (
-              <p
-                className={cn(
-                  "text-amber-600 text-lg hidden md:block selection:bg-amber-600/30 selection:text-white",
-                )}
-              >
+              <p className={cn("text-amber-600 font-mono text-lg hidden md:block selection:bg-amber-600/30 selection:text-white")}>
                 Home
               </p>
             )}
@@ -189,9 +183,7 @@ const Navbar = () => {
                   style={{ color: "oklch(0.871 0.006 286.286)" }}
                 />
                 <sup
-                  className={cn(
-                    "absolute -right-2 top-1 text-zinc-300 selection:bg-zinc-600/30 selection:text-white ",
-                  )}
+                  className={cn("absolute -right-2 top-1 font-mono text-zinc-300 selection:bg-zinc-600/30 selection:text-white ")}
                 >
                   {collection.length}
                 </sup>
@@ -199,7 +191,7 @@ const Navbar = () => {
             )}
             <span
               className={cn(
-                "absolute top-full right-0 mt-3 px-3 py-1.5 tracking-widest bg-zinc-900/90 text-zinc-100/90 text-[10px] uppercase rounded-lg backdrop-blur-md",
+                "absolute top-full font-mono right-0 mt-3 px-3 py-1.5 tracking-widest bg-zinc-900/90 text-zinc-100/90 text-[10px] uppercase rounded-lg backdrop-blur-md",
                 "opacity-0 scale-95 translate-y-2 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 invisible group-hover:visible transition-all duration-300 ease-out pointer-events-none border border-white/20 shadow-xl whitespace-nowrap z-50",
               )}
             >
@@ -233,9 +225,7 @@ const Navbar = () => {
             )}
 
             <sup
-              className={cn(
-                "absolute -right-2 top-1 text-zinc-300 selection:bg-amber-600/30 selection:text-white",
-              )}
+              className={cn("absolute -right-2 top-1 text-zinc-300 selection:bg-amber-600/30 selection:text-white")}
             >
               {location.pathname === "/" && collection.length}
             </sup>
