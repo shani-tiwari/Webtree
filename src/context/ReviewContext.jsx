@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 const ReviewContext = createContext();
 
@@ -11,26 +11,21 @@ export const useReviews = () => {
   return context;
 };
 
-export const ReviewProvider = ({ children }) => {
-  const [reviews, setReviews] = useState([]);
-  const [loading, setLoading] = useState(true);
+const INITIAL_REVIEWS = [
+  {
+    "id": 1,
+    "name": "Shani Tiwari",
+    "xProfile": "@ShaniDevelops",
+    "gender": "male",
+    "text": "Webtree has completely transformed how I organize my development resources. It's incredibly fast and the UI is just stunning!",
+    "date": "2026-03-15T12:00:00.000Z"
+  }
+];
 
-  // Fetch initial reviews from the static file defined in .env
-  useEffect(() => {
-    async function fetchReviews() {
-      try {
-        const res = await fetch(import.meta.env.VITE_PRIVATE_WEBSITE_REVIEWS_URL);
-        const data = await res.json();
-        setReviews(data);
-      } catch (error) {
-        console.error("Failed to load initial reviews:", error);
-      } finally {
-        setLoading(false);
-      }
-    }
-    
-    fetchReviews();
-  }, []);
+export const ReviewProvider = ({ children }) => {
+  const [reviews, setReviews] = useState(INITIAL_REVIEWS);
+  // eslint-disable-next-line no-unused-vars
+  const [loading, setLoading] = useState(false);
 
   const addReview = (review) => {
     setReviews((prevReviews) => {

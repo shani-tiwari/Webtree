@@ -66,9 +66,9 @@ export default function Reviews() {
           >
             <button
                onClick={() => setIsFormOpen(true)}
-               className="group flex items-center justify-center gap-2 px-6 py-3 cursor-pointer rounded-full bg-amber-500 hover:bg-amber-400 text-black selection:text-white font-bold transition-all duration-300 active:scale-95 shadow-[0_0_20px_rgba(245,158,11,0.2)] hover:shadow-[0_0_30px_rgba(245,158,11,0.4)]"
+               className="group flex items-center justify-center gap-2 px-6 py-3 cursor-pointer rounded-full bg-amber-500 hover:bg-amber-600 text-white selection:text-white font-bold transition-all duration-300 active:scale-95 shadow-[0_0_20px_rgba(245,158,11,0.2)] hover:shadow-[0_0_30px_rgba(245,158,11,0.4)]"
             >
-               <HugeiconsIcon icon={PlusSignCircleIcon} size={20} className="group-hover:rotate-90 transition-transform duration-300 " />
+               <HugeiconsIcon icon={PlusSignCircleIcon} size={20} className="font-bold group-hover:rotate-90 transition-transform duration-300 " />
                Share Your Review
             </button>
           </motion.div>
@@ -84,9 +84,9 @@ export default function Reviews() {
           </motion.span>
 
         {/* Reviews Grid */}
-        <div className="flex flex-wrap items-center justify-center gap-[14px] mt-8">
+        <div className="flex gap-[14px] mt-8">
           {loading ? (
-             <div className="col-span-full py-20 text-center animate-pulse">
+             <div className="col-span-full text-center animate-pulse">
                <p className="text-zinc-500 font-mono text-lg">Loading amazing reviews...</p>
              </div>
           ) : reviews.length > 0 ? (
@@ -96,7 +96,7 @@ export default function Reviews() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.05 + 0.4 }}
-                className="w-full flex items-center justify-center"
+                className="w-full flex"
               >
                 <ReviewCard {...review} />
               </motion.div>

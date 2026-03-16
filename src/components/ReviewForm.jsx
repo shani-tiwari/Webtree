@@ -2,12 +2,13 @@ import React, { useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { AnimatePresence, motion } from "motion/react";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { CancelCircleIcon } from "@hugeicons/core-free-icons";
+import { CancelCircleIcon, CancelSquareIcon, EnteringGeoFenceIcon, UserCheck01Icon } from "@hugeicons/core-free-icons";
 import { useReviews } from "../context/ReviewContext";
 import { cn } from "../lib/utils";
 
 export default function ReviewForm({ isOpen, onClose }) {
-  const { addReview } = useReviews();
+  const { addReview, reviews } = useReviews();
+  
   const [formData, setFormData] = useState({
     name: "",
     xProfile: "",
@@ -15,19 +16,38 @@ export default function ReviewForm({ isOpen, onClose }) {
     text: "",
   });
 
+  const [validationStatus, setValidationStatus] = useState(null); // null, 'exists', 'available'
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    if (name === "xProfile") {
+      setValidationStatus(null);
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!formData.name || !formData.text) return;
 
+    // Normalize and check validity before submission
+    const currentX = formData.xProfile.replace("@", "").trim().toLowerCase();
+    if (currentX) {
+      const exists = reviews.some(
+        (review) => review.xProfile.replace("@", "").trim().toLowerCase() === currentX
+      );
+
+      if (exists) {
+        setValidationStatus("exists");
+        return;
+      }
+    }
+
     addReview(formData);
-    
+
     // Reset form & close
     setFormData({ name: "", xProfile: "", gender: "male", text: "" });
+    setValidationStatus(null);
     onClose();
   };
 
@@ -37,6 +57,17 @@ export default function ReviewForm({ isOpen, onClose }) {
     setRows(e.target.scrollHeight < 120 ? 3 : Math.min(6, Math.ceil(e.target.scrollHeight / 24)));
   };
 
+  const checkValidity = (e) => {
+    e?.preventDefault();
+    if (!formData.xProfile.trim()) return;
+
+    const currentX = formData.xProfile.replace("@", "").trim().toLowerCase();
+    const exists = reviews.some(
+      (review) => review.xProfile.replace("@", "").trim().toLowerCase() === currentX
+    );
+
+    setValidationStatus(exists ? "exists" : "available");
+  };
 
 
 
@@ -60,9 +91,10 @@ export default function ReviewForm({ isOpen, onClose }) {
             {/* Background Accents */}
             <div className="hidden md:block absolute -top-20 -left-20 w-40 h-40 bg-amber-600/10 blur-[50px] rounded-full pointer-events-none" />
             
+            {/* close button */}
             <button
                onClick={onClose}
-               className="absolute top-4 right-4 md:top-6 md:right-6 text-zinc-500 hover:text-white transition-colors z-10"
+               className="absolute top-4 right-4 md:top-6 md:right-6 text-zinc-400 hover:text-zinc-200 hover:scale-105 transition-all duration-300 z-10"
             >
               <HugeiconsIcon icon={CancelCircleIcon} size={24} />
             </button>
@@ -91,15 +123,56 @@ export default function ReviewForm({ isOpen, onClose }) {
                 {/* X Profile Field */}
                 <div className="flex flex-col gap-1 md:gap-1.5 flex-1">
                   <label className="text-zinc-400 text-xs md:text-sm font-mono lowercase">X (Twitter) Profile</label>
-                  <input
-                    type="text"
-                    name="xProfile"
-                    value={formData.xProfile}
-                    onChange={handleChange}
-                    maxLength={15}
-                    placeholder="@shanidevelops"
-                    className="w-full bg-zinc-900/50 border border-zinc-800 rounded-lg md:rounded-xl px-3 md:px-4 py-2 md:py-3 text-white placeholder:text-zinc-600 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/50 transition-all font-sans text-sm md:text-base"
-                  />
+                  <div className="relative">
+                    <input
+                      type="text"
+                      name="xProfile"
+                      value={formData.xProfile}
+                      onChange={handleChange}
+                      maxLength={15}
+                      placeholder="@shanidevelops"
+                      className={cn(
+                        "w-full bg-zinc-900/50 border rounded-lg md:rounded-xl px-3 py-2 md:py-3 text-white placeholder:text-zinc-600 focus:outline-none focus:ring-1 transition-all font-sans text-sm md:text-base",
+                        validationStatus === "exists"
+                          ? "border-red-500/50 focus:border-red-500/50 focus:ring-red-500/50"
+                          : validationStatus === "available"
+                          ? "border-green-500/50 focus:border-green-500/50 focus:ring-green-500/50"
+                          : "border-zinc-800 focus:border-amber-500/50 focus:ring-amber-500/50"
+                      )}
+                    />
+                    <div className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-2">
+                      <button
+                        type="button"
+                        onClick={checkValidity}
+                        className={cn(
+                          "flex items-center justify-center font-mono px-2 py-0.5 md:py-1 rounded-lg hover:scale-105 active:scale-95 transition-all duration-300",
+                          validationStatus === "exists"
+                            ? "bg-red-500 text-white"
+                            : validationStatus === "available"
+                            ? "bg-green-500 text-white pointer-events-none opacity-50"
+                            : "bg-amber-500 text-black shadow-lg shadow-amber-500/20"
+                        )}
+                      >
+                        { validationStatus === "available" ? 
+                            <HugeiconsIcon icon={UserCheck01Icon} size={18} className={cn("transition-colors text-white font-bold")} /> 
+                            : 
+                            validationStatus === "exists" ?
+                            <HugeiconsIcon icon={CancelSquareIcon} size={18} className={cn("transition-colors text-white font-bold")} />
+                            :
+                            <HugeiconsIcon icon={EnteringGeoFenceIcon} size={18} className={cn("transition-colors text-white font-bold")} />
+                        }
+                      </button>
+                    </div>
+                    {validationStatus === "exists" && (
+                      <motion.p
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="absolute left-0 -bottom-5 text-[10px] text-red-500 font-mono"
+                      >
+                        * pre existed
+                      </motion.p>
+                    )}
+                  </div>
                 </div>
               </div>
 
@@ -152,7 +225,7 @@ export default function ReviewForm({ isOpen, onClose }) {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="mt-2 md:mt-4 w-full bg-linear-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-black font-bold py-2.5 md:py-3 px-6 rounded-lg md:rounded-xl transition-all duration-300 shadow-[0_0_20px_rgba(245,158,11,0.2)] active:scale-[0.98] text-sm md:text-base"
+                className="mt-2 md:mt-4 w-full tracking-wider bg-linear-to-r from-amber-600 to-amber-700 hover:from-amber-500/80 hover:to-amber-600/80 text-white font-bold py-2.5 md:py-3 px-6 rounded-lg md:rounded-xl transition-all duration-500 shadow-[0_0_20px_rgba(245,158,11,0.2)] active:scale-[0.98] text-sm md:text-base"
               >
                 Submit Review
               </button>
