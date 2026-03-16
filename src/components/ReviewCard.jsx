@@ -8,7 +8,8 @@ export default function ReviewCard({ name, xProfile, gender, text }) {
   const profileImage = gender === "female" ? "/user-img/female.png" : "/user-img/male.jpg";
 
   return (
-    <div
+    <Link 
+    to={"/reviews"}
       className={cn(
         "relative flex flex-col min-w-[300px] w-[300px] md:min-w-[350px] md:w-[350px] p-5 rounded-3xl",
         "bg-[#080808]/80 backdrop-blur-md border border-zinc-800 shadow-lg shrink-0",
@@ -57,6 +58,6 @@ export default function ReviewCard({ name, xProfile, gender, text }) {
           {text}
         </p>
       </div>
-    </div>
+    </Link>
   );
 }

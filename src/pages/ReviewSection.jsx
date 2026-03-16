@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router";
 import { useReviews } from "../context/ReviewContext";
-import ReviewCard from "./ReviewCard";
-import ReviewForm from "./ReviewForm";
+import ReviewCard from "../components/ReviewCard";
+import ReviewForm from "../components/ReviewForm";
 // import { cn } from "../lib/utils";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
@@ -82,7 +82,7 @@ export default function ReviewSection() {
         
         <div 
            ref={scrollContainerRef}
-           className="flex gap-6 overflow-x-auto hide-scrollbar px-4 md:px-14 snap-x snap-mandatory py-4"
+           className="flex gap-6 justify-center overflow-x-auto hide-scrollbar px-4 md:px-14 snap-x snap-mandatory py-4"
            style={{ scrollBehavior: 'smooth' }}
         >
           {loading ? (
