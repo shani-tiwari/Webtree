@@ -10,7 +10,7 @@ import { HugeiconsIcon } from "@hugeicons/react";
 import { Navigation03Icon, PlusSignCircleIcon, PlusSignIcon } from "@hugeicons/core-free-icons";
 
 export default function ReviewSection() {
-  const { reviews } = useReviews();
+  const { reviews, loading } = useReviews();
   const [isFormOpen, setIsFormOpen] = useState(false);
   const scrollContainerRef = useRef(null);
 
@@ -85,7 +85,11 @@ export default function ReviewSection() {
            className="flex gap-6 overflow-x-auto hide-scrollbar px-4 md:px-14 snap-x snap-mandatory py-4"
            style={{ scrollBehavior: 'smooth' }}
         >
-          {reviews.length > 0 ? (
+          {loading ? (
+             <div className="w-full text-center py-10 text-zinc-500 font-mono italic animate-pulse">
+               Loading reviews...
+             </div>
+          ) : reviews.length > 0 ? (
             reviews.map((review, index) => (
               <motion.div
                 key={review.id}

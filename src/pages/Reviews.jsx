@@ -9,7 +9,7 @@ import { HugeiconsIcon } from "@hugeicons/react";
 import { MoveLeftIcon, PlusSignCircleIcon } from "@hugeicons/core-free-icons";
 
 export default function Reviews() {
-  const { reviews } = useReviews();
+  const { reviews, loading } = useReviews();
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   return (
@@ -84,8 +84,12 @@ export default function Reviews() {
           </motion.span>
 
         {/* Reviews Grid */}
-        <div className="flex items-center justify-center mt-8">
-          {reviews.length > 0 ? (
+        <div className="flex flex-wrap items-center justify-center gap-[14px] mt-8">
+          {loading ? (
+             <div className="col-span-full py-20 text-center animate-pulse">
+               <p className="text-zinc-500 font-mono text-lg">Loading amazing reviews...</p>
+             </div>
+          ) : reviews.length > 0 ? (
             reviews.map((review, index) => (
               <motion.div
                 key={review.id}

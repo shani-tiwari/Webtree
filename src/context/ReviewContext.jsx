@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 
 const ReviewContext = createContext();
 
@@ -11,23 +11,26 @@ export const useReviews = () => {
   return context;
 };
 
-// Initial dummy data for visual feedback before users add their own
-// Static array of reviews
-// eslint-disable-next-line react-refresh/only-export-components
-export const initialReviews = [
-  {
-    id: 1,
-    name: "Shani Tiwari",
-    xProfile: "@ShaniDevelops",
-    gender: "male",
-    text: "Webtree has completely transformed how I organize my development resources. It's incredibly fast and the UI is just stunning!",
-    date: "2026-03-15T12:00:00.000Z"
-  },
-];
-
 export const ReviewProvider = ({ children }) => {
-  // Using the static array directly. New reviews added locally here will reset on refresh.
-  const [reviews, setReviews] = useState(initialReviews);
+  const [reviews, setReviews] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  // Fetch initial reviews from the static file defined in .env
+  useEffect(() => {
+    async function fetchReviews() {
+      try {
+        const res = await fetch(import.meta.env.VITE_PRIVATE_WEBSITE_REVIEWS_URL);
+        const data = await res.json();
+        setReviews(data);
+      } catch (error) {
+        console.error("Failed to load initial reviews:", error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    
+    fetchReviews();
+  }, []);
 
   const addReview = (review) => {
     setReviews((prevReviews) => {
@@ -47,7 +50,7 @@ export const ReviewProvider = ({ children }) => {
   };
 
   return (
-    <ReviewContext.Provider value={{ reviews, addReview }}>
+    <ReviewContext.Provider value={{ reviews, addReview, loading }}>
       {children}
     </ReviewContext.Provider>
   );
