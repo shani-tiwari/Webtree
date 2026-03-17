@@ -2,99 +2,154 @@ import React, { useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { AnimatePresence, motion } from "motion/react";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { CancelCircleIcon, CancelSquareIcon, EnteringGeoFenceIcon, UserCheck01Icon } from "@hugeicons/core-free-icons";
-import { useReviews } from "../context/ReviewContext";
+import {
+  CancelCircleIcon,
+  CancelSquareIcon,
+  EnteringGeoFenceIcon,
+  UserCheck01Icon,
+} from "@hugeicons/core-free-icons";
+import emailjs from "@emailjs/browser";
 import { cn } from "../lib/utils";
 
+const REVIEWS_URL = import.meta.env.VITE_PRIVATE_WEBSITE_REVIEWS_URL;
+
 export default function ReviewForm({ isOpen, onClose }) {
-  const { addReview, reviews } = useReviews();
-  
+  const [reviews, setReviews] = useState([]);
+
   const [formData, setFormData] = useState({
     name: "",
+    email: "",
     xProfile: "",
     gender: "male",
     text: "",
   });
 
   const [validationStatus, setValidationStatus] = useState(null); // null, 'exists', 'available'
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
+
+  React.useEffect(() => {
+    if (isOpen) {
+      fetch(REVIEWS_URL)
+        .then((res) => res.json())
+        .then((data) => setReviews(data))
+        .catch((err) => console.error("Failed to fetch reviews:", err));
+    }
+  }, [isOpen]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    if (name === "xProfile") {
+    if (name === "xProfile" || name === "email") {
       setValidationStatus(null);
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.text) return;
 
-    // Normalize and check validity before submission
-    const currentX = formData.xProfile.replace("@", "").trim().toLowerCase();
-    if (currentX) {
-      const exists = reviews.some(
-        (review) => review.xProfile.replace("@", "").trim().toLowerCase() === currentX
-      );
+    // Check for duplicates
+    const currentX = formData.xProfile?.replace("@", "").trim().toLowerCase();
+    const currentEmail = formData.email?.trim().toLowerCase();
 
-      if (exists) {
-        setValidationStatus("exists");
-        return;
-      }
+    const exists = reviews.some((review) => 
+      (currentX && review.xProfile?.replace("@", "").trim().toLowerCase() === currentX) ||
+      (currentEmail && review.email?.trim().toLowerCase() === currentEmail)
+    );
+
+    if (exists) {
+      setValidationStatus("exists");
+      return;
     }
 
-    addReview(formData);
+    setIsSubmitting(true);
 
-    // Reset form & close
-    setFormData({ name: "", xProfile: "", gender: "male", text: "" });
-    setValidationStatus(null);
-    onClose();
+    try {
+      // NOTE: Replace these with your actual EmailJS IDs
+      // SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY
+      await emailjs.send(
+        "service_9wh2vje",
+        "template_x9kgcwu",
+        {
+          name: formData.name,
+          email: formData.email,
+          xProfile: formData.xProfile,
+          gender: formData.gender,
+          message: formData.text,
+        },
+        "Qmvgk6TmgzEtWkpwC",
+      );
+
+      setSubmitMessage("your review will be added soon");
+
+      setTimeout(() => {
+        setFormData({
+          name: "",
+          email: "",
+          xProfile: "",
+          gender: "male",
+          text: "",
+        });
+        setValidationStatus(null);
+        setSubmitMessage("");
+        setIsSubmitting(false);
+        onClose();
+      }, 3000);
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      setSubmitMessage("Failed to send. Please try again.");
+      setIsSubmitting(false);
+    }
   };
 
   const [rows, setRows] = useState(3);
 
   const resizeTextarea = (e) => {
-    setRows(e.target.scrollHeight < 120 ? 3 : Math.min(6, Math.ceil(e.target.scrollHeight / 24)));
+    setRows(
+      e.target.scrollHeight < 120
+        ? 3
+        : Math.min(6, Math.ceil(e.target.scrollHeight / 24)),
+    );
   };
 
   const checkValidity = (e) => {
     e?.preventDefault();
-    if (!formData.xProfile.trim()) return;
+    const currentX = formData.xProfile?.replace("@", "").trim().toLowerCase();
 
-    const currentX = formData.xProfile.replace("@", "").trim().toLowerCase();
-    const exists = reviews.some(
-      (review) => review.xProfile.replace("@", "").trim().toLowerCase() === currentX
+    if (!currentX) return;
+
+    const exists = reviews.some( (review) =>
+        ( review.xProfile?.replace("@", "").trim().toLowerCase() === currentX )
     );
 
     setValidationStatus(exists ? "exists" : "available");
   };
 
-
-
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
-           initial={{ opacity: 0 }}
-           animate={{ opacity: 1 }}
-           exit={{ opacity: 0 }}
-           onClick={onClose}
-           className="fixed inset-0 z-96 flex items-center justify-center bg-black p-3 md:p-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={onClose}
+          className="fixed inset-0 z-96 flex items-center justify-center bg-black p-3 md:p-4"
         >
           <motion.div
             initial={{ scale: 0.95, y: 20 }}
             animate={{ scale: 1, y: 0 }}
             exit={{ scale: 0.95, y: 20 }}
             onClick={(e) => e.stopPropagation()}
-            className="w-full max-w-[95%] sm:max-w-md lg:max-w-lg bg-[#0a0a0a] md:mt-14 border border-zinc-800 rounded-[20px] md:rounded-3xl p-4 md:p-8 relative shadow-2xl overflow-hidden max-h-dvh"
+            className="w-full max-w-[95%] mt-10 sm:max-w-md lg:max-w-lg bg-[#0a0a0a] md:mt-14 border border-zinc-800 rounded-[20px] md:rounded-3xl p-4 md:p-8 relative shadow-2xl overflow-hidden max-h-dvh"
           >
             {/* Background Accents */}
             <div className="hidden md:block absolute -top-20 -left-20 w-40 h-40 bg-amber-600/10 blur-[50px] rounded-full pointer-events-none" />
-            
+
             {/* close button */}
             <button
-               onClick={onClose}
-               className="absolute top-4 right-4 md:top-6 md:right-6 text-zinc-400 hover:text-zinc-200 hover:scale-105 transition-all duration-300 z-10"
+              onClick={onClose}
+              className="absolute top-4 right-4 md:top-6 md:right-6 text-zinc-400 hover:text-zinc-200 hover:scale-105 active:scale-90 transition-all duration-300 z-10"
             >
               <HugeiconsIcon icon={CancelCircleIcon} size={24} />
             </button>
@@ -103,11 +158,16 @@ export default function ReviewForm({ isOpen, onClose }) {
               Add Your Review
             </h2>
 
-            <form onSubmit={handleSubmit} className="flex flex-col gap-3 md:gap-4 mt-2 md:mt-0">
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col gap-3 md:gap-4 mt-2 md:mt-0"
+            >
               <div className="flex flex-col md:flex-row gap-3 md:gap-4 w-full">
                 {/* Name Field */}
                 <div className="flex flex-col gap-1.5 flex-1">
-                  <label className="text-zinc-400 text-xs md:text-sm font-mono">Name *</label>
+                  <label className="text-zinc-400 text-xs md:text-sm font-mono">
+                    Name *
+                  </label>
                   <input
                     type="text"
                     name="name"
@@ -120,9 +180,36 @@ export default function ReviewForm({ isOpen, onClose }) {
                   />
                 </div>
 
+                {/* Email Field */}
+                <div className="flex flex-col gap-1.5 flex-1">
+                  <label className="text-zinc-400 text-xs md:text-sm font-mono">
+                    Email *
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    placeholder="shani@example.com"
+                    className={cn(
+                      "w-full bg-zinc-900/50 border rounded-lg md:rounded-xl px-3 md:px-4 py-2 md:py-3 text-white placeholder:text-zinc-600 focus:outline-none focus:ring-1 transition-all font-sans text-sm md:text-base",
+                      validationStatus === "exists"
+                        ? "border-red-500/50 focus:border-red-500/50 focus:ring-red-500/50"
+                        : validationStatus === "available"
+                          ? "border-green-500/50 focus:border-green-500/50 focus:ring-green-500/50"
+                          : "border-zinc-800 focus:border-amber-500/50 focus:ring-amber-500/50",
+                    )}
+                  />
+                </div>
+              </div>
+
+              <div className="flex flex-col md:flex-row gap-3 md:gap-4 w-full">
                 {/* X Profile Field */}
                 <div className="flex flex-col gap-1 md:gap-1.5 flex-1">
-                  <label className="text-zinc-400 text-xs md:text-sm font-mono lowercase">X (Twitter) Profile</label>
+                  <label className="text-zinc-400 text-xs md:text-sm font-mono lowercase">
+                    X (Twitter) Profile
+                  </label>
                   <div className="relative">
                     <input
                       type="text"
@@ -136,8 +223,8 @@ export default function ReviewForm({ isOpen, onClose }) {
                         validationStatus === "exists"
                           ? "border-red-500/50 focus:border-red-500/50 focus:ring-red-500/50"
                           : validationStatus === "available"
-                          ? "border-green-500/50 focus:border-green-500/50 focus:ring-green-500/50"
-                          : "border-zinc-800 focus:border-amber-500/50 focus:ring-amber-500/50"
+                            ? "border-green-500/50 focus:border-green-500/50 focus:ring-green-500/50"
+                            : "border-zinc-800 focus:border-amber-500/50 focus:ring-amber-500/50",
                       )}
                     />
                     <div className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-2">
@@ -149,18 +236,35 @@ export default function ReviewForm({ isOpen, onClose }) {
                           validationStatus === "exists"
                             ? "bg-red-500 text-white"
                             : validationStatus === "available"
-                            ? "bg-green-500 text-white pointer-events-none opacity-50"
-                            : "bg-amber-500 text-black shadow-lg shadow-amber-500/20"
+                              ? "bg-green-500 text-white pointer-events-none opacity-50"
+                              : "bg-amber-500 text-black shadow-lg shadow-amber-500/20",
                         )}
                       >
-                        { validationStatus === "available" ? 
-                            <HugeiconsIcon icon={UserCheck01Icon} size={18} className={cn("transition-colors text-white font-bold")} /> 
-                            : 
-                            validationStatus === "exists" ?
-                            <HugeiconsIcon icon={CancelSquareIcon} size={18} className={cn("transition-colors text-white font-bold")} />
-                            :
-                            <HugeiconsIcon icon={EnteringGeoFenceIcon} size={18} className={cn("transition-colors text-white font-bold")} />
-                        }
+                        {validationStatus === "available" ? (
+                          <HugeiconsIcon
+                            icon={UserCheck01Icon}
+                            size={18}
+                            className={cn(
+                              "transition-colors text-white font-bold",
+                            )}
+                          />
+                        ) : validationStatus === "exists" ? (
+                          <HugeiconsIcon
+                            icon={CancelSquareIcon}
+                            size={18}
+                            className={cn(
+                              "transition-colors text-white font-bold",
+                            )}
+                          />
+                        ) : (
+                          <HugeiconsIcon
+                            icon={EnteringGeoFenceIcon}
+                            size={18}
+                            className={cn(
+                              "transition-colors text-white font-bold",
+                            )}
+                          />
+                        )}
                       </button>
                     </div>
                     {validationStatus === "exists" && (
@@ -178,28 +282,34 @@ export default function ReviewForm({ isOpen, onClose }) {
 
               {/* Gender Selection */}
               <div className="flex flex-col gap-1 md:gap-1.5">
-                <label className="text-zinc-400 text-xs md:text-sm font-mono ">Avatar Gender</label>
+                <label className="text-zinc-400 text-xs md:text-sm font-mono ">
+                  Avatar Gender
+                </label>
                 <div className="flex gap-3 md:gap-4">
                   <button
                     type="button"
-                    onClick={() => setFormData(prev => ({ ...prev, gender: "male" }))}
+                    onClick={() =>
+                      setFormData((prev) => ({ ...prev, gender: "male" }))
+                    }
                     className={cn(
                       "flex-1 py-1.5 md:py-3 px-3 md:px-4 rounded-lg md:rounded-xl border flex items-center justify-center gap-2 transition-all duration-300 text-sm md:text-base",
-                      formData.gender === "male" 
-                        ? "bg-amber-500/10 border-amber-500/50 text-amber-500" 
-                        : "bg-zinc-900/50 border-zinc-800 text-zinc-400 hover:border-zinc-700"
+                      formData.gender === "male"
+                        ? "bg-amber-500/10 border-amber-500/50 text-amber-500"
+                        : "bg-zinc-900/50 border-zinc-800 text-zinc-400 hover:border-zinc-700",
                     )}
                   >
                     Male
                   </button>
                   <button
                     type="button"
-                    onClick={() => setFormData(prev => ({ ...prev, gender: "female" }))}
+                    onClick={() =>
+                      setFormData((prev) => ({ ...prev, gender: "female" }))
+                    }
                     className={cn(
                       "flex-1 py-1.5 md:py-3 px-3 md:px-4 rounded-lg md:rounded-xl border flex items-center justify-center gap-2 transition-all duration-300 text-sm md:text-base",
-                      formData.gender === "female" 
-                        ? "bg-amber-500/10 border-amber-500/50 text-amber-500" 
-                        : "bg-zinc-900/50 border-zinc-800 text-zinc-400 hover:border-zinc-700"
+                      formData.gender === "female"
+                        ? "bg-amber-500/10 border-amber-500/50 text-amber-500"
+                        : "bg-zinc-900/50 border-zinc-800 text-zinc-400 hover:border-zinc-700",
                     )}
                   >
                     Female
@@ -209,7 +319,9 @@ export default function ReviewForm({ isOpen, onClose }) {
 
               {/* Review Text Field */}
               <div className="flex flex-col gap-1 md:gap-1.5 mt-1 md:mt-2">
-                <label className="text-zinc-400 text-xs md:text-sm font-mono lowercase">Your Feedback *</label>
+                <label className="text-zinc-400 text-xs md:text-sm font-mono lowercase">
+                  Your Feedback *
+                </label>
                 <textarea
                   name="text"
                   value={formData.text}
@@ -225,10 +337,29 @@ export default function ReviewForm({ isOpen, onClose }) {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="mt-2 md:mt-4 w-full tracking-wider bg-linear-to-r from-amber-600 to-amber-700 hover:from-amber-500/80 hover:to-amber-600/80 text-white font-bold py-2.5 md:py-3 px-6 rounded-lg md:rounded-xl transition-all duration-500 shadow-[0_0_20px_rgba(245,158,11,0.2)] active:scale-[0.98] text-sm md:text-base"
+                disabled={isSubmitting}
+                className={cn(
+                  "mt-2 md:mt-4 w-full tracking-wider bg-linear-to-r from-amber-600 to-amber-700 hover:from-amber-500/80 hover:to-amber-600/80 text-white font-bold py-2.5 md:py-3 px-6 rounded-lg md:rounded-xl transition-all duration-500 shadow-[0_0_20px_rgba(245,158,11,0.2)] active:scale-[0.98] text-sm md:text-base disabled:opacity-50 disabled:cursor-not-allowed",
+                  isSubmitting && "animate-pulse",
+                )}
               >
-                Submit Review
+                {isSubmitting ? "Sending..." : "Submit Review"}
               </button>
+
+              {submitMessage && (
+                <motion.p
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className={cn(
+                    "text-center text-sm font-mono mt-2",
+                    submitMessage.includes("soon")
+                      ? "text-amber-500"
+                      : "text-red-500",
+                  )}
+                >
+                  {submitMessage}
+                </motion.p>
+              )}
             </form>
           </motion.div>
         </motion.div>

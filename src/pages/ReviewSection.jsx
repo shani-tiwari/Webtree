@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router";
-import { useReviews } from "../context/ReviewContext";
 import ReviewCard from "../components/ReviewCard";
 import ReviewForm from "../components/ReviewForm";
 // import { cn } from "../lib/utils";
@@ -9,10 +8,28 @@ import { motion } from "motion/react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Navigation03Icon, PlusSignCircleIcon, PlusSignIcon } from "@hugeicons/core-free-icons";
 
+const REVIEWS_URL = import.meta.env.VITE_PRIVATE_WEBSITE_REVIEWS_URL;
+
 export default function ReviewSection() {
-  const { reviews, loading } = useReviews();
+  const [reviews, setReviews] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [isFormOpen, setIsFormOpen] = useState(false);
   const scrollContainerRef = useRef(null);
+
+  // Fetch reviews from API
+  useEffect(() => {
+    // setLoading(true);
+    fetch(REVIEWS_URL)
+      .then(res => res.json())
+      .then(data => {
+        setReviews(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error("Failed to fetch reviews:", err);
+        setLoading(false);
+      });
+  }, []);
 
   // Auto scroll logic for a subtle panning effect
   useEffect(() => {

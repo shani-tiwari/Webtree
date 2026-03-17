@@ -1,16 +1,32 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
-import { useReviews } from "../context/ReviewContext";
 import ReviewCard from "../components/ReviewCard";
 import ReviewForm from "../components/ReviewForm";
 import { Link } from "react-router";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { MoveLeftIcon, PlusSignCircleIcon } from "@hugeicons/core-free-icons";
 
+const REVIEWS_URL = import.meta.env.VITE_PRIVATE_WEBSITE_REVIEWS_URL;
+
 export default function Reviews() {
-  const { reviews, loading } = useReviews();
+  const [reviews, setReviews] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [isFormOpen, setIsFormOpen] = useState(false);
+
+  useEffect(() => {
+    // setLoading(true);
+    fetch(REVIEWS_URL)
+      .then(res => res.json())
+      .then(data => {
+        setReviews(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error("Failed to fetch reviews:", err);
+        setLoading(false);
+      });
+  }, []);
 
   return (
     <section className="min-h-screen w-full relative overflow-hidden bg-black/95 pt-24 pb-20 selection:text-amber-500">
