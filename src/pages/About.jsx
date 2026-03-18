@@ -54,7 +54,8 @@ export default function About() {
       </motion.div>)}
 
       <div className={cn("max-w-[1300px] mx-auto px-1 md:px-14 py-8")}>
-          <motion.h2
+          <motion.a
+            href="/about"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -63,7 +64,7 @@ export default function About() {
             )}
           >
             About <span className={cn("text-neutral-500 italic")}>Webtree</span>
-          </motion.h2>
+          </motion.a>
       </div>
 
 

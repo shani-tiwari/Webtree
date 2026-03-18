@@ -143,7 +143,7 @@ export default function Socials() {
       color: "oklch(66.6% 0.179 58.318)",
       status: "Support",
     },
-  ];
+  ];  
 
   return (
     <section
@@ -175,14 +175,15 @@ export default function Socials() {
       <div className="max-w-7xl mx-auto px-6 relative">
         {/* Modern Minimal Header */}
         <div className="mb-8 space-y-3 md:space-y-4 text-center">
-          <motion.h2
+          <motion.a
+            href="/connect"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-5xl md:text-7xl mx-auto font-black text-white/90 tracking-tighter"
           >
             Stay <span className="text-neutral-500 italic">Connected</span>
-          </motion.h2>
+          </motion.a>
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}

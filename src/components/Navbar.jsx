@@ -17,9 +17,9 @@ import {
 } from "@hugeicons/core-free-icons";
 import { useState, useEffect } from "react";
 // eslint-disable-next-line no-unused-vars
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence, easeIn } from "motion/react";
 import { useCollection } from "../context/CollectionContext";
-import { Link, useLocation } from "react-router";
+import { Link, useLocation, NavLink } from "react-router";
 import { cn } from "../lib/utils";
 
 const Navbar = () => {
@@ -116,6 +116,35 @@ const Navbar = () => {
     location.pathname.startsWith("/reviews") ? "reviews" :
     location.pathname.startsWith("/collection") ? "collection" :
     null;
+
+    const AllSocialLinks = {
+      hidden: { 
+        opacity: 0
+       },
+      visible: {
+        opacity: 1,
+        transition: {
+          delay: 0.1,
+          staggerChildren: 0.08,
+        },
+      },
+    };
+    const socialLink = {
+      hidden: { x: 10, y: -10, 
+        opacity: 0 
+      },
+      visible: {
+        x: 0,
+        y: 0,
+        opacity: 1,
+        transition: {
+          duration: 0.4,
+          ease: "easeIn",
+        },
+      },
+    };
+
+    const [showLength, setShowLength] = useState(true);
 
   return (
     <>
@@ -236,12 +265,14 @@ const Navbar = () => {
           >
             {location.pathname === "/collection" ? (
               <HugeiconsIcon
+                onClick={() => setShowLength(!showLength)}
                 icon={SquareArrowLeft02Icon}
                 size={20}
                 style={{ color: "oklch(0.871 0.006 286.286)" }}
               />
             ) : (
               <HugeiconsIcon
+                onClick={() => setShowLength(!showLength)}
                 icon={FolderCheckIcon}
                 size={20}
                 style={{ color: "oklch(0.871 0.006 286.286)" }}
@@ -251,7 +282,7 @@ const Navbar = () => {
             <sup
               className={cn("absolute -right-2 top-1 text-zinc-300 selection:bg-amber-600/30 selection:text-white")}
             >
-              {location.pathname === "/" && collection.length}
+              { showLength && collection.length}
             </sup>
           </Link>
           <button
@@ -284,84 +315,119 @@ const Navbar = () => {
             <button
               onClick={() => setIsOpen(false)}
               aria-label="Close menu"
-              className="absolute top-3 right-9 text-white/80 hover:text-white active:scale-90 transition-all duration-300"
+              className="absolute top-2 right-9 text-white/80 hover:text-white active:scale-90 transition-all duration-300"
             >
               <HugeiconsIcon icon={CancelCircleIcon} size={30} />
             </button>
 
             {/* Menu Content */}
-            <div className="flex flex-col items-center gap-8 w-full max-w-xs">
+            <motion.div 
+              className="flex flex-col items-center gap-8 w-full max-w-xs "
+              initial={{ opacity: 0, x: 20, y: -20 }}
+              animate={{ opacity: 1,  x: 0, y: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut", delay: 0.2 }}
+            >
               {/* About Link */}
-              <Link
-                to="/about"
+              <motion.a
+                initial={{ x: 20, y: -20}}
+                animate={{ x: 0, y: 0}}
+                transition={{ duration: 0.3, ease: "easeInOut", delay: 0.05 }}
+                href="/about" 
                 className={cn(
-                  "text-zinc-300 text-2xl font-medium tracking-wide transition-all duration-300 active:scale-95 flex items-center gap-6",
+                  "text-3xl font-medium tracking-wide transition-all duration-300 active:scale-95 flex items-center gap-6",
                 )}
                 onClick={() => {
                   setIsOpen(false);
                   scrollTop();
                 }}
               >
-                <span>About</span>
-                <HugeiconsIcon
-                  className="text-white/70 animate-pulse"
+                <span className="bg-clip-text text-transparent bg-linear-to-b from-white to-zinc-500">About </span>
+                <span>🎯</span>
+                {/* <HugeiconsIcon
+                  className="text-white/70 animate-pulse mt-1"
                   icon={Agreement03Icon}
                   size={22}
-                />
-              </Link>
+                /> */}
+              </motion.a>
 
-              <span className="h-[0.5px] w-3/4 bg-white/15 rounded-full"></span>
+              {/* divider */}
+              <motion.span 
+                initial={{ width: "0%"}}
+                animate={{width: "78%" }}
+                transition={{duration: 0.5, ease: "easeOut", delay: 0.2}}
+                className="h-[0.1px] bg-zinc-600 rounded-full">
+              </motion.span>
 
               {/* Socials Section */}
               <div className="flex flex-col items-center gap-6 w-full">
                 <p
                   className={cn(
-                    "text-zinc-400 text-sm tracking-[0.2em] uppercase",
+                    "text-zinc-500 text-sm tracking-[0.2em] uppercase flex gap-2",
                   )}
                 >
-                  Socials
+                  Socials <p className="animate-bounce mt-[2px]">🌐</p> 
                 </p>
-                <div className="flex gap-x-14 gap-y-8 flex-wrap justify-center">
+                <motion.div
+                  variants={AllSocialLinks}
+                  initial="hidden"
+                  animate="visible"
+                  className="flex gap-x-14 gap-y-8 flex-wrap justify-center"
+                >
                   {socialLinks.map((item) => (
-                    <a
+                    <motion.a
+                      variants={socialLink}
                       key={item.name}
                       href={item.url}
                       target="_blank"
+                      rel="noopener noreferrer"
                       className={cn(
-                        "flex flex-col flex-wrap items-center justify-center gap-1.5 text-white/80 transition-all duration-300 active:scale-90 hover:text-white",
+                        "flex flex-col flex-wrap items-center justify-center gap-1.5 text-white/70 transition-all duration-300 active:scale-90 hover:text-white",
                       )}
                       onClick={() => setIsOpen(false)}
                       aria-label={`Visit ${item.label} mobile`}
                     >
                       <HugeiconsIcon icon={item.icon} size={30} />
-                      <span className="text-[10px] text-zinc-400 tracking-widest">
+                      <span className="text-[10px] text-zinc-500 tracking-widest animate-pulse">
                         {item.name}
                       </span>
-                    </a>
+                    </motion.a>
                   ))}
-                </div>
+                </motion.div>
               </div>
 
-              <span className="h-[0.5px] w-3/4 bg-white/15 rounded-full"></span>
+              {/* divider */}
+              <motion.span 
+                initial={{ width: "0%"}}
+                animate={{width: "78%" }}
+                transition={{duration: 0.5, ease: "easeInOut", delay: 0.2}}
+                className="h-[0.1px] bg-zinc-600 rounded-full">
+              </motion.span>
 
-                {/* reviews Link */}
-              <Link
-                to="/reviews"
+
+              {/* reviews Link */}
+              <motion.a
+                href="/reviews"
+                initial={{ x: 17, y: -17}}
+                animate={{ x: 0,  y: 0}}
+                transition={{ duration: 0.3, ease: "easeInOut", delay: 0.7 }}
                 className={cn(
-                  "text-zinc-300 text-2xl font-medium tracking-wide transition-all duration-300 active:scale-95 flex items-center gap-6",
+                  "text-3xl font-medium tracking-wide transition-all duration-300 active:scale-95 flex items-center gap-6",
                 )}
                 onClick={() => {
                   setIsOpen(false);
                   scrollTop();
                 }}
               >
-                <span>Review</span>
-                <HugeiconsIcon
-                  className="text-white/70 animate-pulse"
+                <span className="bg-clip-text text-transparent bg-linear-to-b from-white to-zinc-500">
+                  Review 
+                </span>
+                <span>💭</span>
+                {/* <HugeiconsIcon
+                  className="text-white/70 animate-pulse mt-1"
                   icon={MessagePreview02FreeIcons}
                   size={22}
-                />
-              </Link>
+                /> */}
+              </motion.a>
 
               {/* Other Products */}
               {/* <div className="flex flex-col items-center gap-4 w-full">
@@ -395,7 +461,8 @@ const Navbar = () => {
                   </a>
                 </div>
               </div> */}
-            </div>
+            </motion.div>
+
           </motion.div>
         )}
       </AnimatePresence>
