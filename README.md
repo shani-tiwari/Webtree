@@ -7,7 +7,7 @@ WebTree is a curated collection of development resources built for developers wh
 It sits at https://webtree.shaniweb.com and acts like a single command center for everything you need to design and build beautiful web interfaces.
 
 # 🤔 Why does WebTree exist?
-🧠 The problem it solves:
+## 🧠 The problem it solves:
 
 You open 10–20 tabs trying to find the right fonts, icons, SVGs, color palettes, UI kits, and animations.
 
@@ -16,14 +16,14 @@ You keep bookmarks spread across browsers, folders, and apps, and still can’t 
 Design inspiration and dev tools feel scattered and noisy instead of organized and focused.
 
 
-💚 The idea behind WebTree:
+## 💚 The idea behind WebTree:
 
 “One place to find the best, no fluff, no random links.”
 Instead of hunting everywhere, you land on WebTree and instantly discover high‑quality, pre‑filtered resources that actually help you ship faster.
 
 
 # 🧩 How is WebTree useful?
-✨ For frontend developers & designers:
+## ✨ For frontend developers & designers:
 
 You save time by skipping endless tab‑hopping and SEO‑driven junk.
 
@@ -31,7 +31,7 @@ You get curated picks (not random links), so you can trust that the resources ar
 
 You can explore inspiration in one place: UI components, animations, SVGs, color systems, and more.
 
-🚀 For side‑projects and freelancing:
+## 🚀 For side‑projects and freelancing:
 
 You can prototype and build faster with ready‑to‑use assets.
 
@@ -39,7 +39,7 @@ You reduce the “what design system should I use?” fatigue because you can qu
 
 
 # 🎯 What services / features do you get?
-🗂️ Curated resource library
+## 🗂️ Curated resource library
 
 Fonts, icons, SVGs, illustrations, and more for UI building.
 
@@ -48,25 +48,25 @@ UI kits, component libraries, and design patterns you can reference or adapt.
 Animation libraries, motion‑design tools, and micro‑interaction inspiration.
 
 
-📊 Clean, single‑page experience
+## 📊 Clean, single‑page experience
 
 Minimal, fast‑loading layout so you can browse without scroll fatigue.
 
 Smooth micro‑animations and visual feedback to keep the experience feel modern and playful.
 
 
-💡 Design‑dev friendly structure
+## 💡 Design‑dev friendly structure
 
 Resources grouped by category (e.g., “Fonts”, “Icons”, “Motion”, “UI Kits”).
 
 Easy to scan and jump to the section you need at that moment.
 
-🧭 Problem statement (in simple words)
-📌 The core problem:
+# 🧭 Problem statement (in simple words)
+## 📌 The core problem:
 
 “There’s no single, clean, developer‑friendly place that collects only the best frontend resources in one view.”
 
-🔧 What WebTree does about it:
+## 🔧 What WebTree does about it:
 
 Aggregates the most useful tools and assets from the web.
 
@@ -74,11 +74,6 @@ Filters out low‑quality, outdated, or overly promotional links.
 
 Presents everything in a single, scroll‑free, responsive page so you can focus on building, not searching.
 
-🙌 Who is this for?
-👨‍💻 Frontend devs using React, Vite, Framer, Next.js, etc.
-🎨 UI/UX designers looking for quick inspiration and reusable assets.
-🚀 Freelancers & indie makers who want to ship polished interfaces fast without reinventing the wheel.
-
-🚀 In one line…
+# 🚀 In one line…
 WebTree is your one‑stop frontend playground – less searching, more making. 🚀
 
