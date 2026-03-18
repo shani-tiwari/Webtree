@@ -19,8 +19,10 @@
 }
 
 @font-face {
-  font-family: "beba";
-  src: url("./assets/fonts/Bebas_Neue/BebasNeue-Regular.ttf");
+  font-family: "bebas-neue";
+  src: url("./assets/fonts/BebasNeue/BebasNeue.ttf");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @layer utilities {
@@ -96,6 +98,10 @@
 }
 
 @theme {
+
+  /* font */
+  --font-bebas-neue: "bebas-neue", sans-serif;
+  
   /* Background Colors */
   --color-bg-main: #0b0f1a;
   --color-bg-secondary: #121826;
@@ -123,12 +129,6 @@
   --color-sidebar-item: #b8c1ec;
   --color-sidebar-item-active: #f5c77a;
   --color-sidebar-hover-bg: rgba(245, 199, 122, 0.12);
-
-  /* Accent Colors */
-  --color-accent-blue: #7aa2ff;
-  --color-accent-cyan: #4fd1ff;
-  --color-accent-violet: #9b8cff;
-  --color-accent-gold: #f5c77a;
 
   /* Shadow Values */
   --shadow-glow-blue: 0 0 20px rgba(122, 162, 255, 0.35);
