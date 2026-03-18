@@ -119,27 +119,27 @@ const Navbar = () => {
 
     const AllSocialLinks = {
       hidden: { 
-        opacity: 0
+        opacity: 1
        },
       visible: {
         opacity: 1,
         transition: {
-          delay: 0.1,
+          delay: 0.08,
           staggerChildren: 0.08,
         },
       },
     };
     const socialLink = {
       hidden: { x: 10, y: -10, 
-        opacity: 0 
+        opacity: 1
       },
       visible: {
         x: 0,
         y: 0,
         opacity: 1,
         transition: {
-          duration: 0.4,
-          ease: "easeIn",
+          duration: 0.35,
+          ease: "easeOut",
         },
       },
     };
@@ -354,7 +354,7 @@ const Navbar = () => {
               <motion.span 
                 initial={{ width: "0%"}}
                 animate={{width: "78%" }}
-                transition={{duration: 0.5, ease: "easeOut", delay: 0.2}}
+                transition={{duration: 0.7, ease: "easeOut", delay: 0.3}}
                 className="h-[0.1px] bg-zinc-600 rounded-full">
               </motion.span>
 
@@ -399,7 +399,7 @@ const Navbar = () => {
               <motion.span 
                 initial={{ width: "0%"}}
                 animate={{width: "78%" }}
-                transition={{duration: 0.5, ease: "easeInOut", delay: 0.2}}
+                transition={{duration: 0.7, ease: "easeInOut", delay: 0.3}}
                 className="h-[0.1px] bg-zinc-600 rounded-full">
               </motion.span>
 
@@ -407,9 +407,9 @@ const Navbar = () => {
               {/* reviews Link */}
               <motion.a
                 href="/reviews"
-                initial={{ x: 17, y: -17}}
+                initial={{ x: 20, y: -20}}
                 animate={{ x: 0,  y: 0}}
-                transition={{ duration: 0.3, ease: "easeInOut", delay: 0.7 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
                 className={cn(
                   "text-3xl font-medium tracking-wide transition-all duration-300 active:scale-95 flex items-center gap-6",
                 )}
