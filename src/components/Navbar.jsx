@@ -13,13 +13,13 @@ import {
   FolderFavouriteIcon,
   Agreement03Icon,
   Menu02Icon,
-  MessagePreview02FreeIcons,
+  Home11Icon,
 } from "@hugeicons/core-free-icons";
 import { useState, useEffect } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence, easeIn } from "motion/react";
 import { useCollection } from "../context/CollectionContext";
-import { Link, useLocation, NavLink } from "react-router";
+import { Link, useLocation } from "react-router";
 import { cn } from "../lib/utils";
 
 const Navbar = () => {
@@ -320,6 +320,19 @@ const Navbar = () => {
               <HugeiconsIcon icon={CancelCircleIcon} size={30} />
             </button>
 
+            {/* home button */}
+            { location.pathname !== '/' && 
+              <Link to="/">
+                <button
+                  onClick={() => setIsOpen(false)}
+                  aria-label="go to home"
+                  className="absolute top-2 left-9 text-white/60 hover:text-white active:scale-90 transition-all duration-300"
+                >
+                  <HugeiconsIcon icon={Home11Icon} size={30} />
+                </button>
+              </Link>
+            }
+
             {/* Menu Content */}
             <motion.div 
               className="flex flex-col items-center gap-8 w-full max-w-xs "
@@ -329,7 +342,7 @@ const Navbar = () => {
             >
               {/* About Link */}
               <motion.a
-                initial={{ x: 20, y: -20}}
+                initial={{ x: 10, y: -10}}
                 animate={{ x: 0, y: 0}}
                 transition={{ duration: 0.3, ease: "easeInOut", delay: 0.05 }}
                 href="/about" 
@@ -342,7 +355,7 @@ const Navbar = () => {
                 }}
               >
                 <span className="bg-clip-text text-transparent bg-linear-to-b from-white to-zinc-500">About </span>
-                <span>🎯</span>
+                <span>🕸️</span>
                 {/* <HugeiconsIcon
                   className="text-white/70 animate-pulse mt-1"
                   icon={Agreement03Icon}
@@ -354,7 +367,7 @@ const Navbar = () => {
               <motion.span 
                 initial={{ width: "0%"}}
                 animate={{width: "78%" }}
-                transition={{duration: 0.7, ease: "easeOut", delay: 0.3}}
+                transition={{duration: 0.5, ease: "easeOut", delay: 0.3}}
                 className="h-[0.1px] bg-zinc-600 rounded-full">
               </motion.span>
 
@@ -365,7 +378,8 @@ const Navbar = () => {
                     "text-zinc-500 text-sm tracking-[0.2em] uppercase flex gap-2",
                   )}
                 >
-                  Socials <p className="animate-bounce mt-[2px]">🌐</p> 
+                  Socials 
+                  {/* <p className="animate-bounce mt-[2px]">🌐</p>  */}
                 </p>
                 <motion.div
                   variants={AllSocialLinks}
@@ -399,7 +413,7 @@ const Navbar = () => {
               <motion.span 
                 initial={{ width: "0%"}}
                 animate={{width: "78%" }}
-                transition={{duration: 0.7, ease: "easeInOut", delay: 0.3}}
+                transition={{duration: 0.5, ease: "easeInOut", delay: 0.3}}
                 className="h-[0.1px] bg-zinc-600 rounded-full">
               </motion.span>
 
@@ -407,7 +421,7 @@ const Navbar = () => {
               {/* reviews Link */}
               <motion.a
                 href="/reviews"
-                initial={{ x: 20, y: -20}}
+                initial={{ x: 10, y: -10}}
                 animate={{ x: 0,  y: 0}}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 className={cn(
