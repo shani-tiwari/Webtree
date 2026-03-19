@@ -7,7 +7,6 @@ import ReviewForm from "../components/ReviewForm";
 import { motion } from "motion/react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Navigation03Icon, PlusSignCircleIcon, PlusSignIcon } from "@hugeicons/core-free-icons";
-import Divider from "../components/Divider";
 
 const REVIEWS_URL = import.meta.env.VITE_PRIVATE_WEBSITE_REVIEWS_URL;
 
