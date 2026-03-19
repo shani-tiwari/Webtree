@@ -3,7 +3,6 @@ import Card from "../components/Card";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
 import GoBack from "../components/GoBack";
-import Divider from "../components/Divider";
 import { useLocation } from "react-router";
 
 export default function Collection() {

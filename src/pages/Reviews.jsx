@@ -6,7 +6,6 @@ import ReviewForm from "../components/ReviewForm";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { PlusSignCircleIcon } from "@hugeicons/core-free-icons";
 import GoBack from "../components/GoBack";
-import Divider from "../components/Divider";
 import { useLocation } from "react-router";
 
 const REVIEWS_URL = import.meta.env.VITE_PRIVATE_WEBSITE_REVIEWS_URL;

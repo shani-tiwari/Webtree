@@ -18,7 +18,6 @@ export default function ReviewForm({ isOpen, onClose }) {
 
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
     xProfile: "",
     gender: "male",
     text: "",
@@ -40,7 +39,7 @@ export default function ReviewForm({ isOpen, onClose }) {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    if (name === "xProfile" || name === "email") {
+    if (name === "xProfile") {
       setValidationStatus(null);
     }
   };
@@ -51,11 +50,9 @@ export default function ReviewForm({ isOpen, onClose }) {
 
     // Check for duplicates
     const currentX = formData.xProfile?.replace("@", "").trim().toLowerCase();
-    const currentEmail = formData.email?.trim().toLowerCase();
 
     const exists = reviews.some((review) => 
-      (currentX && review.xProfile?.replace("@", "").trim().toLowerCase() === currentX) ||
-      (currentEmail && review.email?.trim().toLowerCase() === currentEmail)
+      (currentX && review.xProfile?.replace("@", "").trim().toLowerCase() === currentX) 
     );
 
     if (exists) {
@@ -66,14 +63,12 @@ export default function ReviewForm({ isOpen, onClose }) {
     setIsSubmitting(true);
 
     try {
-      // NOTE: Replace these with your actual EmailJS IDs
-      // SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY
       await emailjs.send(
         "service_9wh2vje",
         "template_x9kgcwu",
         {
           name: formData.name,
-          email: formData.email,
+          email: "",
           xProfile: formData.xProfile,
           gender: formData.gender,
           message: formData.text,
@@ -86,7 +81,6 @@ export default function ReviewForm({ isOpen, onClose }) {
       setTimeout(() => {
         setFormData({
           name: "",
-          email: "",
           xProfile: "",
           gender: "male",
           text: "",
@@ -166,7 +160,7 @@ export default function ReviewForm({ isOpen, onClose }) {
                 {/* Name Field */}
                 <div className="flex flex-col gap-1.5 flex-1">
                   <label className="text-zinc-400 text-xs md:text-sm font-mono">
-                    Name *
+                    name *
                   </label>
                   <input
                     type="text"
@@ -179,41 +173,19 @@ export default function ReviewForm({ isOpen, onClose }) {
                     className="w-full bg-zinc-900/50 border border-zinc-800 rounded-lg md:rounded-xl px-3 md:px-4 py-2 md:py-3 text-white placeholder:text-zinc-600 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/50 transition-all font-sans text-sm md:text-base"
                   />
                 </div>
-
-                {/* Email Field */}
-                <div className="flex flex-col gap-1.5 flex-1">
-                  <label className="text-zinc-400 text-xs md:text-sm font-mono">
-                    Email *
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    placeholder="shani@example.com"
-                    className={cn(
-                      "w-full bg-zinc-900/50 border rounded-lg md:rounded-xl px-3 md:px-4 py-2 md:py-3 text-white placeholder:text-zinc-600 focus:outline-none focus:ring-1 transition-all font-sans text-sm md:text-base",
-                      validationStatus === "exists"
-                        ? "border-red-500/50 focus:border-red-500/50 focus:ring-red-500/50"
-                        : validationStatus === "available"
-                          ? "border-green-500/50 focus:border-green-500/50 focus:ring-green-500/50"
-                          : "border-zinc-800 focus:border-amber-500-op50 focus:ring-amber-500-op50",
-                    )}
-                  />
-                </div>
               </div>
 
-              <div className="flex flex-col md:flex-row gap-3 md:gap-4 w-full">
+              <div className="flex gap-3 md:gap-4 w-full">
                 {/* X Profile Field */}
                 <div className="flex flex-col gap-1 md:gap-1.5 flex-1">
                   <label className="text-zinc-400 text-xs md:text-sm font-mono lowercase">
-                    X (Twitter) Profile
+                    X (Twitter) Profile *
                   </label>
                   <div className="relative">
                     <input
                       type="text"
                       name="xProfile"
+                      required
                       value={formData.xProfile}
                       onChange={handleChange}
                       maxLength={15}
@@ -232,7 +204,7 @@ export default function ReviewForm({ isOpen, onClose }) {
                         type="button"
                         onClick={checkValidity}
                         className={cn(
-                          "flex items-center justify-center font-mono px-2 py-0.5 md:py-1 rounded-lg hover:scale-105 active:scale-95 transition-all duration-300",
+                          "flex items-center justify-center font-mono px-2 py-0.5 md:py-[6px] rounded-lg hover:scale-105 active:scale-95 transition-all duration-300",
                           validationStatus === "exists"
                             ? "bg-red-500 text-white"
                             : validationStatus === "available"
@@ -283,7 +255,7 @@ export default function ReviewForm({ isOpen, onClose }) {
               {/* Gender Selection */}
               <div className="flex flex-col gap-1 md:gap-1.5">
                 <label className="text-zinc-400 text-xs md:text-sm font-mono ">
-                  Avatar Gender
+                  avatar gender
                 </label>
                 <div className="flex gap-3 md:gap-4">
                   <button

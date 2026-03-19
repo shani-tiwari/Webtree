@@ -5,7 +5,6 @@ import { ChartLineData02Icon, MoveLeftIcon } from "@hugeicons/core-free-icons";
 import { cn } from "../lib/utils";
 import { Link, useLocation } from "react-router";
 import GoBack from "../components/GoBack";
-import Divider from "../components/Divider";
 
 export default function About() {
   const location = useLocation();
