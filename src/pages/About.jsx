@@ -3,10 +3,12 @@ import { motion } from "motion/react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { ChartLineData02Icon, MoveLeftIcon } from "@hugeicons/core-free-icons";
 import { cn } from "../lib/utils";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import GoBack from "../components/GoBack";
+import Divider from "../components/Divider";
 
 export default function About() {
+  const location = useLocation();
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -26,7 +28,7 @@ export default function About() {
     <section
       id="about"
       className={cn(
-        "w-full min-h-screen mt-10 flex items-center justify-center flex-col bg-[#030303] px-4 relative selection:bg-amber-600-op30 selection:text-white overflow-hidden",
+        "w-full min-h-screen pt-18 lg:mt-0 flex items-center justify-center flex-col bg-[#030303] px-4 relative selection:bg-amber-600-op30 selection:text-white overflow-hidden",
       )}
     >
       {/* Background Micro-Accents */}
@@ -36,13 +38,9 @@ export default function About() {
         )}
       />
 
-      {/* back button */}
-      <header className="w-full relative">
-        <GoBack/>
-
-        <div className={cn("max-w-[1300px] mx-auto px-1 md:px-14 py-8")}>
+        <div className={cn("max-w-[1300px] mx-auto text-center px-1 md:px-14 py-8 mb-2 md:mb-0")}>
             <motion.a
-              href="/about"
+              href={location.pathname !== "/about" && "/about" }
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -53,16 +51,18 @@ export default function About() {
               About <span className={cn("text-neutral-500 italic")}>Webtree</span>
             </motion.a>
         </div>
-      </header>
 
-      {/* divider */}
-      <motion.span 
-        initial={{width:"0%"}}              
-        viewport={{ once: true }}
-        whileInView={{width:"99%"}}
-        transition={{duration:0.7, delay:0.4, originX:50, ease: "easeOut"}}
-        className=" h-[1.3px] md:max-w-[80%] mx-auto -mt-4 md:mt-0 mb-2 bg-white/30 ">
-      </motion.span>
+      {/* back button & divider */}
+        <motion.span 
+          initial={{width:"0%"}}              
+          viewport={{ once: true }}
+          whileInView={{width:"80%"}}
+          transition={{duration:0.6, delay:0.3, originX:50, ease: "easeOut"}}
+          className="z-90 h-[0.5px]  mx-auto -mt-4 md:mt-0 mb-2 bg-white/40 relative">
+          { location.pathname === "/about" && 
+            <GoBack />
+          }
+        </motion.span>
 
       {/* Main Content Grid */}
       <motion.div
@@ -153,11 +153,6 @@ export default function About() {
                 desc: "Expanding our curated collections to server-side excellence.",
                 live: true,
               },
-              // {
-              //   title: "AI Tools & Workflows",
-              //   desc: "Integrating next-gen automation for your dev environment.",
-              //   live: false,
-              // },
               {
                 title: "Interactive Tutorials",
                 desc: "Learn to master the tools you find here.",

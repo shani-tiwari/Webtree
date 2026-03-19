@@ -3,13 +3,16 @@ import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import ReviewCard from "../components/ReviewCard";
 import ReviewForm from "../components/ReviewForm";
-import { Link } from "react-router";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { MoveLeftIcon, PlusSignCircleIcon } from "@hugeicons/core-free-icons";
+import { PlusSignCircleIcon } from "@hugeicons/core-free-icons";
+import GoBack from "../components/GoBack";
+import Divider from "../components/Divider";
+import { useLocation } from "react-router";
 
 const REVIEWS_URL = import.meta.env.VITE_PRIVATE_WEBSITE_REVIEWS_URL;
 
 export default function Reviews() {
+  const location = useLocation();
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -36,24 +39,6 @@ export default function Reviews() {
       <div className="absolute top-0 -left-20 w-[500px] h-[500px] bg-amber-600-op5 blur-[120px] rounded-full pointer-events-none animate-pulse" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-orange-600/5 blur-[120px] rounded-full pointer-events-none animate-pulse" />
 
-      {/* Back Button */}
-      {/* <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.2 }}
-        className="z-90 absolute top-20 left-2 lg:left-38 lg:top-24"
-      >
-        <Link
-          to="/"
-          className="group flex items-center gap-2 text-amber-600 py-1 px-2 md:px-5 rounded-full 
-              bg-black/40 backdrop-blur-md border border-white/5 
-             hover:text-amber-500 hover:bg-black/50 active:scale-97
-              transition-all duration-300 shadow-lg ring-2 ring-zinc-400/50"
-        >
-          <HugeiconsIcon icon={MoveLeftIcon} className="group-hover:-translate-x-1 group-hover:text-lg transition-transform duration-300" size={20} />
-        </Link>
-      </motion.div> */}
-
       <div className="max-w-7xl mx-auto md:px-6 relative md:mt-10">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-6">
@@ -61,7 +46,7 @@ export default function Reviews() {
             <motion.h2
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-5xl uppercase lg:text-6xl font-beba tracking-wider bg-clip-text text-transparent bg-linear-to-b from-white to-neutral-500 mb-4"
+              className="text-5xl md:text-6xl uppercase lg:text-6xl font-bebas-neue  tracking-wider bg-clip-text text-transparent bg-linear-to-b from-white to-neutral-500 mb-1"
             >
               Reviews
             </motion.h2>
@@ -69,7 +54,7 @@ export default function Reviews() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="text-neutral-400 font-mono max-w-2xl leading-tight tracking-wide"
+              className="text-neutral-400 font-mono max-w-2xl px-4 leading-tight tracking-wide"
             >
               See what others are saying about Webtree and share your own experience
             </motion.p>
@@ -90,17 +75,20 @@ export default function Reviews() {
           </motion.div>
         </div>
 
-         {/* Animated line */}
-          <motion.span 
-              initial={{width:"0%"}}
-              whileInView={{width:"97%"}}
-              viewport={{ once: true }}
-              transition={{duration:0.6, delay:0.3, ease: "easeOut"}}
-              className="block mx-auto rounded-full  h-[1.3px] bg-white/30 -mt-6">
-          </motion.span>
+        {/* back button & divider */}
+        <motion.span 
+          initial={{width:"0%"}}              
+          viewport={{ once: true }}
+          whileInView={{width:"100%"}}
+          transition={{duration:0.6, delay:0.3, originX:50, ease: "easeOut"}}
+          className="z-90 h-[0.5px] block mx-auto -mt-4 md:mt-0 mb-2 bg-white/40 relative">
+          { location.pathname === "/reviews" && 
+            <GoBack />
+          }
+        </motion.span>
 
         {/* Reviews Grid */}
-        <div className="flex px-2 flex-wrap gap-8 mt-8 justify-center ">
+        <div className="flex px-3 flex-wrap gap-8 mt-8 justify-center ">
           {loading ? (
              <div className="text-center animate-pulse">
                <p className="text-zinc-500 font-mono text-lg">Loading amazing reviews...</p>

@@ -268,7 +268,7 @@ const Navbar = () => {
                 onClick={() => setShowLength(!showLength)}
                 icon={SquareArrowLeft02Icon}
                 size={20}
-                style={{ color: "oklch(0.871 0.006 286.286)" }}
+                style={{ color: "oklch(55.5% 0.163 48.998)" }}
               />
             ) : (
               <HugeiconsIcon

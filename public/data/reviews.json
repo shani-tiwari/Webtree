@@ -10,6 +10,15 @@
   },
   {
     "id": 2,
+    "name": "Kasif",
+    "xProfile": "@md_kasif_uddin",
+    "email" : "mdkasifuddin121@gmail.com",
+    "gender": "male",
+    "text": "Bro literally your website look amazing 🔥 keep making these type of stuffs.",
+    "date": "2026-03-19T10:33:00.000Z"
+  },
+  {
+    "id": 3,
     "name": "Shani Tiwari",
     "xProfile": "@ShaniDevelops",
     "email" : "shanitiwari2021@gmail.com",
@@ -17,5 +26,6 @@
     "text": "Webtree has completely transformed how I organize my development resources. It's incredibly fast and the UI is just stunning!",
     "date": "2026-03-15T12:00:00.000Z"
   }
+  
   
 ]

@@ -10,7 +10,8 @@ import {
   NewTwitterRectangleIcon,
 } from "@hugeicons/core-free-icons";
 import { cn } from "../lib/utils";
-import { Link } from "react-router";
+import GoBack from "../components/GoBack";
+import { useLocation } from "react-router";
 
 const SocialCard = ({
   name,
@@ -112,20 +113,20 @@ export default function Socials() {
       status: "Building",
     },
     {
-      name: "Twitter",
-      icon: NewTwitterRectangleIcon,
-      url: "https://x.com/ShaniDevelops",
-      label: "Updates, Humour & Tech Insights",
-      color: "oklch(73.7% 0.021 106.9)",
-      status: "Updates",
-    },
-    {
       name: "LinkedIn",
       icon: Linkedin01Icon,
       url: "https://www.linkedin.com/in/shani-tiwari-aspirational/",
       label: "Professional Career & Networking",
       color: "#0A66C2",
       status: "Connect",
+    },
+    {
+      name: "Twitter",
+      icon: NewTwitterRectangleIcon,
+      url: "https://x.com/ShaniDevelops",
+      label: "Updates, Humour & Tech Insights",
+      color: "oklch(73.7% 0.021 106.9)",
+      status: "Updates",
     },
     {
       name: "Instagram",
@@ -145,32 +146,17 @@ export default function Socials() {
     },
   ];  
 
+  const location = useLocation();
+
   return (
     <section
       id="socials"
-      className="w-full min-h-screen flex flex-col items-center justify-center bg-[#030303] pt-14 pb-10 relative overflow-hidden select-none"
+      className="w-full mt-14 md:mt-0 min-h-screen flex flex-col items-center justify-center bg-[#030303] pt-14 pb-10 relative overflow-hidden select-none"
     >
       {/* Enhanced Ambient Background Accents */}
       <div className="absolute top-0 -left-20 w-[500px] h-[500px] bg-purple-600/6 blur-[120px] rounded-full pointer-events-none animate-pulse" />
       <div className="absolute bottom-0 -right-20 w-[500px] h-[500px] bg-blue-600/6 blur-[120px] rounded-full pointer-events-none animate-pulse" />
 
-      {/* back button */}
-      {location.pathname.startsWith("/connect") && (<motion.div
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.2 }}
-        className="z-90 hidden absolute md:flex left-42 top-48"
-      >
-        <Link
-          to="/"
-          className="group flex items-center  gap-2 text-amber-600 py-1 px-2 md:px-5 rounded-full 
-              bg-black/40 backdrop-blur-md border border-white/5 
-             hover:text-amber-500 hover:bg-black/50 active:scale-97
-              transition-all duration-300 shadow-lg ring-2 ring-zinc-400/50"
-        >
-          <HugeiconsIcon icon={MoveLeftIcon} className="group-hover:-translate-x-1 group-hover:text-lg transition-transform duration-300" size={20} />
-        </Link>
-      </motion.div>)}
 
       <div className="max-w-7xl mx-auto px-6 relative">
         {/* Modern Minimal Header */}
@@ -188,22 +174,23 @@ export default function Socials() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="text-neutral-500 max-w-100 mx-auto text-sm md:text-lg leading-5"
+            className="text-neutral-500 max-w-96 mx-auto mt-5 text-sm md:text-lg leading-5"
           >
             Follow my journey online and explore my latest projects & thoughts.
           </motion.p>
-
-
         </div>
 
-        {/* Animated line */}
-          <motion.span 
-              initial={{width:"0%"}}
-              whileInView={{width:"100%"}}
-              viewport={{ once: true }}
-              transition={{duration:0.6, delay:0.3, ease: "easeOut"}}
-              className="block mx-auto  h-[1.3px] bg-white/30 -mt-4 md:mt-0">
-          </motion.span>
+        {/* back button & divider */}
+        <motion.span 
+          initial={{width:"0%"}}              
+          viewport={{ once: true }}
+          whileInView={{width:"100%"}}
+          transition={{duration:0.6, delay:0.3, originX:50, ease: "easeOut"}}
+          className="z-90 h-[0.5px] block mx-auto -mt-4 md:mt-0 mb-2 bg-white/40 relative">
+          { location.pathname === "/connect" && 
+            <GoBack />
+          }
+        </motion.span>
 
         {/* Floating Flex/Grid Container */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6 mt-8">

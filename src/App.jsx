@@ -36,7 +36,7 @@ function App() {
 
         <main
           id="main-content"
-          className="relative z-30 w-full flex flex-col items-center grow"
+          className="relative z-30 w-full flex flex-col items-center"
         >
           <React.Suspense
             fallback={

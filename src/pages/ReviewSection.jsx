@@ -7,6 +7,7 @@ import ReviewForm from "../components/ReviewForm";
 import { motion } from "motion/react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Navigation03Icon, PlusSignCircleIcon, PlusSignIcon } from "@hugeicons/core-free-icons";
+import Divider from "../components/Divider";
 
 const REVIEWS_URL = import.meta.env.VITE_PRIVATE_WEBSITE_REVIEWS_URL;
 
@@ -57,24 +58,24 @@ export default function ReviewSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             // viewport={{ once: true }}
-            className="text-3xl md:text-4xl italic font-extrabold tracking-wide bg-clip-text text-transparent bg-linear-to-b from-white to-zinc-500"
+            className="text-3xl md:text-4xl italic font-extrabold tracking-wide hover:tracking-wider transition-all duration-300 bg-clip-text text-transparent bg-linear-to-b from-white to-zinc-500"
           >
             Review & Feedback
           </motion.h2>
-          <p className="text-zinc-400 font-mono text-sm mt-2">What developers say about Webtree</p>
+          <p className="text-zinc-400 font-mono text-sm mt-2">What developers say about <span className="text-amber-600">webtree</span> </p>
         </div>
         
         <div className="flex items-center gap-4">
           <Link
             to="/reviews"
-            className="group flex items-center justify-center gap-2 px-5 py-2.5 rounded-full border border-white/10 bg-zinc-900/50 text-white/80 hover:bg-zinc-800 hover:text-white transition-all duration-300 font-mono text-sm active:scale-95"
+            className="group flex items-center justify-center gap-2 px-5 py-2.5 rounded-full hover:scale-105 border border-white/10 bg-zinc-900/50 text-white/80 hover:bg-zinc-800 hover:text-white transition-all duration-300 font-mono text-sm active:scale-95"
           >
              View All
              <HugeiconsIcon icon={Navigation03Icon} size={16} className="group-hover:translate-x-1 group-hover:-translate-y-0.3 transition-transform" />
           </Link>
            <button
               onClick={() => setIsFormOpen(true)}
-              className="group flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-amber-500-op10 border border-amber-500-op30 text-amber-500 hover:bg-amber-500-op80 hover:text-black transition-all duration-300 font-bold text-sm active:scale-95 shadow-[0_0_15px_var(--color-amber-500-op10)] hover:shadow-[0_0_20px_var(--color-amber-500-op40)]"
+              className="group flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-amber-500-op10 border border-amber-500-op30 text-amber-500 hover:bg-amber-500-op80 hover:scale-105 hover:text-black transition-all duration-300 font-bold text-sm active:scale-95 shadow-[0_0_15px_var(--color-amber-500-op10)] hover:shadow-[0_0_20px_var(--color-amber-500-op40)]"
            >
             <HugeiconsIcon icon={PlusSignCircleIcon} size={16} className="group-hover:rotate-90 transition-transform duration-300" />
             Add Review
@@ -83,13 +84,13 @@ export default function ReviewSection() {
       </div>
 
        {/* Animated line */}
-          <motion.span 
-              initial={{width:"0%"}}
-              whileInView={{width:"100%"}}
-              viewport={{ once: true }}
-              transition={{duration:0.6, delay:0.3, ease: "easeOut"}}
-              className="block mx-auto  h-[1.3px] bg-white/30 -mt-4 md:mt-0 mb-4">
-          </motion.span>
+        <motion.span 
+                initial={{width:"0%"}}              
+                viewport={{ once: true }}
+                whileInView={{width:"95%"}}
+                transition={{duration:0.6, delay:0.3, originX:50, ease: "easeOut"}}
+                className="z-90 h-[0.5px] block mx-auto -mt-4 md:mt-0 mb-2 bg-white/40 relative">
+            </motion.span>
 
       {/* Scrollable Reviews Container */}
       <div className="relative w-full pb-4">
@@ -114,7 +115,7 @@ export default function ReviewSection() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.4 }}
-                className="snap-center"
+                className="snap-center flex "
               >
                 <ReviewCard {...review} />
               </motion.div>

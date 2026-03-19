@@ -1,36 +1,23 @@
-import { HugeiconsIcon } from "@hugeicons/react";
-import { MoveLeftIcon } from "@hugeicons/core-free-icons";
 import { useCollection } from "../context/CollectionContext";
-import { Link } from "react-router";
 import Card from "../components/Card";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
+import GoBack from "../components/GoBack";
+import Divider from "../components/Divider";
+import { useLocation } from "react-router";
 
 export default function Collection() {
   const { collection } = useCollection();
+  const location = useLocation();
 
   return (
     <main className="relative max-w-[1300px] w-full flex flex-col gap-10 md:gap-10 mx-auto px-4 md:px-14 pb-20">
-      {/* back button */}
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.2 }}
-        className="z-90 absolute top-21 left-2 md:left-8 md:top-34"
-      >
-        <Link
-          to="/"
-          className="group flex items-center  gap-2 text-amber-600 py-1 px-2 md:px-5 rounded-full 
-              bg-black/40 backdrop-blur-md border border-white/5 
-             hover:text-amber-500 hover:bg-black/50 active:scale-95
-              transition-all duration-300 shadow-lg ring-2 ring-zinc-400/50"
-        >
-          <HugeiconsIcon icon={MoveLeftIcon} className="group-hover:-translate-x-1 group-hover:text-lg transition-transform duration-300" size={20} />
-        </Link>
-      </motion.div>
+
 
       <header className="relative  text-white/70 text-center font-beba w-full backdrop-blur-xl md:backdrop-blur-none pt-20 md:pt-32">
-        <h1 className="text-2xl md:text-5xl tracking-wider font-mono">My Collection</h1>
+        <h1 className="text-2xl md:text-6xl tracking-widest font-bold font-bebas-neue bg-clip-text text-transparent bg-linear-to-b from-white to-neutral-500 ">
+          My Collection
+        </h1>
         <p className="text-sm md:text-base font-mono mt-2 opacity-80 text-white/70">
           Your personally curated list of resources
         </p>
@@ -39,13 +26,16 @@ export default function Collection() {
         </p>
       </header>
 
-       {/* Animated line */}
+       {/* back button & divider */}
         <motion.span 
-            initial={{width:"0%"}}
-            whileInView={{width:"100%"}}
-            viewport={{ once: true }}
-            transition={{duration:0.6, delay:0.3, ease: "easeOut"}}
-            className="block mx-auto  h-[1.3px] bg-white/30 -mt-4 md:mt-0">
+          initial={{width:"0%"}}              
+          viewport={{ once: true }}
+          whileInView={{width:"100%"}}
+          transition={{duration:0.6, delay:0.3, originX:50, ease: "easeOut"}}
+          className="z-90 h-[0.5px] block mx-auto -mt-4 md:mt-0 mb-2 bg-white/40 relative">
+          { location.pathname === "/collection" && 
+            <GoBack />
+          }
         </motion.span>
 
       <motion.section
