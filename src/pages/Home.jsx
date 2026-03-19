@@ -10,7 +10,7 @@ import { cn } from "../lib/utils";
 export default function Home() {
   const [data, setData] = useState([]);
   const [carddata, setcardData] = useState([]);
-  const [activeCategory, setActiveCategory] = useState("tools");
+  const [activeCategory, setActiveCategory] = useState("animation");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export default function Home() {
         .then((res) => res.json())
         .then((data) => {
           setData(data);
-          setcardData(data["tools"]);
+          setcardData(data["animation"]);
           setLoading(false);
         });
     }
@@ -71,7 +71,7 @@ export default function Home() {
               130+
             </span>
           </motion.div>
-          <span className="font-mono text-xl md:text-[30px]">Development Resources,One Click away</span>
+          <span className="font-mono text-xl md:text-[30px]">Development Resources,Click away</span>
         </div>
       </motion.header>
 

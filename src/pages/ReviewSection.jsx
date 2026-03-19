@@ -84,12 +84,12 @@ export default function ReviewSection() {
 
        {/* Animated line */}
         <motion.span 
-                initial={{width:"0%"}}              
-                viewport={{ once: true }}
-                whileInView={{width:"95%"}}
-                transition={{duration:0.6, delay:0.3, originX:50, ease: "easeOut"}}
-                className="z-90 h-[0.5px] block mx-auto -mt-4 md:mt-0 mb-2 bg-white/40 relative">
-            </motion.span>
+          initial={{width:"0%"}}              
+          viewport={{ once: true }}
+          whileInView={{width:"95%"}}
+          transition={{duration:0.6, delay:0.3, originX:50, ease: "easeOut"}}
+          className="z-90 h-[0.5px] block mx-auto -mt-4 md:mt-0 mb-2 bg-white/40 relative">
+        </motion.span>
 
       {/* Scrollable Reviews Container */}
       <div className="relative w-full pb-4">
@@ -99,7 +99,7 @@ export default function ReviewSection() {
         
         <div 
            ref={scrollContainerRef}
-           className="flex gap-6 justify-center overflow-x-auto hide-scrollbar px-4 md:px-14 snap-x snap-mandatory py-4"
+           className="flex gap-6 overflow-x-auto hide-scrollbar px-4 md:px-14 py-4"
            style={{ scrollBehavior: 'smooth' }}
         >
           {loading ? (

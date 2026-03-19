@@ -21,6 +21,7 @@ import { motion, AnimatePresence, easeIn } from "motion/react";
 import { useCollection } from "../context/CollectionContext";
 import { Link, useLocation } from "react-router";
 import { cn } from "../lib/utils";
+import '../index.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -178,33 +179,27 @@ const Navbar = () => {
         </motion.div>
 
         {/* Desktop Menu */}
-        <div className={cn("hidden md:flex gap-5 space-x-1 items-center")}>
+        <div className={cn("hidden md:flex gap-5 items-center")}>
           <Link
             to="/about"
-            className={cn("text-neutral-400 font-mono text-lg cursor-pointer scroll-smooth hover:text-neutral-200 hover:-translate-y-0.5 transition-all duration-300 selection:bg-amber-600-op30 selection:text-white",
-              active === "about" && "text-amber-500 hover:text-amber-600-op90 underline underline-offset-8"
-            )}
+            className={cn("navItem", active === "about" && "text-amber-500 hover:text-amber-600-op90 underline underline-offset-8")}
           >
             About
           </Link>
           <Link
             to="/connect"
-            className={cn("text-neutral-400 font-mono text-lg cursor-pointer scroll-smooth hover:text-neutral-200 hover:-translate-y-0.5 transition-all duration-300 selection:bg-amber-600-op30 selection:text-white",
-              active === "connect" && "text-amber-500 underline underline-offset-8 hover:text-amber-600-op90"
-            )}
+            className={cn("navItem", active === "connect" && "text-amber-500 underline underline-offset-8 hover:text-amber-600-op90")}
           >
             Connect
           </Link>
           <Link
             to="/reviews"
-            className={cn("text-neutral-400 font-mono text-lg cursor-pointer scroll-smooth hover:text-neutral-200 hover:-translate-y-0.5 transition-all duration-300 selection:bg-amber-600-op30 selection:text-white",
-              active === "reviews" && "text-amber-500 underline underline-offset-8 hover:text-amber-600-op90"
-            )}
+            className={cn("navItem", active === "reviews" && "text-amber-500 underline underline-offset-8 hover:text-amber-600-op90")}
           >
             Reviews
           </Link>
           <Link
-            className={cn("group flex gap-1 items-center justify-center relative mr-2 hover:-translate-y-0.5 active:scale-97 transition-all duration-300")}
+            className={cn("group flex gap-1 items-center justify-center relative mr-2 hover:-translate-y-0.5 active:scale-97 transition-all duration-200")}
             to={location.pathname === "/collection" ? "/" : "/collection"}
             rel="noreferrer"
             aria-label={`Visit`}
@@ -218,8 +213,8 @@ const Navbar = () => {
                 Home
               </p>
             ) : (
-              <p className={cn("text-neutral-400 font-mono hover:text-neutral-200  text-lg hidden md:block selection:bg-amber-600-op30 selection:text-white")}>
-                Vault
+              <p className={cn("text-neutral-400 font-mono tracking-tight hover:text-neutral-300/90  text-lg hidden md:block selection:bg-amber-600-op30 selection:text-white")}>
+                Collection
               </p>
             )}
             {location.pathname === "/collection" ? (
