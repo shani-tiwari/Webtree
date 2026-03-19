@@ -25,13 +25,13 @@ export default function About() {
     <section
       id="about"
       className={cn(
-        "w-full min-h-screen mt-10 flex items-center justify-center flex-col bg-[#030303] px-4 relative selection:bg-amber-600/30 selection:text-white overflow-hidden",
+        "w-full min-h-screen mt-10 flex items-center justify-center flex-col bg-[#030303] px-4 relative selection:bg-amber-600-op30 selection:text-white overflow-hidden",
       )}
     >
       {/* Background Micro-Accents */}
       <div
         className={cn(
-          "absolute top-0 right-0 w-64 h-64 bg-amber-500/5 blur-[100px] rounded-full pointer-events-none",
+          "absolute top-0 right-0 w-64 h-64 bg-amber-500-op5 blur-[100px] rounded-full pointer-events-none",
         )}
       />
 
@@ -190,7 +190,7 @@ export default function About() {
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
                     </span>
-                    <span className="text-[10px] uppercase tracking-tighter text-amber-500/80 font-semibold">
+                    <span className="text-[10px] uppercase tracking-tighter text-amber-500-op80 font-semibold">
                       Live Soon
                     </span>
                   </div>

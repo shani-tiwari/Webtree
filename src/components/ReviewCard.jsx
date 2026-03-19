@@ -34,7 +34,7 @@ export default function ReviewCard({ name, xProfile, gender, text }) {
               href={`https://x.com/${xProfile.replace("@", "")}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-amber-500/80 hover:text-amber-500 text-sm flex items-center gap-1 transition-colors w-fit"
+              className="text-amber-500-op80 hover:text-amber-500 text-sm flex items-center gap-1 transition-colors w-fit"
               onClick={(e) => e.stopPropagation()}
             >
               {xProfile.startsWith("@") ? xProfile : `@${xProfile}`}
@@ -44,7 +44,7 @@ export default function ReviewCard({ name, xProfile, gender, text }) {
 
         {/* twitter profile */}
         <Link target="_blank" rel="noopener noreferrer" to={`https://x.com/${xProfile.replace("@", "")}`}>
-          <HugeiconsIcon icon={NewTwitterRectangleIcon} size={30} className="text-amber-500/70 hover:text-amber-400/90 transition-colors w-fit" />
+          <HugeiconsIcon icon={NewTwitterRectangleIcon} size={30} className="text-amber-500-op70 hover:text-amber-400-op90 transition-colors w-fit" />
         </Link>
 
       </div>

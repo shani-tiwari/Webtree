@@ -21,7 +21,7 @@ const Categories = React.memo(
           "relative w-fit md:text-start group border border-white/30 py-[3px] px-3 md:py-1.5 md:px-4 mb-2 rounded-[12px] md:rounded-[14px]",
           "backdrop-blur-md cursor-pointer transition-colors duration-200 ease-out select-none shadow-xs shadow-white/8 hover:shadow-[0_4px_15px_rgba(0,0,0,0.6)]",
           isActive
-            ? "bg-linear-to-bl from-amber-600/30 to-amber-700/30 shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_2px_4px_rgba(0,0,0,0.5)]"
+            ? "bg-linear-to-bl from-amber-600-op30 to-amber-700-op30 shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_2px_4px_rgba(0,0,0,0.5)]"
             : "bg-zinc-800/20 hover:bg-zinc-800/40 shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_1px_3px_rgba(0,0,0,0.4)]",
         )}
       >

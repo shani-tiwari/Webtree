@@ -111,13 +111,13 @@ const Card = memo(
                   "p-1 rounded-xl bg-white/8 border-2 border-white/20 cursor-pointer",
                   isCollected
                     ? "text-emerald-600 font-bold pointer-events-none hover:text-emerald-500 filter-[drop-shadow(0_0_12px_rgba(16,185,129,0.4))]"
-                    : "text-amber-300/60  group-hover:text-amber-400/80 filter-[drop-shadow(0_0_12px_rgba(251,191,36,0.4))] ",
+                    : "text-amber-300-op60  group-hover:text-amber-400-op80 filter-[drop-shadow(0_0_12px_var(--color-amber-400-op40))] ",
                 )}
               >
                 {isCollected ? (
                   <HugeiconsIcon icon={FolderCheckIcon} size={20} />
                 ) : (
-                  <HugeiconsIcon className="filter-[drop-shadow(0_0_12px_rgba(251,191,36,0.5))]" icon={FolderAddIcon} size={20} />
+                  <HugeiconsIcon className="filter-[drop-shadow(0_0_12px_var(--color-amber-400-op50))]" icon={FolderAddIcon} size={20} />
                 )}
 
                 <span
@@ -192,7 +192,7 @@ const Card = memo(
           </div>
 
           {/* logo */}
-          <div className={cn("p-2 w-fit mb-2 rounded-2xl bg-neutral-900/50 flex items-center justify-center border-2 border-white/10 overflow-hidden shrink-0 group-hover:border-amber-500/30 transition-all duration-300")}>
+          <div className={cn("p-2 w-fit mb-2 rounded-2xl bg-neutral-900/50 flex items-center justify-center border-2 border-white/10 overflow-hidden shrink-0 group-hover:border-amber-500-op30 transition-all duration-300")}>
               <div
                 className={cn(
                   "w-8 h-8 rounded-2xl bg-neutral-900/50 flex items-center justify-center border border-white/10 overflow-hidden shrink-0 group-hover:scale-120 transition-all duration-300",
@@ -254,7 +254,7 @@ const Card = memo(
           {allowRemove && (
             <span
               className={cn(
-                "absolute right-7 -bottom-2 mt-4 w-fit text-[10px] px-3 py-1 bg-black/75 backdrop-blur-md  border border-white/10 rounded-full text-amber-700/80 uppercase font-black tracking-widest leading-none",
+                "absolute right-7 -bottom-2 mt-4 w-fit text-[10px] px-3 py-1 bg-black/75 backdrop-blur-md  border border-white/10 rounded-full text-amber-700-op80 uppercase font-black tracking-widest leading-none",
               )}
             >
               {category

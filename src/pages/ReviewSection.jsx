@@ -72,10 +72,10 @@ export default function ReviewSection() {
              View All
              <HugeiconsIcon icon={Navigation03Icon} size={16} className="group-hover:translate-x-1 group-hover:-translate-y-0.3 transition-transform" />
           </Link>
-          <button
-             onClick={() => setIsFormOpen(true)}
-             className="group flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-500 hover:bg-amber-500/80 hover:text-black transition-all duration-300 font-bold text-sm active:scale-95 shadow-[0_0_15px_rgba(245,158,11,0.1)] hover:shadow-[0_0_20px_rgba(245,158,11,0.4)]"
-          >
+           <button
+              onClick={() => setIsFormOpen(true)}
+              className="group flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-amber-500-op10 border border-amber-500-op30 text-amber-500 hover:bg-amber-500-op80 hover:text-black transition-all duration-300 font-bold text-sm active:scale-95 shadow-[0_0_15px_var(--color-amber-500-op10)] hover:shadow-[0_0_20px_var(--color-amber-500-op40)]"
+           >
             <HugeiconsIcon icon={PlusSignCircleIcon} size={16} className="group-hover:rotate-90 transition-transform duration-300" />
             Add Review
           </button>

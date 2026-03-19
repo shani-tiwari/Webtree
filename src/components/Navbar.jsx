@@ -155,7 +155,7 @@ const Navbar = () => {
         aria-label="Main Navigation"
         className={cn(
           "fixed top-1 left-1/2 -translate-x-1/2 w-[90%] md:max-w-[1000px] z-50 px-4 md:px-6 py-1 md:py-3",
-          "flex justify-between items-center rounded-full border-2 border-neutral-400/50 shadow-xs shadow-amber-700/40 backdrop-blur-[6px]",
+          "flex justify-between items-center rounded-full border-2 border-neutral-400/50 shadow-xs shadow-amber-700-op40 backdrop-blur-[6px]",
         )}
       >
         {/* Logo */}
@@ -166,7 +166,7 @@ const Navbar = () => {
         >
           <Link
             className={cn(
-              "text-white/40 flex text-lg md:text-2xl font-mono hover:text-white/50 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer selection:bg-amber-600/30 selection:text-white",
+              "text-white/40 flex text-lg md:text-2xl font-mono hover:text-white/50 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer selection:bg-amber-600-op30 selection:text-white",
             )}
             to="/"
             onClick={scrollTop}
@@ -181,24 +181,24 @@ const Navbar = () => {
         <div className={cn("hidden md:flex gap-5 space-x-1 items-center")}>
           <Link
             to="/about"
-            className={cn("text-neutral-400 font-mono text-lg cursor-pointer scroll-smooth hover:text-neutral-200 hover:-translate-y-0.5 transition-all duration-300 selection:bg-amber-600/30 selection:text-white",
-              active === "about" && "text-amber-500 hover:text-amber-600/90 underline underline-offset-8"
+            className={cn("text-neutral-400 font-mono text-lg cursor-pointer scroll-smooth hover:text-neutral-200 hover:-translate-y-0.5 transition-all duration-300 selection:bg-amber-600-op30 selection:text-white",
+              active === "about" && "text-amber-500 hover:text-amber-600-op90 underline underline-offset-8"
             )}
           >
             About
           </Link>
           <Link
             to="/connect"
-            className={cn("text-neutral-400 font-mono text-lg cursor-pointer scroll-smooth hover:text-neutral-200 hover:-translate-y-0.5 transition-all duration-300 selection:bg-amber-600/30 selection:text-white",
-              active === "connect" && "text-amber-500 underline underline-offset-8 hover:text-amber-600/90"
+            className={cn("text-neutral-400 font-mono text-lg cursor-pointer scroll-smooth hover:text-neutral-200 hover:-translate-y-0.5 transition-all duration-300 selection:bg-amber-600-op30 selection:text-white",
+              active === "connect" && "text-amber-500 underline underline-offset-8 hover:text-amber-600-op90"
             )}
           >
             Connect
           </Link>
           <Link
             to="/reviews"
-            className={cn("text-neutral-400 font-mono text-lg cursor-pointer scroll-smooth hover:text-neutral-200 hover:-translate-y-0.5 transition-all duration-300 selection:bg-amber-600/30 selection:text-white",
-              active === "reviews" && "text-amber-500 underline underline-offset-8 hover:text-amber-600/90"
+            className={cn("text-neutral-400 font-mono text-lg cursor-pointer scroll-smooth hover:text-neutral-200 hover:-translate-y-0.5 transition-all duration-300 selection:bg-amber-600-op30 selection:text-white",
+              active === "reviews" && "text-amber-500 underline underline-offset-8 hover:text-amber-600-op90"
             )}
           >
             Reviews
@@ -212,13 +212,13 @@ const Navbar = () => {
           >
             {location.pathname === "/collection" ? (
               <p 
-                className={cn("text-amber-600 font-mono text-lg hidden md:block selection:bg-amber-600/30 selection:text-white ",
-                  active === "home" && "underline underline-offset-8 hover:text-amber-600/90"
+                className={cn("text-amber-600 font-mono text-lg hidden md:block selection:bg-amber-600-op30 selection:text-white ",
+                  active === "home" && "underline underline-offset-8 hover:text-amber-600-op90"
                 )}>
                 Home
               </p>
             ) : (
-              <p className={cn("text-neutral-400 font-mono hover:text-neutral-200  text-lg hidden md:block selection:bg-amber-600/30 selection:text-white")}>
+              <p className={cn("text-neutral-400 font-mono hover:text-neutral-200  text-lg hidden md:block selection:bg-amber-600-op30 selection:text-white")}>
                 Vault
               </p>
             )}
@@ -280,7 +280,7 @@ const Navbar = () => {
             )}
 
             <sup
-              className={cn("absolute -right-2 top-1 text-zinc-300 selection:bg-amber-600/30 selection:text-white")}
+              className={cn("absolute -right-2 top-1 text-zinc-300 selection:bg-amber-600-op30 selection:text-white")}
             >
               { showLength && collection.length}
             </sup>

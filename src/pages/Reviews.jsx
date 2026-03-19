@@ -33,7 +33,7 @@ export default function Reviews() {
       <h1 className="sr-only">Community Reviews</h1>
 
       {/* Ambient backgrounds */}
-      <div className="absolute top-0 -left-20 w-[500px] h-[500px] bg-amber-600/5 blur-[120px] rounded-full pointer-events-none animate-pulse" />
+      <div className="absolute top-0 -left-20 w-[500px] h-[500px] bg-amber-600-op5 blur-[120px] rounded-full pointer-events-none animate-pulse" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-orange-600/5 blur-[120px] rounded-full pointer-events-none animate-pulse" />
 
       {/* Back Button */}
@@ -82,7 +82,7 @@ export default function Reviews() {
           >
             <button
                onClick={() => setIsFormOpen(true)}
-               className="group flex items-center justify-center gap-2 px-6 py-3 cursor-pointer rounded-full bg-amber-500 hover:bg-amber-600 text-white selection:text-white font-bold transition-all duration-300 active:scale-95 shadow-[0_0_20px_rgba(245,158,11,0.2)] hover:shadow-[0_0_30px_rgba(245,158,11,0.4)]"
+               className="group flex items-center justify-center gap-2 px-6 py-3 cursor-pointer rounded-full bg-amber-500 hover:bg-amber-600 text-white selection:text-white font-bold transition-all duration-300 active:scale-95 shadow-[0_0_20px_var(--color-amber-500-op20)] hover:shadow-[0_0_30px_var(--color-amber-500-op40)]"
             >
                <HugeiconsIcon icon={PlusSignCircleIcon} size={20} className="font-bold group-hover:rotate-90 transition-transform duration-300 " />
                Share Your Review

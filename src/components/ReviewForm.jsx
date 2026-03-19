@@ -144,7 +144,7 @@ export default function ReviewForm({ isOpen, onClose }) {
             className="w-full max-w-[95%] mt-10 sm:max-w-md lg:max-w-lg bg-[#0a0a0a] md:mt-14 border border-zinc-800 rounded-[20px] md:rounded-3xl p-4 md:p-8 relative shadow-2xl overflow-hidden max-h-dvh"
           >
             {/* Background Accents */}
-            <div className="hidden md:block absolute -top-20 -left-20 w-40 h-40 bg-amber-600/10 blur-[50px] rounded-full pointer-events-none" />
+            <div className="hidden md:block absolute -top-20 -left-20 w-40 h-40 bg-amber-600-op10 blur-[50px] rounded-full pointer-events-none" />
 
             {/* close button */}
             <button
@@ -198,7 +198,7 @@ export default function ReviewForm({ isOpen, onClose }) {
                         ? "border-red-500/50 focus:border-red-500/50 focus:ring-red-500/50"
                         : validationStatus === "available"
                           ? "border-green-500/50 focus:border-green-500/50 focus:ring-green-500/50"
-                          : "border-zinc-800 focus:border-amber-500/50 focus:ring-amber-500/50",
+                          : "border-zinc-800 focus:border-amber-500-op50 focus:ring-amber-500-op50",
                     )}
                   />
                 </div>
@@ -224,7 +224,7 @@ export default function ReviewForm({ isOpen, onClose }) {
                           ? "border-red-500/50 focus:border-red-500/50 focus:ring-red-500/50"
                           : validationStatus === "available"
                             ? "border-green-500/50 focus:border-green-500/50 focus:ring-green-500/50"
-                            : "border-zinc-800 focus:border-amber-500/50 focus:ring-amber-500/50",
+                            : "border-zinc-800 focus:border-amber-500-op50 focus:ring-amber-500-op50",
                       )}
                     />
                     <div className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-2">
@@ -237,7 +237,7 @@ export default function ReviewForm({ isOpen, onClose }) {
                             ? "bg-red-500 text-white"
                             : validationStatus === "available"
                               ? "bg-green-500 text-white pointer-events-none opacity-50"
-                              : "bg-amber-500 text-black shadow-lg shadow-amber-500/20",
+                              : "bg-amber-500 text-black shadow-lg shadow-amber-500-op20",
                         )}
                       >
                         {validationStatus === "available" ? (
@@ -294,7 +294,7 @@ export default function ReviewForm({ isOpen, onClose }) {
                     className={cn(
                       "flex-1 py-1.5 md:py-3 px-3 md:px-4 rounded-lg md:rounded-xl border flex items-center justify-center gap-2 transition-all duration-300 text-sm md:text-base",
                       formData.gender === "male"
-                        ? "bg-amber-500/10 border-amber-500/50 text-amber-500"
+                        ? "bg-amber-500-op10 border-amber-500-op50 text-amber-500"
                         : "bg-zinc-900/50 border-zinc-800 text-zinc-400 hover:border-zinc-700",
                     )}
                   >
@@ -308,7 +308,7 @@ export default function ReviewForm({ isOpen, onClose }) {
                     className={cn(
                       "flex-1 py-1.5 md:py-3 px-3 md:px-4 rounded-lg md:rounded-xl border flex items-center justify-center gap-2 transition-all duration-300 text-sm md:text-base",
                       formData.gender === "female"
-                        ? "bg-amber-500/10 border-amber-500/50 text-amber-500"
+                        ? "bg-amber-500-op10 border-amber-500-op50 text-amber-500"
                         : "bg-zinc-900/50 border-zinc-800 text-zinc-400 hover:border-zinc-700",
                     )}
                   >
@@ -339,7 +339,7 @@ export default function ReviewForm({ isOpen, onClose }) {
                 type="submit"
                 disabled={isSubmitting}
                 className={cn(
-                  "mt-2 md:mt-4 w-full tracking-wider bg-linear-to-r from-amber-600 to-amber-700 hover:from-amber-500/80 hover:to-amber-600/80 text-white font-bold py-2.5 md:py-3 px-6 rounded-lg md:rounded-xl transition-all duration-500 shadow-[0_0_20px_rgba(245,158,11,0.2)] active:scale-[0.98] text-sm md:text-base disabled:opacity-50 disabled:cursor-not-allowed",
+                  "mt-2 md:mt-4 w-full tracking-wider bg-linear-to-r from-amber-600 to-amber-700 hover:from-amber-500-op80 hover:to-amber-600-op80 text-white font-bold py-2.5 md:py-3 px-6 rounded-lg md:rounded-xl transition-all duration-500 shadow-[0_0_20px_var(--color-amber-500-op20)] active:scale-[0.98] text-sm md:text-base disabled:opacity-50 disabled:cursor-not-allowed",
                   isSubmitting && "animate-pulse",
                 )}
               >
