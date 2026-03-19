@@ -4,6 +4,7 @@ import { HugeiconsIcon } from "@hugeicons/react";
 import { ChartLineData02Icon, MoveLeftIcon } from "@hugeicons/core-free-icons";
 import { cn } from "../lib/utils";
 import { Link } from "react-router";
+import GoBack from "../components/GoBack";
 
 export default function About() {
   const containerVariants = {
@@ -36,38 +37,25 @@ export default function About() {
       />
 
       {/* back button */}
-      {location.pathname.startsWith("/about") && (<motion.div
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.2 }}
-        className="z-90 absolute top-10 left-4 md:left-42 md:top-38"
-      >
-        <Link
-          to="/"
-          className="group flex items-center  gap-2 text-amber-600 py-1 px-2 md:px-5 rounded-full 
-              bg-black/40 backdrop-blur-md border border-white/5 
-             hover:text-amber-500 hover:bg-black/50 active:scale-97
-              transition-all duration-300 shadow-lg ring-2 ring-zinc-400/50"
-        >
-          <HugeiconsIcon icon={MoveLeftIcon} className="group-hover:-translate-x-1 group-hover:text-lg transition-transform duration-300" size={20} />
-        </Link>
-      </motion.div>)}
+      <header className="w-full relative">
+        <GoBack/>
 
-      <div className={cn("max-w-[1300px] mx-auto px-1 md:px-14 py-8")}>
-          <motion.a
-            href="/about"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className={cn(
-              "text-4xl italic md:text-5xl mx-auto text-center font-black text-white/90 tracking-tighter",
-            )}
-          >
-            About <span className={cn("text-neutral-500 italic")}>Webtree</span>
-          </motion.a>
-      </div>
+        <div className={cn("max-w-[1300px] mx-auto px-1 md:px-14 py-8")}>
+            <motion.a
+              href="/about"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className={cn(
+                "text-4xl italic md:text-5xl mx-auto text-center font-black text-white/90 tracking-tighter",
+              )}
+            >
+              About <span className={cn("text-neutral-500 italic")}>Webtree</span>
+            </motion.a>
+        </div>
+      </header>
 
-
+      {/* divider */}
       <motion.span 
         initial={{width:"0%"}}              
         viewport={{ once: true }}

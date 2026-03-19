@@ -37,7 +37,7 @@ export default function Reviews() {
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-orange-600/5 blur-[120px] rounded-full pointer-events-none animate-pulse" />
 
       {/* Back Button */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.2 }}
@@ -52,26 +52,26 @@ export default function Reviews() {
         >
           <HugeiconsIcon icon={MoveLeftIcon} className="group-hover:-translate-x-1 group-hover:text-lg transition-transform duration-300" size={20} />
         </Link>
-      </motion.div>
+      </motion.div> */}
 
-      <div className="max-w-7xl mx-auto px-6 relative mt-10">
+      <div className="max-w-7xl mx-auto md:px-6 relative md:mt-10">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-6">
           <div className="text-center md:text-left">
             <motion.h2
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-beba tracking-wider bg-clip-text text-transparent bg-linear-to-b from-white to-neutral-500 mb-4"
+              className="text-4xl md:text-5xl uppercase lg:text-6xl font-beba tracking-wider bg-clip-text text-transparent bg-linear-to-b from-white to-neutral-500 mb-4"
             >
-              Developer Feedback
+              Reviews
             </motion.h2>
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="text-neutral-400 font-mono max-w-2xl"
+              className="text-neutral-400 font-mono max-w-2xl leading-tight tracking-wide"
             >
-              See what others are saying about Webtree and share your own experience.
+              See what others are saying about Webtree and share your own experience
             </motion.p>
           </div>
 
@@ -85,7 +85,7 @@ export default function Reviews() {
                className="group flex items-center justify-center gap-2 px-6 py-3 cursor-pointer rounded-full bg-amber-500 hover:bg-amber-600 text-white selection:text-white font-bold transition-all duration-300 active:scale-95 shadow-[0_0_20px_var(--color-amber-500-op20)] hover:shadow-[0_0_30px_var(--color-amber-500-op40)]"
             >
                <HugeiconsIcon icon={PlusSignCircleIcon} size={20} className="font-bold group-hover:rotate-90 transition-transform duration-300 " />
-               Share Your Review
+               Add Your Review
             </button>
           </motion.div>
         </div>
@@ -93,34 +93,30 @@ export default function Reviews() {
          {/* Animated line */}
           <motion.span 
               initial={{width:"0%"}}
-              whileInView={{width:"100%"}}
+              whileInView={{width:"97%"}}
               viewport={{ once: true }}
               transition={{duration:0.6, delay:0.3, ease: "easeOut"}}
-              className="block mx-auto  h-[1.3px] bg-white/30 -mt-6">
+              className="block mx-auto rounded-full  h-[1.3px] bg-white/30 -mt-6">
           </motion.span>
 
         {/* Reviews Grid */}
-        <div className="flex gap-[14px] mt-8">
+        <div className="flex px-2 flex-wrap gap-8 mt-8 justify-center ">
           {loading ? (
-             <div className="col-span-full text-center animate-pulse">
+             <div className="text-center animate-pulse">
                <p className="text-zinc-500 font-mono text-lg">Loading amazing reviews...</p>
              </div>
-          ) : reviews.length > 0 ? (
+          ) : (
             reviews.map((review, index) => (
               <motion.div
                 key={review.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.05 + 0.4 }}
-                className="w-full flex"
+                className="flex"
               >
                 <ReviewCard {...review} />
               </motion.div>
             ))
-          ) : (
-            <div className="col-span-full py-20 text-center">
-              <p className="text-zinc-500 font-mono text-lg">No reviews yet. Be the first to add one!</p>
-            </div>
           )}
         </div>
       </div>

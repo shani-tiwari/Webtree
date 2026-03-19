@@ -11,7 +11,7 @@ export default function ReviewCard({ name, xProfile, gender, text }) {
     <Link 
     to={"/reviews"}
       className={cn(
-        "relative flex flex-col min-w-[300px] w-[300px] md:min-w-[350px] md:w-[350px] p-5 rounded-3xl",
+        "relative flex flex-col w-full md:w-[350px] py-3 px-4 rounded-3xl",
         "bg-[#080808]/80 backdrop-blur-md border border-zinc-800 shadow-lg shrink-0",
         "hover:border-zinc-700 hover:-translate-y-1 transition-all duration-300 group"
       )}
@@ -54,7 +54,7 @@ export default function ReviewCard({ name, xProfile, gender, text }) {
         <span className="absolute -top-3 -left-2 text-4xl text-zinc-600 font-serif leading-none select-none animate-pulse">
           "
         </span>
-        <p className="text-zinc-400 text-sm leading-relaxed relative z-10 font-mono italic grow">
+        <p className="text-zinc-400 text-sm leading-[20px] tracking-wide relative z-10 font-mono italic grow">
           {text}
         </p>
       </div>
