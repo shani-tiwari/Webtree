@@ -290,7 +290,7 @@ const Navbar = () => {
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
             aria-label="Toggle menu"
-            className="md:hidden text-gray-400 dark:text-white focus:outline-none hover:scale-106 transition-all duration-400"
+            className="md:hidden text-gray-300 dark:text-white focus:outline-none hover:scale-106 transition-all duration-400"
           >
             <HugeiconsIcon icon={Menu02Icon} size={19} />
           </button>

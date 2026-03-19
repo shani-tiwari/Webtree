@@ -45,7 +45,7 @@ export default function Reviews() {
             <motion.h2
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-5xl md:text-6xl uppercase lg:text-6xl font-bebas-neue  tracking-wider bg-clip-text text-transparent bg-linear-to-b from-white to-neutral-500 mb-1"
+              className="text-5xl md:text-7xl uppercase font-bebas-neue  tracking-wider bg-clip-text text-transparent bg-linear-to-b from-white to-neutral-500 mb-1"
             >
               Reviews
             </motion.h2>
@@ -53,7 +53,7 @@ export default function Reviews() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="text-neutral-400 font-mono max-w-2xl px-4 leading-tight tracking-wide"
+              className="text-neutral-400 px-4 md:px-0 font-mono max-w-2xl leading-tight tracking-wide"
             >
               See what others are saying about Webtree and share your own experience
             </motion.p>
@@ -78,16 +78,16 @@ export default function Reviews() {
         <motion.span 
           initial={{width:"0%"}}              
           viewport={{ once: true }}
-          whileInView={{width:"100%"}}
+          whileInView={{width:"90%"}}
           transition={{duration:0.6, delay:0.3, originX:50, ease: "easeOut"}}
-          className="z-90 h-[0.5px] block mx-auto -mt-4 md:mt-0 mb-2 bg-white/40 relative">
+          className="z-90 h-[0.5px] block mx-auto lg:min-w-full -mt-4 md:mt-0 mb-2 bg-white/40 relative">
           { location.pathname === "/reviews" && 
             <GoBack />
           }
         </motion.span>
 
         {/* Reviews Grid */}
-        <div className="flex px-3 flex-wrap gap-8 mt-8 justify-center ">
+        <div className="flex px-3 flex-wrap gap-8 mt-10 justify-center ">
           {loading ? (
              <div className="text-center animate-pulse">
                <p className="text-zinc-500 font-mono text-lg">Loading amazing reviews...</p>

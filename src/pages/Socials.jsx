@@ -33,7 +33,7 @@ const SocialCard = ({
       whileTap={{ scale: 0.95 }}
       className={cn(
         "group relative flex flex-col items-center justify-between p-4 md:p-5 w-full sm:w-52 md:w-60 lg:w-full",
-        "rounded-3xl md:rounded-4xl bg-white/3 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-400 overflow-hidden",
+        "rounded-3xl md:rounded-3xl lg:rounded-4xl bg-white/3 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-400 overflow-hidden",
       )}
       aria-label={label}
     >
@@ -58,7 +58,7 @@ const SocialCard = ({
 
         {status && (
           <div
-            className={cn("absolute right-1 flex items-center justify-center gap-2 px-1.5 md:px-3 py-1.5 rounded-full bg-black/40 border border-white/5 backdrop-blur-md",)}>
+            className={cn("absolute right-2 top-6 flex items-center justify-center gap-2 px-3 py-1.5 rounded-xl lg:rounded-2xl lg:top-6 lg:right-1 bg-black/40 border border-white/5 backdrop-blur-md",)}>
 
             <span className={cn("relative flex items-center justify-center h-2 w-2" )}>
               <span 
@@ -70,7 +70,7 @@ const SocialCard = ({
                 style={{ backgroundColor: color}}>
               </span>
             </span>
-            <span className={cn("hidden md:block text-[10px] uppercase tracking-widest text-neutral-300 font-bold")}>
+            <span className={cn("block text-[10px] uppercase tracking-widest text-neutral-300 font-bold")}>
               {status}
             </span>
 
@@ -193,7 +193,7 @@ export default function Socials() {
         </motion.span>
 
         {/* Floating Flex/Grid Container */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3 md:gap-6 mt-8">
           {socials.map((social) => (
             <SocialCard
               key={social.name}

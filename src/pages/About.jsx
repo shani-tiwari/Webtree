@@ -55,9 +55,9 @@ export default function About() {
         <motion.span 
           initial={{width:"0%"}}              
           viewport={{ once: true }}
-          whileInView={{width:"80%"}}
+          whileInView={{width:"95%"}}
           transition={{duration:0.6, delay:0.3, originX:50, ease: "easeOut"}}
-          className="z-90 h-[0.5px]  mx-auto -mt-4 md:mt-0 mb-2 bg-white/40 relative">
+          className="z-90 h-[0.5px] lg:max-w-[80%]  mx-auto -mt-4 md:mt-0 mb-2 bg-white/40 relative">
           { location.pathname === "/about" && 
             <GoBack />
           }
@@ -69,11 +69,11 @@ export default function About() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="max-w-[1300px] mx-auto px-1 md:px-14 pt-8 pb-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 "
+        className="max-w-[1300px] mx-auto px-1 md:px-14 pt-12 pb-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 "
       >
         {/* Our Mission */}
         <motion.div variants={itemVariants} className="space-y-4">
-          <div className="flex items-center gap-3 group">
+          <div className="flex items-center justify-center md:justify-start gap-3 group">
             <span className="w-8 h-8 rounded-lg bg-linear-to-b from-amber-500 to-amber-700 flex items-center justify-center text-white font-bold text-lg select-none group-hover:scale-110 transition-transform duration-300">
               ४
             </span>
@@ -81,7 +81,7 @@ export default function About() {
               Our Mission
             </h3>
           </div>
-          <p className="text-gray-300/70 hover:text-gray-300 transition-all duration-300 leading-6 hover:leading-7 px-2 md:pr-10 md:pl-0">
+          <p className="text-gray-300/70 text-center md:text-start hover:text-gray-300 transition-all duration-300 leading-6 hover:leading-7 px-2 md:pr-10 md:pl-0">
             WebTree was born from a simple need: to cut through the noise of the
             modern web. We curate the finest frontend magic—from Tailwind
             components and Framer prototypes to essential performance
@@ -90,8 +90,8 @@ export default function About() {
         </motion.div>
 
         {/* Why WebTree? */}
-        <motion.div variants={itemVariants} className="space-y-4">
-          <div className="flex items-center gap-3 group">
+        <motion.div variants={itemVariants} className="space-y-4 ">
+          <div className="flex items-center gap-3 group justify-center md:justify-start">
             <span className="w-8 h-8 rounded-lg bg-linear-to-b from-gray-700 to-gray-800 flex items-center justify-center text-white group-hover:from-gray-600 group-hover:to-gray-700 transition-all duration-300">
               <HugeiconsIcon icon={ChartLineData02Icon} size={18} />
             </span>
@@ -99,7 +99,7 @@ export default function About() {
               Why WebTree?
             </h3>
           </div>
-          <ul className="text-gray-400 space-y-3 px-1">
+          <ul className="text-gray-400 space-y-3 px-4 md:px-1 text-center md:text-start">
             {[
               {
                 title: "Hand-Curated",
@@ -133,7 +133,7 @@ export default function About() {
 
         {/* Product Roadmap */}
         <motion.div variants={itemVariants} className="space-y-4">
-          <div className="flex items-center gap-3 group">
+          <div className="flex items-center justify-center md:justify-start gap-3 group">
             <motion.span
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ repeat: Infinity, duration: 2 }}
