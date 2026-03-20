@@ -7,6 +7,7 @@ import ReviewForm from "../components/ReviewForm";
 import { motion } from "motion/react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Navigation03Icon, PlusSignCircleIcon, PlusSignIcon } from "@hugeicons/core-free-icons";
+import { cn } from "../lib/utils";
 
 const REVIEWS_URL = import.meta.env.VITE_PRIVATE_WEBSITE_REVIEWS_URL;
 
@@ -57,9 +58,9 @@ export default function ReviewSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             // viewport={{ once: true }}
-            className="text-3xl md:text-4xl italic font-extrabold tracking-wide hover:tracking-wider transition-all duration-300 bg-clip-text text-transparent bg-linear-to-b from-white to-zinc-500"
+            className="text-4xl font-black text-white/90 md:text-5xl italic tracking-tight"
           >
-            Review & Feedback
+            Review <span className={cn("text-neutral-500 italic")}>Feedback</span> 
           </motion.h2>
           <p className="text-zinc-400 font-mono text-sm mt-2">What developers say about <span className="text-amber-600">webtree</span> </p>
         </div>

@@ -14,6 +14,7 @@ import {
   Agreement03Icon,
   Menu02Icon,
   Home11Icon,
+  Tree02Icon,
 } from "@hugeicons/core-free-icons";
 import { useState, useEffect } from "react";
 // eslint-disable-next-line no-unused-vars
@@ -316,17 +317,15 @@ const Navbar = () => {
             </button>
 
             {/* home button */}
-            { location.pathname !== '/' && 
               <Link to="/">
                 <button
                   onClick={() => setIsOpen(false)}
                   aria-label="go to home"
-                  className="absolute top-2 left-9 text-white/60 hover:text-white active:scale-90 transition-all duration-300"
+                  className="block absolute top-2 left-9 text-white/60 hover:text-white active:scale-90 transition-all duration-300"
                 >
                   <HugeiconsIcon icon={Home11Icon} size={30} />
                 </button>
               </Link>
-            }
 
             {/* Menu Content */}
             <motion.div 
@@ -349,13 +348,15 @@ const Navbar = () => {
                   scrollTop();
                 }}
               >
-                <span className="bg-clip-text text-transparent bg-linear-to-b from-white to-zinc-500">About </span>
-                <span>🕸️</span>
-                {/* <HugeiconsIcon
-                  className="text-white/70 animate-pulse mt-1"
-                  icon={Agreement03Icon}
-                  size={22}
-                /> */}
+                <span className="bg-clip-text text-transparent bg-linear-to-b from-white to-zinc-500">
+                  About 
+                </span>
+                <span className="-mr-6">🕸️</span>
+                <HugeiconsIcon
+                  className="text-white/70 mt-1 "
+                  icon={Tree02Icon}
+                  size={28}
+                />
               </motion.a>
 
               {/* divider */}

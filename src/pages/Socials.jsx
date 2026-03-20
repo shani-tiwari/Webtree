@@ -151,7 +151,7 @@ export default function Socials() {
   return (
     <section
       id="socials"
-      className="w-full mt-14 md:mt-0 min-h-screen flex flex-col items-center justify-center bg-[#030303] pt-14 pb-10 relative overflow-hidden select-none"
+      className="w-full min-h-screen flex flex-col items-center justify-center bg-[#030303] pt-14 pb-10 relative overflow-hidden select-none"
     >
       {/* Enhanced Ambient Background Accents */}
       <div className="absolute top-0 -left-20 w-[500px] h-[500px] bg-purple-600/6 blur-[120px] rounded-full pointer-events-none animate-pulse" />

@@ -167,6 +167,8 @@
   --color-amber-700-op30: rgba(180, 83, 9, 0.3);
   --color-amber-700-op40: rgba(180, 83, 9, 0.4);
   --color-amber-700-op80: rgba(180, 83, 9, 0.8);
+
+  --color-white: rgba(255, 255, 255, 0.9);
 }
 
 .navItem {

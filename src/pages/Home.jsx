@@ -6,6 +6,7 @@ import Card from "../components/Card";
 import SkeletonHome from "../components/SkeletonHome";
 import ReviewSection from "./ReviewSection";
 import { cn } from "../lib/utils";
+import CustomSVG from "../components/CustomSVG";
 
 export default function Home() {
   const [data, setData] = useState([]);
@@ -71,13 +72,13 @@ export default function Home() {
               130+
             </span>
           </motion.div>
-          <span className="font-mono text-xl md:text-[30px]">Development Resources,Click away</span>
+          <span className="font-mono text-2xl md:text-[32px]">Development Resources,Click away</span>
         </div>
       </motion.header>
 
       {/* categories & cards */}
       <section
-        className={cn("grow w-full flex flex-col gap-4 md:gap-8 px-1 md:px-14")}
+        className={cn("w-full flex flex-col gap-4 md:gap-8 px-1 md:px-14")}
       >
         {/* categories */}
           <motion.aside
@@ -103,19 +104,22 @@ export default function Home() {
           </motion.aside>
 
           {/* divider */}
-          <motion.span 
+          <div className="z-45 -mt-4 md:-mt-12">
+            <CustomSVG />
+          </div>
+          {/* <motion.span 
             initial={{width:"0%"}}
             animate={{width:"95%"}}
             transition={{duration:2, delay:0.4, originX:50, ease: "easeOut"}}
             className=" h-[0.5px] bg-white/30 mx-auto -mt-4 mb-4">
-          </motion.span>
+          </motion.span> */}
 
           {/* Cards Section */}
           <motion.section
             layout
             aria-label="Resources grid"
             className={cn(
-              "z-10 container bg-transparent grow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[14px] content-start md:-mt-3",
+              "z-10 container bg-transparent grow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[14px] content-start mt-10 md:mt-14"
             )}
           >
             <AnimatePresence mode="popLayout">
