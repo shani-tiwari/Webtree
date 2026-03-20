@@ -93,13 +93,9 @@ export default function ReviewSection() {
 
       {/* Scrollable Reviews Container */}
       <div className="relative w-full pb-4">
-        {/* Soft edge gradients */}
-        <div className="absolute left-0 top-0 bottom-0 w-8 md:w-20 bg-linear-to-r from-black/85 to-transparent blur-sm z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-8 md:w-20 bg-linear-to-l from-black/85 to-transparent blur-sm z-10 pointer-events-none" />
-        
         <div 
            ref={scrollContainerRef}
-           className="flex gap-6 overflow-x-auto hide-scrollbar px-4 md:px-14 py-4"
+           className="flex gap-6 overflow-x-auto hide-scrollbar px-4 md:px-14 py-4 mask-fade-edges"
            style={{ scrollBehavior: 'smooth' }}
         >
           {loading ? (

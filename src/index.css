@@ -170,5 +170,21 @@
 }
 
 .navItem {
-  @apply text-neutral-400 font-mono tracking-tight text-lg cursor-pointer scroll-smooth hover:tracking-normal hover:text-neutral-300/90 hover:-translate-y-0.5 transition-all duration-200 selection:bg-amber-600-op30 selection:text-white
+  @apply text-neutral-400 text-shadow-2xs font-mono tracking-tight text-lg cursor-pointer scroll-smooth hover:tracking-normal hover:text-neutral-300/90 hover:-translate-y-0.5 transition-all duration-200 selection:bg-amber-600-op30 selection:text-white
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.mask-fade-edges {
+  mask-image: linear-gradient(to right, transparent, black 40px, black calc(100% - 40px), transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 40px, black calc(100% - 40px), transparent);
+}
+
+@media (min-width: 768px) {
+  .mask-fade-edges {
+    mask-image: linear-gradient(to right, transparent, black 160px, black calc(100% - 160px), transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 160px, black calc(100% - 160px), transparent);
+  }
 }

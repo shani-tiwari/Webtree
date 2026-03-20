@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence, easeIn } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import Categories from "../components/Categories";
 import Card from "../components/Card";
 import SkeletonHome from "../components/SkeletonHome";
@@ -75,70 +75,71 @@ export default function Home() {
         </div>
       </motion.header>
 
-      {/* categories */}
+      {/* categories & cards */}
       <section
         className={cn("grow w-full flex flex-col gap-4 md:gap-8 px-1 md:px-14")}
       >
-        <motion.aside
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          aria-label="Category selection"
-          className={cn(
-            "z-40 max-w-4xl mx-auto shrink-0 flex flex-wrap justify-center rounded-xl gap-1 md:gap-2 w-full h-fit px-2 md:py-3 md:pt-4 text-white backdrop-blur-sm",
-          )}
-        >
-          {Object.keys(data).map((name, index) => (
-            <Categories
-              key={index}
-              name={name}
-              index={index}
-              setcardData={setcardData}
-              data={data}
-              isActive={activeCategory === name}
-              setActiveCategory={setActiveCategory}
-            />
-          ))}
-        </motion.aside>
-
-        {/* divider */}
-        <motion.span 
-          initial={{width:"0%"}}
-          animate={{width:"99%"}}
-          transition={{duration:0.7, delay:0.4, originX:50, ease: "easeOut"}}
-          className=" h-[1.5px] mx-auto -mt-2 mb-2 bg-white/30 ">
-        </motion.span>
-
-        {/* Cards Section */}
-        <motion.section
-          layout
-          aria-label="Resources grid"
-          className={cn(
-            "z-10 container bg-transparent grow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[14px] content-start md:-mt-3",
-          )}
-        >
-          <AnimatePresence mode="popLayout">
-            {Object.values(carddata).map((item) => (
-              <motion.div
-                key={item.id}
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.3 }}
-              >
-                <Card
-                  id={item.id}
-                  title={item.name}
-                  logo={item.logo}
-                  link={item.link}
-                  desc={item.desc}
-                  category={activeCategory}
-                />
-              </motion.div>
+        {/* categories */}
+          <motion.aside
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            aria-label="Category selection"
+            className={cn(
+              "z-40 max-w-4xl mx-auto shrink-0 flex flex-wrap justify-center rounded-xl gap-1 md:gap-2 w-full h-fit px-2 md:py-3 md:pt-4 text-white backdrop-blur-sm",
+            )}
+          >
+            {Object.keys(data).map((name, index) => (
+              <Categories
+                key={index}
+                name={name}
+                index={index}
+                setcardData={setcardData}
+                data={data}
+                isActive={activeCategory === name}
+                setActiveCategory={setActiveCategory}
+              />
             ))}
-          </AnimatePresence>
-        </motion.section>
+          </motion.aside>
+
+          {/* divider */}
+          <motion.span 
+            initial={{width:"0%"}}
+            animate={{width:"95%"}}
+            transition={{duration:2, delay:0.4, originX:50, ease: "easeOut"}}
+            className=" h-[0.5px] bg-white/30 mx-auto -mt-4 mb-4">
+          </motion.span>
+
+          {/* Cards Section */}
+          <motion.section
+            layout
+            aria-label="Resources grid"
+            className={cn(
+              "z-10 container bg-transparent grow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[14px] content-start md:-mt-3",
+            )}
+          >
+            <AnimatePresence mode="popLayout">
+              {Object.values(carddata).map((item) => (
+                <motion.div
+                  key={item.id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Card
+                    id={item.id}
+                    title={item.name}
+                    logo={item.logo}
+                    link={item.link}
+                    desc={item.desc}
+                    category={activeCategory}
+                  />
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.section>
       </section>
 
       {/* Review Section */}

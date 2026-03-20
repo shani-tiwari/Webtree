@@ -92,7 +92,7 @@ const Card = memo(
           whileHover={{ y: -8, transition: { duration: 0.2 } }}
           className={cn(
             "relative h-full flex flex-col bg-[#080808]/80 backdrop-blur-md border border-zinc-800 rounded-4xl p-4",
-            "transition-colors duration-300 group cursor-pointer text-white/70 select-none hover:border-zinc-600/80 shadow-lg hover:shadow-2xl",
+            "transition-all ease-[cubic-bezier(0.79,0.47,0.24,0.98)] duration-100 group cursor-pointer text-white/70 select-none hover:border-zinc-600/80 shadow-lg hover:shadow-2xl",
           )}
         >
           {/* Action Icons Section */}
