@@ -15,8 +15,9 @@ import {
   Menu02Icon,
   Home11Icon,
   Tree02Icon,
+  Link02FreeIcons,
 } from "@hugeicons/core-free-icons";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence, easeIn } from "motion/react";
 import { useCollection } from "../../context/CollectionContext";
@@ -57,51 +58,7 @@ const Navbar = () => {
     visible: { opacity: 1, y: 0 },
   };
 
-  const socialLinks = [
-    {
-      name: "GitHub",
-      icon: GithubIcon,
-      url: "https://github.com/shani-tiwari/webtree",
-      label: "Visit my GitHub ⭐",
-    },
-    {
-      name: "X / Twitter",
-      icon: NewTwitterRectangleIcon,
-      url: "https://x.com/ShaniDevelops",
-      label: "Follow on X 🚀",
-    },
-    {
-      name: "LinkedIn",
-      icon: Linkedin01Icon,
-      url: "https://www.linkedin.com/in/shani-tiwari-aspirational/",
-      label: "Connect on LinkedIn ⛓️‍💥",
-    },
-    {
-      name: "Gmail",
-      icon: Mail01Icon,
-      url: "mailto:shanitiwarifl@gmail.com",
-      label: "Send me an email 💌",
-    },
-    // {
-    //   name: "Dribbble",
-    //   icon: Dribbble,
-    //   url: "https://dribbble.com/shani-tiwari",
-    //   label: "My Dribbble portfolio🎨",
-    // },
-    {
-      name: "Instagram",
-      icon: InstagramIcon,
-      url: "https://Instagram.com/shanidevelops",
-      label: "Follow on Instagram✨",
-    },
-    {
-      name: "Coffee",
-      icon: Coffee01Icon,
-      url: "https://buymeacoffee.com/shani_tiwari?new=1",
-      label: "🍵 coffee ❔",
-    },
-  ];
-
+  
   const scrollTop = () => {
     window.scrollTo({
       top: 0,
@@ -119,34 +76,88 @@ const Navbar = () => {
     location.pathname.startsWith("/collection") ? "collection" :
     null;
 
-    const AllSocialLinks = {
-      hidden: { 
-        opacity: 1
-       },
-      visible: {
-        opacity: 1,
-        transition: {
-          delay: 0.08,
-          staggerChildren: 0.08,
-        },
-      },
-    };
-    const socialLink = {
-      hidden: { x: 10, y: -10, 
-        opacity: 1
-      },
-      visible: {
-        x: 0,
-        y: 0,
-        opacity: 1,
-        transition: {
-          duration: 0.35,
-          ease: "easeOut",
-        },
-      },
-    };
+    // social link section 
+    // const socialLinks = [
+    //   {
+    //     name: "GitHub",
+    //     icon: GithubIcon,
+    //     url: "https://github.com/shani-tiwari/webtree",
+    //     label: "Visit my GitHub ⭐",
+    //   },
+    //   {
+    //     name: "X / Twitter",
+    //     icon: NewTwitterRectangleIcon,
+    //     url: "https://x.com/ShaniDevelops",
+    //     label: "Follow on X 🚀",
+    //   },
+    //   {
+    //     name: "LinkedIn",
+    //     icon: Linkedin01Icon,
+    //     url: "https://www.linkedin.com/in/shani-tiwari-aspirational/",
+    //     label: "Connect on LinkedIn ⛓️‍💥",
+    //   },
+    //   {
+    //     name: "Gmail",
+    //     icon: Mail01Icon,
+    //     url: "mailto:shanitiwarifl@gmail.com",
+    //     label: "Send me an email 💌",
+    //   },
+    //   // {
+    //   //   name: "Dribbble",
+    //   //   icon: Dribbble,
+    //   //   url: "https://dribbble.com/shani-tiwari",
+    //   //   label: "My Dribbble portfolio🎨",
+    //   // },
+    //   {
+    //     name: "Instagram",
+    //     icon: InstagramIcon,
+    //     url: "https://Instagram.com/shanidevelops",
+    //     label: "Follow on Instagram✨",
+    //   },
+    //   {
+    //     name: "Coffee",
+    //     icon: Coffee01Icon,
+    //     url: "https://buymeacoffee.com/shani_tiwari?new=1",
+    //     label: "🍵 coffee ❔",
+    //   },
+    // ];
+    // social link section - animation 
+    // const AllSocialLinks = {
+    //   hidden: { 
+    //     opacity: 1
+    //    },
+    //   visible: {
+    //     opacity: 1,
+    //     transition: {
+    //       delay: 0.08,
+    //       staggerChildren: 0.08,
+    //     },
+    //   },
+    // };
+    // const socialLink = {
+    //   hidden: { x: 10, y: -10, 
+    //     opacity: 1
+    //   },
+    //   visible: {
+    //     x: 0,
+    //     y: 0,
+    //     opacity: 1,
+    //     transition: {
+    //       duration: 0.35,
+    //       ease: "easeOut",
+    //     },
+    //   },
+    // };
 
-    const [showLength, setShowLength] = useState(true);
+
+  const [showLength, setShowLength] = useState(true);
+  const navLinks = [
+    { name: "Home",       path: "/",           icon: Home11Icon },
+    { name: "About",      path: "/about",      icon: Tree02Icon },
+    { name: "Connect",    path: "/connect",    icon: Link02FreeIcons },
+    { name: "Collection", path: "/collection", icon: FolderFavouriteIcon },
+    { name: "Reviews",    path: "/reviews",    icon: Agreement03Icon },
+  ];
 
   return (
     <>
@@ -181,24 +192,25 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className={cn("hidden md:flex gap-5 items-center")}>
-          <Link
-            to="/about"
-            className={cn("navItem", active === "about" && "text-amber-500 hover:text-amber-600-op90 underline underline-offset-8")}
-          >
-            About
-          </Link>
-          <Link
-            to="/connect"
-            className={cn("navItem", active === "connect" && "text-amber-500 underline underline-offset-8 hover:text-amber-600-op90")}
-          >
-            Connect
-          </Link>
-          <Link
-            to="/reviews"
-            className={cn("navItem", active === "reviews" && "text-amber-500 underline underline-offset-8 hover:text-amber-600-op90")}
-          >
-            Reviews
-          </Link>
+          {
+            ['About', 'Connect', 'Reviews'].map((item) => {
+              const lowerItem = item.toLowerCase();
+              const isActive = active === lowerItem;
+              return (
+                <Link
+                  key={item}
+                  to={`/${lowerItem}`}
+                  className={cn("navItem",
+                    isActive 
+                      ? "text-amber-600 underline underline-offset-8" 
+                      : "text-neutral-400"
+                  )}
+                >
+                  {item}
+                </Link>
+              );
+            })
+          }
           <Link
             className={cn("group flex gap-1 items-center justify-center relative mr-2 hover:-translate-y-0.5 active:scale-97 transition-all duration-200")}
             to={location.pathname === "/collection" ? "/" : "/collection"}
@@ -316,17 +328,6 @@ const Navbar = () => {
               <HugeiconsIcon icon={CancelCircleIcon} size={30} />
             </button>
 
-            {/* home button */}
-              <Link to="/">
-                <button
-                  onClick={() => setIsOpen(false)}
-                  aria-label="go to home"
-                  className="block absolute top-2 left-9 text-white/60 hover:text-white active:scale-90 transition-all duration-300"
-                >
-                  <HugeiconsIcon icon={Home11Icon} size={30} />
-                </button>
-              </Link>
-
             {/* Menu Content */}
             <motion.div 
               className="flex flex-col items-center gap-8 w-full max-w-xs "
@@ -334,48 +335,65 @@ const Navbar = () => {
               animate={{ opacity: 1,  x: 0, y: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut", delay: 0.2 }}
             >
-              {/* About Link */}
-              <motion.a
-                initial={{ x: 10, y: -10}}
-                animate={{ x: 0, y: 0}}
-                transition={{ duration: 0.3, ease: "easeInOut", delay: 0.05 }}
-                href="/about" 
-                className={cn(
-                  "text-3xl font-medium tracking-wide transition-all duration-300 active:scale-95 flex items-center gap-6",
-                )}
-                onClick={() => {
-                  setIsOpen(false);
-                  scrollTop();
-                }}
-              >
-                <span className="bg-clip-text text-transparent bg-linear-to-b from-white to-zinc-500">
-                  About 
-                </span>
-                <span className="-mr-6">🕸️</span>
-                <HugeiconsIcon
-                  className="text-white/70 mt-1 "
-                  icon={Tree02Icon}
-                  size={28}
-                />
-              </motion.a>
-
-              {/* divider */}
-              <motion.span 
-                initial={{ width: "0%"}}
-                animate={{width: "78%" }}
-                transition={{duration: 0.5, ease: "easeOut", delay: 0.3}}
-                className="h-[0.1px] bg-zinc-600 rounded-full">
-              </motion.span>
+              <div className="flex flex-col items-center gap-6 w-full">
+                {
+                  navLinks.map((link, index) => (
+                    <React.Fragment key={link.name}>
+                      <motion.div
+                        initial={{ x: 10, y: -10, opacity: 0 }}
+                        animate={{ x: 0, y: 0, opacity: 1 }}
+                        transition={{ 
+                          duration: 0.3, 
+                          ease: "easeInOut", 
+                          delay: 0.05 * (index + 1) 
+                        }}
+                      >
+                        <Link
+                          to={link.path}
+                          className={cn("text-3xl font-medium tracking-wide transition-all duration-300 active:scale-95 flex items-center gap-6",
+                            location.pathname === link.path ? "text-amber-500" : ""
+                          )}
+                          onClick={() => { setIsOpen(false); scrollTop(); }}
+                        >
+                          <span className={cn("bg-clip-text text-transparent bg-linear-to-b",
+                            location.pathname === link.path 
+                              ? "from-amber-400 to-amber-600" 
+                              : "from-white to-zinc-500"
+                          )}>
+                            {link.name}
+                          </span>
+                          <HugeiconsIcon
+                            className={cn("mt-1",
+                              location.pathname === link.path ? "text-amber-500" : "text-white/70"
+                            )}
+                            icon={link.icon}
+                            size={28}
+                          />
+                        </Link>
+                      </motion.div>
+                      
+                      {/* divider */}
+                      {index < navLinks.length - 1 && (
+                        <motion.span 
+                          initial={{ width: "0%", opacity: 0 }}
+                          animate={{ width: "80%", opacity: 1 }}
+                          transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 + (index * 0.1) }}
+                          className="h-px bg-linear-to-r from-transparent via-zinc-500/50 to-transparent block">
+                        </motion.span>
+                      )}
+                    </React.Fragment>
+                  ))
+                }
+              </div>
 
               {/* Socials Section */}
-              <div className="flex flex-col items-center gap-6 w-full">
+              {/* <div className="flex flex-col items-center gap-6 w-full">
                 <p
                   className={cn(
                     "text-zinc-500 text-sm tracking-[0.2em] uppercase flex gap-2",
                   )}
                 >
                   Socials 
-                  {/* <p className="animate-bounce mt-[2px]">🌐</p>  */}
                 </p>
                 <motion.div
                   variants={AllSocialLinks}
@@ -403,73 +421,6 @@ const Navbar = () => {
                     </motion.a>
                   ))}
                 </motion.div>
-              </div>
-
-              {/* divider */}
-              <motion.span 
-                initial={{ width: "0%"}}
-                animate={{width: "78%" }}
-                transition={{duration: 0.5, ease: "easeInOut", delay: 0.3}}
-                className="h-[0.1px] bg-zinc-600 rounded-full">
-              </motion.span>
-
-
-              {/* reviews Link */}
-              <motion.a
-                href="/reviews"
-                initial={{ x: 10, y: -10}}
-                animate={{ x: 0,  y: 0}}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-                className={cn(
-                  "text-3xl font-medium tracking-wide transition-all duration-300 active:scale-95 flex items-center gap-6",
-                )}
-                onClick={() => {
-                  setIsOpen(false);
-                  scrollTop();
-                }}
-              >
-                <span className="bg-clip-text text-transparent bg-linear-to-b from-white to-zinc-500">
-                  Review 
-                </span>
-                <span>💭</span>
-                {/* <HugeiconsIcon
-                  className="text-white/70 animate-pulse mt-1"
-                  icon={MessagePreview02FreeIcons}
-                  size={22}
-                /> */}
-              </motion.a>
-
-              {/* Other Products */}
-              {/* <div className="flex flex-col items-center gap-4 w-full">
-                <p
-                  className={cn(
-                    "text-zinc-400 text-sm tracking-[0.2em] uppercase",
-                  )}
-                >
-                  Other Products
-                </p>
-                <div className="flex items-center gap-6">
-                  <a
-                    href="https://bebd.vercel.app"
-                    target="_blank"
-                    className={cn(
-                      "text-zinc-300 text-2xl font-medium transition-all duration-300 active:scale-95",
-                    )}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    ↁ BeBD
-                  </a>
-                  <a
-                    href="https://github.com/shani-tiwari/BeBD-be_better_developer"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="transition-all duration-300 hover:-translate-y-0.5 hover:scale-110 active:scale-90"
-                  >
-                    <span className="text-white/70 transition-colors duration-300 hover:text-white animate-pulse">
-                      <HugeiconsIcon icon={GithubIcon} size={24} />
-                    </span>
-                  </a>
-                </div>
               </div> */}
             </motion.div>
 
