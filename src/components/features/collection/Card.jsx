@@ -8,10 +8,10 @@ import {
   Copy02Icon,
   SentIcon,
 } from "@hugeicons/core-free-icons";
-import { useCollection } from "../context/CollectionContext";
+import { useCollection } from "../../../context/CollectionContext";
 import { useState, memo } from "react";
 import { Link } from "react-router";
-import { cn } from "../lib/utils";
+import { cn } from "../../../utils/utils";
 
 // Memoized Card Component
 const Card = memo(

@@ -1,36 +1,20 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router";
-import ReviewCard from "../components/ReviewCard";
-import ReviewForm from "../components/ReviewForm";
-// import { cn } from "../lib/utils";
+import ReviewCard from "./ReviewCard";
+import ReviewForm from "./ReviewForm";
+// import { cn } from "../../../utils/utils";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Navigation03Icon, PlusSignCircleIcon, PlusSignIcon } from "@hugeicons/core-free-icons";
-import { cn } from "../lib/utils";
+import { cn } from "../../../utils/utils";
 
-const REVIEWS_URL = import.meta.env.VITE_PRIVATE_WEBSITE_REVIEWS_URL;
+import { useReviewsData } from "../../../hooks/useReviewsData";
 
 export default function ReviewSection() {
-  const [reviews, setReviews] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const { reviews, loading } = useReviewsData();
   const [isFormOpen, setIsFormOpen] = useState(false);
   const scrollContainerRef = useRef(null);
-
-  // Fetch reviews from API
-  useEffect(() => {
-    // setLoading(true);
-    fetch(REVIEWS_URL)
-      .then(res => res.json())
-      .then(data => {
-        setReviews(data);
-        setLoading(false);
-      })
-      .catch(err => {
-        console.error("Failed to fetch reviews:", err);
-        setLoading(false);
-      });
-  }, []);
 
   // Auto scroll logic for a subtle panning effect
   useEffect(() => {

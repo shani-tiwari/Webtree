@@ -2,9 +2,9 @@
 import { motion } from "motion/react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { ChartLineData02Icon, MoveLeftIcon } from "@hugeicons/core-free-icons";
-import { cn } from "../lib/utils";
+import { cn } from "../utils/utils";
 import { Link, useLocation } from "react-router";
-import GoBack from "../components/GoBack";
+import GoBack from "../components/layout/GoBack";
 
 export default function About() {
   const location = useLocation();

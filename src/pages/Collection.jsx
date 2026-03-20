@@ -1,8 +1,8 @@
 import { useCollection } from "../context/CollectionContext";
-import Card from "../components/Card";
+import Card from "../components/features/collection/Card";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
-import GoBack from "../components/GoBack";
+import GoBack from "../components/layout/GoBack";
 import { useLocation } from "react-router";
 
 export default function Collection() {

@@ -19,10 +19,10 @@ import {
 import { useState, useEffect } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence, easeIn } from "motion/react";
-import { useCollection } from "../context/CollectionContext";
+import { useCollection } from "../../context/CollectionContext";
 import { Link, useLocation } from "react-router";
-import { cn } from "../lib/utils";
-import '../index.css';
+import { cn } from "../../utils/utils";
+import "../../index.css";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

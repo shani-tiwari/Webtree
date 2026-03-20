@@ -9,8 +9,8 @@ import {
   MoveLeftIcon,
   NewTwitterRectangleIcon,
 } from "@hugeicons/core-free-icons";
-import { cn } from "../lib/utils";
-import GoBack from "../components/GoBack";
+import { cn } from "../utils/utils";
+import GoBack from "../components/layout/GoBack";
 import { useLocation } from "react-router";
 
 const SocialCard = ({

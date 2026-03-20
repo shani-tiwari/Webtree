@@ -1,31 +1,20 @@
-/* eslint-disable no-unused-vars */
-import { useEffect, useState } from "react";
+import { useState } from "react";
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "motion/react";
-import Categories from "../components/Categories";
-import Card from "../components/Card";
-import SkeletonHome from "../components/SkeletonHome";
-import ReviewSection from "./ReviewSection";
-import { cn } from "../lib/utils";
-import CustomSVG from "../components/CustomSVG";
+import Categories from "../components/features/collection/Categories";
+import Card from "../components/features/collection/Card";
+import SkeletonHome from "../components/ui/SkeletonHome";
+import ReviewSection from "../components/features/reviews/ReviewSection";
+import { cn } from "../utils/utils";
+import CustomSVG from "../components/ui/CustomSVG";
+
+import { useCollectionData } from "../hooks/useCollectionData";
 
 export default function Home() {
-  const [data, setData] = useState([]);
-  const [carddata, setcardData] = useState([]);
+  const { data, loading } = useCollectionData();
   const [activeCategory, setActiveCategory] = useState("animation");
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    async function getData() {
-      await fetch(import.meta.env.VITE_PRIVATE_WEBSITE_COLLECTION_URL)
-        .then((res) => res.json())
-        .then((data) => {
-          setData(data);
-          setcardData(data["animation"]);
-          setLoading(false);
-        });
-    }
-    getData();
-  }, []);
+  const carddata = data[activeCategory] || [];
 
   if (loading) {
     return <SkeletonHome />;
@@ -95,7 +84,6 @@ export default function Home() {
                 key={index}
                 name={name}
                 index={index}
-                setcardData={setcardData}
                 data={data}
                 isActive={activeCategory === name}
                 setActiveCategory={setActiveCategory}

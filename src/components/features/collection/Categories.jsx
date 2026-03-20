@@ -1,12 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { motion } from "motion/react";
-import { cn } from "../lib/utils";
+import { cn } from "../../../utils/utils";
 
 const Categories = React.memo(
-  ({ name, setcardData, data, isActive, setActiveCategory }) => {
+  ({ name, data, isActive, setActiveCategory }) => {
     const handleClick = () => {
-      setcardData(data[name]);
       setActiveCategory(name);
     };
 

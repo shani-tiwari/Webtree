@@ -1,5 +1,5 @@
 import React from "react";
-import { cn } from "../lib/utils";
+import { cn } from "../../../utils/utils";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { NewTwitterRectangleIcon } from "@hugeicons/core-free-icons";
 import { Link } from "react-router";

@@ -1,12 +1,12 @@
 import Home from "./pages/Home";
 import React from "react";
 import { Routes, Route, useLocation } from "react-router";
-import { cn } from "./lib/utils";
+import { cn } from "./utils/utils";
 import About from "./pages/About";
 import Socials from "./pages/Socials";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
-import ScrollToTop from "./components/ScrollToTop";
+import Footer from "./components/layout/Footer";
+import Navbar from "./components/layout/Navbar";
+import ScrollToTop from "./components/layout/ScrollToTop";
 import Reviews from "./pages/Reviews";
 
 const Collection = React.lazy(() => import("./pages/Collection"));

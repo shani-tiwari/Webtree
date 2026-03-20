@@ -9,7 +9,7 @@ import {
   UserCheck01Icon,
 } from "@hugeicons/core-free-icons";
 import emailjs from "@emailjs/browser";
-import { cn } from "../lib/utils";
+import { cn } from "../../../utils/utils";
 
 const REVIEWS_URL = import.meta.env.VITE_PRIVATE_WEBSITE_REVIEWS_URL;
 
