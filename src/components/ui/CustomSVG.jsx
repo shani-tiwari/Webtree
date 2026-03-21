@@ -6,7 +6,7 @@ export default function CustomSVG() {
   return (
 
     // my design and animation 
-    <div className=" relative mx-auto w-[85vw] md:w-[58vw] pointer-events-none">
+    <div className=" relative mx-auto w-[85vw] lg:w-[80vw] xl:w-[58vw] pointer-events-none">
         <svg 
          className=" absolute top-2 -left-[0.2px] rotate-180 "  
          viewBox="0 0 300 70" 

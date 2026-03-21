@@ -105,8 +105,8 @@ const Card = memo(
                 whileTap={{ scale: 0.97 }}
                 onClick={handleAddKey}
                 className={cn(
-                  "group/icon absolute right-[10px] flex items-center justify-center transition-colors duration-200 z-30",
-                  "p-1 rounded-xl bg-white/2 border-2 border-white/20 cursor-pointer",
+                  "group/icon absolute right-[10px] flex items-center justify-center transition-all duration-200 z-30",
+                  "p-1 rounded-xl bg-white/2 border-2 border-white/20 cursor-pointer active:scale-95",
                   isCollected
                     ? "text-emerald-600 font-bold hover:text-emerald-500 filter-[drop-shadow(0_0_4px_rgba(16,185,129,0.3))]"
                     : "text-amber-300-op60  group-hover:text-amber-400-op80 filter-[drop-shadow(0_0_4px_var(--color-amber-400-op30))] ",
@@ -120,7 +120,7 @@ const Card = memo(
 
                 <span
                   className={cn(
-                    "absolute right-full -top-2 mr-2 w-max px-2 py-1 text-[10px] uppercase bg-zinc-900 border border-white/10 rounded-md shadow-xs",
+                    "hidden md:flex absolute right-full -top-2 mr-2 w-max px-2 py-1 text-[10px] uppercase bg-zinc-900 border border-white/10 rounded-md shadow-xs",
                     "tracking-wide font-semibold invisible group-hover/icon:visible transition-all duration-300 pointer-events-none z-99 ",
                   )}
                 >
@@ -134,12 +134,12 @@ const Card = memo(
                 whileTap={{ scale: 0.97 }}
                 onClick={handleRemoveKey}
                 className={cn("group/delete absolute right-2 flex items-center justify-center text-red-600/90 hover:text-red-500 p-1 rounded-xl border-2 border-white/20 z-30",
-                  "transition-colors duration-200 cursor-pointer",
+                  "active:scale-95 transition-all duration-200 cursor-pointer",
                 )}
               >
-                <HugeiconsIcon icon={Delete03Icon} size={20} />
+                <HugeiconsIcon icon={Delete03Icon} size={19} />
                 <span
-                  className={cn("absolute right-full mr-2 -mt-4 w-max px-2.5 py-[3px] text-[10px] uppercase bg-zinc-900 border border-white/10 rounded-md filter-[drop-shadow(0_0_4px_rgba(220,38,50,0.3))] ",
+                  className={cn(" hidden md:flex absolute right-full mr-2 -mt-4 w-max px-2.5 py-[3px] text-[10px] uppercase bg-zinc-900 border border-white/10 rounded-md filter-[drop-shadow(0_0_4px_rgba(220,38,50,0.3))] ",
                     "shadow-xs tracking-wide font-semibold invisible group-hover/delete:opacity-100 group-hover/delete:visible transition-all duration-200 pointer-events-none z-99",
                   )}
                 >
@@ -153,13 +153,13 @@ const Card = memo(
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.97 }}
               onClick={handleCopy}
-              className={cn("group/copy absolute right-11 top-2 flex items-center justify-center transition-colors duration-200 z-30",
+              className={cn("group/copy absolute right-[42px] top-[4px] flex items-center justify-center active:scale-95 transition-all duration-200 z-30",
                 "text-sky-300/80 group-hover:text-sky-500/80 p-1 rounded-xl bg-white/2 border-2 border-white/20 cursor-pointer",
               )}
             >
-              <HugeiconsIcon icon={Copy02Icon} size={20} />
+              <HugeiconsIcon icon={Copy02Icon} size={19} />
               <span
-                className={cn("absolute right-full mr-2 w-max px-2.5 py-1 text-[10px] uppercase bg-zinc-900 border border-white/20 rounded-md shadow-xs ",
+                className={cn("hidden md:flex absolute right-full mr-2 w-max px-2.5 py-1 text-[10px] uppercase bg-zinc-900 border border-white/20 rounded-md shadow-xs ",
                   "filter-[drop-shadow(0_0_4px_rgba(125,211,252,0.3))] font-semibold invisible group-hover/copy:opacity-100 group-hover/copy:visible transition-all duration-300 pointer-events-none z-99",
                 )}
               >
@@ -173,14 +173,14 @@ const Card = memo(
               whileTap={{ scale: 0.97 }}
               onClick={handleShare}
               className={cn(
-                "group/share absolute top-[22px] right-2 flex items-center justify-center transition-colors duration-200 z-30",
+                "group/share absolute top-[20px] right-[10px] flex items-center justify-center active:scale-95 transition-all duration-200 z-30",
                 "text-indigo-400 group-hover:text-indigo-500 p-1 rounded-xl bg-white/2 border-2 border-white/20 cursor-pointer",
               )}
             >
-              <HugeiconsIcon icon={SentIcon} size={20} />
+              <HugeiconsIcon icon={SentIcon} size={19} />
               <span
                 className={cn(
-                  "absolute top-[78%] -left-14 w-max px-2.5 py-[3px] text-[10px] uppercase bg-zinc-900 border border-white/20 rounded-md shadow-xs font-semibold invisible filter-[drop-shadow(0_0_4px_rgba(160,180,252,0.3))]",
+                  "hidden md:flex absolute top-[78%] -left-14 w-max px-2.5 py-[3px] text-[10px] uppercase bg-zinc-900 border border-white/20 rounded-md shadow-xs font-semibold invisible filter-[drop-shadow(0_0_4px_rgba(160,180,252,0.3))]",
                   "tracking-wide group-hover/share:visible transition-all duration-200 pointer-events-none z-999",
                 )}
               >

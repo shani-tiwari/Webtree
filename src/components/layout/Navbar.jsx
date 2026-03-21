@@ -174,19 +174,20 @@ const Navbar = () => {
         {/* Logo */}
         <motion.div
           variants={itemVariants}
-          className={cn("flex items-center")}
+          className={cn("flex items-center md:flex-1")}
           aria-label="Logo"
         >
           <Link
-            className={cn(
-              "text-white/40 flex text-lg md:text-2xl font-mono hover:text-white/50 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer selection:bg-amber-600-op30 selection:text-white",
-            )}
+            className={cn("text-white/40 flex items-center text-lg md:text-2xl font-mono hover:text-white/50 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer selection:bg-amber-600-op30 selection:text-white")}
             to="/"
             onClick={scrollTop}
           >
-            <p className="text-amber-500">४</p>
-            <p className={cn("w-2 h-1")}></p>
-            Webtree
+            <p className="text-amber-500 mr-2 md:text-[26px]">
+              ४
+            </p>
+            <p className="mt-[1.5px] xl:mt-0 xl:mb-[1.5px]">
+              Webtree
+            </p>
           </Link>
         </motion.div>
 
@@ -213,8 +214,10 @@ const Navbar = () => {
           }
         </div>
 
+        {/* Right Side (Collection & Mobile Menu) */}
+        <div className={cn("flex items-center justify-end md:flex-1")}>
           <Link
-            className={cn("group flex gap-1 items-center justify-center relative mr-2 hover:-translate-y-0.5 active:scale-97 transition-all duration-200")}
+            className={cn("group relative flex gap-1 items-center justify-center mr-2 hover:-translate-y-0.5 active:scale-97 transition-all duration-200")}
             to={location.pathname === "/collection" ? "/" : "/collection"}
             rel="noreferrer"
             aria-label={`Visit`}
@@ -228,7 +231,7 @@ const Navbar = () => {
                 Home
               </p>
             ) : (
-              <p className={cn("text-neutral-400 font-mono tracking-tight hover:text-neutral-300/90  text-lg hidden md:block selection:bg-amber-600-op30 selection:text-white")}>
+              <p className={cn("text-neutral-400 font-mono mr-1 tracking-tight hover:text-neutral-300/90 text-lg md:text-[22px] hidden md:block selection:bg-amber-600-op30 selection:text-white")}>
                 Collection
               </p>
             )}
@@ -244,11 +247,10 @@ const Navbar = () => {
                 <HugeiconsIcon
                   icon={FolderFavouriteIcon}
                   size={20}
-                  style={{ color: "oklch(66.6% 0.179 58.318)" }}
-                  className="hidden md:flex"
+                  className="hidden md:flex text-amber-500"
                 />
                 <sup
-                  className={cn(" hidden md:flex absolute -right-2 top-1 font-mono text-amber-500 selection:bg-zinc-600/30 selection:text-white ")}
+                  className={cn("hidden md:flex absolute -right-[6px] top-[5px] font-mono text-amber-500 selection:bg-zinc-600/30 selection:text-white ")}
                 >
                   {collection.length}
                 </sup>
@@ -257,54 +259,55 @@ const Navbar = () => {
             <span
               className={cn(
                 "hidden md:flex absolute top-full font-mono right-0 mt-3 px-3 py-1.5 tracking-widest bg-zinc-900/90 text-zinc-100/90 text-[10px] uppercase rounded-lg backdrop-blur-md",
-                "opacity-0 scale-95 translate-y-2 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 invisible group-hover:visible transition-all duration-300 ease-out pointer-events-none border border-white/20 shadow-xl whitespace-nowrap z-50",
+                "opacity-0 scale-95 translate-y-2 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 invisible group-hover:visible transition-all duration-300 ease-out pointer-events-none border border-white/30 shadow-xl whitespace-nowrap z-50",
               )}
             >
               {location.pathname === "/collection"
-                ? "Back to Home 🏡"
-                : "Personal Collection 🎁"}
+                ? "Back to Home"
+                : "Personal Collection"}
             </span>
           </Link>
 
-        {/* Mobile Menu Button */}
-        <div className={cn("md:hidden flex items-center justify-center gap-4")}>
-          <Link
-            className={cn("relative mr-2 ml-2 active:scale-95")}
-            to={location.pathname === "/collection" ? "/" : "/collection"}
-            rel="noreferrer"
-            aria-label={`Visit`}
-          >
-            {location.pathname === "/collection" ? (
-              <HugeiconsIcon
-                onClick={() => setShowLength(!showLength)}
-                icon={SquareArrowLeft02Icon}
-                size={20}
-                style={{ color: "oklch(55.5% 0.163 48.998)" }}
-              />
-            ) : (
-              <HugeiconsIcon
-                onClick={() => setShowLength(!showLength)}
-                icon={FolderCheckIcon}
-                size={20}
-                style={{ color: "oklch(0.871 0.006 286.286)" }}
-              />
-            )}
-
-            <sup
-              className={cn("absolute -right-2 top-1 text-zinc-300 selection:bg-amber-600-op30 selection:text-white")}
+          {/* Mobile Menu Button  */}
+          <div className={cn("md:hidden flex items-center justify-center gap-4")}>
+            <Link
+              className={cn("relative mr-2 ml-2 active:scale-95")}
+              to={location.pathname === "/collection" ? "/" : "/collection"}
+              rel="noreferrer"
+              aria-label={`Visit`}
             >
-              { showLength && collection.length}
-            </sup>
-          </Link>
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            aria-expanded={isOpen}
-            aria-controls="mobile-menu"
-            aria-label="Toggle menu"
-            className="md:hidden text-gray-300 dark:text-white focus:outline-none hover:scale-106 transition-all duration-400"
-          >
-            <HugeiconsIcon icon={Menu02Icon} size={19} />
-          </button>
+              {location.pathname === "/collection" ? (
+                <HugeiconsIcon
+                  onClick={() => setShowLength(!showLength)}
+                  icon={SquareArrowLeft02Icon}
+                  size={20}
+                  style={{ color: "oklch(55.5% 0.163 48.998)" }}
+                />
+              ) : (
+                <HugeiconsIcon
+                  onClick={() => setShowLength(!showLength)}
+                  icon={FolderCheckIcon}
+                  size={20}
+                  style={{ color: "oklch(0.871 0.006 286.286)" }}
+                />
+              )}
+
+              <sup
+                className={cn("absolute -right-2 top-1 text-zinc-300 selection:bg-amber-600-op30 selection:text-white")}
+              >
+                { showLength && collection.length}
+              </sup>
+            </Link>
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              aria-expanded={isOpen}
+              aria-controls="mobile-menu"
+              aria-label="Toggle menu"
+              className="md:hidden text-gray-300 dark:text-white focus:outline-none hover:scale-106 transition-all duration-400"
+            >
+              <HugeiconsIcon icon={Menu02Icon} size={19} />
+            </button>
+          </div>
         </div>
       </motion.nav>
 

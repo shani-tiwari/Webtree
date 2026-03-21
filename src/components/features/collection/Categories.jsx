@@ -17,7 +17,7 @@ const Categories = React.memo(
         aria-pressed={isActive}
         aria-label={`Select ${name.split("_").join(" ")} category`}
         className={cn(
-          "relative w-fit md:text-start group border border-white/30 py-[3px] px-3 md:py-1.5 md:px-4 mb-2 rounded-[12px] md:rounded-[14px]",
+          "relative w-fit group border border-white/30 py-[3px] px-3 md:py-1.5 md:px-4 mb-2 rounded-[12px] md:rounded-[14px]",
           "backdrop-blur-md cursor-pointer transition-all duration-100 ease-out select-none shadow-xs shadow-white/8 hover:shadow-[0_4px_15px_rgba(0,0,0,0.6)]",
           isActive
             ? "bg-linear-to-br from-amber-600-op30 to-amber-700-op30 shadow-[inset_0_1px_0_rgba(255,255,255,0.5),0_2px_4px_rgba(0,0,0,0.8)]"
@@ -38,6 +38,7 @@ const Categories = React.memo(
             .split("_")
             .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
             .join(" ")}
+            {/* blur glow */}
           {
             isActive && (
               <span
@@ -45,10 +46,11 @@ const Categories = React.memo(
               />
             )
           }
+          {/* line */}
           {
             isActive && (
               <span
-                className="absolute -bottom-[6.5px] md:-bottom-[9.5px] left-0 w-[95%] h-[0.9px] bg-linear-to-l from-transparent via-zinc-300 to-transparent "
+                className="absolute -bottom-[7px] md:-bottom-[10.5px] xl:-bottom-[9.5px] left-0 w-[95%] h-[0.9px] bg-linear-to-l from-transparent via-zinc-300 to-transparent "
               />
             )
           }
