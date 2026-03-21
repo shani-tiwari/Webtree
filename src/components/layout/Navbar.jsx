@@ -167,7 +167,7 @@ const Navbar = () => {
         variants={navVariants}
         aria-label="Main Navigation"
         className={cn(
-          "fixed top-1 left-1/2 -translate-x-1/2 w-[90%] md:max-w-[1000px] z-50 px-4 md:px-6 py-1 md:py-3",
+          "fixed top-1 left-1/2 -translate-x-1/2 w-[90%] md:max-w-[1100px] z-50 px-4 md:px-6 py-1 md:py-3",
           "flex justify-between items-center rounded-full border-2 border-neutral-400/50 shadow-xs shadow-amber-700-op40 backdrop-blur-[6px]",
         )}
       >
@@ -191,7 +191,7 @@ const Navbar = () => {
         </motion.div>
 
         {/* Desktop Menu */}
-        <div className={cn("hidden md:flex gap-5 items-center")}>
+        <div className={cn("hidden md:flex grow gap-5 items-center justify-center")}>
           {
             ['About', 'Connect', 'Reviews'].map((item) => {
               const lowerItem = item.toLowerCase();
@@ -200,10 +200,10 @@ const Navbar = () => {
                 <Link
                   key={item}
                   to={`/${lowerItem}`}
-                  className={cn("navItem",
+                  className={cn("navItem mx-0.5",
                     isActive 
                       ? "text-amber-600 underline underline-offset-8" 
-                      : "text-neutral-400"
+                      : "text-neutral-400 hover:text-neutral-300"
                   )}
                 >
                   {item}
@@ -211,6 +211,8 @@ const Navbar = () => {
               );
             })
           }
+        </div>
+
           <Link
             className={cn("group flex gap-1 items-center justify-center relative mr-2 hover:-translate-y-0.5 active:scale-97 transition-all duration-200")}
             to={location.pathname === "/collection" ? "/" : "/collection"}
@@ -261,7 +263,6 @@ const Navbar = () => {
                 : "Personal Collection 🎁"}
             </span>
           </Link>
-        </div>
 
         {/* Mobile Menu Button */}
         <div className={cn("md:hidden flex items-center justify-center gap-4")}>

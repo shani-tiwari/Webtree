@@ -16,22 +16,20 @@ import { cn } from "../../../utils/utils";
 // Memoized Card Component
 const Card = memo(
   ({ id, title, link, desc, allowRemove, logo, category, ...props }) => {
-    const { addToCollection, removeFromCollection, collection } =
-      useCollection();
+
+    const { addToCollection, removeFromCollection, collection } = useCollection();
+
     const [added, setAdded] = useState(false);
     const [copied, setCopied] = useState(false);
 
-    const normalize = (str) =>
-      str ? str.trim().split(" ").join("").toLowerCase() : "";
+    const normalize = (str) => str ? str.trim().split(" ").join("").toLowerCase() : "";
 
     // Check if item is already in collection to show correct state
-    const isCollected = collection.some(
-      (item) => normalize(item.name || item.title) === normalize(title),
-    );
+    const isCollected = collection.some( (item) => normalize(item.name || item.title) === normalize(title) );
 
     const handleAddKey = (e) => {
       e.preventDefault();
-      e.stopPropagation();
+      // e.stopPropagation();
 
       const item = {
         id,
@@ -51,13 +49,13 @@ const Card = memo(
 
     const handleRemoveKey = (e) => {
       e.preventDefault();
-      e.stopPropagation();
+      // e.stopPropagation();
       removeFromCollection(title);
     };
 
     const handleCopy = (e) => {
       e.preventDefault();
-      e.stopPropagation();
+      // e.stopPropagation();
       navigator.clipboard.writeText(link);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
@@ -65,7 +63,7 @@ const Card = memo(
 
     const handleShare = async (e) => {
       e.preventDefault();
-      e.stopPropagation();
+      // e.stopPropagation();
       if (navigator.share) {
         try {
           await navigator.share({
@@ -88,27 +86,27 @@ const Card = memo(
         className={cn("w-full h-full block p-1")}
         aria-label={`View ${title} resource`}
       >
-        <motion.article
-          whileHover={{ y: -8, transition: { duration: 0.2 } }}
+        <article
           className={cn(
             "relative h-full flex flex-col bg-[#080808]/80 backdrop-blur-md border border-zinc-800 rounded-4xl p-4",
-            "transition-all ease-[cubic-bezier(0.79,0.47,0.24,0.98)] duration-100 group cursor-pointer text-white/70 select-none hover:border-zinc-600/80 shadow-lg hover:shadow-2xl",
+            "hover:-translate-y-2 transition-all ease-[cubic-bezier(0.79,0.47,0.24,0.98)] duration-200 group cursor-pointer text-white/70 select-none hover:border-zinc-600/80 shadow-lg hover:shadow-2xl",
           )}
         >
           {/* Action Icons Section */}
           <div
             className={cn(
-              "absolute top-7 right-3 flex gap-3.5 items-center z-40 ",
+              "absolute top-5 right-3 flex gap-2 items-center z-40",
             )}
           >
+            {/* add or added button */}
             {!allowRemove && (
               <motion.span
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={handleAddKey}
                 className={cn(
-                  "group/icon absolute right-[10px] flex items-center justify-center transition-colors duration-200 z-30",
-                  "p-1 rounded-xl bg-white/8 border-2 border-white/20 cursor-pointer",
+                  "group/icon flex items-center justify-center transition-colors duration-200 z-30",
+                  "p-1.5 rounded-xl bg-white/8 border-2 border-white/20 cursor-pointer",
                   isCollected
                     ? "text-emerald-600 font-bold pointer-events-none hover:text-emerald-500 filter-[drop-shadow(0_0_12px_rgba(16,185,129,0.4))]"
                     : "text-amber-300-op60  group-hover:text-amber-400-op80 filter-[drop-shadow(0_0_12px_var(--color-amber-400-op40))] ",
@@ -130,12 +128,14 @@ const Card = memo(
                 </span>
               </motion.span>
             )}
+
+            {/* delete button */}
             {allowRemove && (
               <motion.span
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={handleRemoveKey}
-                className={cn("group/delete absolute right-2 flex items-center justify-center text-red-600/90 hover:text-red-500 p-1 rounded-xl border-2 border-white/20 z-30",
+                className={cn("group/delete flex items-center justify-center text-red-600/90 hover:text-red-500 p-1.5 rounded-xl border-2 border-white/20 z-30",
                   "transition-colors duration-200 cursor-pointer",
                 )}
               >
@@ -155,8 +155,8 @@ const Card = memo(
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.97 }}
               onClick={handleCopy}
-              className={cn("group/copy absolute right-11 top-2 flex items-center justify-center transition-colors duration-200 z-30",
-                "text-sky-300/80 group-hover:text-sky-500/80 p-1 rounded-xl bg-white/8 border-2 border-white/20 cursor-pointer",
+              className={cn("group/copy flex items-center justify-center transition-colors duration-200 z-30",
+                "text-sky-300/80 group-hover:text-sky-500/80 p-1.5 rounded-xl bg-white/8 border-2 border-white/20 cursor-pointer",
               )}
             >
               <HugeiconsIcon icon={Copy02Icon} size={20} />
@@ -175,8 +175,8 @@ const Card = memo(
               whileTap={{ scale: 0.97 }}
               onClick={handleShare}
               className={cn(
-                "group/share absolute top-[22px] right-2 flex items-center justify-center transition-colors duration-200 z-30",
-                "text-indigo-400 group-hover:text-indigo-500 p-1 rounded-xl bg-white/8 border-2 border-white/20 cursor-pointer",
+                "group/share flex items-center justify-center transition-colors duration-200 z-30",
+                "text-indigo-400 group-hover:text-indigo-500 p-1.5 rounded-xl bg-white/8 border-2 border-white/20 cursor-pointer",
               )}
             >
               <HugeiconsIcon icon={SentIcon} size={20} />
@@ -189,6 +189,7 @@ const Card = memo(
                 Share
               </span>
             </motion.span>
+
           </div>
 
           {/* logo */}
@@ -204,10 +205,10 @@ const Card = memo(
                       src={logo}
                       alt={`${title} logo`}
                       className="w-full h-full object-cover"
-                      onError={(e) => {
-                        e.target.style.display = "none";
-                        e.target.nextSibling.style.display = "flex";
-                      }}
+                      // onError={(e) => {
+                      //   e.target.style.display = "none";
+                      //   e.target.nextSibling.style.display = "flex";
+                      // }}
                     />
                   </Link>
                 ) : null}
@@ -263,7 +264,7 @@ const Card = memo(
                 .join(" ")}
             </span>
           )}
-        </motion.article>
+        </article>
       </motion.div>
     );
   },

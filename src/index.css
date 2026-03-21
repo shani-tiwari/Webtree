@@ -172,7 +172,7 @@
 }
 
 .navItem {
-  @apply text-shadow-2xs font-mono tracking-tight text-lg cursor-pointer scroll-smooth hover:tracking-normal hover:text-neutral-300/90 hover:-translate-y-0.5 transition-all duration-200 selection:bg-amber-600-op30 selection:text-white
+  @apply text-shadow-2xs font-mono tracking-tight text-xl cursor-pointer scroll-smooth hover:tracking-normal hover:-translate-y-0.5 transition-all duration-200 selection:bg-amber-600-op30 selection:text-white
 }
 
 .hide-scrollbar::-webkit-scrollbar {
