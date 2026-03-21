@@ -80,7 +80,7 @@ export default function ReviewSection() {
       <div className="relative w-full pb-4">
         <div 
            ref={scrollContainerRef}
-           className="flex gap-6 overflow-x-auto hide-scrollbar px-4 md:px-14 py-4 mask-fade-edges"
+           className="flex justify-center gap-6 overflow-x-auto hide-scrollbar px-4 md:px-14 py-4 mask-fade-edges"
            style={{ scrollBehavior: 'smooth' }}
         >
           {loading ? (

@@ -145,6 +145,7 @@
   /* Amber Opacity Variants */
   --color-amber-300-op60: rgba(252, 211, 77, 0.6);
 
+  --color-amber-400-op30: rgba(251, 191, 36, 0.3);
   --color-amber-400-op40: rgba(251, 191, 36, 0.4);
   --color-amber-400-op80: rgba(251, 191, 36, 0.8);
   --color-amber-400-op90: rgba(251, 191, 36, 0.9);

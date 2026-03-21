@@ -92,15 +92,9 @@ export default function Home() {
           </motion.aside>
 
           {/* divider */}
-          <div className="z-45 -mt-4 md:-mt-12">
+          <div className=" -mt-4 md:-mt-12 pointer-events-none ">
             <CustomSVG />
           </div>
-          {/* <motion.span 
-            initial={{width:"0%"}}
-            animate={{width:"95%"}}
-            transition={{duration:2, delay:0.4, originX:50, ease: "easeOut"}}
-            className=" h-[0.5px] bg-white/30 mx-auto -mt-4 mb-4">
-          </motion.span> */}
 
           {/* Cards Section */}
           <motion.section
