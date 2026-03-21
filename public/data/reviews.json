@@ -9,6 +9,14 @@
   },
   {
     "id": 2,
+    "name": "Adarsh Vardhan",
+    "xProfile": "@adarshraj5206",
+    "gender": "male",
+    "text": "Ek dum gjb ki website hai 🔥, sare resources ek jagah badiya hai bhai 🙂.",
+    "date": "2026-03-21T11:00:00.000Z"
+  },
+  {
+    "id": 3,
     "name": "Anjali",
     "xProfile": "@anjalinirwal02",
     "gender": "female",
@@ -16,7 +24,7 @@
     "date": "2026-03-19T8:35:00.000Z"
   },
   {
-    "id": 2,
+    "id": 4,
     "name": "Kasif",
     "xProfile": "@md_kasif_uddin",
     "gender": "male",
