@@ -248,7 +248,8 @@ const Card = memo(
           {allowRemove && (
             <span
               className={cn(
-                "absolute right-7 -bottom-2 mt-4 w-fit text-[10px] px-3 py-1 bg-black/75 backdrop-blur-md  border border-white/10 rounded-full text-amber-700-op80 uppercase font-black tracking-widest leading-none",
+                "absolute -bottom-[8.5px] right-8 mt-4 w-fit text-[10px] px-3 py-1 z-999 bg-black/20 border border-white/10",
+                "rounded-full text-amber-700 uppercase font-black tracking-widest leading-none will-change-transform",
               )}
             >
               {category

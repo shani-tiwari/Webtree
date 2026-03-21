@@ -203,7 +203,7 @@ const Navbar = () => {
                   to={`/${lowerItem}`}
                   className={cn("navItem mx-0.5",
                     isActive 
-                      ? "text-amber-600 underline underline-offset-8" 
+                      ? "text-amber-500 wavy-underline-pulse" 
                       : "text-neutral-400 hover:text-neutral-300"
                   )}
                 >

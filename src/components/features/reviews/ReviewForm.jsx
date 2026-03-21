@@ -135,7 +135,7 @@ export default function ReviewForm({ isOpen, onClose }) {
             animate={{ scale: 1, y: 0 }}
             exit={{ scale: 0.95, y: 20 }}
             onClick={(e) => e.stopPropagation()}
-            className="w-full max-w-[95%] mt-10 sm:max-w-md lg:max-w-lg bg-[#0a0a0a] md:mt-14 border border-zinc-800 rounded-[20px] md:rounded-3xl p-4 md:p-8 relative shadow-2xl overflow-hidden max-h-dvh"
+            className="w-full max-w-[95%] mt-10 sm:max-w-md lg:max-w-lg bg-[#0a0a0a] md:mt-14 border border-zinc-800 rounded-[20px] md:rounded-3xl p-4 md:p-7 relative shadow-2xl overflow-hidden"
           >
             {/* Background Accents */}
             <div className="hidden md:block absolute -top-20 -left-20 w-40 h-40 bg-amber-600-op10 blur-[50px] rounded-full pointer-events-none" />
@@ -143,12 +143,12 @@ export default function ReviewForm({ isOpen, onClose }) {
             {/* close button */}
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 md:top-6 md:right-6 text-zinc-400 hover:text-zinc-200 hover:scale-105 active:scale-90 transition-all duration-300 z-10"
+              className="absolute top-4 right-4 md:top-9 md:right-6 text-zinc-400 hover:text-zinc-200 hover:scale-105 active:scale-90 transition-all duration-300 z-10"
             >
               <HugeiconsIcon icon={CancelCircleIcon} size={24} />
             </button>
 
-            <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-linear-to-b from-amber-300 to-amber-700 mb-6 text-center">
+            <h2 className="wavy-underline-pulse left-[50%] translate-x-[-50%]  text-2xl font-bold bg-clip-text text-transparent bg-linear-to-b from-amber-300 to-amber-700 mb-6">
               Add Your Review
             </h2>
 
