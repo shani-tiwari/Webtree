@@ -2,7 +2,7 @@
 import { motion } from "motion/react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { ChartLineData02Icon, MoveLeftIcon } from "@hugeicons/core-free-icons";
-import { cn } from "../utils/utils";
+import { cn } from "../utils/utils.js";
 import { Link, useLocation } from "react-router";
 import GoBack from "../components/layout/GoBack";
 

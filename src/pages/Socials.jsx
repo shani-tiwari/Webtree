@@ -9,7 +9,7 @@ import {
   MoveLeftIcon,
   NewTwitterRectangleIcon,
 } from "@hugeicons/core-free-icons";
-import { cn } from "../utils/utils";
+import { cn } from "../utils/utils.js";
 import GoBack from "../components/layout/GoBack";
 import { useLocation } from "react-router";
 

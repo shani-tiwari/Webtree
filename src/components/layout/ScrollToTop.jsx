@@ -3,7 +3,7 @@ import { ArrowUp01Icon } from "@hugeicons/core-free-icons";
 import { useState, useEffect } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "motion/react";
-import { cn } from "../../utils/utils";
+import { cn } from "../../utils/utils.js";
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 

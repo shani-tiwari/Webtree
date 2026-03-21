@@ -7,7 +7,7 @@ import ReviewForm from "./ReviewForm";
 import { motion } from "motion/react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Navigation03Icon, PlusSignCircleIcon, PlusSignIcon } from "@hugeicons/core-free-icons";
-import { cn } from "../../../utils/utils";
+import { cn } from "../../../utils/utils.js";
 
 import { useReviewsData } from "../../../hooks/useReviewsData";
 

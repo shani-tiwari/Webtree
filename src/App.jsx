@@ -1,7 +1,7 @@
 import Home from "./pages/Home";
 import React from "react";
 import { Routes, Route, useLocation } from "react-router";
-import { cn } from "./utils/utils";
+import { cn } from "./utils/utils.js";
 import About from "./pages/About";
 import Socials from "./pages/Socials";
 import Footer from "./components/layout/Footer";

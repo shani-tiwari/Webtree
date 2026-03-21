@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { motion } from "motion/react";
-import { cn } from "../../../utils/utils";
+import { cn } from "../../../utils/utils.js";
 
 const Categories = React.memo(
   ({ name, data, isActive, setActiveCategory }) => {

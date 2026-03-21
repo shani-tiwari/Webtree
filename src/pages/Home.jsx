@@ -5,7 +5,7 @@ import Categories from "../components/features/collection/Categories";
 import Card from "../components/features/collection/Card";
 import SkeletonHome from "../components/ui/SkeletonHome";
 import ReviewSection from "../components/features/reviews/ReviewSection";
-import { cn } from "../utils/utils";
+import { cn } from "../utils/utils.js";
 import CustomSVG from "../components/ui/CustomSVG";
 
 import { useCollectionData } from "../hooks/useCollectionData";

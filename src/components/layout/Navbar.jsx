@@ -22,7 +22,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence, easeIn } from "motion/react";
 import { useCollection } from "../../context/CollectionContext";
 import { Link, useLocation } from "react-router";
-import { cn } from "../../utils/utils";
+import { cn } from "../../utils/utils.js";
 import "../../index.css";
 
 const Navbar = () => {
@@ -167,7 +167,7 @@ const Navbar = () => {
         variants={navVariants}
         aria-label="Main Navigation"
         className={cn(
-          "fixed top-1 left-1/2 -translate-x-1/2 w-[90%] md:max-w-[1100px] z-50 px-4 md:px-6 py-1 md:py-3",
+          "fixed top-1 left-1/2 -translate-x-1/2 w-[90%] md:max-w-[1050px] z-50 px-4 md:px-8 py-1 md:py-3",
           "flex justify-between items-center rounded-full border-2 border-neutral-400/50 shadow-xs shadow-amber-700-op40 backdrop-blur-[6px]",
         )}
       >
@@ -237,6 +237,7 @@ const Navbar = () => {
                 icon={SquareArrowLeft02Icon}
                 size={20}
                 style={{ color: "oklch(66.6% 0.179 58.318)" }}
+                className="hidden md:flex"
               />
             ) : (
               <div>
@@ -244,9 +245,10 @@ const Navbar = () => {
                   icon={FolderFavouriteIcon}
                   size={20}
                   style={{ color: "oklch(66.6% 0.179 58.318)" }}
+                  className="hidden md:flex"
                 />
                 <sup
-                  className={cn("absolute -right-2 top-1 font-mono text-amber-500 selection:bg-zinc-600/30 selection:text-white ")}
+                  className={cn(" hidden md:flex absolute -right-2 top-1 font-mono text-amber-500 selection:bg-zinc-600/30 selection:text-white ")}
                 >
                   {collection.length}
                 </sup>
@@ -254,7 +256,7 @@ const Navbar = () => {
             )}
             <span
               className={cn(
-                "absolute top-full font-mono right-0 mt-3 px-3 py-1.5 tracking-widest bg-zinc-900/90 text-zinc-100/90 text-[10px] uppercase rounded-lg backdrop-blur-md",
+                "hidden md:flex absolute top-full font-mono right-0 mt-3 px-3 py-1.5 tracking-widest bg-zinc-900/90 text-zinc-100/90 text-[10px] uppercase rounded-lg backdrop-blur-md",
                 "opacity-0 scale-95 translate-y-2 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 invisible group-hover:visible transition-all duration-300 ease-out pointer-events-none border border-white/20 shadow-xl whitespace-nowrap z-50",
               )}
             >

@@ -1,6 +1,6 @@
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import { cn } from "../../utils/utils";
+import { cn } from "../../utils/utils.js";
 
 const SkeletonHome = () => {
   const categoryWidths = [
