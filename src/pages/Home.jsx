@@ -13,12 +13,20 @@ import { useCollectionData } from "../hooks/useCollectionData";
 export default function Home() {
   const { data, loading } = useCollectionData();
   const [activeCategory, setActiveCategory] = useState("animation");
+  const [isCollapsed, setIsCollapsed] = useState(true);
 
   const carddata = data[activeCategory] || [];
 
   if (loading) {
     return <SkeletonHome />;
   }
+
+  const scrollTo = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <section
@@ -77,22 +85,42 @@ export default function Home() {
             aria-label="Category selection"
             className={cn(
               "z-40 max-w-4xl mx-auto shrink-0 flex flex-wrap justify-center rounded-xl gap-1 md:gap-2 w-full h-fit px-2 md:py-3 md:pt-4 text-white backdrop-blur-sm",
+              !isCollapsed ? " mb-7 lg:mb-0" : "mb-8"
             )}
           >
-            {Object.keys(data).map((name, index) => (
-              <Categories
-                key={index}
-                name={name}
-                index={index}
-                data={data}
-                isActive={activeCategory === name}
-                setActiveCategory={setActiveCategory}
-              />
-            ))}
+            {
+              Object.keys(data).slice(0, isCollapsed ? (5+3) : undefined).map((name, index) => (
+                <Categories
+                  key={index}
+                  name={name}
+                  index={index}
+                  data={data}
+                  isActive={activeCategory === name}
+                  setActiveCategory={setActiveCategory}
+                />
+              ))
+            }
+            {
+              Object.keys(data).length > 5 && (
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setIsCollapsed(!isCollapsed)}
+                  className={cn(
+                    "relative w-fit group border border-white/30 py-[3px] px-3 md:py-1.5 md:px-4 mb-2 rounded-[12px] md:rounded-[14px]",
+                    "backdrop-blur-md cursor-pointer hover:transition-colors transition-all duration-50 ease-out select-none shadow-xs shadow-white/8 hover:shadow-[0_4px_15px_rgba(0,0,0,0.6)]",
+                    "bg-zinc-800/20 hover:bg-zinc-800/40 text-amber-500 font-medium text-sm"
+                  )}
+                >
+                  {isCollapsed ? "More..." : "Less"}
+                </motion.button>
+              )
+            }
+
           </motion.aside>
 
           {/* divider */}
-          <div className=" -mt-4 md:-mt-12 pointer-events-none ">
+          <div className={cn(" -mt-4 md:-mt-12 pointer-events-none ")}>
             <CustomSVG />
           </div>
 
@@ -101,11 +129,11 @@ export default function Home() {
             layout
             aria-label="Resources grid"
             className={cn(
-              "z-10 container bg-transparent grow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[14px] content-start mt-10 md:mt-14"
+              "z-10 container bg-transparent grow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[14px] content-start mt-2 md:mt-10"
             )}
           >
             <AnimatePresence mode="popLayout">
-              {Object.values(carddata).map((item) => (
+              {Object.values(carddata).slice(0, isCollapsed ? 5 : undefined).map((item) => (
                 <motion.div
                   key={item.id}
                   layout
@@ -124,6 +152,22 @@ export default function Home() {
                   />
                 </motion.div>
               ))}
+              {
+                Object.keys(data).length > 5 && (
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => {setIsCollapsed(!isCollapsed); !isCollapsed && scrollTo();}}
+                    className={cn(
+                      "relative w-[80%] mx-auto group border border-white/30 py-2 px-3 md:py-1.5 md:px-4 mb-2 rounded-[16px]",
+                      "backdrop-blur-md cursor-pointer hover:transition-colors transition-all duration-50 ease-out select-none shadow-xs shadow-white/8 hover:shadow-[0_4px_15px_rgba(0,0,0,0.6)]",
+                      "bg-zinc-800/20 hover:bg-zinc-800/40 text-amber-500 font-medium text-lg"
+                    )}
+                  >
+                    {isCollapsed ? "Show More..." : "Show Less..."}
+                  </motion.button>
+                )
+              }  
             </AnimatePresence>
           </motion.section>
       </section>
