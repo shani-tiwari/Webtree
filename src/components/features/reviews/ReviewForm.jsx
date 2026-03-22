@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { AnimatePresence, motion } from "motion/react";
 import { HugeiconsIcon } from "@hugeicons/react";
@@ -120,6 +120,21 @@ export default function ReviewForm({ isOpen, onClose }) {
     setValidationStatus(exists ? "exists" : "available");
   };
 
+  // scroll none when modal open
+    useEffect(() => {
+      if (isOpen) {
+        document.body.style.overflow = "hidden";
+        document.documentElement.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "auto";
+        document.documentElement.style.overflow = "auto";
+      }
+      return () => {
+        document.body.style.overflow = "auto";
+        document.documentElement.style.overflow = "auto";
+      };
+    }, [isOpen]);
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -157,21 +172,42 @@ export default function ReviewForm({ isOpen, onClose }) {
               className="flex flex-col gap-3 md:gap-4 mt-2 md:mt-0"
             >
               <div className="flex flex-col md:flex-row gap-3 md:gap-4 w-full">
-                {/* Name Field */}
-                <div className="flex flex-col gap-1.5 flex-1">
-                  <label className="text-zinc-400 text-xs md:text-sm font-mono">
-                    name *
+                {/* Vibe selection in place of Name */}
+                <div className="flex flex-col gap-2 flex-1">
+                  <label className="text-zinc-400 text-xs md:text-sm font-mono lowercase">
+                    (choose your vibe) *
                   </label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    maxLength={30}
-                    placeholder="Shani Tiwari"
-                    className="w-full bg-zinc-900/50 border border-zinc-800 rounded-lg md:rounded-xl px-3 md:px-4 py-2 md:py-3 text-white placeholder:text-zinc-600 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/50 transition-all font-sans text-sm md:text-base"
-                  />
+                  <div className="grid grid-cols-6 gap-2 md:gap-3">
+                    {[
+                      { hex: "#1e1b4b", label: "Indigo" },
+                      { hex: "#4a3f35", label: "Taupe" },
+                      { hex: "#7f1d1d", label: "Crimson" },
+                      { hex: "#7c2d12", label: "Orange" },
+                      { hex: "#4a044e", label: "Fuchsia" },
+                      { hex: "#0f392b", label: "Forest" },
+                    ].map((color) => (
+                      <button
+                        key={color.hex}
+                        type="button"
+                        onClick={() => setFormData(prev => ({ ...prev, name: color.hex }))}
+                        className={cn(
+                          "group relative h-10 md:h-12 rounded-2xl border-2 transition-all duration-300",
+                          formData.name === color.hex 
+                            ? "border-amber-500 scale-105 shadow-[0_0_10px_rgba(245,158,11,0.3)]" 
+                            : "border-zinc-400/60 hover:border-zinc-300/90 hover:scale-102"
+                        )}
+                        style={{ backgroundColor: color.hex }}
+                        aria-label={`Select ${color.label} vibe`}
+                      >
+                        {formData.name === color.hex && (
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="w-1.5 h-1.5 rounded-full bg-white shadow-sm" />
+                          </div>
+                        )}
+                        <span className="sr-only">{color.label}</span>
+                      </button>
+                    ))}
+                  </div>
                 </div>
               </div>
 
