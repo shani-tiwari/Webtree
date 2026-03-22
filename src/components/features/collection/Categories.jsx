@@ -13,6 +13,7 @@ const Categories = React.memo(
       <motion.button
         whileHover={{ scale: 1.02, y: -2 }}
         whileTap={{ scale: 0.97 }}
+        transition={{ delay: 0.85 }}
         onClick={handleClick}
         aria-pressed={isActive}
         aria-label={`Select ${name.split("_").join(" ")} category`}

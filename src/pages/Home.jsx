@@ -42,7 +42,7 @@ export default function Home() {
       <motion.header
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 0.3, delay: 0.2 , ease: "easeOut" }}
         className={cn(
           "w-full text-white/80 text-center px-4 md:px-6 font-semibold font-beba pt-20 md:pt-30",
         )}
@@ -77,7 +77,7 @@ export default function Home() {
           <motion.aside
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
             aria-label="Category selection"
             className={cn(
               "z-40 gap-1 md:gap-2 w-full h-fit px-2 md:py-3 md:pt-4 mb-8 max-w-4xl mx-auto shrink-0 flex flex-wrap justify-center rounded-xl  text-white backdrop-blur-sm",
@@ -126,6 +126,7 @@ export default function Home() {
             carddata={carddata}
             activeCategory={activeCategory}
           />
+
       </section>
 
       {/* Review Section */}
@@ -191,7 +192,7 @@ function ResourceGallery({ carddata, activeCategory }) {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.3, delay: 0.8 }}
           >
             <Card
               id={item.id}

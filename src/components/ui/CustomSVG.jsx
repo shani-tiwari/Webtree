@@ -15,7 +15,7 @@ export default function CustomSVG() {
             <motion.path 
              initial={{pathLength: 0}}
              animate={{pathLength: 1}}
-             transition={{duration:0.9, delay: 0.3}}
+             transition={{duration:0.5, delay: 0.4}}
              d="
                 M10 70  
                 Q10 60 50 60
@@ -39,7 +39,7 @@ export default function CustomSVG() {
             <motion.path
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: 1 }}
-                transition={{ duration: 0.9, delay: 0.3 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
                 d="
                     M10 70
                     Q10 60 50 60

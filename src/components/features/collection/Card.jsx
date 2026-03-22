@@ -44,7 +44,7 @@ const Card = memo(
       addToCollection(item);
 
       setAdded(true);
-      // setTimeout(() => setAdded(false), 2000);
+      setTimeout(() => setAdded(false), 2000);
     };
 
     const handleRemoveKey = (e) => {
