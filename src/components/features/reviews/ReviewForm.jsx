@@ -180,7 +180,7 @@ export default function ReviewForm({ isOpen, onClose }) {
                   <div className="grid grid-cols-6 gap-2 md:gap-3">
                     {[
                       { hex: "#1e1b4b", label: "Indigo" },
-                      { hex: "#4a3f35", label: "Taupe" },
+                      { hex: "#78290f", label: "Chocolate" },
                       { hex: "#7f1d1d", label: "Crimson" },
                       { hex: "#7c2d12", label: "Orange" },
                       { hex: "#4a044e", label: "Fuchsia" },

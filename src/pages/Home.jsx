@@ -116,7 +116,7 @@ export default function Home() {
           </motion.aside>
 
           {/* divider */}
-          <div className={cn(" -mt-4 md:-mt-12 pointer-events-none ")}>
+          <div className={cn(" -mt-4 md:-mt-12 pointer-events-none  ")}>
             <CustomSVG />
           </div>
 
