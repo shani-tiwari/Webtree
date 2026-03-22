@@ -23,6 +23,7 @@ export default function ReviewCard({ name, xProfile, gender, text }) {
             <img
               src={profileImage}
               alt={name}
+              loading="lazy"
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
             />
           </div>
