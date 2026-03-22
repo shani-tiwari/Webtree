@@ -238,7 +238,7 @@ const Card = memo(
           {/*  Description */}
           <Link to={link} target="_blank" rel="noopener noreferrer">
             <p
-              className={cn("text-[14px] max-w-full ml-1 text-neutral-400 leading-[18px] font-mono grow group-hover:text-neutral-200 transition-colors duration-300")}
+              className={cn("text-[14px] max-w-full ml-1 text-neutral-400 leading-[18px] font-mono grow group-hover:text-neutral-300 transition-colors duration-300")}
             >
               {desc}
             </p>

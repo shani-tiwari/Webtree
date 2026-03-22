@@ -179,7 +179,7 @@ function ResourceGallery({ carddata, activeCategory }) {
       layout
       aria-label="Resources grid"
       className={cn(
-        "z-10 container bg-transparent grow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[14px] content-start mt-2 md:mt-10"
+        "z-10 container bg-transparent grow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[14px] content-start mt-2 md:mt-10 transition-all duration-300"
       )}
     >
       <AnimatePresence mode="popLayout">
@@ -221,7 +221,7 @@ function ResourceGallery({ carddata, activeCategory }) {
                     )}
                   >
                     <p>Show More</p>
-                    <HugeiconsIcon icon={DragRight02Icon} size={24} />
+                    <HugeiconsIcon icon={DragRight02Icon} size={24} className="animate-pulse" />
                   </motion.button>
                 )}
                 {CardShow > 5 && (
@@ -236,7 +236,7 @@ function ResourceGallery({ carddata, activeCategory }) {
                       "bg-zinc-800/30 hover:bg-zinc-800/50 text-amber-500 font-mono font-semibold text-base md:text-lg"
                     )}
                   >
-                    <HugeiconsIcon icon={DragLeft02Icon} size={24} />
+                    <HugeiconsIcon icon={DragLeft02Icon} size={24} className="animate-pulse"  />
                     Show Less
                   </motion.button>
                 )}

@@ -34,10 +34,10 @@ const Navbar = () => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "";
+      document.body.style.overflow = "auto";
     }
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.overflow = "auto";
     };
   }, [isOpen]);
 
@@ -225,7 +225,7 @@ const Navbar = () => {
           >
             {location.pathname === "/collection" ? (
               <p 
-                className={cn("text-amber-600 font-mono text-lg hidden md:block selection:bg-amber-600-op30 selection:text-white ",
+                className={cn("text-amber-600 font-mono text-xl hidden md:block selection:bg-amber-600-op30 selection:text-white ",
                   active === "home" && "underline underline-offset-8 hover:text-amber-600-op90"
                 )}>
                 Home
@@ -240,7 +240,7 @@ const Navbar = () => {
                 icon={SquareArrowLeft02Icon}
                 size={20}
                 style={{ color: "oklch(66.6% 0.179 58.318)" }}
-                className="hidden md:flex"
+                className="hidden md:flex "
               />
             ) : (
               <div>
@@ -271,7 +271,7 @@ const Navbar = () => {
           {/* Mobile Menu Button  */}
           <div className={cn("md:hidden flex items-center justify-center gap-4")}>
             <Link
-              className={cn("relative mr-2 ml-2 active:scale-95")}
+              className={cn("relative text-xl mr-2 ml-2 active:scale-95")}
               to={location.pathname === "/collection" ? "/" : "/collection"}
               rel="noreferrer"
               aria-label={`Visit`}
@@ -299,7 +299,7 @@ const Navbar = () => {
               </sup>
             </Link>
             <button
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={() => setIsOpen(true)}
               aria-expanded={isOpen}
               aria-controls="mobile-menu"
               aria-label="Toggle menu"

@@ -30,12 +30,10 @@ export default function About() {
         "w-full min-h-screen pt-18 lg:mt-0 flex items-center justify-center flex-col bg-[#030303] px-4 relative selection:bg-amber-600-op30 selection:text-white overflow-hidden",
       )}
     >
-      {/* Background Micro-Accents */}
-      <div
-        className={cn(
-          "absolute top-0 right-0 w-64 h-64 bg-amber-500-op5 blur-[100px] rounded-full pointer-events-none",
-        )}
-      />
+      {/* Enhanced Ambient Background Accents */}
+      <div className="absolute top-0 -left-20 w-[500px] h-[500px] bg-purple-600/6 blur-[120px] rounded-full pointer-events-none animate-pulse" />
+      <div className="absolute bottom-0 -right-20 w-[500px] h-[500px] bg-blue-600/6 blur-[120px] rounded-full pointer-events-none animate-pulse" />
+
 
         <div className={cn("max-w-[1300px] mx-auto text-center px-1 md:px-14 py-8 mb-2 md:mb-0")}>
             <motion.a
