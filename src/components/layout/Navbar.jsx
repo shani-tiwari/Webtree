@@ -33,11 +33,14 @@ const Navbar = () => {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
     }
     return () => {
       document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
     };
   }, [isOpen]);
 
@@ -321,7 +324,7 @@ const Navbar = () => {
             exit={{ opacity: 0, scale: 0.97 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className={cn(
-              "fixed inset-0 z-50 w-screen h-screen bg-black/95 backdrop-blur-md md:hidden",
+              "fixed inset-0 z-50 w-screen h-screen bg-black/90 backdrop-blur-sm md:hidden",
               "flex flex-col items-center justify-center p-8 text-shadow-2xs",
             )}
           >
@@ -351,7 +354,7 @@ const Navbar = () => {
                         transition={{ 
                           duration: 0.3, 
                           ease: "easeInOut", 
-                          delay: 0.05 * (index + 1) 
+                          delay: 0.11 * (index + 1) 
                         }}
                       >
                         <Link
@@ -369,7 +372,7 @@ const Navbar = () => {
                             {link.name}
                           </span>
                           <HugeiconsIcon
-                            className={cn("mt-1",
+                            className={cn("mt-1 animate-pulse",
                               location.pathname === link.path ? "text-amber-500" : "text-white/70"
                             )}
                             icon={link.icon}
