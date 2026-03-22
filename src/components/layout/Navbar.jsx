@@ -188,9 +188,9 @@ const Navbar = () => {
             <p className="text-amber-500 mr-2 md:text-[26px]">
               ४
             </p>
-            <p className="mt-[1.5px] xl:mt-0 xl:mb-[1.5px]">
+            <h1 className="mt-[1.5px] xl:mt-0 xl:mb-[1.5px]">
               Webtree
-            </p>
+            </h1>
           </Link>
         </motion.div>
 

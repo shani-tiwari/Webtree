@@ -57,15 +57,15 @@ export default function Home() {
             animate={{ scale: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <span
+            <h1
               className={cn(
                 "wavy-underline-pulse w-fit bg-clip-text text-transparent bg-linear-to-b from-amber-300 to-amber-700",
               )}
             >
               130+
-            </span>
+            </h1>
           </motion.div>
-          <span className="font-mono text-2xl md:text-[32px]">Development Resources,Click away</span>
+          <h1 className="font-mono text-2xl md:text-[32px]">Development Resources</h1>
         </div>
       </motion.header>
 
@@ -143,7 +143,7 @@ function ResourceGallery({ carddata, activeCategory }) {
   useEffect(() => {
     if (shouldScrollIdx !== -1) {
       // Small timeout or requestAnimationFrame to ensure the new card is in the DOM
-      const scrollTimeout = setTimeout(() => {
+      // const scrollTimeout = setTimeout(() => {
         const targetEl = cardRefs.current[shouldScrollIdx];
         if (targetEl) {
           const rect = targetEl.getBoundingClientRect();
@@ -155,11 +155,11 @@ function ResourceGallery({ carddata, activeCategory }) {
             top: targetY,
             behavior: "smooth"
           });
-          setShouldScrollIdx(-1);
+          // setShouldScrollIdx(-1);
         }
-      }, 50);
+      // }, 50);
 
-      return () => clearTimeout(scrollTimeout);
+      // return () => clearTimeout(scrollTimeout);
     }
   }, [CardShow, shouldScrollIdx]);
 
@@ -192,7 +192,7 @@ function ResourceGallery({ carddata, activeCategory }) {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.5 }}
           >
             <Card
               id={item.id}
