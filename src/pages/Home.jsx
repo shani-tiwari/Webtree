@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "motion/react";
 import Categories from "../components/features/collection/Categories";
@@ -9,10 +9,13 @@ import { cn } from "../utils/utils.js";
 import CustomSVG from "../components/ui/CustomSVG";
 
 import { useCollectionData } from "../hooks/useCollectionData";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { DragLeft02Icon, DragRight02Icon, MoveLeftIcon, MoveRightIcon } from "@hugeicons/core-free-icons";
 
 export default function Home() {
   const { data, loading } = useCollectionData();
-  const [activeCategory, setActiveCategory] = useState("animation");
+  const [activeCategory, setActiveCategory] = useState("tools");
+
   const [isCollapsed, setIsCollapsed] = useState(true);
 
   const carddata = data[activeCategory] || [];
@@ -20,13 +23,6 @@ export default function Home() {
   if (loading) {
     return <SkeletonHome />;
   }
-
-  const scrollTo = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
 
   return (
     <section
@@ -125,55 +121,130 @@ export default function Home() {
           </div>
 
           {/* Cards Section */}
-          <motion.section
-            layout
-            aria-label="Resources grid"
-            className={cn(
-              "z-10 container bg-transparent grow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[14px] content-start mt-2 md:mt-10"
-            )}
-          >
-            <AnimatePresence mode="popLayout">
-              {Object.values(carddata).slice(0, isCollapsed ? 5 : undefined).map((item) => (
-                <motion.div
-                  key={item.id}
-                  layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <Card
-                    id={item.id}
-                    title={item.name}
-                    logo={item.logo}
-                    link={item.link}
-                    desc={item.desc}
-                    category={activeCategory}
-                  />
-                </motion.div>
-              ))}
-              {
-                Object.keys(data).length > 5 && (
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => {setIsCollapsed(!isCollapsed); !isCollapsed && scrollTo();}}
-                    className={cn(
-                      "relative w-[80%] mx-auto group border border-white/30 py-2 px-3 md:py-1.5 md:px-4 mb-2 rounded-[16px]",
-                      "backdrop-blur-md cursor-pointer hover:transition-colors transition-all duration-50 ease-out select-none shadow-xs shadow-white/8 hover:shadow-[0_4px_15px_rgba(0,0,0,0.6)]",
-                      "bg-zinc-800/20 hover:bg-zinc-800/40 text-amber-500 font-medium text-lg"
-                    )}
-                  >
-                    {isCollapsed ? "Show More..." : "Show Less..."}
-                  </motion.button>
-                )
-              }  
-            </AnimatePresence>
-          </motion.section>
+          <ResourceGallery
+            key={activeCategory}
+            carddata={carddata}
+            activeCategory={activeCategory}
+          />
       </section>
 
       {/* Review Section */}
       <ReviewSection />
     </section>
+  );
+}
+
+function ResourceGallery({ carddata, activeCategory }) {
+  const [CardShow, setCardShow] = useState(5);
+  const cardRefs = useRef([]);
+  const [shouldScrollIdx, setShouldScrollIdx] = useState(-1);
+
+  useEffect(() => {
+    if (shouldScrollIdx !== -1) {
+      // Small timeout or requestAnimationFrame to ensure the new card is in the DOM
+      const scrollTimeout = setTimeout(() => {
+        const targetEl = cardRefs.current[shouldScrollIdx];
+        if (targetEl) {
+          const rect = targetEl.getBoundingClientRect();
+          const scrollY = window.scrollY || window.pageYOffset;
+          // Center the target card on the screen
+          const targetY = rect.top + scrollY - (window.innerHeight / 2) + (rect.height / 2);
+
+          window.scrollTo({
+            top: targetY,
+            behavior: "smooth"
+          });
+          setShouldScrollIdx(-1);
+        }
+      }, 50);
+
+      return () => clearTimeout(scrollTimeout);
+    }
+  }, [CardShow, shouldScrollIdx]);
+
+  const handleShowMore = () => {
+    const nextLimit = Math.min(CardShow + 5, carddata.length);
+    setCardShow(nextLimit);
+    setShouldScrollIdx(nextLimit - 1);
+  };
+
+  const handleShowLess = () => {
+    const newShowCount = Math.max(5, CardShow - 5);
+    setCardShow(newShowCount);
+    setShouldScrollIdx(newShowCount - 1);
+  };
+
+  return (
+    <motion.section
+      layout
+      aria-label="Resources grid"
+      className={cn(
+        "z-10 container bg-transparent grow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[14px] content-start mt-2 md:mt-10"
+      )}
+    >
+      <AnimatePresence mode="popLayout">
+        {carddata.slice(0, CardShow).map((item, index) => {
+          return <motion.div
+            key={item.id}
+            ref={(el) => (cardRefs.current[index] = el)}
+            layout
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.3 }}
+          >
+            <Card
+              id={item.id}
+              title={item.name}
+              logo={item.logo}
+              link={item.link}
+              desc={item.desc}
+              category={activeCategory}
+            />
+          </motion.div>
+        })}
+        {
+          carddata.length > 5 && (
+            <div className=" flex items-center justify-center">
+
+              <div className="flex flex-col flex-wrap justify-center gap-4 p-2 md:p-3 rounded-[20px] bg-zinc-800/10 border border-white/10 backdrop-blur-md w-full max-w-sm mx-auto">
+                {CardShow < carddata.length && (
+                  <motion.button
+                    layout
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={handleShowMore}
+                    className={cn(
+                      "relative flex justify-center items-center gap-4 flex-1 group border border-white/20 py-2 px-4 rounded-[14px]",
+                      "backdrop-blur-md cursor-pointer transition-all duration-200 ease-out select-none shadow-xs shadow-white/8 hover:shadow-[0_4px_10px_rgba(0,0,0,0.4)]",
+                      "bg-zinc-800/30 hover:bg-zinc-800/50 font-mono text-amber-500 font-semibold text-base md:text-lg"
+                    )}
+                  >
+                    <p>Show More</p>
+                    <HugeiconsIcon icon={DragRight02Icon} size={24} />
+                  </motion.button>
+                )}
+                {CardShow > 5 && (
+                  <motion.button
+                    layout
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={handleShowLess}
+                    className={cn(
+                      "relative flex justify-center items-center gap-4 flex-1 group border border-white/20 py-2 px-4 rounded-[14px]",
+                      "backdrop-blur-md cursor-pointer transition-all duration-200 ease-out select-none shadow-xs shadow-white/8 hover:shadow-[0_4px_10px_rgba(0,0,0,0.4)]",
+                      "bg-zinc-800/30 hover:bg-zinc-800/50 text-amber-500 font-mono font-semibold text-base md:text-lg"
+                    )}
+                  >
+                    <HugeiconsIcon icon={DragLeft02Icon} size={24} />
+                    Show Less
+                  </motion.button>
+                )}
+
+              </div>
+            </div>
+        )}
+      </AnimatePresence>
+    </motion.section>
   );
 }
