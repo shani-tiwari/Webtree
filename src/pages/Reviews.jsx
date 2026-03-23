@@ -30,7 +30,7 @@ export default function Reviews() {
             <motion.h2
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-5xl md:text-7xl uppercase font-bebas-neue  tracking-wider bg-clip-text text-transparent bg-linear-to-b from-white to-neutral-500 mb-1"
+              className="text-5xl md:text-7xl italic tracking-tighter font-black hover:tracking-tight transition-all duration-500 bg-clip-text text-transparent bg-linear-to-b from-white to-neutral-500 mb-1"
             >
               Reviews
             </motion.h2>
@@ -38,7 +38,7 @@ export default function Reviews() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="text-neutral-400 px-4 md:px-0 font-mono max-w-2xl leading-tight tracking-wide"
+              className="text-neutral-400 px-4 md:px-0 font-mono max-w-2xl leading-tight tracking-tight hover:tracking-tighter transition-all duration-700"
             >
               See what others are saying about Webtree and share your own experience
             </motion.p>

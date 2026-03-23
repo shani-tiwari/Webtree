@@ -20,7 +20,7 @@ export default function GoBack() {
             hover:text-amber-500 hover:bg-black/50 active:scale-95
             transition-all duration-300 shadow-lg ring-2 ring-zinc-400/50"
         >
-          <HugeiconsIcon icon={MoveLeftIcon} className="group-hover:-translate-x-1 transition-transform duration-300" size={20} />
+          <HugeiconsIcon icon={MoveLeftIcon} className="group-hover:-translate-x-1 animate-pulse transition-transform duration-300" size={20} />
         </span>
       </motion.div>
   )
