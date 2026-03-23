@@ -73,9 +73,9 @@ const Navbar = () => {
 
   const active =
     location.pathname === "/" ? null :
-    location.pathname.startsWith("/about") ? "about" :
+    location.pathname.startsWith("/about-webtree") ? "about" :
     location.pathname.startsWith("/connect") ? "connect" :
-    location.pathname.startsWith("/reviews") ? "reviews" :
+    location.pathname.startsWith("/webtree-reviews") ? "reviews" :
     location.pathname.startsWith("/collection") ? "collection" :
     null;
 
@@ -156,10 +156,10 @@ const Navbar = () => {
   const [showLength, setShowLength] = useState(true);
   const navLinks = [
     { name: "Home",       path: "/",           icon: Home11Icon },
-    { name: "About",      path: "/about",      icon: Tree02Icon },
-    { name: "Connect",    path: "/connect",    icon: Link02FreeIcons },
-    { name: "Collection", path: "/collection", icon: FolderFavouriteIcon },
-    { name: "Reviews",    path: "/reviews",    icon: Agreement03Icon },
+    { name: "About",      path: "/about-webtree",    icon: Tree02Icon },
+    { name: "Connect",    path: "/connect",          icon: Link02FreeIcons },
+    { name: "Collection", path: "/collection",       icon: FolderFavouriteIcon },
+    { name: "Reviews",    path: "/webtree-reviews",  icon: Agreement03Icon },
   ];
 
   return (
@@ -197,20 +197,23 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className={cn("hidden md:flex grow gap-5 items-center justify-center")}>
           {
-            ['About', 'Connect', 'Reviews'].map((item) => {
-              const lowerItem = item.toLowerCase();
-              const isActive = active === lowerItem;
+            [
+              { label: 'About',   path: '/about-webtree'   },
+              { label: 'Connect', path: '/connect'         },
+              { label: 'Reviews', path: '/webtree-reviews' },
+            ].map((item) => {
+              const isActive = active === item.label.toLowerCase();
               return (
                 <Link
-                  key={item}
-                  to={`/${lowerItem}`}
+                  key={item.label}
+                  to={item.path}
                   className={cn("navItem mx-0.5",
                     isActive 
                       ? "text-amber-500 wavy-underline-pulse" 
                       : "text-neutral-400 hover:text-neutral-300"
                   )}
                 >
-                  {item}
+                  {item.label}
                 </Link>
               );
             })

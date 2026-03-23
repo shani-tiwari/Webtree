@@ -7,7 +7,7 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://webtree.shaniweb.com/about</loc>
+    <loc>https://webtree.shaniweb.com/about-webtree</loc>
     <lastmod>2026-03-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -19,7 +19,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://webtree.shaniweb.com/reviews</loc>
+    <loc>https://webtree.shaniweb.com/webtree-reviews</loc>
     <lastmod>2026-03-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

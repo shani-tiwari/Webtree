@@ -66,7 +66,7 @@ export default function Reviews() {
           whileInView={{width:"90%"}}
           transition={{duration:0.6, delay:0.3, originX:50, ease: "easeOut"}}
           className="z-90 h-[0.5px] block mx-auto lg:min-w-full -mt-4 md:mt-0 mb-2 bg-white/40 relative">
-          { location.pathname === "/reviews" && 
+          { location.pathname === "/webtree-reviews" && 
             <GoBack />
           }
         </motion.span>

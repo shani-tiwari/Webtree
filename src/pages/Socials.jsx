@@ -163,9 +163,9 @@ export default function Socials() {
         <div className="mb-8 space-y-3 md:space-y-4 text-center">
           <motion.a
             href="/connect"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="text-5xl md:text-7xl mx-auto font-black text-white/90 tracking-tighter"
           >
             Stay <span className="text-neutral-500 italic">Connected</span>

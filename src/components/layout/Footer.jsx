@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { cn } from "../../utils/utils.js";
 
 export default function Footer() {
@@ -20,13 +21,18 @@ export default function Footer() {
           )}
         >
           Made with <span className={cn("animate-bounce")}>❤️</span> by{" "}
-          <span
+          <Link
+            to='/connect'
+            title="Connect with Shani Tiwari"
+            aria-label="Connect with Shani Tiwari"
+            rel="noopener noreferrer"
+             
             className={cn(
-              "text-white hover:text-amber-500 cursor-default tracking-wider transition-colors duration-300",
+              "text-white hover:text-amber-500 tracking-wider cursor-pointer transition-colors duration-300",
             )}
           >
             Shani Tiwari
-          </span>
+          </Link>
         </p>
         <p
           className={cn(

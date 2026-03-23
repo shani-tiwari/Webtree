@@ -13,7 +13,7 @@ const Collection = React.lazy(() => import("./pages/Collection"));
 
 function App() {
   const location = useLocation();
-  const isFullScreenRoute = ["/about", "/connect", "/reviews"].includes(location.pathname);
+  const isFullScreenRoute = ["/about-webtree", "/connect", "/webtree-reviews"].includes(location.pathname);
 
   return (
     <>
@@ -46,9 +46,9 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/collection" element={<Collection />} />
-              <Route path="/about" element={<About />} />
+              <Route path="/about-webtree" element={<About />} />
               <Route path="/connect" element={<Socials />} />
-              <Route path="/reviews" element={<Reviews />} />
+              <Route path="/webtree-reviews" element={<Reviews />} />
             </Routes>
           </React.Suspense>
 

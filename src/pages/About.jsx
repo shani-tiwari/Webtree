@@ -35,19 +35,19 @@ export default function About() {
       <div className="absolute bottom-0 -right-20 w-[500px] h-[500px] bg-blue-600/6 blur-[120px] rounded-full pointer-events-none animate-pulse" />
 
 
-        <div className={cn("max-w-[1300px] mx-auto text-center px-1 md:px-14 py-8 mb-2 md:mb-0")}>
+        <h1 className={cn("max-w-[1300px] mx-auto text-center px-1 md:px-14 py-8 mb-2 md:mb-0")}>
             <motion.a
-              href={location.pathname !== "/about" && "/about" }
+              href={location.pathname !== "/about-webtree" && "/about-webtree" }
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className={cn(
-                "text-4xl italic md:text-5xl mx-auto text-center font-black text-white/90 tracking-tighter",
+                "text-4xl flex gap-4 italic md:text-7xl mx-auto text-center font-black text-white/90 tracking-tighter",
               )}
             >
-              About <span className={cn("text-neutral-500 italic")}>Webtree</span>
+              About <h1 className={cn("text-neutral-500 italic")}>Webtree</h1>
             </motion.a>
-        </div>
+        </h1>
 
       {/* back button & divider */}
         <motion.span 
@@ -56,7 +56,7 @@ export default function About() {
           whileInView={{width:"95%"}}
           transition={{duration:0.6, delay:0.3, originX:50, ease: "easeOut"}}
           className="z-90 h-[0.5px] lg:max-w-[80%]  mx-auto -mt-4 md:mt-0 mb-2 bg-white/40 relative">
-          { location.pathname === "/about" && 
+          { location.pathname === "/about-webtree" && 
             <GoBack />
           }
         </motion.span>
@@ -117,7 +117,7 @@ export default function About() {
                 whileHover={{ x: 5 }}
                 className="flex gap-2 group cursor-default"
               >
-                <span className="text-amber-500 group-hover:text-amber-400 transition-colors">
+                <span className="text-amber-500 group-hover:text-amber-400 transition-colors animate-pulse">
                   →
                 </span>
                 <span>
@@ -176,7 +176,7 @@ export default function About() {
                   </div>
                 )}
                 <p className="text-sm font-semibold tracking-wide text-white group-hover:text-amber-500 transition-colors">
-                  <span className="text-amber-500">• </span>
+                  <span className="text-amber-500 animate-pulse"> • </span>
                   {item.title}
                 </p>
                 <p className="text-xs text-gray-500 mt-1 leading-4 pl-[10px]">

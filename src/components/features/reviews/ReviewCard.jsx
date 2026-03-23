@@ -7,7 +7,7 @@ export default function ReviewCard({ xProfile, gender, text, bgColor }) {
   const profileImage = gender === "female" ? "/user-img/female.png" : "/user-img/male.jpg";
   return (
     <Link 
-      to={"/reviews"}
+      to={"/webtree-reviews"}
       style={{ backgroundColor: bgColor || "#0a0a0a"}}
       className={cn(
         "relative group flex flex-col w-full md:w-[350px] py-3 px-4 rounded-3xl border-2 border-zinc-600 shadow-lg shrink-0",

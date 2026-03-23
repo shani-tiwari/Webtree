@@ -51,7 +51,7 @@ export default function ReviewSection() {
         
         <div className="flex items-center gap-4">
           <Link
-            to="/reviews"
+            to="/webtree-reviews"
             className="group flex items-center justify-center gap-2 px-5 py-2.5 rounded-full hover:scale-105 border border-white/10 bg-zinc-900/50 text-white/80 hover:bg-zinc-800 hover:text-white transition-all duration-300 font-mono text-sm active:scale-95"
           >
              View All
