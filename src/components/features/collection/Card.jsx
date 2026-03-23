@@ -108,7 +108,7 @@ const Card = memo(
                 whileTap={{ scale: 0.97 }}
                 onClick={handleAddKey}
                 className={cn(
-                  "group/icon absolute right-[10px] flex items-center justify-center transition-all duration-200 z-30",
+                  "group/icon absolute right-[10px] flex items-center justify-center z-30",
                   "p-1 rounded-xl bg-white/2 border-2 border-white/20 cursor-pointer active:scale-95",
                   isCollected
                     ? "text-emerald-600 font-bold hover:text-emerald-500 filter-[drop-shadow(0_0_4px_rgba(16,185,129,0.3))]"
@@ -128,7 +128,7 @@ const Card = memo(
                 <span
                   className={cn(
                     "hidden md:flex absolute right-full -top-2 mr-2 w-max px-2 py-1 text-[10px] uppercase bg-zinc-900 border border-white/10 rounded-md shadow-xs",
-                    "tracking-wide font-semibold invisible group-hover/icon:visible transition-all duration-300 pointer-events-none z-99 ",
+                    "tracking-wide font-semibold invisible group-hover/icon:visible pointer-events-none z-99 ",
                   )}
                 >
                   {added ? "Added" : isCollected ? "Added" : "+ Add"}
@@ -142,14 +142,14 @@ const Card = memo(
                 onClick={handleRemoveKey}
                 className={cn(
                   "group/delete absolute right-2 flex items-center justify-center text-red-600/90 hover:text-red-500 p-1 rounded-xl border-2 border-white/20 z-30",
-                  "active:scale-95 transition-all duration-200 cursor-pointer",
+                  "active:scale-95 cursor-pointer",
                 )}
               >
                 <HugeiconsIcon icon={Delete03Icon} size={19} />
                 <span
                   className={cn(
                     " hidden md:flex absolute right-full mr-2 -mt-4 w-max px-2.5 py-[3px] text-[10px] uppercase bg-zinc-900 border border-white/10 rounded-md filter-[drop-shadow(0_0_4px_rgba(220,38,50,0.3))] ",
-                    "shadow-xs tracking-wide font-semibold invisible group-hover/delete:opacity-100 group-hover/delete:visible transition-all duration-200 pointer-events-none z-99",
+                    "shadow-xs tracking-wide font-semibold invisible group-hover/delete:opacity-100 group-hover/delete:visible pointer-events-none z-99",
                   )}
                 >
                   Remove
@@ -163,7 +163,7 @@ const Card = memo(
               whileTap={{ scale: 0.97 }}
               onClick={handleCopy}
               className={cn(
-                "group/copy absolute right-[42px] top-[4px] flex items-center justify-center active:scale-95 transition-all duration-200 z-30",
+                "group/copy absolute right-[42px] top-[4px] flex items-center justify-center active:scale-95 z-30",
                 "text-sky-300/80 group-hover:text-sky-500/80 p-1 rounded-xl bg-white/2 border-2 border-white/20 cursor-pointer",
               )}
             >
@@ -171,7 +171,7 @@ const Card = memo(
               <span
                 className={cn(
                   "hidden md:flex absolute right-full mr-2 w-max px-2.5 py-1 text-[10px] uppercase bg-zinc-900 border border-white/20 rounded-md shadow-xs ",
-                  "filter-[drop-shadow(0_0_4px_rgba(125,211,252,0.3))] font-semibold invisible group-hover/copy:opacity-100 group-hover/copy:visible transition-all duration-300 pointer-events-none z-99",
+                  "filter-[drop-shadow(0_0_4px_rgba(125,211,252,0.3))] font-semibold invisible group-hover/copy:opacity-100 group-hover/copy:visible pointer-events-none z-99",
                 )}
               >
                 {copied ? "Copied!" : "Copy Link"}
@@ -184,7 +184,7 @@ const Card = memo(
               whileTap={{ scale: 0.97 }}
               onClick={handleShare}
               className={cn(
-                "group/share absolute top-[20px] right-[10px] flex items-center justify-center active:scale-95 transition-all duration-200 z-30",
+                "group/share absolute top-[20px] right-[10px] flex items-center justify-center active:scale-95 z-30",
                 "text-indigo-400 group-hover:text-indigo-500 p-1 rounded-xl bg-white/2 border-2 border-white/20 cursor-pointer",
               )}
             >
@@ -192,7 +192,7 @@ const Card = memo(
               <span
                 className={cn(
                   "hidden md:flex absolute top-[78%] -left-14 w-max px-2.5 py-[3px] text-[10px] uppercase bg-zinc-900 border border-white/20 rounded-md shadow-xs font-semibold invisible filter-[drop-shadow(0_0_4px_rgba(160,180,252,0.3))]",
-                  "tracking-wide group-hover/share:visible transition-all duration-200 pointer-events-none z-999",
+                  "tracking-wide group-hover/share:visible pointer-events-none z-999",
                 )}
               >
                 Share
@@ -266,10 +266,14 @@ const Card = memo(
           {allowRemove && (
             <span
               className={cn(
-                "absolute -bottom-[8.5px] right-8 mt-4 w-fit text-[10px] px-3 py-1 z-999 bg-black/20 border border-white/10",
-                "rounded-full text-amber-700 uppercase font-black tracking-widest leading-none will-change-transform",
+                " flex items-center gap-2 absolute -bottom-[8.5px] right-8 mt-4 w-fit text-[10px] px-3 py-1 z-999 bg-black/90 border border-white/10 transition-all duration-300",
+                "rounded-full text-amber-700 font-bold tracking-[1.4px] leading-none shadow-zinc-600 shadow-xs",
               )}
             >
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-600 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-600"></span>
+              </span>
               {category
                 .split("_")
                 .map((w) => w.charAt(0).toUpperCase() + w.slice(1))

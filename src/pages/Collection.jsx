@@ -20,7 +20,7 @@ export default function Collection() {
           Your personally curated list of resources
         </p>
         <p className="text-sm md:text-base font-mono mt-3 opacity-80 text-green-300">
-          Added Items - {collection.length} 🎯
+          Added Websites - {collection.length} 🎯
         </p>
       </header>
 

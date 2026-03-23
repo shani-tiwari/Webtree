@@ -232,12 +232,12 @@ const Navbar = () => {
             {location.pathname === "/collection" ? (
               <p 
                 className={cn("text-amber-600 font-mono text-xl hidden md:block selection:bg-amber-600-op30 selection:text-white ",
-                  active === "home" && "underline underline-offset-8 hover:text-amber-600-op90"
+                  active !== "home" && "underline underline-offset-10 hover:text-amber-600-op90"
                 )}>
                 Home
               </p>
             ) : (
-              <p className={cn("text-neutral-400 font-mono mr-1 tracking-tight hover:text-neutral-300/90 text-lg md:text-[22px] hidden md:block selection:bg-amber-600-op30 selection:text-white")}>
+              <p className={cn("text-neutral-400 font-mono mr-1 tracking-tight hover:text-neutral-300/90 text-lg md:text-[21px] hidden md:block selection:bg-amber-600-op30 selection:text-white")}>
                 Collection
               </p>
             )}
@@ -264,7 +264,7 @@ const Navbar = () => {
             )}
             <span
               className={cn(
-                "hidden md:flex absolute top-full font-mono right-0 mt-3 px-3 py-1.5 tracking-widest bg-zinc-900/90 text-zinc-100/90 text-[10px] uppercase rounded-lg backdrop-blur-md",
+                "hidden md:flex absolute top-full font-mono right-0 mt-3 px-3 py-1.5 tracking-widest bg-zinc-900/90 font-semibold text-amber-600/90 text-[10px] uppercase rounded-lg backdrop-blur-md",
                 "opacity-0 scale-95 translate-y-2 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 invisible group-hover:visible transition-all duration-300 ease-out pointer-events-none border border-white/30 shadow-xl whitespace-nowrap z-50",
               )}
             >
