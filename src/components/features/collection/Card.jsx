@@ -104,8 +104,9 @@ const Card = memo(
           >
             {!allowRemove && (
               <motion.span
-                whileHover={{ y: -2 }}
+                whileHover={{ y: -2, scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
+                transition={{ duration: 0.2, ease: [0.79, 0.47, 0.24, 0.98] }}
                 onClick={handleAddKey}
                 className={cn(
                   "group/icon absolute right-[10px] flex items-center justify-center z-30",
@@ -137,8 +138,9 @@ const Card = memo(
             )}
             {allowRemove && (
               <motion.span
-                whileHover={{ scale: 1.02, y: -2 }}
+                whileHover={{ scale: 1.03, y: -2 }}
                 whileTap={{ scale: 0.97 }}
+                transition={{ duration: 0.1 }}
                 onClick={handleRemoveKey}
                 className={cn(
                   "group/delete absolute right-2 flex items-center justify-center text-red-600/90 hover:text-red-500 p-1 rounded-xl border-2 border-white/20 z-30",
@@ -159,12 +161,13 @@ const Card = memo(
 
             {/* Copy Link Button */}
             <motion.span
-              whileHover={{ scale: 1.02, y: -2 }}
+              whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.97 }}
+              transition={{ duration: 0.1 }}
               onClick={handleCopy}
               className={cn(
                 "group/copy absolute right-[42px] top-[4px] flex items-center justify-center active:scale-95 z-30",
-                "text-sky-300/80 group-hover:text-sky-500/80 p-1 rounded-xl bg-white/2 border-2 border-white/20 cursor-pointer",
+                "text-sky-300/80 group-hover:text-sky-500/90 p-1 rounded-xl bg-white/2 border-2 border-white/20 cursor-pointer",
               )}
             >
               <HugeiconsIcon icon={Copy02Icon} size={19} />
@@ -180,19 +183,20 @@ const Card = memo(
 
             {/* Share Button */}
             <motion.span
-              whileHover={{ scale: 1.02, y: -2 }}
+              whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.97 }}
+              transition={{ duration: 0.1 }}
               onClick={handleShare}
               className={cn(
                 "group/share absolute top-[20px] right-[10px] flex items-center justify-center active:scale-95 z-30",
-                "text-indigo-400 group-hover:text-indigo-500 p-1 rounded-xl bg-white/2 border-2 border-white/20 cursor-pointer",
+                "text-indigo-500 group-hover:text-indigo-600 p-1 rounded-xl bg-white/2 border-2 border-white/20 cursor-pointer",
               )}
             >
               <HugeiconsIcon icon={SentIcon} size={19} />
               <span
                 className={cn(
-                  "hidden md:flex absolute top-[78%] -left-14 w-max px-2.5 py-[3px] text-[10px] uppercase bg-zinc-900 border border-white/20 rounded-md shadow-xs font-semibold invisible filter-[drop-shadow(0_0_4px_rgba(160,180,252,0.3))]",
-                  "tracking-wide group-hover/share:visible pointer-events-none z-999",
+                  "hidden md:flex absolute top-[78%] px-2.5 -left-14 w-max  py-[3px] text-[10px] uppercase bg-zinc-900 border border-white/20 rounded-md shadow-xs",
+                  " font-semibold invisible filter-[drop-shadow(0_0_4px_rgba(160,180,252,0.3))] tracking-wide group-hover/share:visible pointer-events-none z-999",
                 )}
               >
                 Share
@@ -208,7 +212,7 @@ const Card = memo(
           >
             <div
               className={cn(
-                "w-9 h-9 rounded-xl bg-neutral-900/50 flex items-center justify-center border border-white/10 overflow-hidden shrink-0 group-hover:scale-120 transition-all duration-300",
+                "w-9 h-9 rounded-xl bg-neutral-900/50 flex items-center justify-center border border-white/10 overflow-hidden shrink-0 group-hover:scale-120 transition-all duration-200",
               )}
             >
               {logo ? (
@@ -240,7 +244,8 @@ const Card = memo(
             <Link to={link} target="_blank" rel="noopener noreferrer">
               <h3
                 className={cn(
-                  "font-semibold text-xl md:text-2xl mt-1 mb-[10px] font-sans text-gray-100 leading-6 tracking-wide group-hover:text-amber-500 transition-colors duration-300",
+                  "font-semibold bg-clip-text text-transparent bg-linear-to-b from-zinc-100 to-zinc-300/80 text-xl md:text-2xl mt-1 mb-[10px] font-sans  leading-6 tracking-wide",
+                  " group-hover:text-amber-500 group-hover:tracking-[-0.001em] transition-all duration-300",
                 )}
               >
                 {title}
@@ -255,7 +260,7 @@ const Card = memo(
           <Link to={link} target="_blank" rel="noopener noreferrer">
             <p
               className={cn(
-                "text-[14px] max-w-full ml-1 text-neutral-400 leading-[18px] font-mono grow group-hover:text-neutral-300 transition-colors duration-300",
+                "text-[14px] text-shadow-2xs text-shadow-black max-w-full ml-1 text-neutral-400 leading-[18px] font-mono grow group-hover:text-neutral-300 transition-all duration-300",
               )}
             >
               {desc}

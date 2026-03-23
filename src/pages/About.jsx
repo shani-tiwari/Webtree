@@ -42,7 +42,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className={cn(
-                "text-4xl flex gap-4 italic md:text-7xl mx-auto text-center font-black text-white/90 tracking-tighter",
+                "text-4xl flex gap-4 italic md:text-7xl mx-auto text-center font-black text-white/90 tracking-tighter hover:tracking-tight transition-all duration-500",
               )}
             >
               About <h1 className={cn("text-neutral-500 italic")}>Webtree</h1>
@@ -79,7 +79,7 @@ export default function About() {
               Our Mission
             </h3>
           </div>
-          <p className="text-gray-300/70 text-center md:text-start hover:text-gray-300 transition-all duration-300 leading-6 hover:leading-7 px-2 md:pr-10 md:pl-0">
+          <p className="text-gray-300/80 text-shadow-black text-shadow-sm tracking-wide text-center md:text-start hover:text-gray-300 transition-all duration-500 leading-6 hover:scale-105 hover:translate-y-3 px-2 md:pr-10 md:pl-0">
             WebTree was born from a simple need: to cut through the noise of the
             modern web. We curate the finest frontend magic—from Tailwind
             components and Framer prototypes to essential performance
@@ -121,7 +121,9 @@ export default function About() {
                   →
                 </span>
                 <span>
-                  <strong className="text-neutral-200 tracking-wide">{item.title}:</strong>{" "}
+                  <strong className="text-neutral-200 tracking-wide">
+                    {item.title}:
+                  </strong>{" "}
                   {item.desc}
                 </span>
               </motion.li>
@@ -162,15 +164,15 @@ export default function About() {
                   x: 5,
                   backgroundColor: "rgba(255, 255, 255, 0.08)",
                 }}
-                className="py-2 px-3 rounded-xl bg-white/5 border border-white/10 relative overflow-hidden group transition-colors"
+                className="group py-2 px-3 rounded-xl bg-white/5 border border-white/10 relative overflow-hidden transition-all duration-300"
               >
                 {item.live && (
                   <div className="absolute top-3 right-3 flex items-center gap-2">
-                    <span className="relative flex h-2 w-2">
+                    <span className="relative flex h-2 w-[10px]">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-[10px] bg-amber-500"></span>
                     </span>
-                    <span className="text-[10px] uppercase tracking-tighter text-amber-500-op80 font-semibold">
+                    <span className="text-[10px] uppercase tracking-tight text-amber-500-op80 font-semibold">
                       Live Soon
                     </span>
                   </div>
@@ -179,8 +181,8 @@ export default function About() {
                   <span className="text-amber-500 animate-pulse"> • </span>
                   {item.title}
                 </p>
-                <p className="text-xs text-gray-500 mt-1 leading-4 pl-[10px]">
-                  {item.desc}
+                <p className="text-xs text-gray-400/80 mt-1 group-hover:text-neutral-400 leading-4 pl-[10px]">
+                  + {item.desc}
                 </p>
               </motion.div>
             ))}

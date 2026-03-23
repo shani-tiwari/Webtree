@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 // eslint-disable-next-line no-unused-vars
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence, easeInOut } from "motion/react";
 import Categories from "../components/features/collection/Categories";
 import Card from "../components/features/collection/Card";
 import SkeletonHome from "../components/ui/SkeletonHome";
@@ -65,7 +65,7 @@ export default function Home() {
               130+
             </h1>
           </motion.div>
-          <h1 className="font-mono text-2xl md:text-[32px]">Development Resources</h1>
+          <h1 className="font-mono md:-mt-[3px] text-2xl md:text-[32px] hover:tracking-wide transition-all duration-500">Development Resources</h1>
         </div>
       </motion.header>
 
@@ -77,10 +77,10 @@ export default function Home() {
           <motion.aside
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: easeInOut }}
             aria-label="Category selection"
             className={cn(
-              "z-40 gap-1 md:gap-2 w-full h-fit px-2 md:py-3 md:pt-4 mb-8 max-w-4xl mx-auto shrink-0 flex flex-wrap justify-center rounded-xl  text-white backdrop-blur-sm",
+              "z-40 gap-1 md:gap-2 w-full h-fit px-2 md:py-3 md:pt-4 mb-8 max-w-4xl mx-auto shrink-0 flex flex-wrap justify-center rounded-xl text-white backdrop-blur-sm",
               isCollapsed ? "lg:mb-8" : "mb-6 lg:mb-0"
             )}
           >

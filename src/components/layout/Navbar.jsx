@@ -155,7 +155,7 @@ const Navbar = () => {
 
   const [showLength, setShowLength] = useState(true);
   const navLinks = [
-    { name: "Home",       path: "/",           icon: Home11Icon },
+    { name: "Home",       path: "/",                 icon: Home11Icon },
     { name: "About",      path: "/about-webtree",    icon: Tree02Icon },
     { name: "Connect",    path: "/connect",          icon: Link02FreeIcons },
     { name: "Collection", path: "/collection",       icon: FolderFavouriteIcon },
@@ -198,7 +198,7 @@ const Navbar = () => {
         <div className={cn("hidden md:flex grow gap-5 items-center justify-center")}>
           {
             [
-              { label: 'About',   path: '/about-webtree'   },
+              { label: 'About'  , path: '/about-webtree'   },
               { label: 'Connect', path: '/connect'         },
               { label: 'Reviews', path: '/webtree-reviews' },
             ].map((item) => {
@@ -208,10 +208,7 @@ const Navbar = () => {
                   key={item.label}
                   to={item.path}
                   className={cn("navItem mx-0.5",
-                    isActive 
-                      ? "text-amber-500 wavy-underline-pulse" 
-                      : "text-neutral-400 hover:text-neutral-300"
-                  )}
+                    isActive ? "text-amber-500 wavy-underline-pulse" : "text-neutral-400 hover:text-neutral-300")}
                 >
                   {item.label}
                 </Link>
@@ -237,12 +234,13 @@ const Navbar = () => {
                 Home
               </p>
             ) : (
-              <p className={cn("text-neutral-400 font-mono mr-1 tracking-tight hover:text-neutral-300/90 text-lg md:text-[21px] hidden md:block selection:bg-amber-600-op30 selection:text-white")}>
+              <p className={cn("text-neutral-400 font-mono mr-1 tracking-tight hover:tracking-[0.001em] transition-all duration-250 hover:text-neutral-300/90",
+                "text-lg md:text-[21px] hidden md:block selection:bg-amber-600-op30 selection:text-white")}>
                 Collection
               </p>
             )}
             {location.pathname === "/collection" ? (
-              <HugeiconsIcon
+              <HugeiconsIcon 
                 icon={SquareArrowLeft02Icon}
                 size={20}
                 style={{ color: "oklch(66.6% 0.179 58.318)" }}

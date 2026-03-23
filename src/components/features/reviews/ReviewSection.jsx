@@ -42,26 +42,28 @@ export default function ReviewSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             // viewport={{ once: true }}
-            className="text-4xl font-black text-white/90 md:text-5xl italic tracking-tight"
+            className="text-4xl font-black text-white/90 md:text-5xl italic tracking-tight hover:tracking-tighter transition-all duration-500"
           >
             Review <span className={cn("text-neutral-500 italic")}>Feedback</span> 
           </motion.h2>
-          <p className="text-zinc-400 font-mono text-sm mt-2">What developers say about <span className="text-amber-600">webtree</span> </p>
+          <p className="text-zinc-400 font-mono text-sm mt-2 hover:tracking-tighter transition-all duration-500">What developers say about <span className="text-amber-600">webtree</span> </p>
         </div>
         
         <div className="flex items-center gap-4">
           <Link
             to="/webtree-reviews"
-            className="group flex items-center justify-center gap-2 px-5 py-2.5 rounded-full hover:scale-105 border border-white/10 bg-zinc-900/50 text-white/80 hover:bg-zinc-800 hover:text-white transition-all duration-300 font-mono text-sm active:scale-95"
+            className={cn("group flex items-center justify-center gap-2 px-5 py-2.5 rounded-full hover:-translate-y-1 border border-white/10 bg-zinc-900/50",
+            "text-white/80 hover:bg-zinc-800 hover:tracking-wide hover:text-white transition-all duration-200 font-mono text-sm active:scale-95")}
           >
              View All
              <HugeiconsIcon icon={Navigation03Icon} size={16} className="group-hover:translate-x-1 group-hover:-translate-y-0.3 transition-transform" />
           </Link>
            <button
               onClick={() => setIsFormOpen(true)}
-              className="group flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-amber-500-op10 border border-amber-500-op30 text-amber-500 hover:bg-amber-500-op80 hover:scale-105 hover:text-black transition-all duration-300 font-bold text-sm active:scale-95 shadow-[0_0_15px_var(--color-amber-500-op10)] hover:shadow-[0_0_20px_var(--color-amber-500-op40)]"
+              className={cn("group flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-amber-500-op10 border border-amber-500-op30 text-amber-500 hover:bg-amber-500-op40 ",
+                "hover:-translate-y-1 hover:tracking-wide hover:text-zinc-200 transition-all duration-200 font-bold text-sm active:scale-95 shadow-[0_0_15px_var(--color-amber-500-op10)] hover:shadow-[0_0_15px_var(--color-amber-500-op40)]")}
            >
-            <HugeiconsIcon icon={PlusSignCircleIcon} size={16} className="group-hover:rotate-90 transition-transform duration-300" />
+            <HugeiconsIcon icon={PlusSignCircleIcon} size={16} className="group-hover:rotate-90 transition-transform duration-200" />
             Add Review
           </button>
         </div>
