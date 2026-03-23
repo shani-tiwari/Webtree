@@ -5,15 +5,18 @@ import "./index.css";
 import App from "./App.jsx";
 import { CollectionProvider } from "./context/CollectionContext";
 import { registerSW } from "virtual:pwa-register";
+import SmoothScroll from "./components/ui/SmoothScroll";
 
 registerSW({ immediate: true });
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
-      <CollectionProvider>
-        <App />
-      </CollectionProvider>
-    </BrowserRouter>
+    <SmoothScroll>
+      <BrowserRouter>
+        <CollectionProvider>
+          <App />
+        </CollectionProvider>
+      </BrowserRouter>
+    </SmoothScroll>
   </StrictMode>
 );
