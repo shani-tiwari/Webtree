@@ -10,7 +10,9 @@
 <br/>
 
 <p align="center">
-  <h2 align="center">Your Development Resource Hub(130+ websites in 15+ categories
+  <h2 align="center">
+    Your Development Resource Hub (130+ websites in 15+ categories)
+    <br/>
     <a target="_blank" href="https://webtree.shaniweb.com/" > Live link <a/> 
   </h2>
 </p>
