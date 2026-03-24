@@ -70,24 +70,28 @@ export default function Home() {
       </motion.header>
 
       {/* categories & cards */}
-      <section
+      <motion.section
+        layout
+        transition={{ layout: { duration: 0.5, ease: "easeInOut" } }}
         className={cn("w-full flex flex-col gap-4 md:gap-8 px-1 md:px-14")}
       >
         {/* categories */}
-          <motion.aside
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3, ease: easeInOut }}
-            aria-label="Category selection"
-            className={cn(
-              "z-40 gap-1 md:gap-2 w-full h-fit px-2 md:py-3 md:pt-4 mb-8 max-w-4xl mx-auto shrink-0 flex flex-wrap justify-center rounded-xl text-white backdrop-blur-sm",
-              isCollapsed ? "lg:mb-8" : "mb-6 lg:mb-0"
-            )}
-          >
+        <motion.aside
+          layout
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: 0.3, ease: "easeOut", layout: { duration: 0.35, ease: "easeInOut" } }}
+          aria-label="Category selection"
+          className={cn(
+            "z-40 gap-1 md:gap-2 w-full h-fit px-2 md:py-3 md:pt-4 mb-8 max-w-4xl mx-auto shrink-0 flex flex-wrap justify-center rounded-xl text-white backdrop-blur-sm",
+            isCollapsed ? "lg:mb-8" : "mb-6 lg:mb-0"
+          )}
+        >
+          <AnimatePresence mode="popLayout">
             {
-              Object.keys(data).slice(0, isCollapsed ? (5+3) : undefined).map((name, index) => (
+              Object.keys(data).slice(0, isCollapsed ? (5 + 3) : undefined).map((name, index) => (
                 <Categories
-                  key={index}
+                  key={name}
                   name={name}
                   index={index}
                   data={data}
@@ -96,29 +100,35 @@ export default function Home() {
                 />
               ))
             }
-            {
-              Object.keys(data).length > 5 && (
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => setIsCollapsed(!isCollapsed)}
-                  className={cn(
-                    "relative w-fit group border border-white/30 py-[3px] px-3 md:py-1.5 md:px-4 mb-2 rounded-[12px] md:rounded-[14px]",
-                    "backdrop-blur-md cursor-pointer hover:transition-colors transition-all duration-50 ease-out select-none shadow-xs shadow-white/8 hover:shadow-[0_4px_15px_rgba(0,0,0,0.6)]",
-                    "bg-zinc-800/20 hover:bg-zinc-800/40 text-amber-500 font-medium text-sm"
-                  )}
-                >
-                  {isCollapsed ? "More..." : "Less"}
-                </motion.button>
-              )
-            }
-
-          </motion.aside>
+          </AnimatePresence>
+          {
+            Object.keys(data).length > 5 && (
+              <motion.button
+                layout
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ duration: 0.17, delay: 0.09, ease: 'easeOut' }}
+                onClick={() => setIsCollapsed(!isCollapsed)}
+                className={cn(
+                  "relative w-fit group border border-white/30 py-[3px] px-3 md:py-1.5 md:px-4 mb-2 rounded-[12px] md:rounded-[14px]",
+                  "backdrop-blur-md cursor-pointer hover:transition-colors transition-all duration-50 ease-out select-none shadow-xs shadow-white/8 hover:shadow-[0_4px_15px_rgba(0,0,0,0.6)]",
+                  "bg-linear-to-br from-zinc-900 to-zinc-950 hover:bg-zinc-800/40 text-amber-500 font-medium text-sm"
+                )}
+              >
+                {isCollapsed ? "More" : "Less"}
+              </motion.button>
+            )
+          }
+        </motion.aside>
 
           {/* divider */}
-          <div className={cn(" -mt-4 md:-mt-12 pointer-events-none  ")}>
+
+          <motion.div
+            layout
+            transition={{ layout: { duration: 0.5, ease: "easeOut" } }}
+            className={cn("-mt-4 md:-mt-12 pointer-events-none z-50 relative")}>
             <CustomSVG />
-          </div>
+          </motion.div>
 
           {/* Cards Section */}
           <ResourceGallery
@@ -127,7 +137,7 @@ export default function Home() {
             activeCategory={activeCategory}
           />
 
-      </section>
+      </motion.section>
 
       {/* Review Section */}
       <ReviewSection />

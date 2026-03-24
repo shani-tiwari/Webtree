@@ -4,25 +4,34 @@ import { motion } from "motion/react";
 import { cn } from "../../../utils/utils.js";
 
 const Categories = React.memo(
-  ({ name, data, isActive, setActiveCategory }) => {
+  ({ name, index, data, isActive, setActiveCategory }) => {
     const handleClick = () => {
       setActiveCategory(name);
     };
 
     return (
       <motion.button
-        whileHover={{ scale: 1.02, y: -2 }}
-        whileTap={{ scale: 0.97 }}
-        transition={{  duration: 0.1 }}
+        layout
+        initial={{ opacity: 0, y: 8, scale: 0.92 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.88, y: 6, transition: { duration: 0.15, delay: 0, ease: "easeInOut" } }}
+        whileHover={{ scale: 1.02, y: -2, transition: { duration: 0.15, delay: 0, ease: "easeInOut" } }}
+        whileTap={{ scale: 0.97, transition: { duration: 0.08, delay: 0 } }}
+        transition={{
+          duration: 0.22,
+          delay: index * 0.03,
+          ease: "easeOut",
+          layout: { duration: 0.26, ease: "easeOut" },
+        }}
         onClick={handleClick}
         aria-pressed={isActive}
         aria-label={`Select ${name.split("_").join(" ")} category`}
         className={cn(
           "relative w-fit group border border-white/30 py-[3px] px-3 md:py-1.5 md:px-4 mb-2 rounded-[12px] md:rounded-[14px]",
-          "backdrop-blur-md cursor-pointer select-none shadow-xs shadow-white/8 hover:shadow-[0_4px_15px_rgba(0,0,0,0.6)]",
+          "backdrop-blur-md cursor-pointer select-none shadow-xs shadow-white/8 hover:shadow-[0_4px_15px_rgba(0,0,0,0.6)] ",
           isActive
             ? "bg-linear-to-br from-amber-600-op30 to-amber-700-op30 shadow-[inset_0_1px_0_rgba(255,255,255,0.5),0_2px_4px_rgba(0,0,0,0.8)]"
-            : "bg-zinc-800/20 hover:bg-zinc-800/40 shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_1px_3px_rgba(0,0,0,0.4)]",
+            : "bg-linear-to-br from-zinc-800/60 to-zinc-950 hover:bg-zinc-800/40 shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_1px_3px_rgba(0,0,0,0.4)]",
         )}
       >
         <span
