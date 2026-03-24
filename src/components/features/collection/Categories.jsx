@@ -60,7 +60,7 @@ const Categories = React.memo(
           {
             isActive && (
               <span
-                className="absolute mx-auto -bottom-[6.1px] md:-bottom-[9px] xl:-bottom-[9.5px] left-0 w-[95%] h-px bg-linear-to-l from-transparent via-zinc-200 to-transparent "
+                className="absolute mx-auto -bottom-[6.6px] md:-bottom-[9px] xl:-bottom-[9.5px] left-0 w-[95%] h-px bg-linear-to-l from-transparent via-zinc-200 to-transparent "
               />
             )
           }
