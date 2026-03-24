@@ -105,14 +105,14 @@ export default function Home() {
             Object.keys(data).length > 5 && (
               <motion.button
                 layout
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ duration: 0.17, delay: 0.09, ease: 'easeOut' }}
+                whileHover={{ scale: 1.05, transition:{ duration: 0.1} }}
+                whileTap={{ scale: 0.94, transition:{ duration: 0.1} }}
+                transition={{ duration: 0.1, ease: 'easeIn' }}
                 onClick={() => setIsCollapsed(!isCollapsed)}
                 className={cn(
-                  "relative w-fit group border border-white/30 py-[3px] px-3 md:py-1.5 md:px-4 mb-2 rounded-[12px] md:rounded-[14px]",
-                  "backdrop-blur-md cursor-pointer hover:transition-colors transition-all duration-50 ease-out select-none shadow-xs shadow-white/8 hover:shadow-[0_4px_15px_rgba(0,0,0,0.6)]",
-                  "bg-linear-to-br from-zinc-900 to-zinc-950 hover:bg-zinc-800/40 text-amber-500 font-medium text-sm"
+                  "relative w-fit group border-2 border-amber-500/30 py-[3px] px-3 md:py-1.5 md:px-4 mb-2 rounded-[12px] md:rounded-[36px]",
+                  "cursor-pointer transition-all duration-50 ease-out select-none shadow-xs shadow-white/8 hover:shadow-[0_0_30px_rgba(255,190,0,0.8)]",
+                  "bg-amber-500/15 hover:bg-amber-800/40 text-amber-200 tracking-wide transition-all duration-200"
                 )}
               >
                 {isCollapsed ? "More" : "Less"}

@@ -15,7 +15,7 @@ const Categories = React.memo(
         initial={{ opacity: 0, y: 8, scale: 0.92 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, scale: 0.88, y: 6, transition: { duration: 0.15, delay: 0, ease: "easeInOut" } }}
-        whileHover={{ scale: 1.02, y: -2, transition: { duration: 0.15, delay: 0, ease: "easeInOut" } }}
+        whileHover={{ scale: 1.02, y: -2, transition: { duration: 0.13, ease: "easeInOut" } }}
         whileTap={{ scale: 0.97, transition: { duration: 0.08, delay: 0 } }}
         transition={{
           duration: 0.22,
@@ -28,10 +28,10 @@ const Categories = React.memo(
         aria-label={`Select ${name.split("_").join(" ")} category`}
         className={cn(
           "relative w-fit group border border-white/30 py-[3px] px-3 md:py-1.5 md:px-4 mb-2 rounded-[12px] md:rounded-[14px]",
-          "backdrop-blur-md cursor-pointer select-none shadow-xs shadow-white/8 hover:shadow-[0_4px_15px_rgba(0,0,0,0.6)] ",
+          "backdrop-blur-md cursor-pointer select-none shadow-xs shadow-white/8 hover:shadow-[0_4px_15px_rgba(0,0,0,0.9)]  ",
           isActive
-            ? "bg-linear-to-br from-amber-600-op30 to-amber-700-op30 shadow-[inset_0_1px_0_rgba(255,255,255,0.5),0_2px_4px_rgba(0,0,0,0.8)]"
-            : "bg-linear-to-br from-zinc-800/60 to-zinc-950 hover:bg-zinc-800/40 shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_1px_3px_rgba(0,0,0,0.4)]",
+            ? "bg-linear-to-b from-amber-800/50 border-2 to-amber-950/50 shadow-[inset_0_4px_6px_rgba(255,255,255,0.9),0_2px_4px_rgba(0,0,0,0.8)]"
+            : "bg-linear-to-br from-zinc-800/60 to-zinc-950 hover:bg-zinc-800/40 shadow-[inset_0_3px_0_rgba(255,255,255,0.5),0_1px_3px_rgba(0,0,0,0.4)]",
         )}
       >
         <span
@@ -52,7 +52,7 @@ const Categories = React.memo(
           {
             isActive && (
               <span
-                className="absolute mx-auto -bottom-[5px] md:-bottom-[9px] rounded-full blur-xs left-0 w-[95%] h-[2px] bg-linear-to-l from-transparent via-zinc-300 to-transparent "
+                className="absolute mx-auto -bottom-[5px] md:-bottom-[9px] rounded-full blur-xs left-0 w-[95%] h-[2px] bg-linear-to-l from-transparent via-zinc-200 to-transparent "
               />
             )
           }
@@ -60,7 +60,7 @@ const Categories = React.memo(
           {
             isActive && (
               <span
-                className="absolute mx-auto -bottom-[6.1px] md:-bottom-[9px] xl:-bottom-[9px] left-0 w-[95%] h-px bg-linear-to-l from-transparent via-zinc-300 to-transparent "
+                className="absolute mx-auto -bottom-[6.1px] md:-bottom-[9px] xl:-bottom-[9.5px] left-0 w-[95%] h-px bg-linear-to-l from-transparent via-zinc-200 to-transparent "
               />
             )
           }

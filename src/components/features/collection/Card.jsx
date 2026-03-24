@@ -212,7 +212,7 @@ const Card = memo(
           >
             <div
               className={cn(
-                "w-9 h-9 rounded-xl bg-neutral-900/50 flex items-center justify-center border border-white/10 overflow-hidden shrink-0 group-hover:scale-120 transition-all duration-200",
+                "w-9 h-9 rounded-xl bg-neutral-900/50 flex items-center justify-center border border-white/10 overflow-hidden shrink-0 group-hover:scale-120 hover:scale-115 transition-all duration-200",
               )}
             >
               {logo ? (
