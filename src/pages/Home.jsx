@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 // eslint-disable-next-line no-unused-vars
-import { motion, AnimatePresence, easeInOut } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import Categories from "../components/features/collection/Categories";
 import Card from "../components/features/collection/Card";
 import SkeletonHome from "../components/ui/SkeletonHome";
@@ -10,7 +10,7 @@ import CustomSVG from "../components/ui/CustomSVG";
 
 import { useCollectionData } from "../hooks/useCollectionData";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { DragLeft02Icon, DragRight02Icon, MoveLeftIcon, MoveRightIcon } from "@hugeicons/core-free-icons";
+import { DragLeft02Icon, DragRight02Icon} from "@hugeicons/core-free-icons";
 
 export default function Home() {
   const { data, loading } = useCollectionData();

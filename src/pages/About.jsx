@@ -188,6 +188,43 @@ export default function About() {
             ))}
           </div>
         </motion.div>
+
+        {/* CTA Section */}
+        <motion.div variants={itemVariants} className="md:col-span-2 lg:col-span-3 mt-8">
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
+            className="bg-linear-to-r from-amber-500/10 to-orange-500/10 border-2 border-amber-500/30 rounded-2xl p-8 md:p-12 text-center backdrop-blur-sm hover:shadow-[0_0_10px_rgba(245,158,11,0.2)] transition-all duration-500"
+          >
+            <h3 className="text-2xl md:text-4xl font-bold text-white mb-4">
+              Ready to Build Something Amazing <span className="text-amber-500 animate-pulse">?</span>
+            </h3>
+            <p className="text-gray-300/80 mb-8 leading-5 tracking-wide  max-w-2xl mx-auto">
+              Join the growing community of developers who use WebTree to find
+              the best tools and resources for their projects.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                to="/webtree-reviews"
+                className="px-8 py-3 rounded-xl bg-amber-500 text-white font-bold hover:bg-amber-600 transition-all duration-300 shadow-[0_0_15px_rgba(245,158,11,0.3)] hover:shadow-[0_0_10px_rgba(245,158,11,0.5)]"
+              >
+                Read Reviews
+              </Link>
+              <Link
+                to="/connect"
+                className="px-8 py-3 rounded-xl bg-white/10 text-white font-bold hover:bg-white/20 border border-white/20 transition-all duration-300"
+              >
+                Connect With Us
+              </Link>
+              <Link
+                to="/webtree-blog"
+                className="px-8 py-3 rounded-xl bg-amber-500 text-white font-bold hover:bg-amber-600 transition-all duration-300 shadow-[0_0_15px_rgba(245,158,11,0.3)] hover:shadow-[0_0_10px_rgba(245,158,11,0.5)]"
+              >
+                Read Blog
+              </Link>
+            </div>
+          </motion.div>
+        </motion.div>
       </motion.div>
     </section>
   );

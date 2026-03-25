@@ -8,6 +8,7 @@ import Footer from "./components/layout/Footer";
 import Navbar from "./components/layout/Navbar";
 import ScrollToTop from "./components/layout/ScrollToTop";
 import Reviews from "./pages/Reviews";
+import Blog from "./pages/Blog.jsx";
 
 const Collection = React.lazy(() => import("./pages/Collection"));
 
@@ -49,6 +50,7 @@ function App() {
               <Route path="/about-webtree" element={<About />} />
               <Route path="/connect" element={<Socials />} />
               <Route path="/webtree-reviews" element={<Reviews />} />
+              <Route path="/webtree-blog" element={<Blog />} />
             </Routes>
           </React.Suspense>
 
