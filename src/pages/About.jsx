@@ -5,6 +5,7 @@ import { ChartLineData02Icon, MoveLeftIcon } from "@hugeicons/core-free-icons";
 import { cn } from "../utils/utils.js";
 import { Link, useLocation } from "react-router";
 import GoBack from "../components/layout/GoBack";
+import { useEffect } from "react";
 
 export default function About() {
   const location = useLocation();
@@ -22,6 +23,13 @@ export default function About() {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
+
+  useEffect(() => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    })
+  });
 
   return (
     <section
