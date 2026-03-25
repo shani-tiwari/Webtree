@@ -40,9 +40,9 @@ export default function About() {
               href={location.pathname !== "/about-webtree" && "/about-webtree" }
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
               className={cn(
-                "text-4xl flex gap-4 italic md:text-7xl mx-auto text-center font-black text-white/90 tracking-tighter hover:tracking-tight transition-all duration-500",
+                "text-4xl flex gap-4 italic md:text-7xl mx-auto text-center font-black text-white/90 tracking-tight hover:tracking-tighter transition-all duration-500",
               )}
             >
               About <h1 className={cn("text-neutral-500 italic")}>Webtree</h1>

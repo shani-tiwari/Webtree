@@ -12,16 +12,16 @@ export default function Collection() {
   return (
     <main className="relative max-w-[1300px] w-full flex flex-col gap-10 md:gap-10 mx-auto px-4 md:px-14 pb-20">
 
-      <header className="relative text-white/70 text-center w-full backdrop-blur-xl md:backdrop-blur-none pt-20 md:pt-32 selection:text-amber-600 ">
-        <p className="text-2xl bg-green-600 md:text-6xl tracking-widest font-black italic bg-clip-text text-transparent bg-linear-to-b from-white to-neutral-500 ">
+      <header className="relative text-white/70 text-center w-full  tracking-tight  backdrop-blur-xl md:backdrop-blur-none pt-20 md:pt-32 selection:text-amber-500 ">
+        <p className="text-2xl text-amber-600/75 w-fit mx-auto md:text-6xl font-black hover:tracking-tighter transition-all duration-400 italic  ">
           Your Collection
         </p>
-        <p className="text-sm md:text-base font-mono mt-3 opacity-80 text-white/70">
+        <p className="text-sm md:text-base font-mono mt-3 hover:tracking-tighter transition-all duration-400 text-slate-400/70">
           Your personally curated list of resources
         </p>
-        <p className="text-sm md:text-base font-mono mt-3 opacity-80 text-green-300">
-          Added Websites - {collection.length} 🎯
-        </p>
+        <span className="text-sm md:text-base font-mono mt-3 hover:scale-105 hover:translate-y-2 transition-all duration-300 text-shadow-green-800 text-shadow-sm opacity-80 text-green-300 inline-block">
+          Added Websites - {collection.length} 
+        </span>
       </header>
 
        {/* back button & divider */}

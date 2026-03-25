@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
 import ReviewCard from "../components/features/reviews/ReviewCard";
@@ -14,6 +14,13 @@ export default function Reviews() {
   const location = useLocation();
   const { reviews, loading } = useReviewsData();
   const [isFormOpen, setIsFormOpen] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo({
+      y: 0,
+      behavior: "smooth"
+    })
+  });
 
   return (
     <section className="min-h-screen w-full relative overflow-hidden bg-black/95 pt-24 pb-20 selection:text-amber-500">
@@ -72,7 +79,7 @@ export default function Reviews() {
         </motion.span>
 
         {/* Reviews Grid */}
-        <div className="flex px-3 flex-wrap gap-8 mt-10 justify-center ">
+        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-min gap-8 px-3 mt-10">
           {loading ? (
              <div className="text-center animate-pulse">
                <p className="text-zinc-500 font-mono text-lg">Loading amazing reviews...</p>
@@ -84,7 +91,7 @@ export default function Reviews() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.05 + 0.4 }}
-                className="flex"
+                className=" break-inside-avoid"
               >
                 <ReviewCard {...review} />
               </motion.div>
