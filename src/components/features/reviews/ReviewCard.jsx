@@ -4,7 +4,7 @@ import { NewTwitterRectangleIcon } from "@hugeicons/core-free-icons";
 import { Link } from "react-router";
 import { useLocation } from "react-router";
 
-export default function ReviewCard({ xProfile, gender, text, bgColor }) {
+export default function ReviewCard({ xProfile, gender, text, bgColor, date }) {
   const profileImage = gender === "female" ? "/user-img/female.png" : "/user-img/male.jpg";
   const location = useLocation();
   return (
@@ -17,7 +17,8 @@ export default function ReviewCard({ xProfile, gender, text, bgColor }) {
         )}
       >
         <div className="flex items-center justify-between gap-4 mb-4">
-          <div className="flex items-center gap-4">
+
+          <div className=" flex w-full items-center gap-4">
             {/* Profile Image */}
             <div className="w-12 h-12 rounded-full overflow-hidden border border-zinc-700 bg-zinc-900 shrink-0">
               <img
@@ -29,13 +30,13 @@ export default function ReviewCard({ xProfile, gender, text, bgColor }) {
             </div>
 
             {/* User Info */}
-            <div className="group text-amber-500-op80 flex wavy-underline-pulse pb-1 hover:translate-x-2 hover:text-amber-400 transition-all duration-300">
+            <div className="group text-amber-500-op80 flex justify-end wavy-underline-pulse pb-1 hover:text-amber-400 transition-all duration-300">
 
               <a
                 href={`https://x.com/${xProfile.replace("@", "")}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-lg flex gap-1 justify-center items-center group-hover:tracking-tight transition-all duration-400"
+                className="text-[16px] w-fit flex gap-1 justify-center items-center group-hover:tracking-tight transition-all duration-400"
                 onClick={(e) => e.stopPropagation()}
               >
                 {xProfile.startsWith("@") ? xProfile : `@${xProfile}`}
@@ -45,9 +46,13 @@ export default function ReviewCard({ xProfile, gender, text, bgColor }) {
               </a>
 
             </div>
+
+              {/* date */}
+              <span className="text-[10px] px-3 py-[3px] tracking-wide rounded-full bg-zinc-200/15 text-zinc-400 font-bold transition-all duration-200 group-hover:text-zinc-300">
+                {date}
+              </span>
             
           </div>
-
 
         </div>
 
