@@ -191,17 +191,18 @@ export default function ReviewForm({ isOpen, onClose }) {
                         type="button"
                         onClick={() => setFormData(prev => ({ ...prev, name: color.hex }))}
                         className={cn(
-                          "group relative h-10 md:h-12 rounded-2xl border-2 transition-all duration-300",
+                          "group relative h-10 md:h-12 rounded-2xl border-2 transition-all duration-200",
                           formData.name === color.hex 
                             ? "border-amber-500 scale-105 shadow-[0_0_10px_rgba(245,158,11,0.3)]" 
-                            : "border-zinc-400/60 hover:border-zinc-300/90 hover:scale-102"
+                            : "border-zinc-400/60 hover:border-zinc-300/70 hover:scale-103"
                         )}
                         style={{ backgroundColor: color.hex }}
                         aria-label={`Select ${color.label} vibe`}
                       >
                         {formData.name === color.hex && (
                           <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="w-1.5 h-1.5 rounded-full bg-white shadow-sm" />
+                            <div className="w-1.5 h-1.5 rounded-full bg-amber-600 shadow-sm" />
+                            <div className="absolute opacity-80 animate-ping w-1.5 h-1.5 rounded-full bg-amber-600 shadow-sm" />
                           </div>
                         )}
                         <span className="sr-only">{color.label}</span>
@@ -240,7 +241,7 @@ export default function ReviewForm({ isOpen, onClose }) {
                         type="button"
                         onClick={checkValidity}
                         className={cn(
-                          "flex items-center justify-center font-mono px-2 py-0.5 md:py-[6px] rounded-lg hover:scale-105 active:scale-95 transition-all duration-300",
+                          "flex items-center justify-center font-mono px-2 py-1  md:py-[6px] rounded-lg hover:scale-105 active:scale-95 transition-all duration-300",
                           validationStatus === "exists"
                             ? "bg-red-500 text-white"
                             : validationStatus === "available"
@@ -253,7 +254,7 @@ export default function ReviewForm({ isOpen, onClose }) {
                             icon={UserCheck01Icon}
                             size={18}
                             className={cn(
-                              "transition-colors text-white font-bold",
+                              "transition-colors text-white font-bold animate-bounce mt-1 ",
                             )}
                           />
                         ) : validationStatus === "exists" ? (
@@ -261,7 +262,7 @@ export default function ReviewForm({ isOpen, onClose }) {
                             icon={CancelSquareIcon}
                             size={18}
                             className={cn(
-                              "transition-colors text-white font-bold",
+                              "transition-colors text-white font-bold animate-bounce mt-1",
                             )}
                           />
                         ) : (
@@ -269,7 +270,7 @@ export default function ReviewForm({ isOpen, onClose }) {
                             icon={EnteringGeoFenceIcon}
                             size={18}
                             className={cn(
-                              "transition-colors text-white font-bold",
+                              "transition-colors text-white font-bold animate-bounce mt-1",
                             )}
                           />
                         )}

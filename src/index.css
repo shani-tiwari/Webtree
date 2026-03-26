@@ -196,3 +196,12 @@
     -webkit-mask-image: linear-gradient(to right, transparent, black 160px, black calc(100% - 160px), transparent);
   }
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    background-color: #171717 !important;
+    -webkit-text-fill-color: whitesmoke !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
