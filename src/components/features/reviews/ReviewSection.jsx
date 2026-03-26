@@ -60,10 +60,10 @@ export default function ReviewSection() {
           </Link>
            <button
               onClick={() => setIsFormOpen(true)}
-              className={cn("group flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-amber-500-op10 border border-amber-500-op30 text-amber-500 hover:bg-amber-500-op40 ",
+              className={cn("group flex items-center justify-center gap-2 px-5 py-2.5 cursor-pointer rounded-full bg-amber-500-op10 border border-amber-500-op30 text-amber-500 hover:bg-amber-500-op40 ",
                 "hover:-translate-y-1 hover:tracking-wide hover:text-zinc-200 transition-all duration-200 font-bold text-sm active:scale-95 shadow-[0_0_15px_var(--color-amber-500-op10)] hover:shadow-[0_0_15px_var(--color-amber-500-op40)]")}
            >
-            <HugeiconsIcon icon={PlusSignCircleIcon} size={16} className="group-hover:rotate-90 transition-transform duration-200" />
+            <HugeiconsIcon icon={PlusSignCircleIcon} size={16} className="group-hover:rotate-90 transition-transform duration-200 cursor-pointer" />
             Add Review
           </button>
         </div>

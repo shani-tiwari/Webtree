@@ -181,10 +181,10 @@ export default function ReviewForm({ isOpen, onClose }) {
                     {[
                       { hex: "#1e1b4b", label: "Indigo" },
                       { hex: "#78290f", label: "Chocolate" },
-                      { hex: "#7f1d1d", label: "Crimson" },
-                      { hex: "#7c2d12", label: "Orange" },
+                      { hex: "#831843", label: "Crimson" },
                       { hex: "#4a044e", label: "Fuchsia" },
                       { hex: "#0f392b", label: "Forest" },
+                      { hex: "#7f1d1d", label: "Red" },
                     ].map((color) => (
                       <button
                         key={color.hex}
