@@ -20,6 +20,15 @@
   } , 
   {
     "id": 3,
+    "name": "Jamal",
+    "bgColor": "#0f392b",
+    "xProfile": "@JamalAbolarinwa",
+    "gender": "male",
+    "text": " The website is very good and filled with tones of resources for quick usage when developing websites. Kudos To the developer for developing such an amazing website.",
+    "date": "3-21-26"
+  },
+  {
+    "id": 4,
     "name": "Adarsh Vardhan",
     "bgColor": "#4a044e",
     "xProfile": "@adarshraj5206",
@@ -28,7 +37,7 @@
     "date": "3-21-26"
   },
   {
-    "id": 4,
+    "id": 5,
     "name": "Anjali",
     "bgColor": "#1e1b4b",
     "xProfile": "@anjalinirwal02",
@@ -37,7 +46,7 @@
     "date": "3-19-26"
   },
   {
-    "id": 5,
+    "id": 6,
     "name": "Kasif",
     "bgColor": "#7f1d1d",
     "xProfile": "@md_kasif_uddin",
@@ -46,7 +55,7 @@
     "date": "3-19-26"
   },
   {
-    "id": 6,
+    "id": 7,
     "name": "Cinnamon",
     "bgColor": "#78290f",
     "xProfile": "@irunonironic",

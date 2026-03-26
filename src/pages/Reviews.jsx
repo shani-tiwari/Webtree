@@ -9,6 +9,7 @@ import GoBack from "../components/layout/GoBack";
 import { useLocation } from "react-router";
 
 import { useReviewsData } from "../hooks/useReviewsData";
+import Masonry from "react-masonry-css";
 
 export default function Reviews() {
   const location = useLocation();
@@ -21,6 +22,14 @@ export default function Reviews() {
       behavior: "smooth"
     })
   });
+
+  const breakpointColumnsObj = {
+  default: 3,
+  1024: 2,
+  768: 1
+};
+
+
 
   return (
     <section className="min-h-screen w-full relative overflow-hidden bg-black/95 pt-24 pb-20 selection:text-amber-500">
@@ -81,7 +90,7 @@ export default function Reviews() {
         </motion.span>
 
         {/* Reviews Grid */}
-        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-min gap-8 px-3 mt-10">
+        {/* <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-min gap-8 px-3 mt-10">
           {loading ? (
              <div className="text-center animate-pulse">
                <p className="text-zinc-500 font-mono text-lg">Loading amazing reviews...</p>
@@ -99,7 +108,32 @@ export default function Reviews() {
               </motion.div>
             ))
           )}
+        </div> */}
+        <div className="px-3 mt-10">
+          {loading ? (
+            <div className="text-center animate-pulse">
+              <p className="text-zinc-500 font-mono text-lg">Loading amazing reviews...</p>
+            </div>
+          ) : (
+            <Masonry
+              breakpointCols={breakpointColumnsObj}
+              className="flex gap-6"
+              columnClassName="flex flex-col gap-8"
+            >
+              {reviews.map((review, index) => (
+                <motion.div
+                  key={review.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.05 + 0.4 }}
+                >
+                  <ReviewCard {...review} />
+                </motion.div>
+              ))}
+            </Masonry>
+          )}
         </div>
+
       </div>
 
       <ReviewForm isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
