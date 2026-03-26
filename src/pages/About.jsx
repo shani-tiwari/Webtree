@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { ChartLineData02Icon, MoveLeftIcon } from "@hugeicons/core-free-icons";
+import { BookOpen02Icon, ChartLineData02Icon, Link01Icon, Link02Icon, MessageMultiple01Icon, MessageSquarePlus, MoveLeftIcon } from "@hugeicons/core-free-icons";
 import { cn } from "../utils/utils.js";
 import { Link, useLocation } from "react-router";
 import GoBack from "../components/layout/GoBack";
@@ -214,21 +214,21 @@ export default function About() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/webtree-reviews"
-                className="px-8 py-3 rounded-xl bg-amber-500 text-white font-bold hover:bg-amber-600 transition-all duration-300 shadow-[0_0_15px_rgba(245,158,11,0.3)] hover:shadow-[0_0_10px_rgba(245,158,11,0.5)]"
+                className="px-8 py-3 flex items-center gap-2 rounded-xl bg-amber-500/80 border-2 border-amber-700/70 text-white font-bold hover:bg-amber-600 transition-all duration-300 shadow-[0_0_15px_rgba(245,158,11,0.3)] hover:shadow-[0_0_10px_rgba(245,158,11,0.5)]"
               >
-                Read Reviews
+                Read Reviews <HugeiconsIcon icon={MessageMultiple01Icon}  size={20}/>
               </Link>
               <Link
                 to="/connect"
-                className="px-8 py-3 rounded-xl bg-white/10 text-white font-bold hover:bg-white/20 border border-white/20 transition-all duration-300"
+                className="px-8 py-3 flex items-center gap-2 rounded-xl bg-white/10 text-white font-bold hover:bg-white/20 border border-white/20 transition-all duration-300"
               >
-                Connect With Us
+                Connect With Us <HugeiconsIcon icon={Link01Icon}  size={20}/>
               </Link>
               <Link
                 to="/webtree-blog"
-                className="px-8 py-3 rounded-xl bg-amber-500 text-white font-bold hover:bg-amber-600 transition-all duration-300 shadow-[0_0_15px_rgba(245,158,11,0.3)] hover:shadow-[0_0_10px_rgba(245,158,11,0.5)]"
+                className="px-8 py-3 flex items-center gap-2 rounded-xl bg-amber-500/80 border-2 border-amber-700/70 text-white font-bold hover:bg-amber-600 transition-all duration-300 shadow-[0_0_15px_rgba(245,158,11,0.3)] hover:shadow-[0_0_10px_rgba(245,158,11,0.5)]"
               >
-                Read Blog
+                Read Blog <HugeiconsIcon icon={BookOpen02Icon}  size={20}/>
               </Link>
             </div>
           </motion.div>

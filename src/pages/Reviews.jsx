@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import ReviewCard from "../components/features/reviews/ReviewCard";
 import ReviewForm from "../components/features/reviews/ReviewForm";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { PlusSignCircleIcon } from "@hugeicons/core-free-icons";
+import { BubbleChatAddIcon, CommentAdd01Icon, CommentAdd03Icon, Idea01Icon, InLoveIcon, PlusSignCircleIcon } from "@hugeicons/core-free-icons";
 import GoBack from "../components/layout/GoBack";
 import { useLocation } from "react-router";
 
@@ -34,13 +34,13 @@ export default function Reviews() {
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-6">
           <div className="text-center md:text-left md:ml-16">
-            <motion.h2
+            <motion.span
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-5xl md:text-7xl italic tracking-tighter font-black hover:tracking-tight transition-all duration-500 bg-clip-text text-transparent bg-linear-to-b from-white to-neutral-500 mb-1"
+              className="w-fit mx-auto md:mx-0 text-5xl md:text-7xl italic flex items-center gap-4 tracking-tighter font-black hover:tracking-tight transition-all duration-500 bg-clip-text text-transparent bg-linear-to-b from-white to-neutral-500 mb-1"
             >
-              Reviews
-            </motion.h2>
+              Reviews <HugeiconsIcon icon={Idea01Icon} size={42} className="hover:text-amber-500 transition-all duration-100 text-amber-500/80 mt-1 md:mt-3" />
+            </motion.span>
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -58,9 +58,11 @@ export default function Reviews() {
           >
             <button
                onClick={() => setIsFormOpen(true)}
-               className="group flex items-center justify-center gap-2 px-6 py-3 cursor-pointer rounded-full bg-amber-500 hover:bg-amber-600 text-white selection:text-white font-bold transition-all duration-300 active:scale-95 shadow-[0_0_20px_var(--color-amber-500-op20)] hover:shadow-[0_0_30px_var(--color-amber-500-op40)]"
+               className="group flex items-center justify-center gap-2 px-6 py-3 cursor-pointer rounded-full bg-amber-500/90 hover:bg-amber-600 hover:scale-102 text-white selection:text-white font-bold transition-all duration-200 active:scale-95 shadow-[0_0_20px_var(--color-amber-500-op20)] hover:shadow-[0_0_30px_var(--color-amber-500-op40)]"
             >
-               <HugeiconsIcon icon={PlusSignCircleIcon} size={20} className="font-bold group-hover:rotate-90 transition-transform duration-300 " />
+               <HugeiconsIcon icon={BubbleChatAddIcon} 
+                className="text-xl font-bold group-hover:scale-105 transition-transform duration-300 " 
+               />
                Add Your Review
             </button>
           </motion.div>

@@ -30,7 +30,7 @@ export default function ReviewCard({ xProfile, gender, text, bgColor, date }) {
             </div>
 
             {/* User Info */}
-            <div className="group text-amber-500-op80 flex justify-end wavy-underline-pulse pb-1 hover:text-amber-400 transition-all duration-300">
+            <div className="group text-amber-500/90 flex justify-end wavy-underline-pulse pb-1 hover:text-amber-400 transition-all duration-300">
 
               <a
                 href={`https://x.com/${xProfile.replace("@", "")}`}
@@ -40,15 +40,13 @@ export default function ReviewCard({ xProfile, gender, text, bgColor, date }) {
                 onClick={(e) => e.stopPropagation()}
               >
                 {xProfile.startsWith("@") ? xProfile : `@${xProfile}`}
-                <HugeiconsIcon icon={NewTwitterRectangleIcon} size={20} 
-                  className="mt-0.5" 
-                />
+                <HugeiconsIcon icon={NewTwitterRectangleIcon} size={20} className="mt-0.5" />
               </a>
 
             </div>
 
               {/* date */}
-              <span className="text-[10px] px-3 py-[3px] tracking-wide rounded-full bg-zinc-200/15 text-zinc-400 font-bold transition-all duration-200 group-hover:text-zinc-300">
+              <span className="hidden leading-none md:flex items-center text-[10px] px-3 py-1 tracking-wide rounded-full bg-zinc-200/15 text-zinc-400 font-bold transition-all duration-200 group-hover:text-zinc-300">
                 {date}
               </span>
             

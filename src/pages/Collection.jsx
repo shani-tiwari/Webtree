@@ -19,7 +19,7 @@ export default function Collection() {
         <p className="text-sm md:text-base font-mono mt-3 hover:tracking-tighter transition-all duration-400 text-slate-400/70">
           Your personally curated list of resources
         </p>
-        <span className="text-sm md:text-base font-mono mt-3 hover:scale-105 hover:translate-y-2 transition-all duration-300 text-shadow-green-800 text-shadow-sm opacity-80 text-green-300 inline-block">
+        <span className="text-sm md:text-base font-mono mt-3 hover:scale-105 hover:translate-y-1 transition-all duration-300 text-shadow-green-800 text-shadow-sm opacity-80 text-green-300 inline-block">
           Added Websites - {collection.length} 
         </span>
       </header>
