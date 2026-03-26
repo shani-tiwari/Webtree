@@ -1,13 +1,14 @@
 [
+  
   {
     "id": 1,
-    "name": "Cinnamon",
-    "bgColor": "#78290f",
-    "xProfile": "@irunonironic",
-    "gender": "female",
-    "text": "most resources are available in one place. Simple, useful and nice.",
-    "date": "2026-03-19T7:58:00.000Z"
-  },
+    "name": "ApexUI",
+    "bgColor": "#0f392b",
+    "xProfile": "@apex_ui",
+    "gender": "male",
+    "text": " This website is really impressive and very useful, especially for developers. APIs tools and animation resources ek hi Jagah milna makes it very convenient. The UI is clean, modern and easy to navigate, So kaam quickly ho jata hai. Overall experience is smooth, efficient and saves a lot of time. Highly recommended",
+    "date": "2026-03-26T10:33:00.000Z"
+  } , 
   {
     "id": 2,
     "name": "Dims",
@@ -43,6 +44,15 @@
     "gender": "male",
     "text": "Bro literally your website look amazing 🔥 keep making these type of stuffs.",
     "date": "2026-03-19T10:33:00.000Z"
+  },
+  {
+    "id": 6,
+    "name": "Cinnamon",
+    "bgColor": "#78290f",
+    "xProfile": "@irunonironic",
+    "gender": "female",
+    "text": "most resources are available in one place. Simple, useful and nice.",
+    "date": "2026-03-19T7:58:00.000Z"
   }
 ]
 
