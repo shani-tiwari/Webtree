@@ -3,9 +3,11 @@ import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
+  AiContentGenerator01Icon,
   CancelCircleIcon,
   CancelSquareIcon,
   EnteringGeoFenceIcon,
+  PaintBucketIcon,
   UserCheck01Icon,
 } from "@hugeicons/core-free-icons";
 import emailjs from "@emailjs/browser";
@@ -149,6 +151,7 @@ export default function ReviewForm({ isOpen, onClose }) {
             initial={{ scale: 0.95, y: 20 }}
             animate={{ scale: 1, y: 0 }}
             exit={{ scale: 0.95, y: 20 }}
+            transition={{ duration: 0.2 , ease: [0.5, 1.1, 0.8, 1]}}
             onClick={(e) => e.stopPropagation()}
             className="w-full max-w-[95%] mt-10 sm:max-w-md lg:max-w-lg bg-[#0a0a0a] md:mt-14 border border-zinc-800 rounded-[20px] md:rounded-3xl p-4 md:p-7 relative shadow-2xl overflow-hidden"
           >
@@ -163,7 +166,7 @@ export default function ReviewForm({ isOpen, onClose }) {
               <HugeiconsIcon icon={CancelCircleIcon} size={24} />
             </button>
 
-            <h2 className="wavy-underline-pulse left-[50%] translate-x-[-50%]  text-2xl font-bold bg-clip-text text-transparent bg-linear-to-b from-amber-300 to-amber-700 mb-6">
+            <h2 className="wavy-underline-pulse left-[50%] translate-x-[-50%] text-amber-500 text-shadow-sm text-shadow-zinc-700  text-2xl font-bold mb-6">
               Add Your Review
             </h2>
 
@@ -191,7 +194,7 @@ export default function ReviewForm({ isOpen, onClose }) {
                         type="button"
                         onClick={() => setFormData(prev => ({ ...prev, name: color.hex }))}
                         className={cn(
-                          "group relative h-10 md:h-12 rounded-2xl border-2 transition-all duration-200",
+                          "group relative flex items-center justify-center h-10 md:h-12 rounded-xl border-2 transition-all duration-200",
                           formData.name === color.hex 
                             ? "border-amber-500 scale-105 shadow-[0_0_10px_rgba(245,158,11,0.3)]" 
                             : "border-zinc-400/60 hover:border-zinc-300/70 hover:scale-103"
@@ -200,10 +203,11 @@ export default function ReviewForm({ isOpen, onClose }) {
                         aria-label={`Select ${color.label} vibe`}
                       >
                         {formData.name === color.hex && (
-                          <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="w-1.5 h-1.5 rounded-full bg-amber-600 shadow-sm" />
-                            <div className="absolute opacity-80 animate-ping w-1.5 h-1.5 rounded-full bg-amber-600 shadow-sm" />
-                          </div>
+                          // <div className="absolute inset-0 flex items-center justify-center">
+                          //   <div className="w-1.5 h-1.5 rounded-full bg-amber-600 shadow-sm" />
+                          //   <div className="absolute opacity-80 animate-ping w-1.5 h-1.5 rounded-full bg-amber-600 shadow-sm" />
+                          // </div>
+                          <HugeiconsIcon icon={PaintBucketIcon} size={24} className="text-amber-300 " />
                         )}
                         <span className="sr-only">{color.label}</span>
                       </button>
@@ -241,7 +245,7 @@ export default function ReviewForm({ isOpen, onClose }) {
                         type="button"
                         onClick={checkValidity}
                         className={cn(
-                          "flex items-center justify-center font-mono px-2 py-1  md:py-[6px] rounded-lg hover:scale-105 active:scale-95 transition-all duration-300",
+                          "flex items-center justify-center font-mono px-2 py-[3px] md:py-[6px] rounded-lg hover:scale-105 active:scale-95 transition-all duration-300",
                           validationStatus === "exists"
                             ? "bg-red-500 text-white"
                             : validationStatus === "available"
@@ -348,11 +352,12 @@ export default function ReviewForm({ isOpen, onClose }) {
                 type="submit"
                 disabled={isSubmitting}
                 className={cn(
-                  "mt-2 md:mt-4 w-full tracking-wider bg-linear-to-r from-amber-600 to-amber-700 hover:from-amber-500-op80 hover:to-amber-600-op80 text-white font-bold py-2.5 md:py-3 px-6 rounded-lg md:rounded-xl transition-all duration-500 shadow-[0_0_20px_var(--color-amber-500-op20)] active:scale-[0.98] text-sm md:text-base disabled:opacity-50 disabled:cursor-not-allowed",
+                  "mt-2 md:mt-4 w-full flex items-center justify-center gap-2 tracking-wider border-2 border-amber-800/80 bg-linear-to-r from-amber-600 to-amber-700 hover:from-amber-500-op80 hover:to-amber-600-op80 text-white font-bold py-2.5 md:py-3 px-6 rounded-lg md:rounded-xl transition-all duration-500 shadow-[0_0_20px_var(--color-amber-500-op20)] active:scale-[0.98] text-sm md:text-base disabled:opacity-50 disabled:cursor-not-allowed",
                   isSubmitting && "animate-pulse",
                 )}
               >
                 {isSubmitting ? "Sending..." : "Submit Review"}
+                <HugeiconsIcon icon={AiContentGenerator01Icon} size={20} className="mt-0.5" />
               </button>
 
               {submitMessage && (

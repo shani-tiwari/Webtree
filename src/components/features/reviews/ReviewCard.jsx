@@ -12,71 +12,75 @@ export default function ReviewCard({ xProfile, gender, text, bgColor, date }) {
         to={"/webtree-reviews"}
         style={{ backgroundColor: bgColor || "#0a0a0a"}}
         className={cn(
-          "relative group flex flex-col w-full md:w-[350px] py-3 px-4 rounded-[20px] border-2 border-zinc-500 shadow-lg shrink-0",
-          "hover:border-zinc-400 transition-all duration-200 hover:leading-4"
+          "relative group flex flex-col w-[290px] md:w-[320px] py-4 px-5 rounded-[24px] border-2 border-zinc-500/50 shadow-lg shrink-0 backdrop-blur-sm",
+          "hover:border-amber-500/50 transition-all duration-200 hover:shadow-amber-500/10"
         )}
       >
-        <div className="flex items-center justify-between gap-4 mb-4">
 
-          <div className=" flex w-full items-center gap-4">
+        <div className="w-full flex flex-col items-start gap-4">
+
+          <div className="flex items-center gap-3 w-full">
+
             {/* Profile Image */}
-            <div className="w-12 h-12 rounded-full overflow-hidden border border-zinc-700 bg-zinc-900 shrink-0">
+            <div className="w-13 h-13 rounded-full overflow-hidden border-2 border-zinc-700/50 bg-zinc-900 shrink-0 shadow-inner">
               <img
                 src={profileImage}
                 alt={xProfile}
                 loading="lazy"
-                className="w-full h-full object-cover group-hover:scale-110 hover:scale-102 transition-all duration-300"
+                className="w-full h-full object-cover group-hover:scale-110 hover:scale-100 transition-transform duration-300"
               />
             </div>
 
-            {/* User Info */}
-            <div className="group text-amber-500/90 flex justify-end wavy-underline-pulse pb-1 hover:text-amber-400 transition-all duration-300">
-
-              <a
-                href={`https://x.com/${xProfile.replace("@", "")}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[16px] w-fit flex gap-1 justify-center items-center group-hover:tracking-tight transition-all duration-400"
-                onClick={(e) => e.stopPropagation()}
-              >
-                {xProfile.startsWith("@") ? xProfile : `@${xProfile}`}
-                <HugeiconsIcon icon={NewTwitterRectangleIcon} size={20} className="mt-0.5" />
-              </a>
-
-            </div>
-
-              {/* date */}
-              <span className="hidden leading-none md:flex items-center text-[10px] px-3 py-1 tracking-wide rounded-full bg-zinc-200/15 text-zinc-400 font-bold transition-all duration-200 group-hover:text-zinc-300">
+            {/* User Info & Date Container */}
+            <div className="flex flex-col gap-2 min-w-0">
+              <div className="wavy-underline-pulse pb-0.5">
+                <a
+                  href={`https://x.com/${xProfile.replace("@", "")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[15px] font-bold text-amber-500/90 hover:text-amber-400 transition-colors flex items-center gap-1.5 truncate"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {xProfile.startsWith("@") ? xProfile : `@${xProfile}`}
+                  <HugeiconsIcon icon={NewTwitterRectangleIcon} size={18} className="shrink-0" />
+                </a>
+              </div>
+              
+              {/* Date span - now below ID */}
+              <span className="w-fit text-[10px] px-2 py-[0.5px] bg-zinc-200/20 rounded-full text-zinc-400 font-medium tracking-wide">
                 {date}
               </span>
-            
+            </div>
+              
+          </div>
+
+          {/* Review Text */}
+          <div className="relative w-full">
+            <span className="absolute -top-4 -left-1 text-5xl text-zinc-700/40 font-serif leading-none select-none italic">
+              "
+            </span>
+            <p className="group-hover:text-zinc-100 font-sans transition-colors duration-200 text-zinc-300 text-[15px] leading-relaxed tracking-normal relative z-10 italic grow pl-1">
+              {
+                location.pathname !== "/webtree-reviews" ? (
+                  <>
+                    {text.slice(0, 100)}... 
+                    <Link
+                      to="/webtree-reviews"
+                      className="text-slate-200/80 hover:text-amber-500 animate-pulse text-lg items-center group-hover:tracking-wider transition-all duration-500"
+                    >
+                      { } more
+                    </Link>
+                  </>
+                ) : (
+                  text
+                )
+              }
+            </p>
           </div>
 
         </div>
 
-        {/* Review Text */}
-        <div className="relative grow">
-          <span className="absolute -top-3 -left-2 text-4xl text-zinc-600 font-serif leading-none select-none animate-pulse">
-            "
-          </span>
-          <p className="group-hover:text-zinc-200 font-mono transition-all duration-150 text-zinc-300 text-sm leading-[20px] tracking-wide relative z-10  italic grow">
-            {
-              location.pathname !== "/webtree-reviews" ? (
-                <>
-                  {text.slice(0, 100)}... 
-                  <Link
-                    to="/webtree-reviews"
-                    className="text-slate-200/80 hover:text-slate-200 animate-pulse text-lg items-center group-hover:tracking-wider transition-all duration-500"
-                  >
-                    { } more
-                  </Link>
-                </>
-              ) : (
-                text
-              )
-            }
-          </p>
-        </div>
+
       </Link>
   );
 }
