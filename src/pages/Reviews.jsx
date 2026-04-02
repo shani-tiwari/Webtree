@@ -117,8 +117,8 @@ export default function Reviews() {
           ) : (
             <Masonry
               breakpointCols={breakpointColumnsObj}
-              className="flex gap-6"
-              columnClassName="flex flex-col gap-8"
+              className="flex gap-0"
+              columnClassName="flex flex-col gap-8 items-center"
             >
               {reviews.map((review, index) => (
                 <motion.div

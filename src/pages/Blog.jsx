@@ -69,7 +69,7 @@ export default function Blog() {
   });
 
   return (
-    <div className="select-none min-h-screen bg-slate-50 dark:bg-slate-950 py-16 px-4 sm:px-6 lg:px-8 font-sans selection:bg-indigo-100 dark:selection:bg-indigo-900 selection:text-indigo-900 dark:selection:text-indigo-100">
+    <div className="select-none min-h-screen bg-slate-950 py-16 px-4 sm:px-6 lg:px-8 font-sans selection:bg-indigo-900 selection:text-indigo-900 ">
       <motion.article
         initial="hidden"
         animate="visible"
@@ -81,7 +81,7 @@ export default function Blog() {
           variants={itemVariants}
           className="text-center mb-16 mt-10"
         >
-          <div className="inline-flex items-center space-x-2 bg-indigo-50 dark:bg-indigo-900/30 px-6 py-2.5  rounded-full mb-6">
+          <div className="inline-flex items-center space-x-2 bg-indigo-900/30 px-6 py-2.5  rounded-full mb-6">
             <HugeiconsIcon
               icon={SparklesIcon}
               size={16}
@@ -93,11 +93,11 @@ export default function Blog() {
           </div>
           <h1 className="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-slate-400 to-slate-300 mb-6 leading-tight">
             The Ultimate Hub for{" "}
-            <span className="bg-clip-text text-transparent bg-linear-to-r from-emerald-600 to-indigo-600 dark:from-emerald-400 dark:to-indigo-400">
+            <span className="bg-clip-text text-transparent bg-linear-to-r from-emerald-600 to-indigo-600">
               Web Design & Development Resources
             </span>
           </h1>
-          <p className="text-xl text-slate-600 dark:text-slate-400 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-slate-400 mb-8 max-w-2xl mx-auto">
             A handpicked universe of design and development assets, organized
             for modern creators.
           </p>
@@ -121,7 +121,7 @@ export default function Blog() {
           {/* What is this? */}
           <motion.section
             variants={itemVariants}
-            className="prose prose-slate dark:prose-invert max-w-none"
+            className="prose prose-invert max-w-none"
           >
             <div className="flex items-center space-x-3 mb-4">
               <HugeiconsIcon
@@ -129,11 +129,11 @@ export default function Blog() {
                 size={24}
                 className="text-indigo-500"
               />
-              <h2 className="text-2xl font-bold text-slate-900 dark:text-white m-0">
+              <h2 className="text-2xl font-bold text-white m-0">
                 Curated Resource Library for Modern Developers
               </h2>
             </div>
-            <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
+            <p className="text-lg text-slate-300 leading-relaxed">
               WebTree is a precision-curated repository of essential development assets—ranging from
               premium UI kits and motion libraries to high-performance APIs and CSS background assets. 
               Our mission is to centralize the highest quality tools for web professionals, eliminating 
@@ -145,13 +145,13 @@ export default function Blog() {
                 categories.map((cat, i) => (
                     <div
                     key={i}
-                    className="flex items-center space-x-3 p-3 bg-white dark:bg-slate-900 rounded-lg border border-slate-600 hover:scale-102 transition-all duration-150 shadow-sm"
+                    className="flex items-center space-x-3 p-3 bg-slate-900 rounded-lg border border-slate-600 hover:scale-102 transition-all duration-150 shadow-sm"
                     >
                     <span className="relative flex h-1.5 w-1.5">
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-500"></span>
                     </span>
-                    <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                    <span className="text-sm font-medium text-slate-300">
                         {cat}
                     </span>
                     </div>
@@ -168,12 +168,12 @@ export default function Blog() {
                 size={24}
                 className="text-emerald-500"
               />
-              <h2 className="text-2xl font-bold text-slate-900 dark:text-white m-0">
+              <h2 className="text-2xl font-bold text-white m-0">
                 Solving the Modern Developer Resource Hunt
               </h2>
             </div>
-            <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-800 shadow-md">
-              <p className="text-slate-600 dark:text-slate-400 mb-6 italic">
+            <div className="bg-slate-900 rounded-2xl p-8 border border-slate-800 shadow-md">
+              <p className="text-slate-400 mb-6 italic">
                 "As a full-stack developer, I encountered these recurring bottlenecks:"
               </p>
               <ul className="space-y-4">
@@ -218,8 +218,8 @@ export default function Blog() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 text-center">
-                <p className="font-medium text-indigo-600 dark:text-indigo-400">
+              <div className="mt-8 pt-6 border-t border-slate-800 text-center">
+                <p className="font-medium text-indigo-400">
                   WebTree fixes all this in one clean package.
                 </p>
               </div>
@@ -234,7 +234,7 @@ export default function Blog() {
                 size={24}
                 className="text-amber-500"
               />
-              <h2 className="text-2xl font-bold text-slate-900 dark:text-white m-0">
+              <h2 className="text-2xl font-bold text-white m-0">
                 Advanced Features & Core Capabilities
               </h2>
             </div>
@@ -263,9 +263,9 @@ export default function Blog() {
               ].map((feature, i) => (
                 <div
                   key={i}
-                  className="group p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl border hover:pl-[22px] border-slate-800 hover:border-indigo-500 transition-all duration-300"
+                  className="group p-6 bg-slate-800/50 rounded-2xl border hover:pl-[22px] border-slate-800 hover:border-indigo-500 transition-all duration-300"
                 >
-                  <div className="p-2 bg-slate-900 rounded-xl w-fit mb-4 shadow-sm group-hover:bg-indigo-500 group-hover:text-white transition-all duration-500">
+                  <div className="p-2 bg-slate-900 rounded-xl w-fit mb-4 shadow-md shadow-black group-hover:bg-indigo-500 group-hover:text-white transition-all duration-500">
                     {feature.icon && (
                       <HugeiconsIcon
                         icon={feature.icon}
@@ -274,10 +274,10 @@ export default function Blog() {
                       />
                     )}
                   </div>
-                  <h3 className="font-bold text-slate-900 dark:text-white mb-2">
+                  <h3 className="font-bold text-white mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                  <p className="text-sm text-slate-400 leading-relaxed">
                     {feature.desc}
                   </p>
                 </div>
@@ -318,9 +318,9 @@ export default function Blog() {
           {/* Comparison */}
           <motion.section
             variants={itemVariants}
-            className="bg-slate-100 dark:bg-slate-900/50 rounded-2xl p-8 border border-slate-200 dark:border-slate-800"
+            className="bg-slate-900/50 rounded-2xl p-8 border border-slate-800"
           >
-            <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-8 text-center uppercase tracking-wide">
+            <h2 className="text-xl font-bold text-white mb-8 text-center uppercase tracking-wide">
               Optimizing Your Development Workflow
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
@@ -331,7 +331,7 @@ export default function Blog() {
                 <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
                   Before WebTree
                 </span>
-                <div className="p-4 bg-white dark:bg-slate-900 rounded-xl mt-2 border-2 border-red-900/50 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                <div className="p-4 bg-slate-900 rounded-xl mt-2 border-2 border-red-900/50 text-slate-400 text-sm leading-relaxed">
                   "Need a glassmorphism card &rarr; Google &rarr; 10 tabs &rarr;
                   bookmark &rarr; lost forever"
                 </div>
@@ -340,7 +340,7 @@ export default function Blog() {
                 <span className="text-xs font-bold uppercase tracking-wider text-indigo-500">
                   After WebTree
                 </span>
-                <div className="p-4 bg-white dark:bg-slate-900 rounded-xl mt-2 border-2 border-emerald-800  text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                <div className="p-4 bg-slate-900 rounded-xl mt-2 border-2 border-emerald-800 text-slate-400 text-sm leading-relaxed">
                   "Need glassmorphism &rarr; WebTree &rarr; 2 sec &rarr; Save to
                   collection &rarr; Done ✅"
                 </div>
@@ -351,25 +351,25 @@ export default function Blog() {
           {/* Footer CTA */}
           <motion.footer
             variants={itemVariants}
-            className="text-center pt-8 border-t border-slate-200 dark:border-slate-800"
+            className="text-center pt-8 border-t border-slate-800"
           >
-            <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+            <h2 className="text-2xl font-bold text-white mb-4">
               Get Started with WebTree Professional
             </h2>
-            <p className="text-slate-600 dark:text-slate-400 mb-8">
+            <p className="text-slate-400 mb-8">
               Zero registration required. Instant access to professional tools. 
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
               <a
                 href="https://webtree.shaniweb.com"
-                className="text-indigo-600 dark:text-indigo-400 font-bold hover:underline"
+                className="text-indigo-400 font-bold hover:underline"
               >
                 webtree.shaniweb.com
               </a>
-              <span className="text-slate-300 dark:text-slate-700 hidden sm:inline">
+              <span className="text-slate-700 hidden sm:inline">
                 |
               </span>
-              <button className="flex items-center space-x-2 text-slate-600 dark:text-slate-400 hover:text-indigo-600 transition-colors">
+              <button className="flex items-center space-x-2 text-slate-400 hover:text-indigo-600 transition-colors">
                 <HugeiconsIcon icon={Share01Icon} size={16} />
                 <span onClick={handleShare} className="text-sm font-medium">
                   Share WebTree Library
