@@ -78,9 +78,9 @@ export default function Home() {
         {/* categories */}
         <motion.aside
           layout
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, delay: 0.3, ease: "easeOut", layout: { duration: 0.35, ease: "easeInOut" } }}
+          transition={{ duration: 0.3, layout: { duration: 0.3, ease: "easeInOut" } }}
           aria-label="Category selection"
           className={cn(
             "z-40 gap-1 md:gap-2 w-full h-fit px-2 md:py-3 md:pt-4 mb-8 max-w-4xl mx-auto shrink-0 flex flex-wrap justify-center rounded-xl text-white backdrop-blur-sm",
@@ -106,7 +106,7 @@ export default function Home() {
               <motion.button
                 whileHover={{ scale: 1.05, transition:{ duration: 0.1} }}
                 whileTap={{ scale: 0.94, transition:{ duration: 0.1} }}
-                transition={{ duration: 0.1, ease: [0.1, 0.7, 1.4, 1], delay: 0.5 }}
+                transition={{ duration: 0.1, ease: [0.1, 0.7, 1.4, 1], delay: 0.4 }}
                 onClick={() => setIsCollapsed(!isCollapsed)}
                 className={cn(
                   "relative w-fit group border-2 border-amber-500/30 py-[3px] px-3 md:py-1.5 md:px-4 mb-2 rounded-[12px] md:rounded-[36px]",
