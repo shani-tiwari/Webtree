@@ -208,10 +208,10 @@ export default function Blog() {
                       />
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900 dark:text-white leading-tight">
+                      <h4 className="font-bold text-white leading-tight">
                         {item.title}
                       </h4>
-                      <p className="text-slate-600 dark:text-slate-400 text-sm mt-1">
+                      <p className="text-slate-300/80 text-sm mt-1">
                         {item.desc}
                       </p>
                     </div>
