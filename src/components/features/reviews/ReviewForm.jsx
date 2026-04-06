@@ -148,10 +148,10 @@ export default function ReviewForm({ isOpen, onClose }) {
           className="fixed inset-0 z-96 flex items-center justify-center bg-black p-3 md:p-4"
         >
           <motion.div
-            initial={{ scale: 0.95, y: 20 }}
+            initial={{ scale: 0.95, y: 10 }}
             animate={{ scale: 1, y: 0 }}
-            exit={{ scale: 0.95, y: 20 }}
-            transition={{ duration: 0.2 , ease: [0.5, 1.1, 0.8, 1]}}
+            exit={{ scale: 0.95, y: 10 }}
+            transition={{ duration: 0.3 , ease: "easeOut"}}
             onClick={(e) => e.stopPropagation()}
             className="w-full max-w-[95%] mt-10 sm:max-w-md lg:max-w-lg bg-[#0a0a0a] md:mt-14 border border-zinc-800 rounded-[20px] md:rounded-3xl p-4 md:p-7 relative shadow-2xl overflow-hidden"
           >
