@@ -2,15 +2,15 @@ import Home from "./pages/Home";
 import React from "react";
 import { Routes, Route, useLocation } from "react-router";
 import { cn } from "./utils/utils.js";
-import About from "./pages/About";
-import Socials from "./pages/Socials";
-import Footer from "./components/layout/Footer";
 import Navbar from "./components/layout/Navbar";
-import ScrollToTop from "./components/layout/ScrollToTop";
-import Reviews from "./pages/Reviews";
-import Blog from "./pages/Blog.jsx";
+import About from "./pages/About";
 
-const Collection = React.lazy(() => import("./pages/Collection"));
+const Socials     = React.lazy(() => import("./pages/Socials"));
+const Footer      = React.lazy(() => import("./components/layout/Footer"));
+const ScrollToTop = React.lazy(() => import("./components/layout/ScrollToTop"));
+const Reviews     = React.lazy(() => import("./pages/Reviews"));
+const Blog        = React.lazy(() => import("./pages/Blog.jsx"));
+const Collection  = React.lazy(() => import("./pages/Collection"));
 
 function App() {
   const location = useLocation();
