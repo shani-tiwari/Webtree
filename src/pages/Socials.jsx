@@ -129,7 +129,7 @@ export default function Socials() {
     {
       name: "Instagram",
       icon: InstagramIcon,
-      url: "https://Instagram.com/shanidevelops",
+      url: "https://Instagram.com/shani.develops",
       label: "Personal Journey & Experience",
       color: "#E4405F",
       status: "Stories",
