@@ -243,7 +243,7 @@
       "logo": "https://img.logo.dev/reui.io?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
-  "design_idea": [
+  "design_ideas": [
     {
       "id": 1,
       "name": "Dribbble",
@@ -301,7 +301,7 @@
       "logo": "https://img.logo.dev/seesaw.is?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
-  "font": [
+  "fonts": [
     {
       "id": 1,
       "name": "Google Fonts",
@@ -367,7 +367,7 @@
       "logo": "https://img.logo.dev/rawpixel.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
-  "image": [
+  "images": [
     {
       "id": 1,
       "name": "Unsplash",
@@ -417,7 +417,7 @@
       "logo": "https://img.logo.dev/rawpixel.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
-  "video": [
+  "videos": [
     {
       "id": 1,
       "name": "Mixkit",
@@ -591,7 +591,7 @@
       "logo": "https://img.logo.dev/rawpixel.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
-  "color": [
+  "colors": [
     {
       "id": 1,
       "name": "Coolors",
@@ -871,7 +871,7 @@
       "logo": "https://img.logo.dev/mixamo.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
-  "apis": [
+  "api": [
     {
       "id": 1,
       "name": "JSONPlaceholder",
