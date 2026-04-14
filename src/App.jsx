@@ -1,16 +1,17 @@
 import Home from "./pages/Home";
 import React from "react";
-import { Routes, Route, useLocation } from "react-router";
+import { Routes, Route, useLocation, Navigate } from "react-router";
 import { cn } from "./utils/utils.js";
 import Navbar from "./components/layout/Navbar";
 import About from "./pages/About";
 
-const Socials     = React.lazy(() => import("./pages/Socials"));
-const Footer      = React.lazy(() => import("./components/layout/Footer"));
-const ScrollToTop = React.lazy(() => import("./components/layout/ScrollToTop"));
-const Reviews     = React.lazy(() => import("./pages/Reviews"));
 const Blog        = React.lazy(() => import("./pages/Blog.jsx"));
+const Footer      = React.lazy(() => import("./components/layout/Footer"));
+const Socials     = React.lazy(() => import("./pages/Socials"));
+const Reviews     = React.lazy(() => import("./pages/Reviews"));
+const Explore     = React.lazy(() => import("./pages/Explore"));
 const Collection  = React.lazy(() => import("./pages/Collection"));
+const ScrollToTop = React.lazy(() => import("./components/layout/ScrollToTop"));
 
 function App() {
   const location = useLocation();
@@ -46,6 +47,8 @@ function App() {
           >
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/explore" element={<Navigate to="/explore/tools" replace />} />
+              <Route path="/explore/:category" element={<Explore />} />
               <Route path="/collection" element={<Collection />} />
               <Route path="/about-webtree" element={<About />} />
               <Route path="/connect" element={<Socials />} />

@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import { cn } from "../../../utils/utils.js";
 
 const Categories = React.memo(
-  ({ name, index, data, isActive, setActiveCategory }) => {
+  ({ name, index, isActive, setActiveCategory }) => {
     const handleClick = () => {
       setActiveCategory(name);
     };
@@ -38,27 +38,20 @@ const Categories = React.memo(
           className={cn("font-light tracking-wide drop-shadow-sm text-shadow-2xs text-[12px] md:text-[13px]")}
         >
           {
-            name
-              .split("_")
-              .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-              .join(" ")
+            name.split("_").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")
           }
           {/* blur glow */}
-          {
-            isActive && (
+          { isActive && (
               <span
                 className="absolute mx-auto -bottom-[5px] md:-bottom-[9.2px] rounded-full blur-xs left-0 w-[95%] h-[2px] bg-linear-to-l from-transparent via-zinc-200 to-transparent "
               />
-            )
-          }
+          )}
           {/* line */}
-          {
-            isActive && (
+          { isActive && (
               <span
                 className="absolute mx-auto -bottom-[7px] md:-bottom-[9px] xl:-bottom-[9.5px] left-0 w-[95%] h-px bg-linear-to-l from-transparent via-zinc-200 to-transparent "
               />
-            )
-          }
+          )}
         </span>
       </motion.button>
     );

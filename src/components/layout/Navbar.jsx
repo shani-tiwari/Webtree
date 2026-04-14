@@ -201,6 +201,7 @@ const Navbar = () => {
               { label: 'About'  , path: '/about-webtree'   },
               { label: 'Connect', path: '/connect'         },
               { label: 'Reviews', path: '/webtree-reviews' },
+              { label: 'Explore', path: '/explore/tools'   },
             ].map((item) => {
               const isActive = active === item.label.toLowerCase();
               return (
