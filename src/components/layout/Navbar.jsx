@@ -77,6 +77,7 @@ const Navbar = () => {
     location.pathname.startsWith("/connect") ? "connect" :
     location.pathname.startsWith("/webtree-reviews") ? "reviews" :
     location.pathname.startsWith("/collection") ? "collection" :
+    location.pathname.startsWith("/explore") ? "explore" :
     null;
 
     // social link section 
