@@ -81,8 +81,9 @@ export default function Home() {
           transition={{ duration: 0.3, layout: { duration: 0.3, ease: "easeInOut" } }}
           aria-label="Category selection"
           className={cn(
-            "z-40 gap-1 md:gap-2 w-full h-fit px-2 md:py-3 md:pt-4 mb-8 max-w-4xl mx-auto shrink-0 flex flex-wrap justify-center rounded-xl text-white backdrop-blur-sm",
-            isCollapsed ? "lg:mb-8" : "mb-6 lg:mb-0"
+            "z-40 gap-1 md:gap-2 w-full h-fit px-2 md:py-3  md:pt-4 mb-8 max-w-4xl mx-auto shrink-0",
+            "flex flex-wrap justify-center rounded-xl text-white backdrop-blur-sm",
+            isCollapsed ? ' lg:mb-8' : ' lg:mb-6'
           )}
         >
           <AnimatePresence mode="popLayout">
@@ -104,7 +105,7 @@ export default function Home() {
               <motion.button
                 whileHover={{ scale: 1.05, transition:{ duration: 0.1} }}
                 whileTap={{ scale: 0.94, transition:{ duration: 0.1} }}
-                transition={{ duration: 0.1, ease: [0.1, 0.7, 1.4, 1], delay: 0.4 }}
+                transition={{ duration: 0.1, ease: [0.1, 0.7, 1.4, 1], delay: 0 }}
                 onClick={() => setIsCollapsed(!isCollapsed)}
                 className={cn(
                   "relative w-fit group border-2 border-amber-500/30 py-[3px] px-3 md:py-1.5 md:px-4 mb-2 rounded-[12px] md:rounded-[36px]",
@@ -118,21 +119,20 @@ export default function Home() {
           }
         </motion.aside>
 
-          {/* divider */}
+        {/* divider */}
+        <motion.div
+          layout
+          transition={{ layout: { duration: 0.5, ease: "easeOut" } }}
+          className={cn("-mt-4 md:-mt-10 pointer-events-none z-50 relative")}>
+          <CustomSVG />
+        </motion.div>
 
-          <motion.div
-            layout
-            transition={{ layout: { duration: 0.5, ease: "easeOut" } }}
-            className={cn("-mt-4 md:-mt-10 pointer-events-none z-50 relative")}>
-            <CustomSVG />
-          </motion.div>
-
-          {/* Cards Section */}
-          <ResourceGallery
-            key={activeCategory}
-            carddata={carddata}
-            activeCategory={activeCategory}
-          />
+        {/* Cards Section */}
+        <ResourceGallery
+          key={activeCategory}
+          carddata={carddata}
+          activeCategory={activeCategory}
+        />
 
       </motion.section>
 

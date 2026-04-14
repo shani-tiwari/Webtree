@@ -18,7 +18,7 @@ const Categories = React.memo(
         whileHover={{ scale: 1.02, y: -2, transition: { duration: 0.13, ease: "easeInOut" } }}
         whileTap={{ scale: 0.97, transition: { duration: 0.08, delay: 0 } }}
         transition={{
-          duration: 0.22,
+          // duration: 0.22, -- with layout duration(feels weird)
           delay: index * 0.03,
           ease: "easeOut",
           layout: { duration: 0.26, ease: "easeOut" },
@@ -27,7 +27,7 @@ const Categories = React.memo(
         aria-pressed={isActive}
         aria-label={`Select ${name.split("_").join(" ")} category`}
         className={cn(
-          "relative w-fit group border border-white/30 py-[3px] px-3 md:py-1.5 md:px-4 mb-2 rounded-[12px] md:rounded-[14px]",
+          "relative w-fit group border-[1.6px] border-white/30 py-[3px] px-3 md:py-1.5 md:px-4 mb-2 rounded-[12px] md:rounded-[14px]",
           "backdrop-blur-md cursor-pointer select-none shadow-xs shadow-white/8 hover:shadow-[0_4px_15px_rgba(0,0,0,0.9)]  ",
           isActive
             ? "bg-linear-to-b from-amber-800/50 border-2 to-amber-950/50 shadow-[inset_0_4px_6px_rgba(255,255,255,0.9),0_2px_4px_rgba(0,0,0,0.8)]"
@@ -35,19 +35,14 @@ const Categories = React.memo(
         )}
       >
         <span
-          className={cn("font-light tracking-wide drop-shadow-sm text-shadow-2xs text-sm")}
+          className={cn("font-light tracking-wide drop-shadow-sm text-shadow-2xs text-[12px] md:text-[13px]")}
         >
-          {/* {
-            isActive && (
-              <span
-                className="absolute -top-[9px] left-0 w-[90%] h-[0.5px] bg-linear-to-l from-transparent  via-zinc-200 to-transparent "
-              />
-            )
-          } */}
-          {name
-            .split("_")
-            .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-            .join(" ")}
+          {
+            name
+              .split("_")
+              .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+              .join(" ")
+          }
           {/* blur glow */}
           {
             isActive && (
