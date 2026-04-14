@@ -85,7 +85,7 @@ export default function Blog() {
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="webtree" />
         <meta property="og:url" content="https://webtree.shaniweb.com/blog" />
-        <meta property="og:title" content="Blog - WebTree" />
+        <meta property="og:title" content="WebTree - Blog" />
         <meta property="og:description" content="Blog - WebTree" />
         <meta property="og:image" content="https://webtree.shaniweb.com/og-image.png" />
       </Helmet>

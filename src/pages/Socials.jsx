@@ -164,7 +164,7 @@ export default function Socials() {
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="webtree" />
       <meta property="og:url" content="https://webtree.shaniweb.com/connect" />
-      <meta property="og:title" content="About Webtree - Collection of Web Development Resources" />
+      <meta property="og:title" content="Webtree - Collection of Web Development Resources" />
       <meta property="og:description" content="Webtree, the ultimate collection of web development resources. Discover tools, design ideas, and more." />
       <meta property="og:image" content="https://webtree.shaniweb.com/og-image.png" />
     </Helmet>
