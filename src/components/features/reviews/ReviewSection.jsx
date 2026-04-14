@@ -22,10 +22,6 @@ export default function ReviewSection() {
     if (!container) return;
     
     let animationFrameId;
-    // eslint-disable-next-line no-unused-vars
-    let scrollPos = 0;
-    // eslint-disable-next-line no-unused-vars
-    const scrollSpeed = 0.5; // pixels per frame
     
     return () => {
       if(animationFrameId) cancelAnimationFrame(animationFrameId);

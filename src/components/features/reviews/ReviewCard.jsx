@@ -5,7 +5,7 @@ import { Link } from "react-router";
 import { useLocation } from "react-router";
 
 export default function ReviewCard({ xProfile, gender, text, bgColor, date }) {
-  const profileImage = gender === "female" ? "/user-img/female.png" : "/user-img/male.jpg";
+  const profileImage = gender === "female" ? "/user-imgs/female.png" : "/user-imgs/male.jpg";
   const location = useLocation();
   return (
       <Link 
