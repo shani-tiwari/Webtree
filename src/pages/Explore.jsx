@@ -6,15 +6,14 @@ import { cn } from "../utils/utils.js";
 import { Helmet } from "react-helmet";
 import SkeletonHome from "../components/ui/SkeletonHome";
 import { useCollectionData } from "../hooks/useCollectionData";
+import CustomSVG from "../components/ui/CustomSVG"
 
 const Categories = React.lazy(() => import("../components/features/collection/Categories"));
-const CustomSVG  = React.lazy(() => import("../components/ui/CustomSVG"));
 const CardsGrid  = React.lazy(() => import("../components/layout/CardsGrid.jsx"));
 
 export default function Explore() {
 
   const { category } = useParams();
-  console.log(category)
   const navigate = useNavigate();
 
   const { data, loading } = useCollectionData();
@@ -31,6 +30,13 @@ export default function Explore() {
 
   const cardData =
     data && activeCategory && data[activeCategory] ? data[activeCategory] : [];
+
+  // useEffect(() => {
+  //   window.scrollTo({
+  //       top: 0,
+  //       behavior: "smooth"
+  //   })
+  // }, [activeCategory]);
 
   return (
     <>
@@ -56,7 +62,7 @@ export default function Explore() {
       {/* main section */}
       <section
         id="explore"
-        className="w-full h-fit max-w-[1300px] flex flex-col gap-10 md:gap-10 pt-30"
+        className=" h-fit max-w-[1200px] flex flex-col gap-10 md:gap-10 pt-30"
       >
         <h1 className="sr-only">Explore Web Dev Resources</h1>
 
@@ -82,13 +88,10 @@ export default function Explore() {
           </h1>
         </motion.h1>
 
-        {/* categories & cards */}
+        {/* categories & SVG */}
         <motion.section
-          layout
-          transition={{ layout: { duration: 0.5, ease: "easeInOut" } }}
-          className={cn(
-            "w-full flex flex-col gap-4 md:gap-8 px-1 md:px-14 pb-20",
-          )}
+          transition={{ duration: 0.5, ease: "easeInOut"  }}
+          className={cn("w-full flex flex-col gap-4 md:gap-8 px-1 md:px-14")}
         >
           {/* categories */}
           <motion.aside
@@ -101,7 +104,7 @@ export default function Explore() {
             }}
             aria-label="Category selection"
             className={cn(
-              "z-40 gap-1 md:gap-2 w-full h-fit px-2 md:py-3  md:pt-4 mb-8 max-w-4xl mx-auto shrink-0",
+              "z-40 gap-1 md:gap-2 w-full  h-fit px-2 md:py-3  md:pt-4 mb-8 max-w-4xl mx-auto shrink-0",
               "flex flex-wrap justify-center rounded-xl text-white backdrop-blur-sm",
             )}
           >
@@ -110,7 +113,7 @@ export default function Explore() {
                 <div className="text-white text-sm">Loading Categories...</div>
               }
             >
-              <AnimatePresence mode="popLayout">
+              <AnimatePresence>
                 {Object.keys(data || {}).map((name, index) => (
                   <Categories
                     key={name}
@@ -130,20 +133,20 @@ export default function Explore() {
             transition={{ layout: { duration: 0.5, ease: "easeOut" } }}
             className={cn("-mt-4 md:-mt-10 pointer-events-none z-50 relative")}
           >
-            <Suspense fallback={<div />}>
               <CustomSVG />
-            </Suspense>
           </motion.div>
+        </motion.section>
 
-          {/* Cards Section */}
-          <Suspense fallback={<SkeletonHome />}>
+        {/* cards */}
+        <section className="w-full flex justify-center mb-20 overflow-hidden " >
             <CardsGrid
               carddata={cardData}
               activeCategory={activeCategory}
               show="all"
             />
-          </Suspense>
-        </motion.section>
+        </section>
+
+
       </section>
     </>
   );

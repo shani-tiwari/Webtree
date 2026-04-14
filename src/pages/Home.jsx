@@ -88,7 +88,6 @@ export default function Home() {
               130+ <span className="">Web Dev Resources</span>
             </h1>
           </motion.div>
-          {/* <h1 className="font-mono md:-mt-[3px] text-2xl md:text-[32px] hover:tracking-wide transition-all duration-500">Web Dev Resources</h1> */}
         </div>
       </motion.h1>
 
