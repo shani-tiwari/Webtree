@@ -6,6 +6,7 @@ import { cn } from "../utils/utils.js";
 import { Link, useLocation } from "react-router";
 import GoBack from "../components/layout/GoBack";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 
 export default function About() {
   const location = useLocation();
@@ -32,6 +33,28 @@ export default function About() {
   });
 
   return (
+    <>
+    {/* helmet - SEO */}
+    <Helmet>
+      <title>About Webtree - The Ultimate Collection of Web Dev Resources</title>
+      <meta name="description" content="Webtree, the ultimate collection of web development resources. Discover tools, design ideas, and more." />
+      <meta name="author" content="Shani Tiwari" />
+      <meta name="robots" content="index, follow" />
+      <meta name="theme-color" content="#030303" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@ShaniDevelops" />
+      <meta name="twitter:title" content="About Webtree - Collection of Web Development Resources" />
+      <meta name="twitter:description" content="Webtree, the ultimate collection of web development resources. Discover tools, design ideas, and more." />
+      <meta name="twitter:image" content="https://webtree.shaniweb.com/og-image.png" />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="webtree" />
+      <meta property="og:url" content="https://webtree.shaniweb.com/about-webtree" />
+      <meta property="og:title" content="About Webtree - Collection of Web Development Resources" />
+      <meta property="og:description" content="Webtree, the ultimate collection of web development resources. Discover tools, design ideas, and more." />
+      <meta property="og:image" content="https://webtree.shaniweb.com/og-image.png" />
+    </Helmet>
+
+    {/* main section */}
     <section
       id="about"
       className={cn(
@@ -235,5 +258,6 @@ export default function About() {
         </motion.div>
       </motion.div>
     </section>
+    </>
   );
 }

@@ -12,6 +12,7 @@ import {
 import { cn } from "../utils/utils.js";
 import GoBack from "../components/layout/GoBack";
 import { useLocation } from "react-router";
+import { Helmet } from "react-helmet";
 
 const SocialCard = ({
   name,
@@ -147,6 +148,27 @@ export default function Socials() {
   const location = useLocation();
 
   return (
+    <>
+    {/* helmet - SEO */}
+    <Helmet>
+      <title>Socials - Webtree</title>
+      <meta name="description" content="Socials - Webtree" />
+      <meta name="author" content="Shani Tiwari" />
+      <meta name="robots" content="index, follow" />
+      <meta name="theme-color" content="#030303" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@ShaniDevelops" />
+      <meta name="twitter:title" content="Socials - Webtree" />
+      <meta name="twitter:description" content="Socials - Webtree" />
+      <meta name="twitter:image" content="https://webtree.shaniweb.com/og-image.png" />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="webtree" />
+      <meta property="og:url" content="https://webtree.shaniweb.com/connect" />
+      <meta property="og:title" content="About Webtree - Collection of Web Development Resources" />
+      <meta property="og:description" content="Webtree, the ultimate collection of web development resources. Discover tools, design ideas, and more." />
+      <meta property="og:image" content="https://webtree.shaniweb.com/og-image.png" />
+    </Helmet>
+    
     <section
       id="socials"
       className="w-full min-h-screen flex flex-col items-center justify-center bg-[#030303] pt-14 pb-10 relative overflow-hidden select-none"
@@ -206,5 +228,6 @@ export default function Socials() {
         </div>
       </div>
     </section>
+    </>
   );
 }
