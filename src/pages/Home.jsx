@@ -39,17 +39,17 @@ export default function Home() {
       </div>
 
       {/* Header */}
-      <motion.header
+      <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3, delay: 0.2 , ease: "easeOut" }}
         className={cn(
-          "w-full text-white/80 text-center px-4 md:px-6 font-semibold font-beba pt-20 md:pt-30",
+          "w-full text-white/80 text-center px-4 md:px-6 pt-20 md:pt-30",
         )}
       >
         <div
           className={cn(
-            " text-xl font-bebas-neue md:text-[28px] flex flex-col gap-2 lg:flex-row md:gap-3 bg-clip-text text-transparent bg-linear-to-b from-amber-300 to-amber-700 mx-auto w-fit  tracking-wider selection:bg-amber-600-op30 selection:text-white",
+            " text-xl md:text-[32px] flex flex-col items-center gap-2 lg:flex-row md:gap-3 mx-auto w-fit selection:bg-amber-600-op30 selection:text-white",
           )}
         >
           <motion.div
@@ -58,16 +58,14 @@ export default function Home() {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <h1
-              className={cn(
-                "wavy-underline-pulse w-fit bg-clip-text text-transparent bg-linear-to-b from-amber-300 to-amber-700",
-              )}
+              className={cn("wavy-underline-pulse font-black italic tracking-[-0.03em] w-fit bg-clip-text text-transparent bg-linear-to-b from-amber-300 to-amber-700")}
             >
-              130+
+              130+ <span className="">Web Dev Resources</span>
             </h1>
           </motion.div>
-          <h1 className="font-mono md:-mt-[3px] text-2xl md:text-[32px] hover:tracking-wide transition-all duration-500">Development Resources</h1>
+          {/* <h1 className="font-mono md:-mt-[3px] text-2xl md:text-[32px] hover:tracking-wide transition-all duration-500">Web Dev Resources</h1> */}
         </div>
-      </motion.header>
+      </motion.h1>
 
       {/* categories & cards */}
       <motion.section
