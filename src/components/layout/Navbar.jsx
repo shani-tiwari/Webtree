@@ -16,6 +16,7 @@ import {
   Home11Icon,
   Tree02Icon,
   Link02FreeIcons,
+  SearchList02Icon,
 } from "@hugeicons/core-free-icons";
 import React, { useState, useEffect } from "react";
 // eslint-disable-next-line no-unused-vars
@@ -158,6 +159,7 @@ const Navbar = () => {
   const navLinks = [
     { name: "Home",       path: "/",                 icon: Home11Icon },
     { name: "About",      path: "/about-webtree",    icon: Tree02Icon },
+    { name: "Explore",    path: "/explore/tools",    icon: SearchList02Icon },
     { name: "Connect",    path: "/connect",          icon: Link02FreeIcons },
     { name: "Collection", path: "/collection",       icon: FolderFavouriteIcon },
     { name: "Reviews",    path: "/webtree-reviews",  icon: Agreement03Icon },
