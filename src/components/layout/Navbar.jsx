@@ -177,7 +177,7 @@ const Navbar = () => {
               <div className="relative hidden md:flex">
                 <HugeiconsIcon icon={FolderFavouriteIcon} size={20} className="text-amber-500"/>
                 {collection.length > 0 && (
-                  <span className="absolute -right-[6px] top-[5px] font-mono text-amber-500 selection:bg-zinc-600/30 selection:text-white">
+                  <span className="absolute -right-[8px] top-[-10px] font-mono text-amber-500/80 selection:bg-zinc-600/30 selection:text-white">
                     {collection.length}
                   </span>
                 )}

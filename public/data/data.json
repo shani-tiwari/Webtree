@@ -557,41 +557,7 @@
       "logo": "https://img.logo.dev/hugeicons.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
-  "background": [
-    {
-      "id": 1,
-      "name": "Picjumbo",
-      "desc": "Free high-res images, backgrounds, and photos for personal/commercial use.",
-      "link": "https://picjumbo.com",
-      "category": "backgrounds",
-      "logo": "https://img.logo.dev/picjumbo.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 2,
-      "name": "Unsplash",
-      "desc": "Excellent source for abstract and textured backgrounds.",
-      "link": "https://unsplash.com",
-      "category": "backgrounds",
-      "logo": "https://img.logo.dev/unsplash.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 3,
-      "name": "Pexels",
-      "desc": "Variety of backgrounds including gradients and patterns.",
-      "link": "https://www.pexels.com",
-      "category": "backgrounds",
-      "logo": "https://img.logo.dev/pexels.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 4,
-      "name": "Rawpixel",
-      "desc": "rawpixel makes it easy to find beautiful visuals and create incredible designs..",
-      "link": "https://www.rawpixel.com/wallpapers?page=1&path=1636&sort=curated",
-      "category": "backgrounds",
-      "logo": "https://img.logo.dev/rawpixel.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    }
-  ],
-  "colors": [
+    "colors": [
     {
       "id": 1,
       "name": "Coolors",
@@ -639,6 +605,40 @@
       "link": "https://tailwindcss.com/docs/customizing-colors",
       "category": "color_palettes",
       "logo": "https://img.logo.dev/tailwindcss.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    }
+  ],
+  "background": [
+    {
+      "id": 1,
+      "name": "Picjumbo",
+      "desc": "Free high-res images, backgrounds, and photos for personal/commercial use.",
+      "link": "https://picjumbo.com",
+      "category": "backgrounds",
+      "logo": "https://img.logo.dev/picjumbo.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 2,
+      "name": "Unsplash",
+      "desc": "Excellent source for abstract and textured backgrounds.",
+      "link": "https://unsplash.com",
+      "category": "backgrounds",
+      "logo": "https://img.logo.dev/unsplash.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 3,
+      "name": "Pexels",
+      "desc": "Variety of backgrounds including gradients and patterns.",
+      "link": "https://www.pexels.com",
+      "category": "backgrounds",
+      "logo": "https://img.logo.dev/pexels.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 4,
+      "name": "Rawpixel",
+      "desc": "rawpixel makes it easy to find beautiful visuals and create incredible designs..",
+      "link": "https://www.rawpixel.com/wallpapers?page=1&path=1636&sort=curated",
+      "category": "backgrounds",
+      "logo": "https://img.logo.dev/rawpixel.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
   "animation": [
