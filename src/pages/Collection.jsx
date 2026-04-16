@@ -4,6 +4,8 @@ import Card from "../components/features/collection/Card";
 import { motion } from "motion/react";
 import GoBack from "../components/layout/GoBack";
 import { useLocation } from "react-router";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { FolderAddIcon } from "@hugeicons/core-free-icons";
 
 export default function Collection() {
   const { collection } = useCollection();
@@ -46,7 +48,7 @@ export default function Collection() {
           <div className="text-center text-zinc-400/70 py-20 flex flex-col items-center gap-4">
             <p className="text-lg">Your collection is empty.</p>
             <p className="text-base">
-              Add items by clicking the "+ Add" button on any resource card.
+              Add items by clicking the <HugeiconsIcon icon={FolderAddIcon} size={20} className="text-amber-500 inline-block mx-1"/> button on any resource card.
             </p>
           </div>
         ) : (

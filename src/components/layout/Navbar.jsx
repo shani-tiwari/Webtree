@@ -81,80 +81,6 @@ const Navbar = () => {
     location.pathname.startsWith("/explore") ? "explore" :
     null;
 
-    // social link section 
-    // const socialLinks = [
-    //   {
-    //     name: "GitHub",
-    //     icon: GithubIcon,
-    //     url: "https://github.com/shani-tiwari/webtree",
-    //     label: "Visit my GitHub ⭐",
-    //   },
-    //   {
-    //     name: "X / Twitter",
-    //     icon: NewTwitterRectangleIcon,
-    //     url: "https://x.com/ShaniDevelops",
-    //     label: "Follow on X 🚀",
-    //   },
-    //   {
-    //     name: "LinkedIn",
-    //     icon: Linkedin01Icon,
-    //     url: "https://www.linkedin.com/in/shani-tiwari-aspirational/",
-    //     label: "Connect on LinkedIn ⛓️‍💥",
-    //   },
-    //   {
-    //     name: "Gmail",
-    //     icon: Mail01Icon,
-    //     url: "mailto:shanitiwarifl@gmail.com",
-    //     label: "Send me an email 💌",
-    //   },
-    //   // {
-    //   //   name: "Dribbble",
-    //   //   icon: Dribbble,
-    //   //   url: "https://dribbble.com/shani-tiwari",
-    //   //   label: "My Dribbble portfolio🎨",
-    //   // },
-    //   {
-    //     name: "Instagram",
-    //     icon: InstagramIcon,
-    //     url: "https://Instagram.com/shanidevelops",
-    //     label: "Follow on Instagram✨",
-    //   },
-    //   {
-    //     name: "Coffee",
-    //     icon: Coffee01Icon,
-    //     url: "https://buymeacoffee.com/shani_tiwari?new=1",
-    //     label: "🍵 coffee ❔",
-    //   },
-    // ];
-    // social link section - animation 
-    // const AllSocialLinks = {
-    //   hidden: { 
-    //     opacity: 1
-    //    },
-    //   visible: {
-    //     opacity: 1,
-    //     transition: {
-    //       delay: 0.08,
-    //       staggerChildren: 0.08,
-    //     },
-    //   },
-    // };
-    // const socialLink = {
-    //   hidden: { x: 10, y: -10, 
-    //     opacity: 1
-    //   },
-    //   visible: {
-    //     x: 0,
-    //     y: 0,
-    //     opacity: 1,
-    //     transition: {
-    //       duration: 0.35,
-    //       ease: "easeOut",
-    //     },
-    //   },
-    // };
-
-
   const [showLength, setShowLength] = useState(true);
   const navLinks = [
     { name: "Home",       path: "/",                 icon: Home11Icon },
@@ -164,6 +90,8 @@ const Navbar = () => {
     { name: "Collection", path: "/collection",       icon: FolderFavouriteIcon },
     { name: "Reviews",    path: "/webtree-reviews",  icon: Agreement03Icon },
   ];
+
+  const isCollectionPage = location.pathname === "/collection";
 
   return (
     <>
@@ -191,7 +119,7 @@ const Navbar = () => {
             <p className="text-amber-500 mr-2 md:text-[26px]">
               ४
             </p>
-            <h1 className="mt-[1.5px] xl:mt-0 xl:mb-[1.5px]">
+            <h1 className=" xl:mt-0 xl:mb-[1.5px]">
               Webtree
             </h1>
           </Link>
@@ -243,25 +171,16 @@ const Navbar = () => {
                 Collection
               </p>
             )}
-            {location.pathname === "/collection" ? (
-              <HugeiconsIcon 
-                icon={SquareArrowLeft02Icon}
-                size={20}
-                style={{ color: "oklch(66.6% 0.179 58.318)" }}
-                className="hidden md:flex "
-              />
+            {isCollectionPage ? (
+              <HugeiconsIcon icon={SquareArrowLeft02Icon} size={20} style={{ color: "oklch(66.6% 0.179 58.318)" }} className="hidden md:flex"/>
             ) : (
-              <div>
-                <HugeiconsIcon
-                  icon={FolderFavouriteIcon}
-                  size={20}
-                  className="hidden md:flex text-amber-500"
-                />
-                <sup
-                  className={cn("hidden md:flex absolute -right-[6px] top-[5px] font-mono text-amber-500 selection:bg-zinc-600/30 selection:text-white ")}
-                >
-                  {collection.length}
-                </sup>
+              <div className="relative hidden md:flex">
+                <HugeiconsIcon icon={FolderFavouriteIcon} size={20} className="text-amber-500"/>
+                {collection.length > 0 && (
+                  <span className="absolute -right-[6px] top-[5px] font-mono text-amber-500 selection:bg-zinc-600/30 selection:text-white">
+                    {collection.length}
+                  </span>
+                )}
               </div>
             )}
             <span
@@ -284,27 +203,30 @@ const Navbar = () => {
               rel="noreferrer"
               aria-label={`Visit`}
             >
-              {location.pathname === "/collection" ? (
-                <HugeiconsIcon
-                  onClick={() => setShowLength(!showLength)}
-                  icon={SquareArrowLeft02Icon}
-                  size={20}
-                  style={{ color: "oklch(55.5% 0.163 48.998)" }}
-                />
-              ) : (
-                <HugeiconsIcon
-                  onClick={() => setShowLength(!showLength)}
-                  icon={FolderCheckIcon}
-                  size={20}
-                  style={{ color: "oklch(0.871 0.006 286.286)" }}
-                />
-              )}
-
-              <sup
-                className={cn("absolute -right-2 top-1 text-zinc-300 selection:bg-amber-600-op30 selection:text-white")}
-              >
-                { showLength && collection.length}
-              </sup>
+              {
+                location.pathname === "/collection" ? (
+                  <HugeiconsIcon
+                    onClick={() => setShowLength(!showLength)}
+                    icon={SquareArrowLeft02Icon}
+                    size={20}
+                    style={{ color: "oklch(55.5% 0.163 48.998)" }}
+                  />
+                ) : (
+                  <HugeiconsIcon
+                    onClick={() => setShowLength(!showLength)}
+                    icon={FolderCheckIcon}
+                    size={20}
+                    style={{ color: "oklch(0.871 0.006 286.286)" }}
+                  />
+                )}
+                {!isCollectionPage && showLength && collection.length > 0 && (
+                  <sup
+                    className={cn("absolute -right-2 top-1 text-zinc-300 selection:bg-amber-600-op30 selection:text-white")}
+                  >
+                    {collection.length}
+                  </sup>
+                )
+              }
             </Link>
             <button
               onClick={() => setIsOpen(true)}
@@ -399,43 +321,6 @@ const Navbar = () => {
                   ))
                 }
               </div>
-
-              {/* Socials Section */}
-              {/* <div className="flex flex-col items-center gap-6 w-full">
-                <p
-                  className={cn(
-                    "text-zinc-500 text-sm tracking-[0.2em] uppercase flex gap-2",
-                  )}
-                >
-                  Socials 
-                </p>
-                <motion.div
-                  variants={AllSocialLinks}
-                  initial="hidden"
-                  animate="visible"
-                  className="flex gap-x-14 gap-y-8 flex-wrap justify-center"
-                >
-                  {socialLinks.map((item) => (
-                    <motion.a
-                      variants={socialLink}
-                      key={item.name}
-                      href={item.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={cn(
-                        "flex flex-col flex-wrap items-center justify-center gap-1.5 text-white/70 transition-all duration-300 active:scale-90 hover:text-white",
-                      )}
-                      onClick={() => setIsOpen(false)}
-                      aria-label={`Visit ${item.label} mobile`}
-                    >
-                      <HugeiconsIcon icon={item.icon} size={30} />
-                      <span className="text-[10px] text-zinc-500 tracking-widest animate-pulse">
-                        {item.name}
-                      </span>
-                    </motion.a>
-                  ))}
-                </motion.div>
-              </div> */}
             </motion.div>
 
           </motion.div>
