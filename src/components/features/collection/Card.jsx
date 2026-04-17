@@ -110,7 +110,7 @@ const Card = memo(
                 onClick={handleAddKey}
                 className={cn(
                   "group/icon absolute right-[10px] flex items-center justify-center z-30",
-                  "p-1 rounded-xl bg-white/2 border-2 border-white/20 cursor-pointer active:scale-95",
+                  "p-1 rounded-xl bg-white/2 border-2 border-white/20 cursor-pointer",
                   isCollected
                     ? "text-emerald-600 font-bold hover:text-emerald-500 filter-[drop-shadow(0_0_4px_rgba(16,185,129,0.3))]"
                     : "text-amber-300-op60  group-hover:text-amber-400-op80 filter-[drop-shadow(0_0_4px_var(--color-amber-400-op30))] ",
@@ -120,7 +120,7 @@ const Card = memo(
                   <HugeiconsIcon icon={FolderCheckIcon} size={20} />
                 ) : (
                   <HugeiconsIcon
-                    className="filter-[drop-shadow(0_0_4px_var(--color-amber-400-op50))]"
+                    className="filter-[drop-shadow(0_0_4px_var(--color-amber-400-op50))] active:scale-95"
                     icon={FolderAddIcon}
                     size={20}
                   />
@@ -143,11 +143,10 @@ const Card = memo(
                 transition={{ duration: 0.1 }}
                 onClick={handleRemoveKey}
                 className={cn(
-                  "group/delete absolute right-2 flex items-center justify-center text-red-600/90 hover:text-red-500 p-1 rounded-xl border-2 border-white/20 z-30",
-                  "active:scale-95 cursor-pointer",
+                  "group/delete absolute right-2 flex items-center justify-center text-red-600/90 hover:text-red-500 p-1 rounded-xl border-2 border-white/20 z-30 cursor-pointer",
                 )}
               >
-                <HugeiconsIcon icon={Delete03Icon} size={19} />
+                <HugeiconsIcon icon={Delete03Icon} size={19} className="active:scale-95"/>
                 <span
                   className={cn(
                     " hidden md:flex absolute right-full mr-2 -mt-4 w-max px-2.5 py-[3px] text-[10px] uppercase bg-zinc-900 border border-white/10 rounded-md filter-[drop-shadow(0_0_4px_rgba(220,38,50,0.3))] ",
@@ -166,11 +165,11 @@ const Card = memo(
               transition={{ duration: 0.1 }}
               onClick={handleCopy}
               className={cn(
-                "group/copy absolute right-[42px] top-[4px] flex items-center justify-center active:scale-95 z-30",
+                "group/copy absolute right-[42px] top-[4px] flex items-center justify-center  z-30",
                 "text-sky-300/80 group-hover:text-sky-500/90 p-1 rounded-xl bg-white/2 border-2 border-white/20 cursor-pointer",
               )}
             >
-              <HugeiconsIcon icon={Copy02Icon} size={19} />
+              <HugeiconsIcon icon={Copy02Icon} size={19} className="active:scale-95" />
               <span
                 className={cn(
                   "hidden md:flex absolute right-full mr-2 w-max px-2.5 py-1 text-[10px] uppercase bg-zinc-900 border border-white/20 rounded-md shadow-xs ",
@@ -188,11 +187,11 @@ const Card = memo(
               transition={{ duration: 0.1 }}
               onClick={handleShare}
               className={cn(
-                "group/share absolute top-[20px] right-[10px] flex items-center justify-center active:scale-95 z-30",
+                "group/share absolute top-[20px] right-[10px] flex items-center justify-center z-30",
                 "text-indigo-500 group-hover:text-indigo-600 p-1 rounded-xl bg-white/2 border-2 border-white/20 cursor-pointer",
               )}
             >
-              <HugeiconsIcon icon={SentIcon} size={19} />
+              <HugeiconsIcon icon={SentIcon} size={19} className="-translate-x-px translate-y-px active:scale-95" />
               <span
                 className={cn(
                   "hidden md:flex absolute top-[78%] px-2.5 -left-14 w-max  py-[3px] text-[10px] uppercase bg-zinc-900 border border-white/20 rounded-md shadow-xs",
