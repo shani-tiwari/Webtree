@@ -32,7 +32,7 @@ export default function Home() {
     <>
     {/* helmet - SEO */}
     <Helmet>
-      <title>WebTree - The Ultimate Collection of Web Dev Resources</title>
+      <title>WebTree - Web Dev Resources</title>
       <meta name="description" content="Webtree, the ultimate collection of web development resources. Discover tools, design ideas, and more." />
       <meta name="author" content="Shani Tiwari" />
       <meta name="robots" content="index, follow" />

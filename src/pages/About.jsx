@@ -36,7 +36,7 @@ export default function About() {
     <>
     {/* helmet - SEO */}
     <Helmet>
-      <title>About Webtree - The Ultimate Collection of Web Dev Resources</title>
+      {/* <title>About Webtree - Web Dev Resources</title> */}
       <meta name="description" content="Webtree, the ultimate collection of web development resources. Discover tools, design ideas, and more." />
       <meta name="author" content="Shani Tiwari" />
       <meta name="robots" content="index, follow" />

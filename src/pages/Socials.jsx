@@ -151,7 +151,7 @@ export default function Socials() {
     <>
     {/* helmet - SEO */}
     <Helmet>
-      <title>Socials - Webtree</title>
+      {/* <title>Socials - Webtree</title> */}
       <meta name="description" content="Socials - Webtree" />
       <meta name="author" content="Shani Tiwari" />
       <meta name="robots" content="index, follow" />

@@ -42,7 +42,7 @@ export default function Explore() {
   return (
     <>
       <Helmet>
-        <title>Explore - WebTree</title>
+        {/* <title>Explore - WebTree</title> */}
         <meta name="description" content="Explore - WebTree" />
         <meta name="author" content="Shani Tiwari" />
         <meta name="robots" content="index, follow" />
