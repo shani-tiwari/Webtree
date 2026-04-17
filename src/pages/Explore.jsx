@@ -1,4 +1,4 @@
-import React, { useState, Suspense } from "react";
+import React, { useState, Suspense, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "motion/react";
@@ -24,6 +24,13 @@ export default function Explore() {
     navigate(`/explore/${newCategory}`);
   };
 
+  useEffect(() => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    })
+  });
+
   if (loading) {
     return <SkeletonHome />;
   }
@@ -31,12 +38,6 @@ export default function Explore() {
   const cardData =
     data && activeCategory && data[activeCategory] ? data[activeCategory] : [];
 
-  // useEffect(() => {
-  //   window.scrollTo({
-  //       top: 0,
-  //       behavior: "smooth"
-  //   })
-  // }, [activeCategory]);
 
   return (
     <>
