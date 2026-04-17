@@ -296,9 +296,9 @@
       "id": 7,
       "name": "Seesaw",
       "desc": "Platform for discovering and sharing innovative web designs and ideas.",
-      "link": "https://seesaw.is",
+      "link": "https://seesaw.website",
       "category": "design_ideas",
-      "logo": "https://img.logo.dev/seesaw.is?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+      "logo": "https://img.logo.dev/seesaw.website?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
   "fonts": [
@@ -557,7 +557,7 @@
       "logo": "https://img.logo.dev/hugeicons.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
-    "colors": [
+  "colors": [
     {
       "id": 1,
       "name": "Coolors",
