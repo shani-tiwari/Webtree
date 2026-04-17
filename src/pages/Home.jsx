@@ -153,7 +153,7 @@ export default function Home() {
 
         {/* explore page button */}
         <Link to={`/explore/${activeCategory}`} 
-          className={cn("group w-fit mx-auto mt-10 flex gap-2 text-white font-medium px-6 py-2 border-2 border-amber-600  bg-linear-to-t from-amber-600 to-amber-800 rounded-xl",
+          className={cn("group select-none w-fit mx-auto mt-10 flex gap-2 text-white font-medium px-6 py-2 border-2 border-amber-600  bg-linear-to-t from-amber-600 to-amber-800 rounded-xl",
           "shadow-sm shadow-amber-500/50 text-shadow-lg text-shadow-black/20 hover:shadow-[0_0_20px_rgba(255,190,0,0.2)] hover:scale-102 active:scale-98 transition-all duration-300")}
         >
          Explore More Websites
