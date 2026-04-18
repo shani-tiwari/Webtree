@@ -92,8 +92,8 @@ const Card = memo(
         <motion.section
           whileHover={{ y: -8, transition: { duration: 0.2 } }}
           className={cn(
-            "relative h-full flex flex-col bg-[#080808]/80 backdrop-blur-md border-2 border-zinc-700/80 rounded-4xl p-4 shadow-white/5 ",
-            "transition-all ease-[cubic-bezier(0.79,0.47,0.24,0.98)] duration-100 group cursor-pointer text-white/70 select-none hover:border-zinc-600 shadow-md hover:shadow-2xl",
+            "relative h-full flex flex-col bg-[#080808]/80 backdrop-blur-md border-2 border-zinc-700/80 rounded-[30px] p-4",
+            "transition-all ease-[cubic-bezier(0.79,0.47,0.24,0.98)] duration-100 group cursor-pointer text-white/70 select-none hover:border-zinc-600 shadow-md shadow-black hover:shadow-xl",
           )}
         >
           {/* Action Icons Section */}
@@ -110,20 +110,16 @@ const Card = memo(
                 onClick={handleAddKey}
                 className={cn(
                   "group/icon absolute right-[10px] flex items-center justify-center z-30",
-                  "p-1 rounded-xl bg-white/2 border-2 border-white/20 cursor-pointer",
+                  "p-1 rounded-xl bg-white/2 border-2 border-white/20 cursor-pointer shadow-sm",
                   isCollected
-                    ? "text-emerald-600 font-bold hover:text-emerald-500 filter-[drop-shadow(0_0_4px_rgba(16,185,129,0.3))]"
-                    : "text-amber-300-op60  group-hover:text-amber-400-op80 filter-[drop-shadow(0_0_4px_var(--color-amber-400-op30))] ",
+                    ? "text-emerald-600 font-bold hover:text-emerald-500 shadow-emerald-500/30"
+                    : "text-amber-300-op60  group-hover:text-amber-400-op80  shadow-amber-500/30",
                 )}
               >
                 {isCollected ? (
                   <HugeiconsIcon icon={FolderCheckIcon} size={20} />
                 ) : (
-                  <HugeiconsIcon
-                    className="filter-[drop-shadow(0_0_4px_var(--color-amber-400-op50))] active:scale-95"
-                    icon={FolderAddIcon}
-                    size={20}
-                  />
+                  <HugeiconsIcon className="active:scale-95" icon={FolderAddIcon} size={20} />
                 )}
 
                 <span
@@ -132,7 +128,7 @@ const Card = memo(
                     "tracking-wide font-semibold invisible group-hover/icon:visible pointer-events-none z-99 ",
                   )}
                 >
-                  {added ? "Added" : isCollected ? "Added" : "+ Add"}
+                  {added ? "Added" : isCollected ? "Added" : "+ Add to collection"}
                 </span>
               </motion.span>
             )}
@@ -143,7 +139,7 @@ const Card = memo(
                 transition={{ duration: 0.1 }}
                 onClick={handleRemoveKey}
                 className={cn(
-                  "group/delete absolute right-2 flex items-center justify-center text-red-600/90 hover:text-red-500 p-1 rounded-xl border-2 border-white/20 z-30 cursor-pointer",
+                  "group/delete absolute right-2 flex items-center justify-center text-red-600/90 hover:text-red-500 p-1 rounded-xl border-2 border-white/20 z-30 cursor-pointer shadow-xs shadow-red-500/70",
                 )}
               >
                 <HugeiconsIcon icon={Delete03Icon} size={19} className="active:scale-95"/>
@@ -165,7 +161,7 @@ const Card = memo(
               transition={{ duration: 0.1 }}
               onClick={handleCopy}
               className={cn(
-                "group/copy absolute right-[42px] top-[4px] flex items-center justify-center  z-30",
+                "group/copy absolute right-[42px] top-[4px] flex items-center justify-center  z-30 shadow-xs shadow-sky-700/70",
                 "text-sky-300/80 group-hover:text-sky-500/90 p-1 rounded-xl bg-white/2 border-2 border-white/20 cursor-pointer",
               )}
             >
@@ -187,7 +183,7 @@ const Card = memo(
               transition={{ duration: 0.1 }}
               onClick={handleShare}
               className={cn(
-                "group/share absolute top-[20px] right-[10px] flex items-center justify-center z-30",
+                "group/share absolute top-[20px] right-[10px] flex items-center justify-center z-30 shadow-xs shadow-indigo-700/70",
                 "text-indigo-500 group-hover:text-indigo-600 p-1 rounded-xl bg-white/2 border-2 border-white/20 cursor-pointer",
               )}
             >
@@ -241,18 +237,18 @@ const Card = memo(
           {/* title */}
           <div className={cn("pl-1 pt-1.5 mb-1")}>
             <Link to={link} target="_blank" rel="noopener noreferrer"
-             className={cn("font-semibold  bg-clip-text text-transparent bg-linear-to-b from-zinc-100 to-zinc-200/80  text-xl md:text-2xl  font-sans  leading-6 tracking-normal",
-                  "group-hover:text-amber-500 group-hover:tracking-[-0.02em] text-shadow-xs text-shadow-black/40 transition-all duration-150")}
+             className={cn("font-semibold  bg-clip-text text-transparent bg-linear-to-b from-zinc-100 to-zinc-200/90  text-xl md:text-2xl font-sans leading-6 tracking-normal",
+                  "group-hover:text-amber-500 group-hover:tracking-[-0.02em] text-shadow-xs text-shadow-black/50 transition-all duration-150")}
             >
                 {title}
             </Link>
           </div>
 
           {/* divider */}
-          <span className="w-[95%] h-[0.3px] bg-white/20 mb-[5px] ml-1"></span>
+          <span className="w-[95%] h-px bg-white/20 mb-[5px] ml-1 my-1"></span>
 
           {/*  Description */}
-          <Link to={link} target="_blank" rel="noopener noreferrer" className="pl-0.5 group-hover:scale-95 transition-all duration-200">
+          <Link to={link} target="_blank" rel="noopener noreferrer" className="pl-0.5 perspective-distant group-hover:rotate-x-20 transition-all duration-200">
             <p
               className={cn(
                 "text-[14px] text-shadow-2xs text-shadow-black max-w-full ml-1 text-neutral-400 leading-[18px] font-mono grow group-hover:text-neutral-300 transition-all duration-300",

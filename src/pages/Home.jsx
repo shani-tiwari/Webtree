@@ -126,12 +126,12 @@ export default function Home() {
           {
             Object.keys(data).length > 5 && (
               <motion.button
-                transition={{ duration: 0.2, ease: "easeInOut" }}
+                transition={{ duration: 0, ease: "easeInOut" }}
                 onClick={() => setIsCollapsed(!isCollapsed)}
                 className={cn(
                   "relative w-fit group border-2 border-amber-500/30 py-[3px] px-3 md:py-1.5 md:px-4 mb-2 rounded-[12px] md:rounded-[36px]",
                   "cursor-pointer transition-all duration-50 ease-out select-none shadow-xs shadow-white/8 hover:shadow-[0_0_30px_rgba(255,190,0,0.8)]",
-                  "bg-amber-500/15 hover:bg-amber-800/40 text-amber-200 tracking-wide hover:scale-103 active:scale-98 transition-all duration-100"
+                  "bg-amber-500/15 hover:bg-amber-800/40 text-amber-200 tracking-wide hover:scale-103 active:scale-98 transition-transform duration-100"
                 )}
               >
                 {isCollapsed ? "More" : "Less"}

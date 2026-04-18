@@ -101,7 +101,7 @@ const Navbar = () => {
         variants={navVariants}
         aria-label="Main Navigation"
         className={cn(
-          "fixed top-1 left-1/2 -translate-x-1/2 w-[90%] md:max-w-[1050px] z-50 px-4 md:px-8 py-1 md:py-3",
+          "fixed top-1 left-1/2 -translate-x-1/2 w-[90%] md:max-w-[1050px] z-50 px-5 md:px-8 py-1 md:py-2",
           "flex justify-between items-center rounded-full border-2 border-neutral-400/50 shadow-xs shadow-amber-700-op40 backdrop-blur-[6px]",
         )}
       >
@@ -112,21 +112,21 @@ const Navbar = () => {
           aria-label="Logo"
         >
           <Link
-            className={cn("text-white/40 flex items-center text-lg md:text-2xl font-mono hover:text-white/50 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer selection:bg-amber-600-op30 selection:text-white")}
+            className={cn("text-white/40 flex items-center justify-center font-mono hover:text-white/50 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer selection:bg-amber-600-op30 selection:text-white")}
             to="/"
             onClick={scrollTop}
           >
-            <p className="text-amber-500 mr-2 md:text-[26px]">
+            <p className="text-amber-500 mr-2 text-[22px] md:text-[26px]">
               ४
             </p>
-            <h1 className=" xl:mt-0 xl:mb-[1.5px]">
+            <h1 className=" xl:mt-0 mb-[1.5px] text-[18px] md:text-[21px] tracking-tighter">
               Webtree
             </h1>
           </Link>
         </motion.div>
 
         {/* Desktop Menu */}
-        <div className={cn("hidden md:flex grow gap-5 items-center justify-center")}>
+        <div className={cn("hidden md:flex grow gap-3 lg:gap-5 items-center justify-center")}>
           {
             [
               { label: 'About'  , path: '/about-webtree'   },
@@ -139,7 +139,7 @@ const Navbar = () => {
                 <Link
                   key={item.label}
                   to={item.path}
-                  className={cn("navItem mx-0.5",
+                  className={cn("navItem lg:mx-0.5",
                     isActive ? "text-amber-500 wavy-underline-pulse" : "text-neutral-400 hover:text-neutral-300")}
                 >
                   {item.label}
@@ -166,18 +166,18 @@ const Navbar = () => {
                 Home
               </p>
             ) : (
-              <p className={cn("text-neutral-400 font-mono mr-1 tracking-tight hover:tracking-[0.001em] transition-all duration-250 hover:text-neutral-300/90",
-                "text-lg md:text-[21px] hidden md:block selection:bg-amber-600-op30 selection:text-white")}>
+              <p className={cn("text-neutral-400 font-mono mr-1 tracking-tighter transition-all duration-250 hover:text-neutral-300/90",
+                "text-lg md:text-[20.5px] hidden md:block selection:bg-amber-600-op30 selection:text-white")}>
                 Collection
               </p>
             )}
             {isCollectionPage ? (
-              <HugeiconsIcon icon={SquareArrowLeft02Icon} size={20} style={{ color: "oklch(66.6% 0.179 58.318)" }} className="hidden md:flex"/>
+              <HugeiconsIcon icon={SquareArrowLeft02Icon} size={20} style={{ color: "oklch(66.6% 0.179 58.318)" }} className="hidden md:flex mt-1"/>
             ) : (
               <div className="relative hidden md:flex">
-                <HugeiconsIcon icon={FolderFavouriteIcon} size={20} className="text-amber-500"/>
+                <HugeiconsIcon icon={FolderFavouriteIcon} size={19} className="text-amber-500"/>
                 {collection.length > 0 && (
-                  <span className="absolute -right-[8px] top-[-10px] font-mono text-amber-500/80 selection:bg-zinc-600/30 selection:text-white">
+                  <span className="absolute text-xs -right-[6px] top-[-6px] font-mono text-amber-500/80 selection:bg-zinc-600/30 selection:text-white">
                     {collection.length}
                   </span>
                 )}
@@ -215,13 +215,13 @@ const Navbar = () => {
                   <HugeiconsIcon
                     onClick={() => setShowLength(!showLength)}
                     icon={FolderCheckIcon}
-                    size={20}
+                    size={19}
                     style={{ color: "oklch(0.871 0.006 286.286)" }}
                   />
                 )}
                 {!isCollectionPage && showLength && collection.length > 0 && (
                   <sup
-                    className={cn("absolute -right-2 top-1 text-zinc-300 selection:bg-amber-600-op30 selection:text-white")}
+                    className={cn("absolute text-xs -right-2 -top-1 text-zinc-300 selection:bg-amber-600-op30 selection:text-white")}
                   >
                     {collection.length}
                   </sup>

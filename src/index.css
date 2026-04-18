@@ -181,7 +181,7 @@
 }
 
 .navItem {
-  @apply text-shadow-2xs font-mono tracking-tight text-[19px] cursor-pointer scroll-smooth hover:tracking-wide
+  @apply text-shadow-2xs font-mono tracking-tight md:text-[17px] lg:text-[19px] cursor-pointer scroll-smooth hover:tracking-wide
    hover:-translate-y-0.5 transition-all duration-250 selection:bg-amber-600-op30 selection:text-white
 }
 
