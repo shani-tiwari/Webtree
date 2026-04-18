@@ -299,6 +299,14 @@
       "link": "https://seesaw.website",
       "category": "design_ideas",
       "logo": "https://img.logo.dev/seesaw.website?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 8,
+      "name": "Repaint",
+      "desc": "Build a website by chatting with AI.",
+      "link": "https://repaint.com/website-design",
+      "category": "design_ideas",
+      "logo": "https://img.logo.dev/repaint.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
   "fonts": [
