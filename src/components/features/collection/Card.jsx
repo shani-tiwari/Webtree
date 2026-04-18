@@ -89,11 +89,11 @@ const Card = memo(
         className={cn("w-full h-full block p-1")}
         aria-label={`View ${title} resource`}
       >
-        <motion.article
+        <motion.section
           whileHover={{ y: -8, transition: { duration: 0.2 } }}
           className={cn(
-            "relative h-full flex flex-col bg-[#080808]/80 backdrop-blur-md border border-zinc-800 rounded-4xl p-4",
-            "transition-all ease-[cubic-bezier(0.79,0.47,0.24,0.98)] duration-100 group cursor-pointer text-white/70 select-none hover:border-zinc-600/80 shadow-lg hover:shadow-2xl",
+            "relative h-full flex flex-col bg-[#080808]/80 backdrop-blur-md border-2 border-zinc-700/80 rounded-4xl p-4 shadow-white/5 ",
+            "transition-all ease-[cubic-bezier(0.79,0.47,0.24,0.98)] duration-100 group cursor-pointer text-white/70 select-none hover:border-zinc-600 shadow-md hover:shadow-2xl",
           )}
         >
           {/* Action Icons Section */}
@@ -239,16 +239,12 @@ const Card = memo(
           </div>
 
           {/* title */}
-          <div className={cn("pl-1")}>
-            <Link to={link} target="_blank" rel="noopener noreferrer">
-              <h3
-                className={cn(
-                  "font-semibold bg-clip-text text-transparent bg-linear-to-b from-zinc-100 to-zinc-300/80 text-xl md:text-2xl mt-1 mb-[10px] font-sans  leading-6 tracking-wide",
-                  " group-hover:text-amber-500 group-hover:tracking-[-0.001em] transition-all duration-300",
-                )}
-              >
+          <div className={cn("pl-1 pt-1.5 mb-1")}>
+            <Link to={link} target="_blank" rel="noopener noreferrer"
+             className={cn("font-semibold  bg-clip-text text-transparent bg-linear-to-b from-zinc-100 to-zinc-200/80  text-xl md:text-2xl  font-sans  leading-6 tracking-normal",
+                  "group-hover:text-amber-500 group-hover:tracking-[-0.02em] text-shadow-xs text-shadow-black/40 transition-all duration-150")}
+            >
                 {title}
-              </h3>
             </Link>
           </div>
 
@@ -256,7 +252,7 @@ const Card = memo(
           <span className="w-[95%] h-[0.3px] bg-white/20 mb-[5px] ml-1"></span>
 
           {/*  Description */}
-          <Link to={link} target="_blank" rel="noopener noreferrer">
+          <Link to={link} target="_blank" rel="noopener noreferrer" className="pl-0.5 group-hover:scale-95 transition-all duration-200">
             <p
               className={cn(
                 "text-[14px] text-shadow-2xs text-shadow-black max-w-full ml-1 text-neutral-400 leading-[18px] font-mono grow group-hover:text-neutral-300 transition-all duration-300",
@@ -284,7 +280,7 @@ const Card = memo(
                 .join(" ")}
             </span>
           )}
-        </motion.article>
+        </motion.section>
       </motion.div>
     );
   },
