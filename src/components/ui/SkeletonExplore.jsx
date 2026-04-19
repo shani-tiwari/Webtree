@@ -4,9 +4,7 @@ import { cn } from "../../utils/utils.js";
 import CustomSVG from "./CustomSVG";
 
 const SkeletonExplore = () => {
-  const categoryWidths = [
-    70, 95, 80, 110, 75, 85, 100, 90, 85, 75, 105, 80, 95, 70,
-  ];
+  const categoryWidths = [ 70, 95, 80, 110, 75, 85, 100, 90 ];
 
   return (
     <SkeletonTheme baseColor="#18181b" highlightColor="#27272a">
@@ -66,7 +64,7 @@ const SkeletonExplore = () => {
                 "content-start mt-2 md:mt-12"
               )}
             >
-              {Array(12).fill(0).map((_, i) => (
+              {Array(4).fill(0).map((_, i) => (
                 <div key={i} className={cn("w-full h-full block p-1")}>
                   <article
                     className={cn(

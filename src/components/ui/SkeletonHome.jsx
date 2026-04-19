@@ -3,9 +3,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import { cn } from "../../utils/utils.js";
 
 const SkeletonHome = () => {
-  const categoryWidths = [
-    70, 95, 80, 110, 75, 85, 100, 90, 85, 75, 105, 80, 95, 70,
-  ];
+  const categoryWidths = [ 70, 95, 80, 110, 75, 85, 100, 90 ];
 
   return (
     <SkeletonTheme baseColor="#18181b" highlightColor="#27272a">
@@ -63,7 +61,7 @@ const SkeletonHome = () => {
               "z-10 container bg-transparent grow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[14px] content-start md:-mt-3",
             )}
           >
-            {Array(12)
+            {Array(4)
               .fill(0)
               .map((_, i) => (
                 <div key={i} className={cn("w-full h-full block p-1")}>
