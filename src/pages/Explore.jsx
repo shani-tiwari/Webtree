@@ -4,7 +4,7 @@ import { useParams, useNavigate } from "react-router";
 import { motion, AnimatePresence } from "motion/react";
 import { cn } from "../utils/utils.js";
 import { Helmet } from "react-helmet";
-import SkeletonHome from "../components/ui/SkeletonHome";
+import SkeletonExplore from "../components/ui/SkeletonExplore";
 import { useCollectionData } from "../hooks/useCollectionData";
 import CustomSVG from "../components/ui/CustomSVG"
 
@@ -32,7 +32,7 @@ export default function Explore() {
   });
 
   if (loading) {
-    return <SkeletonHome />;
+    return <SkeletonExplore />;
   }
 
   const cardData =

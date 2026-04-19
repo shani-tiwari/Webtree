@@ -1,45 +1,40 @@
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { cn } from "../../utils/utils.js";
+import CustomSVG from "./CustomSVG";
 
-const SkeletonHome = () => {
+const SkeletonExplore = () => {
   const categoryWidths = [
     70, 95, 80, 110, 75, 85, 100, 90, 85, 75, 105, 80, 95, 70,
   ];
 
   return (
     <SkeletonTheme baseColor="#18181b" highlightColor="#27272a">
+      {/* main section matching Explore.jsx */}
       <section
-        id="home-skeleton"
-        className="w-full h-fit max-w-[1300px] flex flex-col gap-10 md:gap-10"
+        id="explore-skeleton"
+        className="w-full h-fit max-w-[1200px] mx-auto flex flex-col gap-10 md:gap-10 pt-30"
       >
+        <h1 className="sr-only">Loading Explore Web Dev Resources</h1>
+
         {/* Header */}
         <header
-          className={cn("w-full text-center px-4 md:px-6 pt-20 md:pt-30")}
+          className={cn("w-full flex justify-center text-center px-4 md:px-6 select-none")}
         >
-          <div
-            className={cn(
-              "flex flex-col items-center gap-2 lg:flex-row justify-center md:gap-3 mx-auto w-fit",
-            )}
-          >
-            <Skeleton
-              width={300}
-              height={40}
-              borderRadius={8}
-              className="md:w-[450px]"
-            />
+          <div className="w-fit">
+            <Skeleton width={180} height={35} borderRadius={8} className="md:w-[250px] md:h-[45px]" />
           </div>
         </header>
 
-        {/* categories */}
+        {/* categories & SVG */}
         <section
-          className={cn(
-            "grow w-full flex flex-col gap-4 md:gap-8 px-1 md:px-14",
-          )}
+          className={cn("select-none w-full flex flex-col gap-4 md:gap-8 px-1 md:px-14")}
         >
+          {/* categories */}
           <aside
             className={cn(
-              "z-40 max-w-4xl mx-auto shrink-0 flex flex-wrap justify-center gap-1 md:gap-2 w-full h-fit px-2 md:py-3 md:pt-4 backdrop-blur-sm",
+              "z-40 gap-1 md:gap-2 w-full h-fit px-2 md:py-3 md:pt-4 mb-8 max-w-4xl mx-auto shrink-0",
+              "flex flex-wrap justify-center rounded-xl text-white backdrop-blur-sm",
             )}
           >
             {categoryWidths.map((w, i) => (
@@ -54,18 +49,24 @@ const SkeletonHome = () => {
             ))}
           </aside>
 
-          {/* divider */}
-          <span className="h-[1.5px] mx-auto -mt-2 mb-2 bg-white/10 w-[99%] animate-pulse"></span>
-
-          {/* Cards Section */}
-          <section
-            className={cn(
-              "z-10 container bg-transparent grow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[14px] content-start md:-mt-3",
-            )}
+          {/* divider - SVG */}
+          <div
+            className={cn("-mt-4 md:-mt-10 pointer-events-none z-50 relative flex justify-center w-full")}
           >
-            {Array(12)
-              .fill(0)
-              .map((_, i) => (
+              <CustomSVG />
+          </div>
+        </section>
+
+        {/* cards */}
+        <section className="w-full flex justify-center mb-20 overflow-hidden">
+          <div className="relative w-full min-h-fit">
+            <section
+              className={cn(
+                "w-full z-10 px-2 md:px-4 lg:px-0 container left-0 right-0 mx-auto bg-transparent grow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[14px]",
+                "content-start mt-2 md:mt-12"
+              )}
+            >
+              {Array(12).fill(0).map((_, i) => (
                 <div key={i} className={cn("w-full h-full block p-1")}>
                   <article
                     className={cn(
@@ -109,11 +110,12 @@ const SkeletonHome = () => {
                   </article>
                 </div>
               ))}
-          </section>
+            </section>
+          </div>
         </section>
       </section>
     </SkeletonTheme>
   );
 };
 
-export default SkeletonHome;
+export default SkeletonExplore;
