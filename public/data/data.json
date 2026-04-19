@@ -151,6 +151,14 @@
       "desc": "Intelligent PNG/JPEG compression that preserves visual quality. API available for automation in builds.",
       "category": "tools",
       "logo": "https://img.logo.dev/tinypng.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 20,
+      "name": "useHooks",
+      "link": "https://usehooks.com/",
+      "desc": "A collection of modern, server-safe React hooks from the ui.dev team.",
+      "category": "tools",
+      "logo": "https://img.logo.dev/usehooks.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
   "ui_library": [
