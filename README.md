@@ -24,6 +24,24 @@
 WebTree is a collection of development resources, built for developers who are tired of juggling alot of tabs and endless Google searches.
 It acts like a single command center for everything you need to design and build beautiful web interfaces.
 
+
+<br/>
+<br/>
+
+# Performance Scores 👇 (21july 2026)
+<br/>
+✅ Lighthouse Performance	 → 81    <br/>
+✅ Lighthouse SEO	    →    92	  <br/>
+✅ PageSpeed Score	  →      96	  <br/>
+✅ Total Blocking Time	 →   310ms	<br/>
+
+# Core Web Vitals (Real User) 👇
+<br/>
+✅ LCP (Largest Contentful Paint) → 	1.4s	<br/>
+✅ FCP (First Contentful Paint) → 	0.6s	<br/>
+✅ CLS (Cumulative Layout Shift) →	0	<br/>
+✅ INP (Interaction to Next Paint) →	192ms	<br/>
+
 <br/>
 <br/>
 
