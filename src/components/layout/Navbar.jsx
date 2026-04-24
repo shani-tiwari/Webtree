@@ -108,7 +108,7 @@ const Navbar = () => {
         {/* Logo */}
         <motion.div
           variants={itemVariants}
-          className={cn("flex items-center md:flex-1")}
+          className={cn("flex items-center justify-center md:flex-1")}
           aria-label="Logo"
         >
           <Link
@@ -119,7 +119,7 @@ const Navbar = () => {
             <p className="text-amber-500 mr-2 text-[22px] md:text-[26px]">
               ४
             </p>
-            <h1 className=" xl:mt-0 mb-[1.5px] text-[18px] md:text-[21px] tracking-tighter">
+            <h1 className=" xl:mt-0 mb-px text-[18px] md:text-[21px] tracking-tighter">
               Webtree
             </h1>
           </Link>
@@ -246,10 +246,10 @@ const Navbar = () => {
         {isOpen && (
           <motion.div
             id="mobile-menu"
-            initial={{ opacity: 0, scale: 0.97 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.97 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+            // initial={{ opacity: 0, scale: 0.95 }}
+            // animate={{ opacity: 1, scale: 1 }}
+            // exit={{ opacity: 0, scale: 0.97 }}
+            // transition={{ duration: 0.3, ease: "easeInOut" }}
             className={cn(
               "fixed inset-0 z-50 w-screen h-screen bg-black/90 backdrop-blur-sm md:hidden",
               "flex flex-col items-center justify-center p-8 text-shadow-2xs",
@@ -267,9 +267,9 @@ const Navbar = () => {
             {/* Menu Content */}
             <motion.div 
               className="flex flex-col items-center gap-8 w-full max-w-xs "
-              initial={{ opacity: 0, x: 20, y: -20 }}
-              animate={{ opacity: 1,  x: 0, y: 0 }}
-              transition={{ duration: 0.3, ease: "easeInOut", delay: 0.2 }}
+              initial={{ opacity: 0, y: -25 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
             >
               <div className="flex flex-col items-center gap-6 w-full">
                 {
@@ -279,9 +279,9 @@ const Navbar = () => {
                         initial={{ x: 10, y: -10, opacity: 0 }}
                         animate={{ x: 0, y: 0, opacity: 1 }}
                         transition={{ 
-                          duration: 0.3, 
+                          duration: 0.2, 
                           ease: "easeInOut", 
-                          delay: 0.11 * (index + 1) 
+                          delay: 0.11 * (index + 0.5) 
                         }}
                       >
                         <Link
