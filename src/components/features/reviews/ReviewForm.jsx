@@ -91,7 +91,7 @@ export default function ReviewForm({ isOpen, onClose }) {
         setSubmitMessage("");
         setIsSubmitting(false);
         onClose();
-      }, 3000);
+      }, 1000);
     } catch (error) {
       console.error("EmailJS Error:", error);
       setSubmitMessage("Failed to send. Please try again.");

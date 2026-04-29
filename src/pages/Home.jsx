@@ -7,11 +7,12 @@ import CustomSVG from "../components/ui/CustomSVG";
 import SkeletonHome from "../components/ui/SkeletonHome";
 import Categories from "../components/features/collection/Categories";
 import ReviewSection from "../components/features/reviews/ReviewSection";
+import SuggestAddonForm from "../components/features/collection/SuggestAddonForm";
 
 import { useCollectionData } from "../hooks/useCollectionData";
 import CardsGrid from "../components/layout/CardsGrid.jsx";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { Rocket01Icon } from "@hugeicons/core-free-icons";
+import { PlusSignCircleIcon, Rocket01Icon } from "@hugeicons/core-free-icons";
 import { Helmet } from "react-helmet";
 
 
@@ -21,6 +22,7 @@ export default function Home() {
   const [activeCategory, setActiveCategory] = useState("tools");
 
   const [isCollapsed, setIsCollapsed] = useState(true);
+  const [isSuggestAddonOpen, setIsSuggestAddonOpen] = useState(false);
 
   const carddata = data[activeCategory] || [];
 
@@ -151,19 +153,38 @@ export default function Home() {
         {/* Cards Section */}
         <CardsGrid carddata={carddata} activeCategory={activeCategory} show={'less'} />
 
-        {/* explore page button */}
-        <Link to={`/explore/${activeCategory}`} 
-          className={cn("group select-none w-fit mx-auto mt-10 flex gap-2 text-white font-medium px-6 py-2 border-2 border-amber-600  bg-linear-to-t from-amber-600 to-amber-800 rounded-xl",
-          "shadow-sm shadow-amber-500/50 text-shadow-lg text-shadow-black/20 hover:shadow-[0_0_20px_rgba(255,190,0,0.2)] hover:scale-102 active:scale-98 transition-all duration-300")}
-        >
-         Explore More Websites
-         <HugeiconsIcon icon={Rocket01Icon} size={22} className="mt-0.5 group-hover:translate-y-[-3px] group-hover:translate-x-[3px] transition-all duration-300" />
-        </Link>
+        <div className="w-full flex flex-col gap-2  mt-8">
+          
+          {/* explore page button */}
+          <Link to={`/explore/${activeCategory}`} 
+            className={cn("group select-none w-fit mx-auto mt-0 flex gap-2 text-white font-medium px-6 py-2 border-2 border-amber-600  bg-linear-to-t from-amber-600 to-amber-800 rounded-xl",
+            "shadow-sm shadow-amber-500/50 text-shadow-lg text-shadow-black/20 hover:shadow-[0_0_20px_rgba(255,190,0,0.2)] hover:scale-102 active:scale-98 transition-all duration-300")}
+          >
+            Explore More Websites
+           <HugeiconsIcon icon={Rocket01Icon} size={22} className="mt-0.5 group-hover:translate-y-[-3px] group-hover:translate-x-[3px] transition-all duration-300" />
+          </Link>
+
+          {/* suggest add ons */}
+          <button 
+            onClick={() => setIsSuggestAddonOpen(true)}
+            className={cn("group select-none w-fit mx-auto mt-6 flex gap-2 text-white font-medium px-6 py-2 border-2 border-zinc-600  bg-linear-to-t from-zinc-200/30 to-zinc-500/30 rounded-xl",
+            "shadow-sm shadow-zinc-500/50 text-shadow-lg text-shadow-black/20 hover:shadow-[0_0_20px_rgba(150,150,150,0.2)] hover:scale-102 active:scale-98 transition-all duration-100")}
+          >
+            Suggest Add-on
+            <HugeiconsIcon icon={PlusSignCircleIcon} size={22} className="mt-0.5 group-hover:rotate-90 transition-transform duration-100" />
+          </button>
+
+        </div>
 
       </motion.section>
 
       {/* Review Section */}
       <ReviewSection />
+      
+      <SuggestAddonForm 
+        isOpen={isSuggestAddonOpen} 
+        onClose={() => setIsSuggestAddonOpen(false)} 
+      />
     </section>
     </>
   );
