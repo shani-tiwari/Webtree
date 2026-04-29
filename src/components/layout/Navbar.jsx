@@ -101,14 +101,14 @@ const Navbar = () => {
         variants={navVariants}
         aria-label="Main Navigation"
         className={cn(
-          "fixed top-1 left-1/2 -translate-x-1/2 w-[90%] md:max-w-[1050px] z-50 px-5 md:px-8 py-1 md:py-2",
+          "fixed top-1 left-1/2 -translate-x-1/2 w-[90%] md:max-w-[1050px] z-50 px-5 md:px-9 py-1 md:py-2",
           "flex justify-between items-center rounded-full border-2 border-neutral-400/50 shadow-xs shadow-amber-700-op40 backdrop-blur-[6px]",
         )}
       >
         {/* Logo */}
         <motion.div
           variants={itemVariants}
-          className={cn("flex items-center justify-center md:flex-1")}
+          className={cn("flex items-center md:flex-1")}
           aria-label="Logo"
         >
           <Link
