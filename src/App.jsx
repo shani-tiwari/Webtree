@@ -5,17 +5,19 @@ import { cn } from "./utils/utils.js";
 import Navbar from "./components/layout/Navbar";
 import About from "./pages/About";
 
-const Blog        = React.lazy(() => import("./pages/Blog.jsx"));
-const Footer      = React.lazy(() => import("./components/layout/Footer"));
-const Socials     = React.lazy(() => import("./pages/Socials"));
-const Reviews     = React.lazy(() => import("./pages/Reviews"));
-const Explore     = React.lazy(() => import("./pages/Explore"));
-const Collection  = React.lazy(() => import("./pages/Collection"));
+const Blog = React.lazy(() => import("./pages/Blog.jsx"));
+const Footer = React.lazy(() => import("./components/layout/Footer"));
+const Socials = React.lazy(() => import("./pages/Socials"));
+const Reviews = React.lazy(() => import("./pages/Reviews"));
+const Explore = React.lazy(() => import("./pages/Explore"));
+const Collection = React.lazy(() => import("./pages/Collection"));
 const ScrollToTop = React.lazy(() => import("./components/layout/ScrollToTop"));
 
 function App() {
   const location = useLocation();
-  const isFullScreenRoute = ["/about-webtree", "/connect", "/webtree-reviews"].includes(location.pathname);
+  const isFullScreenRoute = ["/about", "/connect", "/reviews"].includes(
+    location.pathname,
+  );
 
   return (
     <>
@@ -47,13 +49,16 @@ function App() {
           >
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/explore" element={<Navigate to="/explore/tools" replace />} />
+              <Route
+                path="/explore"
+                element={<Navigate to="/explore/tools" replace />}
+              />
               <Route path="/explore/:category" element={<Explore />} />
               <Route path="/collection" element={<Collection />} />
-              <Route path="/about-webtree" element={<About />} />
+              <Route path="/about" element={<About />} />
               <Route path="/connect" element={<Socials />} />
-              <Route path="/webtree-reviews" element={<Reviews />} />
-              <Route path="/webtree-blog" element={<Blog />} />
+              <Route path="/reviews" element={<Reviews />} />
+              <Route path="/blog" element={<Blog />} />
             </Routes>
           </React.Suspense>
 

@@ -6,7 +6,11 @@ import ReviewForm from "./ReviewForm";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { Navigation03Icon, PlusSignCircleIcon, PlusSignIcon } from "@hugeicons/core-free-icons";
+import {
+  Navigation03Icon,
+  PlusSignCircleIcon,
+  PlusSignIcon,
+} from "@hugeicons/core-free-icons";
 import { cn } from "../../../utils/utils.js";
 
 import { useReviewsData } from "../../../hooks/useReviewsData";
@@ -20,11 +24,11 @@ export default function ReviewSection() {
   useEffect(() => {
     const container = scrollContainerRef.current;
     if (!container) return;
-    
+
     let animationFrameId;
-    
+
     return () => {
-      if(animationFrameId) cancelAnimationFrame(animationFrameId);
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
     };
   }, [reviews]);
 
@@ -33,58 +37,74 @@ export default function ReviewSection() {
       {/* Header section */}
       <div className="flex flex-col md:flex-row justify-between items-center mb-10 px-4 md:px-14 gap-4">
         <div className="flex flex-col items-center md:items-start text-center md:text-left">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             // viewport={{ once: true }}
             className="text-4xl font-black text-white/90 md:text-5xl italic tracking-tight hover:tracking-tighter transition-all duration-500"
           >
-            Review <span className={cn("text-neutral-500 italic")}>Feedback</span> 
+            Review{" "}
+            <span className={cn("text-neutral-500 italic")}>Feedback</span>
           </motion.h2>
-          <p className="text-zinc-400 font-mono text-sm mt-2 hover:tracking-tighter transition-all duration-500">What developers say about <span className="text-amber-600">webtree</span> </p>
+          <p className="text-zinc-400 font-mono text-sm mt-2 hover:tracking-tighter transition-all duration-500">
+            What developers say about{" "}
+            <span className="text-amber-600">webtree</span>{" "}
+          </p>
         </div>
-        
+
         <div className="flex items-center gap-4">
           <Link
-            to="/webtree-reviews"
-            className={cn("group flex items-center justify-center gap-2 px-5 py-2.5 rounded-full hover:-translate-y-1 border border-white/10 bg-zinc-900/50",
-            "text-white/80 hover:bg-zinc-800 hover:tracking-wide hover:text-white transition-all duration-200 font-mono text-sm active:scale-95")}
+            to="/reviews"
+            className={cn(
+              "group flex items-center justify-center gap-2 px-5 py-2.5 rounded-full hover:-translate-y-1 border border-white/10 bg-zinc-900/50",
+              "text-white/80 hover:bg-zinc-800 hover:tracking-wide hover:text-white transition-all duration-200 font-mono text-sm active:scale-95",
+            )}
           >
-             View All
-             <HugeiconsIcon icon={Navigation03Icon} size={16} className="group-hover:translate-x-1 group-hover:-translate-y-0.3 transition-transform" />
+            View All
+            <HugeiconsIcon
+              icon={Navigation03Icon}
+              size={16}
+              className="group-hover:translate-x-1 group-hover:-translate-y-0.3 transition-transform"
+            />
           </Link>
-           <button
-              onClick={() => setIsFormOpen(true)}
-              className={cn("group flex items-center justify-center gap-2 px-5 py-2.5 cursor-pointer rounded-full bg-amber-500-op10 border border-amber-500-op30 text-amber-500 hover:bg-amber-500-op40 ",
-                "hover:-translate-y-1 hover:tracking-wide hover:text-zinc-200 transition-all duration-200 font-bold text-sm active:scale-95 shadow-[0_0_15px_var(--color-amber-500-op10)] hover:shadow-[0_0_15px_var(--color-amber-500-op40)]")}
-           >
-            <HugeiconsIcon icon={PlusSignCircleIcon} size={16} className="group-hover:rotate-90 transition-transform duration-200 cursor-pointer" />
+          <button
+            onClick={() => setIsFormOpen(true)}
+            className={cn(
+              "group flex items-center justify-center gap-2 px-5 py-2.5 cursor-pointer rounded-full bg-amber-500-op10 border border-amber-500-op30 text-amber-500 hover:bg-amber-500-op40 ",
+              "hover:-translate-y-1 hover:tracking-wide hover:text-zinc-200 transition-all duration-200 font-bold text-sm active:scale-95 shadow-[0_0_15px_var(--color-amber-500-op10)] hover:shadow-[0_0_15px_var(--color-amber-500-op40)]",
+            )}
+          >
+            <HugeiconsIcon
+              icon={PlusSignCircleIcon}
+              size={16}
+              className="group-hover:rotate-90 transition-transform duration-200 cursor-pointer"
+            />
             Add Review
           </button>
         </div>
       </div>
 
-       {/* Animated line */}
-        <motion.span 
-          initial={{width:"0%"}}              
-          viewport={{ once: true }}
-          whileInView={{width:"95%"}}
-          transition={{duration:0.6, delay:0.3, originX:50, ease: "easeOut"}}
-          className="z-90 h-[0.5px] block mx-auto -mt-4 md:mt-0 mb-2 bg-white/40 relative">
-        </motion.span>
+      {/* Animated line */}
+      <motion.span
+        initial={{ width: "0%" }}
+        viewport={{ once: true }}
+        whileInView={{ width: "95%" }}
+        transition={{ duration: 0.6, delay: 0.3, originX: 50, ease: "easeOut" }}
+        className="z-90 h-[0.5px] block mx-auto -mt-4 md:mt-0 mb-2 bg-white/40 relative"
+      ></motion.span>
 
       {/* Scrollable Reviews Container */}
       <div className="relative w-full pb-4">
-        <div 
-           ref={scrollContainerRef}
-           className="flex gap-6 overflow-x-auto hide-scrollbar px-8 md:px-24 py-4 mask-fade-edges"
-           style={{ scrollBehavior: 'smooth' }}
+        <div
+          ref={scrollContainerRef}
+          className="flex gap-6 overflow-x-auto hide-scrollbar px-8 md:px-24 py-4 mask-fade-edges"
+          style={{ scrollBehavior: "smooth" }}
         >
           {loading ? (
-             <div className="w-full text-center py-10 text-zinc-500 font-mono italic animate-pulse">
-               Loading reviews...
-             </div>
+            <div className="w-full text-center py-10 text-zinc-500 font-mono italic animate-pulse">
+              Loading reviews...
+            </div>
           ) : reviews.length > 0 ? (
             reviews.map((review, index) => (
               <motion.div

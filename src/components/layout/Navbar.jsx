@@ -62,7 +62,6 @@ const Navbar = () => {
     visible: { opacity: 1, y: 0 },
   };
 
-  
   const scrollTop = () => {
     window.scrollTo({
       top: 0,
@@ -73,22 +72,28 @@ const Navbar = () => {
   const { collection } = useCollection();
 
   const active =
-    location.pathname === "/" ? null :
-    location.pathname.startsWith("/about-webtree") ? "about" :
-    location.pathname.startsWith("/connect") ? "connect" :
-    location.pathname.startsWith("/webtree-reviews") ? "reviews" :
-    location.pathname.startsWith("/collection") ? "collection" :
-    location.pathname.startsWith("/explore") ? "explore" :
-    null;
+    location.pathname === "/"
+      ? null
+      : location.pathname.startsWith("/about")
+        ? "about"
+        : location.pathname.startsWith("/connect")
+          ? "connect"
+          : location.pathname.startsWith("/reviews")
+            ? "reviews"
+            : location.pathname.startsWith("/collection")
+              ? "collection"
+              : location.pathname.startsWith("/explore")
+                ? "explore"
+                : null;
 
   const [showLength, setShowLength] = useState(true);
   const navLinks = [
-    { name: "Home",       path: "/",                 icon: Home11Icon },
-    { name: "About",      path: "/about-webtree",    icon: Tree02Icon },
-    { name: "Explore",    path: "/explore/tools",    icon: SearchList02Icon },
-    { name: "Connect",    path: "/connect",          icon: Link02FreeIcons },
-    { name: "Collection", path: "/collection",       icon: FolderFavouriteIcon },
-    { name: "Reviews",    path: "/webtree-reviews",  icon: Agreement03Icon },
+    { name: "Home", path: "/", icon: Home11Icon },
+    { name: "About", path: "/about", icon: Tree02Icon },
+    { name: "Explore", path: "/explore/tools", icon: SearchList02Icon },
+    { name: "Connect", path: "/connect", icon: Link02FreeIcons },
+    { name: "Collection", path: "/collection", icon: FolderFavouriteIcon },
+    { name: "Reviews", path: "/reviews", icon: Agreement03Icon },
   ];
 
   const isCollectionPage = location.pathname === "/collection";
@@ -112,13 +117,13 @@ const Navbar = () => {
           aria-label="Logo"
         >
           <Link
-            className={cn("text-white/40 flex items-center justify-center font-mono hover:text-white/50 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer selection:bg-amber-600-op30 selection:text-white")}
+            className={cn(
+              "text-white/40 flex items-center justify-center font-mono hover:text-white/50 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer selection:bg-amber-600-op30 selection:text-white",
+            )}
             to="/"
             onClick={scrollTop}
           >
-            <p className="text-amber-500 mr-2 text-[22px] md:text-[26px]">
-              ४
-            </p>
+            <p className="text-amber-500 mr-2 text-[22px] md:text-[26px]">४</p>
             <h1 className=" xl:mt-0 mb-px text-[18px] md:text-[21px] tracking-tighter">
               Webtree
             </h1>
@@ -126,56 +131,80 @@ const Navbar = () => {
         </motion.div>
 
         {/* Desktop Menu */}
-        <div className={cn("hidden md:flex grow gap-3 lg:gap-5 items-center justify-center")}>
-          {
-            [
-              { label: 'About'  , path: '/about-webtree'   },
-              { label: 'Connect', path: '/connect'         },
-              { label: 'Reviews', path: '/webtree-reviews' },
-              { label: 'Explore', path: '/explore/tools'   },
-            ].map((item) => {
-              const isActive = active === item.label.toLowerCase();
-              return (
-                <Link
-                  key={item.label}
-                  to={item.path}
-                  className={cn("navItem lg:mx-0.5",
-                    isActive ? "text-amber-500 wavy-underline-pulse" : "text-neutral-400 hover:text-neutral-300")}
-                >
-                  {item.label}
-                </Link>
-              );
-            })
-          }
+        <div
+          className={cn(
+            "hidden md:flex grow gap-3 lg:gap-5 items-center justify-center",
+          )}
+        >
+          {[
+            { label: "About", path: "/about" },
+            { label: "Connect", path: "/connect" },
+            { label: "Reviews", path: "/reviews" },
+            { label: "Explore", path: "/explore/tools" },
+          ].map((item) => {
+            const isActive = active === item.label.toLowerCase();
+            return (
+              <Link
+                key={item.label}
+                to={item.path}
+                className={cn(
+                  "navItem lg:mx-0.5",
+                  isActive
+                    ? "text-amber-500 wavy-underline-pulse"
+                    : "text-neutral-400 hover:text-neutral-300",
+                )}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </div>
 
         {/* Right Side (Collection & Mobile Menu) */}
         <div className={cn("flex items-center justify-end md:flex-1")}>
           <Link
-            className={cn("group relative flex gap-1 items-center justify-center mr-2 hover:-translate-y-0.5 active:scale-97 transition-all duration-200")}
+            className={cn(
+              "group relative flex gap-1 items-center justify-center mr-2 hover:-translate-y-0.5 active:scale-97 transition-all duration-200",
+            )}
             to={location.pathname === "/collection" ? "/" : "/collection"}
             rel="noreferrer"
             aria-label={`Visit`}
             onClick={scrollTop}
           >
             {location.pathname === "/collection" ? (
-              <p 
-                className={cn("text-amber-600 font-mono text-xl hidden md:block selection:bg-amber-600-op30 selection:text-white ",
-                  active !== "home" && "underline underline-offset-10 hover:text-amber-600-op90"
-                )}>
+              <p
+                className={cn(
+                  "text-amber-600 font-mono text-xl hidden md:block selection:bg-amber-600-op30 selection:text-white ",
+                  active !== "home" &&
+                    "underline underline-offset-10 hover:text-amber-600-op90",
+                )}
+              >
                 Home
               </p>
             ) : (
-              <p className={cn("text-neutral-400 font-mono mr-1 tracking-tighter transition-all duration-250 hover:text-neutral-300/90",
-                "text-lg md:text-[20.5px] hidden md:block selection:bg-amber-600-op30 selection:text-white")}>
+              <p
+                className={cn(
+                  "text-neutral-400 font-mono mr-1 tracking-tighter transition-all duration-250 hover:text-neutral-300/90",
+                  "text-lg md:text-[20.5px] hidden md:block selection:bg-amber-600-op30 selection:text-white",
+                )}
+              >
                 Collection
               </p>
             )}
             {isCollectionPage ? (
-              <HugeiconsIcon icon={SquareArrowLeft02Icon} size={20} style={{ color: "oklch(66.6% 0.179 58.318)" }} className="hidden md:flex mt-1"/>
+              <HugeiconsIcon
+                icon={SquareArrowLeft02Icon}
+                size={20}
+                style={{ color: "oklch(66.6% 0.179 58.318)" }}
+                className="hidden md:flex mt-1"
+              />
             ) : (
               <div className="relative hidden md:flex">
-                <HugeiconsIcon icon={FolderFavouriteIcon} size={19} className="text-amber-500"/>
+                <HugeiconsIcon
+                  icon={FolderFavouriteIcon}
+                  size={19}
+                  className="text-amber-500"
+                />
                 {collection.length > 0 && (
                   <span className="absolute text-xs -right-[6px] top-[-6px] font-mono text-amber-500/80 selection:bg-zinc-600/30 selection:text-white">
                     {collection.length}
@@ -196,37 +225,39 @@ const Navbar = () => {
           </Link>
 
           {/* Mobile Menu Button  */}
-          <div className={cn("md:hidden flex items-center justify-center gap-4")}>
+          <div
+            className={cn("md:hidden flex items-center justify-center gap-4")}
+          >
             <Link
               className={cn("relative text-xl mr-2 ml-2 active:scale-95")}
               to={location.pathname === "/collection" ? "/" : "/collection"}
               rel="noreferrer"
               aria-label={`Visit`}
             >
-              {
-                location.pathname === "/collection" ? (
-                  <HugeiconsIcon
-                    onClick={() => setShowLength(!showLength)}
-                    icon={SquareArrowLeft02Icon}
-                    size={20}
-                    style={{ color: "oklch(55.5% 0.163 48.998)" }}
-                  />
-                ) : (
-                  <HugeiconsIcon
-                    onClick={() => setShowLength(!showLength)}
-                    icon={FolderCheckIcon}
-                    size={19}
-                    style={{ color: "oklch(0.871 0.006 286.286)" }}
-                  />
-                )}
-                {!isCollectionPage && showLength && collection.length > 0 && (
-                  <sup
-                    className={cn("absolute text-xs -right-2 -top-1 text-zinc-300 selection:bg-amber-600-op30 selection:text-white")}
-                  >
-                    {collection.length}
-                  </sup>
-                )
-              }
+              {location.pathname === "/collection" ? (
+                <HugeiconsIcon
+                  onClick={() => setShowLength(!showLength)}
+                  icon={SquareArrowLeft02Icon}
+                  size={20}
+                  style={{ color: "oklch(55.5% 0.163 48.998)" }}
+                />
+              ) : (
+                <HugeiconsIcon
+                  onClick={() => setShowLength(!showLength)}
+                  icon={FolderCheckIcon}
+                  size={19}
+                  style={{ color: "oklch(0.871 0.006 286.286)" }}
+                />
+              )}
+              {!isCollectionPage && showLength && collection.length > 0 && (
+                <sup
+                  className={cn(
+                    "absolute text-xs -right-2 -top-1 text-zinc-300 selection:bg-amber-600-op30 selection:text-white",
+                  )}
+                >
+                  {collection.length}
+                </sup>
+              )}
             </Link>
             <button
               onClick={() => setIsOpen(true)}
@@ -265,64 +296,77 @@ const Navbar = () => {
             </button>
 
             {/* Menu Content */}
-            <motion.div 
+            <motion.div
               className="flex flex-col items-center gap-8 w-full max-w-xs "
               initial={{ opacity: 0, y: -25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
             >
               <div className="flex flex-col items-center gap-6 w-full">
-                {
-                  navLinks.map((link, index) => (
-                    <React.Fragment key={link.name}>
-                      <motion.div
-                        initial={{ x: 10, y: -10, opacity: 0 }}
-                        animate={{ x: 0, y: 0, opacity: 1 }}
-                        transition={{ 
-                          duration: 0.2, 
-                          ease: "easeInOut", 
-                          delay: 0.11 * (index + 0.5) 
+                {navLinks.map((link, index) => (
+                  <React.Fragment key={link.name}>
+                    <motion.div
+                      initial={{ x: 10, y: -10, opacity: 0 }}
+                      animate={{ x: 0, y: 0, opacity: 1 }}
+                      transition={{
+                        duration: 0.2,
+                        ease: "easeInOut",
+                        delay: 0.11 * (index + 0.5),
+                      }}
+                    >
+                      <Link
+                        to={link.path}
+                        className={cn(
+                          "text-3xl font-medium tracking-wide transition-all duration-300 active:scale-95 flex items-center gap-6",
+                          location.pathname === link.path
+                            ? "text-amber-500"
+                            : "",
+                        )}
+                        onClick={() => {
+                          setIsOpen(false);
+                          scrollTop();
                         }}
                       >
-                        <Link
-                          to={link.path}
-                          className={cn("text-3xl font-medium tracking-wide transition-all duration-300 active:scale-95 flex items-center gap-6",
-                            location.pathname === link.path ? "text-amber-500" : ""
+                        <span
+                          className={cn(
+                            "bg-clip-text text-transparent bg-linear-to-b",
+                            location.pathname === link.path
+                              ? "from-amber-400 to-amber-600"
+                              : "from-white to-zinc-500",
                           )}
-                          onClick={() => { setIsOpen(false); scrollTop(); }}
                         >
-                          <span className={cn("bg-clip-text text-transparent bg-linear-to-b",
-                            location.pathname === link.path 
-                              ? "from-amber-400 to-amber-600" 
-                              : "from-white to-zinc-500"
-                          )}>
-                            {link.name}
-                          </span>
-                          <HugeiconsIcon
-                            className={cn("mt-1 animate-pulse",
-                              location.pathname === link.path ? "text-amber-500" : "text-white/70"
-                            )}
-                            icon={link.icon}
-                            size={28}
-                          />
-                        </Link>
-                      </motion.div>
-                      
-                      {/* divider */}
-                      {index < navLinks.length - 1 && (
-                        <motion.span 
-                          initial={{ width: "0%", opacity: 0 }}
-                          animate={{ width: "80%", opacity: 1 }}
-                          transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 + (index * 0.1) }}
-                          className="h-px bg-linear-to-r from-transparent via-zinc-500/50 to-transparent block">
-                        </motion.span>
-                      )}
-                    </React.Fragment>
-                  ))
-                }
+                          {link.name}
+                        </span>
+                        <HugeiconsIcon
+                          className={cn(
+                            "mt-1 animate-pulse",
+                            location.pathname === link.path
+                              ? "text-amber-500"
+                              : "text-white/70",
+                          )}
+                          icon={link.icon}
+                          size={28}
+                        />
+                      </Link>
+                    </motion.div>
+
+                    {/* divider */}
+                    {index < navLinks.length - 1 && (
+                      <motion.span
+                        initial={{ width: "0%", opacity: 0 }}
+                        animate={{ width: "80%", opacity: 1 }}
+                        transition={{
+                          duration: 0.5,
+                          ease: "easeOut",
+                          delay: 0.2 + index * 0.1,
+                        }}
+                        className="h-px bg-linear-to-r from-transparent via-zinc-500/50 to-transparent block"
+                      ></motion.span>
+                    )}
+                  </React.Fragment>
+                ))}
               </div>
             </motion.div>
-
           </motion.div>
         )}
       </AnimatePresence>

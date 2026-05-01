@@ -15,8 +15,6 @@ import { HugeiconsIcon } from "@hugeicons/react";
 import { PlusSignCircleIcon, Rocket01Icon } from "@hugeicons/core-free-icons";
 import { Helmet } from "react-helmet";
 
-
-
 export default function Home() {
   const { data, loading } = useCollectionData();
   const [activeCategory, setActiveCategory] = useState("tools");
@@ -32,162 +30,199 @@ export default function Home() {
 
   return (
     <>
-    {/* helmet - SEO */}
-    <Helmet>
-      <title>WebTree - Web Dev Resources</title>
-      <meta name="description" content="Webtree, the ultimate collection of web development resources. Discover tools, design ideas, and more." />
-      <meta name="author" content="Shani Tiwari" />
-      <meta name="robots" content="index, follow" />
-      <meta name="theme-color" content="#030303" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@ShaniDevelops" />
-      <meta name="twitter:title" content="About Webtree - Collection of Web Development Resources" />
-      <meta name="twitter:description" content="Webtree, the ultimate collection of web development resources. Discover tools, design ideas, and more." />
-      <meta name="twitter:image" content="https://webtree.shaniweb.com/og-image.png" />
-      <meta property="og:type" content="website" />
-      <meta property="og:site_name" content="webtree" />
-      <meta property="og:url" content="https://webtree.shaniweb.com/about-webtree" />
-      <meta property="og:title" content="Webtree - Collection of Web Development Resources" />
-      <meta property="og:description" content="Webtree, the ultimate collection of web development resources. Discover tools, design ideas, and more." />
-      <meta property="og:image" content="https://webtree.shaniweb.com/og-image.png" />
-    </Helmet>
-    
-    <section
-      id="home"
-      className="w-full h-fit max-w-[1300px] flex flex-col gap-10 md:gap-10"
-    >
-      <h1 className="sr-only">WebTree Resources Directory</h1>
+      {/* helmet - SEO */}
+      <Helmet>
+        <title>WebTree - Web Dev Resources</title>
+        <meta
+          name="description"
+          content="Webtree, the ultimate collection of web development resources. Discover tools, design ideas, and more."
+        />
+        <meta name="author" content="Shani Tiwari" />
+        <meta name="robots" content="index, follow" />
+        <meta name="theme-color" content="#030303" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@ShaniDevelops" />
+        <meta
+          name="twitter:title"
+          content="About Webtree - Collection of Web Development Resources"
+        />
+        <meta
+          name="twitter:description"
+          content="Webtree, the ultimate collection of web development resources. Discover tools, design ideas, and more."
+        />
+        <meta
+          name="twitter:image"
+          content="https://webtree.shaniweb.com/og-image.png"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="webtree" />
+        <meta property="og:url" content="https://webtree.shaniweb.com/about" />
+        <meta
+          property="og:title"
+          content="Webtree - Collection of Web Development Resources"
+        />
+        <meta
+          property="og:description"
+          content="Webtree, the ultimate collection of web development resources. Discover tools, design ideas, and more."
+        />
+        <meta
+          property="og:image"
+          content="https://webtree.shaniweb.com/og-image.png"
+        />
+      </Helmet>
 
-      {/* Screen reader live region for announcing category changes */}
-      <div className={cn("sr-only")} aria-live="polite" role="status">
-        {activeCategory
-          ? `Showing ${activeCategory.split("_").join(" ")} resources`
-          : ""}
-      </div>
-
-      {/* Header */}
-      <motion.h1
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.3, delay: 0.2 , ease: "easeOut" }}
-        className={cn(
-          "w-full text-white/80 text-center px-4 md:px-6 pt-20 md:pt-30",
-        )}
+      <section
+        id="home"
+        className="w-full h-fit max-w-[1300px] flex flex-col gap-10 md:gap-10"
       >
-        <div
-          className={cn(
-            " text-xl md:text-[32px] flex flex-col items-center gap-2 lg:flex-row md:gap-3 mx-auto w-fit selection:bg-amber-600-op30 selection:text-white",
-          )}
-        >
-          <motion.div
-            initial={{ scale: 0.9 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <h1
-              className={cn("wavy-underline-pulse font-black italic tracking-[-0.03em] w-fit bg-clip-text text-transparent bg-linear-to-b from-amber-300 to-amber-700 text-shadow-lg text-shadow-amber-700/20")}
-            >
-              130+ <span className="">Web Dev Resources</span>
-            </h1>
-          </motion.div>
+        <h1 className="sr-only">WebTree Resources Directory</h1>
+
+        {/* Screen reader live region for announcing category changes */}
+        <div className={cn("sr-only")} aria-live="polite" role="status">
+          {activeCategory
+            ? `Showing ${activeCategory.split("_").join(" ")} resources`
+            : ""}
         </div>
-      </motion.h1>
 
-      {/* categories & cards */}
-      <motion.section
-        layout
-        transition={{ layout: { duration: 0.5, ease: "easeInOut" } }}
-        className={cn("w-full flex flex-col gap-4 md:gap-8 px-1 md:px-14")}
-      >
-        {/* categories */}
-        <motion.aside
-          layout
-          initial={{ opacity: 0, y: -10 }}
+        {/* Header */}
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, layout: { duration: 0.3, ease: "easeInOut" } }}
-          aria-label="Category selection"
+          transition={{ duration: 0.3, delay: 0.2, ease: "easeOut" }}
           className={cn(
-            "z-40 gap-1 md:gap-2 w-full h-fit px-2 md:py-3  md:pt-4 mb-8 max-w-4xl mx-auto shrink-0",
-            "flex flex-wrap justify-center rounded-xl text-white backdrop-blur-sm",
-            isCollapsed ? ' lg:mb-8' : ' lg:mb-6'
+            "w-full text-white/80 text-center px-4 md:px-6 pt-20 md:pt-30",
           )}
         >
-          <AnimatePresence mode="popLayout">
-            {
-              Object.keys(data).slice(0, isCollapsed ? (5 + 3) : undefined).map((name, index) => (
-                <Categories
-                  key={name}
-                  name={name}
-                  index={index}
-                  isActive={activeCategory === name}
-                  setActiveCategory={setActiveCategory}
-                />
-              ))
-            }
-          </AnimatePresence>
-          {
-            Object.keys(data).length > 5 && (
+          <div
+            className={cn(
+              " text-xl md:text-[32px] flex flex-col items-center gap-2 lg:flex-row md:gap-3 mx-auto w-fit selection:bg-amber-600-op30 selection:text-white",
+            )}
+          >
+            <motion.div
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <h1
+                className={cn(
+                  "wavy-underline-pulse font-black italic tracking-[-0.03em] w-fit bg-clip-text text-transparent bg-linear-to-b from-amber-300 to-amber-700 text-shadow-lg text-shadow-amber-700/20",
+                )}
+              >
+                130+ <span className="">Web Dev Resources</span>
+              </h1>
+            </motion.div>
+          </div>
+        </motion.h1>
+
+        {/* categories & cards */}
+        <motion.section
+          layout
+          transition={{ layout: { duration: 0.5, ease: "easeInOut" } }}
+          className={cn("w-full flex flex-col gap-4 md:gap-8 px-1 md:px-14")}
+        >
+          {/* categories */}
+          <motion.aside
+            layout
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.3,
+              layout: { duration: 0.3, ease: "easeInOut" },
+            }}
+            aria-label="Category selection"
+            className={cn(
+              "z-40 gap-1 md:gap-2 w-full h-fit px-2 md:py-3  md:pt-4 mb-8 max-w-4xl mx-auto shrink-0",
+              "flex flex-wrap justify-center rounded-xl text-white backdrop-blur-sm",
+              isCollapsed ? " lg:mb-8" : " lg:mb-6",
+            )}
+          >
+            <AnimatePresence mode="popLayout">
+              {Object.keys(data)
+                .slice(0, isCollapsed ? 5 + 3 : undefined)
+                .map((name, index) => (
+                  <Categories
+                    key={name}
+                    name={name}
+                    index={index}
+                    isActive={activeCategory === name}
+                    setActiveCategory={setActiveCategory}
+                  />
+                ))}
+            </AnimatePresence>
+            {Object.keys(data).length > 5 && (
               <motion.button
                 transition={{ duration: 0, ease: "easeInOut" }}
                 onClick={() => setIsCollapsed(!isCollapsed)}
                 className={cn(
                   "relative w-fit group border-2 border-amber-500/30 py-[3px] px-3 md:py-1.5 md:px-4 mb-2 rounded-[12px] md:rounded-[36px]",
                   "cursor-pointer transition-all duration-50 ease-out select-none shadow-xs shadow-white/8 hover:shadow-[0_0_30px_rgba(255,190,0,0.8)]",
-                  "bg-amber-500/15 hover:bg-amber-800/40 text-amber-200 tracking-wide hover:scale-103 active:scale-98 transition-transform duration-100"
+                  "bg-amber-500/15 hover:bg-amber-800/40 text-amber-200 tracking-wide hover:scale-103 active:scale-98 transition-transform duration-100",
                 )}
               >
                 {isCollapsed ? "More" : "Less"}
               </motion.button>
-            )
-          }
-        </motion.aside>
+            )}
+          </motion.aside>
 
-        {/* divider - SVG */}
-        <motion.div
-          layout
-          transition={{ layout: { duration: 0.5, ease: "easeOut" } }}
-          className={cn("-mt-4 md:-mt-10 pointer-events-none z-50 relative")}>
-          <CustomSVG />
-        </motion.div>
-
-        {/* Cards Section */}
-        <CardsGrid carddata={carddata} activeCategory={activeCategory} show={'less'} />
-
-        <div className="w-full flex flex-col gap-2  mt-8">
-          
-          {/* explore page button */}
-          <Link to={`/explore/${activeCategory}`} 
-            className={cn("group select-none w-fit mx-auto mt-0 flex gap-2 text-white font-medium px-6 py-2 border-2 border-amber-600  bg-linear-to-t from-amber-600 to-amber-800 rounded-xl",
-            "shadow-sm shadow-amber-500/50 text-shadow-lg text-shadow-black/20 hover:shadow-[0_0_20px_rgba(255,190,0,0.2)] hover:scale-102 active:scale-98 transition-all duration-300")}
+          {/* divider - SVG */}
+          <motion.div
+            layout
+            transition={{ layout: { duration: 0.5, ease: "easeOut" } }}
+            className={cn("-mt-4 md:-mt-10 pointer-events-none z-50 relative")}
           >
-            Explore More Websites
-           <HugeiconsIcon icon={Rocket01Icon} size={22} className="mt-0.5 group-hover:translate-y-[-3px] group-hover:translate-x-[3px] transition-all duration-300" />
-          </Link>
+            <CustomSVG />
+          </motion.div>
 
-          {/* suggest add ons */}
-          <button 
-            onClick={() => setIsSuggestAddonOpen(true)}
-            className={cn("group select-none w-fit mx-auto mt-6 flex gap-2 text-white font-medium px-6 py-2 border-2 border-zinc-600  bg-linear-to-t from-zinc-200/30 to-zinc-500/30 rounded-xl",
-            "shadow-sm shadow-zinc-500/50 text-shadow-lg text-shadow-black/20 hover:shadow-[0_0_20px_rgba(150,150,150,0.2)] hover:scale-102 active:scale-98 transition-all duration-100")}
-          >
-            Suggest Add-on
-            <HugeiconsIcon icon={PlusSignCircleIcon} size={22} className="mt-0.5 group-hover:rotate-90 transition-transform duration-100" />
-          </button>
+          {/* Cards Section */}
+          <CardsGrid
+            carddata={carddata}
+            activeCategory={activeCategory}
+            show={"less"}
+          />
 
-        </div>
+          <div className="w-full flex flex-col gap-2  mt-8">
+            {/* explore page button */}
+            <Link
+              to={`/explore/${activeCategory}`}
+              className={cn(
+                "group select-none w-fit mx-auto mt-0 flex gap-2 text-white font-medium px-6 py-2 border-2 border-amber-600  bg-linear-to-t from-amber-600 to-amber-800 rounded-xl",
+                "shadow-sm shadow-amber-500/50 text-shadow-lg text-shadow-black/20 hover:shadow-[0_0_20px_rgba(255,190,0,0.2)] hover:scale-102 active:scale-98 transition-all duration-300",
+              )}
+            >
+              Explore More Websites
+              <HugeiconsIcon
+                icon={Rocket01Icon}
+                size={22}
+                className="mt-0.5 group-hover:translate-y-[-3px] group-hover:translate-x-[3px] transition-all duration-300"
+              />
+            </Link>
 
-      </motion.section>
+            {/* suggest add ons */}
+            <button
+              onClick={() => setIsSuggestAddonOpen(true)}
+              className={cn(
+                "group select-none w-fit mx-auto mt-6 flex gap-2 text-white font-medium px-6 py-2 border-2 border-zinc-600  bg-linear-to-t from-zinc-200/30 to-zinc-500/30 rounded-xl",
+                "shadow-sm shadow-zinc-500/50 text-shadow-lg text-shadow-black/20 hover:shadow-[0_0_20px_rgba(150,150,150,0.2)] hover:scale-102 active:scale-98 transition-all duration-100",
+              )}
+            >
+              Suggest Add-on
+              <HugeiconsIcon
+                icon={PlusSignCircleIcon}
+                size={22}
+                className="mt-0.5 group-hover:rotate-90 transition-transform duration-100"
+              />
+            </button>
+          </div>
+        </motion.section>
 
-      {/* Review Section */}
-      <ReviewSection />
-      
-      <SuggestAddonForm 
-        isOpen={isSuggestAddonOpen} 
-        onClose={() => setIsSuggestAddonOpen(false)} 
-      />
-    </section>
+        {/* Review Section */}
+        <ReviewSection />
+
+        <SuggestAddonForm
+          isOpen={isSuggestAddonOpen}
+          onClose={() => setIsSuggestAddonOpen(false)}
+        />
+      </section>
     </>
   );
 }
-
-
