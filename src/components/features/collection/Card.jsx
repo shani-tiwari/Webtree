@@ -99,7 +99,7 @@ const Card = memo(
           {/* Action Icons Section */}
           <div
             className={cn(
-              "absolute top-7 right-3 flex gap-3.5 items-center z-40 ",
+              "absolute top-7 right-3 flex items-center z-40 ",
             )}
           >
             {!allowRemove && (
@@ -161,7 +161,7 @@ const Card = memo(
               transition={{ duration: 0.1 }}
               onClick={handleCopy}
               className={cn(
-                "group/copy absolute right-[42px] top-[4px] flex items-center justify-center  z-30 shadow-xs shadow-sky-700/70",
+                "group/copy absolute right-[44px] top-[3px] flex items-center justify-center  z-30 shadow-xs shadow-sky-700/70",
                 "text-sky-300/80 group-hover:text-sky-500/90 p-1 rounded-xl bg-white/2 border-2 border-white/20 cursor-pointer",
               )}
             >
@@ -183,7 +183,7 @@ const Card = memo(
               transition={{ duration: 0.1 }}
               onClick={handleShare}
               className={cn(
-                "group/share absolute top-[20px] right-[10px] flex items-center justify-center z-30 shadow-xs shadow-indigo-700/70",
+                "group/share absolute top-[21px] right-[11px] flex items-center justify-center z-30 shadow-xs shadow-indigo-700/70",
                 "text-indigo-500 group-hover:text-indigo-600 p-1 rounded-xl bg-white/2 border-2 border-white/20 cursor-pointer",
               )}
             >

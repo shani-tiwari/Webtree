@@ -133,7 +133,7 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div
           className={cn(
-            "hidden md:flex grow gap-3 lg:gap-5 items-center justify-center",
+            "hidden md:flex grow gap-3 items-center justify-center",
           )}
         >
           {[

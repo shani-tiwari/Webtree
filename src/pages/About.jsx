@@ -11,7 +11,7 @@ import {
   MoveLeftIcon,
 } from "@hugeicons/core-free-icons";
 import { cn } from "../utils/utils.js";
-import { Link, useLocation } from "react-router";
+import { useLocation } from "react-router";
 import GoBack from "../components/layout/GoBack";
 import { useEffect } from "react";
 import { Helmet } from "react-helmet";
@@ -260,7 +260,7 @@ export default function About() {
           {/* CTA Section */}
           <motion.div
             variants={itemVariants}
-            className="md:col-span-2 lg:col-span-3  justify-center mt-8 bg-zinc-900"
+            className="md:col-span-2 lg:col-span-3 justify-center mt-8 bg-zinc-900"
           >
             <motion.div
               whileHover={{ scale: 1.02 }}
@@ -275,7 +275,7 @@ export default function About() {
                 Join the growing community of developers who use WebTree to find
                 the best tools and resources for their projects.
               </p>
-              <div className="flex flex-col md:flex-row justify-start items-center mx-auto">
+              <div className="flex flex-col md:flex-row justify-start items-center gap-4 mx-auto">
                 <MagneticButton text="Read Reviews" to="/reviews" icon={MessageMultiple01Icon} />
                 <MagneticButton text="Connect With Me" to="/connect" icon={Link01Icon} className='bg-linear-to-t from-zinc-700 to-zinc-800 border-zinc-500/40 hover:shadow-[0_0_20px_rgba(100,100,100,0.8)] shadow-zinc-500/50'/>
                 <MagneticButton text="Read Blog" to="/blog" icon={BookOpen02Icon} />
