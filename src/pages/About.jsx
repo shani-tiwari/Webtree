@@ -15,6 +15,7 @@ import { Link, useLocation } from "react-router";
 import GoBack from "../components/layout/GoBack";
 import { useEffect } from "react";
 import { Helmet } from "react-helmet";
+import MagneticButton from "../components/ui/MagneticButton.jsx";
 
 export default function About() {
   const location = useLocation();
@@ -259,7 +260,7 @@ export default function About() {
           {/* CTA Section */}
           <motion.div
             variants={itemVariants}
-            className="md:col-span-2 lg:col-span-3 mt-8"
+            className="md:col-span-2 lg:col-span-3  justify-center mt-8 bg-zinc-900"
           >
             <motion.div
               whileHover={{ scale: 1.02 }}
@@ -274,26 +275,10 @@ export default function About() {
                 Join the growing community of developers who use WebTree to find
                 the best tools and resources for their projects.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  to="/reviews"
-                  className="px-8 py-3 flex items-center gap-2 rounded-xl bg-amber-500/80 border-2 border-amber-700/70 text-white font-bold hover:bg-amber-600 transition-all duration-300 shadow-[0_0_15px_rgba(245,158,11,0.3)] hover:shadow-[0_0_10px_rgba(245,158,11,0.5)]"
-                >
-                  Read Reviews{" "}
-                  <HugeiconsIcon icon={MessageMultiple01Icon} size={20} />
-                </Link>
-                <Link
-                  to="/connect"
-                  className="px-8 py-3 flex items-center gap-2 rounded-xl bg-white/10 text-white font-bold hover:bg-white/20 border border-white/20 transition-all duration-300"
-                >
-                  Connect With Us <HugeiconsIcon icon={Link01Icon} size={20} />
-                </Link>
-                <Link
-                  to="/blog"
-                  className="px-8 py-3 flex items-center gap-2 rounded-xl bg-amber-500/80 border-2 border-amber-700/70 text-white font-bold hover:bg-amber-600 transition-all duration-300 shadow-[0_0_15px_rgba(245,158,11,0.3)] hover:shadow-[0_0_10px_rgba(245,158,11,0.5)]"
-                >
-                  Read Blog <HugeiconsIcon icon={BookOpen02Icon} size={20} />
-                </Link>
+              <div className="flex flex-col md:flex-row justify-start items-center mx-auto">
+                <MagneticButton text="Read Reviews" to="/reviews" icon={MessageMultiple01Icon} />
+                <MagneticButton text="Connect With Me" to="/connect" icon={Link01Icon} className='bg-linear-to-t from-zinc-700 to-zinc-800 border-zinc-500/40 hover:shadow-[0_0_20px_rgba(100,100,100,0.8)] shadow-zinc-500/50'/>
+                <MagneticButton text="Read Blog" to="/blog" icon={BookOpen02Icon} />
               </div>
             </motion.div>
           </motion.div>

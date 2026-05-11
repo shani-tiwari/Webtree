@@ -1,7 +1,6 @@
 import { useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "motion/react";
-import { Link } from "react-router";
 import { cn } from "../utils/utils.js";
 import CustomSVG from "../components/ui/CustomSVG";
 import SkeletonHome from "../components/ui/SkeletonHome";
@@ -14,6 +13,7 @@ import CardsGrid from "../components/layout/CardsGrid.jsx";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { PlusSignCircleIcon, Rocket01Icon } from "@hugeicons/core-free-icons";
 import { Helmet } from "react-helmet";
+import MagneticButton from "../components/ui/MagneticButton.jsx";
 
 export default function Home() {
   const { data, loading } = useCollectionData();
@@ -182,7 +182,12 @@ export default function Home() {
 
           <div className="w-full flex flex-col gap-2  mt-8">
             {/* explore page button */}
-            <Link
+            <MagneticButton
+              text="Explore More Websites"
+              to={`${activeCategory && 'explore/' + activeCategory || '/explore'}`}
+              icon={Rocket01Icon}
+            />
+            {/* <Link
               to={`/explore/${activeCategory}`}
               className={cn(
                 "group select-none w-fit mx-auto mt-0 flex gap-2 text-white font-medium px-6 py-2 border-2 border-amber-600  bg-linear-to-t from-amber-600 to-amber-800 rounded-xl",
@@ -195,7 +200,7 @@ export default function Home() {
                 size={22}
                 className="mt-0.5 group-hover:translate-y-[-3px] group-hover:translate-x-[3px] transition-all duration-300"
               />
-            </Link>
+            </Link> */}
 
             {/* suggest add ons */}
             <button
