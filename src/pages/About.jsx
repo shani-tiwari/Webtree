@@ -135,104 +135,43 @@ export default function About() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="max-w-[1300px] mx-auto px-1 md:px-14 pt-12 pb-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 "
+          className="w-full max-w-[1200px] mx-auto px-1 flex md:px-14 pt-12  gap-12 "
         >
-          {/* Our Mission */}
           <motion.div variants={itemVariants} className="space-y-4">
-            <div className="flex items-center justify-center md:justify-start gap-3 group">
-              <span className="w-8 h-8 rounded-lg bg-linear-to-b from-amber-500 to-amber-700 flex items-center justify-center text-white font-bold text-lg select-none group-hover:scale-110 transition-transform duration-300">
-                ४
-              </span>
-              <h3 className="text-[22px] font-bold text-white tracking-wide group-hover:text-amber-500 transition-colors duration-300">
-                Our Mission
-              </h3>
-            </div>
-            <p className="text-gray-300/80 text-shadow-black text-shadow-sm tracking-wide text-center md:text-start hover:text-gray-300 transition-all duration-500 leading-6 hover:scale-105 hover:translate-y-3 px-2 md:pr-10 md:pl-0">
-              WebTree was born from a simple need: to cut through the noise of
-              the modern web. We curate the finest frontend magic—from Tailwind
-              components and Framer prototypes to essential performance
-              tools—helping you build better, faster.
-            </p>
-          </motion.div>
-
-          {/* Why WebTree? */}
-          <motion.div variants={itemVariants} className="space-y-4 ">
-            <div className="flex items-center gap-3 group justify-center md:justify-start">
-              <span className="w-8 h-8 rounded-lg bg-linear-to-b from-gray-700 to-gray-800 flex items-center justify-center text-white group-hover:from-gray-600 group-hover:to-gray-700 transition-all duration-300">
-                <HugeiconsIcon icon={ChartLineData02Icon} size={18} />
-              </span>
-              <h3 className="text-[22px] font-bold text-white tracking-wide group-hover:text-amber-500 transition-colors duration-300">
-                Why WebTree?
-              </h3>
-            </div>
-            <ul className="text-gray-400 space-y-3 px-4 md:px-1 text-center md:text-start">
+            <div className="w-full grid lg:grid-cols-3 gap-4 md:gap-8 md:grid-cols-2 space-y-[12px]">
               {[
                 {
                   title: "Hand-Curated",
-                  desc: "Every resource is verified for quality and utility.",
+                  desc: "Every resource is carefully reviewed for quality, relevance, and real-world usefulness.",
                 },
                 {
-                  title: "One-Click Magic",
-                  desc: "Zero friction access to the tools you need right now.",
+                  title: "Instant Access",
+        desc: "Find the right tool fast without digging through endless tabs and bookmarks.",
                 },
-                {
-                  title: "Community Driven",
-                  desc: "Built by developers who understand the craft.",
-                },
-              ].map((item, i) => (
-                <motion.li
-                  key={i}
-                  whileHover={{ x: 5 }}
-                  className="flex gap-2 group cursor-default"
-                >
-                  <span className="text-amber-500 group-hover:text-amber-400 transition-colors animate-pulse">
-                    →
-                  </span>
-                  <span>
-                    <strong className="text-neutral-200 tracking-wide">
-                      {item.title}:
-                    </strong>{" "}
-                    {item.desc}
-                  </span>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Product Roadmap */}
-          <motion.div variants={itemVariants} className="space-y-4">
-            <div className="flex items-center justify-center md:justify-start gap-3 group">
-              <motion.span
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ repeat: Infinity, duration: 2 }}
-                className="w-8 h-8 rounded-lg bg-linear-to-b from-gray-700 to-gray-800 flex items-center justify-center text-amber-500"
-              >
-                ⚡
-              </motion.span>
-              <h3 className="text-[22px] font-bold text-white tracking-wide group-hover:text-amber-500 transition-colors duration-300">
-                Roadmap
-              </h3>
-            </div>
-            <div className="space-y-[12px]">
-              {[
-                {
-                  title: "Backend & Infrastructure",
-                  desc: "Expanding our curated collections to server-side excellence.",
-                  live: true,
-                },
-                {
-                  title: "Interactive Tutorials",
-                  desc: "Learn to master the tools you find here.",
-                  live: false,
-                },
-              ].map((item, i) => (
+                  {
+                    title: "Smarter Workflow",
+                    desc: "Discover resources in one place so you can stay in flow and keep building.",
+                  },
+                  {
+                    title: "Simple Navigation",
+                    desc: "Browse categories effortlessly and move to what you need in just a click.",
+                  },
+                  {
+                    title: "Focused Building",
+                    desc: "Spend less time searching and more time shipping your ideas.",
+                  },
+                  {
+                    title: "Built for Developers",
+                    desc: "Designed to support faster decisions, fewer mistakes, and better project momentum.",
+                  },
+                ].map((item, i) => (
                 <motion.div
                   key={i}
                   whileHover={{
                     x: 5,
                     backgroundColor: "rgba(255, 255, 255, 0.08)",
                   }}
-                  className="group py-2 px-3 rounded-xl bg-white/5 border border-white/10 relative overflow-hidden transition-all duration-300"
+                  className="group h-full py-2 px-3 rounded-xl bg-white/5 border border-white/10 relative overflow-hidden transition-all duration-300"
                 >
                   {item.live && (
                     <div className="absolute top-3 right-3 flex items-center gap-2">
@@ -250,37 +189,11 @@ export default function About() {
                     {item.title}
                   </p>
                   <p className="text-xs text-gray-400/80 mt-1 group-hover:text-neutral-400 leading-4 pl-[10px]">
-                    + {item.desc}
+                    {item.desc}
                   </p>
-                </motion.div>
+                  </motion.div>
               ))}
             </div>
-          </motion.div>
-
-          {/* CTA Section */}
-          <motion.div
-            variants={itemVariants}
-            className="md:col-span-2 lg:col-span-3 justify-center mt-8 bg-zinc-900"
-          >
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.2, ease: "easeInOut" }}
-              className="bg-linear-to-r from-amber-500/10 to-orange-500/10 border-2 border-amber-500/30 rounded-2xl p-8 md:p-12 text-center backdrop-blur-sm hover:shadow-[0_0_10px_rgba(245,158,11,0.2)] transition-all duration-500"
-            >
-              <h3 className="text-2xl md:text-4xl font-bold text-white mb-4">
-                Ready to Build Something Amazing{" "}
-                <span className="text-amber-500 animate-pulse">?</span>
-              </h3>
-              <p className="text-gray-300/80 mb-8 leading-5 tracking-wide  max-w-2xl mx-auto">
-                Join the growing community of developers who use WebTree to find
-                the best tools and resources for their projects.
-              </p>
-              <div className="flex flex-col md:flex-row justify-start items-center gap-4 mx-auto">
-                <MagneticButton text="Read Reviews" to="/reviews" icon={MessageMultiple01Icon} />
-                <MagneticButton text="Connect With Me" to="/connect" icon={Link01Icon} className='bg-linear-to-t from-zinc-700 to-zinc-800 border-zinc-500/40 hover:shadow-[0_0_20px_rgba(100,100,100,0.8)] shadow-zinc-500/50'/>
-                <MagneticButton text="Read Blog" to="/blog" icon={BookOpen02Icon} />
-              </div>
-            </motion.div>
           </motion.div>
         </motion.div>
       </section>
