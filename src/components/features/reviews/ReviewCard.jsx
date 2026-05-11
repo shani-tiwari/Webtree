@@ -8,12 +8,17 @@ export default function ReviewCard({ xProfile, gender, text, bgColor, date }) {
   const profileImage =
     gender === "female" ? "/user-imgs/female.webp" : "/user-imgs/male.webp";
   const location = useLocation();
+
   return (
     <Link
       to={"/reviews"}
-      style={{ backgroundColor: bgColor || "#0a0a0a" }}
+      style={{ 
+        backgroundColor: bgColor ? `${bgColor}95` : "#0a0a0a90" ,
+        backdropFilter: "blur(10px)",
+        WebkitBackdropFilter: "blur(10px)" 
+      }} 
       className={cn(
-        "relative group flex flex-col w-[290px] md:w-[320px] py-4 px-5 rounded-[24px] border-2 border-zinc-500/50 shadow-lg shrink-0 backdrop-blur-sm",
+        "relative group flex flex-col w-[290px] md:w-[320px] py-4 px-5 rounded-[24px] border-2 border-zinc-500/60 shadow-lg shrink-0",
         "hover:border-amber-500/50 transition-all duration-200 hover:shadow-amber-500/10",
       )}
     >
@@ -57,7 +62,7 @@ export default function ReviewCard({ xProfile, gender, text, bgColor, date }) {
 
         {/* Review Text */}
         <div className="relative w-full">
-          <span className="absolute -top-4 -left-1 text-5xl text-zinc-700/40 font-serif leading-none select-none italic">
+          <span className="absolute -top-4 -left-1 text-5xl text-zinc-400/60 font-serif leading-none select-none italic">
             "
           </span>
           <p className="group-hover:text-zinc-100 font-sans transition-colors duration-200 text-zinc-300 text-[15px] leading-relaxed tracking-normal relative z-10 italic grow pl-1">
@@ -66,7 +71,7 @@ export default function ReviewCard({ xProfile, gender, text, bgColor, date }) {
                 {text.slice(0, 100)}...
                 <Link
                   to="/reviews"
-                  className="text-slate-200/80 hover:text-amber-500 animate-pulse text-lg items-center group-hover:tracking-wider transition-all duration-500"
+                  className="text-slate-200/80 hover:text-amber-500 animate-pulse text-[16px] items-center group-hover:tracking-wider transition-all duration-500"
                 >
                   {} more
                 </Link>
