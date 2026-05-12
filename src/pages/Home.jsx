@@ -122,7 +122,7 @@ export default function Home() {
                   "wavy-underline-pulse font-black italic tracking-[-0.03em] w-fit bg-clip-text text-transparent bg-linear-to-b from-amber-300 to-amber-700 text-shadow-lg text-shadow-amber-700/20",
                 )}
               >
-                130+ <span className="">Web Dev Resources</span>
+                135+ <span className="">Web Dev Resources</span>
               </h1>
             </motion.div>
           </div>

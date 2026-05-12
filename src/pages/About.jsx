@@ -185,7 +185,7 @@ export default function About() {
 const about_data = [
   {
     title: "Curated, Not Crowded",
-    desc: "130+ useful web dev resources across 15+ categories—filtered for quality so you don’t waste time.",
+    desc: "135+ useful web dev resources across 15+ categories—filtered for quality so you don’t waste time.",
     icon: DashboardSquareEditIcon
   },
   {
