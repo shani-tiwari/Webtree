@@ -13,15 +13,16 @@ export default function ReviewCard({ xProfile, gender, text, bgColor, date }) {
     <Link
       to={"/reviews"}
       style={{ 
-        backgroundColor: bgColor ? `${bgColor}95` : "#0a0a0a90" ,
-        backdropFilter: "blur(10px)",
-        WebkitBackdropFilter: "blur(10px)" 
+        backgroundColor: bgColor ? `${bgColor}90` : "rgba(10, 10, 10, 0.6)",
+        backdropFilter: "blur(50px)",
+        WebkitBackdropFilter: "blur(50px)",
       }} 
       className={cn(
         "relative group flex flex-col w-[290px] md:w-[320px] py-4 px-5 rounded-[24px] border-2 border-zinc-500/60 shadow-lg shrink-0",
-        "hover:border-amber-500/50 transition-all duration-200 hover:shadow-amber-500/10",
+        "hover:border-amber-500/50 transition-all duration-200 hover:shadow-amber-500/10 ",
       )}
     >
+
       <div className="w-full flex flex-col items-start gap-4">
         <div className="flex items-center gap-3 w-full">
           {/* Profile Image */}
@@ -65,7 +66,7 @@ export default function ReviewCard({ xProfile, gender, text, bgColor, date }) {
           <span className="absolute -top-4 -left-1 text-5xl text-zinc-400/60 font-serif leading-none select-none italic">
             "
           </span>
-          <p className="group-hover:text-zinc-100 font-sans transition-colors duration-200 text-zinc-300 text-[15px] leading-relaxed tracking-normal relative z-10 italic grow pl-1">
+          <p className="group-hover:text-zinc-100 font-sans transition-colors duration-200 text-zinc-300 text-[15px] leading-relaxed tracking-wide relative z-10 italic grow pl-1">
             {location.pathname !== "/reviews" ? (
               <>
                 {text.slice(0, 100)}...

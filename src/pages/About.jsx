@@ -4,16 +4,23 @@ import { HugeiconsIcon } from "@hugeicons/react";
 import {
   BookOpen02Icon,
   ChartLineData02Icon,
+  ComputerChartUpIcon,
+  DashboardSquareEditIcon,
+  FolderAddIcon,
   Link01Icon,
   Link02Icon,
   MessageMultiple01Icon,
   MessageSquarePlus,
   MoveLeftIcon,
+  SentIcon,
+  ShapeCollectionIcon,
+  UserBlock02FreeIcons,
+  ZapIcon,
 } from "@hugeicons/core-free-icons";
 import { cn } from "../utils/utils.js";
 import { useLocation } from "react-router";
 import GoBack from "../components/layout/GoBack";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import MagneticButton from "../components/ui/MagneticButton.jsx";
 
@@ -31,15 +38,15 @@ export default function About() {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  });
+  // useEffect(() => {
+  //   window.scrollTo({
+  //     top: 0,
+  //     behavior: "smooth",
+  //   });
+  // });
 
   return (
     <>
@@ -135,64 +142,37 @@ export default function About() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="w-full max-w-[1200px] mx-auto px-1 flex md:px-14 pt-12  gap-12 "
+          className="w-full max-w-[1200px] mx-auto px-1 flex md:px-14 pt-12  gap-10 "
         >
           <motion.div variants={itemVariants} className="space-y-4">
-            <div className="w-full grid lg:grid-cols-3 gap-4 md:gap-8 md:grid-cols-2 space-y-[12px]">
-              {[
-                {
-                  title: "Hand-Curated",
-                  desc: "Every resource is carefully reviewed for quality, relevance, and real-world usefulness.",
-                },
-                {
-                  title: "Instant Access",
-        desc: "Find the right tool fast without digging through endless tabs and bookmarks.",
-                },
-                  {
-                    title: "Smarter Workflow",
-                    desc: "Discover resources in one place so you can stay in flow and keep building.",
-                  },
-                  {
-                    title: "Simple Navigation",
-                    desc: "Browse categories effortlessly and move to what you need in just a click.",
-                  },
-                  {
-                    title: "Focused Building",
-                    desc: "Spend less time searching and more time shipping your ideas.",
-                  },
-                  {
-                    title: "Built for Developers",
-                    desc: "Designed to support faster decisions, fewer mistakes, and better project momentum.",
-                  },
-                ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  whileHover={{
-                    x: 5,
-                    backgroundColor: "rgba(255, 255, 255, 0.08)",
-                  }}
-                  className="group h-full py-2 px-3 rounded-xl bg-white/5 border border-white/10 relative overflow-hidden transition-all duration-300"
-                >
-                  {item.live && (
-                    <div className="absolute top-3 right-3 flex items-center gap-2">
-                      <span className="relative flex h-2 w-[10px]">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-2 w-[10px] bg-amber-500"></span>
+            <div className="w-full grid lg:grid-cols-3 gap-4 md:gap-6 md:grid-cols-2 space-y-[12px]">
+              {
+                about_data.map((item, i) => (
+                  <motion.div
+                    key={i}
+                    whileHover={{
+                      y: i < 3 ? 8 : -8,
+                      backgroundColor: "rgba(193, 152, 33, 0.09)",
+                    }}
+                    transition={{ duration: 0.2, ease: 'linear' }}
+                    className="group h-full py-2 px-3 rounded-xl bg-black/70 ring-1 ring-amber-400/20 shadow-sm shadow-white/40 relative overflow-hidden transition-all duration-200"
+                  >
+                    {/* <div className="absolute top-0 left-0 bg-red-500"></div> */}
+
+                    <p className="text-sm flex justify-center items-center tracking-wide text-white group-hover:text-amber-500 transition-all">
+                      <span className="text-amber-500 flex items-center gap-2  "> ⁜ 
+                        <p className="text-white/80 text-[16px] font-semibold text-shadow-lg text-shadow-black">{item.title}</p> 
                       </span>
-                      <span className="text-[10px] uppercase tracking-tight text-amber-500-op80 font-semibold">
-                        Live Soon
-                      </span>
-                    </div>
-                  )}
-                  <p className="text-sm font-semibold tracking-wide text-white group-hover:text-amber-500 transition-colors">
-                    <span className="text-amber-500 animate-pulse"> • </span>
-                    {item.title}
-                  </p>
-                  <p className="text-xs text-gray-400/80 mt-1 group-hover:text-neutral-400 leading-4 pl-[10px]">
-                    {item.desc}
-                  </p>
-                  </motion.div>
-              ))}
+                      {/* <span className="flex items-center justify-end">
+                        {item.icon && <HugeiconsIcon icon={item.icon} size={22} className="mt-2 animate-pulse hover:scale-105 transition-all duration-200" />}
+                      </span> */}
+                    </p>
+                    <p className="text-[13px] text-gray-400/90 text-center text-shadow-lg text-shadow-black tracking-wide mt-1 group-hover:text-neutral-400 leading-4 px-[18px]">
+                      {item.desc}
+                    </p>
+                    </motion.div>
+                ))
+              }
             </div>
           </motion.div>
         </motion.div>
@@ -200,3 +180,37 @@ export default function About() {
     </>
   );
 }
+
+
+const about_data = [
+  {
+    title: "Curated, Not Crowded",
+    desc: "130+ useful web dev resources across 15+ categories—filtered for quality so you don’t waste time.",
+    icon: DashboardSquareEditIcon
+  },
+  {
+    title: "Discover Faster",
+    desc: "Find the right tools, libraries, and references quickly with a structure built for real developer workflows.",
+    icon: ZapIcon
+  },
+  {
+    title: "Built for Better Decisions",
+    desc: "From inspiration to implementation, everything is organized to help you work faster and make better development decisions.",
+    icon: ComputerChartUpIcon
+  },
+  {
+    title: "Save Your Stack",
+    desc: "Add resources to your collection and keep your favorite tools organized in one place.",
+    icon:  FolderAddIcon
+  },
+  {
+    title: "Share Instantly",
+    desc: "Copy links and share helpful resources with one click.",
+    icon:  SentIcon
+  },
+  {
+    title: "No Account Needed",
+    desc: "Browse, save, and explore without signup friction.",
+    icon: UserBlock02FreeIcons
+  },
+];
