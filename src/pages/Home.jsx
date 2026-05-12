@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "motion/react";
 import { cn } from "../utils/utils.js";
@@ -21,6 +21,20 @@ export default function Home() {
 
   const [isCollapsed, setIsCollapsed] = useState(true);
   const [isSuggestAddonOpen, setIsSuggestAddonOpen] = useState(false);
+
+    useEffect(() => {
+      if (isSuggestAddonOpen) {
+        document.body.style.overflow = "hidden";
+        document.documentElement.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "auto";
+        document.documentElement.style.overflow = "auto";
+      }
+      return () => {
+        document.body.style.overflow = "auto";
+        document.documentElement.style.overflow = "auto";
+      };
+    }, [isSuggestAddonOpen]);
 
   const carddata = data[activeCategory] || [];
 
@@ -190,7 +204,7 @@ export default function Home() {
 
             {/* suggest add ons */}
             <button
-              onClick={() => setIsSuggestAddonOpen(true)}
+              onClick={() => setIsSuggestAddonOpen(!isSuggestAddonOpen)}
               className={cn(
                 "group select-none w-fit mx-auto mt-6 flex gap-2 text-white font-medium px-6 py-2 border-2 border-zinc-600  bg-linear-to-t from-zinc-200/30 to-zinc-500/30 rounded-xl",
                 "shadow-sm shadow-zinc-500/50 text-shadow-lg text-shadow-black/20 hover:shadow-[0_0_20px_rgba(150,150,150,0.2)] hover:scale-102 active:scale-98 transition-all duration-100",

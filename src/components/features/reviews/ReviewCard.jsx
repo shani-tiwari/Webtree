@@ -13,20 +13,20 @@ export default function ReviewCard({ xProfile, gender, text, bgColor, date }) {
     <Link
       to={"/reviews"}
       style={{ 
-        backgroundColor: bgColor ? `${bgColor}90` : "rgba(10, 10, 10, 0.6)",
+        backgroundColor: bgColor ? `${bgColor}95` : "rgba(10, 10, 10, 0.6)",
         backdropFilter: "blur(50px)",
         WebkitBackdropFilter: "blur(50px)",
       }} 
       className={cn(
         "relative group flex flex-col w-[290px] md:w-[320px] py-4 px-5 rounded-[24px] border-2 border-zinc-500/60 shadow-lg shrink-0",
-        "hover:border-amber-500/50 transition-all duration-200 hover:shadow-amber-500/10 ",
+        "hover:border-amber-500/50 hover:shadow-[0_0_10px_var(--color-amber-500-op40)] hover:scale-98 transition-all duration-300",
       )}
     >
 
       <div className="w-full flex flex-col items-start gap-4">
-        <div className="flex items-center gap-3 w-full">
+        <div className="flex items-center gap-4 w-full">
           {/* Profile Image */}
-          <div className="w-13 h-13 rounded-full overflow-hidden border-2 border-zinc-700/50 bg-zinc-900 shrink-0 shadow-inner">
+          <div className="w-13 h-13 rounded-full overflow-hidden border-2 border-zinc-600/90 bg-zinc-900 shrink-0 shadow-inner">
             <img
               src={profileImage}
               alt={xProfile}
@@ -42,7 +42,7 @@ export default function ReviewCard({ xProfile, gender, text, bgColor, date }) {
                 href={`https://x.com/${xProfile.replace("@", "")}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[15px] font-bold text-amber-500/90 hover:text-amber-400 transition-colors flex items-center gap-1.5 truncate"
+                className="text-[15px] font-semibold text-amber-400/95 flex items-center gap-1.5 "
                 onClick={(e) => e.stopPropagation()}
               >
                 {xProfile.startsWith("@") ? xProfile : `@${xProfile}`}
@@ -55,7 +55,7 @@ export default function ReviewCard({ xProfile, gender, text, bgColor, date }) {
             </div>
 
             {/* Date span - now below ID */}
-            <span className="w-fit text-[10px] px-2 py-[0.5px] bg-zinc-200/20 rounded-full text-zinc-400 font-medium tracking-wide">
+            <span className="w-fit text-[10px] px-3 py-[0.5px] bg-zinc-200/20 rounded-full text-zinc-400 font-medium tracking-wide">
               {date}
             </span>
           </div>
