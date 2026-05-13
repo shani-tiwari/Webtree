@@ -191,27 +191,39 @@ const SocialCard = ({
           <HugeiconsIcon icon={icon} size={26} />
         </div>
 
-        {status && (
+        {/* status indicator  */}
           <div
-            className={cn("absolute right-2 top-6 flex items-center justify-center gap-2 px-3 py-1.5 rounded-xl lg:rounded-2xl lg:top-6 lg:right-1 bg-black/40 shadow-md shadow-white/10 group-hover:border-2 border border-white/10 backdrop-blur-md",)}>
+            className={cn("absolute right-2 top-6 flex items-center justify-center gap-2 px-3 py-1.5 rounded-xl lg:rounded-2xl lg:top-6 lg:right-1 bg-black/40 group-hover:bg-(--color)/10 shadow-md shadow-white/10 group-hover:border-2 border border-white/10 backdrop-blur-md",)} 
+            style={{ "--color": color }}
+          >
 
-            <span className={cn("relative flex items-center justify-center h-[11px] w-5" )}>
+            <span className={cn("relative flex items-center justify-center h-[11px] w-[22px] " )}>
+              {/* ping animation */}
               <span 
-                className={cn("animate-ping absolute inline-flex rounded-lg items-center justify-center h-[80%] w-[80%] opacity-80")} 
-                style={{ backgroundColor: color}}>
+                className={cn("animate-ping absolute inline-flex rounded-lg items-center justify-center h-[80%] w-[80%] opacity-80",
+                `bg-(--color)`)}
+                style={{ "--color": color }}
+                >
               </span>
+              {/* pill container */}
               <span 
-                className={cn("relative inline-flex h-full w-full items-center justify-end rounded-lg px-px")} 
-                style={{ backgroundColor: color}}>
-                  <span className="bg-white/80 w-2 h-2 rounded-full shadow-lg shadow-black  inset-shadow-sm"></span>
+                className={cn("relative h-full w-full rounded-lg px-px transition-all duration-200 ease-in-out",
+                  "group-hover:justify-end group-hover:bg-(--color)/90 bg-gray-600",
+                )}
+                style={{ "--color": color }}
+                >
+                    {/* Actual Dot */}
+                    <span 
+                      className="absolute mx-0.5 left-0 top-0.5 group-hover:left-2.5 bg-white/80 w-2 h-2 rounded-full shadow-lg shadow-black transition-all duration-300  inset-shadow-sm">
+                    </span>
               </span>
             </span>
+
             <span className={cn("block text-[10px] uppercase tracking-widest text-shadow-black text-shadow-sm text-neutral-300 font-bold")}>
               {status}
             </span>
 
           </div>
-        )}
       </div>
 
       {/* Bottom Section */}

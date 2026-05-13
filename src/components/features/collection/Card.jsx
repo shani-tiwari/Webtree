@@ -14,12 +14,11 @@ import { Link } from "react-router";
 import { cn } from "../../../utils/utils.js";
 
 // Memoized Card Component
-const Card = memo(
-  ({ id, title, link, desc, allowRemove, logo, category, ...props }) => {
-    const { addToCollection, removeFromCollection, collection } =
-      useCollection();
+const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, ...props }) => {
 
-    const [added, setAdded] = useState(false);
+  const { addToCollection, removeFromCollection, collection } = useCollection();
+
+    const [added, setAdded]  = useState(false);
     const [copied, setCopied] = useState(false);
 
     const normalize = (str) =>
@@ -82,7 +81,6 @@ const Card = memo(
         handleCopy(e);
       }
     };
-
     return (
       <motion.div
         layout
@@ -237,8 +235,8 @@ const Card = memo(
           {/* title */}
           <div className={cn("pl-1 pt-1.5 mb-1")}>
             <Link to={link} target="_blank" rel="noopener noreferrer"
-             className={cn("font-semibold  bg-clip-text text-transparent bg-linear-to-b from-zinc-100 to-zinc-200/90  text-xl md:text-2xl font-sans leading-6 tracking-normal",
-                  "group-hover:text-amber-500 group-hover:tracking-[-0.02em] text-shadow-xs text-shadow-black/50 transition-all duration-150")}
+             className={cn("font-semibold  bg-clip-text text-transparent bg-linear-to-b from-zinc-100 to-zinc-200  text-xl md:text-[22px] font-sans leading-6 tracking-normal",
+                  "group-hover:text-amber-500/80 group-hover:tracking-[-0.02em] text-shadow-2xs text-shadow-black/40 transition-all duration-150")} 
             >
                 {title}
             </Link>
@@ -276,6 +274,17 @@ const Card = memo(
                 .join(" ")}
             </span>
           )}
+
+          {/* newly added indicator */}
+          {  
+            isNew && (
+              <span
+                className="absolute right-5 bottom-5 flex justify-center items-center h-1.5 w-1.5">
+                  <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-400"></span>
+              </span>
+            )
+          }
         </motion.section>
       </motion.div>
     );

@@ -87,13 +87,13 @@ const Navbar = () => {
                 : null;
 
   const [showLength, setShowLength] = useState(true);
-  const navLinks = [
+  const mobile_navLinks = [
     { name: "Home", path: "/", icon: Home11Icon },
-    { name: "About", path: "/about", icon: Tree02Icon },
-    { name: "Explore", path: "/explore/tools", icon: SearchList02Icon },
-    { name: "Connect", path: "/connect", icon: Link02FreeIcons },
     { name: "Collection", path: "/collection", icon: FolderFavouriteIcon },
+    { name: "Explore", path: "/explore/tools", icon: SearchList02Icon },
     { name: "Reviews", path: "/reviews", icon: Agreement03Icon },
+    { name: "About", path: "/about", icon: Tree02Icon },
+    { name: "Connect", path: "/connect", icon: Link02FreeIcons },
   ];
 
   const isCollectionPage = location.pathname === "/collection";
@@ -277,10 +277,6 @@ const Navbar = () => {
         {isOpen && (
           <motion.div
             id="mobile-menu"
-            // initial={{ opacity: 0, scale: 0.95 }}
-            // animate={{ opacity: 1, scale: 1 }}
-            // exit={{ opacity: 0, scale: 0.97 }}
-            // transition={{ duration: 0.3, ease: "easeInOut" }}
             className={cn(
               "fixed inset-0 z-50 w-screen h-screen bg-black/90 backdrop-blur-sm md:hidden",
               "flex flex-col items-center justify-center p-8 text-shadow-2xs",
@@ -303,7 +299,7 @@ const Navbar = () => {
               transition={{ duration: 0.3, ease: "easeInOut" }}
             >
               <div className="flex flex-col items-center gap-6 w-full">
-                {navLinks.map((link, index) => (
+                {mobile_navLinks.map((link, index) => (
                   <React.Fragment key={link.name}>
                     <motion.div
                       initial={{ x: 10, y: -10, opacity: 0 }}
@@ -351,7 +347,7 @@ const Navbar = () => {
                     </motion.div>
 
                     {/* divider */}
-                    {index < navLinks.length - 1 && (
+                    {index < mobile_navLinks.length - 1 && (
                       <motion.span
                         initial={{ width: "0%", opacity: 0 }}
                         animate={{ width: "80%", opacity: 1 }}

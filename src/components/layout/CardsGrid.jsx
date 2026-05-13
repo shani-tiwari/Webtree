@@ -34,6 +34,7 @@ export default function CardsGrid({ carddata, activeCategory, show }) {
                   link={item.link}
                   desc={item.desc}
                   category={activeCategory}
+                  isNew={item.new}
                 />
             </motion.div>
           })}

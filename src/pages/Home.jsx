@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "motion/react";
 import { cn } from "../utils/utils.js";
@@ -7,14 +7,14 @@ import SkeletonHome from "../components/ui/SkeletonHome";
 import Categories from "../components/features/collection/Categories";
 import ReviewSection from "../components/features/reviews/ReviewSection";
 import SuggestAddonForm from "../components/features/collection/SuggestAddonForm";
-
 import { useCollectionData } from "../hooks/useCollectionData";
 import CardsGrid from "../components/layout/CardsGrid.jsx";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { PlusSignCircleIcon, Rocket01Icon } from "@hugeicons/core-free-icons";
-import { Helmet } from "react-helmet";
 import MagneticButton from "../components/ui/MagneticButton.jsx";
+import { Helmet } from "react-helmet";
 
+ 
 export default function Home() {
   const { data, loading } = useCollectionData();
   const [activeCategory, setActiveCategory] = useState("tools");
@@ -22,26 +22,11 @@ export default function Home() {
   const [isCollapsed, setIsCollapsed] = useState(true);
   const [isSuggestAddonOpen, setIsSuggestAddonOpen] = useState(false);
 
-    useEffect(() => {
-      if (isSuggestAddonOpen) {
-        document.body.style.overflow = "hidden";
-        document.documentElement.style.overflow = "hidden";
-      } else {
-        document.body.style.overflow = "auto";
-        document.documentElement.style.overflow = "auto";
-      }
-      return () => {
-        document.body.style.overflow = "auto";
-        document.documentElement.style.overflow = "auto";
-      };
-    }, [isSuggestAddonOpen]);
-
   const carddata = data[activeCategory] || [];
 
   if (loading) {
     return <SkeletonHome />;
   }
-
   return (
     <>
       {/* helmet - SEO */}
@@ -99,34 +84,8 @@ export default function Home() {
         </div>
 
         {/* Header */}
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, delay: 0.2, ease: "easeOut" }}
-          className={cn(
-            "w-full text-white/80 text-center px-4 md:px-6 pt-20 md:pt-30",
-          )}
-        >
-          <div
-            className={cn(
-              " text-xl md:text-[32px] flex flex-col items-center gap-2 lg:flex-row md:gap-3 mx-auto w-fit selection:bg-amber-600-op30 selection:text-white",
-            )}
-          >
-            <motion.div
-              initial={{ scale: 0.9 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <h1
-                className={cn(
-                  "wavy-underline-pulse font-black italic tracking-[-0.03em] w-fit bg-clip-text text-transparent bg-linear-to-b from-amber-300 to-amber-700 text-shadow-lg text-shadow-amber-700/20",
-                )}
-              >
-                135+ <span className="">Web Dev Resources</span>
-              </h1>
-            </motion.div>
-          </div>
-        </motion.h1>
+          <Header />
+ 
 
         {/* categories & cards */}
         <motion.section
@@ -221,7 +180,7 @@ export default function Home() {
         </motion.section>
 
         {/* Review Section */}
-        <ReviewSection />
+         <ReviewSection />
 
         <SuggestAddonForm
           isOpen={isSuggestAddonOpen}
@@ -230,4 +189,39 @@ export default function Home() {
       </section>
     </>
   );
+};
+
+function Header(){
+  return(
+    <>
+      <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: 0.2, ease: "easeOut" }}
+          className={cn(
+            "w-full text-white/80 text-center px-4 md:px-6 pt-20 md:pt-30",
+          )}
+        >
+          <div
+            className={cn(
+              " text-xl md:text-[32px] flex flex-col items-center gap-2 lg:flex-row md:gap-3 mx-auto w-fit selection:bg-amber-600-op30 selection:text-white",
+            )}
+          >
+            <motion.div
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <h1
+                className={cn(
+                  "wavy-underline-pulse font-black italic tracking-[-0.03em] w-fit bg-clip-text text-transparent bg-linear-to-b from-amber-300 to-amber-700 text-shadow-lg text-shadow-amber-700/20",
+                )}
+              >
+                135+ <span className="">Web Dev Resources</span>
+              </h1>
+            </motion.div>
+          </div>
+        </motion.h1>
+    </>
+  )
 }

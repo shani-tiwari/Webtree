@@ -152,7 +152,7 @@ export default function About() {
                     key={i}
                     whileHover={{
                       y: i < 3 ? 10 : -10,
-                      backgroundColor: "rgba(193, 152, 33, 0.09)",
+                      backgroundColor: "rgba(193, 152, 33, 0.04)",
                     }}
                     transition={{ duration: 0.2, ease: 'linear' }}
                     className="group h-full py-2 px-3 rounded-xl bg-black/70 ring-1 ring-amber-400/20 shadow-sm shadow-white/40 relative overflow-hidden transition-all duration-200"
@@ -161,9 +161,6 @@ export default function About() {
                       <span className="text-amber-500 flex items-center gap-2  "> ⁜ 
                         <p className="text-white/80 text-[16px] font-semibold text-shadow-lg text-shadow-black">{item.title}</p> 
                       </span>
-                      {/* <span className="flex items-center justify-end">
-                        {item.icon && <HugeiconsIcon icon={item.icon} size={22} className="mt-2 animate-pulse hover:scale-105 transition-all duration-200" />}
-                      </span> */}
                     </p>
                     <p className="text-[13px] text-gray-400/90 text-center text-shadow-lg text-shadow-black tracking-wide mt-1 group-hover:text-neutral-400 leading-4 px-[18px]">
                       {item.desc}

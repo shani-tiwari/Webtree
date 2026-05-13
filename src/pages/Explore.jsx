@@ -1,4 +1,4 @@
-import React, { useState, Suspense, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "motion/react";
@@ -8,8 +8,8 @@ import SkeletonExplore from "../components/ui/SkeletonExplore";
 import { useCollectionData } from "../hooks/useCollectionData";
 import CustomSVG from "../components/ui/CustomSVG"
 
-const Categories = React.lazy(() => import("../components/features/collection/Categories"));
-const CardsGrid  = React.lazy(() => import("../components/layout/CardsGrid.jsx"));
+import Categories from "../components/features/collection/Categories";
+import CardsGrid from "../components/layout/CardsGrid.jsx";
 
 export default function Explore() {
 
@@ -31,14 +31,13 @@ export default function Explore() {
     })
   });
 
+  
+  const cardData = data && activeCategory && data[activeCategory] ? data[activeCategory] : [];
+  
   if (loading) {
     return <SkeletonExplore />;
   }
-
-  const cardData =
-    data && activeCategory && data[activeCategory] ? data[activeCategory] : [];
-
-
+  
   return (
     <>
       <Helmet>
@@ -109,11 +108,6 @@ export default function Explore() {
               "flex flex-wrap justify-center rounded-xl text-white backdrop-blur-sm",
             )}
           >
-            <Suspense
-              fallback={
-                <div className="text-white text-sm">Loading Categories...</div>
-              }
-            >
               <AnimatePresence>
                 {Object.keys(data || {}).map((name, index) => (
                   <Categories
@@ -125,7 +119,6 @@ export default function Explore() {
                   />
                 ))}
               </AnimatePresence>
-            </Suspense>
           </motion.aside>
 
           {/* divider - SVG */}
