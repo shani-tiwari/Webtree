@@ -5,7 +5,7 @@ import { cn } from "./utils/utils.js";
 import Navbar from "./components/layout/Navbar";
 import About from "./pages/About";
 
-const Blog = React.lazy(() => import("./pages/Blog.jsx"));
+// const Blog = React.lazy(() => import("./pages/Blog.jsx"));
 const Footer = React.lazy(() => import("./components/layout/Footer"));
 const Socials = React.lazy(() => import("./pages/Socials"));
 const Reviews = React.lazy(() => import("./pages/Reviews"));
@@ -58,7 +58,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/connect" element={<Socials />} />
               <Route path="/reviews" element={<Reviews />} />
-              <Route path="/blog" element={<Blog />} />
+              {/* <Route path="/blog" element={<Blog />} /> */}
             </Routes>
           </React.Suspense>
 

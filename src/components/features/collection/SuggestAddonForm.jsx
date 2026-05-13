@@ -72,7 +72,7 @@ export default function SuggestAddonForm({ isOpen, onClose }) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="fixed inset-0 z-96 flex items-center justify-center bg-black/60 backdrop-blur-sm p-3 md:p-4"
+          className="fixed inset-0 z-96 flex items-center justify-center bg-black/80 backdrop-blur-xl p-3 md:p-4"
         >
           <motion.div
             initial={{ scale: 0.95, y: 10 }}

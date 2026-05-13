@@ -137,10 +137,10 @@ const Navbar = () => {
           )}
         >
           {[
+            { label: "Explore", path: "/explore/tools" },
             { label: "About", path: "/about" },
             { label: "Connect", path: "/connect" },
             { label: "Reviews", path: "/reviews" },
-            { label: "Explore", path: "/explore/tools" },
           ].map((item) => {
             const isActive = active === item.label.toLowerCase();
             return (

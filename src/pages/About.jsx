@@ -95,7 +95,7 @@ export default function About() {
       <section
         id="about"
         className={cn(
-          "w-full min-h-screen pt-18 lg:mt-0 flex items-center justify-center flex-col bg-[#030303] px-4 relative selection:bg-amber-600-op30 selection:text-white overflow-hidden",
+          "w-full min-h-screen flex items-center justify-center flex-col bg-[#030303] px-4 relative selection:bg-amber-600-op30 selection:text-white overflow-hidden",
         )}
       >
         {/* Enhanced Ambient Background Accents */}
@@ -142,7 +142,7 @@ export default function About() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="w-full max-w-[1200px] mx-auto px-1 flex md:px-14 pt-12  gap-10 "
+          className="w-full max-w-[1200px] mx-auto px-1 flex md:px-8 pt-10 mb-8 gap-10 "
         >
           <motion.div variants={itemVariants} className="space-y-4">
             <div className="w-full grid lg:grid-cols-3 gap-4 md:gap-6 md:grid-cols-2 space-y-[12px]">
@@ -151,14 +151,12 @@ export default function About() {
                   <motion.div
                     key={i}
                     whileHover={{
-                      y: i < 3 ? 8 : -8,
+                      y: i < 3 ? 10 : -10,
                       backgroundColor: "rgba(193, 152, 33, 0.09)",
                     }}
                     transition={{ duration: 0.2, ease: 'linear' }}
                     className="group h-full py-2 px-3 rounded-xl bg-black/70 ring-1 ring-amber-400/20 shadow-sm shadow-white/40 relative overflow-hidden transition-all duration-200"
                   >
-                    {/* <div className="absolute top-0 left-0 bg-red-500"></div> */}
-
                     <p className="text-sm flex justify-center items-center tracking-wide text-white group-hover:text-amber-500 transition-all">
                       <span className="text-amber-500 flex items-center gap-2  "> ⁜ 
                         <p className="text-white/80 text-[16px] font-semibold text-shadow-lg text-shadow-black">{item.title}</p> 

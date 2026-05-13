@@ -87,7 +87,7 @@ export default function Socials() {
     
     <section
       id="socials"
-      className="w-full min-h-screen flex flex-col items-center justify-center bg-[#030303] pt-14 pb-10 relative overflow-hidden select-none"
+      className="w-full min-h-screen flex flex-col items-center justify-center bg-[#030303] pt-12 pb-10 relative overflow-hidden select-none"
     >
       {/* Enhanced Ambient Background Accents */}
       <div className="absolute top-0 -left-20 w-[500px] h-[500px] bg-purple-600/6 blur-[120px] rounded-full pointer-events-none animate-pulse" />
@@ -110,7 +110,7 @@ export default function Socials() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="text-neutral-500 max-w-96 mx-auto mt-5 text-sm md:text-lg leading-5 hover:tracking-tighter transition-all duration-500"
+            className="text-neutral-500 w-fit  mx-auto mt-5 text-md leading-4 tracking-tight hover:tracking-tighter transition-all duration-500"
           >
             Follow my journey online and explore my latest projects & thoughts.
           </motion.p>
@@ -129,7 +129,7 @@ export default function Socials() {
         </motion.span>
 
         {/* Floating Flex/Grid Container */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3 md:gap-6 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3 md:gap-6 mt-10">
           {socials.map((social) => (
             <SocialCard
               key={social.name}
