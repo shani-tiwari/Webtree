@@ -7,6 +7,7 @@ import ReviewForm from "./ReviewForm";
 import { motion } from "motion/react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
+  MessageAdd01Icon,
   Navigation03Icon,
   PlusSignCircleIcon,
   PlusSignIcon,
@@ -57,25 +58,30 @@ export default function ReviewSection() {
           <Link
             to="/reviews"
             className={cn(
-              "group flex items-center justify-center gap-2 px-5 py-2.5 rounded-full border border-white/20 bg-zinc-900/70",
-              "text-white/80 hover:bg-zinc-800 hover:text-white hover:scale-103 transition-all duration-250 font-mono text-sm active:scale-97",
+              "group flex items-center justify-center gap-2 px-5 py-2.5 rounded-full border border-white/20 bg-zinc-900/70 text-shadow-lg text-shadow-black/30",
+              "text-white/80 hover:bg-zinc-800 hover:text-white hover:scale-103 hover:shadow-2xs shadow-white/50 transition-all duration-250 font-mono text-sm active:scale-97",
             )}
           >
             View All
-            <HugeiconsIcon icon={Navigation03Icon} size={16} />
+            <HugeiconsIcon icon={Navigation03Icon} size={18} className="text-shadow-lg text-shadow-white group-hover:rotate-0 rotate-180 transition-transform duration-500 " />
           </Link>
+
           <button
             onClick={() => setIsFormOpen(true)}
             className={cn(
-              "group flex items-center justify-center gap-2 px-5 py-2.5 cursor-pointer rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-500 hover:bg-amber-500/40 ",
-              "hover:text-zinc-200 hover:scale-103 transition-all duration-250 font-bold text-sm active:scale-95 shadow-[0_0_15px_var(--color-amber-500-op10)] hover:shadow-[0_0_15px_var(--color-amber-500-op40)]",
+              "group flex items-center justify-center gap-2 px-5 py-2.5 cursor-pointer rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-500 text-shadow-lg text-shadow-black/30 hover:bg-amber-600/30 ",
+              " hover:scale-103 transition-all duration-250 font-bold text-sm active:scale-95 shadow-2xs hover:shadow-amber-500/50",
             )}
           >
-            <HugeiconsIcon icon={PlusSignCircleIcon} size={16}
-              className="group-hover:rotate-90 transition-transform duration-200 cursor-pointer"
-            />
             Add Review
+            <HugeiconsIcon 
+            // icon={PlusSignCircleIcon} 
+            icon={MessageAdd01Icon} 
+            size={20}
+              className="group-hover:scale-120 rotate-3 transition-transform duration-500 cursor-pointer"
+            />
           </button>
+
         </div>
       </div>
 

@@ -152,10 +152,10 @@ export default function About() {
                     key={i}
                     whileHover={{
                       y: i < 3 ? 9 : -9,
-                      x: (i % 3 === 0) ? 9 : (i % 3 === 1) ? 0 : -9 ,
+                      x: (i % 3 === 0) ? 10 : (i % 3 === 1) ? 0 : -10 ,
                       backgroundColor: "rgba(193, 152, 33, 0.04)",
                     }}
-                    transition={{ duration: 0.1, ease: 'linear' }}
+                    transition={{ duration: 0.05, ease: 'linear' }}
                     className="group h-full py-2 px-3 rounded-xl bg-black/70 ring-1 ring-amber-400/20 shadow-sm shadow-white/40 relative overflow-hidden transition-all duration-200"
                   >
                     <p className="text-sm flex justify-center items-center tracking-wide text-white group-hover:text-amber-500 transition-all">
@@ -183,7 +183,6 @@ const about_data = [
     title: "Curated, Not Crowded",
     desc: "135+ useful web dev resources across 15+ categories—filtered for quality so you don’t waste time.",
     icon: DashboardSquareEditIcon,
-    diff: true
   },
   {
     title: "Discover Faster",
@@ -194,13 +193,11 @@ const about_data = [
     title: "Built for Better Decisions",
     desc: "From inspiration to implementation, everything is organized to help you work faster and make better development decisions.",
     icon: ComputerChartUpIcon,
-    diff: true
   },
   {
     title: "Save Your Stack",
     desc: "Add resources to your collection and keep your favorite tools organized in one place.",
     icon:  FolderAddIcon,
-    diff: true
   },
   {
     title: "Share Instantly",
@@ -211,6 +208,5 @@ const about_data = [
     title: "No Account Needed",
     desc: "Browse, save, and explore without signup friction.",
     icon: UserBlock02FreeIcons,
-    diff: true
   },
 ];
