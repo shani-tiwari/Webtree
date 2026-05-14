@@ -40,7 +40,7 @@ export default function Socials() {
       icon: NewTwitterRectangleIcon,
       url: "https://x.com/ShaniDevelops",
       label: "Updates, Humour & Tech Insights.",
-      color: "oklch(87.7% 0.021 106.9)",
+      color: "oklch(78.7% 0.021 106.9)",
       status: "Updates",
     },
     {
@@ -214,7 +214,7 @@ const SocialCard = ({
                 >
                     {/* Actual Dot */}
                     <span 
-                      className="absolute mx-0.5 left-0 top-0.5 group-hover:left-2.5 bg-white/80 w-2 h-2 rounded-full shadow-lg shadow-black transition-all duration-300  inset-shadow-sm">
+                      className="absolute left-0.5 top-px group-hover:left-[12px] bg-white/80 w-2 h-2 rounded-full shadow-lg shadow-black transition-all duration-300  inset-shadow-sm">
                     </span>
               </span>
             </span>

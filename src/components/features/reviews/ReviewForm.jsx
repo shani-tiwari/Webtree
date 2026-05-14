@@ -7,6 +7,7 @@ import {
   CancelCircleIcon,
   CancelSquareIcon,
   EnteringGeoFenceIcon,
+  PaintBrush02Icon,
   PaintBucketIcon,
   UserCheck01Icon,
 } from "@hugeicons/core-free-icons";
@@ -19,7 +20,7 @@ export default function ReviewForm({ isOpen, onClose }) {
   const [reviews, setReviews] = useState([]);
 
   const [formData, setFormData] = useState({
-    name: "",
+    color: "#1e1b4b", 
     xProfile: "",
     gender: "male",
     text: "",
@@ -69,7 +70,7 @@ export default function ReviewForm({ isOpen, onClose }) {
         "service_9wh2vje",
         "template_x9kgcwu",
         {
-          name: formData.name,
+          name: formData.color,
           email: "",
           xProfile: formData.xProfile,
           gender: formData.gender,
@@ -153,7 +154,7 @@ export default function ReviewForm({ isOpen, onClose }) {
             exit={{ scale: 0.95, y: 10 }}
             transition={{ duration: 0.3 , ease: "easeOut"}}
             onClick={(e) => e.stopPropagation()}
-            className="w-full max-w-[95%] mt-10 sm:max-w-md lg:max-w-lg bg-[#0a0a0a] md:mt-14 border border-zinc-800 rounded-[20px] md:rounded-3xl p-4 md:p-7 relative shadow-2xl overflow-hidden"
+            className="w-full max-w-[95%] mt-10 sm:max-w-md lg:max-w-lg bg-[#0a0a0a] md:mt-14 border-2 border-zinc-600 rounded-[20px] md:rounded-3xl p-4 md:py-7 md:px-8 relative shadow-2xl overflow-hidden"
           >
             {/* Background Accents */}
             <div className="hidden md:block absolute -top-20 -left-20 w-40 h-40 bg-amber-600-op10 blur-[50px] rounded-full pointer-events-none" />
@@ -161,7 +162,7 @@ export default function ReviewForm({ isOpen, onClose }) {
             {/* close button */}
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 md:top-9 md:right-6 text-zinc-400 hover:text-zinc-200 hover:scale-105 active:scale-90 transition-all duration-300 z-10"
+              className="absolute top-4 right-4 md:top-9 md:right-6 text-zinc-300/80 hover:text-zinc-100 hover:scale-105 active:scale-90 transition-all duration-300 z-10"
             >
               <HugeiconsIcon icon={CancelCircleIcon} size={24} />
             </button>
@@ -178,7 +179,7 @@ export default function ReviewForm({ isOpen, onClose }) {
                 {/* Vibe selection in place of Name */}
                 <div className="flex flex-col gap-2 flex-1">
                   <label className="text-zinc-400 text-xs md:text-sm font-mono lowercase">
-                    (choose your vibe) *
+                    (choose your vibe)*
                   </label>
                   <div className="grid grid-cols-6 gap-2 md:gap-3">
                     {[
@@ -192,22 +193,18 @@ export default function ReviewForm({ isOpen, onClose }) {
                       <button
                         key={color.hex}
                         type="button"
-                        onClick={() => setFormData(prev => ({ ...prev, name: color.hex }))}
+                        onClick={() => setFormData(prev => ({ ...prev, color: color.hex }))}
                         className={cn(
-                          "group relative flex items-center justify-center h-10 md:h-12 rounded-xl border-2 transition-all duration-200",
-                          formData.name === color.hex 
+                          "group relative flex items-center justify-center h-10 rounded-full border-2 shadow-inner shadow-white/30 hover:scale-97 active:scale-95 transition-all duration-200",
+                          formData.color === color.hex 
                             ? "border-amber-500 scale-105 shadow-[0_0_10px_rgba(245,158,11,0.3)]" 
-                            : "border-zinc-400/60 hover:border-zinc-300/70 hover:scale-103"
+                            : "border-zinc-500/60 hover:border-zinc-600/70"
                         )}
                         style={{ backgroundColor: color.hex }}
                         aria-label={`Select ${color.label} vibe`}
                       >
-                        {formData.name === color.hex && (
-                          // <div className="absolute inset-0 flex items-center justify-center">
-                          //   <div className="w-1.5 h-1.5 rounded-full bg-amber-600 shadow-sm" />
-                          //   <div className="absolute opacity-80 animate-ping w-1.5 h-1.5 rounded-full bg-amber-600 shadow-sm" />
-                          // </div>
-                          <HugeiconsIcon icon={PaintBucketIcon} size={24} className="text-amber-300 " />
+                        {formData.color === color.hex && (
+                          <HugeiconsIcon icon={PaintBrush02Icon} size={22} className="text-amber-300 animate-pulse " />
                         )}
                         <span className="sr-only">{color.label}</span>
                       </button>
@@ -215,12 +212,48 @@ export default function ReviewForm({ isOpen, onClose }) {
                   </div>
                 </div>
               </div>
+                      {/* Gender Selection */}
+              <div className="flex flex-col gap-1 md:gap-1.5">
+                {/* <label className="text-zinc-400 text-xs md:text-sm font-mono ">
+                  avatar gender
+                </label> */}
+                <div className="flex gap-3 md:gap-4">
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setFormData((prev) => ({ ...prev, gender: "male" }))
+                    }
+                    className={cn(
+                      "flex-1 py-1.5 md:py-3 px-3 md:px-4 rounded-lg md:rounded-xl border flex items-center justify-center gap-2 transition-all duration-300 text-sm md:text-base",
+                      formData.gender === "male"
+                        ? "bg-amber-500-op10 border-amber-500-op50 text-amber-500"
+                        : "bg-zinc-900/50 border-zinc-800 text-zinc-400 hover:border-zinc-700",
+                    )}
+                  >
+                    Male
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setFormData((prev) => ({ ...prev, gender: "female" }))
+                    }
+                    className={cn(
+                      "flex-1 py-1.5 md:py-3 px-3 md:px-4 rounded-lg md:rounded-xl border flex items-center justify-center gap-2 transition-all duration-300 text-sm md:text-base",
+                      formData.gender === "female"
+                        ? "bg-amber-500-op10 border-amber-500-op50 text-amber-500"
+                        : "bg-zinc-900/50 border-zinc-800 text-zinc-400 hover:border-zinc-700",
+                    )}
+                  >
+                    Female
+                  </button>
+                </div>
+              </div>
 
               <div className="flex gap-3 md:gap-4 w-full">
                 {/* X Profile Field */}
                 <div className="flex flex-col gap-1 md:gap-1.5 flex-1">
                   <label className="text-zinc-400 text-xs md:text-sm font-mono lowercase">
-                    X (Twitter) Profile *
+                    X(Twitter) @Profile*
                   </label>
                   <div className="relative">
                     <input
@@ -286,54 +319,19 @@ export default function ReviewForm({ isOpen, onClose }) {
                         animate={{ opacity: 1, y: 0 }}
                         className="absolute left-0 -bottom-5 text-[10px] text-red-500 font-mono"
                       >
-                        * pre existed
+                        *pre existed
                       </motion.p>
                     )}
                   </div>
                 </div>
               </div>
 
-              {/* Gender Selection */}
-              <div className="flex flex-col gap-1 md:gap-1.5">
-                <label className="text-zinc-400 text-xs md:text-sm font-mono ">
-                  avatar gender
-                </label>
-                <div className="flex gap-3 md:gap-4">
-                  <button
-                    type="button"
-                    onClick={() =>
-                      setFormData((prev) => ({ ...prev, gender: "male" }))
-                    }
-                    className={cn(
-                      "flex-1 py-1.5 md:py-3 px-3 md:px-4 rounded-lg md:rounded-xl border flex items-center justify-center gap-2 transition-all duration-300 text-sm md:text-base",
-                      formData.gender === "male"
-                        ? "bg-amber-500-op10 border-amber-500-op50 text-amber-500"
-                        : "bg-zinc-900/50 border-zinc-800 text-zinc-400 hover:border-zinc-700",
-                    )}
-                  >
-                    Male
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() =>
-                      setFormData((prev) => ({ ...prev, gender: "female" }))
-                    }
-                    className={cn(
-                      "flex-1 py-1.5 md:py-3 px-3 md:px-4 rounded-lg md:rounded-xl border flex items-center justify-center gap-2 transition-all duration-300 text-sm md:text-base",
-                      formData.gender === "female"
-                        ? "bg-amber-500-op10 border-amber-500-op50 text-amber-500"
-                        : "bg-zinc-900/50 border-zinc-800 text-zinc-400 hover:border-zinc-700",
-                    )}
-                  >
-                    Female
-                  </button>
-                </div>
-              </div>
+      
 
               {/* Review Text Field */}
               <div className="flex flex-col gap-1 md:gap-1.5 mt-1 md:mt-2">
                 <label className="text-zinc-400 text-xs md:text-sm font-mono lowercase">
-                  Your Feedback *
+                  Your Feedback*
                 </label>
                 <textarea
                   name="text"
