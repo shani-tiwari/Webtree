@@ -9,10 +9,10 @@ import ReviewSection from "../components/features/reviews/ReviewSection";
 import SuggestAddonForm from "../components/features/collection/SuggestAddonForm";
 import { useCollectionData } from "../hooks/useCollectionData";
 import CardsGrid from "../components/layout/CardsGrid.jsx";
-import { HugeiconsIcon } from "@hugeicons/react";
 import { PlusSignCircleIcon, Rocket01Icon } from "@hugeicons/core-free-icons";
 import MagneticButton from "../components/ui/MagneticButton.jsx";
 import { Helmet } from "react-helmet";
+import GooeyBtn from "../components/ui/GooeyBtn.jsx";
 
  
 export default function Home() {
@@ -162,20 +162,26 @@ export default function Home() {
             />
 
             {/* suggest add ons */}
-            <button
-              onClick={() => setIsSuggestAddonOpen(!isSuggestAddonOpen)}
-              className={cn(
-                "group select-none w-fit mx-auto mt-6 flex gap-2 text-white font-medium px-6 py-2 border-2 border-zinc-600  bg-linear-to-t from-zinc-200/30 to-zinc-500/30 rounded-xl",
-                "shadow-sm shadow-zinc-500/50 text-shadow-lg text-shadow-black/20 hover:shadow-[0_0_20px_rgba(150,150,150,0.2)] hover:scale-102 active:scale-98 transition-all duration-100",
-              )}
-            >
-              Suggest Add-on
-              <HugeiconsIcon
-                icon={PlusSignCircleIcon}
-                size={22}
-                className="mt-0.5 group-hover:rotate-90 transition-transform duration-100"
-              />
-            </button>
+             <GooeyBtn 
+              text="Suggest Add-ons"
+              icon={PlusSignCircleIcon}
+              isSuggestAddonOpen={isSuggestAddonOpen}
+              setIsSuggestAddonOpen={setIsSuggestAddonOpen}
+             />
+              {/* <button
+                onClick={() => setIsSuggestAddonOpen(!isSuggestAddonOpen)}
+                className={cn(
+                  "group select-none w-fit mx-auto mt-6 flex gap-2 text-white font-medium px-6 py-2 border-2 border-zinc-600  bg-linear-to-t from-zinc-200/30 to-zinc-500/30 rounded-xl",
+                  "shadow-sm shadow-zinc-500/50 text-shadow-lg text-shadow-black/20 hover:shadow-[0_0_20px_rgba(150,150,150,0.2)] hover:scale-102 active:scale-98 transition-all duration-100",
+                )}
+              >
+                Suggest Add-on
+                <HugeiconsIcon
+                  icon={PlusSignCircleIcon}
+                  size={22}
+                  className="mt-0.5 group-hover:rotate-90 transition-transform duration-100"
+                />
+              </button> */}
           </div>
         </motion.section>
 

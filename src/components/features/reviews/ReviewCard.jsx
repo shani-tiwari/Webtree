@@ -38,8 +38,8 @@ export default function ReviewCard({ xProfile, gender, text, bgColor, date }) {
           {/* User Info & Date Container */}
           <div className="flex flex-col gap-2 min-w-0">
             <div className="wavy-underline-pulse pb-0.5">
-              <a
-                href={`https://x.com/${xProfile.replace("@", "")}`}
+              <Link
+                to={`https://x.com/${xProfile.replace("@", "")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[15px] font-semibold text-amber-400/95 flex items-center gap-1.5 "
@@ -51,7 +51,7 @@ export default function ReviewCard({ xProfile, gender, text, bgColor, date }) {
                   size={18}
                   className="shrink-0"
                 />
-              </a>
+              </Link>
             </div>
 
             {/* Date span - now below ID */}

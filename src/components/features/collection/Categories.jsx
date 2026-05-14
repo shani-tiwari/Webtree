@@ -35,7 +35,7 @@ const Categories = React.memo(
         )}
       >
         <span
-          className={cn("font-light tracking-wide drop-shadow-sm text-shadow-2xs text-[12px] md:text-[14px]")}
+          className={cn("font-light tracking-wide drop-shadow-sm flex items-center justify-center text-shadow-2xs text-[12px] md:text-[14px]")}
         >
           {
             name.split("_").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")
@@ -43,7 +43,7 @@ const Categories = React.memo(
           {/* blur glow */}
           { isActive && (
               <span
-                className="absolute mx-auto -bottom-[5px] md:-bottom-[8px] rounded-full blur-xs left-0 w-[95%] h-[2px] bg-linear-to-l from-transparent via-zinc-200 to-transparent "
+                className="absolute mx-auto -bottom-[5px] md:-bottom-[7px] rounded-full blur-xs left-0 w-full h-[2px] bg-linear-to-l from-zinc-400 via-zinc-200 to-zinc-400 "
               />
           )}
           {/* line */}

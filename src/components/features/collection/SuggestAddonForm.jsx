@@ -80,7 +80,7 @@ export default function SuggestAddonForm({ isOpen, onClose }) {
             exit={{ scale: 0.95, y: 10 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
             onClick={(e) => e.stopPropagation()}
-            className="w-full max-w-[95%] sm:max-w-md bg-[#0a0a0a] border border-zinc-800 rounded-[20px] md:rounded-3xl p-5 md:p-7 relative shadow-2xl overflow-hidden"
+            className="w-full max-w-[95%] sm:max-w-md bg-[#0a0a0a] border border-zinc-600 rounded-[20px] md:rounded-3xl p-5 md:p-7 relative shadow-2xl overflow-hidden"
           >
             {/* Background Accents */}
             <div className="hidden md:block absolute -top-20 -left-20 w-40 h-40 bg-zinc-600-op10 blur-[50px] rounded-full pointer-events-none" />
@@ -88,12 +88,12 @@ export default function SuggestAddonForm({ isOpen, onClose }) {
             {/* close button */}
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 md:top-6 md:right-6 text-zinc-400 hover:text-zinc-200 hover:scale-105 active:scale-90 transition-all duration-300 z-10"
+              className="absolute top-4 right-4 md:top-10 md:right-6 text-zinc-400 hover:text-zinc-200 hover:scale-105 active:scale-90 transition-all duration-300 z-10"
             >
               <HugeiconsIcon icon={CancelCircleIcon} size={24} />
             </button>
 
-            <h2 className="text-zinc-200 text-xl md:text-2xl font-bold mb-6 mt-2 text-center">
+            <h2 className="text-zinc-200 text-xl md:text-2xl font-bold mb-8 mt-2 text-center">
               Suggest Add-on
             </h2>
 
@@ -117,7 +117,7 @@ export default function SuggestAddonForm({ isOpen, onClose }) {
                 type="submit"
                 disabled={isSubmitting}
                 className={cn(
-                  "mt-4 w-full flex items-center justify-center gap-2 tracking-wider border-2 border-zinc-700 bg-linear-to-r from-zinc-600 to-zinc-800 hover:from-zinc-500 hover:to-zinc-700 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 shadow-md active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed",
+                  "mt-4 w-full flex items-center justify-center gap-2 tracking-wider border-2 border-zinc-500 bg-linear-to-r from-zinc-600 to-zinc-800 hover:from-zinc-500 hover:to-zinc-700 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 shadow-md active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed",
                   isSubmitting && "animate-pulse",
                 )}
               >

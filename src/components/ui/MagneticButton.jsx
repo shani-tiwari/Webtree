@@ -34,7 +34,7 @@ export default function MagneticButton({text, to, icon, className = ''}) {
       <div 
         onMouseMove={handleMoseMove} 
         onMouseLeave={() => setPosition({x: 0, y: 0})}   
-        className={cn(" w-fit flex items-center justify-center rounded-xl border  border-amber-500/40 transition-all duration-300",
+        className={cn(" w-fit h-[42px] flex items-center justify-center rounded-2xl border  border-dashed border-amber-500/40 transition-all duration-300",
           hasMoved && 'bg-amber-800/30 border border-dashed border-amber-400',
         )}>
           <motion.div 
