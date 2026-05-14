@@ -243,13 +243,13 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
           </div>
 
           {/* divider */}
-          <span className="w-[95%] h-px bg-white/20 mb-[5px] ml-1 my-1"></span>
+          <span className="w-[95%] h-px bg-white/30 mb-[5px] ml-1 my-1"></span>
 
           {/*  Description */}
           <Link to={link} target="_blank" rel="noopener noreferrer" className="pl-0.5 perspective-distant group-hover:rotate-x-20 transition-all duration-200">
             <p
               className={cn(
-                "text-[14px] text-shadow-2xs text-shadow-black max-w-full ml-1 text-neutral-400 leading-[18px] font-mono grow group-hover:text-neutral-300 transition-all duration-300",
+                "text-[14px] text-shadow-2xs  text-shadow-black max-w-full ml-1 text-neutral-400/80 leading-[18px] font-mono grow group-hover:text-neutral-300/80 transition-all duration-200",
               )}
             >
               {desc}

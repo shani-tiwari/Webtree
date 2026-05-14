@@ -72,7 +72,7 @@ export default function SuggestAddonForm({ isOpen, onClose }) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="fixed inset-0 z-96 flex items-center justify-center bg-black/80 backdrop-blur-xl p-3 md:p-4"
+          className="fixed inset-0 z-96 flex items-center justify-center bg-black/60 backdrop-blur-xl p-3 md:p-4"
         >
           <motion.div
             initial={{ scale: 0.95, y: 10 }}
@@ -99,7 +99,7 @@ export default function SuggestAddonForm({ isOpen, onClose }) {
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
               <div className="flex flex-col gap-1.5">
-                <label className="text-zinc-400 text-sm font-mono lowercase">
+                <label className="text-zinc-400 text-sm font-mono lowercase pl-2">
                   Website Suggestion (Link or Name)
                 </label>
                 <input
@@ -107,7 +107,7 @@ export default function SuggestAddonForm({ isOpen, onClose }) {
                   required
                   value={suggestion}
                   onChange={(e) => setSuggestion(e.target.value)}
-                  placeholder="e.g. https://example.com"
+                  placeholder="https://webtree.shaniweb.com" 
                   className="w-full bg-zinc-900/50 border border-zinc-800 rounded-xl px-4 py-3 text-white placeholder:text-zinc-600 focus:outline-none focus:border-zinc-500/50 focus:ring-1 focus:ring-zinc-500/50 transition-all font-mono text-sm"
                 />
               </div>

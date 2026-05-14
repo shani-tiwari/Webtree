@@ -24,7 +24,7 @@ export default function Socials() {
       icon: GithubIcon,
       url: "https://github.com/shani-tiwari",
       label: "Code & Open Source Contributions.",
-      color: "oklch(55.6% 0 0)",
+      color: "oklch(75.6% 0 0)",
       status: "Building",
     },
     {
@@ -40,7 +40,7 @@ export default function Socials() {
       icon: NewTwitterRectangleIcon,
       url: "https://x.com/ShaniDevelops",
       label: "Updates, Humour & Tech Insights.",
-      color: "oklch(73.7% 0.021 106.9)",
+      color: "oklch(87.7% 0.021 106.9)",
       status: "Updates",
     },
     {
@@ -243,7 +243,7 @@ const SocialCard = ({
 
       {/* Subtle Bottom Border Accent */}
       <div
-        className="absolute bottom-0 left-0 h-1 w-0 group-hover:w-full blur-lg transition-all duration-600 ease-in-out"
+        className="absolute bottom-0 left-0 h-1 w-0 group-hover:w-full blur-2xl transition-all duration-700 ease-in-out"
         style={{ backgroundColor: color }}
       />
     </motion.a>
