@@ -41,17 +41,17 @@ const Categories = React.memo(
             name.split("_").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")
           }
           {/* blur glow */}
-          { isActive && (
+          {/* { isActive && (
               <span
                 className="absolute mx-auto -bottom-[5px] md:-bottom-[7px] rounded-full blur-xs left-0 w-full h-[2px] bg-linear-to-l from-zinc-400 via-zinc-200 to-zinc-400 "
               />
-          )}
+          )} */}
           {/* line */}
-          { isActive && (
+          {/* { isActive && (
               <span
-                className="absolute mx-auto -bottom-[6px] md:-bottom-[6.5px] xl:-bottom-[8.5px] left-0 w-[95%] h-[1.3px] bg-linear-to-l from-transparent via-zinc-200 to-transparent "
+                className="absolute mx-auto -bottom-[6px] md:-bottom-[6.5px] xl:-bottom-[7.5px] left-0 w-[95%] h-[1.3px] bg-linear-to-l from-transparent via-zinc-200 to-transparent "
               />
-          )}
+          )} */}
         </span>
       </motion.button>
     );

@@ -253,6 +253,24 @@
   ],
   "web_design": [
     {
+      "id": 11,
+      "name": "Saaspo",
+      "desc": "The best SaaS web design inspiration.",
+      "link": "https://saaspo.com/",
+      "category": "design_ideas",
+      "logo": "https://img.logo.dev/saaspo.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true",
+      "new": true
+    },
+    {
+      "id": 12,
+      "name": "UI8",
+      "desc": "Design resources and AI tools for your creative workflow.",
+      "link": "https://ui8.net",
+      "category": "design_ideas",
+      "logo": "https://img.logo.dev/ui8.net?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true",
+      "new": true
+    },
+    {
       "id": 1,
       "name": "Dribbble",
       "desc": "Showcase for designers to share UI/UX shots, illustrations, and animations.",
@@ -685,6 +703,24 @@
     }
   ],
   "animation": [
+    {
+      "id": 11,
+      "name": "Animations.dev",
+      "desc": "How do you craft animations that feel right?.",
+      "link": "https://animations.dev",
+      "category": "animations",
+      "logo": "https://img.logo.dev/animations.dev?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true",
+      "new": true
+    },
+    {
+      "id": 12,
+      "name": "Interface Craft",
+      "desc": "Cross-browser CSS animation library with ready-to-use effects.",
+      "link": "https://interfacecraft.dev",
+      "category": "animations",
+      "logo": "https://img.logo.dev/interfacecraft.dev?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true",
+      "new": true
+    },
     {
       "id": 1,
       "name": "Animate.css",

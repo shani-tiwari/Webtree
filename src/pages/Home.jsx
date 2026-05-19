@@ -168,20 +168,6 @@ export default function Home() {
               isSuggestAddonOpen={isSuggestAddonOpen}
               setIsSuggestAddonOpen={setIsSuggestAddonOpen}
              />
-              {/* <button
-                onClick={() => setIsSuggestAddonOpen(!isSuggestAddonOpen)}
-                className={cn(
-                  "group select-none w-fit mx-auto mt-6 flex gap-2 text-white font-medium px-6 py-2 border-2 border-zinc-600  bg-linear-to-t from-zinc-200/30 to-zinc-500/30 rounded-xl",
-                  "shadow-sm shadow-zinc-500/50 text-shadow-lg text-shadow-black/20 hover:shadow-[0_0_20px_rgba(150,150,150,0.2)] hover:scale-102 active:scale-98 transition-all duration-100",
-                )}
-              >
-                Suggest Add-on
-                <HugeiconsIcon
-                  icon={PlusSignCircleIcon}
-                  size={22}
-                  className="mt-0.5 group-hover:rotate-90 transition-transform duration-100"
-                />
-              </button> */}
           </div>
         </motion.section>
 
@@ -220,10 +206,10 @@ function Header(){
             >
               <h1
                 className={cn(
-                  "wavy-underline-pulse font-black italic tracking-[-0.03em] w-fit bg-clip-text text-transparent bg-linear-to-b from-amber-300 to-amber-700 text-shadow-lg text-shadow-amber-700/20",
+                  "wavy-underline-pulse font-black italic tracking-[-0.03em] w-fit bg-clip-text text-transparent bg-linear-to-b from-amber-300 to-amber-700 text-shadow-lg text-shadow-amber-700/20 hover:tracking-tighter transition-all duration-500",
                 )}
               >
-                135+ <span className="">Web Dev Resources</span>
+                140+ <span className="">Web Dev Resources</span>
               </h1>
             </motion.div>
           </div>
