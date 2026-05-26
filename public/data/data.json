@@ -41,6 +41,24 @@
       "logo": "https://img.logo.dev/flexboxfroggy.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
+      "id": 51,
+      "name": "HTML Symbols",
+      "link": "https://www.htmlsymbols.xyz/",
+      "desc": "HTML Symbols for Web Developers & Web Designers",
+      "category": "tools",
+      "logo": "https://img.logo.dev/htmlsymbols.xyz?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true",
+      "new": true
+    },
+    {
+      "id": 52,
+      "name": "Emojipedia",
+      "link": "https://emojipedia.org/",
+      "desc": "The World’s #1 Resource For Emoji Meanings, Emoji Copy and Paste, Emoji History & Emoji Designs.",
+      "category": "tools",
+      "logo": "https://img.logo.dev/emojipedia.org?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true",
+      "new": true
+    },
+    {
       "id": 6,
       "name": "Clippy",
       "link": "https://bennettfeely.com/clippy/",
