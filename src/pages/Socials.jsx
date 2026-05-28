@@ -10,7 +10,7 @@ import {
   NewTwitterRectangleIcon,
 } from "@hugeicons/core-free-icons";
 import { cn } from "../utils/utils.js";
-import GoBack from "../components/layout/GoBack";
+import { GoBack } from "../components/layout";
 import { useLocation } from "react-router";
 import { Helmet } from "react-helmet";
 

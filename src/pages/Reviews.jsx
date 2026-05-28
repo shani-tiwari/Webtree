@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
-import ReviewCard from "../components/features/reviews/ReviewCard";
-import ReviewForm from "../components/features/reviews/ReviewForm";
+import { ReviewCard, ReviewForm } from "../components/features/reviews";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
   BubbleChatAddIcon,
@@ -12,7 +11,7 @@ import {
   InLoveIcon,
   PlusSignCircleIcon,
 } from "@hugeicons/core-free-icons";
-import GoBack from "../components/layout/GoBack";
+import { GoBack } from "../components/layout";
 import { useLocation } from "react-router";
 
 import { useReviewsData } from "../hooks/useReviewsData";

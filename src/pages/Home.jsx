@@ -2,15 +2,12 @@ import { useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "motion/react";
 import { cn } from "../utils/utils.js";
-import CustomSVG from "../components/ui/CustomSVG";
-import SkeletonHome from "../components/ui/SkeletonHome";
-import Categories from "../components/features/collection/Categories";
-import ReviewSection from "../components/features/reviews/ReviewSection";
-import SuggestAddonForm from "../components/features/collection/SuggestAddonForm";
+import { CustomSVG, SkeletonHome, MagneticButton } from "../components/ui";
+import { Categories, SuggestAddonForm } from "../components/features/collection";
+import { ReviewSection } from "../components/features/reviews";
+import { CardsGrid } from "../components/layout";
 import { useCollectionData } from "../hooks/useCollectionData";
-import CardsGrid from "../components/layout/CardsGrid.jsx";
 import { Rocket01Icon } from "@hugeicons/core-free-icons";
-import MagneticButton from "../components/ui/MagneticButton.jsx";
 import { Helmet } from "react-helmet";
 
  

@@ -1,8 +1,8 @@
 import { useCollection } from "../context/CollectionContext";
-import Card from "../components/features/collection/Card";
+import { Card } from "../components/features/collection";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
-import GoBack from "../components/layout/GoBack";
+import { GoBack } from "../components/layout";
 import { useLocation } from "react-router";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { FolderAddIcon } from "@hugeicons/core-free-icons";

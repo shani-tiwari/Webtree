@@ -12,11 +12,12 @@ export default function ReviewCard({ xProfile, gender, text, bgColor, date }) {
   return (
     <Link
       to={"/reviews"}
-      style={{ 
-        backgroundColor: bgColor ? `${bgColor}95` : "rgba(10, 10, 10, 0.6)",
-        backdropFilter: "blur(50px)",
-        WebkitBackdropFilter: "blur(50px)",
-      }} 
+      style={{
+        backgroundColor: bgColor ? `${bgColor}60` : "rgba(10, 10, 10, 0.6)",
+        backdropFilter: "blur(8px)",
+        WebkitBackdropFilter: "blur(10px)",
+        transform: "translateZ(0)"
+      }}
       className={cn(
         "relative group flex flex-col w-[290px] md:w-[320px] py-4 px-5 rounded-[24px] border-2 border-zinc-500/60 shadow-lg shrink-0",
         "hover:border-amber-500/50 hover:shadow-[0_0_10px_var(--color-amber-500-op40)] hover:scale-98 transition-all duration-300",

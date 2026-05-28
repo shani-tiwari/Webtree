@@ -4,12 +4,11 @@ import { useParams, useNavigate } from "react-router";
 import { motion, AnimatePresence } from "motion/react";
 import { cn } from "../utils/utils.js";
 import { Helmet } from "react-helmet";
-import SkeletonExplore from "../components/ui/SkeletonExplore";
+import { SkeletonExplore, CustomSVG } from "../components/ui";
 import { useCollectionData } from "../hooks/useCollectionData";
-import CustomSVG from "../components/ui/CustomSVG"
 
-import Categories from "../components/features/collection/Categories";
-import CardsGrid from "../components/layout/CardsGrid.jsx";
+import { Categories } from "../components/features/collection";
+import { CardsGrid } from "../components/layout";
 
 export default function Explore() {
 

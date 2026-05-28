@@ -19,10 +19,10 @@ import {
 } from "@hugeicons/core-free-icons";
 import { cn } from "../utils/utils.js";
 import { useLocation } from "react-router";
-import GoBack from "../components/layout/GoBack";
+import { GoBack } from "../components/layout";
 // import { useEffect } from "react";
 import { Helmet } from "react-helmet";
-import MagneticButton from "../components/ui/MagneticButton.jsx";
+import { MagneticButton } from "../components/ui";
 
 export default function About() {
   const location = useLocation();
