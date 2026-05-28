@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router";
 import ReviewCard from "./ReviewCard";
 import ReviewForm from "./ReviewForm";
@@ -8,15 +8,18 @@ import { motion } from "motion/react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
   MessageAdd01Icon,
-  Navigation03Icon,
-  PlusSignCircleIcon,
-  PlusSignIcon,
+  Navigation03Icon
 } from "@hugeicons/core-free-icons";
 import { cn } from "../../../utils/utils.js";
 
 import { useReviewsData } from "../../../hooks/useReviewsData";
 
+
+
+
+
 export default function ReviewSection() {
+
   const { reviews, loading } = useReviewsData();
   const [isFormOpen, setIsFormOpen] = useState(false);
   const scrollContainerRef = useRef(null);
@@ -58,7 +61,7 @@ export default function ReviewSection() {
           <Link
             to="/reviews"
             className={cn(
-              "group flex items-center justify-center gap-2 px-5 py-2.5 rounded-full border border-white/20 bg-zinc-900/70 text-shadow-lg text-shadow-black/30",
+              "group flex items-center justify-center gap-2 px-5 py-2.5 rounded-full border border-white/20 bg-zinc-900/70 backdrop-blur-sm text-shadow-lg text-shadow-black/30",
               "text-white/80 hover:bg-zinc-800 hover:text-white hover:scale-103 hover:shadow-2xs shadow-white/50 transition-all duration-250 font-mono text-sm active:scale-97",
             )}
           >
@@ -69,7 +72,7 @@ export default function ReviewSection() {
           <button
             onClick={() => setIsFormOpen(true)}
             className={cn(
-              "group flex items-center justify-center gap-2 px-5 py-2.5 cursor-pointer rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-500 text-shadow-lg text-shadow-black/30 hover:bg-amber-600/30 ",
+              "group flex items-center justify-center gap-2 px-5 py-2.5 cursor-pointer rounded-full bg-amber-500/20 backdrop-blur-xs border border-amber-500/40 text-amber-500 text-shadow-lg text-shadow-black/30 hover:bg-amber-600/30 ",
               " hover:scale-103 transition-all duration-250 font-bold text-sm active:scale-95 shadow-2xs hover:shadow-amber-500/50",
             )}
           >

@@ -9,12 +9,12 @@ import ReviewSection from "../components/features/reviews/ReviewSection";
 import SuggestAddonForm from "../components/features/collection/SuggestAddonForm";
 import { useCollectionData } from "../hooks/useCollectionData";
 import CardsGrid from "../components/layout/CardsGrid.jsx";
-import { PlusSignCircleIcon, Rocket01Icon } from "@hugeicons/core-free-icons";
+import { Rocket01Icon } from "@hugeicons/core-free-icons";
 import MagneticButton from "../components/ui/MagneticButton.jsx";
 import { Helmet } from "react-helmet";
-import GooeyBtn from "../components/ui/GooeyBtn.jsx";
 
  
+
 export default function Home() {
   const { data, loading } = useCollectionData();
   const [activeCategory, setActiveCategory] = useState("tools");
@@ -160,14 +160,6 @@ export default function Home() {
               to={`${activeCategory && 'explore/' + activeCategory || '/explore'}`}
               icon={Rocket01Icon}
             />
-
-            {/* suggest add ons */}
-             <GooeyBtn 
-              text="Suggest Add-ons"
-              icon={PlusSignCircleIcon}
-              isSuggestAddonOpen={isSuggestAddonOpen}
-              setIsSuggestAddonOpen={setIsSuggestAddonOpen}
-             />
           </div>
         </motion.section>
 
