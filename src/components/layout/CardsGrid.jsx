@@ -16,7 +16,7 @@ export default function CardsGrid({ carddata, activeCategory, show }) {
           aria-label="Resources grid"
           className={cn(
             "w-full z-10 px-2 md:px-4 lg:px-0 container left-0 right-0 mx-auto bg-transparent grow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[14px]",
-            "content-start mt-2 md:mt-12"
+            "content-start mt-2 sm:mt-10 md:mt-12"
           )}
         >
           {

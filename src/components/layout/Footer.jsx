@@ -20,7 +20,7 @@ export default function Footer() {
             "text-sm text-gray-400 flex items-center gap-2 font-medium",
           )}
         >
-          Made with <span className={cn("animate-bounce")}>❤️</span> by{" "}
+          Made with <span className={cn("animate-bounce")}>💜</span> by{" "}
           <Link
             to='/connect'
             title="Connect with Shani Tiwari"
@@ -31,7 +31,7 @@ export default function Footer() {
               "text-white hover:text-amber-500 tracking-wider cursor-pointer transition-colors duration-300",
             )}
           >
-            Shani Tiwari
+            Shani Tiwari(Mr.CooL)
           </Link>
         </p>
         <p

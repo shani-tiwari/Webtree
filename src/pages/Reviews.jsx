@@ -79,12 +79,12 @@ export default function Reviews() {
         />
       </Helmet>
 
-      <section className="min-h-screen w-full relative overflow-hidden bg-black/95 pt-24 pb-20 selection:text-amber-500">
+      <section className="min-h-screen w-full relative overflow-hidden bg-black/80 backdrop-blur-sm pt-24 pb-20 selection:text-amber-500">
         <h1 className="sr-only">Community Reviews</h1>
 
         {/* Ambient backgrounds */}
-        <div className="absolute top-0 -left-20 w-[500px] h-[500px] bg-amber-600-op5 blur-[120px] rounded-full pointer-events-none animate-pulse" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-orange-600/5 blur-[120px] rounded-full pointer-events-none animate-pulse" />
+        <div className="absolute top-0 -left-20 w-[500px] h-[500px] bg-zinc-600/10 blur-[120px] rounded-full pointer-events-none animate-pulse" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-zinc-600/10 blur-[120px] rounded-full pointer-events-none animate-pulse" />
 
         <div className="max-w-7xl mx-auto md:px-6 relative md:mt-10">
           {/* Header */}
@@ -120,7 +120,7 @@ export default function Reviews() {
             >
               <button
                 onClick={() => setIsFormOpen(true)}
-                className="group flex items-center justify-center gap-2 px-6 py-3 cursor-pointer rounded-full bg-amber-500/90 hover:bg-amber-600 hover:scale-102 text-white selection:text-white font-bold transition-all duration-200 active:scale-95 shadow-[0_0_20px_var(--color-amber-500-op20)] hover:shadow-[0_0_30px_var(--color-amber-500-op40)]"
+                className="group flex items-center justify-center gap-2 px-6 py-3 cursor-pointer rounded-full bg-amber-500/90 hover:bg-amber-600 border border-amber-400/30 hover:scale-102 text-white selection:text-white font-bold transition-all duration-200 active:scale-95 shadow-[0_0_20px_var(--color-amber-500-op20)] hover:shadow-[0_0_30px_var(--color-amber-500-op40)]"
               >
                 <HugeiconsIcon
                   icon={BubbleChatAddIcon}

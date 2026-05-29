@@ -30,11 +30,11 @@ export default function MagneticButton({text, to, icon, className = ''}) {
     const hasMoved = position.x !== 0 || position.y !== 0;
     
   return (
-    <div className="w-full flex items-center justify-center">
+    <div className="w-fit mx-auto flex items-center justify-center">
       <div 
         onMouseMove={handleMoseMove} 
         onMouseLeave={() => setPosition({x: 0, y: 0})}   
-        className={cn(" w-fit h-[42px] flex items-center justify-center rounded-2xl border  border-dashed border-amber-500/40 transition-all duration-300",
+        className={cn(" w-full h-[42px] flex items-center justify-center rounded-xl transition-all duration-300",
           hasMoved && 'bg-amber-800/30 border border-dashed border-amber-400',
         )}>
           <motion.div 

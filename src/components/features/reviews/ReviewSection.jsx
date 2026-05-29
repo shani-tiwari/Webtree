@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router";
 import ReviewCard from "./ReviewCard";
 import ReviewForm from "./ReviewForm";
-// import { cn } from "../../../utils/utils";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
 import { HugeiconsIcon } from "@hugeicons/react";
@@ -66,7 +65,7 @@ export default function ReviewSection() {
             )}
           >
             View All
-            <HugeiconsIcon icon={Navigation03Icon} size={18} className="text-shadow-lg text-shadow-white group-hover:rotate-0 rotate-180 transition-transform duration-500 " />
+            <HugeiconsIcon icon={Navigation03Icon} size={18} className="text-shadow-lg text-shadow-white group-hover:rotate-x-0 group-hover:rotate-y-0 lg:rotate-x-180 rotate-y-180  transition-transform duration-500 " />
           </Link>
 
           <button
@@ -101,7 +100,7 @@ export default function ReviewSection() {
       <div className="relative w-full pb-4">
         <div
           ref={scrollContainerRef}
-          className="flex gap-6 overflow-x-auto hide-scrollbar px-8 md:px-24 py-4 mask-fade-edges"
+          className="flex gap-6 overflow-x-auto hide-scrollbar px-8 md:px-24 py-4 mask-fade-edges bg-black/30 backdrop-blur-xs snap-x snap-mandatory "
           style={{ scrollBehavior: "smooth" }}
         >
           {loading ? (
@@ -116,7 +115,7 @@ export default function ReviewSection() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.4 }}
-                className="snap-center flex "
+                className=" flex "
               >
                 <ReviewCard {...review} />
               </motion.div>

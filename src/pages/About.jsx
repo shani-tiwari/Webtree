@@ -2,27 +2,17 @@
 import { motion } from "motion/react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
-  BookOpen02Icon,
-  ChartLineData02Icon,
   ComputerChartUpIcon,
   DashboardSquareEditIcon,
   FolderAddIcon,
-  Link01Icon,
-  Link02Icon,
-  MessageMultiple01Icon,
-  MessageSquarePlus,
-  MoveLeftIcon,
   SentIcon,
-  ShapeCollectionIcon,
   UserBlock02FreeIcons,
   ZapIcon,
 } from "@hugeicons/core-free-icons";
 import { cn } from "../utils/utils.js";
 import { useLocation } from "react-router";
 import { GoBack } from "../components/layout";
-// import { useEffect } from "react";
 import { Helmet } from "react-helmet";
-import { MagneticButton } from "../components/ui";
 
 export default function About() {
   const location = useLocation();
@@ -41,12 +31,6 @@ export default function About() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.2 } },
   };
 
-  // useEffect(() => {
-  //   window.scrollTo({
-  //     top: 0,
-  //     behavior: "smooth",
-  //   });
-  // });
 
   return (
     <>
@@ -155,15 +139,15 @@ export default function About() {
                       x: (i % 3 === 0) ? 10 : (i % 3 === 1) ? 0 : -10 ,
                       backgroundColor: "rgba(193, 152, 33, 0.04)",
                     }}
-                    transition={{ duration: 0.05, ease: 'linear' }}
-                    className="group h-full py-2 px-3 rounded-xl bg-black/70 ring-1 ring-amber-400/20 shadow-sm shadow-white/40 relative overflow-hidden transition-all duration-200"
+                    transition={{ duration: 0.05, type: 'easeIn' }}
+                    className="group h-full py-3 px-3 rounded-xl bg-black/70 ring-1 ring-amber-400/20 shadow-sm shadow-white/40 relative overflow-hidden transition-all duration-200"
                   >
                     <p className="text-sm flex justify-center items-center tracking-wide text-white group-hover:text-amber-500 transition-all">
                       <span className="text-amber-500 flex items-center gap-2  "> ⁜ 
-                        <p className="text-white/80 text-[16px] font-semibold text-shadow-lg text-shadow-black">{item.title}</p> 
+                        <p className="text-white/80 text-[18px] font-semibold text-shadow-lg text-shadow-black">{item.title}</p> 
                       </span>
                     </p>
-                    <p className="text-[13px] text-gray-400/90 text-center text-shadow-lg text-shadow-black tracking-wide mt-1 group-hover:text-neutral-400 leading-4 px-[18px]">
+                    <p className="text-[14px] text-gray-400/90 text-center text-shadow-lg text-shadow-black tracking-normal mt-1 group-hover:text-neutral-400 leading-4 px-[14px]">
                       {item.desc}
                     </p>
                     </motion.div>

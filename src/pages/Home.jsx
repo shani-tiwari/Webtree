@@ -137,7 +137,7 @@ export default function Home() {
           {/* divider - SVG */}
           <motion.div
             layout
-            transition={{ layout: { duration: 0.5, ease: "easeOut" } }}
+            transition={{ layout: { duration: 0.45, ease: "easeOut" } }}
             className={cn("-mt-4 md:-mt-10 pointer-events-none z-50 relative")}
           >
             <CustomSVG />
