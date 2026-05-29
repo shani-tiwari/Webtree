@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { cn } from "../utils/utils.js";
 import { CustomSVG, SkeletonHome, MagneticButton } from "../components/ui";
-import { Categories, SuggestAddonForm } from "../components/features/collection";
+import { Categories } from "../components/features/collection";
 import { ReviewSection } from "../components/features/reviews";
 import { CardsGrid } from "../components/layout";
 import { useCollectionData } from "../hooks/useCollectionData";
@@ -17,8 +17,6 @@ export default function Home() {
   const [activeCategory, setActiveCategory] = useState("tools");
 
   const [isCollapsed, setIsCollapsed] = useState(true);
-  const [isSuggestAddonOpen, setIsSuggestAddonOpen] = useState(false);
-
   const carddata = data[activeCategory] || [];
 
   if (loading) {
@@ -162,11 +160,6 @@ export default function Home() {
 
         {/* Review Section */}
          <ReviewSection />
-
-        <SuggestAddonForm
-          isOpen={isSuggestAddonOpen}
-          onClose={() => setIsSuggestAddonOpen(false)}
-        />
       </section>
     </>
   );

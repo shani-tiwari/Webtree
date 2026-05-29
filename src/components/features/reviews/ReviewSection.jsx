@@ -50,7 +50,7 @@ export default function ReviewSection() {
             Review{" "}
             <span className={cn("text-neutral-500 italic")}>Feedback</span>
           </motion.h2>
-          <p className="text-zinc-400 font-mono text-sm mt-2 hover:tracking-tighter transition-all duration-500">
+          <p className="text-zinc-400 font-mono text-sm mt-0.5 hover:tracking-tighter transition-all duration-500">
             What developers say about{" "}
             <span className="text-amber-600">webtree</span>{" "}
           </p>
@@ -100,7 +100,7 @@ export default function ReviewSection() {
       <div className="relative w-full pb-4">
         <div
           ref={scrollContainerRef}
-          className="flex gap-6 overflow-x-auto hide-scrollbar px-8 md:px-24 py-4 mask-fade-edges bg-black/30 backdrop-blur-xs snap-x snap-mandatory "
+          className="flex gap-6 overflow-x-auto hide-scrollbar px-8 md:px-24 py-4 mask-fade-edges backdrop-blur-xs snap-x snap-mandatory "
           style={{ scrollBehavior: "smooth" }}
         >
           {loading ? (

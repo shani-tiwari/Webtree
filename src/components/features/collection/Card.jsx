@@ -90,7 +90,7 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
         <motion.section
           whileHover={{ y: -8, transition: { duration: 0.2 } }}
           className={cn(
-            "relative h-full flex flex-col bg-[#080808]/80 backdrop-blur-md border-2 border-zinc-700/80 rounded-[30px] p-4",
+            "relative h-full flex flex-col bg-linear-to-tr from-black/10 via-black/5 to-white/8 backdrop-blur-md border-2 border-zinc-700/80 rounded-[30px] p-4",
             "transition-all ease-[cubic-bezier(0.79,0.47,0.24,0.98)] duration-100 group cursor-pointer text-white/70 select-none hover:border-zinc-600 shadow-md shadow-black hover:shadow-xl",
           )}
         >
