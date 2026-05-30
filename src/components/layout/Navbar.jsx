@@ -224,9 +224,9 @@ const Navbar = () => {
             </span>
           </Link>
 
-          {/* Mobile Menu Button  */}
+          {/* Mobile Menu Buttons  */}
           <div
-            className={cn("md:hidden flex items-center justify-center gap-4")}
+            className={cn("z-60 md:hidden flex items-center justify-center gap-4")}
           >
             <Link
               className={cn("relative text-xl mr-2 ml-2 active:scale-95")}
@@ -259,15 +259,20 @@ const Navbar = () => {
                 </sup>
               )}
             </Link>
-            <button
-              onClick={() => setIsOpen(true)}
-              aria-expanded={isOpen}
-              aria-controls="mobile-menu"
-              aria-label="Toggle menu"
-              className="md:hidden text-gray-300 dark:text-white focus:outline-none hover:scale-106 transition-all duration-400"
-            >
-              <HugeiconsIcon icon={Menu02Icon} size={19} />
-            </button>
+
+            {/* menu button & menu */}
+            <div className="z-100 flex items-center justify-center ">
+              {/* menu button */}
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                aria-expanded={isOpen}
+                aria-controls="mobile-menu"
+                aria-label="Toggle menu"
+                className="md:hidden text-gray-300 active:scale-90 transition-all duration-200"
+              >
+                <HugeiconsIcon icon={ Menu02Icon} size={19} />
+              </button>
+            </div>
           </div>
         </div>
       </motion.nav>
@@ -278,45 +283,46 @@ const Navbar = () => {
           <motion.div
             id="mobile-menu"
             className={cn(
-              "fixed inset-0 z-50 w-screen h-screen bg-black/90 backdrop-blur-sm md:hidden",
-              "flex flex-col items-center justify-center p-8 text-shadow-2xs",
+              "absolute right-10 top-4  z-50  bg-black/50 backdrop-blur-md md:hidden rounded-[1.1rem]",
+              "flex flex-col items-center justify-center p-2 text-shadow-2xs border-2 border-white/15 rounded-tl-[40px] ",
+              `${isOpen && 'right-7 top-1.5'}`
             )}
+            initial={{ opacity: 0, width: 0, height: 0, right: '10', top: '4' }}
+            animate={{ opacity: 1, width: "55%", height: "57vh", right: '7', top: '2' }}
+            exit={{ opacity: 0, width: 0, height: 0, transition:{delay: 0.1, duration: 0.5} }} 
+            transition={{ duration: 0.5, type: "spring", stiffness: 100, damping: 15 }}
           >
             {/* Close Button */}
             <button
               onClick={() => setIsOpen(false)}
               aria-label="Close menu"
-              className="absolute top-2 right-9 text-white/80 hover:text-white active:scale-90 transition-all duration-300"
+              className="fixed top-1.5 right-3 text-white/50 active:scale-90 transition-all duration-200"
             >
-              <HugeiconsIcon icon={CancelCircleIcon} size={30} />
+              <HugeiconsIcon icon={CancelCircleIcon} size={26} />
             </button>
 
             {/* Menu Content */}
-            <motion.div
-              className="flex flex-col items-center gap-8 w-full max-w-xs "
-              initial={{ opacity: 0, y: -25 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-            >
-              <div className="flex flex-col items-center gap-6 w-full">
+            <motion.div className=" w-full max-w-xs ">
+              <div className="flex flex-col  items-end gap-2 w-full px-4 pt-14 pb-6 "> 
                 {mobile_navLinks.map((link, index) => (
                   <React.Fragment key={link.name}>
-                    <motion.div
-                      initial={{ x: 10, y: -10, opacity: 0 }}
-                      animate={{ x: 0, y: 0, opacity: 1 }}
+                    <motion.div 
+                      initial={{ y: -15, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ opacity: 0, y:  5, transition: {delay: 0} }}
                       transition={{
                         duration: 0.2,
-                        ease: "easeInOut",
-                        delay: 0.11 * (index + 0.5),
+                        type: 'spring',
+                        stiffness: 190,
+                        damping: 15,
+                        delay: (0.15 * index) + 0.15,
                       }}
                     >
                       <Link
                         to={link.path}
                         className={cn(
-                          "text-3xl font-medium tracking-wide transition-all duration-300 active:scale-95 flex items-center gap-6",
-                          location.pathname === link.path
-                            ? "text-amber-500"
-                            : "",
+                          "text-lg font-medium tracking-wide transition-all duration-300 active:scale-95 flex items-center gap-4",
+                          location.pathname === link.path && "text-amber-500"
                         )}
                         onClick={() => {
                           setIsOpen(false);
@@ -334,19 +340,13 @@ const Navbar = () => {
                           {link.name}
                         </span>
                         <HugeiconsIcon
-                          className={cn(
-                            "mt-1 animate-pulse",
-                            location.pathname === link.path
-                              ? "text-amber-500"
-                              : "text-white/70",
-                          )}
+                          className={cn(location.pathname === link.path ? "text-amber-500" : "text-white/70" )}
                           icon={link.icon}
-                          size={28}
+                          size={23}
                         />
                       </Link>
                     </motion.div>
 
-                    {/* divider */}
                     {index < mobile_navLinks.length - 1 && (
                       <motion.span
                         initial={{ width: "0%", opacity: 0 }}
