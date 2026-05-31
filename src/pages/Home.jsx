@@ -136,7 +136,7 @@ export default function Home() {
           <motion.div
             layout
             transition={{ layout: { duration: 0.45, ease: "easeOut" } }}
-            className={cn("-mt-4 md:-mt-10 pointer-events-none z-50 relative")}
+            className={cn("-mt-4 md:-mt-12 pointer-events-none z-50 relative")}
           >
             <CustomSVG />
           </motion.div>
@@ -148,7 +148,7 @@ export default function Home() {
             show={"less"}
           />
 
-          <div className="w-full flex flex-col gap-2  mt-8">
+          <div className="w-full flex flex-col gap-2  mt-4">
             {/* explore page button */}
             <MagneticButton
               text="Explore More Websites"
@@ -173,7 +173,7 @@ function Header(){
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.2, ease: "easeOut" }}
           className={cn(
-            "w-full text-white/80 text-center px-4 md:px-6 pt-20 md:pt-30",
+            "w-full text-white/80 text-center px-4 md:px-6 pt-20 md:pt-28",
           )}
         >
           <div

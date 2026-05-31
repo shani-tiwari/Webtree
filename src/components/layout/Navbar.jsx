@@ -114,10 +114,10 @@ const Navbar = () => {
         aria-label="Main Navigation"
         className={cn(
           "fixed top-1 left-1/2 -translate-x-1/2 w-[90%] md:max-w-[1050px] z-50 px-5 md:px-9 py-1 md:py-2",
-          "flex justify-between items-center rounded-full border-2 border-neutral-400/50 shadow-xs shadow-amber-700-op40",
+          "flex justify-between items-center rounded-full border-2 border-neutral-400/50 shadow-xs shadow-amber-700-op40 ",
         )}
       >
-        {/* <div className="absolute inset-0 -z-8 rounded-full backdrop-blur-[2px] pointer-events-none" /> */} 
+        <div className="absolute inset-0 -z-8 rounded-full bg-black/10 backdrop-blur-[5px] pointer-events-none" />
         {/* Logo */}
         <motion.div
           variants={itemVariants}
@@ -126,7 +126,7 @@ const Navbar = () => {
         >
           <Link
             className={cn(
-              "text-white/40 flex items-center justify-center font-mono hover:text-white/50 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer selection:bg-amber-600-op30 selection:text-white",
+              "text-white/40 z-10 flex items-center justify-center font-mono hover:text-white/50 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer selection:bg-amber-600-op30 selection:text-white",
             )}
             to="/"
             onClick={scrollTop}
