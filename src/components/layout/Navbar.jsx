@@ -98,6 +98,13 @@ const Navbar = () => {
 
   const isCollectionPage = location.pathname === "/collection";
 
+  const navItem_transition = {
+    duration: 0.2,
+    type: 'spring',
+    stiffness: 190,
+    damping: 15,
+  };
+
   return (
     <>
       <motion.nav
@@ -107,9 +114,10 @@ const Navbar = () => {
         aria-label="Main Navigation"
         className={cn(
           "fixed top-1 left-1/2 -translate-x-1/2 w-[90%] md:max-w-[1050px] z-50 px-5 md:px-9 py-1 md:py-2",
-          "flex justify-between items-center rounded-full border-2 border-neutral-400/50 shadow-xs shadow-amber-700-op40 backdrop-blur-[6px]",
+          "flex justify-between items-center rounded-full border-2 border-neutral-400/50 shadow-xs shadow-amber-700-op40",
         )}
       >
+        {/* <div className="absolute inset-0 -z-8 rounded-full backdrop-blur-[2px] pointer-events-none" /> */} 
         {/* Logo */}
         <motion.div
           variants={itemVariants}
@@ -261,111 +269,102 @@ const Navbar = () => {
             </Link>
 
             {/* menu button & menu */}
-            <div className="z-100 flex items-center justify-center ">
+            <div className="flex items-center justify-center relative ">
               {/* menu button */}
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 aria-expanded={isOpen}
                 aria-controls="mobile-menu"
                 aria-label="Toggle menu"
-                className="md:hidden text-gray-300 active:scale-90 transition-all duration-200"
+                className={cn("z-100 md:hidden flex items-center justify-center text-white/80 active:scale-90 transition-all duration-300")}
               >
-                <HugeiconsIcon icon={ Menu02Icon} size={19} />
+                {
+                  isOpen ? (
+                   <HugeiconsIcon icon={CancelCircleIcon} size={22} className="z-999" />
+                  ) : (
+                   <HugeiconsIcon icon={Menu02Icon} size={22} />
+                  )
+                }
+                {/* menu dropdown  */}
+                <AnimatePresence>
+                  {isOpen && (
+                    <motion.div
+                      id="mobile-menu"
+                      className={cn(
+                        "absolute z-10 right-0 top-0 w-fit bg-black/20 backdrop-blur-sm md:hidden rounded-[1.1rem]  px-7",
+                        "flex flex-col items-center justify-center text-shadow-2xs border-2 border-white/20 rounded-tl-[40px] ",
+                      )}
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1, right: '-12px', top: '-8px', transformOrigin: 'top right', zIndex: 100 }}
+                      exit={{ opacity: 0, scale: 0, transformOrigin: 'top right', transition:{delay: 0.1, duration: 0.5} }} 
+                      transition={{ duration: 0.5, type: "spring", stiffness: 70, damping: 15 }}
+                    >
+
+                      {/* Menu Content */}
+                      <motion.div className=" w-full max-w-xs ">
+                        <div className="flex flex-col  items-end gap-2 w-full px-4 pt-14 pb-6 "> 
+                          {mobile_navLinks.map((link, index) => (
+                            <React.Fragment key={link.name}>
+                              <motion.div 
+                                initial={{ y: -20 }}
+                                animate={{ y: 0, scale: 1 }}
+                                exit={{ y: -15, opacity: 0.5 , scale: 0.6, transition: {delay: 0} }}
+                                transition={{navItem_transition, delay: (0.15 * index) + 0.13}}
+                                className="w-full"
+                              >
+                                <Link
+                                  to={link.path}
+                                  className={cn(
+                                    " text-lg w-full font-medium tracking-wide transition-all duration-300 active:scale-95 flex justify-between items-center gap-4",
+                                    location.pathname === link.path && "text-amber-500"
+                                  )}
+                                  onClick={() => {
+                                    setIsOpen(false);
+                                    scrollTop();
+                                  }}
+                                >
+                                  <span
+                                    className={cn(
+                                      "bg-clip-text text-transparent bg-linear-to-b",
+                                      location.pathname === link.path
+                                        ? "from-amber-400 to-amber-600"
+                                        : "from-white to-zinc-500",
+                                    )}
+                                  >
+                                    {link.name}
+                                  </span>
+                                  <HugeiconsIcon
+                                    className={cn(location.pathname === link.path ? "text-amber-500" : "text-white/70" )}
+                                    icon={link.icon}
+                                    size={21}
+                                  />
+                                </Link>
+                              </motion.div>
+
+                              {index < mobile_navLinks.length - 1 && (
+                                <motion.span
+                                  initial={{ width: "0%", opacity: 0 }}
+                                  animate={{ width: "80%", opacity: 1 }}
+                                  transition={{
+                                    duration: 0.5,
+                                    ease: "easeOut",
+                                    delay: 0.2 + index * 0.1,
+                                  }}
+                                  className="h-px bg-linear-to-r from-transparent via-zinc-500/50 to-transparent block"
+                                ></motion.span>
+                              )}
+                            </React.Fragment>
+                          ))}
+                        </div>
+                      </motion.div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </button>
             </div>
           </div>
         </div>
       </motion.nav>
-
-      {/* Full-Screen Mobile Menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            id="mobile-menu"
-            className={cn(
-              "absolute right-10 top-4  z-50  bg-black/50 backdrop-blur-md md:hidden rounded-[1.1rem]",
-              "flex flex-col items-center justify-center p-2 text-shadow-2xs border-2 border-white/15 rounded-tl-[40px] ",
-              `${isOpen && 'right-7 top-1.5'}`
-            )}
-            initial={{ opacity: 0, width: 0, height: 0, right: '10', top: '4' }}
-            animate={{ opacity: 1, width: "55%", height: "57vh", right: '7', top: '2' }}
-            exit={{ opacity: 0, width: 0, height: 0, transition:{delay: 0.1, duration: 0.5} }} 
-            transition={{ duration: 0.5, type: "spring", stiffness: 100, damping: 15 }}
-          >
-            {/* Close Button */}
-            <button
-              onClick={() => setIsOpen(false)}
-              aria-label="Close menu"
-              className="fixed top-1.5 right-3 text-white/50 active:scale-90 transition-all duration-200"
-            >
-              <HugeiconsIcon icon={CancelCircleIcon} size={26} />
-            </button>
-
-            {/* Menu Content */}
-            <motion.div className=" w-full max-w-xs ">
-              <div className="flex flex-col  items-end gap-2 w-full px-4 pt-14 pb-6 "> 
-                {mobile_navLinks.map((link, index) => (
-                  <React.Fragment key={link.name}>
-                    <motion.div 
-                      initial={{ y: -15, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      exit={{ opacity: 0, y:  5, transition: {delay: 0} }}
-                      transition={{
-                        duration: 0.2,
-                        type: 'spring',
-                        stiffness: 190,
-                        damping: 15,
-                        delay: (0.15 * index) + 0.15,
-                      }}
-                    >
-                      <Link
-                        to={link.path}
-                        className={cn(
-                          "text-lg font-medium tracking-wide transition-all duration-300 active:scale-95 flex items-center gap-4",
-                          location.pathname === link.path && "text-amber-500"
-                        )}
-                        onClick={() => {
-                          setIsOpen(false);
-                          scrollTop();
-                        }}
-                      >
-                        <span
-                          className={cn(
-                            "bg-clip-text text-transparent bg-linear-to-b",
-                            location.pathname === link.path
-                              ? "from-amber-400 to-amber-600"
-                              : "from-white to-zinc-500",
-                          )}
-                        >
-                          {link.name}
-                        </span>
-                        <HugeiconsIcon
-                          className={cn(location.pathname === link.path ? "text-amber-500" : "text-white/70" )}
-                          icon={link.icon}
-                          size={23}
-                        />
-                      </Link>
-                    </motion.div>
-
-                    {index < mobile_navLinks.length - 1 && (
-                      <motion.span
-                        initial={{ width: "0%", opacity: 0 }}
-                        animate={{ width: "80%", opacity: 1 }}
-                        transition={{
-                          duration: 0.5,
-                          ease: "easeOut",
-                          delay: 0.2 + index * 0.1,
-                        }}
-                        className="h-px bg-linear-to-r from-transparent via-zinc-500/50 to-transparent block"
-                      ></motion.span>
-                    )}
-                  </React.Fragment>
-                ))}
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </>
   );
 };
