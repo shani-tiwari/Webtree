@@ -65,7 +65,7 @@ export default function ReviewSection() {
             )}
           >
             View All
-            <HugeiconsIcon icon={Navigation03Icon} size={18} className="text-shadow-lg text-shadow-white group-hover:rotate-x-0 group-hover:rotate-y-0 lg:rotate-x-180 rotate-y-180  transition-transform duration-500 " />
+            <HugeiconsIcon icon={Navigation03Icon} size={18} className="text-shadow-lg text-shadow-white group-hover:rotate-x-0 group-hover:rotate-y-0 lg:rotate-x-180 md:rotate-y-180  transition-transform duration-500 " />
           </Link>
 
           <button

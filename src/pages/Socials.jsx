@@ -197,7 +197,7 @@ const SocialCard = ({
             style={{ "--color": color }}
           >
 
-            <span className={cn("relative flex items-center justify-center h-[11px] w-[22px] " )}>
+            <span className={cn("relative flex items-center justify-center h-[12px] w-[22px] " )}>
               {/* ping animation */}
               <span 
                 className={cn("animate-ping absolute inline-flex rounded-lg items-center justify-center h-[80%] w-[80%] opacity-80",
@@ -214,7 +214,7 @@ const SocialCard = ({
                 >
                     {/* Actual Dot */}
                     <span 
-                      className="absolute left-0.5 top-px group-hover:left-[12px] bg-white/80 w-2 h-2 rounded-full shadow-lg shadow-black transition-all duration-300  inset-shadow-sm">
+                      className="absolute left-[12px] md:left-0.5 top-px group-hover:left-[12px] bg-white/80 w-2 h-2 rounded-full shadow-lg shadow-black transition-all duration-300  inset-shadow-sm">
                     </span>
               </span>
             </span>
