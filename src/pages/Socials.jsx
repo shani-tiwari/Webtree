@@ -193,28 +193,28 @@ const SocialCard = ({
 
         {/* status indicator  */}
           <div
-            className={cn("absolute right-2 top-6 flex items-center justify-center gap-2 px-3 py-1.5 rounded-xl lg:rounded-2xl lg:top-6 lg:right-1 bg-black/40 group-hover:bg-(--color)/10 shadow-md shadow-white/10 group-hover:border-2 border border-white/10 backdrop-blur-md",)} 
             style={{ "--color": color }}
+            className={cn("absolute right-2 top-6 flex items-center justify-center gap-2 px-3 py-1.5 rounded-xl lg:rounded-2xl lg:top-6 lg:right-1 bg-black/40 group-hover:bg-(--color)/10 shadow-md shadow-white/10 group-hover:border-2 border border-white/10 backdrop-blur-md",)} 
           >
 
-            <span className={cn("relative flex items-center justify-center h-[12px] w-[22px] " )}>
+            <span className={cn("relative flex items-center justify-center h-[12px] w-[22px]" )}>
               {/* ping animation */}
               <span 
+                style={{ "--color": color }}
                 className={cn("animate-ping absolute inline-flex rounded-lg items-center justify-center h-[80%] w-[80%] opacity-80",
                 `bg-(--color)`)}
-                style={{ "--color": color }}
                 >
               </span>
               {/* pill container */}
               <span 
-                className={cn("relative h-full w-full rounded-lg px-px transition-all duration-200 ease-in-out",
-                  "group-hover:justify-end group-hover:bg-(--color)/90 bg-gray-600",
-                )}
                 style={{ "--color": color }}
+                className={cn("relative h-full w-full rounded-lg px-px transition-all duration-200 ease-in-out",
+                  "lg:bg-gray-700 lg:group-hover:bg-(--color)/90 bg-(--color) ",
+                )}
                 >
                     {/* Actual Dot */}
                     <span 
-                      className="absolute left-[12px] md:left-0.5 top-px group-hover:left-[12px] bg-white/80 w-2 h-2 rounded-full shadow-lg shadow-black transition-all duration-300  inset-shadow-sm">
+                      className="absolute left-[12px] md:left-0.5 top-[1.5px] group-hover:left-[12px] bg-black/70 w-2 h-2 rounded-full shadow-lg shadow-white/70 border transition-all duration-300  inset-shadow-sm"> 
                     </span>
               </span>
             </span>
