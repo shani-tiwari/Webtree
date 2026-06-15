@@ -93,7 +93,7 @@ const Navbar = () => {
     { name: "Explore", path: "/explore/tools", icon: SearchList02Icon },
     { name: "Reviews", path: "/reviews", icon: Agreement03Icon },
     { name: "About", path: "/about", icon: Tree02Icon },
-    { name: "Connect", path: "/connect", icon: Link02FreeIcons },
+    // { name: "Connect", path: "/connect", icon: Link02FreeIcons },
   ];
 
   const isCollectionPage = location.pathname === "/collection";
@@ -147,7 +147,7 @@ const Navbar = () => {
           {[
             { label: "Explore", path: "/explore/tools" },
             { label: "About", path: "/about" },
-            { label: "Connect", path: "/connect" },
+            // { label: "Connect", path: "/connect" },
             { label: "Reviews", path: "/reviews" },
           ].map((item) => {
             const isActive = active === item.label.toLowerCase();

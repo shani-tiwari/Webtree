@@ -679,7 +679,7 @@
     },
     {
       "id": 6,
-      "name": "Tailwind Color Generator",
+      "name": "Tailwind Color Pallete",
       "desc": "Generate Tailwind CSS compatible color palettes with shades and previews.",
       "link": "https://tailwindcss.com/docs/customizing-colors",
       "category": "color_palettes",
