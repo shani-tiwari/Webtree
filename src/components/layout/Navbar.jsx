@@ -99,10 +99,10 @@ const Navbar = () => {
   const isCollectionPage = location.pathname === "/collection";
 
   const navItem_transition = {
-    duration: 0.2,
+    // duration: 0.2,
     type: 'spring',
-    stiffness: 190,
-    damping: 15,
+    // stiffness: 200,
+    // damping: 25,
   };
 
   return (
@@ -279,8 +279,7 @@ const Navbar = () => {
                 className={cn("z-100 md:hidden flex items-center justify-center text-white/80 active:scale-90 transition-all duration-300")}
               >
                 {
-                  isOpen ? (
-                   <HugeiconsIcon icon={CancelCircleIcon} size={22} className="z-999" />
+                  isOpen ? ( <HugeiconsIcon icon={CancelCircleIcon} size={22} className="z-999" />
                   ) : (
                    <HugeiconsIcon icon={Menu02Icon} size={22} />
                   )
@@ -297,7 +296,7 @@ const Navbar = () => {
                       initial={{ opacity: 0, scale: 0 }}
                       animate={{ opacity: 1, scale: 1, right: '-12px', top: '-8px', transformOrigin: 'top right', zIndex: 100 }}
                       exit={{ opacity: 0, scale: 0, transformOrigin: 'top right', transition:{delay: 0.1, duration: 0.5} }} 
-                      transition={{ duration: 0.5, type: "spring", stiffness: 70, damping: 15 }}
+                      transition={{ duration: 0.5, type: "spring", stiffness: 100, damping: 15 }}
                     >
 
                       {/* Menu Content */}
@@ -306,10 +305,10 @@ const Navbar = () => {
                           {mobile_navLinks.map((link, index) => (
                             <React.Fragment key={link.name}>
                               <motion.div 
-                                initial={{ y: -20 }}
-                                animate={{ y: 0, scale: 1 }}
+                                // initial={{ y: 10 }} 
+                                // animate={{ y: 0}}
                                 exit={{ y: -15, opacity: 0.5 , scale: 0.6, transition: {delay: 0} }}
-                                transition={{navItem_transition, delay: (0.15 * index) + 0.13}}
+                                // transition={{navItem_transition, delay: (0.05 * index) }}
                                 className="w-full"
                               >
                                 <Link

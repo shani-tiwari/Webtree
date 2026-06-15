@@ -110,8 +110,8 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
                   "group/icon absolute right-[10px] flex items-center justify-center z-30",
                   "p-1 rounded-xl bg-white/2 border-2 border-white/20 cursor-pointer shadow-sm",
                   isCollected
-                    ? "text-emerald-600 font-bold hover:text-emerald-500 shadow-emerald-500/30"
-                    : "text-amber-300-op60  group-hover:text-amber-400-op80  shadow-amber-500/30",
+                    ? "text-emerald-600 font-bold hover:text-emerald-500 shadow-emerald-600/30"
+                    : "text-amber-300-op60  group-hover:text-amber-400-op80  shadow-amber-600/30",
                 )}
               >
                 {isCollected ? (
@@ -159,7 +159,7 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
               transition={{ duration: 0.1 }}
               onClick={handleCopy}
               className={cn(
-                "group/copy absolute right-[44px] top-[3px] flex items-center justify-center  z-30 shadow-xs shadow-sky-700/70",
+                "group/copy absolute right-[44px] top-[3px] flex items-center justify-center  z-30 shadow-xs shadow-sky-700/50",
                 "text-sky-300/80 group-hover:text-sky-500/90 p-1 rounded-xl bg-white/2 border-2 border-white/20 cursor-pointer",
               )}
             >
@@ -181,7 +181,7 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
               transition={{ duration: 0.1 }}
               onClick={handleShare}
               className={cn(
-                "group/share absolute top-[21px] right-[11px] flex items-center justify-center z-30 shadow-xs shadow-indigo-700/70",
+                "group/share absolute top-[21px] right-[11px] flex items-center justify-center z-30 shadow-xs shadow-indigo-700/50",
                 "text-indigo-500 group-hover:text-indigo-600 p-1 rounded-xl bg-white/2 border-2 border-white/20 cursor-pointer",
               )}
             >

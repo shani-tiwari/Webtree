@@ -169,26 +169,27 @@ export default function Footer() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{
-                    delay: 0.2 + index * 0.06,
-                    duration: 0.2,
+                    // delay: 0.2 + index * 0.06,
+                    duration: 0.25,
+                    type: 'bounce',
                     ease: easeInOut
                   }}
                   whileHover={{ y: -4, scale: 1.08 }}
                   whileTap={{ scale: 0.95 }}
                   className={cn(
                     "group relative flex h-11 w-11 items-center justify-center rounded-xl",
-                    "border border-white/20 bg-white/3 backdrop-blur-sm",
-                    "transition-colors duration-300 hover:border-white/15 hover:bg-white/6",
+                    "border-2 border-white/20 bg-white/3 backdrop-blur-sm",
+                    "transition-colors duration-200 hover:border-white/15 hover:bg-white/6",
                   )}
-                  style={{ "--social-color": social.color }}
+                  style={{ "--social-color": social.color  }}
                 >
                   <span
                     className="absolute inset-0 rounded-xl opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-20"
-                    style={{ backgroundColor: social.color }}
+                    style={{ backgroundColor: social.color , borderColor: social.color }}
                   />
                   <HugeiconsIcon
                     icon={social.icon}
-                    size={20}
+                    size={22}
                     className="relative z-10 text-neutral-400 transition-colors duration-200 group-hover:text-white"
                     style={{ color: undefined}}
                   />
@@ -210,7 +211,7 @@ export default function Footer() {
           className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 md:flex-row"
         >
           <p className="text-sm text-neutral-500">
-            © {currentYear} WebTree. All rights reserved.
+            ©{currentYear} WebTree. All rights reserved.
           </p>
           <p className="flex items-center gap-2 text-sm text-neutral-400">
             Made with{" "}
