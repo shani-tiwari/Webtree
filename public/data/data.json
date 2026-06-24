@@ -313,14 +313,6 @@
       "logo": "https://img.logo.dev/awwwards.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
-      "id": 4,
-      "name": "Prettyfolio",
-      "desc": "Curated web design portfolios and inspiration for creatives.",
-      "link": "https://prettyfolio.com",
-      "category": "design_ideas",
-      "logo": "https://img.logo.dev/prettyfolio.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
       "id": 5,
       "name": "Stacksorted",
       "desc": "Sorted collections of design stacks, tools, and inspirations for developers.",
