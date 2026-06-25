@@ -26,7 +26,7 @@ const socialLinks = [
   {
     name: "LinkedIn",
     icon: Linkedin01Icon,
-    url: "https://www.linkedin.com/in/shani-tiwari-aspirational/",
+    url: "https://www.linkedin.com/in/shani-tiwarii/",
     color: "#0A66C2",
   },
   {
@@ -45,7 +45,7 @@ const socialLinks = [
     name: "Dribble",
     icon: DribbbleFreeIcons,
     url: "https://Instagram.com/shani.develops",
-    color: "oklch(52.5% 0.223 3.958)", //pink color
+    color: "oklch(52.5% 0.223 3.958)",
   },
   {
     name: "Instagram",
