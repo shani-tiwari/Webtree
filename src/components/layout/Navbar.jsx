@@ -14,8 +14,8 @@ import {
   Agreement03Icon,
   Menu02Icon,
   Home11Icon,
-  Tree02Icon,
-  Link02FreeIcons,
+  // Tree02Icon,
+  // Link02FreeIcons,
   SearchList02Icon,
 } from "@hugeicons/core-free-icons";
 import React, { useState, useEffect } from "react";
@@ -92,18 +92,11 @@ const Navbar = () => {
     { name: "Collection", path: "/collection", icon: FolderFavouriteIcon },
     { name: "Explore", path: "/explore/tools", icon: SearchList02Icon },
     { name: "Reviews", path: "/reviews", icon: Agreement03Icon },
-    { name: "About", path: "/about", icon: Tree02Icon },
+    // { name: "About", path: "/about", icon: Tree02Icon },
     // { name: "Connect", path: "/connect", icon: Link02FreeIcons },
   ];
 
   const isCollectionPage = location.pathname === "/collection";
-
-  const navItem_transition = {
-    // duration: 0.2,
-    type: 'spring',
-    // stiffness: 200,
-    // damping: 25,
-  };
 
   return (
     <>
@@ -145,8 +138,8 @@ const Navbar = () => {
           )}
         >
           {[
-            { label: "Explore", path: "/explore/tools" },
-            { label: "About", path: "/about" },
+            { label: "Explore-All", path: "/explore/tools" },
+            // { label: "About", path: "/about" },
             // { label: "Connect", path: "/connect" },
             { label: "Reviews", path: "/reviews" },
           ].map((item) => {

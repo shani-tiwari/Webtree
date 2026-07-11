@@ -121,6 +121,12 @@ export default function Footer() {
               The ultimate collection of 140+ web development resources. Discover
               tools, design ideas, and curated picks to build better on the web.
             </p>
+            <span className="w-fit group  text-sm font-semibold tracking-tighter  transition-colors duration-300 bg-amber-100/80 text-black flex items-center gap-2 border border-amber-500/20 py-2 px-4 rounded-lg hover:border-amber-500/60 hover:bg-amber-200/80  ">
+              <HugeiconsIcon icon={GithubIcon} size={16} className="-mt-0.5"/>
+              <a href="https://github.com/shani-tiwari/WebTree" target="_blank" rel="noopener noreferrer" className="group-hover:text-black transition-colors duration-300">
+                Star on GitHub
+              </a>
+            </span>
           </motion.div>
 
           {/* Navigation */}

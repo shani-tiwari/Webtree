@@ -140,14 +140,15 @@ export default function About() {
                       backgroundColor: "rgba(193, 152, 33, 0.04)",
                     }}
                     transition={{ duration: 0.05, type: 'easeIn' }}
-                    className="group h-full py-3 px-3 rounded-xl bg-black/70 ring-1 ring-amber-400/20 shadow-sm shadow-white/40 relative overflow-hidden transition-all duration-200"
+                    className="group h-full py-3 px-4 rounded-xl bg-black/20 ring-1 ring-amber-400/10 shadow-sm shadow-white/40 relative overflow-hidden transition-all duration-200"
                   >
-                    <p className="text-sm flex justify-center items-center tracking-wide text-white group-hover:text-amber-500 transition-all">
-                      <span className="text-amber-500 flex items-center gap-2  "> ⁜ 
-                        <p className="text-white/80 text-[18px] font-semibold text-shadow-lg text-shadow-black">{item.title}</p> 
+                    <p className="text-sm w-fit  tracking-wide text-white group-hover:text-amber-500 transition-all">
+                      <span className="text-amber-500 flex gap-2">
+                         ⁜ 
+                        <p className="text-white/80 text-[18px] font-medium text-shadow-lg text-shadow-black">{item.title}</p> 
                       </span>
                     </p>
-                    <p className="text-[14px] text-gray-400/90 text-center text-shadow-lg text-shadow-black tracking-normal mt-1 group-hover:text-neutral-400 leading-4 px-[14px]">
+                    <p className="text-[13px] text-gray-400/90 text-shadow-lg text-shadow-black tracking-wide mt-1 group-hover:text-neutral-400 leading-4">
                       {item.desc}
                     </p>
                     </motion.div>
