@@ -99,8 +99,8 @@
     background-repeat: repeat-x;
     background-size: 19px 8px;
     animation:
-      wave-move 1s linear infinite,
-      pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      wave-move 1.1s linear infinite;
+      /* pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; */
     filter: drop-shadow(0 0 2px rgb(0, 0, 0));
   }
 }
@@ -180,8 +180,20 @@
   --color-white: rgba(255, 255, 255, 0.9);
 }
 
+/* .Navbar{
+  container-type: scroll-state;
+  position: sticky;
+  top: 0;
+  width: 30rem;
+}
+@container scroll-state(stuck: top){
+  .Navbar{
+    max-width: 56rem;
+  }
+} */
+
 .navItem {
-  @apply text-shadow-2xs font-mono tracking-tight md:text-[17px] lg:text-[19px] cursor-pointer scroll-smooth hover:tracking-wide
+  @apply text-shadow-2xs font-mono tracking-tight md:text-[18px] cursor-pointer scroll-smooth 
    hover:-translate-y-0.5 transition-all duration-250 selection:bg-amber-600-op30 selection:text-white
 }
 

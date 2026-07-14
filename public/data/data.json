@@ -213,14 +213,6 @@
       "logo": "https://img.logo.dev/daisyui.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
-      "id": 5,
-      "name": "Pattern Craft",
-      "desc": "Modern background patterns and gradients generator with Tailwind CSS snippets.",
-      "link": "https://patterncraft.fun",
-      "category": "ui_components",
-      "logo": "https://img.logo.dev/patterncraft.fun?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
       "id": 6,
       "name": "TweakCN",
       "desc": "Visual no-code theme editor for shadcn/ui components with Tailwind CSS v4 support.",
@@ -838,14 +830,6 @@
       "logo": "https://img.logo.dev/pexels.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
-      "id": 8,
-      "name": "Irvan",
-      "link": "https://irvan.id/",
-      "desc": "Free minimalist illustrations optimized for websites and apps.",
-      "category": "illustrations",
-      "logo": "https://img.logo.dev/irvan.id?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
       "id": 9,
       "name": "Manypixels",
       "link": "https://www.manypixels.co/gallery/illustrations",
@@ -961,6 +945,34 @@
     }
   ],
   "api": [
+    {
+      "id": 17,
+      "name": "Hugging Face",
+      "desc": "Free ML inference API (limited). Text/image generation.",
+      "link": "https://huggingface.co/inference-api",
+      "category": "apis",
+      "new": true,
+      "logo": "https://img.logo.dev/huggingface.co?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 18,
+      "name": "OpenRouter",
+      "desc": "The Unified Interface For LLMs. Better prices, better uptime, no subscriptions.",
+      "link": "https://openrouter.ai/",
+      "category": "apis",
+      "new": true,
+      "logo": "https://img.logo.dev/openrouter.ai?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+
+    {
+      "id": 19,
+      "name": "Groq",
+      "desc": "Fast LLM inference, OpenAI-compatible. Simple to integrate, easy to scale. Start building in minutes.",
+      "link": "https://console.groq.com/home",
+      "category": "apis",      
+      "new": true,
+      "logo": "https://img.logo.dev/groq.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
     {
       "id": 1,
       "name": "JSONPlaceholder",
@@ -1088,14 +1100,6 @@
       "link": "https://developer.themoviedb.org",
       "category": "apis",
       "logo": "https://img.logo.dev/themoviedb.org?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 17,
-      "name": "Hugging Face",
-      "desc": "Free ML inference API (limited). Text/image generation.",
-      "link": "https://huggingface.co/inference-api",
-      "category": "apis",
-      "logo": "https://img.logo.dev/huggingface.co?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
   "upskill": [

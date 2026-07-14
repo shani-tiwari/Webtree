@@ -74,17 +74,13 @@ const Navbar = () => {
   const active =
     location.pathname === "/"
       ? null
-      : location.pathname.startsWith("/about")
-        ? "about"
-        : location.pathname.startsWith("/connect")
-          ? "connect"
-          : location.pathname.startsWith("/reviews")
-            ? "reviews"
-            : location.pathname.startsWith("/collection")
-              ? "collection"
-              : location.pathname.startsWith("/explore")
-                ? "explore"
-                : null;
+      : location.pathname.startsWith("/reviews")
+        ? "reviews"
+        : location.pathname.startsWith("/collection")
+          ? "collection"
+          : location.pathname.startsWith("/explore")
+            ? "explore"
+            : null;
 
   const [showLength, setShowLength] = useState(true);
   const mobile_navLinks = [
@@ -106,7 +102,7 @@ const Navbar = () => {
         variants={navVariants}
         aria-label="Main Navigation"
         className={cn(
-          "fixed top-1 left-1/2 -translate-x-1/2 w-[90%] md:max-w-[1050px] z-50 px-5 md:px-9 py-1 md:py-2",
+          "fixed top-1.5 left-1/2 -translate-x-1/2 w-[90%] md:max-w-[1200px] z-50 px-5 md:px-9 py-1 md:py-1.5",
           "flex justify-between items-center rounded-full border-2 border-neutral-400/50 shadow-xs shadow-amber-700-op40 ",
         )}
       >
@@ -134,13 +130,11 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div
           className={cn(
-            "hidden md:flex grow gap-3 items-center justify-center",
+            "hidden md:flex grow gap-4 items-center justify-center",
           )}
         >
           {[
-            { label: "Explore-All", path: "/explore/tools" },
-            // { label: "About", path: "/about" },
-            // { label: "Connect", path: "/connect" },
+            { label: "Explore", path: "/explore/tools" },
             { label: "Reviews", path: "/reviews" },
           ].map((item) => {
             const isActive = active === item.label.toLowerCase();
@@ -149,7 +143,7 @@ const Navbar = () => {
                 key={item.label}
                 to={item.path}
                 className={cn(
-                  "navItem lg:mx-0.5",
+                  "navItem ",
                   isActive
                     ? "text-amber-500 wavy-underline-pulse"
                     : "text-neutral-400 hover:text-neutral-300",
@@ -186,7 +180,7 @@ const Navbar = () => {
               <p
                 className={cn(
                   "text-neutral-400 font-mono mr-1 tracking-tighter transition-all duration-250 hover:text-neutral-300/90",
-                  "text-lg md:text-[20.5px] hidden md:block selection:bg-amber-600-op30 selection:text-white",
+                  "text-lg md:text-[20px] hidden md:block selection:bg-amber-600-op30 selection:text-white",
                 )}
               >
                 Collection
@@ -195,7 +189,7 @@ const Navbar = () => {
             {isCollectionPage ? (
               <HugeiconsIcon
                 icon={SquareArrowLeft02Icon}
-                size={20}
+                size={19}
                 style={{ color: "oklch(66.6% 0.179 58.318)" }}
                 className="hidden md:flex mt-1"
               />

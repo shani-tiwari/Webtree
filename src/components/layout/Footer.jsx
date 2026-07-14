@@ -17,7 +17,7 @@ const navLinks = [
   { label: "Home", path: "/" },
   { label: "Collection", path: "/collection" },
   { label: "Explore", path: "/explore/tools" },
-  { label: "About", path: "/about" },
+  // { label: "About", path: "/about" },
   // { label: "Connect", path: "/connect" },
   { label: "Reviews", path: "/reviews" },
 ];
@@ -103,7 +103,7 @@ export default function Footer() {
           {/* Brand */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-col gap-4 lg:col-span-5"
+            className="flex flex-col gap-2 lg:col-span-5"
           >
             <Link
               to="/"
@@ -113,7 +113,7 @@ export default function Footer() {
               <span className="text-2xl text-amber-500 transition-transform duration-300 group-hover:scale-110">
                 ४
               </span>
-              <span className="text-xl font-semibold tracking-tighter text-white/90 transition-colors duration-300 group-hover:text-amber-500">
+              <span className="text-2xl font-semibold tracking-tight text-white/90 transition-colors duration-300 group-hover:text-amber-500">
                 Webtree
               </span>
             </Link>
@@ -121,7 +121,7 @@ export default function Footer() {
               The ultimate collection of 140+ web development resources. Discover
               tools, design ideas, and curated picks to build better on the web.
             </p>
-            <span className="w-fit group  text-sm font-semibold tracking-tighter  transition-colors duration-300 bg-amber-100/80 text-black flex items-center gap-2 border border-amber-500/20 py-2 px-4 rounded-lg hover:border-amber-500/60 hover:bg-amber-200/80  ">
+            <span className="w-fit mt-6 group  text-sm font-semibold tracking-tighter  transition-colors duration-300 bg-amber-200/80 text-black flex items-center gap-2 outline-2 outline-offset-1 outline-amber-400 py-2 px-4 rounded-lg hover:bg-amber-200 active:scale-98"> 
               <HugeiconsIcon icon={GithubIcon} size={16} className="-mt-0.5"/>
               <a href="https://github.com/shani-tiwari/WebTree" target="_blank" rel="noopener noreferrer" className="group-hover:text-black transition-colors duration-300">
                 Star on GitHub
@@ -183,7 +183,7 @@ export default function Footer() {
                   whileHover={{ y: -4, scale: 1.08 }}
                   whileTap={{ scale: 0.95 }}
                   className={cn(
-                    "group relative flex h-11 w-11 items-center justify-center rounded-xl",
+                    "group relative flex items-center justify-center rounded-xl p-1.5",
                     "border-2 border-white/20 bg-white/3 backdrop-blur-sm",
                     "transition-colors duration-200 hover:border-white/15 hover:bg-white/6",
                   )}
@@ -195,7 +195,7 @@ export default function Footer() {
                   />
                   <HugeiconsIcon
                     icon={social.icon}
-                    size={22}
+                    size={24}
                     className="relative z-10 text-neutral-400 transition-colors duration-200 group-hover:text-white"
                     style={{ color: undefined}}
                   />
@@ -230,7 +230,7 @@ export default function Footer() {
             </motion.span>{" "}
             by{" "}
             <Link
-              to="/connect"
+              to="https://shani-tiwari.framer.website"
               title="Connect with Shani Tiwari"
               aria-label="Connect with Shani Tiwari"
               className="text-white transition-colors duration-300 hover:text-amber-500"

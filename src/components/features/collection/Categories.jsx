@@ -15,8 +15,8 @@ const Categories = React.memo(
         initial={{ opacity: 0, y: -8, scale: 0.8 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, scale: 0.80, y: -8, transition: { duration: 0.26, delay: 0, ease: "easeInOut" } }}
-        whileHover={{ y: -2, transition: { duration: 0.1, ease: "easeInOut" } }}
-        whileTap={{ scale: 0.98, transition: { duration: 0.03, delay: 0 } }}
+        whileHover={{ y: -4, transition: { duration: 0.2, ease: "easeOut" } }}
+        whileTap={{ scale: 0.97, transition: { duration: 0.03, delay: 0 } }}
         transition={{
           // duration: 0.22, -- with layout, duration(feels weird)
           delay: index * 0.03,
