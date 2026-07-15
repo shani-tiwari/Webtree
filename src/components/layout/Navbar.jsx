@@ -115,13 +115,15 @@ const Navbar = () => {
         >
           <Link
             className={cn(
-              "text-white/40 z-10 flex items-center justify-center font-mono hover:text-white/50 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer selection:bg-amber-600-op30 selection:text-white",
+              "text-white/40 z-10  flex items-center justify-center gap-1 font-mono hover:text-white/50 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer selection:bg-amber-600-op30 selection:text-white",
             )}
             to="/"
             onClick={scrollTop}
           >
-            <p className="text-amber-500 mr-2 text-[22px] md:text-[26px]">४</p>
-            <h1 className=" xl:mt-0 mb-px text-[18px] md:text-[21px] tracking-tighter">
+            <p className="text-amber-500 text-[22px] md:text-[26px]">
+              ४
+            </p>
+            <h1 className="text-[22px] md:text-[26px] tracking-tighter"> 
               Webtree
             </h1>
           </Link>
@@ -277,7 +279,7 @@ const Navbar = () => {
                     <motion.div
                       id="mobile-menu"
                       className={cn(
-                        "absolute z-10 right-0 top-0 w-fit bg-black/20 backdrop-blur-sm md:hidden rounded-[1.1rem]  px-7",
+                        "absolute z-10 right-0 top-0 w-fit bg-black/20 backdrop-blur-sm md:hidden rounded-[1.1rem] px-2",
                         "flex flex-col items-center justify-center text-shadow-2xs border-2 border-white/20 rounded-tl-[40px] ",
                       )}
                       initial={{ opacity: 0, scale: 0 }}

@@ -1,6 +1,15 @@
 {
   "tools": [
     {
+      "id": 22,
+      "name": "StudentKit",
+      "link": "https://studentkit.app/",
+      "desc": "Free tools, interactive roadmaps, and project ideas for college students, exam aspirants, and job seekers.",
+      "category": "tools",
+      "logo": "https://img.logo.dev/studentkit.app?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true",
+      "new": true
+    },
+    {
       "id": 1,
       "name": "CSS Grid Generator",
       "link": "https://cssgrid-generator.netlify.app/",
@@ -1100,56 +1109,6 @@
       "link": "https://developer.themoviedb.org",
       "category": "apis",
       "logo": "https://img.logo.dev/themoviedb.org?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    }
-  ],
-  "upskill": [
-    {
-      "id": 1,
-      "name": "Sheryians",
-      "desc": "MERN Stack full courses.",
-      "link": "https://www.youtube.com/watch?v=kkOuRJ69BRY&list=PLbtI3_MArDOk_A-GnYHPOiHSxlK2Vd3Zn",
-      "category": "tutorials",
-      "logo": "https://img.logo.dev/sheryians.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 2,
-      "name": "bebd",
-      "desc": "Beginner project ideas with implementation plans and resources.",
-      "link": "https://bebd.vercel.app",
-      "category": "upskill",
-      "logo": "https://img.logo.dev/bebd.vercel.app?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 3,
-      "name": "Traversy Media",
-      "desc": "Crash courses + project tutorials. Practical, no-fluff web dev.",
-      "link": "https://www.youtube.com/@TraversyMedia",
-      "category": "tutorials",
-      "logo": "https://img.logo.dev/traversymedia.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 4,
-      "name": "Web Dev Simplified",
-      "desc": "React hooks, algorithms, bite-sized frontend concepts.",
-      "link": "https://www.youtube.com/@WebDevSimplified",
-      "category": "tutorials",
-      "logo": "https://img.logo.dev/webdevsimplified.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 5,
-      "name": "The Net Ninja",
-      "desc": "Complete series (React, Vue, Node). Beginner to advanced.",
-      "link": "https://www.youtube.com/@NetNinja",
-      "category": "tutorials",
-      "logo": "https://img.logo.dev/thenetninja.co.uk?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 6,
-      "name": "TechWorld with Nana",
-      "desc": "DevOps, Docker, Kubernetes, cloud-focused tutorials.",
-      "link": "https://www.youtube.com/@TechWorldwithNana",
-      "category": "tutorials",
-      "logo": "https://img.logo.dev/techworld-with-nana?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
   "deployment": [
