@@ -272,6 +272,15 @@
   ],
   "web_design": [
     {
+      "id": 13,
+      "name": "Motion Sites",
+      "desc": "Unlock your AI Design SuperpowersSuperpowers.",
+      "link": "https://motionsites.ai/",
+      "category": "design_ideas",
+      "logo": "https://img.logo.dev/motionsites.ai?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true",
+      "new": true
+    },
+    {
       "id": 11,
       "name": "Saaspo",
       "desc": "The best SaaS web design inspiration.",
