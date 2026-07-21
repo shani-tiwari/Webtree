@@ -102,7 +102,7 @@ const Navbar = () => {
         variants={navVariants}
         aria-label="Main Navigation"
         className={cn(
-          "fixed top-1.5 left-1/2 -translate-x-1/2 w-[90%] md:max-w-[1200px] z-50 px-5 md:px-9 py-1 md:py-1.5",
+          "fixed top-1.5 left-1/2 -translate-x-1/2 w-[90%] md:max-w-300 z-50 px-5 md:px-9 py-1 md:py-1.5",
           "flex justify-between items-center rounded-full border-2 border-neutral-400/50 shadow-xs shadow-amber-700-op40 ",
         )}
       >
@@ -203,7 +203,7 @@ const Navbar = () => {
                   className="text-amber-500"
                 />
                 {collection.length > 0 && (
-                  <span className="absolute text-xs -right-[6px] top-[-6px] font-mono text-amber-500/80 selection:bg-zinc-600/30 selection:text-white">
+                  <span className="absolute text-xs -right-1.5 -top-1.5 font-mono text-amber-500/80 selection:bg-zinc-600/30 selection:text-white">
                     {collection.length}
                   </span>
                 )}

@@ -690,6 +690,15 @@
   ],
   "background": [
     {
+      "id": 5,
+      "name": "Haikei",
+      "desc": "Free generative SVG background shapes for web design.",
+      "link": "https://app.haikei.app/",
+      "category": "backgrounds",
+      "new": true,
+      "logo": "https://img.logo.dev/app.haikei.app?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
       "id": 1,
       "name": "Picjumbo",
       "desc": "Free high-res images, backgrounds, and photos for personal/commercial use.",
