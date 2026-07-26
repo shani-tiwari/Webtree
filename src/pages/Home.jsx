@@ -122,7 +122,7 @@ export default function Home() {
                 transition={{ duration: 0, ease: "easeInOut" }}
                 onClick={() => setIsCollapsed(!isCollapsed)}
                 className={cn(
-                  "relative w-fit group border-2 border-amber-500/30 py-[3px] px-3 md:py-1.5 md:px-4 mb-2 rounded-[12px] md:rounded-[36px]",
+                  "relative w-fit group border-2 border-amber-500/30 py-0.75 px-3 md:py-2 md:px-4 mb-2 rounded-[12px] md:rounded-[36px]",
                   "cursor-pointer transition-all duration-50 ease-out select-none shadow-xs shadow-white/8 hover:shadow-[0_0_30px_rgba(255,190,0,0.8)]",
                   "bg-amber-500/15 hover:bg-amber-800/40 text-amber-200 tracking-wide hover:scale-103 active:scale-98 transition-transform duration-100",
                 )}
@@ -151,7 +151,7 @@ export default function Home() {
           <div className="w-full flex flex-col gap-2  mt-4">
             {/* explore page button */}
             <MagneticButton
-              text="Explore More Websites"
+              text="Explore All Resources"
               to={`${activeCategory && 'explore/' + activeCategory || '/explore'}`}
               icon={Rocket01Icon}
             />
@@ -188,10 +188,10 @@ function Header(){
             >
               <h1
                 className={cn(
-                  "wavy-underline-pulse font-black italic tracking-[-0.03em] w-fit bg-clip-text text-transparent bg-linear-to-b from-amber-300 to-amber-700 text-shadow-lg text-shadow-amber-700/20 hover:tracking-tighter transition-all duration-500",
+                  "wavy-underline-pulse tracking-[-0.03em] w-fit bg-clip-text text-transparent bg-linear-to-b from-amber-300 to-amber-700 text-shadow-lg text-shadow-amber-700/20 hover:tracking-tighter transition-all duration-500",
                 )}
               >
-                140+ <span className="">Web Dev Resources</span>
+                140+ <span className="font-serif">Web Dev Resources</span>
               </h1>
             </motion.div>
           </div>

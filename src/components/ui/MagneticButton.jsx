@@ -7,9 +7,11 @@ import { HugeiconsIcon } from "@hugeicons/react";
 
 
 /**
- * @param {string} text - The text to display on the button.
- * @param {string} to - The link to navigate to.
- * @returns {JSX.Element} - The button component.
+ * @param {string} text       - The text to display on the button.
+ * @param {string} to         - The link to navigate to.
+ * @param {string} icon       - The icon to display on the button.
+ * @param {string} className  - The class to apply to the button.
+ * @returns {JSX.Element}     - The button component.
  */
 export default function MagneticButton({text, to, icon, className = ''}) {
     
@@ -20,8 +22,8 @@ export default function MagneticButton({text, to, icon, className = ''}) {
 
         const {width, height, left, top} = ref.current.getBoundingClientRect();
         const {clientX, clientY} = e;
-        const x = clientX - (left + width / 2);
-        const y = clientY - (top + height / 2);
+        const x = clientX - (left + width / 2.2);
+        const y = clientY - (top + height / 2.2);
         setPosition({x,y});
     };
 
@@ -40,7 +42,7 @@ export default function MagneticButton({text, to, icon, className = ''}) {
           <motion.div 
             ref={ref} 
             animate={{ x: position.x, y: position.y }}
-            transition={{ type: "spring", stiffness: 150, damping: 15 }}
+            transition={{ type: "spring", stiffness: 100, damping: 20 }}
             >
               <Link 
                 to={to}
@@ -53,7 +55,7 @@ export default function MagneticButton({text, to, icon, className = ''}) {
                   <HugeiconsIcon
                     icon={icon}
                     size={22}
-                    className="mt-0.5 group-hover:translate-y-[-3px] group-hover:translate-x-[3px] transition-all duration-300"
+                    className="mt-0.5 group-hover:-translate-y-0.75 group-hover:translate-x-0.75 transition-all duration-300"
                   />
               </Link>
           </motion.div>

@@ -15,12 +15,12 @@ export default function CardsGrid({ carddata, activeCategory, show }) {
           transition={{ duration: 0.4, ease: "easeOut" }}
           aria-label="Resources grid"
           className={cn(
-            "w-full z-10 px-2 md:px-4 lg:px-0 container left-0 right-0 mx-auto bg-transparent grow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[14px]",
-            "content-start mt-2 sm:mt-10 md:mt-8"
+            "w-full z-10 px-2 md:px-4 lg:px-0 container left-0 right-0 mx-auto bg-transparent grow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5",
+            " mt-4 sm:mt-10 md:mt-8"
           )}
         >
           {
-            carddata.slice(0, show === 'less' ? 4 : carddata.length).map((item, index) => {
+            carddata.slice(0, show === 'less' ? 3 : carddata.length).map((item, index) => {
               return <motion.div
                 key={item.id}
                 initial={{ opacity: 0, scale: 0.9 }}

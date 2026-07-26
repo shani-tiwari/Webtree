@@ -90,14 +90,14 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
         <motion.section
           whileHover={{ y: -8, transition: { duration: 0.2 } }}
           className={cn(
-            "relative h-full flex flex-col bg-linear-to-tr from-black/10 via-black/5 to-white/8 backdrop-blur-md border-2 border-zinc-700/80 rounded-[30px] p-4",
+            "relative h-full flex flex-col bg-linear-to-tr from-black/10 via-black/5 to-white/8 backdrop-blur-md border-2 border-zinc-700/80 rounded-[30px] p-5",
             "transition-all ease-[cubic-bezier(0.79,0.47,0.24,0.98)] duration-100 group cursor-pointer text-white/70 select-none hover:border-zinc-600 shadow-md shadow-black hover:shadow-xl",
           )}
         >
           {/* Action Icons Section */}
           <div
             className={cn(
-              "absolute top-7 right-3 flex items-center z-40 ",
+              "absolute top-7 right-4 flex items-center z-40 ",
             )}
           >
             {!allowRemove && (
@@ -243,7 +243,7 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
           </div>
 
           {/* divider */}
-          <span className="w-[95%] h-px bg-white/30 mb-[5px] ml-1 my-1"></span>
+          <span className="w-[95%] h-px bg-white/30 my-2"></span>
 
           {/*  Description */}
           <Link to={link} target="_blank" rel="noopener noreferrer" className="pl-0.5 perspective-distant group-hover:rotate-x-20 transition-all duration-200">
