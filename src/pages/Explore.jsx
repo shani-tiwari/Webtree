@@ -84,6 +84,9 @@ export default function Explore() {
             )}
           >
             {activeCategory.replace("_", " ")}
+            <span className="absolute text-xs -right-2.5 top-1 text-amber-500/80 font-bold selection:bg-zinc-600/30 selection:text-white">
+              {data[activeCategory].length}
+            </span>
           </h1>
         </motion.h1>
 

@@ -106,7 +106,7 @@ export default function Home() {
           >
             <AnimatePresence mode="popLayout">
               {Object.keys(data)
-                .slice(0, isCollapsed ? 5 + 3 : undefined)
+                .slice(0, isCollapsed ? 8 : undefined)
                 .map((name, index) => (
                   <Categories
                     key={name}
@@ -122,9 +122,9 @@ export default function Home() {
                 transition={{ duration: 0, ease: "easeInOut" }}
                 onClick={() => setIsCollapsed(!isCollapsed)}
                 className={cn(
-                  "relative w-fit group border-2 border-amber-500/30 py-0.75 px-3 md:py-2 md:px-4 mb-2 rounded-[12px] md:rounded-[36px]",
+                  "relative w-fit text-[14px] font-semibold group border-2 border-amber-500/30 py-0.75 px-3 md:py-2 md:px-4 mb-2 rounded-xl",
                   "cursor-pointer transition-all duration-50 ease-out select-none shadow-xs shadow-white/8 hover:shadow-[0_0_30px_rgba(255,190,0,0.8)]",
-                  "bg-amber-500/15 hover:bg-amber-800/40 text-amber-200 tracking-wide hover:scale-103 active:scale-98 transition-transform duration-100",
+                  "bg-amber-500/15 hover:bg-amber-800/40 text-amber-200 tracking-wide hover:scale-103 active:scale-98 transition-transform duration-500",
                 )}
               >
                 {isCollapsed ? "More" : "Less"}

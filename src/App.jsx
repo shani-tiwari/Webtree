@@ -5,13 +5,13 @@ import { cn } from "./utils/utils.js";
 import Navbar from "./components/layout/Navbar";
 import About from "./pages/About";
 
-// const Blog = React.lazy(() => import("./pages/Blog.jsx"));
 const Footer = React.lazy(() => import("./components/layout/Footer"));
-// const Socials = React.lazy(() => import("./pages/Socials"));
 const Reviews = React.lazy(() => import("./pages/Reviews"));
 const Explore = React.lazy(() => import("./pages/Explore"));
 const Collection = React.lazy(() => import("./pages/Collection"));
 const ScrollToTop = React.lazy(() => import("./components/layout/ScrollToTop"));
+// const Blog = React.lazy(() => import("./pages/Blog.jsx"));
+// const Socials = React.lazy(() => import("./pages/Socials"));
 
 function App() {
   const location = useLocation();
@@ -56,8 +56,8 @@ function App() {
               <Route path="/explore/:category" element={<Explore />} />
               <Route path="/collection" element={<Collection />} />
               <Route path="/about" element={<About />} />
-              {/* <Route path="/connect" element={<Socials />} /> */}
               <Route path="/reviews" element={<Reviews />} />
+              {/* <Route path="/connect" element={<Socials />} /> */}
               {/* <Route path="/blog" element={<Blog />} /> */}
             </Routes>
           </React.Suspense>

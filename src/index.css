@@ -221,3 +221,61 @@ input:-webkit-autofill:active {
     -webkit-text-fill-color: whitesmoke !important;
     transition: background-color 5000s ease-in-out 0s;
 }
+
+.copy-shape{
+  /* width: fit-content;
+  height: fit-content; */
+  border-radius: 200% 800% 140% 800% ;
+  corner-shape: squircle;
+}
+.share-shape{
+  /* width: fit-content;
+  height: fit-content;  */
+  border-radius: 140% 800% 200% 800%;
+  corner-shape: squircle;
+}
+.add-shape{
+  /* width: fit-content;
+  height: fit-content;  */
+  border-radius: 800%  200% 800% 140%;
+  corner-shape: squircle;
+}
+.preview-shape{
+  /* width: fit-content;
+  height: fit-content;  */
+  border-radius:  2000% 280% 2000% 800% ;
+  corner-shape: squircle;
+}
+.delete-shape{
+  /* width: fit-content;
+  height: fit-content;  */
+  border-radius: 800%  200% 800% 140%;
+  corner-shape: squircle;
+}
+.first-icon,
+.sec-icon,
+.third-icon,
+.four-icon{
+  border-radius: 80% 800% 20% 800%;
+  corner-shape: squircle;
+}
+.first-icon{
+  margin-top: 35px;
+  margin-right: -15px ;
+  rotate: -45deg;
+}
+.sec-icon{
+  margin-left: 2px;
+  rotate: 45deg;
+}
+.third-icon{
+  margin-top: 35px;
+  margin-left: -13px ;
+  rotate: 135deg;
+}
+.four-icon{
+  rotate: 45deg;
+  margin-top: -15px;
+}
+
+

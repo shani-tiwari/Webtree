@@ -129,7 +129,7 @@ export default function About() {
           className="w-full max-w-[1200px] mx-auto px-1 flex md:px-8 pt-10 mb-8 gap-10 "
         >
           <motion.div variants={itemVariants} className="space-y-4">
-            <div className="w-full grid lg:grid-cols-3 gap-4 md:gap-6 md:grid-cols-2 space-y-[12px]">
+            <div className="w-full grid lg:grid-cols-3 gap-4 md:gap-6 md:grid-cols-2 space-y-3">
               {
                 about_data.map((item, i) => (
                   <motion.div

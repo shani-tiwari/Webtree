@@ -52,7 +52,7 @@ export default function Collection() {
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[10px]  content-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2.5  content-start">
             {collection.map((item) => (
               <Card
                 key={item.id || item.name}

@@ -5,11 +5,7 @@ import { ReviewCard, ReviewForm } from "../components/features/reviews";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
   BubbleChatAddIcon,
-  CommentAdd01Icon,
-  CommentAdd03Icon,
   Idea01Icon,
-  InLoveIcon,
-  PlusSignCircleIcon,
 } from "@hugeicons/core-free-icons";
 import { GoBack } from "../components/layout";
 import { useLocation } from "react-router";

@@ -7,9 +7,10 @@ import {
   FolderAddIcon,
   Copy02Icon,
   SentIcon,
+  ViewIcon,
 } from "@hugeicons/core-free-icons";
 import { useCollection } from "../../../context/CollectionContext";
-import { useState, memo } from "react";
+import { useState, memo, useEffect } from "react";
 import { Link } from "react-router";
 import { cn } from "../../../utils/utils.js";
 
@@ -20,6 +21,7 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
 
     const [added, setAdded]  = useState(false);
     const [copied, setCopied] = useState(false);
+    const [showPreview, setShowPreview] = useState(false);
 
     const normalize = (str) =>
       str ? str.trim().split(" ").join("").toLowerCase() : "";
@@ -81,6 +83,33 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
         handleCopy(e);
       }
     };
+
+    const handlePreview = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      setShowPreview(true);
+    };
+
+    const handleClosePreview = () => {
+      setShowPreview(false);
+    };
+
+     // Lock body scroll when mobile menu is open
+      useEffect(() => {
+        if (showPreview) {
+          document.body.style.overflow = "hidden";
+          document.documentElement.style.overflow = "hidden";
+        } else {
+          document.body.style.overflow = "auto";
+          document.documentElement.style.overflow = "auto";
+        }
+        return () => {
+          document.body.style.overflow = "auto";
+          document.documentElement.style.overflow = "auto";
+        };
+      }, [showPreview]);
+    
+
     return (
       <motion.div
         layout
@@ -94,24 +123,26 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
             "transition-all ease-[cubic-bezier(0.79,0.47,0.24,0.98)] duration-100 group cursor-pointer text-white/70 select-none hover:border-zinc-600 shadow-md shadow-black hover:shadow-xl",
           )}
         >
+
           {/* Action Icons Section */}
           <div
             className={cn(
-              "absolute top-7 right-4 flex items-center z-40 ",
+              "absolute top-10 right-6 flex items-center z-40 ",
             )}
           >
             {!allowRemove && (
               <motion.span
-                whileHover={{ y: -2, scale: 1.03 }}
+                whileHover={{ y: -1, scale: 1.03, x: 1 }}
                 whileTap={{ scale: 0.97 }}
                 transition={{ duration: 0.2, ease: [0.79, 0.47, 0.24, 0.98] }}
                 onClick={handleAddKey}
                 className={cn(
-                  "group/icon absolute right-[10px] flex items-center justify-center z-30",
-                  "p-1 rounded-xl bg-white/2 border-2 border-white/20 cursor-pointer shadow-sm",
+                  "group/icon add-shape absolute -top-3 right-3 flex items-center justify-center z-30",
+                  "p-1 bg-white/2 border-2 border-white/15 cursor-pointer shadow-sm",
                   isCollected
-                    ? "text-emerald-600 font-bold hover:text-emerald-500 shadow-emerald-600/30"
-                    : "text-amber-300-op60  group-hover:text-amber-400-op80  shadow-amber-600/30",
+                    ? "text-emerald-600 font-bold hover:text-emerald-500 shadow-gray-800"
+                    : "text-amber-300-op60  group-hover:text-amber-400-op80",
+                    // "  shadow-amber-600/30",
                 )}
               >
                 {isCollected ? (
@@ -120,80 +151,108 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
                   <HugeiconsIcon className="active:scale-95" icon={FolderAddIcon} size={20} />
                 )}
 
-                <span
+                {/* <span
                   className={cn(
-                    "hidden md:flex absolute right-full -top-2 mr-2 w-max px-2 py-1 text-[10px] uppercase bg-zinc-900 border border-white/10 rounded-md shadow-xs",
+                    "hidden md:flex absolute right-full -top-3 mr-2 w-max px-2 py-1 text-[10px] uppercase bg-zinc-900 border border-white/10 rounded-md shadow-xs",
                     "tracking-wide font-semibold invisible group-hover/icon:visible pointer-events-none z-99 ",
                   )}
                 >
                   {added ? "Added" : isCollected ? "Added" : "+ Add to collection"}
-                </span>
+                </span> */}
               </motion.span>
             )}
             {allowRemove && (
               <motion.span
-                whileHover={{ scale: 1.03, y: -2 }}
+                whileHover={{ scale: 1.03, y: -1, x: 1 }}
                 whileTap={{ scale: 0.97 }}
                 transition={{ duration: 0.1 }}
                 onClick={handleRemoveKey}
                 className={cn(
-                  "group/delete absolute right-2 flex items-center justify-center text-red-600/90 hover:text-red-500 p-1 rounded-xl border-2 border-white/20 z-30 cursor-pointer shadow-xs shadow-red-500/70",
+                  "group/delete delete-shape absolute right-3 -top-3 flex items-center justify-center text-red-600/90 hover:text-red-500 p-1 rounded-xl border-2 border-white/20 z-30 cursor-pointer",
                 )}
               >
-                <HugeiconsIcon icon={Delete03Icon} size={19} className="active:scale-95"/>
-                <span
+                <HugeiconsIcon icon={Delete03Icon} size={20} className="active:scale-95"/>
+                {/* <span
                   className={cn(
-                    " hidden md:flex absolute right-full mr-2 -mt-4 w-max px-2.5 py-[3px] text-[10px] uppercase bg-zinc-900 border border-white/10 rounded-md filter-[drop-shadow(0_0_4px_rgba(220,38,50,0.3))] ",
+                    " hidden md:flex absolute right-full mr-2 -mt-4 w-max px-2.5 py-0.75 text-[10px] uppercase bg-zinc-900 border border-white/10 rounded-md",
+                    // " filter-[drop-shadow(0_0_4px_rgba(220,38,50,0.3))] ",
                     "shadow-xs tracking-wide font-semibold invisible group-hover/delete:opacity-100 group-hover/delete:visible pointer-events-none z-99",
                   )}
                 >
                   Remove
-                </span>
+                </span> */}
               </motion.span>
             )}
 
             {/* Copy Link Button */}
             <motion.span
-              whileHover={{ scale: 1.03, y: -2 }}
+              whileHover={{ scale: 1.03, y: -1, x: -1 }}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.1 }}
               onClick={handleCopy}
               className={cn(
-                "group/copy absolute right-[44px] top-[3px] flex items-center justify-center  z-30 shadow-xs shadow-sky-700/50",
-                "text-sky-300/80 group-hover:text-sky-500/90 p-1 rounded-xl bg-white/2 border-2 border-white/20 cursor-pointer",
+                "group/copy copy-shape absolute right-11 -top-3 flex items-center justify-center z-30 ",
+                "text-sky-300/80 group-hover:text-sky-500/90 p-1 bg-white/2 border-2 border-white/15 cursor-pointer",
               )}
             >
-              <HugeiconsIcon icon={Copy02Icon} size={19} className="active:scale-95" />
-              <span
+              <HugeiconsIcon icon={Copy02Icon} size={20} className="active:scale-95" />
+              {/* <span
                 className={cn(
                   "hidden md:flex absolute right-full mr-2 w-max px-2.5 py-1 text-[10px] uppercase bg-zinc-900 border border-white/20 rounded-md shadow-xs ",
-                  "filter-[drop-shadow(0_0_4px_rgba(125,211,252,0.3))] font-semibold invisible group-hover/copy:opacity-100 group-hover/copy:visible pointer-events-none z-99",
+                  // "filter-[drop-shadow(0_0_4px_rgba(125,211,252,0.3))]",
+                  " font-semibold invisible group-hover/copy:opacity-100 group-hover/copy:visible pointer-events-none z-99",
                 )}
               >
                 {copied ? "Copied!" : "Copy Link"}
-              </span>
+              </span> */}
             </motion.span>
 
             {/* Share Button */}
             <motion.span
-              whileHover={{ scale: 1.03, y: -2 }}
+              whileHover={{ scale: 1.03, y: 1, x: 1 }}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.1 }}
               onClick={handleShare}
               className={cn(
-                "group/share absolute top-[21px] right-[11px] flex items-center justify-center z-30 shadow-xs shadow-indigo-700/50",
-                "text-indigo-500 group-hover:text-indigo-600 p-1 rounded-xl bg-white/2 border-2 border-white/20 cursor-pointer",
+                "group/share share-shape absolute top-5 right-3 flex items-center justify-center z-30 ",
+                "text-indigo-500 group-hover:text-indigo-600 p-1 bg-white/2 border-2 border-white/15 cursor-pointer",
               )}
             >
-              <HugeiconsIcon icon={SentIcon} size={19} className="-translate-x-px translate-y-px active:scale-95" />
-              <span
+              <HugeiconsIcon icon={SentIcon} size={20} className="-translate-x-px translate-y-px active:scale-95" />
+              {/* <span
                 className={cn(
-                  "hidden md:flex absolute top-[78%] px-2.5 -left-14 w-max  py-[3px] text-[10px] uppercase bg-zinc-900 border border-white/20 rounded-md shadow-xs",
-                  " font-semibold invisible filter-[drop-shadow(0_0_4px_rgba(160,180,252,0.3))] tracking-wide group-hover/share:visible pointer-events-none z-999",
+                  "hidden md:flex absolute top-[78%] px-2.5 -left-14 w-max  py-0.75 text-[10px] uppercase bg-zinc-900 border border-white/20 rounded-md shadow-xs",
+                  " font-semibold invisible ",
+                  // "filter-[drop-shadow(0_0_4px_rgba(160,180,252,0.3))]",
+                  " tracking-wide group-hover/share:visible pointer-events-none z-999",
                 )}
               >
                 Share
-              </span>
+              </span> */}
+            </motion.span>
+
+            {/* preview Button */}
+            <motion.span
+              whileHover={{ scale: 1.03, y: 1, x: -1 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ duration: 0.1 }}
+              onClick={handlePreview}
+              className={cn(
+                "group/preview preview-shape absolute top-5 right-11 flex items-center justify-center z-30 ",
+                "text-purple-700 group-hover:text-purple-500 p-1 bg-white/2 border-2 border-white/15 cursor-pointer",
+              )}
+            >
+              <HugeiconsIcon icon={ViewIcon} size={20} className="-translate-x-px translate-y-px active:scale-95" />
+              {/* <span
+                className={cn(
+                  "hidden md:flex absolute top-[78%] px-2.5 -left-14 w-max  py-0.75 text-[10px] uppercase bg-zinc-900 border border-white/20 rounded-md shadow-xs",
+                  " font-semibold invisible",
+                  // " filter-[drop-shadow(0_0_4px_rgba(160,180,252,0.3))]",
+                  " tracking-wide group-hover/share:visible pointer-events-none z-999",
+                )}
+              >
+                Share
+              </span> */}
             </motion.span>
           </div>
 
@@ -249,7 +308,7 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
           <Link to={link} target="_blank" rel="noopener noreferrer" className="pl-0.5 perspective-distant group-hover:rotate-x-20 transition-all duration-200">
             <p
               className={cn(
-                "text-[14px] text-shadow-2xs  text-shadow-black max-w-full ml-1 text-neutral-400/80 leading-[18px] font-mono grow group-hover:text-neutral-300/80 transition-all duration-200",
+                "text-[14px] text-shadow-2xs  text-shadow-black max-w-full ml-1 text-neutral-400/80 leading-4.5 font-mono grow group-hover:text-neutral-300/80 transition-all duration-200",
               )}
             >
               {desc}
@@ -286,6 +345,58 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
             )
           }
         </motion.section>
+
+        {/* ── Preview Modal ── */}
+        {showPreview && (
+          <div
+            onClick={handleClosePreview}
+            className="fixed inset-0 z-999 bg-black/40 backdrop-blur-md flex items-center justify-center"
+          >
+            {/* Modal Box */}
+            <div
+              onClick={(e) => e.stopPropagation()}
+              className="flex flex-col w-[80vw] h-[80vh] rounded-xl overflow-hidden border border-white/50 bg-black/80"
+            >
+              {/* Top bar */}
+              <div className="flex items-center justify-between px-6 py-2 bg-black/60 border-b border-white/40">
+                {/* URL pill */}
+                <span className="text-[11px] font-mono text-white/60 overflow-hidden text-ellipsis whitespace-nowrap max-w-[50%]">
+                  {link}
+                </span>
+
+                {/* Buttons */}
+                <div className="flex items-center gap-2">
+                  {/* Visit button */}
+                  <a
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="flex items-center gap-2 px-3 py-0.5 rounded-lg text-white/90 bg-indigo-900 cursor-pointer border-2 border-white/60 hover:bg-indigo-700 active:scale-95 transition-all duration-300"
+                  >
+                    ↗ Visit
+                  </a>
+
+                  {/* Close button */}
+                  <button
+                    onClick={handleClosePreview}
+                    className="flex items-center text-[16px] font-bold justify-center px-2 py-0.5 rounded-full border-2 border-white/80 text-black/80 bg-white/60 hover:bg-white/80 active:scale-95 transition-all duration-300"
+                  >
+                    ✕
+                  </button>
+                </div>
+              </div>
+
+              {/* iFrame */}
+              <iframe
+                src={link}
+                title={`Preview of ${title}`}
+                className="flex-1 w-full border-none bg-white/40 scrollbar-thin"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+              />
+            </div>
+          </div>
+        )}
       </motion.div>
     );
   },
