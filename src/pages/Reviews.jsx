@@ -102,10 +102,9 @@ export default function Reviews() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
-                className="text-neutral-400 px-4 md:px-0 font-mono max-w-2xl leading-tight tracking-tight hover:tracking-tighter transition-all duration-700"
+                className="text-neutral-500 px-4 md:px-0 font-mono max-w-2xl leading-tight tracking-tighter "
               >
-                See what others are saying about Webtree and share your own
-                experience
+                See what others are saying about Webtree and share your own experience
               </motion.p>
             </div>
 
@@ -116,7 +115,7 @@ export default function Reviews() {
             >
               <button
                 onClick={() => setIsFormOpen(true)}
-                className="group flex items-center justify-center gap-2 px-6 py-3 cursor-pointer rounded-full bg-amber-500/90 hover:bg-amber-600 border border-amber-400/30 hover:scale-102 text-white selection:text-white font-bold transition-all duration-200 active:scale-95 shadow-[0_0_20px_var(--color-amber-500-op20)] hover:shadow-[0_0_30px_var(--color-amber-500-op40)]"
+                className="group flex items-center justify-center gap-2 px-6 py-3 cursor-pointer rounded-full bg-amber-500/70 hover:bg-amber-600 border border-amber-400/30 hover:scale-102 text-white selection:text-white font-bold transition-all duration-200 active:scale-95 shadow-[0_0_20px_var(--color-amber-500-op20)] hover:shadow-[0_0_30px_var(--color-amber-500-op40)]"
               >
                 <HugeiconsIcon
                   icon={BubbleChatAddIcon}
@@ -173,7 +172,7 @@ export default function Reviews() {
             ) : (
               <Masonry
                 breakpointCols={breakpointColumnsObj}
-                className="flex gap-0"
+                className="flex gap-8"
                 columnClassName="flex flex-col gap-8 items-center"
               >
                 {reviews.map((review, index) => (
@@ -182,6 +181,7 @@ export default function Reviews() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.05 + 0.4 }}
+                    className="flex justify-center "
                   >
                     <ReviewCard {...review} />
                   </motion.div>

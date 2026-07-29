@@ -16,7 +16,7 @@ export default function Home() {
   const { data, loading } = useCollectionData();
   const [activeCategory, setActiveCategory] = useState("tools");
 
-  const [isCollapsed, setIsCollapsed] = useState(true);
+  // const [isCollapsed, setIsCollapsed] = useState(true);
   const carddata = data[activeCategory] || [];
 
   if (loading) {
@@ -99,14 +99,14 @@ export default function Home() {
             }}
             aria-label="Category selection"
             className={cn(
-              "z-40 gap-1 md:gap-2 w-full h-fit px-2 md:py-3  md:pt-4 mb-8 max-w-4xl mx-auto shrink-0",
+              "z-40 gap-1 md:gap-2 w-full h-fit px-4 md:py-3  md:pt-4 mb-8 max-w-4xl mx-auto shrink-0",
               "flex flex-wrap justify-center rounded-xl text-white backdrop-blur-sm",
-              isCollapsed ? " lg:mb-8" : " lg:mb-6",
+              // isCollapsed ? " lg:mb-8" : " lg:mb-6",
             )}
           >
             <AnimatePresence mode="popLayout">
               {Object.keys(data)
-                .slice(0, isCollapsed ? 8 : undefined)
+                .slice(0, 8)
                 .map((name, index) => (
                   <Categories
                     key={name}
@@ -117,19 +117,16 @@ export default function Home() {
                   />
                 ))}
             </AnimatePresence>
-            {Object.keys(data).length > 5 && (
-              <motion.button
+              {/* <motion.button
                 transition={{ duration: 0, ease: "easeInOut" }}
-                onClick={() => setIsCollapsed(!isCollapsed)}
                 className={cn(
                   "relative w-fit text-[14px] font-semibold group border-2 border-amber-500/30 py-0.75 px-3 md:py-2 md:px-4 mb-2 rounded-xl",
                   "cursor-pointer transition-all duration-50 ease-out select-none shadow-xs shadow-white/8 hover:shadow-[0_0_30px_rgba(255,190,0,0.8)]",
                   "bg-amber-500/15 hover:bg-amber-800/40 text-amber-200 tracking-wide hover:scale-103 active:scale-98 transition-transform duration-500",
                 )}
               >
-                {isCollapsed ? "More" : "Less"}
-              </motion.button>
-            )}
+                more...
+              </motion.button> */}
           </motion.aside>
 
           {/* divider - SVG */}

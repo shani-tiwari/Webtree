@@ -71,8 +71,9 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
       if (navigator.share) {
         try {
           await navigator.share({
-            title: title,
-            text: "Check this out!",
+            title: title + " - Webtree",
+            text: "Check this Amazing resource from Webtree.",
+            // Webtree: 'https://webtree.shaniweb.com',
             url: link,
           });
           return; // success - exit
@@ -117,10 +118,10 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
         aria-label={`View ${title} resource`}
       >
         <motion.section
-          whileHover={{ y: -8, transition: { duration: 0.2 } }}
+          // whileHover={{ y: -4, transition: { duration: 0.2 } }}
           className={cn(
             "relative h-full flex flex-col bg-linear-to-tr from-black/10 via-black/5 to-white/8 backdrop-blur-md border-2 border-zinc-700/80 rounded-[30px] p-5",
-            "transition-all ease-[cubic-bezier(0.79,0.47,0.24,0.98)] duration-100 group cursor-pointer text-white/70 select-none hover:border-zinc-600 shadow-md shadow-black hover:shadow-xl",
+            "transition-all ease-[cubic-bezier(0.79,0.47,0.24,0.98)] duration-300 group cursor-pointer text-white/70 select-none hover:border-zinc-600/90 shadow-md shadow-black hover:shadow-xl",
           )}
         >
 
@@ -137,18 +138,17 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
                 transition={{ duration: 0.2, ease: [0.79, 0.47, 0.24, 0.98] }}
                 onClick={handleAddKey}
                 className={cn(
-                  "group/icon add-shape absolute -top-3 right-3 flex items-center justify-center z-30",
-                  "p-1 bg-white/2 border-2 border-white/15 cursor-pointer shadow-sm",
+                  "group/icon add-shape absolute -top-3 right-3.5 flex items-center justify-center z-30",
+                  "p-1.5 bg-white/2 border-2 border-white/15 cursor-pointer",
                   isCollected
-                    ? "text-emerald-600 font-bold hover:text-emerald-500 shadow-gray-800"
+                    ? "text-emerald-600 font-bold hover:text-emerald-500 "
                     : "text-amber-300-op60  group-hover:text-amber-400-op80",
-                    // "  shadow-amber-600/30",
                 )}
               >
                 {isCollected ? (
-                  <HugeiconsIcon icon={FolderCheckIcon} size={20} />
+                  <HugeiconsIcon className="active:scale-95" icon={FolderCheckIcon} size={21} />
                 ) : (
-                  <HugeiconsIcon className="active:scale-95" icon={FolderAddIcon} size={20} />
+                  <HugeiconsIcon className="active:scale-95" icon={FolderAddIcon} size={21} />
                 )}
 
                 {/* <span
@@ -168,19 +168,10 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
                 transition={{ duration: 0.1 }}
                 onClick={handleRemoveKey}
                 className={cn(
-                  "group/delete delete-shape absolute right-3 -top-3 flex items-center justify-center text-red-600/90 hover:text-red-500 p-1 rounded-xl border-2 border-white/20 z-30 cursor-pointer",
+                  "group/delete delete-shape absolute right-3.5 -top-3 flex items-center justify-center text-red-600/90 hover:text-red-500/80 p-1.5 rounded-xl border-2 border-white/20 z-30 cursor-pointer",
                 )}
               >
-                <HugeiconsIcon icon={Delete03Icon} size={20} className="active:scale-95"/>
-                {/* <span
-                  className={cn(
-                    " hidden md:flex absolute right-full mr-2 -mt-4 w-max px-2.5 py-0.75 text-[10px] uppercase bg-zinc-900 border border-white/10 rounded-md",
-                    // " filter-[drop-shadow(0_0_4px_rgba(220,38,50,0.3))] ",
-                    "shadow-xs tracking-wide font-semibold invisible group-hover/delete:opacity-100 group-hover/delete:visible pointer-events-none z-99",
-                  )}
-                >
-                  Remove
-                </span> */}
+                <HugeiconsIcon icon={Delete03Icon} size={21} className="active:scale-95"/>
               </motion.span>
             )}
 
@@ -191,20 +182,11 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
               transition={{ duration: 0.1 }}
               onClick={handleCopy}
               className={cn(
-                "group/copy copy-shape absolute right-11 -top-3 flex items-center justify-center z-30 ",
-                "text-sky-300/80 group-hover:text-sky-500/90 p-1 bg-white/2 border-2 border-white/15 cursor-pointer",
+                "group/copy copy-shape absolute right-12 -top-3 flex items-center justify-center z-30",
+                "text-sky-300/80 group-hover:text-sky-500/90 p-1.5 bg-white/2 border-2 border-white/15 cursor-pointer",
               )}
             >
-              <HugeiconsIcon icon={Copy02Icon} size={20} className="active:scale-95" />
-              {/* <span
-                className={cn(
-                  "hidden md:flex absolute right-full mr-2 w-max px-2.5 py-1 text-[10px] uppercase bg-zinc-900 border border-white/20 rounded-md shadow-xs ",
-                  // "filter-[drop-shadow(0_0_4px_rgba(125,211,252,0.3))]",
-                  " font-semibold invisible group-hover/copy:opacity-100 group-hover/copy:visible pointer-events-none z-99",
-                )}
-              >
-                {copied ? "Copied!" : "Copy Link"}
-              </span> */}
+              <HugeiconsIcon icon={Copy02Icon} size={21} className="active:scale-95" />
             </motion.span>
 
             {/* Share Button */}
@@ -214,21 +196,11 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
               transition={{ duration: 0.1 }}
               onClick={handleShare}
               className={cn(
-                "group/share share-shape absolute top-5 right-3 flex items-center justify-center z-30 ",
-                "text-indigo-500 group-hover:text-indigo-600 p-1 bg-white/2 border-2 border-white/15 cursor-pointer",
+                "group/share share-shape absolute top-5.5 right-3.5 flex items-center justify-center z-30 ",
+                "text-indigo-500 group-hover:text-indigo-600 p-1.5 bg-white/2 border-2 border-white/15 cursor-pointer",
               )}
             >
-              <HugeiconsIcon icon={SentIcon} size={20} className="-translate-x-px translate-y-px active:scale-95" />
-              {/* <span
-                className={cn(
-                  "hidden md:flex absolute top-[78%] px-2.5 -left-14 w-max  py-0.75 text-[10px] uppercase bg-zinc-900 border border-white/20 rounded-md shadow-xs",
-                  " font-semibold invisible ",
-                  // "filter-[drop-shadow(0_0_4px_rgba(160,180,252,0.3))]",
-                  " tracking-wide group-hover/share:visible pointer-events-none z-999",
-                )}
-              >
-                Share
-              </span> */}
+              <HugeiconsIcon icon={SentIcon} size={21} className="-translate-x-px translate-y-px active:scale-95" />
             </motion.span>
 
             {/* preview Button */}
@@ -238,21 +210,11 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
               transition={{ duration: 0.1 }}
               onClick={handlePreview}
               className={cn(
-                "group/preview preview-shape absolute top-5 right-11 flex items-center justify-center z-30 ",
-                "text-purple-700 group-hover:text-purple-500 p-1 bg-white/2 border-2 border-white/15 cursor-pointer",
+                "group/preview preview-shape absolute top-5.5 right-12 flex items-center justify-center z-30 ",
+                "text-purple-700 group-hover:text-purple-500/80 p-1.5 bg-white/2 border-2 border-white/15 cursor-pointer",
               )}
             >
-              <HugeiconsIcon icon={ViewIcon} size={20} className="-translate-x-px translate-y-px active:scale-95" />
-              {/* <span
-                className={cn(
-                  "hidden md:flex absolute top-[78%] px-2.5 -left-14 w-max  py-0.75 text-[10px] uppercase bg-zinc-900 border border-white/20 rounded-md shadow-xs",
-                  " font-semibold invisible",
-                  // " filter-[drop-shadow(0_0_4px_rgba(160,180,252,0.3))]",
-                  " tracking-wide group-hover/share:visible pointer-events-none z-999",
-                )}
-              >
-                Share
-              </span> */}
+              <HugeiconsIcon icon={ViewIcon} size={21} className="-translate-x-px translate-y-px active:scale-95" />
             </motion.span>
           </div>
 
@@ -264,7 +226,7 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
           >
             <div
               className={cn(
-                "w-9 h-9 rounded-xl bg-neutral-900/50 flex items-center justify-center border border-white/10 overflow-hidden shrink-0 group-hover:scale-120 hover:scale-115 transition-all duration-200",
+                "size-10 rounded-xl bg-neutral-900/50 flex items-center justify-center border border-white/10 group-hover:scale-115 hover:scale-110 transition-all duration-300",
               )}
             >
               {logo ? (
@@ -272,7 +234,7 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
                   <img
                     src={logo}
                     alt={`${title} logo`}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover border border-black rounded-xl"
                     onError={(e) => {
                       e.target.style.display = "none";
                       e.target.nextSibling.style.display = "flex";
@@ -294,8 +256,8 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
           {/* title */}
           <div className={cn("pl-1 pt-1.5 mb-1")}>
             <Link to={link} target="_blank" rel="noopener noreferrer"
-             className={cn("font-semibold  bg-clip-text text-transparent bg-linear-to-b from-zinc-100 to-zinc-200  text-xl md:text-[22px] font-sans leading-6 tracking-normal",
-                  "group-hover:text-amber-500/80 group-hover:tracking-[-0.02em] text-shadow-2xs text-shadow-black/40 transition-all duration-150")} 
+             className={cn("font-semibold bg-clip-text text-transparent bg-linear-to-b from-zinc-100 to-zinc-100/80  text-xl md:text-[22px] leading-6 tracking-normal",
+                  "group-hover:text-amber-600/80 group-hover:tracking-[-0.01em] text-shadow-2xs text-shadow-black/40 transition-all duration-200")} 
             >
                 {title}
             </Link>
@@ -305,10 +267,10 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
           <span className="w-[95%] h-px bg-white/30 my-2"></span>
 
           {/*  Description */}
-          <Link to={link} target="_blank" rel="noopener noreferrer" className="pl-0.5 perspective-distant group-hover:rotate-x-20 transition-all duration-200">
+          <Link to={link} target="_blank" rel="noopener noreferrer" className="pl-0.5">
             <p
               className={cn(
-                "text-[14px] text-shadow-2xs  text-shadow-black max-w-full ml-1 text-neutral-400/80 leading-4.5 font-mono grow group-hover:text-neutral-300/80 transition-all duration-200",
+                "text-[14px] text-shadow-2xs text-shadow-black max-w-full ml-1 text-neutral-400/80 leading-4.5 font-mono grow",
               )}
             >
               {desc}

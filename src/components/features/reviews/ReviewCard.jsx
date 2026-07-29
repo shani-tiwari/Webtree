@@ -12,15 +12,15 @@ export default function ReviewCard({ xProfile, gender, text, bgColor, date }) {
   return (
     <Link
       to={"/reviews"}
-      style={{ backgroundColor: bgColor ? `${bgColor}45` : "rgba(10, 10, 10, 0.6)" }}
+      style={{ backgroundColor: bgColor ? `${bgColor}25` : "rgba(10, 10, 10, 0.6)" }}
       className={cn(
-        "relative group flex flex-col w-[290px] md:w-[320px] py-4 px-5 rounded-[24px] border border-zinc-500/60 shadow-lg shrink-0",
-        "hover:border-amber-500/20 transition-all duration-500 hover:scale-102"
+        "relative group flex flex-col w-full py-4 px-5 rounded-3xl border-2 border-zinc-500/50 shadow-lg shrink-0",
+        " transition-all duration-300 hover:border-zinc-500/80"
       )}
     >
 
       <div className="w-full flex flex-col items-start gap-4">
-        <div className="flex items-center gap-4 w-full">
+        <div className="flex items-center gap-4 w-full mb-2">
           {/* Profile Image */}
           <div className="w-13 h-13 rounded-full overflow-hidden border-2 border-zinc-600/90 bg-zinc-900 shrink-0 shadow-inner">
             <img
@@ -32,13 +32,13 @@ export default function ReviewCard({ xProfile, gender, text, bgColor, date }) {
           </div>
 
           {/* User Info & Date Container */}
-          <div className="flex flex-col gap-2 min-w-0">
+          <div className="flex flex-col gap-2 min-w-0 ">
             <div className="wavy-underline-pulse pb-0.5">
               <Link
                 to={`https://x.com/${xProfile.replace("@", "")}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[15px] font-semibold text-amber-400/95 flex items-center gap-1.5 "
+                className="text-[15px] font-semibold text-amber-500/80 flex items-center gap-1.5 "
                 onClick={(e) => e.stopPropagation()}
               >
                 {xProfile.startsWith("@") ? xProfile : `@${xProfile}`}
@@ -62,13 +62,13 @@ export default function ReviewCard({ xProfile, gender, text, bgColor, date }) {
           <span className="absolute -top-4 -left-1 text-5xl text-zinc-400/60 font-serif leading-none select-none italic">
             "
           </span>
-          <p className="group-hover:text-zinc-100 font-sans transition-colors duration-200 text-zinc-300 text-[15px] leading-relaxed tracking-wide relative z-10 italic grow pl-1">
+          <p className="font-serif mt-1 transition-colors duration-200 text-zinc-400 text-[15px] leading-relaxed tracking-wide relative z-10  grow pl-1">
             {location.pathname !== "/reviews" ? (
               <>
                 {text.slice(0, 100)}...
                 <Link
                   to="/reviews"
-                  className="text-slate-200/80 hover:text-amber-500 animate-pulse text-[16px] items-center group-hover:tracking-wider transition-all duration-500"
+                  className="text-slate-200/60 hover:text-amber-500 animate-pulse text-[16px] items-center transition-all duration-500"
                 >
                   {} more
                 </Link>

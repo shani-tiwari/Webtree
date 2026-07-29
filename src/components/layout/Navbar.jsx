@@ -103,7 +103,7 @@ const Navbar = () => {
         aria-label="Main Navigation"
         className={cn(
           "fixed top-1.5 left-1/2 -translate-x-1/2 w-[90%] md:max-w-300 z-50 px-5 md:px-9 py-1 md:py-1.5",
-          "flex justify-between items-center rounded-full border-2 border-neutral-400/50 shadow-xs shadow-amber-700-op40 ",
+          "flex justify-between items-center rounded-full border-2 border-neutral-400/50 ",
         )}
       >
         <div className="absolute inset-0 -z-8 rounded-full bg-black/10 backdrop-blur-[5px] pointer-events-none" />
@@ -170,13 +170,8 @@ const Navbar = () => {
           >
             {location.pathname === "/collection" ? (
               <p
-                className={cn(
-                  "text-amber-600 font-mono text-xl hidden md:block selection:bg-amber-600-op30 selection:text-white ",
-                  active !== "home" &&
-                    "underline underline-offset-10 hover:text-amber-600-op90",
-                )}
-              >
-                Home
+                className={cn("text-amber-600 font-mono text-xl hidden md:block selection:bg-amber-600-op30 selection:text-white ")}>
+                  Home
               </p>
             ) : (
               <p

@@ -107,13 +107,14 @@ export default function Footer() {
         whileInView="visible"
         viewport={{ once: true, margin: "-40px" }}
         variants={containerVariants}
-        className="relative mx-auto max-w-6xl px-6 py-14 md:px-14 md:py-16"
+        className="relative mx-auto max-w-6xl px-8 py-14 md:px-14 md:py-16"
       >
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 ">
+        <div className="flex flex-wrap justify-between gap-16 ">
+
           {/* Brand */}
           <motion.div
             variants={itemVariants}
-            className="flex justify-center sm-md:items-center flex-col gap-2 "
+            className=" w-fit flex justify-center sm-md:items-center flex-col gap-2 "
           >
             <Link
               to="/"
@@ -127,101 +128,102 @@ export default function Footer() {
                 Webtree
               </span>
             </Link>
-            <p className="max-w-sm text-sm leading-relaxed text-neutral-500 sm-md:text-center">
+            <p className="max-w-sm text-sm leading-7 text-neutral-400/90 sm-md:text-center">
               The ultimate collection of 140+ web development resources. Discover
               tools, design ideas, and curated picks to build better on the web.
             </p>
-            <div className="flex justify-start items-center gap-8">
-              <span className="w-fit mt-6 group  text-sm font-semibold tracking-tighter  transition-colors duration-300 bg-amber-600/80 text-black flex items-center gap-2 outline-2 outline-offset-1 outline-amber-600/80 py-2 px-4 rounded-lg hover:bg-amber-600/70 active:scale-98"> 
-                <a href="https://github.com/shani-tiwari/WebTree" target="_blank" rel="noopener noreferrer" className="flex gap-2 justify-center items-center group-hover:text-black transition-colors duration-300">
-                  <HugeiconsIcon icon={Star} strokeWidth={3} size={16} className="-mt-0.5 "/>
+            <div className="flex justify-start items-center gap-8 mt-6">
+              <span className="group w-fit group text-lg font-medium tracking-tighter  transition-colors duration-300 bg-amber-600/80 text-white/80 flex items-center gap-2 outline-2 outline-offset-1 outline-amber-600/80 py-1.5 px-5 rounded-lg hover:bg-amber-600/70 active:scale-98"> 
+                <a href="https://github.com/shani-tiwari/WebTree" target="_blank" rel="noopener noreferrer" className="flex gap-2 justify-center items-center ">
+                  <HugeiconsIcon icon={Star} strokeWidth={3} size={16} className="-mt-0.5 group-hover:-rotate-25 transition-all duration-200 "/>
                   on 
                   <HugeiconsIcon icon={GithubIcon} strokeWidth={3} size={16} className="-mt-0.5 "/>
                 </a>
               </span>
-              <span className="w-fit mt-6 group  text-sm font-semibold tracking-tighter  transition-colors duration-300 bg-amber-600/80 text-black flex items-center gap-2 outline-2 outline-offset-1 outline-amber-600/80 py-2 px-4 rounded-lg hover:bg-amber-600/70 active:scale-98"> 
-                <a href="https://buymeacoffee.com/shani_tiwari?new=1" target="_blank" rel="noopener noreferrer" className="flex gap-2 justify-center items-center group-hover:text-black transition-colors duration-300">
+              <span className="group w-fit group text-lg font-medium tracking-tighter  transition-colors duration-300 bg-amber-600/80 text-white/80 flex items-center gap-2 outline-2 outline-offset-1 outline-amber-600/80 py-1.5 px-5 rounded-lg hover:bg-amber-600/70 active:scale-98"> 
+                <a href="https://buymeacoffee.com/shani_tiwari?new=1" target="_blank" rel="noopener noreferrer" className="flex gap-2 justify-center items-center ">
+                  <HugeiconsIcon icon={Coffee01Icon} strokeWidth={2} size={16} className="-mt-0.5 group-hover:-rotate-25 transition-all duration-200 "/>
                   Coffee ?
-                  {/* <HugeiconsIcon icon={Coffee01Icon} strokeWidth={2} size={16} className="-mt-0.5 "/> */}
                 </a>
               </span>
             </div>
           </motion.div>
 
-          {/* Navigation */}
-          <motion.div variants={itemVariants} className="flex flex-col justify-center items-center ">
-            <h2 className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
-              Navigate
-            </h2>
-            <ul className="grid grid-cols-1 gap-x-4 gap-y-3 sm:grid-cols-1">
-              {navLinks.map((link) => (
-                <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    className={cn(
-                      "group relative inline-flex items-center text-sm text-neutral-400",
-                      "transition-colors duration-300 hover:text-amber-500",
-                    )}
-                  >
-                    <motion.span
-                      className="inline-block"
-                      whileHover={{ x: 4 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                    >
-                      {link.label}
-                    </motion.span>
-                    <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-amber-500/70 transition-all duration-300 group-hover:w-full" />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
 
-          {/* Social */}
-          <motion.div variants={itemVariants} className="flex flex-col justify-start items-center ">
-            <h2 className="mb-5 w-full text-center text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
-              Connect
-            </h2>
-            <div className="flex flex-wrap justify-center max-w-42">
-              {socialLinks.map((social, index) => (
-                <motion.a
-                  key={social.name}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={social.name}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.25,
-                    type: 'bounce',
-                    ease: easeInOut
-                  }}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={cn(
-                    "group size-fit relative flex items-center justify-center p-3 border-2 border-white/20 transition-colors duration-200 ",`${social.no}`
-                  )}
-                  // style={{ "--social-color": social.color  }}
-                >
-                  <span
-                    className="absolute inset-0 rounded-xl opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-20"
-                    style={{ backgroundColor: social.color }}
-                  />
-                  <HugeiconsIcon
-                    icon={social.icon}
-                    size={22}
-                    style={{ rotate: social.rotate }}
+            {/* Navigation */}
+            <motion.div variants={itemVariants} className=" w-fit flex flex-col justify-center items-center ">
+              <h2 className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
+                Navigate
+              </h2>
+              <ul className="grid grid-cols-1 gap-x-4 gap-y-3">
+                {navLinks.map((link) => (
+                  <li key={link.path}>
+                    <Link
+                      to={link.path}
+                      className={cn(
+                        "group relative inline-flex items-center text-sm text-neutral-400",
+                        "transition-colors duration-300 hover:text-amber-500",
+                      )}
+                    >
+                      <motion.span
+                        className="inline-block"
+                        whileHover={{ x: 4 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                      >
+                        {link.label}
+                      </motion.span>
+                      <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-amber-500/70 transition-all duration-300 group-hover:w-full" />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Social */}
+            <motion.div variants={itemVariants} className=" flex flex-col justify-start items-center p-4">
+              <h2 className="mb-5 w-full text-center text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
+                Connect
+              </h2>
+              <div className="flex flex-wrap justify-center max-w-42">
+                {socialLinks.map((social) => (
+                  <motion.a
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.name}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.25,
+                      type: 'bounce',
+                      ease: easeInOut
+                    }}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.95 }}
                     className={cn(
-                      "relative z-10 text-neutral-500 transition-colors duration-200 group-hover:text-white",
-                      // `rotate-${social.rotate}`,
+                      "group size-fit relative flex items-center justify-center p-3 border-2 border-white/20 transition-colors duration-200 ",`${social.no}`
                     )}
-                  />
-                </motion.a>
-              ))}
-            </div>
-          </motion.div>
+                    // style={{ "--social-color": social.color  }}
+                  >
+                    <span
+                      className="absolute inset-0 rounded-xl opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-20"
+                      style={{ backgroundColor: social.color }}
+                    />
+                    <HugeiconsIcon
+                      icon={social.icon}
+                      size={22}
+                      style={{ rotate: social.rotate }}
+                      className={cn(
+                        "relative z-10 text-neutral-500 transition-colors duration-200 group-hover:text-white",
+                      )}
+                    />
+                  </motion.a>
+                ))}
+              </div>
+            </motion.div>
+
         </div>
 
         {/* Bottom bar */}

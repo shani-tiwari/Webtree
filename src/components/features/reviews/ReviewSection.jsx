@@ -114,8 +114,8 @@ export default function ReviewSection() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.4 }}
-                className=" flex "
+                transition={{ delay: index * 0.1, duration: 0.2 }}
+                className="min-w-96 flex justify-center "
               >
                 <ReviewCard {...review} />
               </motion.div>

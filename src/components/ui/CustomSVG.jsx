@@ -9,7 +9,7 @@ export default function CustomSVG() {
         <motion.div 
           layout
           transition={{ layout: { duration: 0.3, ease: "easeIn" } }}
-          className=" relative mx-auto w-[90vw] lg:w-[80vw] xl:w-[57vw] -mt-9 pointer-events-none">
+          className=" relative mx-auto w-[90vw] lg:w-[80vw] xl:w-[55vw] -mt-9 pointer-events-none">
             <svg 
                 className=" absolute top-2 -left-[0.2px] rotate-180 "  
                 viewBox="0 0 300 70" 
@@ -25,7 +25,7 @@ export default function CustomSVG() {
                         Q140 60 150 40
                     " 
                     stroke="var(--color-white)"
-                    strokeWidth="0.2"
+                    strokeWidth="0.3"
                     fill="none"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -49,7 +49,7 @@ export default function CustomSVG() {
                         Q140 60 150 40
                     "
                     stroke="var(--color-white)"
-                    strokeWidth="0.2" 
+                    strokeWidth="0.3" 
                     fill="none"
                     strokeLinecap="round"
                     strokeLinejoin="round"

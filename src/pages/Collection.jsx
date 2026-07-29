@@ -18,10 +18,10 @@ export default function Collection() {
         <p className="text-2xl text-amber-600/75 w-fit mx-auto md:text-6xl font-black hover:tracking-tighter transition-all duration-400 italic  ">
           yoUr collection
         </p>
-        <p className="text-sm md:text-base font-mono mt-3 hover:tracking-[-0.07em] transition-all duration-400 text-slate-400/70">
+        <p className="text-sm md:text-base font-mono mt-4 hover:tracking-[-0.05em] transition-all duration-400 text-slate-400/70">
           Your personally curated list of resources
         </p>
-        <span className="text-sm md:text-base font-mono mt-3 hover:scale-105 hover:translate-y-1 transition-all duration-300 text-shadow-green-800 text-shadow-sm opacity-80 text-green-300 inline-block">
+        <span className="text-sm md:text-base font-mono hover:scale-103 transition-all duration-300 text-shadow-green-800/40 text-shadow-sm opacity-80 text-green-300 inline-block">
           Added Websites - {collection.length} 
         </span>
       </header>
