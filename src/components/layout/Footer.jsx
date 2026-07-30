@@ -71,13 +71,6 @@ const socialLinks = [
   // },
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.08, delayChildren: 0.1 },
-  },
-};
 
 const itemVariants = {
   hidden: { opacity: 0, y: 16 },
@@ -102,20 +95,11 @@ export default function Footer() {
         <div className="absolute -bottom-16 right-1/4 h-40 w-40 rounded-full bg-purple-600/5 blur-[70px]" />
       </div>
 
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-40px" }}
-        variants={containerVariants}
-        className="relative mx-auto max-w-6xl px-8 py-14 md:px-14 md:py-16"
-      >
-        <div className="flex flex-wrap justify-between gap-16 ">
+      <div className="relative mx-auto max-w-6xl px-8 py-14 md:px-14 md:py-16">
+        <div className="flex flex-wrap justify-center md:justify-between gap-16 ">
 
           {/* Brand */}
-          <motion.div
-            variants={itemVariants}
-            className=" w-fit flex justify-center sm-md:items-center flex-col gap-2 "
-          >
+          <motion.div className=" w-fit flex justify-center sm-md:items-center flex-col gap-2 ">
             <Link
               to="/"
               className="group flex w-fit items-center gap-2 transition-transform duration-300 hover:-translate-y-0.5"
@@ -133,17 +117,17 @@ export default function Footer() {
               tools, design ideas, and curated picks to build better on the web.
             </p>
             <div className="flex justify-start items-center gap-8 mt-6">
-              <span className="group w-fit group text-lg font-medium tracking-tighter  transition-colors duration-300 bg-amber-600/80 text-white/80 flex items-center gap-2 outline-2 outline-offset-1 outline-amber-600/80 py-1.5 px-5 rounded-lg hover:bg-amber-600/70 active:scale-98"> 
+              <span className="group w-fit group text-lg font-medium tracking-tighter  transition-colors duration-300 bg-amber-600/80 text-white/80 flex items-center gap-2 outline-2 outline-offset-1 outline-amber-600/80 py-1 px-4 rounded-lg hover:bg-amber-600/70 active:scale-98 text-shadow-lg"> 
                 <a href="https://github.com/shani-tiwari/WebTree" target="_blank" rel="noopener noreferrer" className="flex gap-2 justify-center items-center ">
                   <HugeiconsIcon icon={Star} strokeWidth={3} size={16} className="-mt-0.5 group-hover:-rotate-25 transition-all duration-200 "/>
                   on 
                   <HugeiconsIcon icon={GithubIcon} strokeWidth={3} size={16} className="-mt-0.5 "/>
                 </a>
               </span>
-              <span className="group w-fit group text-lg font-medium tracking-tighter  transition-colors duration-300 bg-amber-600/80 text-white/80 flex items-center gap-2 outline-2 outline-offset-1 outline-amber-600/80 py-1.5 px-5 rounded-lg hover:bg-amber-600/70 active:scale-98"> 
+              <span className="group w-fit group text-lg font-medium tracking-tighter  transition-colors duration-300 bg-amber-600/80 text-white/80 flex items-center gap-2 outline-2 outline-offset-1 outline-amber-600/80 py-1 px-4 rounded-lg hover:bg-amber-600/70 active:scale-98 text-shadow-lg"> 
                 <a href="https://buymeacoffee.com/shani_tiwari?new=1" target="_blank" rel="noopener noreferrer" className="flex gap-2 justify-center items-center ">
                   <HugeiconsIcon icon={Coffee01Icon} strokeWidth={2} size={16} className="-mt-0.5 group-hover:-rotate-25 transition-all duration-200 "/>
-                  Coffee ?
+                  Coffee?
                 </a>
               </span>
             </div>
@@ -151,7 +135,7 @@ export default function Footer() {
 
 
             {/* Navigation */}
-            <motion.div variants={itemVariants} className=" w-fit flex flex-col justify-center items-center ">
+            <div  className=" w-fit flex flex-col justify-center items-center">
               <h2 className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
                 Navigate
               </h2>
@@ -177,10 +161,10 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </div>
 
             {/* Social */}
-            <motion.div variants={itemVariants} className=" flex flex-col justify-start items-center p-4">
+            <div  className="w-fit flex flex-col justify-start items-center">
               <h2 className="mb-5 w-full text-center text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
                 Connect
               </h2>
@@ -216,13 +200,13 @@ export default function Footer() {
                       size={22}
                       style={{ rotate: social.rotate }}
                       className={cn(
-                        "relative z-10 text-neutral-500 transition-colors duration-200 group-hover:text-white",
+                        "relative z-10 text-neutral-400/80 transition-colors duration-200 group-hover:text-white",
                       )}
                     />
                   </motion.a>
                 ))}
               </div>
-            </motion.div>
+            </div>
 
         </div>
 
@@ -231,9 +215,10 @@ export default function Footer() {
           variants={itemVariants}
           className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 md:flex-row"
         >
-          <p className="text-sm text-neutral-500">
-            ©{currentYear} WebTree. All rights reserved.
+          <p className="text-sm text-neutral-500/90  tracking-tight text-center">
+            ©{currentYear} WebTree. All rights reserved
           </p>
+
           <p className="flex items-center gap-2 text-sm text-neutral-400">
             Made with{" "}
             <motion.span
@@ -254,7 +239,7 @@ export default function Footer() {
             </Link>
           </p>
         </motion.div>
-      </motion.div>
+      </div>
     </footer>
   );
 }

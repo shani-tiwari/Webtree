@@ -16,9 +16,9 @@ export default function CustomSVG() {
                 preserveAspectRatio="xMidYMid meet"
                 fill="none">
                     <motion.path 
-                        initial={{pathLength: 0}}
-                        animate={{pathLength: 1}}
-                        transition={{duration:0.75, delay: 0.4}}
+                        initial={{pathLength: 0.3 }}
+                        animate={{pathLength: 1 }}
+                        transition={{duration:0.75}}
                         d="
                             M10 70  
                         Q10 60 50 60
@@ -40,9 +40,9 @@ export default function CustomSVG() {
                 preserveAspectRatio="xMidYMid meet"
             >
                 <motion.path
-                    initial={{ pathLength: 0 }}
+                    initial={{ pathLength: 0.3 }}
                     animate={{ pathLength: 1 }}
-                    transition={{ duration: 0.75, delay: 0.4 }}
+                    transition={{ duration: 0.65 }}
                     d="
                         M10 70
                         Q10 60 50 60

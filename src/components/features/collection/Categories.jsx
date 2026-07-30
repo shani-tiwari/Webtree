@@ -27,15 +27,15 @@ const Categories = React.memo(
         aria-pressed={isActive}
         aria-label={`Select ${name.split("_").join(" ")} category`}
         className={cn(
-          "relative w-fit h-fit group border-[1.6px] border-white/30 py-0.75 px-3 md:py-2 md:px-4 mb-2 rounded-lg md:rounded-xl",
+          "relative w-fit h-fit group border-2 border-white/40 py-0.75 px-2 md:py-1.5 md:px-4 mb-2 rounded-lg md:rounded-xl",
           "backdrop-blur-md cursor-pointer select-none",
           isActive
-            ? "bg-linear-to-b from-amber-800/50 border-2 to-amber-950/50 "
+            ? "bg-linear-to-b from-amber-800/50 to-amber-950/50 outline-2 outline-amber-900/80 border-amber-700/60"
             : "bg-linear-to-br from-zinc-800/60 to-zinc-950 hover:bg-zinc-800/40",
         )}
       >
         <span
-          className={cn("font-light font-serif tracking-wider leading-0 drop-shadow-sm flex items-center justify-center text-shadow-2xs text-[14px]")}
+          className={cn("font-light font-serif tracking-wider leading-0 drop-shadow-sm flex items-center justify-center text-shadow-2xs text-[13px] md:text-[14px]")}
         >
           {
             name.split("_").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")

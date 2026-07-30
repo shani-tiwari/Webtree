@@ -61,7 +61,7 @@ export default function Explore() {
       {/* main section */}
       <section
         id="explore"
-        className=" h-fit max-w-[1200px] flex flex-col gap-10 md:gap-10 pt-30"
+        className="min-h-screen h-fit max-w-[1200px] flex flex-col gap-10 md:gap-10 pt-30"
       >
         <h1 className="sr-only">Explore Web Dev Resources</h1>
 
@@ -80,7 +80,7 @@ export default function Explore() {
           className={cn("w-full text-white/80 text-center px-4 md:px-6 select-none")}
         >
           <h1 className={cn(
-              "wavy-underline-pulse text-2xl md:text-[32px] font-black tracking-[-0.03em] w-fit bg-clip-text text-transparent bg-linear-to-b from-amber-300 to-amber-600 capitalize",
+              "wavy-underline-pulse text-2xl md:text-[32px] font-black tracking-[-0.03em] w-fit bg-clip-text text-transparent bg-linear-to-b from-amber-400 to-amber-600 capitalize",
             )}
           >
             {activeCategory.replace("_", " ")}

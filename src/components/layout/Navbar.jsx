@@ -1,13 +1,13 @@
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
   CancelCircleIcon,
-  Coffee01Icon,
-  DribbbleIcon,
-  GithubIcon,
-  InstagramIcon,
-  Linkedin01Icon,
-  Mail01Icon,
-  NewTwitterRectangleIcon,
+  // Coffee01Icon,
+  // DribbbleIcon,
+  // GithubIcon,
+  // InstagramIcon,
+  // Linkedin01Icon,
+  // Mail01Icon,
+  // NewTwitterRectangleIcon,
   FolderCheckIcon,
   SquareArrowLeft02Icon,
   FolderFavouriteIcon,
@@ -17,6 +17,7 @@ import {
   // Tree02Icon,
   // Link02FreeIcons,
   SearchList02Icon,
+  AllBookmarkIcon,
 } from "@hugeicons/core-free-icons";
 import React, { useState, useEffect } from "react";
 // eslint-disable-next-line no-unused-vars
@@ -115,7 +116,7 @@ const Navbar = () => {
         >
           <Link
             className={cn(
-              "text-white/40 z-10  flex items-center justify-center gap-1 font-mono hover:text-white/50 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer selection:bg-amber-600-op30 selection:text-white",
+              "text-white/40 z-10 flex items-center justify-center gap-1 font-mono hover:text-white/50 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer selection:bg-amber-600-op30 selection:text-white",
             )}
             to="/"
             onClick={scrollTop}
@@ -123,7 +124,7 @@ const Navbar = () => {
             <p className="text-amber-500 text-[22px] md:text-[26px]">
               ४
             </p>
-            <h1 className="text-[22px] md:text-[26px] tracking-tighter"> 
+            <h1 className="text-[22px] md:text-[24px] tracking-tighter"> 
               Webtree
             </h1>
           </Link>
@@ -144,8 +145,7 @@ const Navbar = () => {
               <Link
                 key={item.label}
                 to={item.path}
-                className={cn(
-                  "navItem ",
+                className={cn("navItem ",
                   isActive
                     ? "text-amber-500 wavy-underline-pulse"
                     : "text-neutral-400 hover:text-neutral-300",
@@ -180,7 +180,7 @@ const Navbar = () => {
                   "text-lg md:text-[20px] hidden md:block selection:bg-amber-600-op30 selection:text-white",
                 )}
               >
-                Collection
+                Bookmarks
               </p>
             )}
             {isCollectionPage ? (
@@ -193,7 +193,7 @@ const Navbar = () => {
             ) : (
               <div className="relative hidden md:flex">
                 <HugeiconsIcon
-                  icon={FolderFavouriteIcon}
+                  icon={AllBookmarkIcon}
                   size={19}
                   className="text-amber-500"
                 />

@@ -2,12 +2,12 @@
 import { motion } from "motion/react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
-  Delete03Icon,
-  FolderCheckIcon,
-  FolderAddIcon,
   Copy02Icon,
   SentIcon,
   ViewIcon,
+  BookmarkAdd02Icon,
+  BookmarkCheck02Icon,
+  BookmarkOff02Icon,
 } from "@hugeicons/core-free-icons";
 import { useCollection } from "../../../context/CollectionContext";
 import { useState, memo, useEffect } from "react";
@@ -113,12 +113,13 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
 
     return (
       <motion.div
-        layout
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.35 }}
         className={cn("w-full h-full block p-1")}
         aria-label={`View ${title} resource`}
       >
-        <motion.section
-          // whileHover={{ y: -4, transition: { duration: 0.2 } }}
+        <section
           className={cn(
             "relative h-full flex flex-col bg-linear-to-tr from-black/10 via-black/5 to-white/8 backdrop-blur-md border-2 border-zinc-700/80 rounded-[30px] p-5",
             "transition-all ease-[cubic-bezier(0.79,0.47,0.24,0.98)] duration-300 group cursor-pointer text-white/70 select-none hover:border-zinc-600/90 shadow-md shadow-black hover:shadow-xl",
@@ -128,7 +129,7 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
           {/* Action Icons Section */}
           <div
             className={cn(
-              "absolute top-10 right-6 flex items-center z-40 ",
+              "absolute top-8 right-6 flex items-center z-40 ",
             )}
           >
             {!allowRemove && (
@@ -141,14 +142,14 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
                   "group/icon add-shape absolute -top-3 right-3.5 flex items-center justify-center z-30",
                   "p-1.5 bg-white/2 border-2 border-white/15 cursor-pointer",
                   isCollected
-                    ? "text-emerald-600 font-bold hover:text-emerald-500 "
-                    : "text-amber-300-op60  group-hover:text-amber-400-op80",
+                    ? "text-emerald-600 hover:text-emerald-500 "
+                    : "text-amber-300-op60 group-hover:text-amber-400-op80",
                 )}
               >
                 {isCollected ? (
-                  <HugeiconsIcon className="active:scale-95" icon={FolderCheckIcon} size={21} />
+                  <HugeiconsIcon className="active:scale-95" icon={BookmarkCheck02Icon} size={21} />
                 ) : (
-                  <HugeiconsIcon className="active:scale-95" icon={FolderAddIcon} size={21} />
+                  <HugeiconsIcon className="active:scale-95" icon={BookmarkAdd02Icon} size={21} />
                 )}
 
                 {/* <span
@@ -171,7 +172,7 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
                   "group/delete delete-shape absolute right-3.5 -top-3 flex items-center justify-center text-red-600/90 hover:text-red-500/80 p-1.5 rounded-xl border-2 border-white/20 z-30 cursor-pointer",
                 )}
               >
-                <HugeiconsIcon icon={Delete03Icon} size={21} className="active:scale-95"/>
+                <HugeiconsIcon icon={BookmarkOff02Icon} size={21} className="active:scale-95"/>
               </motion.span>
             )}
 
@@ -306,7 +307,7 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
               </span>
             )
           }
-        </motion.section>
+        </section>
 
         {/* ── Preview Modal ── */}
         {showPreview && (

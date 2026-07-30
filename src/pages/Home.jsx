@@ -80,6 +80,9 @@ export default function Home() {
 
         {/* Header */}
           <Header />
+          {/* <h2 className="mx-auto text-white text-sm tracking-wide bg-white/10 py-2 px-4 rounded-xl">
+            Discover & Bookmark useful resources faster.
+          </h2> */}
  
 
         {/* categories & cards */}
@@ -99,7 +102,7 @@ export default function Home() {
             }}
             aria-label="Category selection"
             className={cn(
-              "z-40 gap-1 md:gap-2 w-full h-fit px-4 md:py-3  md:pt-4 mb-8 max-w-4xl mx-auto shrink-0",
+              "z-40 gap-1 md:gap-2 w-full h-fit md:pt-4 mb-6 md:mb-12 max-w-4xl mx-auto shrink-0",
               "flex flex-wrap justify-center rounded-xl text-white backdrop-blur-sm",
               // isCollapsed ? " lg:mb-8" : " lg:mb-6",
             )}

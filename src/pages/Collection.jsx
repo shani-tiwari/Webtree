@@ -3,20 +3,20 @@ import { Card } from "../components/features/collection";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
 import { GoBack } from "../components/layout";
-import { useLocation } from "react-router";
+import { Link, useLocation } from "react-router";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { FolderAddIcon } from "@hugeicons/core-free-icons";
+import { BookmarkAdd02Icon } from "@hugeicons/core-free-icons";
 
 export default function Collection() {
   const { collection } = useCollection();
   const location = useLocation();
 
   return (
-    <main className="relative max-w-[1300px] w-full flex flex-col gap-10 md:gap-10 mx-auto px-4 md:px-14 pb-20">
+    <main className="relative max-w-325 w-full flex flex-col gap-10 md:gap-10 mx-auto px-4 md:px-14 pb-20">
 
       <header className="relative text-white/70 text-center w-full  tracking-tight  backdrop-blur-xl md:backdrop-blur-none pt-20 md:pt-32 selection:text-amber-500 ">
         <p className="text-2xl text-amber-600/75 w-fit mx-auto md:text-6xl font-black hover:tracking-tighter transition-all duration-400 italic  ">
-          yoUr collection
+          yoUr personaL collectiOn
         </p>
         <p className="text-sm md:text-base font-mono mt-4 hover:tracking-[-0.05em] transition-all duration-400 text-slate-400/70">
           Your personally curated list of resources
@@ -47,8 +47,11 @@ export default function Collection() {
         {collection.length === 0 ? (
           <div className="text-center text-zinc-400/70 py-20 flex flex-col items-center gap-4">
             <p className="text-lg">Your collection is empty.</p>
+            <Link to="/explore" className="text-amber-500 hover:text-amber-600 font-bold">
+              visit explore
+            </Link>
             <p className="text-base">
-              Add items by clicking the <HugeiconsIcon icon={FolderAddIcon} size={20} className="text-amber-500 inline-block mx-1"/> button on any resource card.
+              Add items by clicking the <HugeiconsIcon icon={BookmarkAdd02Icon} size={20} className="text-amber-500 inline-block mx-1"/> button on any resource card.
             </p>
           </div>
         ) : (
