@@ -3,10 +3,7 @@ import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { ReviewCard, ReviewForm } from "../components/features/reviews";
 import { HugeiconsIcon } from "@hugeicons/react";
-import {
-  BubbleChatAddIcon,
-  Idea01Icon,
-} from "@hugeicons/core-free-icons";
+import { BubbleChatAddIcon, Idea01Icon } from "@hugeicons/core-free-icons";
 import { GoBack } from "../components/layout";
 import { useLocation } from "react-router";
 
@@ -36,7 +33,7 @@ export default function Reviews() {
     <>
       {/* helmet - SEO */}
       <Helmet>
-        <title>WebTree - Web Dev Resources</title>
+        <title>WebTree - DeveloperResources</title>
         <meta
           name="description"
           content="Webtree, the ultimate collection of web development resources. Discover tools, design ideas, and more."
@@ -104,7 +101,8 @@ export default function Reviews() {
                 transition={{ delay: 0.2 }}
                 className="text-neutral-500 px-4 md:px-0 font-mono max-w-2xl leading-tight tracking-tighter "
               >
-                See what others are saying about Webtree and share your own experience
+                See what others are saying about Webtree and share your own
+                experience
               </motion.p>
             </div>
 

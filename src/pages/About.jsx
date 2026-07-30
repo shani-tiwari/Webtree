@@ -31,12 +31,11 @@ export default function About() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.2 } },
   };
 
-
   return (
     <>
       {/* helmet - SEO */}
       <Helmet>
-        {/* <title>About Webtree - Web Dev Resources</title> */}
+        {/* <title>About Webtree - DeveloperResources</title> */}
         <meta
           name="description"
           content="Webtree, the ultimate collection of web development resources. Discover tools, design ideas, and more."
@@ -130,30 +129,30 @@ export default function About() {
         >
           <motion.div variants={itemVariants} className="space-y-4">
             <div className="w-full grid lg:grid-cols-3 gap-4 md:gap-6 md:grid-cols-2 space-y-3">
-              {
-                about_data.map((item, i) => (
-                  <motion.div
-                    key={i}
-                    whileHover={{
-                      y: i < 3 ? 9 : -9,
-                      x: (i % 3 === 0) ? 10 : (i % 3 === 1) ? 0 : -10 ,
-                      backgroundColor: "rgba(193, 152, 33, 0.04)",
-                    }}
-                    transition={{ duration: 0.05, type: 'easeIn' }}
-                    className="group h-full py-3 px-4 rounded-xl bg-black/20 ring-1 ring-amber-400/10 shadow-sm shadow-white/40 relative overflow-hidden transition-all duration-200"
-                  >
-                    <p className="text-sm w-fit  tracking-wide text-white group-hover:text-amber-500 transition-all">
-                      <span className="text-amber-500 flex gap-2">
-                         ⁜ 
-                        <p className="text-white/80 text-[18px] font-medium text-shadow-lg text-shadow-black">{item.title}</p> 
-                      </span>
-                    </p>
-                    <p className="text-[13px] text-gray-400/90 text-shadow-lg text-shadow-black tracking-wide mt-1 group-hover:text-neutral-400 leading-4">
-                      {item.desc}
-                    </p>
-                    </motion.div>
-                ))
-              }
+              {about_data.map((item, i) => (
+                <motion.div
+                  key={i}
+                  whileHover={{
+                    y: i < 3 ? 9 : -9,
+                    x: i % 3 === 0 ? 10 : i % 3 === 1 ? 0 : -10,
+                    backgroundColor: "rgba(193, 152, 33, 0.04)",
+                  }}
+                  transition={{ duration: 0.05, type: "easeIn" }}
+                  className="group h-full py-3 px-4 rounded-xl bg-black/20 ring-1 ring-amber-400/10 shadow-sm shadow-white/40 relative overflow-hidden transition-all duration-200"
+                >
+                  <p className="text-sm w-fit  tracking-wide text-white group-hover:text-amber-500 transition-all">
+                    <span className="text-amber-500 flex gap-2">
+                      ⁜
+                      <p className="text-white/80 text-[18px] font-medium text-shadow-lg text-shadow-black">
+                        {item.title}
+                      </p>
+                    </span>
+                  </p>
+                  <p className="text-[13px] text-gray-400/90 text-shadow-lg text-shadow-black tracking-wide mt-1 group-hover:text-neutral-400 leading-4">
+                    {item.desc}
+                  </p>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         </motion.div>
@@ -162,17 +161,16 @@ export default function About() {
   );
 }
 
-
 const about_data = [
   {
     title: "Curated, Not Crowded",
-    desc: "140+ useful web dev resources across 15+ categories—filtered for quality so you don’t waste time.",
+    desc: "140+ useful Developerresources across 15+ categories—filtered for quality so you don’t waste time.",
     icon: DashboardSquareEditIcon,
   },
   {
     title: "Discover Faster",
     desc: "Find the right tools, libraries, and references quickly with a structure built for real developer workflows.",
-    icon: ZapIcon
+    icon: ZapIcon,
   },
   {
     title: "Built for Better Decisions",
@@ -182,12 +180,12 @@ const about_data = [
   {
     title: "Save Your Stack",
     desc: "Add resources to your collection and keep your favorite tools organized in one place.",
-    icon:  FolderAddIcon,
+    icon: FolderAddIcon,
   },
   {
     title: "Share Instantly",
     desc: "Copy links and share helpful resources with one click.",
-    icon:  SentIcon
+    icon: SentIcon,
   },
   {
     title: "No Account Needed",

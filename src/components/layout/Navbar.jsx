@@ -124,7 +124,7 @@ const Navbar = () => {
             <p className="text-amber-500 text-[22px] md:text-[26px]">
               ४
             </p>
-            <h1 className="text-[22px] md:text-[24px] tracking-tighter"> 
+            <h1 className="text-[20px] md:text-[24px] tracking-tighter"> 
               Webtree
             </h1>
           </Link>
@@ -236,9 +236,9 @@ const Navbar = () => {
               ) : (
                 <HugeiconsIcon
                   onClick={() => setShowLength(!showLength)}
-                  icon={FolderCheckIcon}
+                  icon={AllBookmarkIcon}
                   size={19}
-                  style={{ color: "oklch(0.871 0.006 286.286)" }}
+                  style={{ color: "oklch(0.771 0.006 286.286)" }}
                 />
               )}
               {!isCollectionPage && showLength && collection.length > 0 && (
@@ -289,10 +289,7 @@ const Navbar = () => {
                           {mobile_navLinks.map((link, index) => (
                             <React.Fragment key={link.name}>
                               <motion.div 
-                                // initial={{ y: 10 }} 
-                                // animate={{ y: 0}}
                                 exit={{ y: -15, opacity: 0.5 , scale: 0.6, transition: {delay: 0} }}
-                                // transition={{navItem_transition, delay: (0.05 * index) }}
                                 className="w-full"
                               >
                                 <Link

@@ -274,7 +274,7 @@
     {
       "id": 13,
       "name": "Motion Sites",
-      "desc": "Unlock your AI Design SuperpowersSuperpowers.",
+      "desc": "Unlock your AI Design Superpowers.",
       "link": "https://motionsites.ai/",
       "category": "design_ideas",
       "logo": "https://img.logo.dev/motionsites.ai?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true",
@@ -688,6 +688,96 @@
       "logo": "https://img.logo.dev/tailwindcss.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
+  "3d": [
+    {
+      "id": 1,
+      "name": "Three.js Resources",
+      "desc": "Curated directory of Three.js tutorials, tools, examples, courses, and libraries for 3D web development, VR, and games.",
+      "link": "https://threejsresources.com",
+      "category": "3d",
+      "logo": "https://img.logo.dev/threejsresources.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 2,
+      "name": "Spline",
+      "desc": "Web-based 3D design tool for creating interactive 3D scenes, models, and animations that integrate with React and Three.js.",
+      "link": "https://spline.design",
+      "category": "3d",
+      "logo": "https://img.logo.dev/spline.design?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 3,
+      "name": "Sketchfab",
+      "desc": "Largest platform for 3D models, AR/VR assets, with free and paid downloads optimized for web embedding via Three.js/GLTF.",
+      "link": "https://sketchfab.com",
+      "category": "3d",
+      "logo": "https://img.logo.dev/sketchfab.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 4,
+      "name": "Poly Haven",
+      "desc": "Free, high-quality CC0 3D models, HDRIs, materials, and textures for realistic 3D rendering in web projects.",
+      "link": "https://polyhaven.com",
+      "category": "3d",
+      "logo": "https://img.logo.dev/polyhaven.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 5,
+      "name": "Blender",
+      "desc": "Free open-source 3D creation suite for modeling, rigging, animation; export GLTF/GLB for web devs using Three.js.",
+      "link": "https://www.blender.org",
+      "category": "3d",
+      "logo": "https://img.logo.dev/blender.org?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 6,
+      "name": "PlayCanvas Asset Store",
+      "desc": "Free 3D models, scripts, fonts, and assets library for PlayCanvas engine, compatible with web-based 3D games.",
+      "link": "https://developer.playcanvas.com/user-manual/editor/assets/asset-store/",
+      "category": "3d",
+      "logo": "https://img.logo.dev/developer.playcanvas.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 7,
+      "name": "CGTrader",
+      "desc": "Marketplace for 3D models, textures, and rigs; thousands of assets ready for web 3D development and purchase.",
+      "link": "https://www.cgtrader.com",
+      "category": "3d",
+      "logo": "https://img.logo.dev/cgtrader.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 8,
+      "name": "Kenney Assets",
+      "desc": "Free game-ready 3D models, sprites, icons, and sounds optimized for web development and prototypes.",
+      "link": "https://kenney.nl/assets",
+      "category": "3d",
+      "logo": "https://img.logo.dev/kenney.nl?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 9,
+      "name": "Quaternius",
+      "desc": "Free low-poly 3D models and assets packs for game devs, lightweight for web 3D projects.",
+      "link": "https://quaternius.com",
+      "category": "3d",
+      "logo": "https://img.logo.dev/quaternius.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 10,
+      "name": "Poly Pizza",
+      "desc": "Free and paid modular 3D assets marketplace for blockchain/web3 devs building 3D experiences.",
+      "link": "https://poly.pizza",
+      "category": "3d",
+      "logo": "https://img.logo.dev/poly.pizza?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 11,
+      "name": "Mixamo",
+      "desc": "Adobe's free 3D character animation tool with rigged models and motions exportable to GLB for web.",
+      "link": "https://www.mixamo.com",
+      "category": "3d",
+      "logo": "https://img.logo.dev/mixamo.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    }
+  ],
   "background": [
     {
       "id": 5,
@@ -879,96 +969,6 @@
       "desc": "Free SVG illustrations designed for charity/NGO websites.",
       "category": "illustrations",
       "logo": "https://img.logo.dev/illustrations.design?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    }
-  ],
-  "3d": [
-    {
-      "id": 1,
-      "name": "Three.js Resources",
-      "desc": "Curated directory of Three.js tutorials, tools, examples, courses, and libraries for 3D web development, VR, and games.",
-      "link": "https://threejsresources.com",
-      "category": "3d",
-      "logo": "https://img.logo.dev/threejsresources.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 2,
-      "name": "Spline",
-      "desc": "Web-based 3D design tool for creating interactive 3D scenes, models, and animations that integrate with React and Three.js.",
-      "link": "https://spline.design",
-      "category": "3d",
-      "logo": "https://img.logo.dev/spline.design?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 3,
-      "name": "Sketchfab",
-      "desc": "Largest platform for 3D models, AR/VR assets, with free and paid downloads optimized for web embedding via Three.js/GLTF.",
-      "link": "https://sketchfab.com",
-      "category": "3d",
-      "logo": "https://img.logo.dev/sketchfab.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 4,
-      "name": "Poly Haven",
-      "desc": "Free, high-quality CC0 3D models, HDRIs, materials, and textures for realistic 3D rendering in web projects.",
-      "link": "https://polyhaven.com",
-      "category": "3d",
-      "logo": "https://img.logo.dev/polyhaven.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 5,
-      "name": "Blender",
-      "desc": "Free open-source 3D creation suite for modeling, rigging, animation; export GLTF/GLB for web devs using Three.js.",
-      "link": "https://www.blender.org",
-      "category": "3d",
-      "logo": "https://img.logo.dev/blender.org?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 6,
-      "name": "PlayCanvas Asset Store",
-      "desc": "Free 3D models, scripts, fonts, and assets library for PlayCanvas engine, compatible with web-based 3D games.",
-      "link": "https://developer.playcanvas.com/user-manual/editor/assets/asset-store/",
-      "category": "3d",
-      "logo": "https://img.logo.dev/developer.playcanvas.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 7,
-      "name": "CGTrader",
-      "desc": "Marketplace for 3D models, textures, and rigs; thousands of assets ready for web 3D development and purchase.",
-      "link": "https://www.cgtrader.com",
-      "category": "3d",
-      "logo": "https://img.logo.dev/cgtrader.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 8,
-      "name": "Kenney Assets",
-      "desc": "Free game-ready 3D models, sprites, icons, and sounds optimized for web development and prototypes.",
-      "link": "https://kenney.nl/assets",
-      "category": "3d",
-      "logo": "https://img.logo.dev/kenney.nl?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 9,
-      "name": "Quaternius",
-      "desc": "Free low-poly 3D models and assets packs for game devs, lightweight for web 3D projects.",
-      "link": "https://quaternius.com",
-      "category": "3d",
-      "logo": "https://img.logo.dev/quaternius.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 10,
-      "name": "Poly Pizza",
-      "desc": "Free and paid modular 3D assets marketplace for blockchain/web3 devs building 3D experiences.",
-      "link": "https://poly.pizza",
-      "category": "3d",
-      "logo": "https://img.logo.dev/poly.pizza?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 11,
-      "name": "Mixamo",
-      "desc": "Adobe's free 3D character animation tool with rigged models and motions exportable to GLB for web.",
-      "link": "https://www.mixamo.com",
-      "category": "3d",
-      "logo": "https://img.logo.dev/mixamo.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
   "api": [

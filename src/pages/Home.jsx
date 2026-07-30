@@ -10,11 +10,9 @@ import { useCollectionData } from "../hooks/useCollectionData";
 import { Rocket01Icon } from "@hugeicons/core-free-icons";
 import { Helmet } from "react-helmet";
 
- 
-
 export default function Home() {
   const { data, loading } = useCollectionData();
-  const [activeCategory, setActiveCategory] = useState("tools");
+  const [activeCategory, setActiveCategory] = useState("web_design");
 
   // const [isCollapsed, setIsCollapsed] = useState(true);
   const carddata = data[activeCategory] || [];
@@ -26,7 +24,7 @@ export default function Home() {
     <>
       {/* helmet - SEO */}
       <Helmet>
-        <title>WebTree - Web Dev Resources</title>
+        <title>WebTree - DeveloperResources</title>
         <meta
           name="description"
           content="Webtree, the ultimate collection of web development resources. Discover tools, design ideas, and more."
@@ -79,11 +77,10 @@ export default function Home() {
         </div>
 
         {/* Header */}
-          <Header />
-          {/* <h2 className="mx-auto text-white text-sm tracking-wide bg-white/10 py-2 px-4 rounded-xl">
+        <Header />
+        {/* <h2 className="mx-auto text-white text-sm tracking-wide bg-white/10 py-2 px-4 rounded-xl">
             Discover & Bookmark useful resources faster.
           </h2> */}
- 
 
         {/* categories & cards */}
         <motion.section
@@ -120,7 +117,7 @@ export default function Home() {
                   />
                 ))}
             </AnimatePresence>
-              {/* <motion.button
+            {/* <motion.button
                 transition={{ duration: 0, ease: "easeInOut" }}
                 className={cn(
                   "relative w-fit text-[14px] font-semibold group border-2 border-amber-500/30 py-0.75 px-3 md:py-2 md:px-4 mb-2 rounded-xl",
@@ -136,7 +133,7 @@ export default function Home() {
           <motion.div
             layout
             transition={{ layout: { duration: 0.45, ease: "easeOut" } }}
-            className={cn("-mt-4 md:-mt-12 pointer-events-none z-50 relative")}
+            className={cn("md:-mt-10 pointer-events-none z-50 relative")}
           >
             <CustomSVG />
           </motion.div>
@@ -152,50 +149,50 @@ export default function Home() {
             {/* explore page button */}
             <MagneticButton
               text="Explore All Resources"
-              to={`${activeCategory && 'explore/' + activeCategory || '/explore'}`}
+              to={`${(activeCategory && "explore/" + activeCategory) || "/explore"}`}
               icon={Rocket01Icon}
             />
           </div>
         </motion.section>
 
         {/* Review Section */}
-         <ReviewSection />
+        <ReviewSection />
       </section>
     </>
   );
-};
+}
 
-function Header(){
-  return(
+function Header() {
+  return (
     <>
       <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, delay: 0.2, ease: "easeOut" }}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3, delay: 0.2, ease: "easeOut" }}
+        className={cn(
+          "w-full text-white/80 text-center px-4 md:px-6 pt-20 md:pt-28",
+        )}
+      >
+        <div
           className={cn(
-            "w-full text-white/80 text-center px-4 md:px-6 pt-20 md:pt-28",
+            " text-xl md:text-[32px] flex flex-col items-center gap-2 lg:flex-row md:gap-3 mx-auto w-fit selection:bg-amber-600-op30 selection:text-white",
           )}
         >
-          <div
-            className={cn(
-              " text-xl md:text-[32px] flex flex-col items-center gap-2 lg:flex-row md:gap-3 mx-auto w-fit selection:bg-amber-600-op30 selection:text-white",
-            )}
+          <motion.div
+            initial={{ scale: 0.9 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <motion.div
-              initial={{ scale: 0.9 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+            <h1
+              className={cn(
+                "wavy-underline-pulse tracking-[-0.03em] w-fit bg-clip-text text-transparent bg-linear-to-b from-amber-300 to-amber-700 text-shadow-lg text-shadow-amber-700/20 hover:tracking-tighter transition-all duration-500",
+              )}
             >
-              <h1
-                className={cn(
-                  "wavy-underline-pulse tracking-[-0.03em] w-fit bg-clip-text text-transparent bg-linear-to-b from-amber-300 to-amber-700 text-shadow-lg text-shadow-amber-700/20 hover:tracking-tighter transition-all duration-500",
-                )}
-              >
-                140+ <span className="font-serif">Web Dev Resources</span>
-              </h1>
-            </motion.div>
-          </div>
-        </motion.h1>
+              140+ <span className="font-serif">Developer Resources</span>
+            </h1>
+          </motion.div>
+        </div>
+      </motion.h1>
     </>
-  )
+  );
 }

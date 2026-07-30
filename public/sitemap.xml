@@ -1,4 +1,4 @@
-<?xml version="2.3" encoding="UTF-8"?>
+<?xml version="2.3.1" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://webtree.shaniweb.com/</loc>
@@ -6,18 +6,6 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  <!-- <url>
-    <loc>https://webtree.shaniweb.com/about</loc>
-    <lastmod>2026-07-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://webtree.shaniweb.com/connect</loc>
-    <lastmod>2026-07-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url> -->
   <url>
     <loc>https://webtree.shaniweb.com/reviews</loc>
     <lastmod>2026-07-28</lastmod>
@@ -37,7 +25,7 @@
     <priority>1</priority>
   </url>
   <url>
-    <loc>https://webtree.shaniweb.com/explore/design_ideas</loc>
+    <loc>https://webtree.shaniweb.com/explore/web_design</loc>
     <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -67,7 +55,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://webtree.shaniweb.com/explore/svg_icons</loc>
+    <loc>https://webtree.shaniweb.com/explore/icons</loc>
     <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -97,13 +85,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://webtree.shaniweb.com/explore/upskill</loc>
-    <lastmod>2026-07-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://webtree.shaniweb.com/explore/apis</loc>
+    <loc>https://webtree.shaniweb.com/explore/api</loc>
     <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

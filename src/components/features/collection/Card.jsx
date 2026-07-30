@@ -318,7 +318,7 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
             {/* Modal Box */}
             <div
               onClick={(e) => e.stopPropagation()}
-              className="flex flex-col w-[80vw] h-[80vh] rounded-xl overflow-hidden border border-white/50 bg-black/80"
+              className="flex flex-col w-[95vw] h-[95vh] rounded-xl overflow-hidden border border-white/50 bg-black/80"
             >
               {/* Top bar */}
               <div className="flex items-center justify-between px-6 py-2 bg-black/60 border-b border-white/40">
@@ -335,7 +335,7 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(e) => e.stopPropagation()}
-                    className="flex items-center gap-2 px-3 py-0.5 rounded-lg text-white/90 bg-indigo-900 cursor-pointer border-2 border-white/60 hover:bg-indigo-700 active:scale-95 transition-all duration-300"
+                    className="flex items-center gap-2 px-3 py-0.5 rounded-lg text-white/90 bg-amber-900 cursor-pointer border-2 border-white/60 hover:bg-amber-700 active:scale-95 transition-all duration-300"
                   >
                     ↗ Visit
                   </a>
