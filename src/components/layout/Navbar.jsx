@@ -221,7 +221,7 @@ const Navbar = () => {
             className={cn("z-60 md:hidden flex items-center justify-center gap-4")}
           >
             <Link
-              className={cn("relative text-xl mr-2 ml-2 active:scale-95")}
+              className={cn("relative text-xl active:scale-95")}
               to={location.pathname === "/collection" ? "/" : "/collection"}
               rel="noreferrer"
               aria-label={`Visit`}
@@ -230,7 +230,7 @@ const Navbar = () => {
                 <HugeiconsIcon
                   onClick={() => setShowLength(!showLength)}
                   icon={SquareArrowLeft02Icon}
-                  size={20}
+                  size={19}
                   style={{ color: "oklch(55.5% 0.163 48.998)" }}
                 />
               ) : (

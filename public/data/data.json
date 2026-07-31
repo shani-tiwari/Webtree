@@ -222,6 +222,15 @@
       "logo": "https://img.logo.dev/daisyui.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
+      "id": 5,
+      "name": "Stacksorted",
+      "desc": "Sorted collections of design stacks, tools, and inspirations for developers.",
+      "link": "https://stacksorted.com",
+      "category": "ui_components",
+      "new": true,
+      "logo": "https://img.logo.dev/stacksorted.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
       "id": 6,
       "name": "TweakCN",
       "desc": "Visual no-code theme editor for shadcn/ui components with Tailwind CSS v4 support.",
@@ -272,13 +281,46 @@
   ],
   "web_design": [
     {
+      "id": 3,
+      "name": "Awwwards",
+      "desc": "Awards for exceptional web design, inspiration, and development resources.",
+      "link": "https://www.awwwards.com",
+      "category": "design_ideas",
+      "logo": "https://img.logo.dev/awwwards.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 6,
+      "name": "Godly",
+      "desc": "Handpicked websites showcasing godly web design and creativity.",
+      "link": "https://godly.website",
+      "category": "design_ideas",
+      "new": true,
+      "logo": "https://img.logo.dev/godly.website?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 9,
+      "name": "SupaHero",
+      "desc": "Website hero section library.",
+      "link": "https://supahero.io/",
+      "category": "design_ideas",
+      "logo": "https://img.logo.dev/supahero.io?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true",
+      "new": true
+    },
+    {
+      "id": 7,
+      "name": "Seesaw",
+      "desc": "Platform for discovering and sharing innovative web designs and ideas.",
+      "link": "https://seesaw.website",
+      "category": "design_ideas",
+      "logo": "https://img.logo.dev/seesaw.website?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
       "id": 13,
       "name": "Motion Sites",
       "desc": "Unlock your AI Design Superpowers.",
       "link": "https://motionsites.ai/",
       "category": "design_ideas",
-      "logo": "https://img.logo.dev/motionsites.ai?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true",
-      "new": true
+      "logo": "https://img.logo.dev/motionsites.ai?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
       "id": 11,
@@ -286,8 +328,7 @@
       "desc": "The best SaaS web design inspiration.",
       "link": "https://saaspo.com/",
       "category": "design_ideas",
-      "logo": "https://img.logo.dev/saaspo.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true",
-      "new": true
+      "logo": "https://img.logo.dev/saaspo.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
       "id": 12,
@@ -295,8 +336,7 @@
       "desc": "Design resources and AI tools for your creative workflow.",
       "link": "https://ui8.net",
       "category": "design_ideas",
-      "logo": "https://img.logo.dev/ui8.net?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true",
-      "new": true
+      "logo": "https://img.logo.dev/ui8.net?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
       "id": 1,
@@ -315,54 +355,12 @@
       "logo": "https://img.logo.dev/behance.net?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
-      "id": 3,
-      "name": "Awwwards",
-      "desc": "Awards for exceptional web design, inspiration, and development resources.",
-      "link": "https://www.awwwards.com",
-      "category": "design_ideas",
-      "logo": "https://img.logo.dev/awwwards.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 5,
-      "name": "Stacksorted",
-      "desc": "Sorted collections of design stacks, tools, and inspirations for developers.",
-      "link": "https://stacksorted.com",
-      "category": "design_ideas",
-      "logo": "https://img.logo.dev/stacksorted.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 6,
-      "name": "Godly",
-      "desc": "Handpicked websites showcasing godly web design and creativity.",
-      "link": "https://godly.website",
-      "category": "design_ideas",
-      "logo": "https://img.logo.dev/godly.website?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 7,
-      "name": "Seesaw",
-      "desc": "Platform for discovering and sharing innovative web designs and ideas.",
-      "link": "https://seesaw.website",
-      "category": "design_ideas",
-      "logo": "https://img.logo.dev/seesaw.website?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
       "id": 8,
       "name": "CTA.gallery",
       "desc": "The Best Call-to-Action (CTA) Design Inspiration.",
       "link": "https://www.cta.gallery/",
       "category": "design_ideas",
-      "logo": "https://img.logo.dev/cta.gallery?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true",
-      "new": true
-    },
-    {
-      "id": 9,
-      "name": "SupaHero",
-      "desc": "Website hero section library.",
-      "link": "https://supahero.io/",
-      "category": "design_ideas",
-      "logo": "https://img.logo.dev/supahero.io?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true",
-      "new": true
+      "logo": "https://img.logo.dev/cta.gallery?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
       "id": 10,
@@ -370,14 +368,13 @@
       "desc": " Hand Picked website from the dark side.",
       "link": "https://www.dark.design/",
       "category": "design_ideas",
-      "logo": "https://img.logo.dev/dark.design?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true",
-      "new": true
+      "logo": "https://img.logo.dev/dark.design?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
       "id": 11,
       "name": "Repaint",
       "desc": "Build a website by chatting with AI.",
-      "link": "https://repaint.com/website-design",
+      "link": "https://repaint.com/",
       "category": "design_ideas",
       "logo": "https://img.logo.dev/repaint.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
@@ -1169,74 +1166,6 @@
       "link": "https://pages.github.com",
       "category": "deployment",
       "logo": "https://img.logo.dev/github.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    }
-  ],
-  "performance": [
-    {
-      "id": 1,
-      "name": "Google PageSpeed Insights",
-      "desc": "Mobile + desktop scores, Core Web Vitals, optimization tips.",
-      "link": "https://pagespeed.web.dev",
-      "category": "performance",
-      "logo": "https://img.logo.dev/pagespeed.web.dev?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 2,
-      "name": "Lighthouse",
-      "desc": "Chrome DevTools auditor. Performance, accessibility, SEO scores.",
-      "link": "https://developer.chrome.com/docs/lighthouse",
-      "category": "performance",
-      "logo": "https://img.logo.dev/developer.chrome.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 3,
-      "name": "GTmetrix",
-      "desc": "Detailed waterfalls, video replays, monitoring. 100 tests/month free.",
-      "link": "https://gtmetrix.com",
-      "category": "performance",
-      "logo": "https://img.logo.dev/gtmetrix.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 4,
-      "name": "WebPageTest",
-      "desc": "Real browsers, multiple locations. Advanced filmstrip view.",
-      "link": "https://www.webpagetest.org",
-      "category": "performance",
-      "logo": "https://img.logo.dev/webpagetest.org?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    }
-  ],
-  "testing": [
-    {
-      "id": 1,
-      "name": "Cypress",
-      "desc": "Fast E2E testing for modern web apps. Real browsers, time travel debugging.",
-      "link": "https://www.cypress.io",
-      "category": "testing",
-      "logo": "https://img.logo.dev/cypress.io?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 2,
-      "name": "Playwright",
-      "desc": "Cross-browser E2E. Chrome, Firefox, Safari, mobile emulation.",
-      "link": "https://playwright.dev",
-      "category": "testing",
-      "logo": "https://img.logo.dev/playwright.dev?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 3,
-      "name": "Selenium",
-      "desc": "Browser automation for testing. Enterprise standard, all languages.",
-      "link": "https://www.selenium.dev",
-      "category": "testing",
-      "logo": "https://img.logo.dev/selenium.dev?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 4,
-      "name": "Webhook.site",
-      "desc": "Test webhook endpoints instantly. Inspect incoming requests live.",
-      "link": "https://webhook.site",
-      "category": "testing",
-      "logo": "https://img.logo.dev/webhook.site?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ]
 }

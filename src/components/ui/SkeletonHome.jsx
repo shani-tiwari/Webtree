@@ -58,10 +58,10 @@ const SkeletonHome = () => {
           {/* Cards Section */}
           <section
             className={cn(
-              "z-10 container bg-transparent grow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[14px] content-start md:-mt-3",
+              "z-10 container bg-transparent grow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3.5 content-start md:-mt-3",
             )}
           >
-            {Array(4)
+            {Array(3)
               .fill(0)
               .map((_, i) => (
                 <div key={i} className={cn("w-full h-full block p-1")}>

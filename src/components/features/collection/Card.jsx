@@ -10,7 +10,7 @@ import {
   BookmarkOff02Icon,
 } from "@hugeicons/core-free-icons";
 import { useCollection } from "../../../context/CollectionContext";
-import { useState, memo, useEffect } from "react";
+import { useState, memo } from "react";
 import { Link } from "react-router";
 import { cn } from "../../../utils/utils.js";
 
@@ -21,10 +21,9 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
 
     const [added, setAdded]  = useState(false);
     const [copied, setCopied] = useState(false);
-    const [showPreview, setShowPreview] = useState(false);
+    // const [showPreview, setShowPreview] = useState(false);
 
-    const normalize = (str) =>
-      str ? str.trim().split(" ").join("").toLowerCase() : "";
+    const normalize = (str) => str ? str.trim().split(" ").join("").toLowerCase() : "";
 
     // Check if item is already in collection to show correct state
     const isCollected = collection.some(
@@ -84,32 +83,6 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
         handleCopy(e);
       }
     };
-
-    const handlePreview = (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      setShowPreview(true);
-    };
-
-    const handleClosePreview = () => {
-      setShowPreview(false);
-    };
-
-     // Lock body scroll when mobile menu is open
-      useEffect(() => {
-        if (showPreview) {
-          document.body.style.overflow = "hidden";
-          document.documentElement.style.overflow = "hidden";
-        } else {
-          document.body.style.overflow = "auto";
-          document.documentElement.style.overflow = "auto";
-        }
-        return () => {
-          document.body.style.overflow = "auto";
-          document.documentElement.style.overflow = "auto";
-        };
-      }, [showPreview]);
-    
 
     return (
       <motion.div
@@ -205,18 +178,20 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
             </motion.span>
 
             {/* preview Button */}
-            <motion.span
+            <motion.a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.03, y: 1, x: -1 }}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.1 }}
-              onClick={handlePreview}
               className={cn(
                 "group/preview preview-shape absolute top-5.5 right-12 flex items-center justify-center z-30 ",
                 "text-purple-700 group-hover:text-purple-500/80 p-1.5 bg-white/2 border-2 border-white/15 cursor-pointer",
               )}
             >
               <HugeiconsIcon icon={ViewIcon} size={21} className="-translate-x-px translate-y-px active:scale-95" />
-            </motion.span>
+            </motion.a>
           </div>
 
           {/* logo */}
@@ -308,58 +283,6 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
             )
           }
         </section>
-
-        {/* ── Preview Modal ── */}
-        {showPreview && (
-          <div
-            onClick={handleClosePreview}
-            className="fixed inset-0 z-999 bg-black/40 backdrop-blur-md flex items-center justify-center"
-          >
-            {/* Modal Box */}
-            <div
-              onClick={(e) => e.stopPropagation()}
-              className="flex flex-col w-[95vw] h-[95vh] rounded-xl overflow-hidden border border-white/50 bg-black/80"
-            >
-              {/* Top bar */}
-              <div className="flex items-center justify-between px-6 py-2 bg-black/60 border-b border-white/40">
-                {/* URL pill */}
-                <span className="text-[11px] font-mono text-white/60 overflow-hidden text-ellipsis whitespace-nowrap max-w-[50%]">
-                  {link}
-                </span>
-
-                {/* Buttons */}
-                <div className="flex items-center gap-2">
-                  {/* Visit button */}
-                  <a
-                    href={link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="flex items-center gap-2 px-3 py-0.5 rounded-lg text-white/90 bg-amber-900 cursor-pointer border-2 border-white/60 hover:bg-amber-700 active:scale-95 transition-all duration-300"
-                  >
-                    ↗ Visit
-                  </a>
-
-                  {/* Close button */}
-                  <button
-                    onClick={handleClosePreview}
-                    className="flex items-center text-[16px] font-bold justify-center px-2 py-0.5 rounded-full border-2 border-white/80 text-black/80 bg-white/60 hover:bg-white/80 active:scale-95 transition-all duration-300"
-                  >
-                    ✕
-                  </button>
-                </div>
-              </div>
-
-              {/* iFrame */}
-              <iframe
-                src={link}
-                title={`Preview of ${title}`}
-                className="flex-1 w-full border-none bg-white/40 scrollbar-thin"
-                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
-              />
-            </div>
-          </div>
-        )}
       </motion.div>
     );
   },
