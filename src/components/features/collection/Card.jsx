@@ -89,6 +89,7 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.35 }}
+        viewport={{ once: true }}
         className={cn("w-full h-full block p-1")}
         aria-label={`View ${title} resource`}
       >
@@ -112,11 +113,11 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
                 transition={{ duration: 0.2, ease: [0.79, 0.47, 0.24, 0.98] }}
                 onClick={handleAddKey}
                 className={cn(
-                  "group/icon add-shape absolute -top-3 right-3.5 flex items-center justify-center z-30",
-                  "p-1.5 bg-white/2 border-2 border-white/15 cursor-pointer",
+                  "group/icon add-shape absolute -top-4 right-3.25 flex items-center justify-center z-30",
+                  "p-1.5 bg-white/2 border-2 border-white/15 cursor-pointer outline-2 outline-offset-1 outline-white/30",
                   isCollected
                     ? "text-emerald-600 hover:text-emerald-500 "
-                    : "text-amber-300-op60 group-hover:text-amber-400-op80",
+                    : "text-amber-300/80 group-hover:text-amber-400/80",
                 )}
               >
                 {isCollected ? (
@@ -156,7 +157,7 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
               transition={{ duration: 0.1 }}
               onClick={handleCopy}
               className={cn(
-                "group/copy copy-shape absolute right-12 -top-3 flex items-center justify-center z-30",
+                "group/copy copy-shape absolute right-13 -top-4 flex items-center justify-center z-30 outline-2 outline-offset-1 outline-white/30",
                 "text-sky-300/80 group-hover:text-sky-500/90 p-1.5 bg-white/2 border-2 border-white/15 cursor-pointer",
               )}
             >
@@ -170,7 +171,7 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
               transition={{ duration: 0.1 }}
               onClick={handleShare}
               className={cn(
-                "group/share share-shape absolute top-5.5 right-3.5 flex items-center justify-center z-30 ",
+                "group/share share-shape absolute top-6 right-3.25 flex items-center justify-center z-30 outline-2 outline-offset-1 outline-white/30",
                 "text-indigo-500 group-hover:text-indigo-600 p-1.5 bg-white/2 border-2 border-white/15 cursor-pointer",
               )}
             >
@@ -186,7 +187,7 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.1 }}
               className={cn(
-                "group/preview preview-shape absolute top-5.5 right-12 flex items-center justify-center z-30 ",
+                "group/preview preview-shape absolute top-6 right-13 flex items-center justify-center z-30 outline-2 outline-offset-1 outline-white/30",
                 "text-purple-700 group-hover:text-purple-500/80 p-1.5 bg-white/2 border-2 border-white/15 cursor-pointer",
               )}
             >

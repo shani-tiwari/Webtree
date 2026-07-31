@@ -3,7 +3,6 @@ import { useParams, useNavigate } from "react-router";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "motion/react";
 import { cn } from "../utils/utils.js";
-import { Helmet } from "react-helmet";
 import { SkeletonExplore, CustomSVG } from "../components/ui";
 import { useCollectionData } from "../hooks/useCollectionData";
 
@@ -38,34 +37,6 @@ export default function Explore() {
 
   return (
     <>
-      <Helmet>
-        {/* <title>Explore - WebTree</title> */}
-        <meta name="description" content="Explore - WebTree" />
-        <meta name="author" content="Shani Tiwari" />
-        <meta name="robots" content="index, follow" />
-        <meta name="theme-color" content="#030303" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@ShaniDevelops" />
-        <meta name="twitter:title" content="Explore - WebTree" />
-        <meta name="twitter:description" content="Explore - WebTree" />
-        <meta
-          name="twitter:image"
-          content="https://webtree.shaniweb.com/og-image.png"
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="webtree" />
-        <meta
-          property="og:url"
-          content="https://webtree.shaniweb.com/explore"
-        />
-        <meta property="og:title" content="Explore - WebTree" />
-        <meta property="og:description" content="Explore - WebTree" />
-        <meta
-          property="og:image"
-          content="https://webtree.shaniweb.com/og-image.png"
-        />
-      </Helmet>
-
       {/* main section */}
       <section
         id="explore"

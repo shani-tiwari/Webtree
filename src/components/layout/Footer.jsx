@@ -214,10 +214,10 @@ export default function Footer() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.95 }}
                   className={cn(
-                    "group size-fit relative flex items-center justify-center p-3 border-2 border-white/20 transition-colors duration-200 ",
+                    "group size-fit relative flex items-center justify-center p-3 border-2 border-white/30 transition-colors duration-200",
+                    "outline-2 outline-offset-1 outline-white/40",
                     `${social.no}`,
                   )}
-                  // style={{ "--social-color": social.color  }}
                 >
                   <span
                     className="absolute inset-0 rounded-xl opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-20"
@@ -227,9 +227,7 @@ export default function Footer() {
                     icon={social.icon}
                     size={22}
                     style={{ rotate: social.rotate }}
-                    className={cn(
-                      "relative z-10 text-neutral-400/80 transition-colors duration-200 group-hover:text-white",
-                    )}
+                    className={cn("relative z-10 text-neutral-400/80 transition-colors duration-200 group-hover:text-white")}
                   />
                 </motion.a>
               ))}

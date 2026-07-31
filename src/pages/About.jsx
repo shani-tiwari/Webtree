@@ -1,18 +1,8 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
-import { HugeiconsIcon } from "@hugeicons/react";
-import {
-  ComputerChartUpIcon,
-  DashboardSquareEditIcon,
-  FolderAddIcon,
-  SentIcon,
-  UserBlock02FreeIcons,
-  ZapIcon,
-} from "@hugeicons/core-free-icons";
 import { cn } from "../utils/utils.js";
 import { useLocation } from "react-router";
 import { GoBack } from "../components/layout";
-import { Helmet } from "react-helmet";
 
 export default function About() {
   const location = useLocation();
@@ -33,47 +23,6 @@ export default function About() {
 
   return (
     <>
-      {/* helmet - SEO */}
-      <Helmet>
-        <title>About Webtree | Developer Resources</title>
-        <meta
-          name="description"
-          content="Webtree help developers to find & save best development resources in one place."
-        />
-        <meta name="author" content="Shani Tiwari" />
-        <meta name="robots" content="index, follow" />
-        <meta name="theme-color" content="#030303" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@ShaniDevelops" />
-        <meta
-          name="twitter:title"
-          content="About Webtree - Collection of Web Development Resources"
-        />
-        <meta
-          name="twitter:description"
-          content="Webtree help developers to find & save best development resources in one place."
-        />
-        <meta
-          name="twitter:image"
-          content="https://webtree.shaniweb.com/og-image.png"
-        />
-
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="webtree" />
-        <meta property="og:url" content="https://webtree.shaniweb.com/about" />
-        <meta
-          property="og:title"
-          content="Webtree - Collection of Web Development Resources"
-        />
-        <meta
-          property="og:description"
-          content="Webtree, the ultimate collection of web development resources. Discover tools, design ideas, and more."
-        />
-        <meta
-          property="og:image"
-          content="https://webtree.shaniweb.com/og-image.png"
-        />
-      </Helmet>
 
       {/* main section */}
       <section
@@ -166,31 +115,31 @@ const about_data = [
   {
     title: "Curated, Not Crowded",
     desc: "140+ useful Developerresources across 15+ categories—filtered for quality so you don’t waste time.",
-    icon: DashboardSquareEditIcon,
+    // icon: DashboardSquareEditIcon,
   },
   {
     title: "Discover Faster",
     desc: "Find the right tools, libraries, and references quickly with a structure built for real developer workflows.",
-    icon: ZapIcon,
+    // icon: ZapIcon,
   },
   {
     title: "Built for Better Decisions",
     desc: "From inspiration to implementation, everything is organized to help you work faster and make better development decisions.",
-    icon: ComputerChartUpIcon,
+    // icon: ComputerChartUpIcon,
   },
   {
     title: "Save Your Stack",
     desc: "Add resources to your collection and keep your favorite tools organized in one place.",
-    icon: FolderAddIcon,
+    // icon: FolderAddIcon,
   },
   {
     title: "Share Instantly",
     desc: "Copy links and share helpful resources with one click.",
-    icon: SentIcon,
+    // icon: SentIcon,
   },
   {
     title: "No Account Needed",
     desc: "Browse, save, and explore without signup friction.",
-    icon: UserBlock02FreeIcons,
+    // icon: UserBlock02FreeIcons,
   },
 ];

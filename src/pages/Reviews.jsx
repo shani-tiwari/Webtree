@@ -9,7 +9,6 @@ import { useLocation } from "react-router";
 
 import { useReviewsData } from "../hooks/useReviewsData";
 import Masonry from "react-masonry-css";
-import { Helmet } from "react-helmet";
 
 export default function Reviews() {
   const location = useLocation();
@@ -31,25 +30,6 @@ export default function Reviews() {
 
   return (
     <>
-      {/* helmet - SEO */}
-      <Helmet>
-        <title>WebTree | Developer Resources</title>
-        <meta name="description" content="Webtree help developers to find & save best development resources in one place.."/>
-        <meta name="author" content="Shani Tiwari" />
-        <meta name="robots" content="index, follow" />
-        <meta name="theme-color" content="#030303" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@ShaniDevelops" />
-        <meta name="twitter:title" content="About Webtree - Collection of Web Development Resources"/>
-        <meta name="twitter:description"content="Webtree help developers to find & save best development resources in one place.."/>
-        <meta name="twitter:image"content="https://webtree.shaniweb.com/og-image.png"/>
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="webtree" />
-        <meta property="og:url" content="https://webtree.shaniweb.com/about" />
-        <meta property="og:title"content="Webtree - Collection of Web Development Resources"/>
-        <meta property="og:description"content="Webtree help developers to find & save best development resources in one place.."/>
-        <meta property="og:image"content="https://webtree.shaniweb.com/og-image.png"/>
-      </Helmet>
 
       <section className="min-h-screen w-full relative overflow-hidden bg-black/80 backdrop-blur-sm pt-24 pb-20 selection:text-amber-500">
         <h1 className="sr-only">Community Reviews</h1>

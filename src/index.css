@@ -156,23 +156,23 @@ input:-webkit-autofill:active {
 .copy-shape {
   /* width: fit-content;
   height: fit-content; */
-  border-radius: 200% 1000% 140% 1000%;
+  border-radius: 200% 1000% 100% 1000%;
   corner-shape: squircle;
 }
 .share-shape {
-  border-radius: 140% 1000% 200% 1000%;
+  border-radius: 100% 1000% 200% 1000%;
   corner-shape: squircle;
 }
 .add-shape {
-  border-radius: 1000% 200% 1000% 140%;
+  border-radius: 1000% 200% 1000% 100%;
   corner-shape: squircle;
 }
 .preview-shape {
-  border-radius: 3000% 400% 3000% 600%;
+  border-radius: 3000% 200% 3000% 600%;
   corner-shape: squircle;
 }
 .delete-shape {
-  border-radius: 1000% 200% 1000% 140%;
+  border-radius: 1000% 200% 1000% 100%;
   corner-shape: squircle;
 }
 .first-icon,
