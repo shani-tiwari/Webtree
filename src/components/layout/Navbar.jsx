@@ -116,15 +116,13 @@ const Navbar = () => {
         >
           <Link
             className={cn(
-              "text-white/40 z-10 flex items-center justify-center gap-1 font-mono hover:text-white/50 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer selection:bg-amber-600-op30 selection:text-white",
+              "text-white/40 z-10 flex items-center justify-center gap-1 font-mono hover:text-white/50 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer selection:bg-amber-600/30 selection:text-white",
             )}
             to="/"
             onClick={scrollTop}
           >
-            <p className="text-amber-500 text-[22px] md:text-[26px]">
-              ४
-            </p>
-            <h1 className="text-[20px] md:text-[24px] tracking-tighter"> 
+            <p className="text-amber-500 text-[22px] md:text-[26px]">४</p>
+            <h1 className="text-[20px] md:text-[24px] tracking-tighter">
               Webtree
             </h1>
           </Link>
@@ -145,7 +143,8 @@ const Navbar = () => {
               <Link
                 key={item.label}
                 to={item.path}
-                className={cn("navItem ",
+                className={cn(
+                  "navItem ",
                   isActive
                     ? "text-amber-500 wavy-underline-pulse"
                     : "text-neutral-400 hover:text-neutral-300",
@@ -170,14 +169,17 @@ const Navbar = () => {
           >
             {location.pathname === "/collection" ? (
               <p
-                className={cn("text-amber-600 font-mono text-xl hidden md:block selection:bg-amber-600-op30 selection:text-white ")}>
-                  Home
+                className={cn(
+                  "text-amber-600 font-mono text-xl hidden md:block selection:bg-amber-600/30 selection:text-white ",
+                )}
+              >
+                Home
               </p>
             ) : (
               <p
                 className={cn(
                   "text-neutral-400 font-mono mr-1 tracking-tighter transition-all duration-250 hover:text-neutral-300/90",
-                  "text-lg md:text-[20px] hidden md:block selection:bg-amber-600-op30 selection:text-white",
+                  "text-lg md:text-[20px] hidden md:block selection:bg-amber-600/30 selection:text-white",
                 )}
               >
                 Bookmarks
@@ -195,7 +197,7 @@ const Navbar = () => {
                 <HugeiconsIcon
                   icon={AllBookmarkIcon}
                   size={19}
-                  className="text-amber-500"
+                  className="text-amber-500 "
                 />
                 {collection.length > 0 && (
                   <span className="absolute text-xs -right-1.5 -top-1.5 font-mono text-amber-500/80 selection:bg-zinc-600/30 selection:text-white">
@@ -218,7 +220,9 @@ const Navbar = () => {
 
           {/* Mobile Menu Buttons  */}
           <div
-            className={cn("z-60 md:hidden flex items-center justify-center gap-4")}
+            className={cn(
+              "z-60 md:hidden flex items-center justify-center gap-5",
+            )}
           >
             <Link
               className={cn("relative text-xl active:scale-95")}
@@ -244,7 +248,7 @@ const Navbar = () => {
               {!isCollectionPage && showLength && collection.length > 0 && (
                 <sup
                   className={cn(
-                    "absolute text-xs -right-2 -top-1 text-zinc-300 selection:bg-amber-600-op30 selection:text-white",
+                    "absolute text-xs -right-2 -top-1 text-zinc-300 selection:bg-amber-600/30 selection:text-white",
                   )}
                 >
                   {collection.length}
@@ -260,14 +264,19 @@ const Navbar = () => {
                 aria-expanded={isOpen}
                 aria-controls="mobile-menu"
                 aria-label="Toggle menu"
-                className={cn("z-100 md:hidden flex items-center justify-center text-white/80 active:scale-90 transition-all duration-300")}
+                className={cn(
+                  "z-100 md:hidden flex items-center justify-center text-white/80 active:scale-90 transition-all duration-300",
+                )}
               >
-                {
-                  isOpen ? ( <HugeiconsIcon icon={CancelCircleIcon} size={22} className="z-999" />
-                  ) : (
-                   <HugeiconsIcon icon={Menu02Icon} size={22} />
-                  )
-                }
+                {isOpen ? (
+                  <HugeiconsIcon
+                    icon={CancelCircleIcon}
+                    size={22}
+                    className="z-999"
+                  />
+                ) : (
+                  <HugeiconsIcon icon={Menu02Icon} size={22} />
+                )}
                 {/* menu dropdown  */}
                 <AnimatePresence>
                   {isOpen && (
@@ -278,25 +287,47 @@ const Navbar = () => {
                         "flex flex-col items-center justify-center text-shadow-2xs border-2 border-white/20 rounded-tl-[40px] ",
                       )}
                       initial={{ opacity: 0, scale: 0 }}
-                      animate={{ opacity: 1, scale: 1, right: '-12px', top: '-8px', transformOrigin: 'top right', zIndex: 100 }}
-                      exit={{ opacity: 0, scale: 0, transformOrigin: 'top right', transition:{delay: 0.1, duration: 0.5} }} 
-                      transition={{ duration: 0.5, type: "spring", stiffness: 100, damping: 15 }}
+                      animate={{
+                        opacity: 1,
+                        scale: 1,
+                        right: "-12px",
+                        top: "-8px",
+                        transformOrigin: "top right",
+                        zIndex: 100,
+                      }}
+                      exit={{
+                        opacity: 0,
+                        scale: 0,
+                        transformOrigin: "top right",
+                        transition: { delay: 0.1, duration: 0.5 },
+                      }}
+                      transition={{
+                        duration: 0.5,
+                        type: "spring",
+                        stiffness: 100,
+                        damping: 15,
+                      }}
                     >
-
                       {/* Menu Content */}
                       <motion.div className=" w-full max-w-xs ">
-                        <div className="flex flex-col  items-end gap-2 w-full px-4 pt-14 pb-6 "> 
+                        <div className="flex flex-col  items-end gap-2 w-full px-4 pt-14 pb-6 ">
                           {mobile_navLinks.map((link, index) => (
                             <React.Fragment key={link.name}>
-                              <motion.div 
-                                exit={{ y: -15, opacity: 0.5 , scale: 0.6, transition: {delay: 0} }}
+                              <motion.div
+                                exit={{
+                                  y: -15,
+                                  opacity: 0.5,
+                                  scale: 0.6,
+                                  transition: { delay: 0 },
+                                }}
                                 className="w-full"
                               >
                                 <Link
                                   to={link.path}
                                   className={cn(
                                     " text-lg w-full font-medium tracking-wide transition-all duration-300 active:scale-95 flex justify-between items-center gap-4",
-                                    location.pathname === link.path && "text-amber-500"
+                                    location.pathname === link.path &&
+                                      "text-amber-500",
                                   )}
                                   onClick={() => {
                                     setIsOpen(false);
@@ -314,7 +345,11 @@ const Navbar = () => {
                                     {link.name}
                                   </span>
                                   <HugeiconsIcon
-                                    className={cn(location.pathname === link.path ? "text-amber-500" : "text-white/70" )}
+                                    className={cn(
+                                      location.pathname === link.path
+                                        ? "text-amber-500"
+                                        : "text-white/70",
+                                    )}
                                     icon={link.icon}
                                     size={21}
                                   />

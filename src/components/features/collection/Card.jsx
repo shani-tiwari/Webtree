@@ -206,10 +206,11 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
               )}
             >
               {logo ? (
-                <Link to={link} target="_blank" rel="noopener noreferrer">
+                <Link to={link} target="_blank" rel="noopener noreferrer" alt={`${title} logo`}>
                   <img
                     src={logo}
                     alt={`${title} logo`}
+                    loading="lazy"
                     className="w-full h-full object-cover border border-black rounded-xl"
                     onError={(e) => {
                       e.target.style.display = "none";
@@ -218,7 +219,7 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
                   />
                 </Link>
               ) : null}
-              <Link to={link} target="_blank" rel="noopener noreferrer">
+              <Link to={link} target="_blank" rel="noopener noreferrer" alt={`${title} logo`}>
                 <span
                   className="text-amber-500 text-sm font-black"
                   style={{ display: logo ? "none" : "flex" }}
@@ -231,7 +232,7 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
 
           {/* title */}
           <div className={cn("pl-1 pt-1.5 mb-1")}>
-            <Link to={link} target="_blank" rel="noopener noreferrer"
+            <Link to={link} target="_blank" rel="noopener noreferrer" alt={title}
              className={cn("font-semibold bg-clip-text text-transparent bg-linear-to-b from-zinc-100 to-zinc-100/80  text-xl md:text-[22px] leading-6 tracking-normal",
                   "group-hover:text-amber-600/80 group-hover:tracking-[-0.01em] text-shadow-2xs text-shadow-black/40 transition-all duration-200")} 
             >
@@ -243,7 +244,7 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
           <span className="w-[95%] h-px bg-white/30 my-2"></span>
 
           {/*  Description */}
-          <Link to={link} target="_blank" rel="noopener noreferrer" className="pl-0.5">
+          <Link to={link} target="_blank" rel="noopener noreferrer" alt={desc.split(' ').slice(0,20).join(' ')} className="pl-0.5">
             <p
               className={cn(
                 "text-[14px] text-shadow-2xs text-shadow-black max-w-full ml-1 text-neutral-400/80 leading-4.5 font-mono grow",

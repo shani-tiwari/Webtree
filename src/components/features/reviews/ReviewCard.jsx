@@ -12,6 +12,7 @@ export default function ReviewCard({ xProfile, gender, text, bgColor, date }) {
   return (
     <Link
       to={"/reviews"}
+      alt={"reviews"}
       style={{ backgroundColor: bgColor ? `${bgColor}25` : "rgba(10, 10, 10, 0.6)" }}
       className={cn(
         "relative group flex flex-col w-full py-4 px-5 rounded-3xl border-2 border-zinc-500/50 shadow-lg shrink-0",
@@ -37,6 +38,7 @@ export default function ReviewCard({ xProfile, gender, text, bgColor, date }) {
               <Link
                 to={`https://x.com/${xProfile.replace("@", "")}`}
                 target="_blank"
+                alt={xProfile}
                 rel="noopener noreferrer"
                 className="text-[15px] font-semibold text-amber-500/80 flex items-center gap-1.5 "
                 onClick={(e) => e.stopPropagation()}
@@ -68,6 +70,7 @@ export default function ReviewCard({ xProfile, gender, text, bgColor, date }) {
                 {text.slice(0, 100)}...
                 <Link
                   to="/reviews"
+                  alt={'read at Reviews page'}
                   className="text-slate-200/60 hover:text-amber-500 animate-pulse text-[16px] items-center transition-all duration-500"
                 >
                   {} more

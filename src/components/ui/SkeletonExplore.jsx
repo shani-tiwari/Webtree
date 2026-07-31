@@ -75,7 +75,7 @@ const SkeletonExplore = () => {
                 "content-start mt-2 md:mt-12",
               )}
             >
-              {Array(4)
+              {Array(3)
                 .fill(0)
                 .map((_, i) => (
                   <div key={i} className={cn("w-full h-full block p-1")}>

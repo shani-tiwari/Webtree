@@ -25,22 +25,42 @@ export default function Home() {
       {/* helmet - SEO */}
       <Helmet>
         <title>WebTree | Developer Resources</title>
-        <meta name="description" content="Webtree help developers to find & save best development resources in one place.."
+        <meta
+          name="description"
+          content="Webtree help developers to find & save best development resources in one place.."
         />
         <meta name="author" content="Shani Tiwari" />
         <meta name="robots" content="index, follow" />
         <meta name="theme-color" content="#030303" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@ShaniDevelops" />
-        <meta name="twitter:title"content="About Webtree - Collection of Web Development Resources"/>
-        <meta name="twitter:description" content="Webtree help developers to find & save best development resources in one place.."/>
-        <meta name="twitter:image" content="https://webtree.shaniweb.com/og-image.png"/>
+        <meta
+          name="twitter:title"
+          content="About Webtree - Collection of Web Development Resources"
+        />
+        <meta
+          name="twitter:description"
+          content="Webtree help developers to find & save best development resources in one place.."
+        />
+        <meta
+          name="twitter:image"
+          content="https://webtree.shaniweb.com/og-image.png"
+        />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="webtree" />
         <meta property="og:url" content="https://webtree.shaniweb.com/about" />
-        <meta property="og:title"content="Webtree - Collection of Web Development Resources"/>
-        <meta property="og:description"content="Webtree help developers to find & save best development resources in one place.."/>
-        <meta property="og:image"content="https://webtree.shaniweb.com/og-image.png"/>
+        <meta
+          property="og:title"
+          content="Webtree - Collection of Web Development Resources"
+        />
+        <meta
+          property="og:description"
+          content="Webtree help developers to find & save best development resources in one place.."
+        />
+        <meta
+          property="og:image"
+          content="https://webtree.shaniweb.com/og-image.png"
+        />
       </Helmet>
 
       <section
@@ -148,14 +168,14 @@ function Header() {
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.3, delay: 0.2, ease: "easeOut" }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
         className={cn(
           "w-full text-white/80 text-center px-4 md:px-6 pt-20 md:pt-28",
         )}
       >
         <div
           className={cn(
-            " text-xl md:text-[32px] flex flex-col items-center gap-2 lg:flex-row md:gap-3 mx-auto w-fit selection:bg-amber-600-op30 selection:text-white",
+            " text-xl md:text-[32px] flex flex-col items-center gap-2 lg:flex-row md:gap-3 mx-auto w-fit selection:bg-amber-600/30 selection:text-white",
           )}
         >
           <motion.div

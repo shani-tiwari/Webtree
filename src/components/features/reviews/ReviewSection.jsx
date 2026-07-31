@@ -44,7 +44,6 @@ export default function ReviewSection() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            // viewport={{ once: true }}
             className="text-4xl font-black text-white/90 md:text-5xl italic tracking-tight hover:tracking-tighter transition-all duration-500"
           >
             Review{" "}
@@ -77,9 +76,8 @@ export default function ReviewSection() {
           >
             Add Review
             <HugeiconsIcon 
-            // icon={PlusSignCircleIcon} 
-            icon={MessageAdd01Icon} 
-            size={20}
+              icon={MessageAdd01Icon} 
+              size={20}
               className="group-hover:scale-120 rotate-3 transition-transform duration-500 cursor-pointer"
             />
           </button>
@@ -90,7 +88,6 @@ export default function ReviewSection() {
       {/* Animated line */}
       <motion.span
         initial={{ width: "0%" }}
-        viewport={{ once: true }}
         whileInView={{ width: "95%" }}
         transition={{ duration: 0.6, delay: 0.3, originX: 50, ease: "easeOut" }}
         className="z-90 h-[0.5px] block mx-auto -mt-4 md:mt-0 mb-2 bg-white/40 relative"
@@ -111,10 +108,9 @@ export default function ReviewSection() {
             reviews.map((review, index) => (
               <motion.div
                 key={review.id}
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0.3, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.2 }}
+                transition={{ delay: index * 0.01, duration: 0.2 }}
                 className="min-w-96 flex justify-center "
               >
                 <ReviewCard {...review} />

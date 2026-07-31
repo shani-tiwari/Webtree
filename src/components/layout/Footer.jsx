@@ -29,7 +29,7 @@ const socialLinks = [
     url: "https://www.linkedin.com/in/shani-tiwarii/",
     color: "#0A66C2",
     no: "first-icon",
-    rotate: "45deg"
+    rotate: "45deg",
   },
   {
     name: "GitHub",
@@ -37,7 +37,7 @@ const socialLinks = [
     url: "https://github.com/shani-tiwari",
     color: "oklch(75.6% 0 0)",
     no: "sec-icon",
-    rotate: "-45deg"
+    rotate: "-45deg",
   },
   {
     name: "Twitter",
@@ -45,7 +45,7 @@ const socialLinks = [
     url: "https://x.com/ShaniDevelops",
     color: "oklch(78.7% 0.021 106.9)",
     no: "third-icon",
-    rotate: "45deg"
+    rotate: "45deg",
   },
   // {
   //   name: "Dribble",
@@ -60,8 +60,8 @@ const socialLinks = [
     url: "https://Instagram.com/shani.develops",
     color: "oklch(52.5% 0.223 3.958)",
     no: "four-icon",
-    rotate: "-45deg"
-  }
+    rotate: "-45deg",
+  },
   // {
   //   name: "Buy Me a Coffee",
   //   icon: Coffee01Icon,
@@ -70,7 +70,6 @@ const socialLinks = [
   //   no: "five-icon"
   // },
 ];
-
 
 const itemVariants = {
   hidden: { opacity: 0, y: 16 },
@@ -87,7 +86,7 @@ export default function Footer() {
     <footer
       className={cn(
         "relative z-5 w-full font-mono border-t border-white/5 bg-black/80 backdrop-blur-sm",
-        "selection:bg-amber-600-op30 selection:text-white",
+        "selection:bg-amber-600/30 selection:text-white",
       )}
     >
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -97,7 +96,6 @@ export default function Footer() {
 
       <div className="relative mx-auto max-w-6xl px-8 py-14 md:px-14 md:py-16">
         <div className="flex flex-wrap justify-center md:justify-between gap-16 ">
-
           {/* Brand */}
           <motion.div className=" w-fit flex justify-center sm-md:items-center flex-col gap-2 ">
             <Link
@@ -113,101 +111,130 @@ export default function Footer() {
               </span>
             </Link>
             <p className="max-w-sm text-sm leading-7 text-neutral-400/90 sm-md:text-center">
-              The ultimate collection of 140+ web development resources. Discover
-              tools, design ideas, and curated picks to build better on the web.
+              The ultimate collection of 140+ web development resources.
+              Discover tools, design ideas, and curated picks to build better on
+              the web.
             </p>
             <div className="flex justify-start items-center gap-8 mt-6">
-              <span className="group w-fit group text-lg font-medium tracking-tighter  transition-colors duration-300 bg-amber-600/80 text-white/80 flex items-center gap-2 outline-2 outline-offset-1 outline-amber-600/80 py-1 px-4 rounded-lg hover:bg-amber-600/70 active:scale-98 text-shadow-lg"> 
-                <a href="https://github.com/shani-tiwari/WebTree" target="_blank" rel="noopener noreferrer" className="flex gap-2 justify-center items-center ">
-                  <HugeiconsIcon icon={Star} strokeWidth={3} size={16} className="-mt-0.5 group-hover:-rotate-25 transition-all duration-200 "/>
-                  on 
-                  <HugeiconsIcon icon={GithubIcon} strokeWidth={3} size={16} className="-mt-0.5 "/>
+              <span className="group w-fit group text-lg font-medium tracking-tighter  transition-colors duration-300 bg-amber-600/80 text-white/80 flex items-center gap-2 outline-2 outline-offset-1 outline-amber-600/80 py-1 px-4 rounded-lg hover:bg-amber-600/70 active:scale-98 text-shadow-lg">
+                <a
+                  href="https://github.com/shani-tiwari/WebTree"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex gap-2 justify-center items-center "
+                >
+                  <HugeiconsIcon
+                    icon={Star}
+                    strokeWidth={3}
+                    size={16}
+                    className="-mt-0.5 group-hover:-rotate-25 transition-all duration-200 "
+                  />
+                  on
+                  <HugeiconsIcon
+                    icon={GithubIcon}
+                    strokeWidth={3}
+                    size={16}
+                    className="-mt-0.5 "
+                  />
                 </a>
               </span>
-              <span className="group w-fit group text-lg font-medium tracking-tighter  transition-colors duration-300 bg-amber-600/80 text-white/80 flex items-center gap-2 outline-2 outline-offset-1 outline-amber-600/80 py-1 px-4 rounded-lg hover:bg-amber-600/70 active:scale-98 text-shadow-lg"> 
-                <a href="https://buymeacoffee.com/shani_tiwari?new=1" target="_blank" rel="noopener noreferrer" className="flex gap-2 justify-center items-center ">
-                  <HugeiconsIcon icon={Coffee01Icon} strokeWidth={2} size={16} className="-mt-0.5 group-hover:-rotate-25 transition-all duration-200 "/>
+              <span className="group w-fit group text-lg font-medium tracking-tighter  transition-colors duration-300 bg-amber-600/80 text-white/80 flex items-center gap-2 outline-2 outline-offset-1 outline-amber-600/80 py-1 px-4 rounded-lg hover:bg-amber-600/70 active:scale-98 text-shadow-lg">
+                <a
+                  href="https://buymeacoffee.com/shani_tiwari?new=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex gap-2 justify-center items-center "
+                >
+                  <HugeiconsIcon
+                    icon={Coffee01Icon}
+                    strokeWidth={2}
+                    size={16}
+                    className="-mt-0.5 group-hover:-rotate-25 transition-all duration-200 "
+                  />
                   Coffee?
                 </a>
               </span>
             </div>
           </motion.div>
 
-
-            {/* Navigation */}
-            <div  className=" w-fit flex flex-col justify-center items-center">
-              <h2 className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
-                Navigate
-              </h2>
-              <ul className="grid grid-cols-1 gap-x-4 gap-y-3">
-                {navLinks.map((link) => (
-                  <li key={link.path}>
-                    <Link
-                      to={link.path}
-                      className={cn(
-                        "group relative inline-flex items-center text-sm text-neutral-400",
-                        "transition-colors duration-300 hover:text-amber-500",
-                      )}
-                    >
-                      <motion.span
-                        className="inline-block"
-                        whileHover={{ x: 4 }}
-                        transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                      >
-                        {link.label}
-                      </motion.span>
-                      <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-amber-500/70 transition-all duration-300 group-hover:w-full" />
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Social */}
-            <div  className="w-fit flex flex-col justify-start items-center">
-              <h2 className="mb-5 w-full text-center text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
-                Connect
-              </h2>
-              <div className="flex flex-wrap justify-center max-w-42">
-                {socialLinks.map((social) => (
-                  <motion.a
-                    key={social.name}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={social.name}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      duration: 0.25,
-                      type: 'bounce',
-                      ease: easeInOut
-                    }}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.95 }}
+          {/* Navigation */}
+          <div className=" w-fit flex flex-col justify-center items-center">
+            <h2 className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
+              Navigate
+            </h2>
+            <ul className="grid grid-cols-1 gap-x-4 gap-y-3">
+              {navLinks.map((link) => (
+                <li key={link.path}>
+                  <Link
+                    to={link.path}
                     className={cn(
-                      "group size-fit relative flex items-center justify-center p-3 border-2 border-white/20 transition-colors duration-200 ",`${social.no}`
+                      "group relative inline-flex items-center text-sm text-neutral-400",
+                      "transition-colors duration-300 hover:text-amber-500",
                     )}
-                    // style={{ "--social-color": social.color  }}
                   >
-                    <span
-                      className="absolute inset-0 rounded-xl opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-20"
-                      style={{ backgroundColor: social.color }}
-                    />
-                    <HugeiconsIcon
-                      icon={social.icon}
-                      size={22}
-                      style={{ rotate: social.rotate }}
-                      className={cn(
-                        "relative z-10 text-neutral-400/80 transition-colors duration-200 group-hover:text-white",
-                      )}
-                    />
-                  </motion.a>
-                ))}
-              </div>
-            </div>
+                    <motion.span
+                      className="inline-block"
+                      whileHover={{ x: 4 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 25,
+                      }}
+                    >
+                      {link.label}
+                    </motion.span>
+                    <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-amber-500/70 transition-all duration-300 group-hover:w-full" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
+          {/* Social */}
+          <div className="w-fit flex flex-col justify-start items-center">
+            <h2 className="mb-5 w-full text-center text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
+              Connect
+            </h2>
+            <div className="flex flex-wrap justify-center max-w-42">
+              {socialLinks.map((social) => (
+                <motion.a
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.name}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.25,
+                    type: "bounce",
+                    ease: easeInOut,
+                  }}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={cn(
+                    "group size-fit relative flex items-center justify-center p-3 border-2 border-white/20 transition-colors duration-200 ",
+                    `${social.no}`,
+                  )}
+                  // style={{ "--social-color": social.color  }}
+                >
+                  <span
+                    className="absolute inset-0 rounded-xl opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-20"
+                    style={{ backgroundColor: social.color }}
+                  />
+                  <HugeiconsIcon
+                    icon={social.icon}
+                    size={22}
+                    style={{ rotate: social.rotate }}
+                    className={cn(
+                      "relative z-10 text-neutral-400/80 transition-colors duration-200 group-hover:text-white",
+                    )}
+                  />
+                </motion.a>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Bottom bar */}
@@ -223,7 +250,11 @@ export default function Footer() {
             Made with{" "}
             <motion.span
               animate={{ scale: [1, 1.15, 1] }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
               className="inline-block"
             >
               💜

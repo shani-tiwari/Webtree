@@ -36,29 +36,50 @@ export default function About() {
       {/* helmet - SEO */}
       <Helmet>
         <title>About Webtree | Developer Resources</title>
-        <meta name="description" content="Webtree help developers to find & save best development resources in one place."/>
+        <meta
+          name="description"
+          content="Webtree help developers to find & save best development resources in one place."
+        />
         <meta name="author" content="Shani Tiwari" />
         <meta name="robots" content="index, follow" />
         <meta name="theme-color" content="#030303" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@ShaniDevelops" />
-        <meta name="twitter:title" content="About Webtree - Collection of Web Development Resources"/>
-        <meta name="twitter:description" content="Webtree help developers to find & save best development resources in one place."/>
-        <meta name="twitter:image" content="https://webtree.shaniweb.com/og-image.png"/>
-        
+        <meta
+          name="twitter:title"
+          content="About Webtree - Collection of Web Development Resources"
+        />
+        <meta
+          name="twitter:description"
+          content="Webtree help developers to find & save best development resources in one place."
+        />
+        <meta
+          name="twitter:image"
+          content="https://webtree.shaniweb.com/og-image.png"
+        />
+
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="webtree" />
         <meta property="og:url" content="https://webtree.shaniweb.com/about" />
-        <meta property="og:title" content="Webtree - Collection of Web Development Resources"/>
-        <meta property="og:description" content="Webtree, the ultimate collection of web development resources. Discover tools, design ideas, and more."/>
-        <meta property="og:image" content="https://webtree.shaniweb.com/og-image.png"/>
+        <meta
+          property="og:title"
+          content="Webtree - Collection of Web Development Resources"
+        />
+        <meta
+          property="og:description"
+          content="Webtree, the ultimate collection of web development resources. Discover tools, design ideas, and more."
+        />
+        <meta
+          property="og:image"
+          content="https://webtree.shaniweb.com/og-image.png"
+        />
       </Helmet>
 
       {/* main section */}
       <section
         id="about"
         className={cn(
-          "w-full min-h-screen flex items-center justify-center flex-col bg-[#030303] px-4 relative selection:bg-amber-600-op30 selection:text-white overflow-hidden",
+          "w-full min-h-screen flex items-center justify-center flex-col bg-[#030303] px-4 relative selection:bg-amber-600/30 selection:text-white overflow-hidden",
         )}
       >
         {/* Enhanced Ambient Background Accents */}
