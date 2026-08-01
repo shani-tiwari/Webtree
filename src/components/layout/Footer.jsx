@@ -8,10 +8,10 @@ import {
   GithubIcon,
   InstagramIcon,
   Linkedin01Icon,
-  NewTwitterRectangleIcon,
-  Star,
+  NewTwitterRectangleIcon
 } from "@hugeicons/core-free-icons";
 import { cn } from "../../utils/utils.js";
+import MagneticButton from "../ui/MagneticButton.jsx";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -27,7 +27,7 @@ const socialLinks = [
     name: "LinkedIn",
     icon: Linkedin01Icon,
     url: "https://www.linkedin.com/in/shani-tiwarii/",
-    color: "#0A66C2",
+    // color: "#0A66C2",
     no: "first-icon",
     rotate: "45deg",
   },
@@ -35,7 +35,7 @@ const socialLinks = [
     name: "GitHub",
     icon: GithubIcon,
     url: "https://github.com/shani-tiwari",
-    color: "oklch(75.6% 0 0)",
+    // color: "oklch(75.6% 0 0)",
     no: "sec-icon",
     rotate: "-45deg",
   },
@@ -43,7 +43,7 @@ const socialLinks = [
     name: "Twitter",
     icon: NewTwitterRectangleIcon,
     url: "https://x.com/ShaniDevelops",
-    color: "oklch(78.7% 0.021 106.9)",
+    // color: "oklch(78.7% 0.021 106.9)",
     no: "third-icon",
     rotate: "45deg",
   },
@@ -58,7 +58,7 @@ const socialLinks = [
     name: "Instagram",
     icon: InstagramIcon,
     url: "https://Instagram.com/shani.develops",
-    color: "oklch(52.5% 0.223 3.958)",
+    // color: "oklch(52.5% 0.223 3.958)",
     no: "four-icon",
     rotate: "-45deg",
   },
@@ -111,31 +111,20 @@ export default function Footer() {
               </span>
             </Link>
             <p className="max-w-sm text-sm leading-7 text-neutral-400/90 sm-md:text-center">
-              The ultimate collection of 140+ web development resources.
+              The ultimate collection of 135+ web development resources.
               Discover tools, design ideas, and curated picks to build better on
               the web.
             </p>
             <div className="flex justify-start items-center gap-8 mt-6">
-              <span className="group w-fit group text-lg font-medium tracking-tighter  transition-colors duration-300 bg-amber-600/80 text-white/80 flex items-center gap-2 outline-2 outline-offset-1 outline-amber-600/80 py-1 px-4 rounded-lg hover:bg-amber-600/70 active:scale-98 text-shadow-lg">
+              <span className="group w-fit group text-lg font-medium tracking-tighter transition-colors duration-300 bg-amber-600/80 text-white/80 flex items-center gap-2 outline-2 outline-offset-1 outline-amber-600/80 py-1 px-4 rounded-lg hover:bg-amber-600/70 active:scale-98 text-shadow-lg">
                 <a
                   href="https://github.com/shani-tiwari/WebTree"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex gap-2 justify-center items-center "
                 >
-                  <HugeiconsIcon
-                    icon={Star}
-                    strokeWidth={3}
-                    size={16}
-                    className="-mt-0.5 group-hover:-rotate-25 transition-all duration-200 "
-                  />
-                  on
-                  <HugeiconsIcon
-                    icon={GithubIcon}
-                    strokeWidth={3}
-                    size={16}
-                    className="-mt-0.5 "
-                  />
+                  star on
+                  <MagneticButton icon={GithubIcon} size='20'/>
                 </a>
               </span>
               <span className="group w-fit group text-lg font-medium tracking-tighter  transition-colors duration-300 bg-amber-600/80 text-white/80 flex items-center gap-2 outline-2 outline-offset-1 outline-amber-600/80 py-1 px-4 rounded-lg hover:bg-amber-600/70 active:scale-98 text-shadow-lg">
@@ -145,12 +134,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="flex gap-2 justify-center items-center "
                 >
-                  <HugeiconsIcon
-                    icon={Coffee01Icon}
-                    strokeWidth={2}
-                    size={16}
-                    className="-mt-0.5 group-hover:-rotate-25 transition-all duration-200 "
-                  />
+                  <MagneticButton icon={Coffee01Icon} size='20'/>
                   Coffee?
                 </a>
               </span>
@@ -220,15 +204,19 @@ export default function Footer() {
                   )}
                 >
                   <span
-                    className="absolute inset-0 rounded-xl opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-20"
-                    style={{ backgroundColor: social.color }}
+                    className="absolute inset-0 rounded-xl bg-white/80 opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-20"
+                    
                   />
-                  <HugeiconsIcon
+                    <span style={{ rotate: social.rotate }} >
+                      <MagneticButton icon={social.icon}  />
+                    </span>
+                  {/* <HugeiconsIcon
                     icon={social.icon}
                     size={22}
-                    style={{ rotate: social.rotate }}
-                    className={cn("relative z-10 text-neutral-400/80 transition-colors duration-200 group-hover:text-white")}
-                  />
+                    className={cn(
+                      "relative z-10 text-neutral-400/80 transition-colors duration-200 group-hover:text-white",
+                    )}
+                  /> */}
                 </motion.a>
               ))}
             </div>

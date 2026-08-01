@@ -12,6 +12,7 @@ import {
 import { cn } from "../../../utils/utils.js";
 
 import { useReviewsData } from "../../../hooks/useReviewsData";
+import MagneticButton from "../../ui/MagneticButton.jsx";
 
 
 
@@ -63,8 +64,8 @@ export default function ReviewSection() {
               "text-white/80 hover:bg-zinc-800 hover:text-white hover:scale-103 hover:shadow-2xs shadow-white/50 transition-all duration-250 font-mono text-sm active:scale-97",
             )}
           >
-            View All
-            <HugeiconsIcon icon={Navigation03Icon} size={18} className="text-shadow-lg text-shadow-white group-hover:rotate-x-0 group-hover:rotate-y-0 lg:rotate-x-180 md:rotate-y-180  transition-transform duration-500 " />
+            View All <MagneticButton icon={Navigation03Icon} size='18' />
+            {/* <HugeiconsIcon icon={Navigation03Icon} size={18} className="text-shadow-lg text-shadow-white group-hover:rotate-x-0 group-hover:rotate-y-0 lg:rotate-x-180 md:rotate-y-180  transition-transform duration-500 " /> */}
           </Link>
 
           <button
@@ -74,12 +75,7 @@ export default function ReviewSection() {
               " hover:scale-103 transition-all duration-250 font-bold text-sm active:scale-95 shadow-2xs hover:shadow-amber-500/50",
             )}
           >
-            Add Review
-            <HugeiconsIcon 
-              icon={MessageAdd01Icon} 
-              size={20}
-              className="group-hover:scale-120 rotate-3 transition-transform duration-500 cursor-pointer"
-            />
+            Add Review <MagneticButton icon={MessageAdd01Icon} size='20' className='text-amber-500 ' />
           </button>
 
         </div>

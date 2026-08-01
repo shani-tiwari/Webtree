@@ -8,6 +8,7 @@ import { ReviewSection } from "../components/features/reviews";
 import { CardsGrid } from "../components/layout";
 import { useCollectionData } from "../hooks/useCollectionData";
 import { Rocket01Icon } from "@hugeicons/core-free-icons";
+import { Link } from "react-router";
 
 export default function Home() {
   const { data, loading } = useCollectionData();
@@ -21,7 +22,6 @@ export default function Home() {
   }
   return (
     <>
-
       <section
         id="home"
         className="w-full h-fit max-w-[1300px] flex flex-col gap-10 md:gap-10"
@@ -37,9 +37,7 @@ export default function Home() {
 
         {/* Header */}
         <Header />
-        {/* <h2 className="mx-auto text-white text-sm tracking-wide bg-white/10 py-2 px-4 rounded-xl">
-            Discover & Bookmark useful resources faster.
-          </h2> */}
+    
 
         {/* categories & cards */}
         <motion.section
@@ -65,7 +63,7 @@ export default function Home() {
           >
             <AnimatePresence mode="popLayout">
               {Object.keys(data)
-                .slice(0, 8)
+                .slice(0, 7)
                 .map((name, index) => (
                   <Categories
                     key={name}
@@ -76,16 +74,6 @@ export default function Home() {
                   />
                 ))}
             </AnimatePresence>
-            {/* <motion.button
-                transition={{ duration: 0, ease: "easeInOut" }}
-                className={cn(
-                  "relative w-fit text-[14px] font-semibold group border-2 border-amber-500/30 py-0.75 px-3 md:py-2 md:px-4 mb-2 rounded-xl",
-                  "cursor-pointer transition-all duration-50 ease-out select-none shadow-xs shadow-white/8 hover:shadow-[0_0_30px_rgba(255,190,0,0.8)]",
-                  "bg-amber-500/15 hover:bg-amber-800/40 text-amber-200 tracking-wide hover:scale-103 active:scale-98 transition-transform duration-500",
-                )}
-              >
-                more...
-              </motion.button> */}
           </motion.aside>
 
           {/* divider - SVG */}
@@ -104,13 +92,22 @@ export default function Home() {
             show={"less"}
           />
 
+          {/* <div>
+            <h2 className="mx-auto text-amber-600/80 text-sm tracking-wide bg-amber-500/20 py-1.5 px-6 rounded-xl">
+              Find & save development resources faster.
+            </h2>
+          </div> */}
           <div className="w-full flex flex-col gap-2  mt-4">
             {/* explore page button */}
-            <MagneticButton
-              text="Explore All Resources"
+            <Link
               to={`${(activeCategory && "explore/" + activeCategory) || "/explore"}`}
-              icon={Rocket01Icon}
-            />
+              className={cn(
+                "group select-none w-fit mx-auto mt-0 flex gap-2 text-white font-medium px-6 py-2 border-2 border-amber-500/70  bg-linear-to-t from-amber-600 to-amber-800 rounded-xl",
+                "shadow-sm shadow-amber-500/50 text-shadow-lg text-shadow-black/20 hover:shadow-[0_0_20px_rgba(255,190,0,0.2)] hover:scale-102 active:scale-98 transition-all duration-300",
+              )}>
+                Explore All Resources
+                <MagneticButton icon={Rocket01Icon}/>
+            </Link>
           </div>
         </motion.section>
 
@@ -125,8 +122,8 @@ function Header() {
   return (
     <>
       <motion.h1
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
         className={cn(
           "w-full text-white/80 text-center px-4 md:px-6 pt-20 md:pt-28",
@@ -134,22 +131,16 @@ function Header() {
       >
         <div
           className={cn(
-            " text-xl md:text-[32px] flex flex-col items-center gap-2 lg:flex-row md:gap-3 mx-auto w-fit selection:bg-amber-600/30 selection:text-white",
+            " text-xl md:text-[29px] px-2 flex flex-col items-center gap-2 lg:flex-row md:gap-3 mx-auto w-fit selection:bg-amber-600/30 selection:text-white",
           )}
         >
-          <motion.div
-            initial={{ scale: 0.9 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
             <h1
               className={cn(
-                "wavy-underline-pulse tracking-[-0.03em] w-fit bg-clip-text text-transparent bg-linear-to-b from-amber-300 to-amber-700 text-shadow-lg text-shadow-amber-700/20 hover:tracking-tighter transition-all duration-500",
+                "wavy-underline-pulse font-serif tracking-[-0.01em] w-fit bg-clip-text text-transparent bg-linear-to-b from-amber-300 to-amber-700 text-shadow-lg text-shadow-amber-700/20 hover:tracking-tight transition-all duration-500",
               )}
             >
-              140+ <span className="font-serif">Developer Resources</span>
+              Find & Save, <span className="font-mono">135+</span> Development Resources faster.
             </h1>
-          </motion.div>
         </div>
       </motion.h1>
     </>

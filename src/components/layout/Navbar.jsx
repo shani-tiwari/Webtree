@@ -1,31 +1,22 @@
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
   CancelCircleIcon,
-  // Coffee01Icon,
-  // DribbbleIcon,
-  // GithubIcon,
-  // InstagramIcon,
-  // Linkedin01Icon,
-  // Mail01Icon,
-  // NewTwitterRectangleIcon,
-  FolderCheckIcon,
   SquareArrowLeft02Icon,
   FolderFavouriteIcon,
   Agreement03Icon,
   Menu02Icon,
   Home11Icon,
-  // Tree02Icon,
-  // Link02FreeIcons,
   SearchList02Icon,
   AllBookmarkIcon,
 } from "@hugeicons/core-free-icons";
 import React, { useState, useEffect } from "react";
 // eslint-disable-next-line no-unused-vars
-import { motion, AnimatePresence, easeIn } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { useCollection } from "../../context/CollectionContext";
 import { Link, useLocation } from "react-router";
 import { cn } from "../../utils/utils.js";
 import "../../index.css";
+import MagneticButton from "../ui/MagneticButton.jsx";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -137,6 +128,7 @@ const Navbar = () => {
           {[
             { label: "Explore", path: "/explore/tools" },
             { label: "Reviews", path: "/reviews" },
+            { label: "Github", path: "https://github.com/shani-tiwari/webtree" },
           ].map((item) => {
             const isActive = active === item.label.toLowerCase();
             return (
@@ -147,7 +139,7 @@ const Navbar = () => {
                   "navItem ",
                   isActive
                     ? "text-amber-500 wavy-underline-pulse"
-                    : "text-neutral-400 hover:text-neutral-300",
+                    : "text-neutral-300/80 hover:text-neutral-300",
                 )}
               >
                 {item.label}
@@ -168,17 +160,15 @@ const Navbar = () => {
             onClick={scrollTop}
           >
             {location.pathname === "/collection" ? (
-              <p
-                className={cn(
+              <p className={cn(
                   "text-amber-600 font-mono text-xl hidden md:block selection:bg-amber-600/30 selection:text-white ",
                 )}
               >
                 Home
               </p>
             ) : (
-              <p
-                className={cn(
-                  "text-neutral-400 font-mono mr-1 tracking-tighter transition-all duration-250 hover:text-neutral-300/90",
+              <p className={cn(
+                  "text-neutral-300/80 font-mono mr-1 tracking-tighter transition-all duration-250 hover:text-neutral-300/",
                   "text-lg md:text-[20px] hidden md:block selection:bg-amber-600/30 selection:text-white",
                 )}
               >
@@ -186,19 +176,10 @@ const Navbar = () => {
               </p>
             )}
             {isCollectionPage ? (
-              <HugeiconsIcon
-                icon={SquareArrowLeft02Icon}
-                size={19}
-                style={{ color: "oklch(66.6% 0.179 58.318)" }}
-                className="hidden md:flex mt-1"
-              />
+              <MagneticButton icon={SquareArrowLeft02Icon} size='20' className='hidden md:flex text-amber-600' />
             ) : (
               <div className="relative hidden md:flex">
-                <HugeiconsIcon
-                  icon={AllBookmarkIcon}
-                  size={19}
-                  className="text-amber-500 "
-                />
+                <MagneticButton icon={AllBookmarkIcon} size='20' className='text-amber-500' />
                 {collection.length > 0 && (
                   <span className="absolute text-xs -right-1.5 -top-1.5 font-mono text-amber-500/80 selection:bg-zinc-600/30 selection:text-white">
                     {collection.length}

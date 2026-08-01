@@ -1,5 +1,72 @@
 {
+  "my_picks*": [
+    {
+      "id": 4,
+      "name": "Pattern Generator",
+      "link": "https://www.heropatterns.com/",
+      "desc": "SVG/CSS background patterns with customizable colors and opacity.",
+      "category": "featured",
+      "logo": "https://img.logo.dev/heropatterns.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 3,
+      "name": "Awwwards",
+      "desc": "Awards for exceptional web design, inspiration, and development resources.",
+      "link": "https://www.awwwards.com",
+      "category": "featured",
+      "logo": "https://img.logo.dev/awwwards.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 2,
+      "name": "Tailwind Color Pallete",
+      "desc": "Generate Tailwind CSS compatible color palettes with shades and previews.",
+      "link": "https://tailwindcss.com/docs/customizing-colors",
+      "category": "featured",
+      "logo": "https://img.logo.dev/tailwindcss.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 1,
+      "name": "Haikei",
+      "desc": "Free generative SVG background shapes for web design.",
+      "link": "https://app.haikei.app/",
+      "category": "featured",
+      "new": true,
+      "logo": "https://img.logo.dev/app.haikei.app?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 0,
+      "name": "Unsplash",
+      "desc": "High-resolution photos from a global community, free under Unsplash license.",
+      "link": "https://unsplash.com",
+      "category": "featured",
+      "logo": "https://img.logo.dev/unsplash.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    }
+  ],
   "tools": [
+    {
+      "id": 20,
+      "name": "useHooks",
+      "link": "https://usehooks.com/",
+      "desc": "A collection of modern, server-safe React hooks from the ui.dev team.",
+      "category": "tools",
+      "logo": "https://img.logo.dev/usehooks.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+        {
+      "id": 12,
+      "name": "Pattern Generator",
+      "link": "https://www.heropatterns.com/",
+      "desc": "SVG/CSS background patterns with customizable colors and opacity.",
+      "category": "tools",
+      "logo": "https://img.logo.dev/heropatterns.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 13,
+      "name": "SVGOMG",
+      "link": "https://jakearchibald.github.io/svgomg",
+      "desc": "Optimize SVGs up to 70% smaller. Essential for icons/logos in production frontend apps.",
+      "category": "tools",
+      "logo": "https://img.logo.dev/jakearchibald.github.io?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
     {
       "id": 22,
       "name": "StudentKit",
@@ -40,14 +107,6 @@
       "desc": "Build linear/radial/conic gradients with angle/color stops and Tailwind exports.",
       "category": "tools",
       "logo": "https://img.logo.dev/cssgradient.io?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 5,
-      "name": "Flexbox Froggy",
-      "link": "https://flexboxfroggy.com/",
-      "desc": "Game-based Flexbox learning with code challenges (great for CSS layout practice).",
-      "category": "tools",
-      "logo": "https://img.logo.dev/flexboxfroggy.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
       "id": 51,
@@ -108,30 +167,6 @@
       "logo": "https://img.logo.dev/fontjoy.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
-      "id": 11,
-      "name": "Loading.io",
-      "link": "https://loading.io/",
-      "desc": "CSS/SVG spinners, loaders, and animated placeholders generator.",
-      "category": "tools",
-      "logo": "https://img.logo.dev/loading.io?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 12,
-      "name": "Pattern Generator",
-      "link": "https://www.heropatterns.com/",
-      "desc": "SVG/CSS background patterns with customizable colors and opacity.",
-      "category": "tools",
-      "logo": "https://img.logo.dev/heropatterns.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 13,
-      "name": "SVGOMG",
-      "link": "https://jakearchibald.github.io/svgomg",
-      "desc": "Optimize SVGs up to 70% smaller. Essential for icons/logos in production frontend apps.",
-      "category": "tools",
-      "logo": "https://img.logo.dev/jakearchibald.github.io?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
       "id": 14,
       "name": "JSON Formatter",
       "link": "https://jsonformatter.curiousconcept.com",
@@ -146,14 +181,6 @@
       "desc": "Encode/decode images/CSS/icons to base64. Embed assets directly in CSS for tiny performance gains.",
       "category": "tools",
       "logo": "https://img.logo.dev/base64.guru?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 16,
-      "name": "Haunted House",
-      "link": "https://electricinterface.be/haunted-house",
-      "desc": "Interactive cursor trail generator. Canvas-based mouse followers for premium micro-interactions.",
-      "category": "tools",
-      "logo": "https://img.logo.dev/electricinterface.be?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
       "id": 17,
@@ -178,14 +205,6 @@
       "desc": "Intelligent PNG/JPEG compression that preserves visual quality. API available for automation in builds.",
       "category": "tools",
       "logo": "https://img.logo.dev/tinypng.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 20,
-      "name": "useHooks",
-      "link": "https://usehooks.com/",
-      "desc": "A collection of modern, server-safe React hooks from the ui.dev team.",
-      "category": "tools",
-      "logo": "https://img.logo.dev/usehooks.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
   "ui_library": [
@@ -229,6 +248,14 @@
       "category": "ui_components",
       "new": true,
       "logo": "https://img.logo.dev/stacksorted.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 11,
+      "name": "Loading.io",
+      "link": "https://loading.io/",
+      "desc": "CSS/SVG spinners, loaders, and animated placeholders generator.",
+      "category": "ui_components",
+      "logo": "https://img.logo.dev/loading.io?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
       "id": 6,
@@ -448,6 +475,15 @@
   "images": [
     {
       "id": 1,
+      "name": "Picjumbo",
+      "desc": "Free high-res images, backgrounds, and photos for personal/commercial use.",
+      "link": "https://picjumbo.com",
+      "category": "images",
+      "new": true,
+      "logo": "https://img.logo.dev/picjumbo.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 2,
       "name": "Unsplash",
       "desc": "High-resolution photos from a global community, free under Unsplash license.",
       "link": "https://unsplash.com",
@@ -455,7 +491,7 @@
       "logo": "https://img.logo.dev/unsplash.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
-      "id": 2,
+      "id": 3,
       "name": "Pexels",
       "desc": "Curated free stock photos and videos, CC0 licensed for commercial use.",
       "link": "https://www.pexels.com",
@@ -463,7 +499,7 @@
       "logo": "https://img.logo.dev/pexels.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
-      "id": 3,
+      "id": 4,
       "name": "Pixabay",
       "desc": "Millions of free images, illustrations, vectors, and videos under Pixabay license.",
       "link": "https://pixabay.com",
@@ -471,7 +507,7 @@
       "logo": "https://img.logo.dev/pixabay.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
-      "id": 4,
+      "id": 5,
       "name": "Pinterest",
       "desc": "Visual discovery engine for images, ideas, and inspiration across categories.",
       "link": "https://www.pinterest.com",
@@ -479,7 +515,7 @@
       "logo": "https://img.logo.dev/pinterest.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
-      "id": 5,
+      "id": 6,
       "name": "Freepik",
       "desc": "Find free images that speak to you.",
       "link": "https://www.freepik.com/images#from_element=mainmenu",
@@ -487,86 +523,20 @@
       "logo": "https://img.logo.dev/freepik.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
-      "id": 6,
+      "id": 7,
       "name": "Rawpixel",
       "desc": "rawpixel makes it easy to find beautiful visuals and create incredible designs.",
       "link": "https://www.rawpixel.com/search?page=1&path=1522&sort=curated",
       "category": "images",
       "logo": "https://img.logo.dev/rawpixel.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    }
-  ],
-  "videos": [
-    {
-      "id": 1,
-      "name": "Mixkit",
-      "desc": "Curated HD/4K stock videos for commercial use. No attribution or watermark required.",
-      "link": "https://mixkit.co/free-stock-video/",
-      "category": "videos",
-      "logo": "https://img.logo.dev/mixkit.co?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 2,
-      "name": "Pexels Videos",
-      "desc": "Thousands of free HD/4K clips under CC0 license. Perfect for hero backgrounds and transitions.",
-      "link": "https://www.pexels.com/videos/",
-      "category": "videos",
-      "logo": "https://img.logo.dev/pexels.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 3,
-      "name": "Coverr",
-      "desc": "Beautiful cinematic footage for websites. No sign-up, no attribution, commercial-friendly.",
-      "link": "https://coverr.co",
-      "category": "videos",
-      "logo": "https://img.logo.dev/coverr.co?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 4,
-      "name": "Videvo",
-      "desc": "8K+ free clips with premium options. Great for tech demos, motion graphics, and loops.",
-      "link": "https://www.videvo.net",
-      "category": "videos",
-      "logo": "https://img.logo.dev/videvo.net?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 5,
-      "name": "Pixabay Videos",
-      "desc": "1M+ royalty-free videos. Aerial, nature, business clips optimized for web embedding.",
-      "link": "https://pixabay.com/videos/",
-      "category": "videos",
-      "logo": "https://img.logo.dev/pixabay.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 6,
-      "name": "Videezy",
-      "desc": "Pro quality 4K/HD footage. Free tier with attribution; ideal for parallax backgrounds.",
-      "link": "https://www.videezy.com",
-      "category": "videos",
-      "logo": "https://img.logo.dev/videezy.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
       "id": 8,
       "name": "Free Nature Stock",
       "desc": "Stunning nature/landscape footage. CC0 licensed for unlimited commercial projects.",
       "link": "https://freenaturestock.com",
-      "category": "videos",
+      "category": "images",
       "logo": "https://img.logo.dev/freenaturestock.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 9,
-      "name": "Motion Elements",
-      "desc": "5 free downloads/week. High-res motion graphics and backgrounds for web.",
-      "link": "https://www.motionelements.com/free/stock-footage",
-      "category": "videos",
-      "logo": "https://img.logo.dev/motionelements.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 10,
-      "name": "Dareful",
-      "desc": "Curated 4K clips for creative projects. Simple licensing, no attribution needed.",
-      "link": "https://dareful.com",
-      "category": "videos",
-      "logo": "https://img.logo.dev/dareful.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
   "icons": [
@@ -633,6 +603,72 @@
       "desc": "Hugeicons is a free icon library with over 100,000 icons in various styles.",
       "category": "svg_icons",
       "logo": "https://img.logo.dev/hugeicons.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    }
+  ],
+  "videos": [
+    {
+      "id": 1,
+      "name": "Mixkit",
+      "desc": "Curated HD/4K stock videos for commercial use. No attribution or watermark required.",
+      "link": "https://mixkit.co/free-stock-video/",
+      "category": "videos",
+      "logo": "https://img.logo.dev/mixkit.co?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 2,
+      "name": "Pexels Videos",
+      "desc": "Thousands of free HD/4K clips under CC0 license. Perfect for hero backgrounds and transitions.",
+      "link": "https://www.pexels.com/videos/",
+      "category": "videos",
+      "logo": "https://img.logo.dev/pexels.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 3,
+      "name": "Coverr",
+      "desc": "Beautiful cinematic footage for websites. No sign-up, no attribution, commercial-friendly.",
+      "link": "https://coverr.co",
+      "category": "videos",
+      "logo": "https://img.logo.dev/coverr.co?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 4,
+      "name": "Videvo",
+      "desc": "8K+ free clips with premium options. Great for tech demos, motion graphics, and loops.",
+      "link": "https://www.videvo.net",
+      "category": "videos",
+      "logo": "https://img.logo.dev/videvo.net?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 5,
+      "name": "Pixabay Videos",
+      "desc": "1M+ royalty-free videos. Aerial, nature, business clips optimized for web embedding.",
+      "link": "https://pixabay.com/videos/",
+      "category": "videos",
+      "logo": "https://img.logo.dev/pixabay.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 6,
+      "name": "Videezy",
+      "desc": "Pro quality 4K/HD footage. Free tier with attribution; ideal for parallax backgrounds.",
+      "link": "https://www.videezy.com",
+      "category": "videos",
+      "logo": "https://img.logo.dev/videezy.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 9,
+      "name": "Motion Elements",
+      "desc": "5 free downloads/week. High-res motion graphics and backgrounds for web.",
+      "link": "https://www.motionelements.com/free/stock-footage",
+      "category": "videos",
+      "logo": "https://img.logo.dev/motionelements.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 10,
+      "name": "Dareful",
+      "desc": "Curated 4K clips for creative projects. Simple licensing, no attribution needed.",
+      "link": "https://dareful.com",
+      "category": "videos",
+      "logo": "https://img.logo.dev/dareful.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
   "colors": [
@@ -777,45 +813,21 @@
   ],
   "background": [
     {
-      "id": 5,
+      "id": 1,
+      "name": "Pattern Generator",
+      "link": "https://www.heropatterns.com/",
+      "desc": "SVG/CSS background patterns with customizable colors and opacity.",
+      "category": "backgrounds",
+      "logo": "https://img.logo.dev/heropatterns.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 2,
       "name": "Haikei",
       "desc": "Free generative SVG background shapes for web design.",
       "link": "https://app.haikei.app/",
       "category": "backgrounds",
       "new": true,
       "logo": "https://img.logo.dev/app.haikei.app?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 1,
-      "name": "Picjumbo",
-      "desc": "Free high-res images, backgrounds, and photos for personal/commercial use.",
-      "link": "https://picjumbo.com",
-      "category": "backgrounds",
-      "logo": "https://img.logo.dev/picjumbo.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 2,
-      "name": "Unsplash",
-      "desc": "Excellent source for abstract and textured backgrounds.",
-      "link": "https://unsplash.com",
-      "category": "backgrounds",
-      "logo": "https://img.logo.dev/unsplash.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 3,
-      "name": "Pexels",
-      "desc": "Variety of backgrounds including gradients and patterns.",
-      "link": "https://www.pexels.com",
-      "category": "backgrounds",
-      "logo": "https://img.logo.dev/pexels.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 4,
-      "name": "Rawpixel",
-      "desc": "rawpixel makes it easy to find beautiful visuals and create incredible designs..",
-      "link": "https://www.rawpixel.com/wallpapers?page=1&path=1636&sort=curated",
-      "category": "backgrounds",
-      "logo": "https://img.logo.dev/rawpixel.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
   "animation": [
@@ -827,23 +839,6 @@
       "category": "animations",
       "logo": "https://img.logo.dev/animations.dev?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true",
       "new": true
-    },
-    {
-      "id": 12,
-      "name": "Interface Craft",
-      "desc": "Cross-browser CSS animation library with ready-to-use effects.",
-      "link": "https://interfacecraft.dev",
-      "category": "animations",
-      "logo": "https://img.logo.dev/interfacecraft.dev?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true",
-      "new": true
-    },
-    {
-      "id": 1,
-      "name": "Animate.css",
-      "desc": "Cross-browser CSS animation library with ready-to-use effects.",
-      "link": "https://animate.style",
-      "category": "animations",
-      "logo": "https://img.logo.dev/animate.style?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
       "id": 2,

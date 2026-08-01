@@ -23,13 +23,6 @@
   }
 }
 
-@font-face {
-  font-family: "bebas-neue";
-  src: url("./assets/fonts/BebasNeue/BebasNeue.ttf");
-  font-weight: normal;
-  font-style: normal;
-}
-
 @layer utilities {
   .scrollbar-hide::-webkit-scrollbar {
     display: none;

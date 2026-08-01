@@ -13,6 +13,7 @@ import { useCollection } from "../../../context/CollectionContext";
 import { useState, memo } from "react";
 import { Link } from "react-router";
 import { cn } from "../../../utils/utils.js";
+import MagneticButton from "../../ui/MagneticButton.jsx";
 
 // Memoized Card Component
 const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, ...props }) => {
@@ -103,27 +104,27 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
           {/* Action Icons Section */}
           <div
             className={cn(
-              "absolute top-8 right-6 flex items-center z-40 ",
+              "absolute top-9 right-6.75 flex items-center z-40",
             )}
           >
             {!allowRemove && (
               <motion.span
-                whileHover={{ y: -1, scale: 1.03, x: 1 }}
+                whileHover={{ scale: 1.0 }}
                 whileTap={{ scale: 0.97 }}
                 transition={{ duration: 0.2, ease: [0.79, 0.47, 0.24, 0.98] }}
                 onClick={handleAddKey}
                 className={cn(
-                  "group/icon add-shape absolute -top-4 right-3.25 flex items-center justify-center z-30",
-                  "p-1.5 bg-white/2 border-2 border-white/15 cursor-pointer outline-2 outline-offset-1 outline-white/30",
+                  "group/icon add-shape absolute -top-4 right-3.5 flex items-center justify-center z-30",
+                  "p-1.25 bg-white/2 border-2 border-white/15 cursor-pointer outline-2 outline-offset-1 outline-white/30",
                   isCollected
                     ? "text-emerald-600 hover:text-emerald-500 "
                     : "text-amber-300/80 group-hover:text-amber-400/80",
                 )}
               >
                 {isCollected ? (
-                  <HugeiconsIcon className="active:scale-95" icon={BookmarkCheck02Icon} size={21} />
+                  <MagneticButton  className="active:scale-95" icon={BookmarkCheck02Icon} size={20}/>
                 ) : (
-                  <HugeiconsIcon className="active:scale-95" icon={BookmarkAdd02Icon} size={21} />
+                  <MagneticButton className="active:scale-95" icon={BookmarkAdd02Icon} size={20} />
                 )}
 
                 {/* <span
@@ -138,44 +139,44 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
             )}
             {allowRemove && (
               <motion.span
-                whileHover={{ scale: 1.03, y: -1, x: 1 }}
+                whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 transition={{ duration: 0.1 }}
                 onClick={handleRemoveKey}
                 className={cn(
-                  "group/delete delete-shape absolute right-3.5 -top-3 flex items-center justify-center text-red-600/90 hover:text-red-500/80 p-1.5 rounded-xl border-2 border-white/20 z-30 cursor-pointer",
+                  "group/delete delete-shape absolute right-3.5 -top-3 flex items-center justify-center text-red-600/90 hover:text-red-500/80 p-1.25 rounded-xl border-2 border-white/20 z-30 cursor-pointer",
                 )}
               >
-                <HugeiconsIcon icon={BookmarkOff02Icon} size={21} className="active:scale-95"/>
+                <MagneticButton icon={BookmarkOff02Icon} size={20} className="active:scale-95"/>
               </motion.span>
             )}
 
             {/* Copy Link Button */}
             <motion.span
-              whileHover={{ scale: 1.03, y: -1, x: -1 }}
+              whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.1 }}
               onClick={handleCopy}
               className={cn(
                 "group/copy copy-shape absolute right-13 -top-4 flex items-center justify-center z-30 outline-2 outline-offset-1 outline-white/30",
-                "text-sky-300/80 group-hover:text-sky-500/90 p-1.5 bg-white/2 border-2 border-white/15 cursor-pointer",
+                "text-sky-300/80 group-hover:text-sky-500/90 p-1.25 bg-white/2 border-2 border-white/15 cursor-pointer",
               )}
             >
-              <HugeiconsIcon icon={Copy02Icon} size={21} className="active:scale-95" />
+              <MagneticButton icon={Copy02Icon} size={20} className="active:scale-95" />
             </motion.span>
 
             {/* Share Button */}
             <motion.span
-              whileHover={{ scale: 1.03, y: 1, x: 1 }}
+              whileHover={{ scale: 1.03}}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.1 }}
               onClick={handleShare}
               className={cn(
-                "group/share share-shape absolute top-6 right-3.25 flex items-center justify-center z-30 outline-2 outline-offset-1 outline-white/30",
-                "text-indigo-500 group-hover:text-indigo-600 p-1.5 bg-white/2 border-2 border-white/15 cursor-pointer",
+                "group/share share-shape absolute top-5.5 right-3.5 flex items-center justify-center z-30 outline-2 outline-offset-1 outline-white/30",
+                "text-indigo-500 group-hover:text-indigo-600 p-1.25 bg-white/2 border-2 border-white/15 cursor-pointer",
               )}
             >
-              <HugeiconsIcon icon={SentIcon} size={21} className="-translate-x-px translate-y-px active:scale-95" />
+              <MagneticButton icon={SentIcon} size={20} className="-translate-x-px translate-y-px active:scale-95" />
             </motion.span>
 
             {/* preview Button */}
@@ -183,15 +184,15 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.03, y: 1, x: -1 }}
+              whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.1 }}
               className={cn(
-                "group/preview preview-shape absolute top-6 right-13 flex items-center justify-center z-30 outline-2 outline-offset-1 outline-white/30",
-                "text-purple-700 group-hover:text-purple-500/80 p-1.5 bg-white/2 border-2 border-white/15 cursor-pointer",
+                "group/preview preview-shape absolute top-5.5 right-13 flex items-center justify-center z-30 outline-2 outline-offset-1 outline-white/30",
+                "text-purple-700 group-hover:text-purple-500/80 p-1.25 bg-white/2 border-2 border-white/15 cursor-pointer",
               )}
             >
-              <HugeiconsIcon icon={ViewIcon} size={21} className="-translate-x-px translate-y-px active:scale-95" />
+              <MagneticButton icon={ViewIcon} size={20} className="-translate-x-px translate-y-px active:scale-95" />
             </motion.a>
           </div>
 
@@ -242,7 +243,7 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
           </div>
 
           {/* divider */}
-          <span className="w-[95%] h-px bg-white/30 my-2"></span>
+          <span className="w-[95%] h-px bg-white/30 my-1"></span>
 
           {/*  Description */}
           <Link to={link} target="_blank" rel="noopener noreferrer" alt={desc.split(' ').slice(0,20).join(' ')} className="pl-0.5">
