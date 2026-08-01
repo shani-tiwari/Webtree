@@ -76,7 +76,7 @@ export default function Explore() {
         <motion.section
           transition={{ duration: 0.5, ease: "easeInOut" }}
           className={cn(
-            "select-none w-full flex flex-col gap-4 md:gap-8 px-1 md:px-14",
+            "select-none w-full flex flex-col gap-4 md:gap-8 md:px-14",
           )}
         >
           {/* categories */}
@@ -90,7 +90,7 @@ export default function Explore() {
             }}
             aria-label="Category selection"
             className={cn(
-              "z-40 gap-1 md:gap-2 w-full h-fit md:px-2 md:py-3  md:pt-4 mb-8 max-w-4xl mx-auto shrink-0",
+              "z-40 gap-1 md:gap-2 w-full h-fit md:px-2 md:py-3 md:pt-4 mb-8 max-w-4xl mx-auto shrink-0",
               "flex flex-wrap justify-center rounded-xl text-white backdrop-blur-sm",
             )}
           >

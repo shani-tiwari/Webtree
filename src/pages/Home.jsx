@@ -125,18 +125,17 @@ function Header() {
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
-        className={cn(
-          "w-full text-white/80 text-center px-4 md:px-6 pt-20 md:pt-28",
-        )}
+        className={cn("w-full text-white/80 text-center px-6 pt-20 md:pt-28")}
       >
         <div
           className={cn(
-            " text-xl md:text-[29px] px-2 flex flex-col items-center gap-2 lg:flex-row md:gap-3 mx-auto w-fit selection:bg-amber-600/30 selection:text-white",
+            "text-xl md:text-[29px] flex flex-col items-center gap-2 lg:flex-row md:gap-3 mx-auto w-fit selection:bg-amber-600/30 selection:text-white",
           )}
         >
             <h1
               className={cn(
-                "wavy-underline-pulse font-serif tracking-[-0.01em] w-fit bg-clip-text text-transparent bg-linear-to-b from-amber-300 to-amber-700 text-shadow-lg text-shadow-amber-700/20 hover:tracking-tight transition-all duration-500",
+                "wavy-underline-pulse max-w-68 md:max-w-fit font-serif tracking-[-0.01em] bg-clip-text text-transparent bg-linear-to-b from-amber-300 to-amber-700",
+                "text-shadow-lg text-shadow-amber-700/20 hover:tracking-tight transition-all duration-500",
               )}
             >
               Find & Save, <span className="font-mono">135+</span> Development Resources faster.

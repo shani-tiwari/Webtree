@@ -77,8 +77,6 @@ const SkeletonHome = () => {
                       )}
                     >
                       <Skeleton width={28} height={28} borderRadius={8} />
-                      <Skeleton width={28} height={28} borderRadius={8} />
-                      <Skeleton width={28} height={28} borderRadius={8} />
                     </div>
 
                     {/* logo */}
@@ -102,7 +100,6 @@ const SkeletonHome = () => {
                     <div className="ml-1 mt-2 grow flex flex-col gap-2">
                       <Skeleton width="100%" height={14} borderRadius={4} />
                       <Skeleton width="85%" height={14} borderRadius={4} />
-                      <Skeleton width="40%" height={14} borderRadius={4} />
                     </div>
                   </article>
                 </div>

@@ -1121,7 +1121,7 @@
       "logo": "https://img.logo.dev/themoviedb.org?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
-  "deployment": [
+  "deploy": [
     {
       "id": 1,
       "name": "Vercel",

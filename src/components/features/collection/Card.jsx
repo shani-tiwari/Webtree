@@ -144,7 +144,7 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
                 transition={{ duration: 0.1 }}
                 onClick={handleRemoveKey}
                 className={cn(
-                  "group/delete delete-shape absolute right-3.5 -top-3 flex items-center justify-center text-red-600/90 hover:text-red-500/80 p-1.25 rounded-xl border-2 border-white/20 z-30 cursor-pointer",
+                  "group/delete delete-shape absolute right-3.5 -top-3 flex items-center justify-center text-red-600/90 hover:text-red-500/80 p-1.25 rounded-xl border-2 border-white/20 outline-2 outline-offset-1 outline-white/30 z-30 cursor-pointer",
                 )}
               >
                 <MagneticButton icon={BookmarkOff02Icon} size={20} className="active:scale-95"/>
