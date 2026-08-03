@@ -14,7 +14,6 @@ const Categories = React.memo(
         layout
         initial={{ opacity: 0, y: -8, scale: 0.8 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
-        exit={{ opacity: 0, scale: 0.80, y: -8, transition: { duration: 0.3, delay: 0, ease: "easeInOut" } }}
         whileHover={{ y: -4, transition: { duration: 0.2, ease: "easeOut" } }}
         whileTap={{ scale: 0.97, transition: { duration: 0.03, delay: 0 } }}
         transition={{
@@ -27,7 +26,7 @@ const Categories = React.memo(
         aria-pressed={isActive}
         aria-label={`Select ${name.split("_").join(" ")} category`}
         className={cn(
-          "relative w-fit h-fit group border-2 border-white/40 py-0.75 px-2 md:py-1.5 md:px-5.5 mb-2 rounded-lg md:rounded-xl",
+          "relative w-fit h-fit group outline-2 outline-white/40 md:border-2 border-white/40 py-0.75 px-2.5 md:py-1.5 md:px-5.5 mb-2 rounded-lg md:rounded-xl",
           "backdrop-blur-md cursor-pointer select-none",
           isActive
             ? "bg-linear-to-b from-amber-800/50 to-amber-950/50 outline-2 outline-amber-900/80 border-amber-700/60"

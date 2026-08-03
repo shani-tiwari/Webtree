@@ -4,13 +4,13 @@ import tailwindcss from "@tailwindcss/vite";
 import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig({
-  // server: {
-  //   host: "0.0.0.0", // Public access
-  //   port: 5173,
-  //   strictPort: true,
-  //   tunnel: false, // No tunnel
-  //   open: false, // No auto-open
-  // },
+  server: {
+    host: "0.0.0.0", // Public access
+    port: 5173,
+    strictPort: true,
+    tunnel: false, // No tunnel
+    open: false, // No auto-open
+  },
   plugins: [
     react(),
     tailwindcss(),

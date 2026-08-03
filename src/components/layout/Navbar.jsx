@@ -113,7 +113,7 @@ const Navbar = () => {
             onClick={scrollTop}
           >
             <p className="text-amber-500 text-[22px] md:text-[26px]">४</p>
-            <h1 className="text-[20px] md:text-[24px] tracking-tighter">
+            <h1 className="text-[20px] md:text-[24px] text-neutral-300/70 hover:text-neutral-300 tracking-tighter">
               Webtree
             </h1>
           </Link>

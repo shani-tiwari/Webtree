@@ -811,7 +811,7 @@
       "logo": "https://img.logo.dev/mixamo.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
-  "background": [
+  "bg": [
     {
       "id": 1,
       "name": "Pattern Generator",

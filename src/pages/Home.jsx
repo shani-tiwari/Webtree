@@ -129,16 +129,16 @@ function Header() {
       >
         <div
           className={cn(
-            "text-xl md:text-[29px] flex flex-col items-center gap-2 lg:flex-row md:gap-3 mx-auto w-fit selection:bg-amber-600/30 selection:text-white",
+            "text-xl md:text-[28px] mx-auto w-full selection:bg-amber-600/30 selection:text-white",
           )}
         >
             <h1
               className={cn(
-                "wavy-underline-pulse max-w-68 md:max-w-fit font-serif tracking-[-0.01em] bg-clip-text text-transparent bg-linear-to-b from-amber-300 to-amber-700",
+                "wavy-underline-pulse max-w-67.5 w-fit md:max-w-fit font-serif tracking-[-0.02em]  bg-clip-text text-transparent bg-linear-to-b from-amber-300 to-amber-700",
                 "text-shadow-lg text-shadow-amber-700/20 hover:tracking-tight transition-all duration-500",
               )}
             >
-              Find & Save, <span className="font-mono">135+</span> Development Resources faster.
+              Find <span className="inline-block -rotate-90 text-amber-500 px-px">४</span> Save, <span className="font-mono">135+</span> Development Resources faster
             </h1>
         </div>
       </motion.h1>
