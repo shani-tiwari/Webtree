@@ -8,8 +8,12 @@ import {
   Home11Icon,
   SearchList02Icon,
   AllBookmarkIcon,
+  InstagramIcon,
+  NewTwitterRectangleIcon,
+  GithubIcon,
+  Linkedin01Icon,
 } from "@hugeicons/core-free-icons";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "motion/react";
 import { useCollection } from "../../context/CollectionContext";
@@ -23,19 +27,19 @@ const Navbar = () => {
   const location = useLocation();
 
   // Lock body scroll when mobile menu is open
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-      document.documentElement.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-      document.documentElement.style.overflow = "auto";
-    }
-    return () => {
-      document.body.style.overflow = "auto";
-      document.documentElement.style.overflow = "auto";
-    };
-  }, [isOpen]);
+  // useEffect(() => {
+  //   if (isOpen) {
+  //     document.body.style.overflow = "hidden";
+  //     document.documentElement.style.overflow = "hidden";
+  //   } else {
+  //     document.body.style.overflow = "auto";
+  //     document.documentElement.style.overflow = "auto";
+  //   }
+  //   return () => {
+  //     document.body.style.overflow = "auto";
+  //     document.documentElement.style.overflow = "auto";
+  //   };
+  // }, [isOpen]);
 
   const navVariants = {
     hidden: { y: -100, opacity: 0 },
@@ -83,6 +87,37 @@ const Navbar = () => {
     // { name: "About", path: "/about", icon: Tree02Icon },
     // { name: "Connect", path: "/connect", icon: Link02FreeIcons },
   ];
+  
+const socialLinks = [
+  {
+    name: "LinkedIn",
+    icon: Linkedin01Icon,
+    url: "https://www.linkedin.com/in/shani-tiwarii/",
+    no: "first-icon",
+    rotate: "45deg",
+  },
+  {
+    name: "GitHub",
+    icon: GithubIcon,
+    url: "https://github.com/shani-tiwari",
+    no: "sec-icon",
+    rotate: "-45deg",
+  },
+  {
+    name: "Twitter",
+    icon: NewTwitterRectangleIcon,
+    url: "https://x.com/ShaniDevelops",
+    no: "third-icon",
+    rotate: "45deg",
+  },
+  {
+    name: "Instagram",
+    icon: InstagramIcon,
+    url: "https://Instagram.com/shani.develops",
+    no: "four-icon",
+    rotate: "-45deg",
+  },
+];
 
   const isCollectionPage = location.pathname === "/collection";
 
@@ -335,9 +370,10 @@ const Navbar = () => {
                                     size={21}
                                   />
                                 </Link>
+                                 
                               </motion.div>
 
-                              {index < mobile_navLinks.length - 1 && (
+                              {index < mobile_navLinks.length && (
                                 <motion.span
                                   initial={{ width: "0%", opacity: 0 }}
                                   animate={{ width: "80%", opacity: 1 }}
@@ -346,11 +382,37 @@ const Navbar = () => {
                                     ease: "easeOut",
                                     delay: 0.2 + index * 0.1,
                                   }}
-                                  className="h-px bg-linear-to-r from-transparent via-zinc-500/50 to-transparent block"
+                                  className="h-px w-full mx-auto bg-linear-to-r from-transparent via-zinc-500/50 to-transparent block"
                                 ></motion.span>
                               )}
+                              
                             </React.Fragment>
                           ))}
+                           {/* Social */}
+                                <div className="w-full flex flex-col justify-center items-center">
+                                  <h2 className="mb-4 w-full text-start text-xs font-semibold uppercase text-neutral-500">
+                                    Connect
+                                  </h2>
+                                  <div className="w-full flex justify-between gap-4">
+                                    {socialLinks.map((social) => (
+                                      <motion.a
+                                        key={social.name}
+                                        href={social.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={social.name}
+                                        transition={{ duration: 0.25, type: "spring"}}
+                                        whileTap={{ scale: 0.95 }}
+                                        className={cn(
+                                          "group relative w-fit flex items-center justify-center p-1.5 transition-colors duration-200",
+                                          "outline-2 outline-offset-1 outline-amber-600/30 rounded-xl bg-white/6",
+                                        )}
+                                      >
+                                        <HugeiconsIcon icon={social.icon} size={20} />
+                                      </motion.a>
+                                    ))}
+                                  </div>
+                                </div>
                         </div>
                       </motion.div>
                     </motion.div>
