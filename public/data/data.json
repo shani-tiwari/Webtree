@@ -1,45 +1,86 @@
 {
-  "my_picks*": [
+  "latest": [
     {
-      "id": 4,
-      "name": "Pattern Generator",
-      "link": "https://www.heropatterns.com/",
-      "desc": "SVG/CSS background patterns with customizable colors and opacity.",
-      "category": "featured",
-      "logo": "https://img.logo.dev/heropatterns.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+      "id": 14,
+      "name": "Savee",
+      "desc": "Made for visual minds, Browse inspiration curated by designers.Find the best visual references for your next project.",
+      "link": "https://www.savee.com",
+      "category": "latest",
+      "new": true,
+      "logo": "https://img.logo.dev/savee.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
-      "id": 3,
-      "name": "Awwwards",
-      "desc": "Awards for exceptional web design, inspiration, and development resources.",
-      "link": "https://www.awwwards.com",
-      "category": "featured",
-      "logo": "https://img.logo.dev/awwwards.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+      "id": 6,
+      "name": "Godly",
+      "desc": "Handpicked websites showcasing godly web design and creativity.",
+      "link": "https://godly.website",
+      "category": "latest",
+      "new": true,
+      "logo": "https://img.logo.dev/godly.website?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
-      "id": 2,
-      "name": "Tailwind Color Pallete",
-      "desc": "Generate Tailwind CSS compatible color palettes with shades and previews.",
-      "link": "https://tailwindcss.com/docs/customizing-colors",
-      "category": "featured",
-      "logo": "https://img.logo.dev/tailwindcss.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+      "id": 5,
+      "name": "Stacksorted",
+      "desc": "Sorted collections of design stacks, tools, and inspirations for developers.",
+      "link": "https://stacksorted.com",
+      "category": "latest",
+      "new": true,
+      "logo": "https://img.logo.dev/stacksorted.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+     {
+      "id": 9,
+      "name": "Streamlinehq",
+      "desc": "Your Ultimate Icon Library Download or copy svg & png icons.",
+      "link": "https://streamlinehq.com",
+      "category": "latest",
+      "new": true,
+      "logo": "https://img.logo.dev/streamlinehq.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
       "id": 1,
       "name": "Haikei",
       "desc": "Free generative SVG background shapes for web design.",
       "link": "https://app.haikei.app/",
-      "category": "featured",
+      "category": "latest",
       "new": true,
       "logo": "https://img.logo.dev/app.haikei.app?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
-      "id": 0,
-      "name": "Unsplash",
-      "desc": "High-resolution photos from a global community, free under Unsplash license.",
-      "link": "https://unsplash.com",
-      "category": "featured",
-      "logo": "https://img.logo.dev/unsplash.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+      "id": 1,
+      "name": "Picjumbo",
+      "desc": "Free high-res images, backgrounds, and photos for personal/commercial use.",
+      "link": "https://picjumbo.com",
+      "category": "latest",
+      "new": true,
+      "logo": "https://img.logo.dev/picjumbo.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+     {
+      "id": 17,
+      "name": "Hugging Face",
+      "desc": "Free ML inference API (limited). Text/image generation.",
+      "link": "https://huggingface.co/inference-api",
+      "category": "latest",
+      "new": true,
+      "logo": "https://img.logo.dev/huggingface.co?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 18,
+      "name": "OpenRouter",
+      "desc": "The Unified Interface For LLMs. Better prices, better uptime, no subscriptions.",
+      "link": "https://openrouter.ai/",
+      "category": "latest",
+      "new": true,
+      "logo": "https://img.logo.dev/openrouter.ai?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+
+    {
+      "id": 19,
+      "name": "Groq",
+      "desc": "Fast LLM inference, OpenAI-compatible. Simple to integrate, easy to scale. Start building in minutes.",
+      "link": "https://console.groq.com/home",
+      "category": "latest",      
+      "new": true,
+      "logo": "https://img.logo.dev/groq.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
   "tools": [
@@ -308,6 +349,15 @@
   ],
   "web_design": [
     {
+      "id": 14,
+      "name": "Savee",
+      "desc": "Made for visual minds, Browse inspiration curated by designers.Find the best visual references for your next project.",
+      "link": "https://www.savee.com",
+      "category": "design_ideas",
+      "new": true,
+      "logo": "https://img.logo.dev/savee.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
       "id": 3,
       "name": "Awwwards",
       "desc": "Awards for exceptional web design, inspiration, and development resources.",
@@ -406,70 +456,55 @@
       "logo": "https://img.logo.dev/repaint.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
-  "fonts": [
+  "animation": [
     {
-      "id": 1,
-      "name": "Google Fonts",
-      "desc": "Library of 1,500+ open source fonts optimized for the web, free for commercial use.",
-      "link": "https://fonts.google.com",
-      "category": "fonts",
-      "logo": "https://img.logo.dev/fonts.google.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+      "id": 11,
+      "name": "Animations.dev",
+      "desc": "How do you craft animations that feel right?.",
+      "link": "https://animations.dev",
+      "category": "animations",
+      "logo": "https://img.logo.dev/animations.dev?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true",
+      "new": true
     },
     {
       "id": 2,
-      "name": "FontSpace",
-      "desc": "Over 150,000 free downloadable fonts from verified designers, with previews and licenses.",
-      "link": "https://www.fontspace.com",
-      "category": "fonts",
-      "logo": "https://img.logo.dev/fontspace.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+      "name": "LottieFiles",
+      "desc": "Free animated icons, illustrations, and Lottie JSON animations.",
+      "link": "https://lottiefiles.com",
+      "category": "animations",
+      "logo": "https://img.logo.dev/lottiefiles.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
       "id": 3,
-      "name": "DaFont",
-      "desc": "Popular site with thousands of free fonts for personal use, searchable by category.",
-      "link": "https://www.dafont.com",
-      "category": "fonts",
-      "logo": "https://img.logo.dev/dafont.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+      "name": "GSAP",
+      "desc": "Robust JavaScript animation library for complex timelines and effects.",
+      "link": "https://gsap.com",
+      "category": "animations",
+      "logo": "https://img.logo.dev/gsap.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
       "id": 4,
-      "name": "Font Squirrel",
-      "desc": "Handpicked premium-quality free fonts with commercial licenses and generators.",
-      "link": "https://www.fontsquirrel.com",
-      "category": "fonts",
-      "logo": "https://img.logo.dev/fontsquirrel.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+      "name": "Codrops",
+      "desc": "Tutorials and demos for advanced CSS, JS, and WebGL animations.",
+      "link": "https://tympanus.net/codrops",
+      "category": "animations",
+      "logo": "https://img.logo.dev/tympanus.net?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
       "id": 5,
-      "name": "Fontshare",
-      "desc": "Free professional-grade fonts from Indian Type Foundry, 100% free for personal and commercial use.",
-      "link": "https://www.fontshare.com",
-      "category": "fonts",
-      "logo": "https://img.logo.dev/fontshare.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 6,
-      "name": "Unblast",
-      "desc": "Free fonts and design resources including mockups, templates, and graphics for designers.",
-      "link": "https://unblast.com",
-      "category": "fonts",
-      "logo": "https://img.logo.dev/unblast.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 7,
-      "name": "Awwwards Free Fonts",
-      "desc": "Curated collection of high-quality free fonts selected by Awwwards for digital design.",
-      "link": "https://www.awwwards.com/awwwards/collections/free-fonts/",
-      "category": "fonts",
+      "name": "Awwwards Animations",
+      "desc": "Inspiring animation examples and collections from award-winning sites.",
+      "link": "https://www.awwwards.com/awwwards/collections/animation/",
+      "category": "animations",
       "logo": "https://img.logo.dev/awwwards.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
-      "id": 8,
-      "name": "Rawpixel",
-      "desc": "rawpixel makes it easy to find beautiful visuals and create incredible designs..",
-      "link": "https://www.rawpixel.com/fonts?page=1&path=1524&sort=curated",
-      "category": "fonts",
-      "logo": "https://img.logo.dev/rawpixel.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+      "id": 6,
+      "name": "Jitter",
+      "desc": "Animate Logo, Icons, Images, Gif's.",
+      "link": "https://jitter.video/templates/",
+      "category": "animations",
+      "logo": "https://img.logo.dev/jitter.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
   "images": [
@@ -540,6 +575,15 @@
     }
   ],
   "icons": [
+    {
+      "id": 9,
+      "name": "Streamlinehq",
+      "desc": "Your Ultimate Icon Library Download or copy svg & png icons.",
+      "link": "https://streamlinehq.com",
+      "category": "svg_icons",
+      "new": true,
+      "logo": "https://img.logo.dev/streamlinehq.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
     {
       "id": 1,
       "name": "SVG Repo",
@@ -830,55 +874,70 @@
       "logo": "https://img.logo.dev/app.haikei.app?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
-  "animation": [
+  "fonts": [
     {
-      "id": 11,
-      "name": "Animations.dev",
-      "desc": "How do you craft animations that feel right?.",
-      "link": "https://animations.dev",
-      "category": "animations",
-      "logo": "https://img.logo.dev/animations.dev?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true",
-      "new": true
+      "id": 1,
+      "name": "Google Fonts",
+      "desc": "Library of 1,500+ open source fonts optimized for the web, free for commercial use.",
+      "link": "https://fonts.google.com",
+      "category": "fonts",
+      "logo": "https://img.logo.dev/fonts.google.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
       "id": 2,
-      "name": "LottieFiles",
-      "desc": "Free animated icons, illustrations, and Lottie JSON animations.",
-      "link": "https://lottiefiles.com",
-      "category": "animations",
-      "logo": "https://img.logo.dev/lottiefiles.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+      "name": "FontSpace",
+      "desc": "Over 150,000 free downloadable fonts from verified designers, with previews and licenses.",
+      "link": "https://www.fontspace.com",
+      "category": "fonts",
+      "logo": "https://img.logo.dev/fontspace.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
       "id": 3,
-      "name": "GSAP",
-      "desc": "Robust JavaScript animation library for complex timelines and effects.",
-      "link": "https://gsap.com",
-      "category": "animations",
-      "logo": "https://img.logo.dev/gsap.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+      "name": "DaFont",
+      "desc": "Popular site with thousands of free fonts for personal use, searchable by category.",
+      "link": "https://www.dafont.com",
+      "category": "fonts",
+      "logo": "https://img.logo.dev/dafont.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
       "id": 4,
-      "name": "Codrops",
-      "desc": "Tutorials and demos for advanced CSS, JS, and WebGL animations.",
-      "link": "https://tympanus.net/codrops",
-      "category": "animations",
-      "logo": "https://img.logo.dev/tympanus.net?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+      "name": "Font Squirrel",
+      "desc": "Handpicked premium-quality free fonts with commercial licenses and generators.",
+      "link": "https://www.fontsquirrel.com",
+      "category": "fonts",
+      "logo": "https://img.logo.dev/fontsquirrel.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
       "id": 5,
-      "name": "Awwwards Animations",
-      "desc": "Inspiring animation examples and collections from award-winning sites.",
-      "link": "https://www.awwwards.com/awwwards/collections/animation/",
-      "category": "animations",
-      "logo": "https://img.logo.dev/awwwards.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+      "name": "Fontshare",
+      "desc": "Free professional-grade fonts from Indian Type Foundry, 100% free for personal and commercial use.",
+      "link": "https://www.fontshare.com",
+      "category": "fonts",
+      "logo": "https://img.logo.dev/fontshare.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
       "id": 6,
-      "name": "Jitter",
-      "desc": "Animate Logo, Icons, Images, Gif's.",
-      "link": "https://jitter.video/templates/",
-      "category": "animations",
-      "logo": "https://img.logo.dev/jitter.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+      "name": "Unblast",
+      "desc": "Free fonts and design resources including mockups, templates, and graphics for designers.",
+      "link": "https://unblast.com",
+      "category": "fonts",
+      "logo": "https://img.logo.dev/unblast.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 7,
+      "name": "Awwwards Free Fonts",
+      "desc": "Curated collection of high-quality free fonts selected by Awwwards for digital design.",
+      "link": "https://www.awwwards.com/awwwards/collections/free-fonts/",
+      "category": "fonts",
+      "logo": "https://img.logo.dev/awwwards.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 8,
+      "name": "Rawpixel",
+      "desc": "rawpixel makes it easy to find beautiful visuals and create incredible designs..",
+      "link": "https://www.rawpixel.com/fonts?page=1&path=1524&sort=curated",
+      "category": "fonts",
+      "logo": "https://img.logo.dev/rawpixel.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
   "illustration": [

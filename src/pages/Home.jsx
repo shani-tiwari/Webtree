@@ -12,7 +12,7 @@ import { Link } from "react-router";
 
 export default function Home() {
   const { data, loading } = useCollectionData();
-  const [activeCategory, setActiveCategory] = useState("web_design");
+  const [activeCategory, setActiveCategory] = useState("latest");
 
   // const [isCollapsed, setIsCollapsed] = useState(true);
   const carddata = data[activeCategory] || [];
@@ -47,21 +47,17 @@ export default function Home() {
         >
           {/* categories */}
           <motion.aside
-            layout
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
               duration: 0.3,
-              layout: { duration: 0.3, ease: "easeInOut" },
             }}
             aria-label="Category selection"
             className={cn(
-              "z-40 gap-1 md:gap-2 w-full h-fit md:pt-4 mb-6 md:mb-12 max-w-4xl mx-auto shrink-0",
+              "z-40 gap-2 px-4 w-full h-fit md:pt-4 mb-6 md:mb-12 max-w-4xl mx-auto shrink-0",
               "flex flex-wrap justify-center rounded-xl text-white backdrop-blur-sm",
-              // isCollapsed ? " lg:mb-8" : " lg:mb-6",
             )}
           >
-            <AnimatePresence mode="popLayout">
               {Object.keys(data)
                 .slice(0, 7)
                 .map((name, index) => (
@@ -73,7 +69,6 @@ export default function Home() {
                     setActiveCategory={setActiveCategory}
                   />
                 ))}
-            </AnimatePresence>
           </motion.aside>
 
           {/* divider - SVG */}
@@ -92,11 +87,6 @@ export default function Home() {
             show={"less"}
           />
 
-          {/* <div>
-            <h2 className="mx-auto text-amber-600/80 text-sm tracking-wide bg-amber-500/20 py-1.5 px-6 rounded-xl">
-              Find & save development resources faster.
-            </h2>
-          </div> */}
           <div className="w-full flex flex-col gap-2  mt-4">
             {/* explore page button */}
             <Link
@@ -134,11 +124,11 @@ function Header() {
         >
             <h1
               className={cn(
-                "wavy-underline-pulse max-w-67.5 w-fit md:max-w-fit font-serif tracking-[-0.02em]  bg-clip-text text-transparent bg-linear-to-b from-amber-300 to-amber-700",
+                "wavy-underline-pulse max-w-72 w-fit md:max-w-fit font-serif tracking-[-0.02em]  bg-clip-text text-transparent bg-linear-to-b from-amber-300 to-amber-700",
                 "text-shadow-lg text-shadow-amber-700/20 hover:tracking-tight transition-all duration-500",
               )}
             >
-              Find <span className="inline-block -rotate-90 text-amber-500 px-px">४</span> Save, <span className="font-mono">135+</span> Development Resources faster
+              Find <span className="inline-block -rotate-90 text-amber-500 px-px">४</span> Save, <span className="font-mono">135+</span> Development Resources faster.
             </h1>
         </div>
       </motion.h1>

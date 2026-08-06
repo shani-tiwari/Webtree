@@ -280,8 +280,8 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
             isNew && (
               <span
                 className="absolute right-5 bottom-5 flex justify-center items-center h-1.5 w-1.5">
-                  <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-green-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-400"></span>
+                  <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-green-400/60 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-400/40"></span>
               </span>
             )
           }

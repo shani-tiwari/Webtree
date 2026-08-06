@@ -250,15 +250,15 @@ const socialLinks = [
                 <HugeiconsIcon
                   onClick={() => setShowLength(!showLength)}
                   icon={SquareArrowLeft02Icon}
-                  size={19}
+                  size={22}
                   style={{ color: "oklch(55.5% 0.163 48.998)" }}
                 />
               ) : (
                 <HugeiconsIcon
                   onClick={() => setShowLength(!showLength)}
                   icon={AllBookmarkIcon}
-                  size={19}
-                  style={{ color: "oklch(0.771 0.006 286.286)" }}
+                  size={22}
+                  style={{ color: "#ffffffb3" }}
                 />
               )}
               {!isCollectionPage && showLength && collection.length > 0 && (
@@ -281,17 +281,17 @@ const socialLinks = [
                 aria-controls="mobile-menu"
                 aria-label="Toggle menu"
                 className={cn(
-                  "z-100 md:hidden flex items-center justify-center text-white/80 active:scale-90 transition-all duration-300",
+                  "z-100 md:hidden flex items-center justify-center text-white/95 active:scale-90 transition-all duration-300",
                 )}
               >
                 {isOpen ? (
                   <HugeiconsIcon
                     icon={CancelCircleIcon}
-                    size={22}
+                    size={26}
                     className="z-999"
                   />
                 ) : (
-                  <HugeiconsIcon icon={Menu02Icon} size={22} />
+                  <HugeiconsIcon icon={Menu02Icon} size={24} />
                 )}
                 {/* menu dropdown  */}
                 <AnimatePresence>
@@ -390,7 +390,7 @@ const socialLinks = [
                           ))}
                            {/* Social */}
                                 <div className="w-full flex flex-col justify-center items-center">
-                                  <h2 className="mb-4 w-full text-start text-xs font-semibold uppercase text-neutral-500">
+                                  <h2 className="mb-4 pt-2 w-full text-start text-xs font-semibold uppercase text-neutral-500">
                                     Connect
                                   </h2>
                                   <div className="w-full flex justify-between gap-4">
@@ -404,11 +404,11 @@ const socialLinks = [
                                         transition={{ duration: 0.25, type: "spring"}}
                                         whileTap={{ scale: 0.95 }}
                                         className={cn(
-                                          "group relative w-fit flex items-center justify-center p-1.5 transition-colors duration-200",
-                                          "outline-2 outline-offset-1 outline-amber-600/30 rounded-xl bg-white/6",
+                                          "group relative w-fit flex items-center justify-center p-2 transition-colors duration-200",
+                                          "outline-2 outline-offset-1 outline-white/20 rounded-xl bg-white/6",
                                         )}
                                       >
-                                        <HugeiconsIcon icon={social.icon} size={20} />
+                                        <HugeiconsIcon icon={social.icon} size={20}/>
                                       </motion.a>
                                     ))}
                                   </div>
