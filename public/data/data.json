@@ -1,6 +1,15 @@
 {
   "latest": [
     {
+      "id": 15,
+      "name": "Recent",
+      "desc": "A daily curation of exceptional design, websites and tools.",
+      "link": "https://recent.design/",
+      "category": "latest",
+      "new": true,
+      "logo": "https://img.logo.dev/recent.design?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
       "id": 14,
       "name": "Savee",
       "desc": "Made for visual minds, Browse inspiration curated by designers.Find the best visual references for your next project.",
@@ -348,6 +357,15 @@
     }
   ],
   "web_design": [
+    {
+      "id": 15,
+      "name": "Recent",
+      "desc": "A daily curation of exceptional design, websites and tools.",
+      "link": "https://recent.design/",
+      "category": "design_ideas",
+      "new": true,
+      "logo": "https://img.logo.dev/recent.design?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
     {
       "id": 14,
       "name": "Savee",
