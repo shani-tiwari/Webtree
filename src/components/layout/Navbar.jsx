@@ -237,7 +237,7 @@ const socialLinks = [
           {/* Mobile Menu Buttons  */}
           <div
             className={cn(
-              "z-60 md:hidden flex items-center justify-center gap-5",
+              "z-60 md:hidden flex items-center justify-center gap-4.5",
             )}
           >
             <Link
@@ -250,14 +250,14 @@ const socialLinks = [
                 <HugeiconsIcon
                   onClick={() => setShowLength(!showLength)}
                   icon={SquareArrowLeft02Icon}
-                  size={22}
+                  size={20}
                   style={{ color: "oklch(55.5% 0.163 48.998)" }}
                 />
               ) : (
                 <HugeiconsIcon
                   onClick={() => setShowLength(!showLength)}
                   icon={AllBookmarkIcon}
-                  size={22}
+                  size={20}
                   style={{ color: "#ffffffb3" }}
                 />
               )}
@@ -291,7 +291,7 @@ const socialLinks = [
                     className="z-999"
                   />
                 ) : (
-                  <HugeiconsIcon icon={Menu02Icon} size={24} />
+                  <HugeiconsIcon icon={Menu02Icon} size={23} />
                 )}
                 {/* menu dropdown  */}
                 <AnimatePresence>

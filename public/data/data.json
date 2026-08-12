@@ -1,6 +1,15 @@
 {
   "latest": [
     {
+      "id": 16,
+      "name": "Minimal",
+      "desc": "For the love of beautiful & functional websites.",
+      "link": "https://minimal.gallery/",
+      "category": "latest",
+      "new": true,
+      "logo": "https://img.logo.dev/minimal.gallery/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
       "id": 15,
       "name": "Recent",
       "desc": "A daily curation of exceptional design, websites and tools.",
@@ -357,6 +366,15 @@
     }
   ],
   "web_design": [
+    {
+      "id": 16,
+      "name": "Minimal",
+      "desc": "For the love of beautiful & functional websites.",
+      "link": "https://minimal.gallery/",
+      "category": "design_ideas",
+      "new": true,
+      "logo": "https://img.logo.dev/minimal.gallery/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
     {
       "id": 15,
       "name": "Recent",
