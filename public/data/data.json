@@ -1,6 +1,15 @@
 {
   "latest": [
     {
+      "id": 17,
+      "name": "iamsajid",
+      "desc": "Motion Design, Color Generator, CSS Tricks, Animations.",
+      "link": "https://www.iamsajid.com/",
+      "category": "latest",
+      "new": true,
+      "logo": "https://img.logo.dev/iamsajid.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
       "id": 16,
       "name": "Minimal",
       "desc": "For the love of beautiful & functional websites.",
@@ -102,6 +111,15 @@
     }
   ],
   "tools": [
+    {
+      "id": 21,
+      "name": "iamsajid",
+      "desc": "Motion Design, Color Generator, CSS Tricks, Animations.",
+      "link": "https://www.iamsajid.com/",
+      "category": "tools",
+      "new": true,
+      "logo": "https://img.logo.dev/iamsajid.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
     {
       "id": 20,
       "name": "useHooks",
