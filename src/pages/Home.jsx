@@ -12,7 +12,7 @@ import { Link } from "react-router";
 
 export default function Home() {
   const { data, loading } = useCollectionData();
-  const [activeCategory, setActiveCategory] = useState("latest");
+  const [activeCategory, setActiveCategory] = useState("be_pro");
 
   // const [isCollapsed, setIsCollapsed] = useState(true);
   const carddata = data[activeCategory] || [];
@@ -37,7 +37,6 @@ export default function Home() {
 
         {/* Header */}
         <Header />
-    
 
         {/* categories & cards */}
         <motion.section
@@ -58,17 +57,17 @@ export default function Home() {
               "flex flex-wrap justify-center rounded-xl text-white backdrop-blur-sm",
             )}
           >
-              {Object.keys(data)
-                .slice(0, 7)
-                .map((name, index) => (
-                  <Categories
-                    key={name}
-                    name={name}
-                    index={index}
-                    isActive={activeCategory === name}
-                    setActiveCategory={setActiveCategory}
-                  />
-                ))}
+            {Object.keys(data)
+              .slice(0, 7)
+              .map((name, index) => (
+                <Categories
+                  key={name}
+                  name={name}
+                  index={index}
+                  isActive={activeCategory === name}
+                  setActiveCategory={setActiveCategory}
+                />
+              ))}
           </motion.aside>
 
           {/* divider - SVG */}
@@ -94,9 +93,10 @@ export default function Home() {
               className={cn(
                 "group select-none w-fit mx-auto mt-0 flex gap-2 text-white font-medium px-6 py-2 border-2 border-amber-500/70  bg-linear-to-t from-amber-600 to-amber-800 rounded-xl",
                 "shadow-sm shadow-amber-500/50 text-shadow-lg text-shadow-black/20 hover:shadow-[0_0_20px_rgba(255,190,0,0.2)] hover:scale-102 active:scale-98 transition-all duration-300",
-              )}>
-                Explore All Resources
-                <MagneticButton icon={Rocket01Icon}/>
+              )}
+            >
+              Explore All Resources
+              <MagneticButton icon={Rocket01Icon} />
             </Link>
           </div>
         </motion.section>
@@ -122,15 +122,16 @@ function Header() {
             "text-xl md:text-[28px] mx-auto w-full selection:bg-amber-600/30 selection:text-white",
           )}
         >
-            <h1
-              className={cn(
-                "wavy-underline-pulse max-w-72 w-fit md:max-w-fit font-serif tracking-[-0.02em]  bg-clip-text text-transparent bg-linear-to-b from-amber-300 to-amber-700",
-                "text-shadow-lg text-shadow-amber-700/20 hover:tracking-tight transition-all duration-500",
-              )}
-            >
-              Find 🡢 Save, <span className="font-mono">135+</span> Development Resources faster.
-              {/* <span className="inline-block -rotate-90 text-amber-500 px-px">४</span>  */}
-            </h1>
+          <h1
+            className={cn(
+              "wavy-underline-pulse max-w-72 w-fit md:max-w-fit font-serif tracking-[-0.02em]  bg-clip-text text-transparent bg-linear-to-b from-amber-300 to-amber-700",
+              "text-shadow-lg text-shadow-amber-700/20 hover:tracking-tight transition-all duration-500",
+            )}
+          >
+            Find 🡢 Save, <span className="font-mono">140+</span> Development
+            Resources faster.
+            {/* <span className="inline-block -rotate-90 text-amber-500 px-px">४</span>  */}
+          </h1>
         </div>
       </motion.h1>
     </>

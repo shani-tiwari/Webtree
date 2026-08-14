@@ -110,6 +110,44 @@
       "logo": "https://img.logo.dev/groq.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
+  "be_pro": [
+    {
+       "id": 3,
+       "new": true,
+       "category": "be_pro",
+       "name": "Hello Frontend",
+       "link": "https://hellofrontend.com/",
+       "desc": "Master Frontend Interviews Without Generic LeetCode.",
+       "logo": "https://img.logo.dev/hellofrontend.com/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+       "id": 3,
+       "new": true,
+       "category": "be_pro",
+       "name": "Hello Frontend",
+       "link": "https://debugit.dev/",
+       "desc": "Read code. Fix bugs. Build real skills. A different way to practice JS.",
+       "logo": "https://img.logo.dev/debugit.dev/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+   {
+      "id": 2,
+      "new": true,
+      "category": "be_pro",
+      "name": "JS Challenger",
+      "link": "https://jschallenger.com/",
+      "desc": "A hands-on JavaScript experience with Structured learning path.",
+      "logo": "https://img.logo.dev/jschallenger.com/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+   {
+      "id": 1,
+      "new": true,
+      "category": "be_pro",
+      "name": "Frontend Dummies",
+      "link": "https://frontenddummies.com/",
+      "desc": "Master Frontend development skills.",
+      "logo": "https://img.logo.dev/frontenddummies.com/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    }
+  ],
   "tools": [
     {
       "id": 21,
@@ -284,7 +322,7 @@
       "logo": "https://img.logo.dev/tinypng.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
-  "ui_library": [
+  "ui_labs": [
     {
       "id": 1,
       "name": "Motion",

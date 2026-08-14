@@ -24,10 +24,12 @@ export default function MagneticButton({ icon, size='22', className = ''}) {
         setPosition({x,y});
     };
 
+    const width = window.innerWidth >= 768;
+
   return (
     <div className="w-fit flex items-center justify-center">
         <motion.span
-          onMouseMove={handleMoseMove} 
+          onMouseMove={width ? handleMoseMove : null} 
           onMouseLeave={() => setPosition({x: 0, y: 0})}   
           ref={ref} 
           animate={{ x: position.x, y: position.y }}

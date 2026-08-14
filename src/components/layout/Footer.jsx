@@ -8,7 +8,7 @@ import {
   GithubIcon,
   InstagramIcon,
   Linkedin01Icon,
-  NewTwitterRectangleIcon
+  NewTwitterRectangleIcon,
 } from "@hugeicons/core-free-icons";
 import { cn } from "../../utils/utils.js";
 import MagneticButton from "../ui/MagneticButton.jsx";
@@ -111,7 +111,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="max-w-sm text-sm leading-7 text-neutral-400/90 sm-md:text-center">
-              The ultimate collection of 135+ web development resources.
+              The ultimate collection of 140+ web development resources.
               Discover tools, design ideas, and curated picks to build better on
               the web.
             </p>
@@ -124,7 +124,7 @@ export default function Footer() {
                   className="flex gap-2 justify-center items-center "
                 >
                   star on
-                  <MagneticButton icon={GithubIcon} size='20'/>
+                  <MagneticButton icon={GithubIcon} size="20" />
                 </a>
               </span>
               <span className="group w-fit group text-lg font-medium tracking-tighter  transition-colors duration-300 bg-amber-600/80 text-white/80 flex items-center gap-2 outline-2 outline-offset-1 outline-amber-600/80 py-1 px-4 rounded-lg hover:bg-amber-600/70 active:scale-98 text-shadow-lg">
@@ -134,7 +134,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="flex gap-2 justify-center items-center "
                 >
-                  <MagneticButton icon={Coffee01Icon} size='20'/>
+                  <MagneticButton icon={Coffee01Icon} size="20" />
                   Coffee?
                 </a>
               </span>
@@ -203,13 +203,10 @@ export default function Footer() {
                     `${social.no}`,
                   )}
                 >
-                  <span
-                    className="absolute inset-0 rounded-xl bg-white/80 opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-20"
-                    
-                  />
-                    <span style={{ rotate: social.rotate }} >
-                      <MagneticButton icon={social.icon}  />
-                    </span>
+                  <span className="absolute inset-0 rounded-xl bg-white/80 opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-20" />
+                  <span style={{ rotate: social.rotate }}>
+                    <MagneticButton icon={social.icon} />
+                  </span>
                   {/* <HugeiconsIcon
                     icon={social.icon}
                     size={22}
