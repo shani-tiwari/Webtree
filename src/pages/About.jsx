@@ -55,7 +55,6 @@ export default function About() {
         {/* back button & divider */}
         <motion.span
           initial={{ width: "0%" }}
-          viewport={{ once: true }}
           whileInView={{ width: "95%" }}
           transition={{
             duration: 0.6,
@@ -73,7 +72,6 @@ export default function About() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
           className="w-full max-w-[1200px] mx-auto px-1 flex md:px-8 pt-10 mb-8 gap-10 "
         >
           <motion.div variants={itemVariants} className="space-y-4">

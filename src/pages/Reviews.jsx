@@ -31,7 +31,6 @@ export default function Reviews() {
 
   return (
     <>
-
       <section className="min-h-screen w-full relative overflow-hidden bg-black/80 backdrop-blur-sm pt-24 pb-20 selection:text-amber-500">
         <h1 className="sr-only">Community Reviews</h1>
 
@@ -49,7 +48,7 @@ export default function Reviews() {
                 className="w-fit mx-auto md:mx-0 text-5xl md:text-7xl italic flex items-center gap-4 tracking-tighter font-black hover:tracking-tight transition-all duration-500 bg-clip-text text-transparent bg-linear-to-b from-white to-neutral-500 mb-1"
               >
                 Reviews{" "}
-                <MagneticButton  
+                <MagneticButton
                   icon={Idea01Icon}
                   size={42}
                   className="hover:text-amber-500 transition-all duration-100 text-amber-500/80 mt-1 md:mt-3"
@@ -75,7 +74,10 @@ export default function Reviews() {
                 onClick={() => setIsFormOpen(true)}
                 className="group flex items-center justify-center gap-2 px-6 py-3 cursor-pointer rounded-full bg-amber-600 border border-amber-400/30 text-white selection:text-white font-bold transition-all duration-200 active:scale-95 shadow-[0_0_30px_var(--color-amber-500-op40)]"
               >
-                <MagneticButton icon={BubbleChatAddIcon} className="text-xl font-bold group-hover:scale-105 transition-transform duration-300 "/>
+                <MagneticButton
+                  icon={BubbleChatAddIcon}
+                  className="text-xl font-bold group-hover:scale-105 transition-transform duration-300 "
+                />
                 Add Your Review
               </button>
             </motion.div>
@@ -84,7 +86,6 @@ export default function Reviews() {
           {/* back button & divider */}
           <motion.span
             initial={{ width: "0%" }}
-            viewport={{ once: true }}
             whileInView={{ width: "90%" }}
             transition={{
               duration: 0.6,

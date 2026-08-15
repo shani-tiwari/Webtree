@@ -13,7 +13,6 @@ export default function Collection() {
 
   return (
     <main className="relative max-w-325 w-full flex flex-col gap-10 md:gap-10 mx-auto px-4 md:px-14 pb-20">
-
       <header className="relative text-white/70 text-center w-full  tracking-tight  backdrop-blur-xl md:backdrop-blur-none pt-20 md:pt-32 selection:text-amber-500 ">
         <p className="text-2xl text-amber-600/75 w-fit mx-auto md:text-6xl font-black hover:tracking-tighter transition-all duration-400 italic  ">
           yoUr personaL collectiOn
@@ -22,21 +21,19 @@ export default function Collection() {
           Your personally curated list of resources
         </p>
         <span className="text-sm md:text-base font-mono hover:scale-103 transition-all duration-300 text-shadow-green-800/40 text-shadow-sm opacity-80 text-green-300 inline-block">
-          Added Websites - {collection.length} 
+          Added Websites - {collection.length}
         </span>
       </header>
 
-       {/* back button & divider */}
-        <motion.span 
-          initial={{width:"0%"}}              
-          viewport={{ once: true }}
-          whileInView={{width:"100%"}}
-          transition={{duration:0.6, delay:0.3, originX:50, ease: "easeOut"}}
-          className="z-90 h-[0.5px] block mx-auto -mt-4 md:mt-0 mb-2 bg-white/40 relative">
-          { location.pathname === "/collection" && 
-            <GoBack />
-          }
-        </motion.span>
+      {/* back button & divider */}
+      <motion.span
+        initial={{ width: "0%" }}
+        whileInView={{ width: "100%" }}
+        transition={{ duration: 0.6, delay: 0.3, originX: 50, ease: "easeOut" }}
+        className="z-90 h-[0.5px] block mx-auto -mt-4 md:mt-0 mb-2 bg-white/40 relative"
+      >
+        {location.pathname === "/collection" && <GoBack />}
+      </motion.span>
 
       <motion.section
         initial={{ y: 20, opacity: 0 }}
@@ -47,11 +44,20 @@ export default function Collection() {
         {collection.length === 0 ? (
           <div className="text-center text-zinc-400/70 py-20 flex flex-col items-center gap-4">
             <p className="text-lg">Your collection is empty.</p>
-            <Link to="/explore" className="text-amber-500 hover:text-amber-600 font-bold">
+            <Link
+              to="/explore"
+              className="text-amber-500 hover:text-amber-600 font-bold"
+            >
               visit explore
             </Link>
             <p className="text-base">
-              Add items by clicking the <HugeiconsIcon icon={BookmarkAdd02Icon} size={20} className="text-amber-500 inline-block mx-1"/> button on any resource card.
+              Add items by clicking the{" "}
+              <HugeiconsIcon
+                icon={BookmarkAdd02Icon}
+                size={20}
+                className="text-amber-500 inline-block mx-1"
+              />{" "}
+              button on any resource card.
             </p>
           </div>
         ) : (

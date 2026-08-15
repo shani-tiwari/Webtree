@@ -41,6 +41,7 @@ export default function Home() {
         {/* categories & cards */}
         <motion.section
           layout
+          viewport={{ once: true }}
           transition={{ layout: { duration: 0.5, ease: "easeInOut" } }}
           className={cn("w-full flex flex-col gap-4 md:gap-8 px-1 md:px-14")}
         >
@@ -48,6 +49,7 @@ export default function Home() {
           <motion.aside
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{
               duration: 0.3,
             }}
@@ -73,6 +75,7 @@ export default function Home() {
           {/* divider - SVG */}
           <motion.div
             layout
+            viewport={{ once: true }}
             transition={{ layout: { duration: 0.45, ease: "easeOut" } }}
             className={cn("md:-mt-10 pointer-events-none z-50 relative")}
           >
@@ -113,6 +116,7 @@ function Header() {
     <>
       <motion.h1
         initial={{ opacity: 0, scale: 0.9 }}
+        viewport={{ once: true }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
         className={cn("w-full text-white/80 text-center px-6 pt-20 md:pt-28")}
@@ -128,7 +132,7 @@ function Header() {
               "text-shadow-lg text-shadow-amber-700/20 hover:tracking-tight transition-all duration-500",
             )}
           >
-            Find → Save, <span className="font-mono">140+</span> Development
+            Find & Save, <span className="font-mono">140+</span> Development
             Resources faster.
             {/* <span className="inline-block -rotate-90 text-amber-500 px-px">४</span>  */}
           </h1>

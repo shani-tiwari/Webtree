@@ -16,15 +16,17 @@ import { cn } from "../../../utils/utils.js";
 import MagneticButton from "../../ui/MagneticButton.jsx";
 
 // Memoized Card Component
-const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, ...props }) => {
+const Card = memo(
+  ({ id, title, link, desc, allowRemove, logo, category, isNew, ...props }) => {
+    const { addToCollection, removeFromCollection, collection } =
+      useCollection();
 
-  const { addToCollection, removeFromCollection, collection } = useCollection();
-
-    const [added, setAdded]  = useState(false);
+    const [added, setAdded] = useState(false);
     const [copied, setCopied] = useState(false);
     // const [showPreview, setShowPreview] = useState(false);
 
-    const normalize = (str) => str ? str.trim().split(" ").join("").toLowerCase() : "";
+    const normalize = (str) =>
+      str ? str.trim().split(" ").join("").toLowerCase() : "";
 
     // Check if item is already in collection to show correct state
     const isCollected = collection.some(
@@ -89,8 +91,8 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.35 }}
         viewport={{ once: true }}
+        transition={{ duration: 0.35 }}
         className={cn("w-full h-full block p-1")}
         aria-label={`View ${title} resource`}
       >
@@ -100,12 +102,9 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
             "transition-all ease-[cubic-bezier(0.79,0.47,0.24,0.98)] duration-300 group cursor-pointer text-white/70 select-none hover:border-zinc-600/90 shadow-md shadow-black hover:shadow-xl",
           )}
         >
-
           {/* Action Icons Section */}
           <div
-            className={cn(
-              "absolute top-9 right-6.75 flex items-center z-40",
-            )}
+            className={cn("absolute top-9 right-6.75 flex items-center z-40")}
           >
             {!allowRemove && (
               <motion.span
@@ -122,9 +121,17 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
                 )}
               >
                 {isCollected ? (
-                  <MagneticButton  className="active:scale-95" icon={BookmarkCheck02Icon} size={20}/>
+                  <MagneticButton
+                    className="active:scale-95"
+                    icon={BookmarkCheck02Icon}
+                    size={20}
+                  />
                 ) : (
-                  <MagneticButton className="active:scale-95" icon={BookmarkAdd02Icon} size={20} />
+                  <MagneticButton
+                    className="active:scale-95"
+                    icon={BookmarkAdd02Icon}
+                    size={20}
+                  />
                 )}
 
                 {/* <span
@@ -147,7 +154,11 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
                   "group/delete delete-shape absolute right-3.5 -top-3 flex items-center justify-center text-red-600/90 hover:text-red-500/80 p-1.25 rounded-xl border-2 border-white/20 outline-2 outline-offset-1 outline-white/30 z-30 cursor-pointer",
                 )}
               >
-                <MagneticButton icon={BookmarkOff02Icon} size={20} className="active:scale-95"/>
+                <MagneticButton
+                  icon={BookmarkOff02Icon}
+                  size={20}
+                  className="active:scale-95"
+                />
               </motion.span>
             )}
 
@@ -162,12 +173,16 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
                 "text-sky-300/80 group-hover:text-sky-500/90 p-1.25 bg-white/2 border-2 border-white/15 cursor-pointer",
               )}
             >
-              <MagneticButton icon={Copy02Icon} size={20} className="active:scale-95" />
+              <MagneticButton
+                icon={Copy02Icon}
+                size={20}
+                className="active:scale-95"
+              />
             </motion.span>
 
             {/* Share Button */}
             <motion.span
-              whileHover={{ scale: 1.03}}
+              whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.1 }}
               onClick={handleShare}
@@ -176,7 +191,11 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
                 "text-indigo-500 group-hover:text-indigo-600 p-1.25 bg-white/2 border-2 border-white/15 cursor-pointer",
               )}
             >
-              <MagneticButton icon={SentIcon} size={20} className="-translate-x-px translate-y-px active:scale-95" />
+              <MagneticButton
+                icon={SentIcon}
+                size={20}
+                className="-translate-x-px translate-y-px active:scale-95"
+              />
             </motion.span>
 
             {/* preview Button */}
@@ -192,7 +211,11 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
                 "text-purple-700 group-hover:text-purple-500/80 p-1.25 bg-white/2 border-2 border-white/15 cursor-pointer",
               )}
             >
-              <MagneticButton icon={ViewIcon} size={20} className="-translate-x-px translate-y-px active:scale-95" />
+              <MagneticButton
+                icon={ViewIcon}
+                size={20}
+                className="-translate-x-px translate-y-px active:scale-95"
+              />
             </motion.a>
           </div>
 
@@ -208,7 +231,12 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
               )}
             >
               {logo ? (
-                <Link to={link} target="_blank" rel="noopener noreferrer" alt={`${title} logo`}>
+                <Link
+                  to={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  alt={`${title} logo`}
+                >
                   <img
                     src={logo}
                     alt={`${title} logo`}
@@ -221,7 +249,12 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
                   />
                 </Link>
               ) : null}
-              <Link to={link} target="_blank" rel="noopener noreferrer" alt={`${title} logo`}>
+              <Link
+                to={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                alt={`${title} logo`}
+              >
                 <span
                   className="text-amber-500 text-sm font-black"
                   style={{ display: logo ? "none" : "flex" }}
@@ -234,11 +267,17 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
 
           {/* title */}
           <div className={cn("pl-1 pt-1.5 mb-1")}>
-            <Link to={link} target="_blank" rel="noopener noreferrer" alt={title}
-             className={cn("font-semibold bg-clip-text text-transparent bg-linear-to-b from-zinc-100 to-zinc-100/80  text-xl md:text-[22px] leading-6 tracking-normal",
-                  "group-hover:text-amber-600/80 group-hover:tracking-[-0.01em] text-shadow-2xs text-shadow-black/40 transition-all duration-200")} 
+            <Link
+              to={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              alt={title}
+              className={cn(
+                "font-semibold bg-clip-text text-transparent bg-linear-to-b from-zinc-100 to-zinc-100/80  text-xl md:text-[22px] leading-6 tracking-normal",
+                "group-hover:text-amber-600/80 group-hover:tracking-[-0.01em] text-shadow-2xs text-shadow-black/40 transition-all duration-200",
+              )}
             >
-                {title}
+              {title}
             </Link>
           </div>
 
@@ -246,7 +285,13 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
           <span className="w-[95%] h-px bg-white/30 my-1"></span>
 
           {/*  Description */}
-          <Link to={link} target="_blank" rel="noopener noreferrer" alt={desc.split(' ').slice(0,20).join(' ')} className="pl-0.5">
+          <Link
+            to={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            alt={desc.split(" ").slice(0, 20).join(" ")}
+            className="pl-0.5"
+          >
             <p
               className={cn(
                 "text-[14px] text-shadow-2xs text-shadow-black max-w-full ml-1 text-neutral-400/80 leading-4.5 font-mono grow",
@@ -276,15 +321,12 @@ const Card = memo(({ id, title, link, desc, allowRemove, logo, category, isNew, 
           )}
 
           {/* newly added indicator */}
-          {  
-            isNew && (
-              <span
-                className="absolute right-5 bottom-5 flex justify-center items-center h-1.5 w-1.5">
-                  <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-green-400/60 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-400/40"></span>
-              </span>
-            )
-          }
+          {isNew && (
+            <span className="absolute right-5 bottom-5 flex justify-center items-center h-1.5 w-1.5">
+              <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-green-400/60 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-400/40"></span>
+            </span>
+          )}
         </section>
       </motion.div>
     );

@@ -34,11 +34,14 @@ const Categories = React.memo(
         )}
       >
         <span
-          className={cn("font-light font-serif tracking-wider leading-0 drop-shadow-sm flex items-center justify-center text-shadow-2xs text-[13px] md:text-[14px]")}
+          className={cn(
+            "font-light font-serif tracking-wider leading-0 drop-shadow-sm flex items-center justify-center text-shadow-2xs text-[13px] md:text-[14px]",
+          )}
         >
-          {
-            name.split("_").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")
-          }
+          {name
+            .split("_")
+            .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+            .join(" ")}
           {/* blur glow */}
           {/* { isActive && (
               <span
