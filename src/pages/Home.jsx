@@ -9,6 +9,7 @@ import { CardsGrid } from "../components/layout";
 import { useCollectionData } from "../hooks/useCollectionData";
 import { Rocket01Icon } from "@hugeicons/core-free-icons";
 import { Link } from "react-router";
+// import InstallDialogue from "../components/ui/InstallDialogue.jsx";
 
 export default function Home() {
   const { data, loading } = useCollectionData();
@@ -34,6 +35,7 @@ export default function Home() {
             ? `Showing ${activeCategory.split("_").join(" ")} resources`
             : ""}
         </div>
+
 
         {/* Header */}
         <Header />
@@ -82,13 +84,19 @@ export default function Home() {
             <CustomSVG />
           </motion.div>
 
+
           {/* Cards Section */}
           <CardsGrid
             carddata={carddata}
             activeCategory={activeCategory}
             show={"less"}
-          />
+            />
 
+            
+          {/* install dialogue */}
+          {/* <InstallDialogue/> */}
+
+          
           <div className="w-full flex flex-col gap-2  mt-4">
             {/* explore page button */}
             <Link

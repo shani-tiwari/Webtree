@@ -10,6 +10,7 @@ const Reviews = React.lazy(() => import("./pages/Reviews"));
 const Explore = React.lazy(() => import("./pages/Explore"));
 const Collection = React.lazy(() => import("./pages/Collection"));
 const ScrollToTop = React.lazy(() => import("./components/layout/ScrollToTop"));
+const NotFound = React.lazy(() => import("./pages/NotFound"));
 // const Blog = React.lazy(() => import("./pages/Blog.jsx"));
 // const Socials = React.lazy(() => import("./pages/Socials"));
 
@@ -55,15 +56,13 @@ function App() {
               <Route path="/collection" element={<Collection />} />
               <Route path="/about" element={<About />} />
               <Route path="/reviews" element={<Reviews />} />
-              {/* <Route path="/connect" element={<Socials />} /> */}
-              {/* <Route path="/blog" element={<Blog />} /> */}
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </React.Suspense>
 
           {location.pathname === "/" && (
             <>
               <About />
-              {/* <Socials /> */}
             </>
           )}
         </main>

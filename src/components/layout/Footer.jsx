@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { Link } from "react-router";
 import { easeInOut, motion } from "motion/react";
-import { HugeiconsIcon } from "@hugeicons/react";
 import {
   Coffee01Icon,
   // Dribbble,
@@ -189,6 +188,7 @@ export default function Footer() {
                   aria-label={social.name}
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{once: true}}
                   transition={{
                     duration: 0.25,
                     type: "bounce",
@@ -206,13 +206,6 @@ export default function Footer() {
                   <span style={{ rotate: social.rotate }}>
                     <MagneticButton icon={social.icon} />
                   </span>
-                  {/* <HugeiconsIcon
-                    icon={social.icon}
-                    size={22}
-                    className={cn(
-                      "relative z-10 text-neutral-400/80 transition-colors duration-200 group-hover:text-white",
-                    )}
-                  /> */}
                 </motion.a>
               ))}
             </div>
