@@ -9,7 +9,7 @@ import { CardsGrid } from "../components/layout";
 import { useCollectionData } from "../hooks/useCollectionData";
 import { Rocket01Icon } from "@hugeicons/core-free-icons";
 import { Link } from "react-router";
-// import InstallDialogue from "../components/ui/InstallDialogue.jsx";
+import InstallDialogue from "../components/ui/InstallDialogue.jsx";
 
 export default function Home() {
   const { data, loading } = useCollectionData();
@@ -37,6 +37,12 @@ export default function Home() {
         </div>
 
 
+        {/* install dialogue */}
+        <div className="absolute p-4 top-100 left-0 right-0 md:left-auto md:top-20 md:right-6 z-99"> 
+          <InstallDialogue />
+        </div>
+
+
         {/* Header */}
         <Header />
 
@@ -57,7 +63,7 @@ export default function Home() {
             }}
             aria-label="Category selection"
             className={cn(
-              "z-40 gap-2 px-4 w-full h-fit md:pt-4 mb-6 md:mb-12 max-w-4xl mx-auto shrink-0",
+              "z-40 gap-2 md:gap-3 px-4 w-full h-fit md:pt-4 mb-6 md:mb-12 max-w-4xl mx-auto shrink-0",
               "flex flex-wrap justify-center rounded-xl text-white backdrop-blur-sm",
             )}
           >
@@ -91,11 +97,6 @@ export default function Home() {
             activeCategory={activeCategory}
             show={"less"}
             />
-
-            
-          {/* install dialogue */}
-          {/* <InstallDialogue/> */}
-
           
           <div className="w-full flex flex-col gap-2  mt-4">
             {/* explore page button */}
