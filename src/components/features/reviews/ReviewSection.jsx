@@ -44,6 +44,7 @@ export default function ReviewSection() {
           <motion.h2
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
+            viewport={{once: true}}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-4xl font-black text-white/90 md:text-5xl italic tracking-tight hover:tracking-tighter transition-all duration-500"
           >
@@ -105,6 +106,7 @@ export default function ReviewSection() {
               <motion.div
                 key={review.id}
                 initial={{ opacity: 0.3, scale: 0.9 }}
+                viewport={{once: true}}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.01, duration: 0.2 }}
                 className="min-w-96 flex justify-center "

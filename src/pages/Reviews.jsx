@@ -45,6 +45,7 @@ export default function Reviews() {
               <motion.span
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
+                viewport={{once: true}}
                 className="w-fit mx-auto md:mx-0 text-5xl md:text-7xl italic flex items-center gap-4 tracking-tighter font-black hover:tracking-tight transition-all duration-500 bg-clip-text text-transparent bg-linear-to-b from-white to-neutral-500 mb-1"
               >
                 Reviews{" "}
@@ -58,6 +59,7 @@ export default function Reviews() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
+                viewport={{once: true}}
                 className="text-neutral-500 px-4 md:px-0 font-mono max-w-2xl leading-tight tracking-tighter "
               >
                 See what others are saying about Webtree and share your own
@@ -68,6 +70,7 @@ export default function Reviews() {
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
+              viewport={{once: true}}
               transition={{ delay: 0.3 }}
             >
               <button
@@ -87,6 +90,7 @@ export default function Reviews() {
           <motion.span
             initial={{ width: "0%" }}
             whileInView={{ width: "90%" }}
+            viewport={{once: true}}
             transition={{
               duration: 0.6,
               delay: 0.3,
@@ -136,6 +140,7 @@ export default function Reviews() {
                     key={review.id}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
+                    viewport={{once: true}}
                     transition={{ delay: index * 0.05 + 0.4 }}
                     className="flex justify-center "
                   >
