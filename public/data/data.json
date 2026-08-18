@@ -1,6 +1,15 @@
 {
   "latest": [
     {
+      "id": 18,
+      "name": "Animos",
+      "desc": "Showcase your design in Motion.",
+      "link": "https://animos.app/",
+      "category": "latest",
+      "logo": "https://img.logo.dev/animos.app?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true",
+      "new": true
+    },
+    {
       "id": 17,
       "name": "iamsajid",
       "desc": "Motion Design, Color Generator, CSS Tricks, Animations.",
@@ -549,6 +558,15 @@
     }
   ],
   "animation": [
+    {
+      "id": 12,
+      "name": "Animos",
+      "desc": "Showcase your design in Motion.",
+      "link": "https://animos.app/",
+      "category": "animations",
+      "logo": "https://img.logo.dev/animos.app?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true",
+      "new": true
+    },
     {
       "id": 11,
       "name": "Animations.dev",

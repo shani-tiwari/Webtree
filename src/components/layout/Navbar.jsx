@@ -148,7 +148,7 @@ const socialLinks = [
             onClick={scrollTop}
           >
             <p className="text-amber-500 text-[22px] md:text-[26px]">४</p>
-            <h1 className="text-[20px] md:text-[24px] text-neutral-300/70 hover:text-neutral-300 tracking-tighter">
+            <h1 className="text-[19px] md:text-[24px] text-neutral-300/70 hover:text-neutral-300 tracking-tighter">
               Webtree
             </h1>
           </Link>
@@ -157,27 +157,29 @@ const socialLinks = [
         {/* Desktop Menu */}
         <div
           className={cn(
-            "hidden md:flex grow gap-4 items-center justify-center",
+            "hidden md:flex grow gap-6 items-center justify-center",
           )}
         >
           {[
-            { label: "Explore", path: "/explore/tools" },
-            { label: "Reviews", path: "/reviews" },
-            { label: "Github", path: "https://github.com/shani-tiwari/webtree" },
-          ].map((item) => {
+            { label: "Explore", path: "/explore/tools", icon: SearchList02Icon },
+            { label: "Reviews", path: "/reviews", icon: Agreement03Icon },
+            { label: "Github", path: "https://github.com/shani-tiwari/webtree", icon: GithubIcon },
+          ].map((item, i) => {
             const isActive = active === item.label.toLowerCase();
             return (
               <Link
                 key={item.label}
                 to={item.path}
                 className={cn(
-                  "navItem ",
+                  "navItem flex gap-2 justify-center items-center",
                   isActive
                     ? "text-amber-500 wavy-underline-pulse"
                     : "text-neutral-300/80 hover:text-neutral-300",
                 )}
               >
                 {item.label}
+                <MagneticButton icon={item.icon} size='18' className='mt-0.5' />
+                {i<2 && <p className="text-neutral-500/90 ml-2">|</p>} 
               </Link>
             );
           })}

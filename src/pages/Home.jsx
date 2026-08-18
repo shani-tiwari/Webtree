@@ -9,7 +9,6 @@ import { CardsGrid } from "../components/layout";
 import { useCollectionData } from "../hooks/useCollectionData";
 import { Rocket01Icon } from "@hugeicons/core-free-icons";
 import { Link } from "react-router";
-import InstallDialogue from "../components/ui/InstallDialogue.jsx";
 
 export default function Home() {
   const { data, loading } = useCollectionData();
@@ -35,13 +34,6 @@ export default function Home() {
             ? `Showing ${activeCategory.split("_").join(" ")} resources`
             : ""}
         </div>
-
-
-        {/* install dialogue */}
-        <div className="absolute p-4 top-100 left-0 right-0 md:left-auto md:top-20 md:right-6 z-99"> 
-          <InstallDialogue />
-        </div>
-
 
         {/* Header */}
         <Header />
