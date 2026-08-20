@@ -266,7 +266,7 @@ const socialLinks = [
               {!isCollectionPage && showLength && collection.length > 0 && (
                 <sup
                   className={cn(
-                    "absolute text-xs -right-2 -top-1.5 text-zinc-300 selection:bg-amber-600/30 selection:text-white",
+                    "absolute text-xs -right-2.5 -top-1.5 text-zinc-300 selection:bg-amber-600/30 selection:text-white",
                   )}
                 >
                   {collection.length}

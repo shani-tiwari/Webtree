@@ -3,7 +3,7 @@ import React from "react";
 import { Routes, Route, useLocation, Navigate } from "react-router";
 import { cn } from "./utils/utils.js";
 import Navbar from "./components/layout/Navbar";
-import About from "./pages/About";
+// import About from "./pages/About";
 
 const Footer = React.lazy(() => import("./components/layout/Footer"));
 const Reviews = React.lazy(() => import("./pages/Reviews"));
@@ -54,17 +54,17 @@ function App() {
               />
               <Route path="/explore/:category" element={<Explore />} />
               <Route path="/collection" element={<Collection />} />
-              <Route path="/about" element={<About />} />
+              {/* <Route path="/about" element={<About />} /> */}
               <Route path="/reviews" element={<Reviews />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </React.Suspense>
 
-          {location.pathname === "/" && (
+          {/* {location.pathname === "/" && (
             <>
               <About />
             </>
-          )}
+          )} */}
         </main>
 
         {!isFullScreenRoute && (

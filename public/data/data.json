@@ -1,6 +1,15 @@
 {
   "latest": [
     {
+      "id": 19,
+      "name": "Desengs",
+      "desc": "The Ultimate Resource for Design Engineers. Curated by design engineers — for design engineers.",
+      "link": "https://desengs.com/",
+      "category": "latest",
+      "logo": "https://img.logo.dev/desengs.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true",
+      "new": true
+    },
+    {
       "id": 18,
       "name": "Animos",
       "desc": "Showcase your design in Motion.",
@@ -120,6 +129,15 @@
     }
   ],
   "be_pro": [
+    {
+      "id": 4,
+      "name": "Desengs",
+      "desc": "The Ultimate Resource for Design Engineers. Curated by design engineers — for design engineers.",
+      "link": "https://desengs.com/",
+      "category": "be_pro",
+      "logo": "https://img.logo.dev/desengs.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true",
+      "new": true
+    },
     {
        "id": 3,
        "new": true,

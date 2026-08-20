@@ -17,7 +17,7 @@ const fellowPages = [
   { name: "Explore", path: "/explore/tools", icon: SearchList02Icon, desc: "Browse curated dev tools" },
   { name: "Collection", path: "/collection", icon: FolderFavouriteIcon, desc: "Your saved stack" },
   { name: "Reviews", path: "/reviews", icon: Agreement03Icon, desc: "Community thoughts" },
-  { name: "About", path: "/about", icon: Rocket01Icon, desc: "Learn about Webtree" },
+  // { name: "About", path: "/about", icon: Rocket01Icon, desc: "Learn about Webtree" },
 ];
 
 export default function NotFound() {
