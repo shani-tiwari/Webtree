@@ -170,16 +170,15 @@ const socialLinks = [
               <Link
                 key={item.label}
                 to={item.path}
+                target={item.path.startsWith("/") ? "_self" : "_blank"}
                 className={cn(
                   "navItem flex gap-2 justify-center items-center",
-                  isActive
-                    ? "text-amber-500 wavy-underline-pulse"
-                    : "text-neutral-300/80 hover:text-neutral-300",
+                  isActive ? "text-amber-500" : "text-neutral-300/80 hover:text-neutral-300",
                 )}
               >
-                {item.label}
+                <p>{item.label}</p>
                 <MagneticButton icon={item.icon} size='18' className='mt-0.5' />
-                {i<2 && <p className="text-neutral-500/90 ml-2">|</p>} 
+                <p>{i<2 && <p className="text-neutral-500/90 ml-2">|</p>}</p>
               </Link>
             );
           })}

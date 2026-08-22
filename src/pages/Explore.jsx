@@ -42,7 +42,7 @@ export default function Explore() {
         id="explore"
         className="min-h-screen h-fit max-w-[1200px] flex flex-col gap-10 md:gap-10 pt-30"
       >
-        <h1 className="sr-only">Explore DeveloperResources</h1>
+        <h1 className="sr-only">Explore Developer Resources</h1>
 
         {/* Screen reader live region for announcing category changes */}
         <div className={cn("sr-only")} aria-live="polite" role="status">
