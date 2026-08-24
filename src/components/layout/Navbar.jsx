@@ -6,12 +6,13 @@ import {
   Agreement03Icon,
   Menu02Icon,
   Home11Icon,
-  SearchList02Icon,
+  // SearchList02Icon,
   AllBookmarkIcon,
   InstagramIcon,
   NewTwitterRectangleIcon,
   GithubIcon,
   Linkedin01Icon,
+  KeyframesMultipleIcon
 } from "@hugeicons/core-free-icons";
 import React, { useState } from "react";
 // eslint-disable-next-line no-unused-vars
@@ -74,15 +75,17 @@ const Navbar = () => {
         ? "reviews"
         : location.pathname.startsWith("/collection")
           ? "collection"
-          : location.pathname.startsWith("/explore")
-            ? "explore"
+          : location.pathname.startsWith("/explore/tools")
+            ? "All Websites"
             : null;
 
   const [showLength, setShowLength] = useState(true);
+
+
   const mobile_navLinks = [
     { name: "Home", path: "/", icon: Home11Icon },
     { name: "Collection", path: "/collection", icon: FolderFavouriteIcon },
-    { name: "Explore", path: "/explore/tools", icon: SearchList02Icon },
+    { name: "All Websites", path: "/explore/tools", icon: KeyframesMultipleIcon },
     { name: "Reviews", path: "/reviews", icon: Agreement03Icon },
     // { name: "About", path: "/about", icon: Tree02Icon },
     // { name: "Connect", path: "/connect", icon: Link02FreeIcons },
@@ -161,11 +164,11 @@ const socialLinks = [
           )}
         >
           {[
-            { label: "Explore", path: "/explore/tools", icon: SearchList02Icon },
+            { label: "All Websites", path: "/explore/tools", icon: KeyframesMultipleIcon },
             { label: "Reviews", path: "/reviews", icon: Agreement03Icon },
             { label: "Github", path: "https://github.com/shani-tiwari/webtree", icon: GithubIcon },
           ].map((item, i) => {
-            const isActive = active === item.label.toLowerCase();
+            const isActive = active?.split(' ').join('')?.toLowerCase() === item.label.split(' ').join('').toLowerCase();
             return (
               <Link
                 key={item.label}
@@ -177,7 +180,7 @@ const socialLinks = [
                 )}
               >
                 <p>{item.label}</p>
-                <MagneticButton icon={item.icon} size='18' className='mt-0.5' />
+                <MagneticButton icon={item.icon} size='19' className='mt-0.5' />
                 <p>{i<2 && <p className="text-neutral-500/90 ml-2">|</p>}</p>
               </Link>
             );
@@ -391,7 +394,7 @@ const socialLinks = [
                           ))}
                            {/* Social */}
                                 <div className="w-full flex flex-col justify-center items-center">
-                                  <h2 className="mb-4 pt-2 w-full text-start text-xs font-semibold uppercase text-neutral-500">
+                                  <h2 className="mb-4 pt-2 w-full text-start text-xs font-semibold uppercase text-neutral-500/80">
                                     Connect
                                   </h2>
                                   <div className="w-full flex justify-between gap-4">
@@ -409,7 +412,7 @@ const socialLinks = [
                                           "outline-2 outline-offset-1 outline-white/20 rounded-xl bg-white/6",
                                         )}
                                       >
-                                        <HugeiconsIcon icon={social.icon} size={20}/>
+                                        <HugeiconsIcon icon={social.icon} size={21}/>
                                       </motion.a>
                                     ))}
                                   </div>

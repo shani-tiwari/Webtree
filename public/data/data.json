@@ -586,15 +586,6 @@
       "new": true
     },
     {
-      "id": 11,
-      "name": "Animations.dev",
-      "desc": "How do you craft animations that feel right?.",
-      "link": "https://animations.dev",
-      "category": "animations",
-      "logo": "https://img.logo.dev/animations.dev?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true",
-      "new": true
-    },
-    {
       "id": 2,
       "name": "LottieFiles",
       "desc": "Free animated icons, illustrations, and Lottie JSON animations.",
