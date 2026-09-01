@@ -151,7 +151,7 @@
        "id": 3,
        "new": true,
        "category": "be_pro",
-       "name": "Hello Frontend",
+       "name": "Debug it",
        "link": "https://debugit.dev/",
        "desc": "Read code. Fix bugs. Build real skills. A different way to practice JS.",
        "logo": "https://img.logo.dev/debugit.dev/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
