@@ -70,7 +70,7 @@ const Navbar = () => {
         ? "reviews"
         : location.pathname.startsWith("/collection")
           ? "collection"
-          : location.pathname.startsWith("/explore/tools")
+          : location.pathname.startsWith("/explore")
             ? "All Websites"
             : null;
 
