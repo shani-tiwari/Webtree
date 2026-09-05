@@ -3,7 +3,6 @@ import React from "react";
 import { Routes, Route, useLocation, Navigate } from "react-router";
 import { cn } from "./utils/utils.js";
 import Navbar from "./components/layout/Navbar";
-// import About from "./pages/About";
 
 const Footer = React.lazy(() => import("./components/layout/Footer"));
 const Reviews = React.lazy(() => import("./pages/Reviews"));
@@ -11,8 +10,7 @@ const Explore = React.lazy(() => import("./pages/Explore"));
 const Collection = React.lazy(() => import("./pages/Collection"));
 const ScrollToTop = React.lazy(() => import("./components/layout/ScrollToTop"));
 const NotFound = React.lazy(() => import("./pages/NotFound"));
-// const Blog = React.lazy(() => import("./pages/Blog.jsx"));
-// const Socials = React.lazy(() => import("./pages/Socials"));
+
 
 function App() {
   const location = useLocation();
@@ -54,17 +52,11 @@ function App() {
               />
               <Route path="/explore/:category" element={<Explore />} />
               <Route path="/collection" element={<Collection />} />
-              {/* <Route path="/about" element={<About />} /> */}
               <Route path="/reviews" element={<Reviews />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </React.Suspense>
 
-          {/* {location.pathname === "/" && (
-            <>
-              <About />
-            </>
-          )} */}
         </main>
 
         {!isFullScreenRoute && (

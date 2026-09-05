@@ -8,7 +8,8 @@ export default function CardsGrid({ carddata, activeCategory, show }) {
           key={activeCategory}
           aria-label="Resources grid"
           className={cn(
-            "w-full z-10 px-2 md:px-4 lg:px-0 container mx-auto bg-transparent grow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5",
+            "w-full z-10 px-2 md:px-4 lg:px-0 container mx-auto bg-transparent grow",
+            "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5",
             "md:mt-9 bg-white/1 backdrop-blur-xs"
           )}
         >

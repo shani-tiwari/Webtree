@@ -6,7 +6,6 @@ import {
   Agreement03Icon,
   Menu02Icon,
   Home11Icon,
-  // SearchList02Icon,
   AllBookmarkIcon,
   InstagramIcon,
   NewTwitterRectangleIcon,
@@ -14,7 +13,7 @@ import {
   Linkedin01Icon,
   KeyframesMultipleIcon
 } from "@hugeicons/core-free-icons";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "motion/react";
 import { useCollection } from "../../context/CollectionContext";
@@ -28,19 +27,19 @@ const Navbar = () => {
   const location = useLocation();
 
   // Lock body scroll when mobile menu is open
-  // useEffect(() => {
-  //   if (isOpen) {
-  //     document.body.style.overflow = "hidden";
-  //     document.documentElement.style.overflow = "hidden";
-  //   } else {
-  //     document.body.style.overflow = "auto";
-  //     document.documentElement.style.overflow = "auto";
-  //   }
-  //   return () => {
-  //     document.body.style.overflow = "auto";
-  //     document.documentElement.style.overflow = "auto";
-  //   };
-  // }, [isOpen]);
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
+    };
+  }, [isOpen]);
 
   const navVariants = {
     hidden: { y: -100, opacity: 0 },
@@ -54,10 +53,6 @@ const Navbar = () => {
     },
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: -20 },
-    visible: { opacity: 1, y: 0 },
-  };
 
   const scrollTop = () => {
     window.scrollTo({
@@ -87,8 +82,6 @@ const Navbar = () => {
     { name: "Collection", path: "/collection", icon: FolderFavouriteIcon },
     { name: "All Websites", path: "/explore/tools", icon: KeyframesMultipleIcon },
     { name: "Reviews", path: "/reviews", icon: Agreement03Icon },
-    // { name: "About", path: "/about", icon: Tree02Icon },
-    // { name: "Connect", path: "/connect", icon: Link02FreeIcons },
   ];
   
 const socialLinks = [
@@ -124,6 +117,13 @@ const socialLinks = [
 
   const isCollectionPage = location.pathname === "/collection";
 
+
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
     <>
       <motion.nav
@@ -132,11 +132,11 @@ const socialLinks = [
         variants={navVariants}
         aria-label="Main Navigation"
         className={cn(
-          "fixed top-1.5 left-1/2 -translate-x-1/2 w-[90%] md:max-w-300 z-50 px-5 md:px-9 py-1 md:py-1.5",
-          "flex justify-between items-center rounded-full border-2 border-neutral-400/50 ",
+          "fixed top-2 left-1/2 -translate-x-1/2 w-[90%] md:w-[75%] z-50 px-4 md:px-6 py-1 md:py-1.5",
+          "flex justify-between items-center rounded-full border-2 border-neutral-400/50  shadow-xl shadow-white/5 ",
         )}
       >
-        <div className="absolute inset-0 -z-8 rounded-full bg-black/10 backdrop-blur-[5px] pointer-events-none" />
+        <div className="absolute inset-0 -z-8 rounded-full bg-black/10 backdrop-blur-xs pointer-events-none" />
         {/* Logo */}
         <motion.div
           variants={itemVariants}

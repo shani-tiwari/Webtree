@@ -15,7 +15,7 @@ export default function ReviewCard({ xProfile, gender, text, bgColor, date }) {
       alt={"reviews"}
       style={{ backgroundColor: bgColor ? `${bgColor}25` : "rgba(10, 10, 10, 0.6)" }}
       className={cn(
-        "relative group flex flex-col w-full py-4 px-5 rounded-3xl border-2 border-zinc-500/50 shadow-lg shrink-0",
+        "relative group flex flex-col w-[90%] py-4 px-5 rounded-3xl border-2 border-zinc-500/50 shadow-lg shrink-0",
         " transition-all duration-300 hover:border-zinc-500/80"
       )}
     >

@@ -89,17 +89,17 @@ const Card = memo(
 
     return (
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 10, scale: 0.97, filter: 'blur(2px)' }}
+        whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
         viewport={{ once: true }}
-        transition={{ duration: 0.35 }}
+        transition={{ duration: 0.25 }}
         className={cn("w-full h-full block p-1")}
         aria-label={`View ${title} resource`}
       >
         <section
           className={cn(
             "relative h-full flex flex-col bg-linear-to-tr from-black/10 via-black/5 to-white/8 backdrop-blur-md border-2 border-zinc-700/80 rounded-[30px] p-5",
-            "transition-all ease-[cubic-bezier(0.79,0.47,0.24,0.98)] duration-300 group cursor-pointer text-white/70 select-none hover:border-zinc-600/90 shadow-md shadow-black hover:shadow-xl",
+            "transition-colors ease-[cubic-bezier(0.79,0.47,0.24,0.98)] duration-250 group cursor-pointer text-white/70 select-none hover:border-zinc-600/90 shadow-md shadow-black hover:shadow-xl",
           )}
         >
           {/* Action Icons Section */}

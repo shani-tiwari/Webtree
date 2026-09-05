@@ -40,7 +40,7 @@ export default function Explore() {
       {/* main section */}
       <section
         id="explore"
-        className="min-h-screen h-fit max-w-[1200px] flex flex-col gap-10 md:gap-10 pt-30"
+        className="min-h-screen h-fit max-w-300 flex flex-col gap-10 md:gap-10 pt-30"
       >
         <h1 className="sr-only">Explore Developer Resources</h1>
 
@@ -66,8 +66,8 @@ export default function Explore() {
             )}
           >
             {activeCategory.replace("_", " ")}
-            <span className="absolute text-xs -right-5 top-0 text-amber-500/80 font-semibold selection:bg-zinc-600/30 selection:text-white">
-              ({data[activeCategory].length})
+            <span className="absolute text-xs -right-5 -top-2 tracking-wide border rounded-full p-1 px-1.5 text-amber-500/80 font-semibold selection:bg-zinc-600/30 selection:text-white text-shadow-lg">
+              {data[activeCategory].length} 
             </span>
           </h1>
         </motion.h1>

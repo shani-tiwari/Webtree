@@ -37,7 +37,7 @@ export default function ReviewSection() {
   }, [reviews]);
 
   return (
-    <section className="w-full max-w-[1300px] mx-auto mt-20 mb-10 overflow-hidden relative selection:text-amber-500">
+    <section className="w-full max-w-325 mx-auto mt-20 mb-10 overflow-hidden relative selection:text-amber-500">
       {/* Header section */}
       <div className="flex flex-col md:flex-row justify-between items-center mb-10 px-4 md:px-14 gap-4">
         <div className="flex flex-col items-center md:items-start text-center md:text-left">
@@ -94,7 +94,7 @@ export default function ReviewSection() {
       <div className="relative w-full pb-4">
         <div
           ref={scrollContainerRef}
-          className="flex gap-6 overflow-x-auto hide-scrollbar px-8 md:px-24 py-4 mask-fade-edges backdrop-blur-xs "
+          className="flex overflow-x-auto hide-scrollbar px-4 md:px-10 py-4 mask-fade-edges backdrop-blur-xs "
           style={{ scrollBehavior: "smooth" }}
         >
           {loading ? (
@@ -109,7 +109,7 @@ export default function ReviewSection() {
                 viewport={{once: true}}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.01, duration: 0.2 }}
-                className="min-w-96 flex justify-center "
+                className="min-w-96 flex "
               >
                 <ReviewCard {...review} />
               </motion.div>
