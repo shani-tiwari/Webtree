@@ -39,7 +39,7 @@ export default function Collection() {
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.3 }}
-        className="grow w-full"
+        className="grow w-full "
       >
         {collection.length === 0 ? (
           <div className="text-center text-zinc-400/70 py-20 flex flex-col items-center gap-4">
@@ -61,7 +61,7 @@ export default function Collection() {
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2.5  content-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2.5  content-center bg-black/1 backdrop-blur-md">
             {collection.map((item) => (
               <Card
                 key={item.id || item.name}
