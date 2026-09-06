@@ -9,7 +9,7 @@ const SkeletonHome = () => {
     <SkeletonTheme baseColor="#18181b" highlightColor="#27272a">
       <section
         id="home-skeleton"
-        className="w-full h-fit max-w-[1300px] flex flex-col gap-10 md:gap-10"
+        className="w-full h-fit max-w-325 flex flex-col gap-10 md:gap-10"
       >
         {/* Header */}
         <header
@@ -24,7 +24,7 @@ const SkeletonHome = () => {
               width={300}
               height={40}
               borderRadius={8}
-              className="md:w-[450px]"
+              className="md:w-112.5"
             />
           </div>
         </header>
@@ -46,7 +46,7 @@ const SkeletonHome = () => {
                   width={w}
                   height={30}
                   borderRadius={14}
-                  className="md:h-[34px]"
+                  className="md:h-8.5"
                 />
               </div>
             ))}
@@ -67,7 +67,7 @@ const SkeletonHome = () => {
                 <div key={i} className={cn("w-full h-full block p-1")}>
                   <article
                     className={cn(
-                      "relative h-full min-h-[220px] flex flex-col bg-[#080808]/80 backdrop-blur-md border border-zinc-800 rounded-4xl p-4 shadow-lg",
+                      "relative h-full min-h-55 flex flex-col bg-[#080808]/80 backdrop-blur-md border border-zinc-800 rounded-4xl p-4 shadow-lg",
                     )}
                   >
                     {/* Action Icons Section */}
@@ -89,12 +89,12 @@ const SkeletonHome = () => {
                     </div>
 
                     {/* title */}
-                    <div className={cn("pl-1 mt-1 mb-[10px]")}>
+                    <div className={cn("pl-1 mt-1 mb-2.5")}>
                       <Skeleton width="60%" height={24} borderRadius={6} />
                     </div>
 
                     {/* divider */}
-                    <span className="w-[95%] h-[0.3px] bg-white/10 mb-[5px] ml-1"></span>
+                    <span className="w-[95%] h-[0.3px] bg-white/10 mb-1.25 ml-1"></span>
 
                     {/* Description */}
                     <div className="ml-1 mt-2 grow flex flex-col gap-2">
