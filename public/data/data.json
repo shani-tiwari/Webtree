@@ -1,6 +1,30 @@
 {
   "latest": [
     {
+      "id": 22,
+      "name": "Soundcn",
+      "desc": "Curated UI sounds for Copy. Paste. Play.",
+      "link": "https://soundcn.xyz/",
+      "category": "latest",
+      "logo": "https://img.logo.dev/soundcn.xyz/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 21,
+      "name": "Raphael Salaja",
+      "desc": "Declarative audio synthesis library for the web.",
+      "link": "https://audio.raphaelsalaja.com/",
+      "category": "latest",
+      "logo": "https://img.logo.dev/audio.raphaelsalaja.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 20,
+      "name": "Cuelume",
+      "desc": "Interfaces that sound as good as they feel.",
+      "link": "https://cuelume.dev",
+      "category": "latest",
+      "logo": "https://img.logo.dev/cuelume.dev?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
       "id": 19,
       "name": "Desengs",
       "desc": "The Ultimate Resource for Design Engineers. Curated by design engineers — for design engineers.",
@@ -55,24 +79,6 @@
       "logo": "https://img.logo.dev/savee.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
-      "id": 6,
-      "name": "Godly",
-      "desc": "Handpicked websites showcasing godly web design and creativity.",
-      "link": "https://godly.website",
-      "category": "latest",
-      "new": true,
-      "logo": "https://img.logo.dev/godly.website?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 5,
-      "name": "Stacksorted",
-      "desc": "Sorted collections of design stacks, tools, and inspirations for developers.",
-      "link": "https://stacksorted.com",
-      "category": "latest",
-      "new": true,
-      "logo": "https://img.logo.dev/stacksorted.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-     {
       "id": 9,
       "name": "Streamlinehq",
       "desc": "Your Ultimate Icon Library Download or copy svg & png icons.",
@@ -82,24 +88,6 @@
       "logo": "https://img.logo.dev/streamlinehq.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
-      "id": 1,
-      "name": "Haikei",
-      "desc": "Free generative SVG background shapes for web design.",
-      "link": "https://app.haikei.app/",
-      "category": "latest",
-      "new": true,
-      "logo": "https://img.logo.dev/app.haikei.app?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 1,
-      "name": "Picjumbo",
-      "desc": "Free high-res images, backgrounds, and photos for personal/commercial use.",
-      "link": "https://picjumbo.com",
-      "category": "latest",
-      "new": true,
-      "logo": "https://img.logo.dev/picjumbo.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-     {
       "id": 17,
       "name": "Hugging Face",
       "desc": "Free ML inference API (limited). Text/image generation.",
@@ -768,6 +756,32 @@
       "logo": "https://img.logo.dev/hugeicons.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
+  "audio": [
+    {
+      "id": 3,
+      "name": "Soundcn",
+      "desc": "Curated UI sounds for Copy. Paste. Play.",
+      "link": "https://soundcn.xyz/",
+      "category": "audio",
+      "logo": "https://img.logo.dev/soundcn.xyz/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 2,
+      "name": "Raphael Salaja",
+      "desc": "Declarative audio synthesis library for the web.",
+      "link": "https://audio.raphaelsalaja.com/",
+      "category": "audio",
+      "logo": "https://img.logo.dev/audio.raphaelsalaja.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 1,
+      "name": "Cuelume",
+      "desc": "Interfaces that sound as good as they feel.",
+      "link": "https://cuelume.dev",
+      "category": "audio",
+      "logo": "https://img.logo.dev/cuelume.dev?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    }
+  ],
   "videos": [
     {
       "id": 1,
@@ -974,7 +988,7 @@
       "logo": "https://img.logo.dev/mixamo.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
-  "bg": [
+  "background": [
     {
       "id": 1,
       "name": "Pattern Generator",

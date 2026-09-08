@@ -11,6 +11,7 @@ import { Rocket01Icon } from "@hugeicons/core-free-icons";
 import { Link } from "react-router";
 
 export default function Home() {
+  
   const { data, loading } = useCollectionData();
   const [activeCategory, setActiveCategory] = useState("be_pro");
 
@@ -24,7 +25,7 @@ export default function Home() {
     <>
       <section
         id="home"
-        className="w-full h-fit max-w-[1300px] flex flex-col gap-10 md:gap-10"
+        className="w-full h-fit max-w-325 flex flex-col gap-10 md:gap-10"
       >
         <h1 className="sr-only">WebTree Resources Directory</h1>
 
@@ -55,7 +56,7 @@ export default function Home() {
             }}
             aria-label="Category selection"
             className={cn(
-              "z-40 gap-2 md:gap-3 px-4 w-full h-fit md:pt-4 mb-6 md:mb-12 max-w-4xl mx-auto shrink-0",
+              "z-40 gap-2 md:gap-3 px-4 w-full h-fit md:pt-4 mb-6 md:mb-12 max-w-5xl mx-auto shrink-0",
               "flex flex-wrap justify-center rounded-xl text-white backdrop-blur-sm",
             )}
           >

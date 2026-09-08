@@ -86,7 +86,7 @@ export default function Explore() {
             transition={{ duration: 0.3 }}
             aria-label="Category selection"
             className={cn(
-              "z-40 px-4 gap-2 w-full h-fit md:py-3 md:pt-4 mb-8 max-w-4xl mx-auto shrink-0",
+              "z-40 px-4 gap-2 w-full h-fit md:py-3 md:pt-4 mb-8 max-w-5xl mx-auto shrink-0",
               "flex flex-wrap justify-center rounded-xl text-white backdrop-blur-sm",
             )}
           >
