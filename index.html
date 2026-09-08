@@ -103,24 +103,25 @@
     <!-- SEO/Ranking -->
 
     <!-- Structured Data (JSON-LD) -->
+      <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
-            {
-              "@context": "https://schema.org",
-              "@graph": [
-                {
-                  "@type": "WebSite",
-                  "@id": "https://webtree.shaniweb.com/#website",
-                  "url": "https://webtree.shaniweb.com/",
-                  "name": "WebTree | Developer Resources, Free Developer Tools, Frontend Resources",
-                  "description": "The ultimate collection of over 140 free developer tools, UI kits, React components. Find the best frontend development tools, SVG icons, web fonts, and web design inspiration to speed up your workflow.",
-                  "inLanguage": "en-US",
-                  "publisher": { "@id": "https://webtree.shaniweb.com/#organization" },
-                  "potentialAction": {
-                    "@type": "SearchAction",
-                    "target": "https://webtree.shaniweb.com/?q={search_term_string}",
-                    "query-input": "required name=search_term_string"
-                  }
-                },
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://webtree.shaniweb.com/#website",
+            "url": "https://webtree.shaniweb.com/",
+            "name": "WebTree | Developer Resources, Free Developer Tools, Frontend Resources",
+            "description": "The ultimate collection of over 140 free developer tools, UI kits, React components. Find the best frontend development tools, SVG icons, web fonts, and web design inspiration to speed up your workflow.",
+            "inLanguage": "en-US",
+            "publisher": { "@id": "https://webtree.shaniweb.com/#organization" },
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://webtree.shaniweb.com/?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          },
           {
             "@type": "Organization",
             "@id": "https://webtree.shaniweb.com/#organization",
@@ -140,7 +141,6 @@
               "https://github.com/shani-tiwari",
               "https://linkedin.com/in/shani-tiwarii",
               "https://instagram.com/shani.develops"
-
             ]
           },
           {
@@ -155,31 +155,31 @@
               "https://linkedin.com/in/theshanitiwari",
               "https://twitter.com/ShaniDevelops",
               "https://instagram.com/shani.develops"
-
             ],
             "worksFor": { "@id": "https://webtree.shaniweb.com/#organization" }
           },
           {
             "@type": "CollectionPage",
             "@id": "https://webtree.shaniweb.com/collection",
-            "url": "https://webtree.shaniweb.com/",
+            "url": "https://webtree.shaniweb.com/collection",
             "name": "collection of saved websites",
             "description": "A collection of saved websites",
             "inLanguage": "en-US",
-            "isPartOf": { "@id": "https://webtree.shaniweb.com/#website" },
+            "isPartOf": { "@id": "https://webtree.shaniweb.com/#website" }
           },
           {
-            "@type": "ExplorePage",
+            "@type": "CollectionPage",
             "@id": "https://webtree.shaniweb.com/explore/tools",
             "url": "https://webtree.shaniweb.com/explore/tools",
             "name": "Explore All Websites",
             "description": "Explore all websites with Categories",
             "inLanguage": "en-US",
-            "isPartOf": { "@id": "https://webtree.shaniweb.com/#website" },
-          },
+            "isPartOf": { "@id": "https://webtree.shaniweb.com/#website" }
+          }
         ]
       }
     </script>
+
 
     <!-- Google tag (gtag.js) -->
     <script
