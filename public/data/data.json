@@ -78,15 +78,6 @@
       "logo": "https://img.logo.dev/recent.design?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
-      "id": 14,
-      "name": "Savee",
-      "desc": "Made for visual minds, Browse inspiration curated by designers.Find the best visual references for your next project.",
-      "link": "https://www.savee.com",
-      "category": "latest",
-      "new": true,
-      "logo": "https://img.logo.dev/savee.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
       "id": 9,
       "name": "Streamlinehq",
       "desc": "Your Ultimate Icon Library Download or copy svg & png icons.",
@@ -206,15 +197,6 @@
       "logo": "https://img.logo.dev/jakearchibald.github.io?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
-      "id": 22,
-      "name": "StudentKit",
-      "link": "https://studentkit.app/",
-      "desc": "Free tools, interactive roadmaps, and project ideas for college students, exam aspirants, and job seekers.",
-      "category": "tools",
-      "logo": "https://img.logo.dev/studentkit.app?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true",
-      "new": true
-    },
-    {
       "id": 1,
       "name": "CSS Grid Generator",
       "link": "https://cssgrid-generator.netlify.app/",
@@ -273,14 +255,6 @@
       "logo": "https://img.logo.dev/bennettfeely.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
-      "id": 7,
-      "name": "Tailwind Play",
-      "link": "https://play.tailwindcss.com/",
-      "desc": "Live Tailwind CSS editor with autocomplete, responsive previews, and export.",
-      "category": "tools",
-      "logo": "https://img.logo.dev/play.tailwindcss.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
       "id": 8,
       "name": "Responsively App",
       "link": "https://responsively.app/",
@@ -295,14 +269,6 @@
       "desc": "AI-powered color schemes with export to CSS, Tailwind, Figma.",
       "category": "tools",
       "logo": "https://img.logo.dev/coolors.co?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 10,
-      "name": "Fontjoy",
-      "link": "https://fontjoy.com/",
-      "desc": "AI font pairing tool for perfect Google Fonts combinations.",
-      "category": "tools",
-      "logo": "https://img.logo.dev/fontjoy.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
       "id": 14,
@@ -464,15 +430,6 @@
       "logo": "https://img.logo.dev/recent.design?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
-      "id": 14,
-      "name": "Savee",
-      "desc": "Made for visual minds, Browse inspiration curated by designers.Find the best visual references for your next project.",
-      "link": "https://www.savee.com",
-      "category": "design_ideas",
-      "new": true,
-      "logo": "https://img.logo.dev/savee.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
       "id": 3,
       "name": "Awwwards",
       "desc": "Awards for exceptional web design, inspiration, and development resources.",
@@ -561,14 +518,6 @@
       "link": "https://www.dark.design/",
       "category": "design_ideas",
       "logo": "https://img.logo.dev/dark.design?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 11,
-      "name": "Repaint",
-      "desc": "Build a website by chatting with AI.",
-      "link": "https://repaint.com/",
-      "category": "design_ideas",
-      "logo": "https://img.logo.dev/repaint.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
   "animation": [
@@ -624,13 +573,12 @@
   ],
   "images": [
     {
-      "id": 1,
-      "name": "Picjumbo",
-      "desc": "Free high-res images, backgrounds, and photos for personal/commercial use.",
-      "link": "https://picjumbo.com",
+      "id": 7,
+      "name": "Rawpixel",
+      "desc": "rawpixel makes it easy to find beautiful visuals and create incredible designs.",
+      "link": "https://www.rawpixel.com/search?page=1&path=1522&sort=curated",
       "category": "images",
-      "new": true,
-      "logo": "https://img.logo.dev/picjumbo.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+      "logo": "https://img.logo.dev/rawpixel.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
       "id": 2,
@@ -671,14 +619,6 @@
       "link": "https://www.freepik.com/images#from_element=mainmenu",
       "category": "images",
       "logo": "https://img.logo.dev/freepik.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 7,
-      "name": "Rawpixel",
-      "desc": "rawpixel makes it easy to find beautiful visuals and create incredible designs.",
-      "link": "https://www.rawpixel.com/search?page=1&path=1522&sort=curated",
-      "category": "images",
-      "logo": "https://img.logo.dev/rawpixel.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
       "id": 8,
@@ -1024,6 +964,14 @@
     }
   ],
   "fonts": [
+    {
+      "id": 10,
+      "name": "Fontjoy",
+      "link": "https://fontjoy.com/",
+      "desc": "AI font pairing tool for perfect Google Fonts combinations.",
+      "category": "fonts",
+      "logo": "https://img.logo.dev/fontjoy.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
     {
       "id": 1,
       "name": "Google Fonts",
