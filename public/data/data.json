@@ -1,6 +1,14 @@
 {
   "latest": [
     {
+      "id": 23,
+      "name": "react-sounds",
+      "desc": "Add Sound Effects to Your React Apps Effortlessly.",
+      "link": "https://www.reactsounds.com/",
+      "category": "latest",
+      "logo": "https://img.logo.dev/reactsounds.com/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
       "id": 22,
       "name": "Soundcn",
       "desc": "Curated UI sounds for Copy. Paste. Play.",
@@ -757,6 +765,14 @@
     }
   ],
   "audio": [
+    {
+      "id": 4,
+      "name": "react-sounds",
+      "desc": "Add Sound Effects to Your React Apps Effortlessly.",
+      "link": "https://www.reactsounds.com/",
+      "category": "audio",
+      "logo": "https://img.logo.dev/reactsounds.com/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
     {
       "id": 3,
       "name": "Soundcn",
