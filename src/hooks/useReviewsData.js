@@ -1,22 +1,90 @@
-import { useState, useEffect } from "react";
-import { reviewService } from "../services/reviewService";
+// import { useState, useEffect } from "react";
+// import { reviewService } from "../services/reviewService";
 
-export function useReviewsData() {
-  const [reviews, setReviews] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+// export function useReviewsData() {
+//   const [reviews, setReviews] = useState([]);
+//   const [loading, setLoading] = useState(true);
+//   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    reviewService.getReviews()
-      .then(data => {
-        setReviews(data);
-        setLoading(false);
-      })
-      .catch(err => {
-        setError(err);
-        setLoading(false);
-      });
-  }, []);
+//   useEffect(() => {
+//     reviewService.getReviews()
+//       .then(data => {
+//         setReviews(data);
+//         setLoading(false);
+//       })
+//       .catch(err => {
+//         setError(err);
+//         setLoading(false);
+//       });
+//   }, []);
 
-  return { reviews, loading, error, setReviews };
-}
+//   return { reviews, loading, error, setReviews };
+// }
+
+export const Reviews = [
+  
+  {
+    "id": 1,
+    "name": "ApexUI",
+    "bgColor": "#0f392b",
+    "xProfile": "@apex_ui",
+    "gender": "male",
+    "text": " This website is really impressive and very useful, especially for developers. APIs tools and animation resources ek hi Jagah milna makes it very convenient. The UI is clean, modern and easy to navigate, So kaam quickly ho jata hai. Overall experience is smooth, efficient and saves a lot of time. Highly recommended",
+    "date": "3-26-26"
+  } , 
+  {
+    "id": 2,
+    "name": "Dims",
+    "bgColor": "#4a044e",
+    "xProfile": "@DimitriStojcic",
+    "gender": "male",
+    "text": " The ui is pretty clean. The dark mode and having all those resources laid out as genuinely useful but you definitely need a search bar at the top to cut the friction and kind of tweak that 'show more' button so it pops more? It's a solid build.",
+    "date": "3-25-26"
+  } , 
+  {
+    "id": 3,
+    "name": "Jamal",
+    "bgColor": "#0f392b",
+    "xProfile": "@JamalAbolarinwa",
+    "gender": "male",
+    "text": " The website is very good and filled with tones of resources for quick usage when developing websites. Kudos To the developer for developing such an amazing website.",
+    "date": "3-21-26"
+  },
+  {
+    "id": 4,
+    "name": "Adarsh Vardhan",
+    "bgColor": "#4a044e",
+    "xProfile": "@adarshraj5206",
+    "gender": "male",
+    "text": "Ek dum gjb ki website hai 🔥, sare resources ek jagah badiya hai bhai .",
+    "date": "3-21-26"
+  },
+  {
+    "id": 5,
+    "name": "Anjali",
+    "bgColor": "#1e1b4b",
+    "xProfile": "@anjalinirwal02",
+    "gender": "female",
+    "text": "Wow, It's aweasome UI, so clean and user friendly. The best way to organise your resources.",
+    "date": "3-19-26"
+  },
+  {
+    "id": 6,
+    "name": "Kasif",
+    "bgColor": "#7f1d1d",
+    "xProfile": "@md_kasif_uddin",
+    "gender": "male",
+    "text": "Bro literally your website look amazing 🔥 keep making these type of stuffs.",
+    "date": "3-19-26"
+  },
+  {
+    "id": 7,
+    "name": "Cinnamon",
+    "bgColor": "#78290f",
+    "xProfile": "@irunonironic",
+    "gender": "female",
+    "text": "most resources are available in one place. Simple, useful and nice.",
+    "date": "3-19-26"
+  }
+]
+

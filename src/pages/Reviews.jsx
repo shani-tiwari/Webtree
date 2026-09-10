@@ -7,13 +7,12 @@ import { BubbleChatAddIcon, Idea01Icon } from "@hugeicons/core-free-icons";
 import { GoBack } from "../components/layout";
 import { useLocation } from "react-router";
 
-import { useReviewsData } from "../hooks/useReviewsData";
+import { Reviews as reviews } from "../hooks/useReviewsData";
 import Masonry from "react-masonry-css";
 import { MagneticButton } from "../components/ui";
 
 export default function Reviews() {
   const location = useLocation();
-  const { reviews, loading } = useReviewsData();
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   useEffect(() => {
@@ -35,8 +34,8 @@ export default function Reviews() {
         <h1 className="sr-only">Community Reviews</h1>
 
         {/* Ambient backgrounds */}
-        <div className="absolute top-0 -left-20 w-[500px] h-[500px] bg-zinc-600/10 blur-[120px] rounded-full pointer-events-none animate-pulse" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-zinc-600/10 blur-[120px] rounded-full pointer-events-none animate-pulse" />
+        <div className="absolute top-0 -left-20 w-125 h-125 bg-zinc-600/10 blur-[120px] rounded-full pointer-events-none animate-pulse" />
+        <div className="absolute bottom-0 right-0 w-125 h-125 bg-zinc-600/10 blur-[120px] rounded-full pointer-events-none animate-pulse" />
 
         <div className="max-w-7xl mx-auto md:px-6 relative md:mt-10">
           {/* Header */}
@@ -102,34 +101,7 @@ export default function Reviews() {
             {location.pathname === "/reviews" && <GoBack />}
           </motion.span>
 
-          {/* Reviews Grid */}
-          {/* <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-min gap-8 px-3 mt-10">
-          {loading ? (
-             <div className="text-center animate-pulse">
-               <p className="text-zinc-500 font-mono text-lg">Loading amazing reviews...</p>
-             </div>
-          ) : (
-            reviews.map((review, index) => (
-              <motion.div
-                key={review.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.05 + 0.4 }}
-                className=" break-inside-avoid"
-              >
-                <ReviewCard {...review} />
-              </motion.div>
-            ))
-          )}
-        </div> */}
           <div className="px-3 mt-10">
-            {loading ? (
-              <div className="text-center animate-pulse">
-                <p className="text-zinc-500 font-mono text-lg">
-                  Loading amazing reviews...
-                </p>
-              </div>
-            ) : (
               <Masonry
                 breakpointCols={breakpointColumnsObj}
                 className="flex gap-8"
@@ -148,7 +120,6 @@ export default function Reviews() {
                   </motion.div>
                 ))}
               </Masonry>
-            )}
           </div>
         </div>
 

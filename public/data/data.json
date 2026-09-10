@@ -316,7 +316,7 @@
       "id": 1,
       "name": "Motion",
       "desc": "Open-source UI kit with animated React components built for Next.js and Tailwind CSS.",
-      "link": "https://motion-primitives.com",
+      "link": "https://motion-primitives.com/docs/accordion",
       "category": "ui_components",
       "logo": "https://img.logo.dev/motion-primitives.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
@@ -384,14 +384,6 @@
       "link": "https://ant.design",
       "category": "ui_components",
       "logo": "https://img.logo.dev/ant.design?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 9,
-      "name": "Jitter",
-      "desc": "Video creation platform with animated templates for social media and marketing.",
-      "link": "https://jitter.video",
-      "category": "ui_components",
-      "logo": "https://img.logo.dev/jitter.video?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
       "id": 10,

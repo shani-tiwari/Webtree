@@ -4,14 +4,13 @@ import ReviewCard from "./ReviewCard";
 import ReviewForm from "./ReviewForm";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
-import { HugeiconsIcon } from "@hugeicons/react";
 import {
   MessageAdd01Icon,
   Navigation03Icon
 } from "@hugeicons/core-free-icons";
 import { cn } from "../../../utils/utils.js";
 
-import { useReviewsData } from "../../../hooks/useReviewsData";
+import { Reviews } from "../../../hooks/useReviewsData";
 import MagneticButton from "../../ui/MagneticButton.jsx";
 
 
@@ -20,7 +19,6 @@ import MagneticButton from "../../ui/MagneticButton.jsx";
 
 export default function ReviewSection() {
 
-  const { reviews, loading } = useReviewsData();
   const [isFormOpen, setIsFormOpen] = useState(false);
   const scrollContainerRef = useRef(null);
 
@@ -34,7 +32,7 @@ export default function ReviewSection() {
     return () => {
       if (animationFrameId) cancelAnimationFrame(animationFrameId);
     };
-  }, [reviews]);
+  }, []);
 
   return (
     <section className="w-full max-w-325 mx-auto mt-20 mb-10 overflow-hidden relative selection:text-amber-500">
@@ -97,12 +95,7 @@ export default function ReviewSection() {
           className="flex overflow-x-auto hide-scrollbar px-4 md:px-10 py-4 mask-fade-edges backdrop-blur-xs "
           style={{ scrollBehavior: "smooth" }}
         >
-          {loading ? (
-            <div className="w-full text-center py-10 text-zinc-500 font-mono italic animate-pulse">
-              Loading reviews...
-            </div>
-          ) : reviews.length > 0 ? (
-            reviews.map((review, index) => (
+          {  Reviews.map((review, index) => (
               <motion.div
                 key={review.id}
                 initial={{ opacity: 0.3, scale: 0.9 }}
@@ -114,11 +107,7 @@ export default function ReviewSection() {
                 <ReviewCard {...review} />
               </motion.div>
             ))
-          ) : (
-            <div className="w-full text-center py-10 text-zinc-500 font-mono italic">
-              No reviews yet. Be the first to add one!
-            </div>
-          )}
+          }
         </div>
       </div>
 
