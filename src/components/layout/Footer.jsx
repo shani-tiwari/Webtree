@@ -114,7 +114,7 @@ export default function Footer() {
               Discover tools, design ideas, and curated picks to build better on
               the web.
             </p>
-            <div className="flex justify-start items-center gap-8 mt-6">
+            <div className="flex flex-col md:flex-row justify-start items-center gap-8 mt-6">
               <span className="group w-fit group text-lg font-medium tracking-tighter transition-colors duration-300 bg-amber-600/80 text-white/80 flex items-center gap-2 outline-2 outline-offset-1 outline-amber-600/80 py-1 px-4 rounded-lg hover:bg-amber-600/70 active:scale-98 text-shadow-lg">
                 <a
                   href="https://github.com/shani-tiwari/WebTree"
@@ -122,19 +122,22 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="flex gap-2 justify-center items-center "
                 >
-                  star on
+                  star on Github
                   <MagneticButton icon={GithubIcon} size="20" />
                 </a>
               </span>
               <span className="group w-fit group text-lg font-medium tracking-tighter  transition-colors duration-300 bg-amber-600/80 text-white/80 flex items-center gap-2 outline-2 outline-offset-1 outline-amber-600/80 py-1 px-4 rounded-lg hover:bg-amber-600/70 active:scale-98 text-shadow-lg">
+                <div className="size-6 bg-white/10 rounded-md border border-white/40 flex items-center justify-center">
+                  +
+                </div>
                 <a
                   href="https://buymeacoffee.com/shani_tiwari?new=1"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex gap-2 justify-center items-center "
                 >
-                  <MagneticButton icon={Coffee01Icon} size="20" />
-                  Coffee?
+                  {/* <MagneticButton icon={Growth} size="20" /> */}
+                  Support 
                 </a>
               </span>
             </div>
