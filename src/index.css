@@ -22,7 +22,23 @@
     text-shadow: inherit;
   }
 }
+.button {
+  position: relative;
+  isolation: isolate;
+}
 
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  /* border-radius: inherit; */
+  transition: transform 200ms ease;
+}
+
+.button:hover::before {
+  transform: scale(1.03);
+}
 @layer utilities {
   .scrollbar-hide::-webkit-scrollbar {
     display: none;

@@ -96,12 +96,15 @@ export default function Home() {
             <Link
               to={`${(activeCategory && "explore/" + activeCategory) || "/explore"}`}
               className={cn(
-                "group select-none w-fit mx-auto mt-0 flex gap-2 text-white font-medium px-6 py-2 border-2 border-amber-500/70  bg-linear-to-t from-amber-600 to-amber-800 rounded-xl",
-                "shadow-sm shadow-amber-500/50 text-shadow-lg text-shadow-black/20 hover:shadow-[0_0_20px_rgba(255,190,0,0.2)] hover:scale-102 active:scale-98 transition-all duration-300",
+                " button group select-none w-fit mx-auto mt-0 flex gap-2 px-6 py-2 border-2 border-amber-500/70  bg-linear-to-t from-amber-600 to-amber-800 rounded-xl",
+                "shadow-sm shadow-amber-500/50 hover:shadow-[0_0_12px_rgba(255,190,0,0.2)] hover:scale-101 active:scale-98 transition-all duration-200",
               )}
             >
-              Explore All Resources
-              <MagneticButton icon={Rocket01Icon} />
+              {/* willChange - won't worked ---- psuedo element used (Line. 30-40 css)*/}
+              <span className="font-medium"> 
+                Explore All Resources
+              </span>
+              <MagneticButton icon={Rocket01Icon} className='text-black mt-0.5'/>
             </Link>
           </div>
         </motion.section>

@@ -117,6 +117,14 @@
   ],
   "be_pro": [
     {
+      "id": 5,
+      "name": "Interfaces",
+      "desc": "Interface Cheat Sheet - The Ultimate Design Reference",
+      "link": "https://interfaces.dev/cheat-sheet",
+      "category": "be_pro",
+      "logo": "https://img.logo.dev/interfaces.dev?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
       "id": 4,
       "name": "Desengs",
       "desc": "The Ultimate Resource for Design Engineers. Curated by design engineers — for design engineers.",

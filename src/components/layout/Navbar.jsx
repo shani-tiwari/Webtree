@@ -137,6 +137,24 @@ const socialLinks = [
         )}
       >
         <div className="absolute inset-0 -z-8 rounded-full bg-black/10 backdrop-blur-xs pointer-events-none" />
+            <div 
+              style={{
+                filter: 'url(#glassEffect)',
+                backdropFilter: "blur(3px)",
+                WebkitBackdropFilter: "blur(3px)",
+              }}
+              className="absolute inset-0 pointer-events-none -z-3 rounded-full"
+            />
+            <svg aria-hidden="true" className="absolute h-0 w-0 overflow-hidden">
+              <defs>
+                <filter id="glassEffect" >
+                    <feTurbulence type="fractalNoise" baseFrequency="0.006 0.008" numOctaves="7"  result="noise"/>
+                    <feGaussianBlur in="noise" stdDeviation="3" result="softNoise" />
+                    <feDisplacementMap in="SourceGraphic" in2="softNoise" scale="20" />
+                    <feGaussianBlur in="displaced" stdDeviation="0.4" />
+                </filter>
+              </defs>
+            </svg>
         {/* Logo */}
         <motion.div
           variants={itemVariants}
@@ -220,7 +238,7 @@ const socialLinks = [
               <div className="relative hidden md:flex">
                 <MagneticButton icon={AllBookmarkIcon} size='20' className='text-amber-500' />
                 {collection.length > 0 && (
-                  <span className="absolute text-xs -right-1.5 -top-1.5 font-mono text-amber-500/80 selection:bg-zinc-600/30 selection:text-white">
+                  <span className="absolute text-xs -right-2 -top-2 font-mono text-amber-500/80 selection:bg-zinc-600/30 selection:text-white">
                     {collection.length}
                   </span>
                 )}
