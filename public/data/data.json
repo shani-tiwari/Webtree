@@ -117,6 +117,15 @@
   ],
   "be_pro": [
     {
+      "id": 6,
+      "name": "FeralUI",
+      "link": "https://feralui.dev/gradients",
+      "desc": "Gradient studies across shape, backdrop, and colour.",
+      "category": "be_pro",
+      "new": true,
+      "logo": "https://img.logo.dev/feralui.dev?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
       "id": 5,
       "name": "Interfaces",
       "desc": "Interface Cheat Sheet - The Ultimate Design Reference",
@@ -963,6 +972,14 @@
     }
   ],
   "bg": [
+    {
+      "id": 3,
+      "name": "FeralUI",
+      "link": "https://feralui.dev/gradients",
+      "desc": "Gradient studies across shape, backdrop, and colour.",
+      "category": "backgrounds",
+      "logo": "https://img.logo.dev/feralui.dev?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
     {
       "id": 1,
       "name": "Pattern Generator",
