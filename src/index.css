@@ -39,6 +39,7 @@
 .button:hover::before {
   transform: scale(1.03);
 }
+
 @layer utilities {
   .scrollbar-hide::-webkit-scrollbar {
     display: none;

@@ -172,6 +172,15 @@
   ],
   "tools": [
     {
+      "id": 22,
+      "name": "Dither it!",
+      "desc": "Free online image dithering tool. Convert images to pixel art.",
+      "link": "https://ditherit.com/",
+      "category": "tools",
+      "new": true,
+      "logo": "https://img.logo.dev/ditherit.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
       "id": 21,
       "name": "iamsajid",
       "desc": "Motion Design, Color Generator, CSS Tricks, Animations.",
