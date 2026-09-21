@@ -339,6 +339,14 @@
   ],
   "ui_labs": [
     {
+      "id": 13,
+      "name": "Rewamp",
+      "desc": "Components that feel alive.",
+      "link": "https://rewampui.com",
+      "category": "ui_components",
+      "logo": "https://img.logo.dev/rewampui.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
       "id": 1,
       "name": "Motion",
       "desc": "Open-source UI kit with animated React components built for Next.js and Tailwind CSS.",
@@ -420,7 +428,7 @@
       "logo": "https://img.logo.dev/tailwindui.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
-      "id": 11,
+      "id": 12,
       "name": "REUI",
       "desc": "Supercharge your shadcn projects with a free collection of premium-quality components.",
       "link": "https://reui.io",
