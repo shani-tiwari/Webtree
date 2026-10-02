@@ -117,12 +117,20 @@
   ],
   "be_pro": [
     {
+      "id": 7,
+      "name": "Vibrant Design",
+      "link": "https://vibrant.design/",
+      "desc": "Design inspiration from the best of the internet.",
+      "category": "be_pro",
+      "new": true,
+      "logo": "https://img.logo.dev/vibrant.design/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
       "id": 6,
       "name": "FeralUI",
       "link": "https://feralui.dev/gradients",
       "desc": "Gradient studies across shape, backdrop, and colour.",
       "category": "be_pro",
-      "new": true,
       "logo": "https://img.logo.dev/feralui.dev?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
@@ -139,12 +147,10 @@
       "desc": "The Ultimate Resource for Design Engineers. Curated by design engineers — for design engineers.",
       "link": "https://desengs.com/",
       "category": "be_pro",
-      "logo": "https://img.logo.dev/desengs.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true",
-      "new": true
+      "logo": "https://img.logo.dev/desengs.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
        "id": 3,
-       "new": true,
        "category": "be_pro",
        "name": "Hello Frontend",
        "link": "https://hellofrontend.com/",
@@ -153,7 +159,6 @@
     },
     {
        "id": 3,
-       "new": true,
        "category": "be_pro",
        "name": "Debug it",
        "link": "https://debugit.dev/",
@@ -162,7 +167,6 @@
     },
    {
       "id": 2,
-      "new": true,
       "category": "be_pro",
       "name": "JS Challenger",
       "link": "https://jschallenger.com/",
@@ -171,7 +175,6 @@
     },
    {
       "id": 1,
-      "new": true,
       "category": "be_pro",
       "name": "Frontend Dummies",
       "link": "https://frontenddummies.com/",
