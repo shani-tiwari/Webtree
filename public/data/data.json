@@ -342,6 +342,14 @@
   ],
   "ui_labs": [
     {
+      "id": 14,
+      "name": "Amicro",
+      "desc": "Premium micro-interactions and transition components.",
+      "link": "https://amicro.vercel.app/",
+      "category": "ui_components",
+      "logo": "https://img.logo.dev/amicro.vercel.app/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
       "id": 13,
       "name": "Rewamp",
       "desc": "Components that feel alive.",
