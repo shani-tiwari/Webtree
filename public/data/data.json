@@ -342,6 +342,14 @@
   ],
   "ui_labs": [
     {
+      "id": 15,
+      "name": "UX Pilot",
+      "desc": "Design engineering Labs.",
+      "link": "https://uxpilot.ai/labs",
+      "category": "ui_components",
+      "logo": "https://img.logo.dev/uxpilot.ai/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
       "id": 14,
       "name": "Amicro",
       "desc": "Premium micro-interactions and transition components.",
@@ -991,6 +999,14 @@
     }
   ],
   "bg": [
+    {
+      "id": 4,
+      "name": "UX Pilot",
+      "desc": "Design engineering Labs.",
+      "link": "https://uxpilot.ai/labs",
+      "category": "backgrounds",
+      "logo": "https://img.logo.dev/uxpilot.ai/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
     {
       "id": 3,
       "name": "FeralUI",
