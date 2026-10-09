@@ -351,6 +351,14 @@
   ],
   "ui_labs": [
     {
+      "id": 16,
+      "name": "ObsidianUI",
+      "desc": "Design less. Ship Better.",
+      "link": "https://obsidianui.dev",
+      "category": "ui_components",
+      "logo": "https://img.logo.dev/obsidianui.dev?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
       "id": 15,
       "name": "UX Pilot",
       "desc": "Design engineering Labs.",
