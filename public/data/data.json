@@ -117,6 +117,15 @@
   ],
   "be_pro": [
     {
+      "id": 8,
+      "name": "Frontend FYI",
+      "link": "https://frontend.fyi/",
+      "desc": "Teaching you the craft of frontend.",
+      "category": "be_pro",
+      "new": true,
+      "logo": "https://img.logo.dev/frontend.fyi/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
       "id": 7,
       "name": "Vibrant Design",
       "link": "https://vibrant.design/",
