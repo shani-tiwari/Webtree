@@ -117,6 +117,33 @@
   ],
   "be_pro": [
     {
+      "id": 11,
+      "name": "Made With Gsap",
+      "link": "https://madewithgsap.com/",
+      "desc": "Unique JS Effects, Made with care.",
+      "category": "be_pro",
+      "new": true,
+      "logo": "https://img.logo.dev/madewithgsap.com//?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 10,
+      "name": "Refero",
+      "link": "https://refero.design/",
+      "desc": "Real product screens, flows, and patterns to help designers.",
+      "category": "be_pro",
+      "new": true,
+      "logo": "https://img.logo.dev/refero.design/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 9,
+      "name": "Osmo Supply",
+      "link": "https://osmo.supply/",
+      "desc": "Webflow & HTML resources, icons, easings.",
+      "category": "be_pro",
+      "new": true,
+      "logo": "https://img.logo.dev/osmo.supply/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
       "id": 8,
       "name": "Frontend FYI",
       "link": "https://frontend.fyi/",
