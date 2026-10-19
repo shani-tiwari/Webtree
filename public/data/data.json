@@ -758,6 +758,15 @@
   ],
   "icons": [
     {
+      "id": 10,
+      "name": "3dIcons",
+      "desc": "Beautifully Crafted open source & premium 3D Icons.",
+      "link": "https://3dicons.co",
+      "category": "svg_icons",
+      "new": true,
+      "logo": "https://img.logo.dev/3dicons.co?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
       "id": 9,
       "name": "Streamlinehq",
       "desc": "Your Ultimate Icon Library Download or copy svg & png icons.",
