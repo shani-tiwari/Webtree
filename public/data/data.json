@@ -117,6 +117,30 @@
   ],
   "be_pro": [
     {
+      "id": 14,
+      "name": "Gauge UI",
+      "link": "https://gauge-ui.dev/",
+      "desc": "Build any gauge you can imagine.",
+      "category": "be_pro",
+      "logo": "https://img.logo.dev/gauge-ui.dev/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 13,
+      "name": "Mdxcn",
+      "link": "https://mdxcn.dev/",
+      "desc": "markdown-friendly components for mdx.",
+      "category": "be_pro",
+      "logo": "https://img.logo.dev/mdxcn.dev/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 12,
+      "name": "Pele",
+      "link": "https://pele.run/",
+      "desc": "Mermaid diagrams to SVG.",
+      "category": "be_pro",
+      "logo": "https://img.logo.dev/pele.run/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
       "id": 11,
       "name": "Made With Gsap",
       "link": "https://madewithgsap.com/",
@@ -374,6 +398,14 @@
     }
   ],
   "ui_labs": [
+    {
+      "id": 17,
+      "name": "Gauge UI",
+      "link": "https://gauge-ui.dev/",
+      "desc": "Build any gauge you can imagine.",
+      "category": "ui_components",
+      "logo": "https://img.logo.dev/gauge-ui.dev/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
     {
       "id": 16,
       "name": "ObsidianUI",
