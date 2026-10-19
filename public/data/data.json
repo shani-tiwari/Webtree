@@ -122,7 +122,6 @@
       "link": "https://madewithgsap.com/",
       "desc": "Unique JS Effects, Made with care.",
       "category": "be_pro",
-      "new": true,
       "logo": "https://img.logo.dev/madewithgsap.com/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
@@ -131,7 +130,6 @@
       "link": "https://refero.design/",
       "desc": "Real product screens, flows, and patterns to help designers.",
       "category": "be_pro",
-      "new": true,
       "logo": "https://img.logo.dev/refero.design/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
@@ -140,7 +138,6 @@
       "link": "https://osmo.supply/",
       "desc": "Webflow & HTML resources, icons, easings.",
       "category": "be_pro",
-      "new": true,
       "logo": "https://img.logo.dev/osmo.supply/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
@@ -950,6 +947,32 @@
       "link": "https://tailwindcss.com/docs/customizing-colors",
       "category": "color_palettes",
       "logo": "https://img.logo.dev/tailwindcss.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    }
+  ],
+  "blogs": [
+    {
+      "id": 3,
+      "name": "Joshwcomeau",
+      "desc": "Articles and Tutorials.",
+      "link": "https://Joshwcomeau.com",
+      "category": "blogs",
+      "logo": "https://img.logo.dev/Joshwcomeau.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 2,
+      "name": "Bram",
+      "desc": "A rather geeky/technical weblog.",
+      "link": "https://bram.us",
+      "category": "blogs",
+      "logo": "https://img.logo.dev/bram.us?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 1,
+      "name": "Modern CSS",
+      "desc": "Modern CSS Solutions for Old CSS Problems.",
+      "link": "https://moderncss.dev",
+      "category": "blogs",
+      "logo": "https://img.logo.dev/moderncss.dev?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     }
   ],
   "3d": [
