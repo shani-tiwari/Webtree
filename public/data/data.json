@@ -117,6 +117,14 @@
   ],
   "be_pro": [
     {
+      "id": 15,
+      "name": "Free for dev",
+      "link": "https://free-for.dev/#/",
+      "desc": "Resources free for developers.",
+      "category": "be_pro",
+      "logo": "https://img.logo.dev/free-for.dev/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
       "id": 14,
       "name": "Gauge UI",
       "link": "https://gauge-ui.dev/",
