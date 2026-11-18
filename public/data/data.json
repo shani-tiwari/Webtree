@@ -538,12 +538,73 @@
   ],
   "web_design": [
     {
+      "id": 24,
+      "name": "Admire the web",
+      "desc": "We showcase the very best to keep you inspired.",
+      "link": "https://admiretheweb.com/",
+      "category": "design_ideas",
+      "new": true,
+      "logo": "https://img.logo.dev/admiretheweb.com/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 23,
+      "name": "Land-book",
+      "desc": "website design inspiration gallery.",
+      "link": "https://land-book.com/",
+      "category": "design_ideas",
+      "new": true,
+      "logo": "https://img.logo.dev/land-book.com/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 22,
+      "name": "Lapa Ninja",
+      "desc": "The Best Landing Page Design Inspiration.",
+      "link": "https://lapa.ninja/",
+      "category": "design_ideas",
+      "new": true,
+      "logo": "https://img.logo.dev/lapa.ninja/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 21,
+      "name": "BWG",
+      "desc": "Handpicked websites by David Hellmann.",
+      "link": "https://bestwebsite.gallery/",
+      "category": "design_ideas",
+      "new": true,
+      "logo": "https://img.logo.dev/bestwebsite.gallery/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 20,
+      "name": "CSS Design Awards",
+      "desc": "Daily curated selection of the best websites across the globe.",
+      "link": "https://www.cssdesignawards.com/",
+      "category": "design_ideas",
+      "new": true,
+      "logo": "https://img.logo.dev/www.cssdesignawards.com/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 19,
+      "name": "Site Inspire",
+      "desc": "A showcase of the web’s finest design + talent.",
+      "link": "https://www.siteinspire.com/",
+      "category": "design_ideas",
+      "new": true,
+      "logo": "https://img.logo.dev/www.siteinspire.com/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 18,
+      "name": "The FWA",
+      "desc": "Your space for inspiration.",
+      "link": "https://thefwa.com/",
+      "category": "design_ideas",
+      "logo": "https://img.logo.dev/thwfwa.com/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
       "id": 17,
       "name": "Cosmos",
       "desc": "Your space for inspiration",
       "link": "https://www.cosmos.so/",
       "category": "design_ideas",
-      "new": true,
       "logo": "https://img.logo.dev/cosmos.so/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
@@ -552,7 +613,6 @@
       "desc": "For the love of beautiful & functional websites.",
       "link": "https://minimal.gallery/",
       "category": "design_ideas",
-      "new": true,
       "logo": "https://img.logo.dev/minimal.gallery/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
@@ -561,7 +621,6 @@
       "desc": "A daily curation of exceptional design, websites and tools.",
       "link": "https://recent.design/",
       "category": "design_ideas",
-      "new": true,
       "logo": "https://img.logo.dev/recent.design?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
@@ -578,7 +637,6 @@
       "desc": "Handpicked websites showcasing godly web design and creativity.",
       "link": "https://godly.website",
       "category": "design_ideas",
-      "new": true,
       "logo": "https://img.logo.dev/godly.website?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
@@ -587,8 +645,7 @@
       "desc": "Website hero section library.",
       "link": "https://supahero.io/",
       "category": "design_ideas",
-      "logo": "https://img.logo.dev/supahero.io?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true",
-      "new": true
+      "logo": "https://img.logo.dev/supahero.io?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
       "id": 7,

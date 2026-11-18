@@ -110,7 +110,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="max-w-sm text-sm leading-7 text-neutral-400/90 sm-md:text-center">
-              The ultimate collection of 140+ web development resources.
+              The ultimate collection of 150+ web development resources.
               Discover tools, design ideas, and curated picks to build better on
               the web.
             </p>
@@ -137,7 +137,7 @@ export default function Footer() {
                   className="flex gap-2 justify-center items-center "
                 >
                   {/* <MagneticButton icon={Growth} size="20" /> */}
-                  Support 
+                  Support
                 </a>
               </span>
             </div>
@@ -191,7 +191,7 @@ export default function Footer() {
                   aria-label={social.name}
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{once: true}}
+                  viewport={{ once: true }}
                   transition={{
                     duration: 0.25,
                     type: "bounce",

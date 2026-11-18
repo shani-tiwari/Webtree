@@ -11,7 +11,6 @@ import { Rocket01Icon } from "@hugeicons/core-free-icons";
 import { Link } from "react-router";
 
 export default function Home() {
-  
   const { data, loading } = useCollectionData();
   const [activeCategory, setActiveCategory] = useState("be_pro");
 
@@ -83,14 +82,13 @@ export default function Home() {
             <CustomSVG />
           </motion.div>
 
-
           {/* Cards Section */}
           <CardsGrid
             carddata={carddata}
             activeCategory={activeCategory}
             show={"less"}
-            />
-          
+          />
+
           <div className="w-full flex flex-col gap-2  mt-4">
             {/* explore page button */}
             <Link
@@ -101,10 +99,11 @@ export default function Home() {
               )}
             >
               {/* willChange - won't worked ---- psuedo element used (Line. 30-40 css)*/}
-              <span className="font-medium"> 
-                Explore All Resources
-              </span>
-              <MagneticButton icon={Rocket01Icon} className='text-black mt-0.5'/>
+              <span className="font-medium">Explore All Resources</span>
+              <MagneticButton
+                icon={Rocket01Icon}
+                className="text-black mt-0.5"
+              />
             </Link>
           </div>
         </motion.section>
@@ -137,8 +136,8 @@ function Header() {
               "text-shadow-lg text-shadow-amber-700/20 hover:tracking-tight transition-all duration-500",
             )}
           >
-            Find & Save, <span className="font-mono">140+</span> Development
-            Resources faster.
+            Find & Save, <span className="font-mono">150+</span> Development
+            Resources, faster.
             {/* <span className="inline-block -rotate-90 text-amber-500 px-px">४</span>  */}
           </h1>
         </div>
