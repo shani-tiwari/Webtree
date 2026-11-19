@@ -117,6 +117,14 @@
   ],
   "be_pro": [
     {
+      "id": 16,
+      "name": "Designeer",
+      "link": "https://designeer.xyz/",
+      "desc": "Curated catalogue for designers and developers.",
+      "category": "be_pro",
+      "logo": "https://img.logo.dev/designeer.xyz?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
       "id": 15,
       "name": "Free for dev",
       "link": "https://free-for.dev/#/",
@@ -537,6 +545,15 @@
     }
   ],
   "web_design": [
+    {
+      "id": 25,
+      "name": "Gems Design",
+      "desc": "A time capsule of well-designed finds.",
+      "link": "https://gems.design/",
+      "category": "design_ideas",
+      "new": true,
+      "logo": "https://img.logo.dev/gems.design/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
     {
       "id": 24,
       "name": "Admire the web",
