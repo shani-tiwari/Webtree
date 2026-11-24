@@ -423,12 +423,20 @@
   ],
   "ui_labs": [
     {
+      "id": 18,
+      "name": "Breeze UI",
+      "link": "https://www.breezeui.com/",
+      "desc": "Calm UI, crafted by hand.",
+      "category": "ui_components",
+      "logo": "https://img.logo.dev/breezeui.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
       "id": 17,
       "name": "Gauge UI",
       "link": "https://gauge-ui.dev/",
       "desc": "Build any gauge you can imagine.",
       "category": "ui_components",
-      "logo": "https://img.logo.dev/gauge-ui.dev/?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+      "logo": "https://img.logo.dev/gauge-ui.dev?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
       "id": 16,
