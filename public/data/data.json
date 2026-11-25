@@ -117,6 +117,38 @@
   ],
   "be_pro": [
     {
+      "id": 21,
+      "name": "Its Nice That",
+      "link": "https://www.itsnicethat.com/projects-creatives",
+      "desc": "Daily Design Inspiration.",
+      "category": "be_pro",
+      "logo": "https://img.logo.dev/www.itsnicethat.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 20,
+      "name": "Designer Daily",
+      "link": "https://www.designer-daily.com/",
+      "desc": "Daily Design Inspiration.",
+      "category": "be_pro",
+      "logo": "https://img.logo.dev/www.designer-daily.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 19,
+      "name": "The Inspiration Grid",
+      "link": "https://theinspirationgrid.com/",
+      "desc": "Daily Design Inspiration.",
+      "category": "be_pro",
+      "logo": "https://img.logo.dev/theinspirationgrid.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 18,
+      "name": "Creative Boom",
+      "link": "https://www.creativeboom.com/",
+      "desc": "graphic design, branding, logo design, typography and packaging.",
+      "category": "be_pro",
+      "logo": "https://img.logo.dev/www.creativeboom.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
       "id": 17,
       "name": "Trazo",
       "link": "https://trazo.akoder.xyz/",
@@ -422,6 +454,22 @@
     }
   ],
   "ui_labs": [
+    {
+      "id": 20,
+      "name": "Opensource UI",
+      "link": "https://opensourceui.in/components",
+      "desc": "Build Better Interfaces for Free.",
+      "category": "ui_components",
+      "logo": "https://img.logo.dev/opensourceui.in?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 19,
+      "name": "bluma Design",
+      "link": "https://www.bluma.design/",
+      "desc": "React and SwiftUI components.",
+      "category": "ui_components",
+      "logo": "https://img.logo.dev/www.bluma.design?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
     {
       "id": 18,
       "name": "Breeze UI",

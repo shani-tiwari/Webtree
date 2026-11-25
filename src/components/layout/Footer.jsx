@@ -110,7 +110,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="max-w-sm text-sm leading-7 text-neutral-400/90 sm-md:text-center">
-              The ultimate collection of 150+ web development resources.
+              The ultimate collection of 160+ web development resources.
               Discover tools, design ideas, and curated picks to build better on
               the web.
             </p>

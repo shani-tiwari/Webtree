@@ -136,7 +136,7 @@ function Header() {
               "text-shadow-lg text-shadow-amber-700/20 hover:tracking-tight transition-all duration-500",
             )}
           >
-            Find & Save, <span className="font-mono">150+</span> Development
+            Find & Save, <span className="font-mono">160+</span> Development
             Resources, faster.
             {/* <span className="inline-block -rotate-90 text-amber-500 px-px">४</span>  */}
           </h1>
