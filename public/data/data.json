@@ -1164,6 +1164,38 @@
   ],
   "3d": [
     {
+      "id": 15,
+      "name": "Womp",
+      "desc": "Physical products, built at the speed of software.",
+      "link": "https://womp.com/",
+      "category": "3d",
+      "logo": "https://img.logo.dev/womp.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 14,
+      "name": "vectary",
+      "desc": "From AI-accelerated ideation to 3D anyone can explore.",
+      "link": "https://www.vectary.com/",
+      "category": "3d",
+      "logo": "https://img.logo.dev/vectary.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 13,
+      "name": "Theatre JS",
+      "desc": "Powerful motion design in the browser.",
+      "link": "https://www.theatrejs.com/",
+      "category": "3d",
+      "logo": "https://img.logo.dev/theatrejs.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
+      "id": 12,
+      "name": "Unicorn Studio",
+      "desc": "Design something attention-worthy.",
+      "link": "https://www.unicorn.studio/",
+      "category": "3d",
+      "logo": "https://img.logo.dev/unicorn.studio?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
+    },
+    {
       "id": 1,
       "name": "Three.js Resources",
       "desc": "Curated directory of Three.js tutorials, tools, examples, courses, and libraries for 3D web development, VR, and games.",
@@ -1194,14 +1226,6 @@
       "link": "https://polyhaven.com",
       "category": "3d",
       "logo": "https://img.logo.dev/polyhaven.com?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
-    },
-    {
-      "id": 5,
-      "name": "Blender",
-      "desc": "Free open-source 3D creation suite for modeling, rigging, animation; export GLTF/GLB for web devs using Three.js.",
-      "link": "https://www.blender.org",
-      "category": "3d",
-      "logo": "https://img.logo.dev/blender.org?token=pk_HOUkAlGxQZ6k23y1WiUE5A&retina=true"
     },
     {
       "id": 6,
